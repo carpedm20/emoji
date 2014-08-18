@@ -18,16 +18,6 @@ To install ndrive, simply:
 
     $ pip install emoji
 
-Or, you can use:
-
-    $ easy_install ndrive
-
-Or, you can also install manually:
-
-    $ git clone https://github.com/carpedm20/emoji.git
-    $ cd emoji
-    $ python setup.py install
-
 
 Example
 -------
