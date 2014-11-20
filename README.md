@@ -14,7 +14,7 @@ This project was inspired by [emoji](https://github.com/kyokomi/emoji) of [kyoko
 Installation
 ------------
 
-To install ndrive, simply:
+To install emoji, simply:
 
     $ pip install emoji
 
