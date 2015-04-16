@@ -1,1 +1,7 @@
-include README.rst LICENSE
+include LICENSE.txt
+include MANIFEST.in
+include README.rst
+include requirements-dev.txt
+include setup.cfg
+include setup.py
+recursive-include tests *.py
