@@ -1,39 +1,77 @@
+=====
 Emoji
 =====
 
-Emoji is a simple Python module.
+.. image:: https://pypip.in/v/emoji/badge.png?style=flat
+    :target: https://pypi.python.org/pypi/emoji
 
-This project was inspired by
-`emoji <https://github.com/kyokomi/emoji>`__ of
-`kyokomi <https://github.com/kyokomi/emoji>`__.
+.. image:: https://pypip.in/d/emoji/badge.png?style=flat
+    :target: https://pypi.python.org/pypi/emoji
 
-|PyPi version| |PyPi downloads| |PyPi status| |PyPi license|
+.. image:: https://pypip.in/status/emoji/badge.svg?style=flat
+    :target: https://pypi.python.org/pypi/emoji
+
+.. image:: https://pypip.in/license/emoji/badge.svg?style=flat
+    :target: https://pypi.python.org/pypi/emoji
+
+
+`Emoji <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__  for Python.  This project was inspired by `kyokomi <https://github.com/kyokomi/emoji>`__.
+
 
 Example
--------
+=======
 
-::
+.. code-block:: python
 
-    from emoji import emojize
+    import emoji
+    print(emoji.emojize('Water! :water_wave:'))
+    Water! 🌊
+    print(emoji.decode('🌊'))
+    water_wave
 
-    print emojize("Python is :thumbsup:")
-    print emojize("Do you want some :beer: ?")
+.. image:: https://raw.githubusercontent.com/carpedm20/emoji/master/demo/demo.png
 
-Link
-----
 
-`emoji cheat sheet <http://www.emoji-cheat-sheet.com/>`__
+Installation
+============
 
-Author
-------
+Via pip:
 
-Taehoon Kim / [@carpedm20](http://carpedm20.github.io/about/)
+.. code-block:: console
 
-.. |PyPi version| image:: https://pypip.in/v/emoji/badge.png?style=flat
-   :target: https://pypi.python.org/pypi/emoji
-.. |PyPi downloads| image:: https://pypip.in/d/emoji/badge.png?style=flat
-   :target: https://pypi.python.org/pypi/emoji
-.. |PyPi status| image:: https://pypip.in/status/emoji/badge.svg?style=flat
-   :target: https://pypi.python.org/pypi/emoji
-.. |PyPi license| image:: https://pypip.in/license/emoji/badge.svg?style=flat
-   :target: https://pypi.python.org/pypi/emoji
+    $ pip install emoji --upgrade
+
+From master branch:
+
+.. code-block:: console
+
+    $ git clone https://github.com/carpedm20/emoji.git
+    $ cd emoji
+    $ python setup.py install
+
+
+Developing
+==========
+
+.. code-block:: console
+
+    $ git clone https://github.com/carpedm20/emoji.git
+    $ cd emoji
+    $ virtualenv venv
+    $ source venv/bin/activate
+    $ pip install -r requirements-dev.txt -e .
+    $ nosetests --with-coverage
+
+
+License
+=======
+
+See ``LICENSE.txt``.
+
+
+Authors
+=======
+
+Taehoon Kim / `@carpedm20 <http://carpedm20.github.io/about/>`__
+
+Kevin Wurster / `@geowurster <http://twitter.com/geowurster>`__

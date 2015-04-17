@@ -1,62 +1,76 @@
-# -*- coding: utf-8 -*-
-"""
-emoji
-=====
-
-emoji terminal output for Python
-
-Links
-`````
-
-* `GitHub repository <http://github.com/carpedm20/emoji>`_
-* `development version
-  <http://github.com/carpedm20/emoji/zipball/master>`_
+#!/usr/bin/env python
 
 
 """
-from __future__ import with_statement
-import re
+Setup script for emoji
+"""
 
+
+import os
 try:
     from setuptools import setup
 except ImportError:
-    from ez_setup import use_setuptools
-    use_setuptools()
-    from setuptools import setup
+    from distutils.core import setup
 
-# detect the current version
-with open('emoji/__init__.py') as f:
-    version = re.search(r'__version__\s*=\s*\'(.+?)\'', f.read()).group(1)
-assert version
+
+with open('README.rst') as f:
+    readme_content = f.read().strip()
+
+
+with open('LICENSE.txt') as f:
+    license_content = f.read().strip()
+
+
+version = None
+author = None
+email = None
+source = None
+with open(os.path.join('emoji', '__init__.py')) as f:
+    for line in f:
+        if line.strip().startswith('__version__'):
+            version = line.split('=')[1].strip().replace('"', '').replace("'", '')
+        elif line.strip().startswith('__author__'):
+            author = line.split('=')[1].strip().replace('"', '').replace("'", '')
+        elif line.strip().startswith('__email__'):
+            email = line.split('=')[1].strip().replace('"', '').replace("'", '')
+        elif line.strip().startswith('__source__'):
+            source = line.split('=')[1].strip().replace('"', '').replace("'", '')
+        elif None not in (version, author, email, source):
+            break
 
 setup(
     name='emoji',
-    packages=['emoji'],
-    version=version,
-    description='emoji terminal output for Python',
-    long_description=open('README.rst').read(),
-    license='BSD License',
-    author='Taehoon Kim',
-    author_email='carpedm20@gmail.com',
-    url='http://github.com/carpedm20/emoji',
-    keywords=['emoji'],
+    author=author,
+    author_email=email,
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
-        'Environment :: Console',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Information Technology',
+        'License :: OSI Approved :: BSD License',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.1',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
-        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Programming Language :: Python',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+        'Topic :: Multimedia :: Graphics :: Presentation',
+        'Topic :: Software Development :: Libraries :: Python Modules',
     ],
+    description="Emoji for Python",
+    keywords=['emoji'],
+    include_package_data=True,
+    license=license_content,
+    long_description=readme_content,
+    packages=['emoji'],
+    url=source,
+    version=version,
+    zip_safe=True,
 )
