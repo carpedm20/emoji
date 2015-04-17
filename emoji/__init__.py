@@ -3,6 +3,12 @@
 
 """
 Emoji for Python
+
+    >>> import emoji
+    >>> print(emoji.emojize('Water! :water_wave:'))
+    Water! 🌊
+    >>> print(emoji.decode('🌊'))
+    :water_wave:
 """
 
 
