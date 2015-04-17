@@ -23,15 +23,15 @@ Example
 
 .. code-block:: python
 
-    import emoji
-    print(emoji.emojize('Water! :water_wave:'))
+    >> import emoji
+    >> print(emoji.emojize('Water! :water_wave:'))
     Water! 🌊
-    print(emoji.decode('🌊')) # for Python 3.x
+    >> print(emoji.decode(u'🌊')) # for Python 2.x
     :water_wave:
-    print(emoji.decode(u'🌊')) # for Python 2.x
+    >> print(emoji.decode('🌊')) # for Python 3.x
     :water_wave:
 
-.. image:: https://raw.githubusercontent.com/carpedm20/emoji/master/demo/demo.png
+.. image:: https://raw.githubusercontent.com/carpedm20/emoji/master/example/example.png
 
 
 Installation
