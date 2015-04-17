@@ -2,13 +2,6 @@
 Emoji
 =====
 
-
-.. image:: https://travis-ci.org/geowurster/emoji.svg?branch=master
-    :target: https://travis-ci.org/geowurster/emoji
-
-.. image:: https://coveralls.io/repos/geowurster/emoji/badge.svg?branch=master
-    :target: https://coveralls.io/r/geowurster/emoji
-
 .. image:: https://pypip.in/v/emoji/badge.png?style=flat
     :target: https://pypi.python.org/pypi/emoji
 
@@ -22,9 +15,7 @@ Emoji
     :target: https://pypi.python.org/pypi/emoji
 
 
-`Emoji <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__  for Python.
-
-This project was inspired by `kyokomi <https://github.com/kyokomi/emoji>`__.
+`Emoji <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__  for Python.  This project was inspired by `kyokomi <https://github.com/kyokomi/emoji>`__.
 
 
 Example
