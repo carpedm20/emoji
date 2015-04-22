@@ -2,6 +2,9 @@
 Emoji
 =====
 
+.. image:: https://travis-ci.org/carpedm20/emoji.svg?branch=master
+    :target: https://travis-ci.org/carpedm20/emoji
+
 .. image:: https://pypip.in/v/emoji/badge.png?style=flat
     :target: https://pypi.python.org/pypi/emoji
 
