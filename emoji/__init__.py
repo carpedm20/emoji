@@ -1,14 +1,18 @@
 # -*- coding: UTF-8 -*-
 
-
 """
-Emoji for Python
+emoji for Python
+~~~~~~~~~~~~~~~~
+
+emoji terminal output for Python.
 
     >>> import emoji
-    >>> print(emoji.emojize('Water! :water_wave:'))
-    Water! 🌊
-    >>> print(emoji.decode('🌊'))
-    :water_wave:
+    >>> print(emoji.emojize('Python is :thumbsup:'))
+    Python is 👍
+    >> print(emoji.emojize('Python is :thumbs_up_sign:', is_alias=False))
+    Python is 👍
+    >>> print(emoji.decode('👍'))
+    :+1:
 """
 
 
@@ -16,7 +20,7 @@ from .core import *
 from .unicode_codes import *
 
 
-__version__ = '0.2.1'
+__version__ = '0.3.2'
 __author__ = 'Taehoon Kim, Kevin Wurster'
 __email__ = 'carpedm20@gmail.com, wursterk@gmail.com'
 __source__ = 'https://github.com/carpedm20/emoji/'

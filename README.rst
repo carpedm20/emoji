@@ -11,14 +11,12 @@ Example
 .. code-block:: python
 
     >> import emoji
-    >> print(emoji.emojize('Water! :water_wave:'))
-    Water! 🌊
-    >> print(emoji.decode(u'🌊')) # for Python 2.x
-    :water_wave:
-    >> print(emoji.decode('🌊')) # for Python 3.x
-    :water_wave:
-
-.. image:: https://raw.githubusercontent.com/carpedm20/emoji/master/example/example.png
+    >> print(emoji.emojize('Python is :thumbsup:'))
+    Python is 👍
+    >> print(emoji.emojize('Python is :thumbs_up_sign:', is_alias=False))
+    Python is 👍
+    >> print(emoji.decode('👍'))
+    :+1:
 
 
 Installation
@@ -37,25 +35,6 @@ From master branch:
     $ git clone https://github.com/carpedm20/emoji.git
     $ cd emoji
     $ python setup.py install
-
-
-Developing
-==========
-
-.. code-block:: console
-
-    $ git clone https://github.com/carpedm20/emoji.git
-    $ cd emoji
-    $ virtualenv venv
-    $ source venv/bin/activate
-    $ pip install -r requirements-dev.txt -e .
-    $ nosetests --with-coverage
-
-
-License
-=======
-
-See ``LICENSE.txt``.
 
 
 Authors

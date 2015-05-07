@@ -8,7 +8,7 @@ python:
   - "pypy3"
 
 install:
-  - pip install -r requirements-dev.txt
+  - pip install -r requirements.txt
   - pip install .
 
 script:
