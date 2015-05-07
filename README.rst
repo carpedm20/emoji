@@ -37,9 +37,14 @@ From master branch:
     $ python setup.py install
 
 
+Link
+====
+
+`Emoji Cheat Sheet <http://www.emoji-cheat-sheet.com/>`__
+
+
 Authors
 =======
 
 Taehoon Kim / `@carpedm20 <http://carpedm20.github.io/about/>`__
-
 Kevin Wurster / `@geowurster <http://twitter.com/geowurster>`__
