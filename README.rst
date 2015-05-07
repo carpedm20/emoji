@@ -2,25 +2,6 @@
 Emoji
 =====
 
-<<<<<<< HEAD
-=======
-.. image:: https://travis-ci.org/carpedm20/emoji.svg?branch=master
-    :target: https://travis-ci.org/carpedm20/emoji
-
-.. image:: https://pypip.in/v/emoji/badge.png?style=flat
-    :target: https://pypi.python.org/pypi/emoji
-
-.. image:: https://pypip.in/d/emoji/badge.png?style=flat
-    :target: https://pypi.python.org/pypi/emoji
-
-.. image:: https://pypip.in/status/emoji/badge.svg?style=flat
-    :target: https://pypi.python.org/pypi/emoji
-
-.. image:: https://pypip.in/license/emoji/badge.svg?style=flat
-    :target: https://pypi.python.org/pypi/emoji
-
-
->>>>>>> 83bd3e2d7d909a8128849e9b4202306855a1eb82
 `Emoji <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__  for Python.  This project was inspired by `kyokomi <https://github.com/kyokomi/emoji>`__.
 
 
