@@ -13,10 +13,9 @@ import emoji
 
 def test_emojize_name_only():
     for name in emoji.EMOJI_UNICODE.keys():
-        actual = emoji.emojize(name)
+        actual = emoji.emojize(name, False)
         expected = emoji.EMOJI_UNICODE[name]
         assert expected == actual, "%s != %s" % (expected, actual)
-
 
 def test_emojize_complicated_string():
     # A bunch of emoji's with UTF-8 strings to make sure the regex expression is functioning
@@ -29,23 +28,23 @@ def test_emojize_complicated_string():
         ':flag_for_Curaçao:': u'\U0001F1E8 \U0001F1FC'
     }
     string = ' complicated! '.join(list(name_code.keys()))
-    actual = emoji.emojize(string)
+    actual = emoji.emojize(string, False)
     expected = string
     for name, code in name_code.items():
         expected = expected.replace(name, code)
-    expected = emoji.emojize(actual)
+    expected = emoji.emojize(actual, False)
     assert expected == actual, "%s != %s" % (expected, actual)
 
 
 def test_emojize_invalid_emoji():
     string = '__---___--Invalid__--__-Name'
-    assert emoji.emojize(string) == string
+    assert emoji.emojize(string, False) == string
 
 
 def test_decode():
 
     for name, u_code in emoji.EMOJI_UNICODE.items():
-        assert emoji.decode(u_code) == name
+        assert emoji.decode(u_code, False) == name
 
 
 def test_decode_invalid_string():

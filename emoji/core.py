@@ -27,7 +27,7 @@ def emojize(string, is_alias=True):
         Python is fun 👍
     """
 
-    pattern = re.compile('(:[a-zA-Z0-9\+\-_]+:)')
+    pattern = re.compile('(:[a-zA-Z0-9\+\-_&.ô’Åéãíç]+:)')
 
     def replace(match):
         if is_alias:

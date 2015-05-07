@@ -20,7 +20,7 @@ from .core import *
 from .unicode_codes import *
 
 
-__version__ = '0.3.2'
+__version__ = '0.3.3'
 __author__ = 'Taehoon Kim, Kevin Wurster'
 __email__ = 'carpedm20@gmail.com, wursterk@gmail.com'
 __source__ = 'https://github.com/carpedm20/emoji/'
