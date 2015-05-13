@@ -9,6 +9,7 @@ Unittests for emoji.core
 from __future__ import unicode_literals
 
 import emoji
+from nose.tools import assert_raises
 
 
 def test_emojize_name_only():
@@ -16,6 +17,7 @@ def test_emojize_name_only():
         actual = emoji.emojize(name, False)
         expected = emoji.EMOJI_UNICODE[name]
         assert expected == actual, "%s != %s" % (expected, actual)
+
 
 def test_emojize_complicated_string():
     # A bunch of emoji's with UTF-8 strings to make sure the regex expression is functioning
@@ -42,14 +44,16 @@ def test_emojize_invalid_emoji():
 
 
 def test_decode():
-
     for name, u_code in emoji.EMOJI_UNICODE.items():
         assert emoji.decode(u_code, False) == name
 
 
 def test_decode_invalid_string():
-    try:
+    with assert_raises(ValueError):
         emoji.decode('__---___--Invalid__--__-Name')
-        raise Exception("Above line should have raised a ValueError")
-    except ValueError:
-        pass
+
+
+def test_alias():
+    # When is_alias=False aliases should be passed through untouched
+    assert emoji.emojize(':camel:', is_alias=False) == ':camel:'
+    assert emoji.emojize(':camel:', is_alias=True) == emoji.EMOJI_ALIAS_UNICODE[':camel:']
