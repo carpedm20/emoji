@@ -13,7 +13,7 @@ Example
     >> import emoji
     >> print(emoji.emojize('Python is :thumbsup:'))
     Python is 👍
-    >> print(emoji.emojize('Python is :thumbs_up_sign:', is_alias=False))
+    >> print(emoji.emojize('Python is :thumbs_up_sign:', use_aliases=False))
     Python is 👍
     >> print(emoji.decode('👍'))
     :+1:
