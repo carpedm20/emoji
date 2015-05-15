@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 
+
 """
 emoji.core
 ~~~~~~~~~~
@@ -10,27 +11,35 @@ Core components for emoji.
 
 
 import re
+import sys
 
 from . import unicode_codes
 
 
-def emojize(string, is_alias=True):
+PY2 = sys.version_info[0] is 2
+
+
+USE_ALIASES = False
+
+
+def emojize(string, use_aliases=USE_ALIASES):
+
     """Replace emoji names in a string with unicode codes.
 
     :param string: String contains emoji names.
-    :param is_alias: (optional) Whether uses aliase of emoji name or not.
+    :param use_aliases: (optional) Enable emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
 
         >>> import emoji
-        >>> print(emoji.emojize("Python is fun :thumbsup:"))
+        >>> print(emoji.emojize("Python is fun :thumbsup:", use_aliases=True))
         Python is fun 👍
-        >>> print(emoji.emojize("Python is fun :thumbs_up_sign:", False))
+        >>> print(emoji.emojize("Python is fun :thumbs_up_sign:"))
         Python is fun 👍
     """
 
     pattern = re.compile('(:[a-zA-Z0-9\+\-_&.ô’Åéãíç]+:)')
 
     def replace(match):
-        if is_alias:
+        if use_aliases:
             return unicode_codes.EMOJI_ALIAS_UNICODE.get(match.group(1), match.group(1))
         else:
             return unicode_codes.EMOJI_UNICODE.get(match.group(1), match.group(1))
@@ -38,28 +47,27 @@ def emojize(string, is_alias=True):
     return pattern.sub(replace, string)
 
 
-def decode(u_code, is_alias=True):
+def decode(u_code, use_aliases=USE_ALIASES):
+
     """Given a unicode code return the name of the associated emoji.
 
     :param u_code : String contains unicode emoji.
-    :param is_alias: (optional) Whether uses aliase of emoji name or not.
+    :param use_aliases: (optional) Whether uses aliase of emoji name or not.
     :raises ValueError: unrecognized string.
     :return: Name of associated emoji.
 
         >>> import emoji
-        >>> print(emoji.decode("👍"))
+        >>> print(emoji.decode("👍"), use_aliases=True)
         :+1:
-        >>> print(emoji.decode("👍", False))
+        >>> print(emoji.decode("👍"))
         :thumbs_up_sign:
     """
 
-    try:
+    if PY2:  # pragma no cover
         u_code = u_code.decode('utf-8')
-    except:
-        pass
 
     try:
-        if is_alias:
+        if use_aliases:
             return unicode_codes.UNICODE_EMOJI_ALIAS[u_code]
         else:
             return unicode_codes.UNICODE_EMOJI[u_code]
