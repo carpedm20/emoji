@@ -21,13 +21,13 @@ from .unicode_codes import *
 
 
 __version__ = '0.3.3'
-__author__ = 'Taehoon Kim'
-__email__ = 'carpedm20@gmail.com'
+__author__ = 'Taehoon Kim and Kevin Wurster'
+__email__ = 'carpedm20@gmail.com and wursterk@gmail.com'
 __source__ = 'https://github.com/carpedm20/emoji/'
 __license__ = '''
 New BSD License
 
-Copyright (c) 2014-2015, Taehoon Kim
+Copyright (c) 2014-2015, Taehoon Kim and Kevin Wurster
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

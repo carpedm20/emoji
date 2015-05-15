@@ -18,12 +18,9 @@ def test_emoji_names():
             assert name.startswith(':') and name.endswith(':') and len(name) >= 3
             emj = emoji.emojize(name, is_alias=is_alias)
             assert emj == ucode, "%s != %s" % (emoji.emojize(name), ucode)
-            # print(emoji.emojize(name))
-            # try:
-            #     assert emoji.emojize(name) == ucode, "%s != %s" % (name, ucode)
-            # except:
-            #     raise ValueError
-            #     print(name)
-            # assert emoji.emojize(name) == emoji.unicode_codes.EMOJI_UNICODE[name],\
-            #     "%s != %s" % (name, ucode)
-        break
+
+
+def test_compare_normal_and_aliases():
+    # There should always be more aliases than normal codes since the aliases contain
+    # the normal codes
+    assert len(emoji.EMOJI_UNICODE) < len(emoji.EMOJI_ALIAS_UNICODE)
