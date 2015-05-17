@@ -43,17 +43,6 @@ def test_emojize_invalid_emoji():
     assert emoji.emojize(string, False) == string
 
 
-def test_decode():
-    # No aliases
-    for name, u_code in emoji.EMOJI_UNICODE.items():
-        assert emoji.decode(u_code, use_aliases=False) == name
-
-
-def test_decode_invalid_string():
-    with assert_raises(ValueError):
-        emoji.decode('__---___--Invalid__--__-Name')
-
-
 def test_alias():
     # When use_aliases=False aliases should be passed through untouched
     assert emoji.emojize(':camel:', use_aliases=False) == ':camel:'
