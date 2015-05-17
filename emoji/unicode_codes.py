@@ -1294,7 +1294,7 @@ EMOJI_UNICODE = {
     ':zipper-mouth_face:': u'\U0001F910'
 }
 
-EMOJI_ALIAS_UNICODE = {
+EMOJI_ALIAS_UNICODE = dict(EMOJI_UNICODE.items(), **{
     ':admission_tickets:': u'\U0001F39F',
     ':aerial_tramway:': u'\U0001F6A1',
     ':airplane:': u'\U00002708',
@@ -2602,7 +2602,7 @@ EMOJI_ALIAS_UNICODE = {
     ':yellow_heart:': u'\U0001F49B',
     ':yin_yang:': u'\U0000262F',
     ':zipper-mouth_face:': u'\U0001F910'
-}
+})
 
 
 UNICODE_EMOJI = {v: k for k, v in EMOJI_UNICODE.items()}
