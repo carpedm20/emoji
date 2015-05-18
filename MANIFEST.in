@@ -1,6 +1,7 @@
 include LICENSE.txt
 include MANIFEST.in
 include README.rst
+include CHANGES.txt
 include requirements.txt
 include setup.cfg
 include setup.py

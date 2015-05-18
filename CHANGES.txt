@@ -1,6 +1,14 @@
 emoji
 =====
 
+0.3.4
+-----
+
+* Restored default functionality - #6
+* Removed `emoji.decode()` - #10
+* Added `use_aliases` to `emoji.emojize()` to enable the GitHub aliases and others - #8
+
+
 0.2
 ---
 
