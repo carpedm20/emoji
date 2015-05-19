@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 
+
 """
 emoji for Python
 ~~~~~~~~~~~~~~~~
@@ -7,12 +8,10 @@ emoji for Python
 emoji terminal output for Python.
 
     >>> import emoji
-    >>> print(emoji.emojize('Python is :thumbsup:'))
+    >>> print(emoji.emojize('Python is :thumbsup:', use_aliases=True))
     Python is 👍
-    >> print(emoji.emojize('Python is :thumbs_up_sign:', is_alias=False))
+    >> print(emoji.emojize('Python is :thumbs_up_sign:'))
     Python is 👍
-    >>> print(emoji.decode('👍'))
-    :+1:
 """
 
 
@@ -20,7 +19,7 @@ from .core import *
 from .unicode_codes import *
 
 
-__version__ = '0.3.3'
+__version__ = '0.3.4'
 __author__ = 'Taehoon Kim and Kevin Wurster'
 __email__ = 'carpedm20@gmail.com and wursterk@gmail.com'
 __source__ = 'https://github.com/carpedm20/emoji/'
