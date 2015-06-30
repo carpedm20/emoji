@@ -7,6 +7,7 @@ Setup script for emoji
 """
 
 
+from codecs import open
 import os
 try:
     from setuptools import setup
@@ -14,7 +15,7 @@ except ImportError:
     from distutils.core import setup
 
 
-with open('README.rst') as f:
+with open('README.rst', encoding='UTF-8') as f:
     readme_content = f.read().strip()
 
 
