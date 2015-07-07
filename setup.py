@@ -7,14 +7,12 @@ Setup script for emoji
 """
 
 
+from codecs import open
 import os
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
 
 
-with open('README.rst') as f:
+with open('README.rst', encoding='UTF-8') as f:
     readme_content = f.read().strip()
 
 
@@ -26,7 +24,7 @@ version = None
 author = None
 email = None
 source = None
-with open(os.path.join('emoji', '__init__.py')) as f:
+with open(os.path.join('emoji', '__init__.py'), encoding='utf-8') as f:
     for line in f:
         if line.strip().startswith('__version__'):
             version = line.split('=')[1].strip().replace('"', '').replace("'", '')
