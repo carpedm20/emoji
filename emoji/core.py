@@ -58,7 +58,7 @@ def demojize(string):
         >>> print(emoji.demojize(u"Python is fun 👍"))
         Python is fun :thumbs_up_sign:
         >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
-        Python is fun :thumbs_up_sign:
+        Unicode is tricky :hushed_face:
     """
 
     # via Martijn Pieters, http://stackoverflow.com/questions/26568722/remove-unicode-emoji-using-re-in-python
