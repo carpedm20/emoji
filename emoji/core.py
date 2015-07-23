@@ -81,20 +81,20 @@ def demojize(string):
     # Python 3+ should handle all strings as unicode. Right?
         try:
             # Wide UCS-4 build
-            pattern = re.compile(u'['
+            pattern = re.compile('['
                 '\U0001F300-\U0001F64F'
                 '\U0001F680-\U0001F6FF'
                 '\u2600-\u26FF\u2700-\u27BF]+', 
                 re.UNICODE)
         except re.error:
             # Narrow UCS-2 build
-            pattern = re.compile(u'('
+            pattern = re.compile('('
                 '\ud83c[\udf00-\udfff]|'
                 '\ud83d[\udc00-\ude4f\ude80-\udeff]|'
                 '[\u2600-\u26FF\u2700-\u27BF])+', 
                 re.UNICODE)
 
     def replace(match):
-        return unicode_codes.UNICODE_EMOJI.get(match.group(1), match.group(1))
+        return unicode_codes.UNICODE_EMOJI.get(match.group(0), match.group(0))
 
     return pattern.sub(replace, string)
