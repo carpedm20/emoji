@@ -47,3 +47,15 @@ def test_alias():
     # When use_aliases=False aliases should be passed through untouched
     assert emoji.emojize(':camel:', use_aliases=False) == ':camel:'
     assert emoji.emojize(':camel:', use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE[':camel:']
+
+def test_demojize_name_only():
+    for name in emoji.EMOJI_UNICODE.keys():
+        oneway = emoji.emojize(name, False)
+        roundtrip = emoji.demojize(oneway);
+        assert name == roundtrip, "%s != %s" % (name, roundtrip)
+
+def test_demojize_complicated_string():
+    constructed = u"testing :baby::emoji_modifier_fitzpatrick_type-3: with :eyes: :eyes::eyes: modifiers :baby::emoji_modifier_fitzpatrick_type-5: to symbols ヒㇿ"
+    emojid = emoji.emojize(constructed)
+    destructed = emoji.demojize(emojid)
+    assert constructed == destructed, "%s != %s" % (constructed, destructed)

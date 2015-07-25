@@ -45,3 +45,40 @@ def emojize(string, use_aliases=USE_ALIASES):
             return unicode_codes.EMOJI_UNICODE.get(match.group(1), match.group(1))
 
     return pattern.sub(replace, string)
+
+def demojize(string):
+
+    """Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
+
+    :param string: String contains unicode characters. MUST BE UNICODE.
+
+        >>> import emoji
+        >>> print(emoji.emojize("Python is fun :thumbs_up_sign:"))
+        Python is fun 👍
+        >>> print(emoji.demojize(u"Python is fun 👍"))
+        Python is fun :thumbs_up_sign:
+        >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
+        Unicode is tricky :hushed_face:
+    """
+
+    # via Martijn Pieters, http://stackoverflow.com/questions/26568722/remove-unicode-emoji-using-re-in-python
+    try:
+        # Wide UCS-4 build
+        pattern = re.compile(u'['
+            u'\U0001F300-\U0001F64F'
+            u'\U0001F680-\U0001F6FF'
+            u'\u2600-\u26FF\u2700-\u27BF'
+            u']+', 
+            re.UNICODE)
+    except re.error:
+        # Narrow UCS-2 build
+        pattern = re.compile(u'('
+            u'\ud83c[\udf00-\udfff]|'
+            u'\ud83d[\udc00-\ude4f\ude80-\udeff]|'
+            u'[\u2600-\u26FF\u2700-\u27BF])+', 
+            re.UNICODE)
+
+    def replace(match):
+        return unicode_codes.UNICODE_EMOJI.get(match.group(0), match.group(0))
+
+    return pattern.sub(replace, string)
