@@ -18,6 +18,7 @@ from . import unicode_codes
 
 PY2 = sys.version_info[0] is 2
 
+EMOJI_REGEXP = None
 
 USE_ALIASES = False
 
@@ -60,25 +61,16 @@ def demojize(string):
         >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
         Unicode is tricky :hushed_face:
     """
-
-    # via Martijn Pieters, http://stackoverflow.com/questions/26568722/remove-unicode-emoji-using-re-in-python
-    try:
-        # Wide UCS-4 build
-        pattern = re.compile(u'['
-            u'\U0001F300-\U0001F64F'
-            u'\U0001F680-\U0001F6FF'
-            u'\u2600-\u26FF\u2700-\u27BF'
-            u']+', 
-            re.UNICODE)
-    except re.error:
-        # Narrow UCS-2 build
-        pattern = re.compile(u'('
-            u'\ud83c[\udf00-\udfff]|'
-            u'\ud83d[\udc00-\ude4f\ude80-\udeff]|'
-            u'[\u2600-\u26FF\u2700-\u27BF])+', 
-            re.UNICODE)
+    # Build emoji regexp once
+    if EMOJI_REGEXP is None:
+        global EMOJI_REGEXP
+        # Sort emojis by length to make sure mulit character emojis are
+        # matched first
+        emojis = sorted(unicode_codes.EMOJI_UNICODE.values(), key=len, reverse=True)
+        pattern = u'(' + u'|'.join(re.escape(u) for u in emojis)+ u')'
+        EMOJI_REGEXP = re.compile(pattern)
 
     def replace(match):
-        return unicode_codes.UNICODE_EMOJI.get(match.group(0), match.group(0))
-
-    return pattern.sub(replace, string)
+        val = unicode_codes.UNICODE_EMOJI.get(match.group(0), match.group(0))
+        return val.decode('utf-8') if PY2 else val
+    return EMOJI_REGEXP.sub(replace, string)

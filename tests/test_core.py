@@ -50,8 +50,10 @@ def test_alias():
 
 def test_demojize_name_only():
     for name in emoji.EMOJI_UNICODE.keys():
+        if emoji.PY2:
+            name = name.decode('utf-8')
         oneway = emoji.emojize(name, False)
-        roundtrip = emoji.demojize(oneway);
+        roundtrip = emoji.demojize(oneway)
         assert name == roundtrip, "%s != %s" % (name, roundtrip)
 
 def test_demojize_complicated_string():
