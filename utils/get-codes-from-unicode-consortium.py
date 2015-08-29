@@ -23,7 +23,7 @@ url = 'http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html'
 
 response = requests.get(url)
 response.raise_for_status()
-soup = BeautifulSoup(response.text)
+soup = BeautifulSoup(response.text, "html.parser")
 
 # with open('utils/content.html') as f:
 #     soup = BeautifulSoup(f.read())
