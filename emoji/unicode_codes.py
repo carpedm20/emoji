@@ -694,7 +694,6 @@ EMOJI_UNICODE = {
     ':heavy_multiplication_x:': u'\U00002716',
     ':heavy_plus_sign:': u'\U00002795',
     ':helicopter:': u'\U0001F681',
-    ':helm_symbol:': u'\U00002388',
     ':helmet_with_white_cross:': u'\U000026D1',
     ':herb:': u'\U0001F33F',
     ':hibiscus:': u'\U0001F33A',
