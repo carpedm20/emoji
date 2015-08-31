@@ -2603,3 +2603,5 @@ EMOJI_ALIAS_UNICODE = dict(EMOJI_UNICODE.items(), **{
 
 UNICODE_EMOJI = {v: k for k, v in EMOJI_UNICODE.items()}
 UNICODE_EMOJI_ALIAS = {v: k for k, v in EMOJI_ALIAS_UNICODE.items()}
+UNICODE_EMOJI_NO_SPACE = {v.replace(' ',''): k for k, v in EMOJI_UNICODE.items()}
+UNICODE_EMOJI_ALIAS_NO_SPACE = {v.replace(' ',''): k for k, v in EMOJI_ALIAS_UNICODE.items()}
