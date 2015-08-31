@@ -58,8 +58,20 @@ def test_demojize_name_only():
         roundtrip = emoji.demojize(oneway)
         assert name == roundtrip, "%s != %s" % (name, roundtrip)
 
+def test_demojize_name_only_no_space():
+    for name in emoji.EMOJI_UNICODE.keys():
+        oneway = emoji.emojize(name, False, True)
+        roundtrip = emoji.demojize(oneway, True)
+        assert name == roundtrip, "%s != %s" % (name, roundtrip)
+
 def test_demojize_complicated_string():
     constructed = u"testing :baby::emoji_modifier_fitzpatrick_type-3: with :eyes: :eyes::eyes: modifiers :baby::emoji_modifier_fitzpatrick_type-5: to symbols ヒㇿ"
     emojid = emoji.emojize(constructed)
     destructed = emoji.demojize(emojid)
+    assert constructed == destructed, "%s != %s" % (constructed, destructed)
+
+def test_demojize_complicated_string_nospace():
+    constructed = u"testing :baby::emoji_modifier_fitzpatrick_type-3: with :eyes: :eyes::eyes: modifiers :baby::emoji_modifier_fitzpatrick_type-5: to symbols ヒㇿ"
+    emojid = emoji.emojize(constructed, no_space=True)
+    destructed = emoji.demojize(emojid, no_space=True)
     assert constructed == destructed, "%s != %s" % (constructed, destructed)
