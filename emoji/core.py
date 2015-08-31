@@ -14,16 +14,18 @@ import re
 import sys
 
 from . import unicode_codes
-
+from . import shortcuts
 
 PY2 = sys.version_info[0] is 2
 
 _EMOJI_REGEXP = None
 _EMOJI_REGEXP_NOSPACE = None
+_SHORTCUT_REGEXP = None
 
 USE_ALIASES = False
 
 NO_SPACE = False
+USE_SHORTCUTS = False
 
 
 def emojize(string, use_aliases=USE_ALIASES, no_space=NO_SPACE):
@@ -56,12 +58,13 @@ def emojize(string, use_aliases=USE_ALIASES, no_space=NO_SPACE):
 
     return pattern.sub(replace, string)
 
-def demojize(string, no_space=NO_SPACE):
+def demojize(string, no_space=NO_SPACE, use_shortcuts=USE_SHORTCUTS):
 
     """Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
 
     :param string: String contains unicode characters. MUST BE UNICODE.
     :param no_space: (optional) No space between characters in multi-character emojis.
+    :param use_shortcuts: (optional) Replace shortcuts with emoji shortcodes.
 
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbs_up_sign:"))
@@ -75,7 +78,15 @@ def demojize(string, no_space=NO_SPACE):
     def replace(match):
         return UNICODE_EMOJI.get(match.group(0), match.group(0))
 
-    return get_emoji_regexp(no_space).sub(replace, string)
+    # Decode shortcuts
+    string = get_emoji_regexp(no_space).sub(replace, string)
+
+    if use_shortcuts:
+        def replace_shortcuts(match):
+            return shortcuts.SHORTCUTS.get(match.group(1), match.group(1)) + match.group(2)
+        string = get_shortcut_regexp().sub(replace_shortcuts,string)
+
+    return string
 
 def get_emoji_regexp(no_space=NO_SPACE):
 
@@ -102,3 +113,20 @@ def get_emoji_regexp(no_space=NO_SPACE):
         else:
             _EMOJI_REGEXP = regexp
     return _EMOJI_REGEXP_NOSPACE if no_space else _EMOJI_REGEXP
+
+
+
+def get_shortcut_regexp():
+
+    """Returns compiled regular expression that matches shortcuts defined in
+    ``shortcuts.SHORTCUTS``. The regular expression is only compiled once.
+    """
+
+    global _SHORTCUT_REGEXP
+    # Build shortcut regexp once
+    if _SHORTCUT_REGEXP is None:
+        values = shortcuts.SHORTCUTS.keys()
+        values = sorted(values, key=len, reverse=True)
+        pattern = u'(' + u'|'.join(re.escape(u) for u in values) + u')(\ |$)'
+        _SHORTCUT_REGEXP = re.compile(pattern)
+    return _SHORTCUT_REGEXP

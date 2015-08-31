@@ -58,6 +58,16 @@ def test_demojize_name_only():
         roundtrip = emoji.demojize(oneway)
         assert name == roundtrip, "%s != %s" % (name, roundtrip)
 
+def test_shortcuts():
+    for shortcut in emoji.shortcuts.SHORTCUTS.keys():
+        actual = emoji.demojize(shortcut, use_shortcuts=True)
+        expected = emoji.shortcuts.SHORTCUTS[shortcut]
+        assert expected == actual, "%s != %s" % (expected, actual)
+
+def test_shortcuts():
+    assert emoji.demojize(u'\U0001F376 :S :S :S', no_space=True, use_shortcuts=True) == u':sake_bottle_and_cup: :confounded: :confounded: :confounded:'
+
+
 def test_demojize_name_only_no_space():
     for name in emoji.EMOJI_UNICODE.keys():
         oneway = emoji.emojize(name, False, True)
