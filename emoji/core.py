@@ -18,7 +18,7 @@ from . import unicode_codes
 
 PY2 = sys.version_info[0] is 2
 
-EMOJI_REGEXP = None
+_EMOJI_REGEXP = None
 
 USE_ALIASES = False
 
@@ -37,7 +37,7 @@ def emojize(string, use_aliases=USE_ALIASES):
         Python is fun 👍
     """
 
-    pattern = re.compile('(:[a-zA-Z0-9\+\-_&.ô’Åéãíç]+:)')
+    pattern = re.compile(u'(:[a-zA-Z0-9\+\-_&.ô’Åéãíç]+:)')
 
     def replace(match):
         if use_aliases:
@@ -61,16 +61,26 @@ def demojize(string):
         >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
         Unicode is tricky :hushed_face:
     """
-    # Build emoji regexp once
-    if EMOJI_REGEXP is None:
-        global EMOJI_REGEXP
-        # Sort emojis by length to make sure mulit character emojis are
-        # matched first
-        emojis = sorted(unicode_codes.EMOJI_UNICODE.values(), key=len, reverse=True)
-        pattern = u'(' + u'|'.join(re.escape(u) for u in emojis)+ u')'
-        EMOJI_REGEXP = re.compile(pattern)
 
     def replace(match):
         val = unicode_codes.UNICODE_EMOJI.get(match.group(0), match.group(0))
-        return val.decode('utf-8') if PY2 else val
-    return EMOJI_REGEXP.sub(replace, string)
+        return val
+
+    return get_emoji_regexp().sub(replace, string)
+
+def get_emoji_regexp():
+
+    """Returns compiled regular expression that matches emojis defined in
+    ``emoji.UNICODE_EMOJI_ALIAS``. The regular expression is only compiled once.
+    """
+
+    global _EMOJI_REGEXP
+    # Build emoji regexp once
+    if _EMOJI_REGEXP is None:
+        # Sort emojis by length to make sure mulit-character emojis are
+        # matched first
+        emojis = sorted(unicode_codes.EMOJI_UNICODE.values(), key=len,
+                        reverse=True)
+        pattern = u'(' + u'|'.join(re.escape(u) for u in emojis) + u')'
+        _EMOJI_REGEXP = re.compile(pattern)
+    return _EMOJI_REGEXP

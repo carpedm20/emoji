@@ -48,10 +48,12 @@ def test_alias():
     assert emoji.emojize(':camel:', use_aliases=False) == ':camel:'
     assert emoji.emojize(':camel:', use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE[':camel:']
 
+def test_invalid_alias():
+    # Invalid aliases should be passed through untouched
+    assert emoji.emojize(':tester:', use_aliases=True) == ':tester:'
+
 def test_demojize_name_only():
     for name in emoji.EMOJI_UNICODE.keys():
-        if emoji.PY2:
-            name = name.decode('utf-8')
         oneway = emoji.emojize(name, False)
         roundtrip = emoji.demojize(oneway)
         assert name == roundtrip, "%s != %s" % (name, roundtrip)
