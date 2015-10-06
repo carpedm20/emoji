@@ -74,17 +74,18 @@ def demojize(string, no_space=NO_SPACE, use_shortcuts=USE_SHORTCUTS):
         >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
         Unicode is tricky :hushed_face:
     """
+
+    if use_shortcuts:
+        def replace_shortcuts(match):
+            return shortcuts.SHORTCUTS.get(match.group(1), match.group(1)) + match.group(2)
+        string = get_shortcut_regexp().sub(replace_shortcuts,string)
+
     UNICODE_EMOJI = unicode_codes.UNICODE_EMOJI_NO_SPACE if no_space else unicode_codes.UNICODE_EMOJI
     def replace(match):
         return UNICODE_EMOJI.get(match.group(0), match.group(0))
 
     # Decode shortcuts
     string = get_emoji_regexp(no_space).sub(replace, string)
-
-    if use_shortcuts:
-        def replace_shortcuts(match):
-            return shortcuts.SHORTCUTS.get(match.group(1), match.group(1)) + match.group(2)
-        string = get_shortcut_regexp().sub(replace_shortcuts,string)
 
     return string
 

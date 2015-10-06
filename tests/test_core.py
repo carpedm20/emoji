@@ -52,6 +52,10 @@ def test_invalid_alias():
     # Invalid aliases should be passed through untouched
     assert emoji.emojize(':tester:', use_aliases=True) == ':tester:'
 
+def test_smile_emoji():
+    txt = u'(<some text> :smile:)'
+    assert emoji.emojize(emoji.demojize(emoji.emojize(txt, use_aliases=True), use_shortcuts=True)) == emoji.emojize(txt, use_aliases=True)
+
 def test_demojize_name_only():
     for name in emoji.EMOJI_UNICODE.keys():
         oneway = emoji.emojize(name, False)
