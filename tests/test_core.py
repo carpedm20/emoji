@@ -66,9 +66,10 @@ def test_demojize_name_only():
         roundtrip = emoji.demojize(oneway)
         assert name == roundtrip, "%s != %s" % (name, roundtrip)
 
-def test_shortcuts():
+def test_shortcut_translation():
     for shortcut in emoji.shortcuts.SHORTCUTS.keys():
         actual = emoji.demojize(shortcut, use_shortcuts=True)
+        assert actual!=shortcut
         expected = emoji.shortcuts.SHORTCUTS[shortcut]
         assert expected == actual, "%s != %s" % (expected, actual)
 

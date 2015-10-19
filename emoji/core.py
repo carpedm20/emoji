@@ -78,7 +78,7 @@ def demojize(string, no_space=NO_SPACE, use_shortcuts=USE_SHORTCUTS):
     if use_shortcuts:
         def replace_shortcuts(match):
             return shortcuts.SHORTCUTS.get(match.group(1), match.group(1))
-        string = get_shortcut_regexp().sub(replace_shortcuts,string)
+        string = get_shortcut_regexp().sub(replace_shortcuts, u' ' + string)[1:]
 
     UNICODE_EMOJI = unicode_codes.UNICODE_EMOJI_NO_SPACE if no_space else unicode_codes.UNICODE_EMOJI
     def replace(match):
@@ -128,6 +128,6 @@ def get_shortcut_regexp():
     if _SHORTCUT_REGEXP is None:
         values = shortcuts.SHORTCUTS.keys()
         values = sorted(values, key=len, reverse=True)
-        pattern = u'(?<=[\ |^])(' + u'|'.join(re.escape(u) for u in values) + u')(?=(\ |\)|\.|$))'
+        pattern = u'(?<=[\ ])(' + u'|'.join(re.escape(u) for u in values) + u')((?=(\ |\)|\.))|$)'
         _SHORTCUT_REGEXP = re.compile(pattern)
     return _SHORTCUT_REGEXP
