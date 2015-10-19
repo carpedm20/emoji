@@ -2,8 +2,8 @@ __author__ = 'ynh'
 
 __all__ = ['SHORTCUTS']
 
-SHORTCUTS = {u':)': u':smile:',
-             u':-)': u':smile:',
+SHORTCUTS = {u':)': u':slightly_smiling_face:',
+             u':-)': u':slightly_smiling_face:',
              u':D': u':smiley:',
              u';D': u':joy:',
              u';-D': u':joy:',
@@ -34,7 +34,7 @@ SHORTCUTS = {u':)': u':smile:',
              u':/': u':confused:',
              u':\\': u':confused:',
              u':-(': u':worried:',
-             u'<3':u':heart:',
+             u'<3': u':heart:',
              u':(': u':worried:',
              u':S': u':confounded:',
              u':s': u':confounded:',
@@ -47,5 +47,13 @@ SHORTCUTS = {u':)': u':smile:',
              u':$': u':flushed:',
              u'(y)': u':+1:',
              u'(n)': u':-1:',
+             u':spock:': u':raised_hand_with_part_between_middle_and_ring_fingers:',
+             u':fu:': u':reversed_hand_with_middle_finger_extended:',
+             u':hm:': u':thinking_face:',
+             u':hug:': u':hugging_face:',
+             u'::X:': u'::zipper-mouth_face::',
+             u'::-X:': u'::zipper-mouth_face::',
+             u'::x:': u'::zipper-mouth_face::',
+             u'::-x:': u'::zipper-mouth_face::',
              u':omg:': u':scream:'
              }
