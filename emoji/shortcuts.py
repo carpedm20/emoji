@@ -51,9 +51,9 @@ SHORTCUTS = {u':)': u':slightly_smiling_face:',
              u':fu:': u':reversed_hand_with_middle_finger_extended:',
              u':hm:': u':thinking_face:',
              u':hug:': u':hugging_face:',
-             u'::X:': u'::zipper-mouth_face::',
-             u'::-X:': u'::zipper-mouth_face::',
-             u'::x:': u'::zipper-mouth_face::',
-             u'::-x:': u'::zipper-mouth_face::',
+             u':X': u':zipper-mouth_face:',
+             u':-X': u':zipper-mouth_face:',
+             u':x': u':zipper-mouth_face:',
+             u':-x': u':zipper-mouth_face:',
              u':omg:': u':scream:'
              }
