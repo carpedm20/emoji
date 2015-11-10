@@ -22,12 +22,12 @@ def test_emojize_name_only():
 def test_emojize_complicated_string():
     # A bunch of emoji's with UTF-8 strings to make sure the regex expression is functioning
     name_code = {
-        ':flag_for_Ceuta_&_Melilla:': u'\U0001F1EA \U0001F1E6',
-        ':flag_for_St._Barthélemy:': u'\U0001F1E7 \U0001F1F1',
-        ':flag_for_Côte_d’Ivoire:': u'\U0001F1E8 \U0001F1EE',
-        ':flag_for_Åland_Islands:': u'\U0001F1E6 \U0001F1FD',
-        ':flag_for_São_Tomé_&_Príncipe:': u'\U0001F1F8 \U0001F1F9',
-        ':flag_for_Curaçao:': u'\U0001F1E8 \U0001F1FC'
+        ':flag_for_Ceuta_&_Melilla:': u'\U0001F1EA\U0001F1E6',
+        ':flag_for_St._Barthélemy:': u'\U0001F1E7\U0001F1F1',
+        ':flag_for_Côte_d’Ivoire:': u'\U0001F1E8\U0001F1EE',
+        ':flag_for_Åland_Islands:': u'\U0001F1E6\U0001F1FD',
+        ':flag_for_São_Tomé_&_Príncipe:': u'\U0001F1F8\U0001F1F9',
+        ':flag_for_Curaçao:': u'\U0001F1E8\U0001F1FC'
     }
     string = ' complicated! '.join(list(name_code.keys()))
     actual = emoji.emojize(string, False)
