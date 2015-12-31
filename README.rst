@@ -39,6 +39,23 @@ From master branch:
     $ python setup.py install
 
 
+Developing
+----------
+
+.. code-block:: console
+
+    $ git clone https://github.com/carpedm20/emoji.git
+    $ cd emoji
+    $ pip install -e .\[dev\]
+    $ nosetests
+
+The ``utils/get-codes-from-unicode-consortium.py`` may help when updating
+``unicode_codes.py`` but is not guaranteed to work.  Generally speaking it
+scrapes a table on the Unicode Consortium's website with
+`BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`_ and prints the
+contents to ``stdout`` in a more useful format.
+
+
 Link
 ----
 

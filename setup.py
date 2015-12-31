@@ -9,21 +9,15 @@ Setup script for emoji
 
 from codecs import open
 import os
+
 from setuptools import setup
 
 
-with open('README.rst', encoding='UTF-8') as f:
+with open('README.rst', encoding='utf-8') as f:
     readme_content = f.read().strip()
 
 
-with open('LICENSE.txt') as f:
-    license_content = f.read().strip()
-
-
-version = None
-author = None
-email = None
-source = None
+author = email = source = version = None
 with open(os.path.join('emoji', '__init__.py'), encoding='utf-8') as f:
     for line in f:
         if line.strip().startswith('__version__'):
@@ -66,8 +60,15 @@ setup(
     ],
     description="Emoji for Python",
     keywords=['emoji'],
+    extras_require={
+        'dev': [
+            'nose',
+            'coverage',
+            'coveralls'
+        ]
+    },
     include_package_data=True,
-    license=license_content,
+    license="New BSD",
     long_description=readme_content,
     packages=['emoji'],
     url=source,
