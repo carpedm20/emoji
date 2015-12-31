@@ -13,17 +13,18 @@ Core components for emoji.
 import re
 import sys
 
-from . import unicode_codes
+from emoji import unicode_codes
+
+
+__all__ = ['emojize', 'demojize', 'get_emoji_regexp']
 
 
 PY2 = sys.version_info[0] is 2
 
 _EMOJI_REGEXP = None
 
-USE_ALIASES = False
 
-
-def emojize(string, use_aliases=USE_ALIASES):
+def emojize(string, use_aliases=False):
 
     """Replace emoji names in a string with unicode codes.
 
@@ -47,6 +48,7 @@ def emojize(string, use_aliases=USE_ALIASES):
 
     return pattern.sub(replace, string)
 
+
 def demojize(string):
 
     """Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
@@ -67,6 +69,7 @@ def demojize(string):
         return val
 
     return get_emoji_regexp().sub(replace, string)
+
 
 def get_emoji_regexp():
 
