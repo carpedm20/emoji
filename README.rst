@@ -39,6 +39,17 @@ From master branch:
     $ python setup.py install
 
 
+Developing
+----------
+
+.. code-block:: console
+
+    $ git clone https://github.com/carpedm20/emoji.git
+    $ cd emoji
+    $ pip install -e .\[dev\]
+    $ nosetests
+
+
 Link
 ----
 
