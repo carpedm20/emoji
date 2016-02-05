@@ -24,37 +24,40 @@ PY2 = sys.version_info[0] is 2
 _EMOJI_REGEXP = None
 
 
-def emojize(string, use_aliases=False):
+def emojize(string, use_aliases=False, delimiters=(":",":")):
 
     """Replace emoji names in a string with unicode codes.
 
     :param string: String contains emoji names.
     :param use_aliases: (optional) Enable emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
-
+    :param delimiters: (optional) Use delimiters other than ":"
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbsup:", use_aliases=True))
         Python is fun 👍
         >>> print(emoji.emojize("Python is fun :thumbs_up_sign:"))
         Python is fun 👍
+        >>> print(emoji.emojize("Python is fun __thumbs_up_sign__", delimiters = ("__", "__")))
+        Python is fun 👍
     """
-
-    pattern = re.compile(u'(:[a-zA-Z0-9\+\-_&.ô’Åéãíç]+:)')
+ 
+    pattern = re.compile(u'(%s[a-zA-Z0-9\+\-_&.ô’Åéãíç]+%s)' % delimiters)
 
     def replace(match):
+        mg = match.group(1).replace(delimiters[0], ":").replace(delimiters[1], ":")
         if use_aliases:
-            return unicode_codes.EMOJI_ALIAS_UNICODE.get(match.group(1), match.group(1))
+            return unicode_codes.EMOJI_ALIAS_UNICODE.get(mg, mg)
         else:
-            return unicode_codes.EMOJI_UNICODE.get(match.group(1), match.group(1))
+            return unicode_codes.EMOJI_UNICODE.get(mg, mg)
 
     return pattern.sub(replace, string)
 
 
-def demojize(string):
+def demojize(string, delimiters=(":",":")):
 
     """Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
 
     :param string: String contains unicode characters. MUST BE UNICODE.
-
+    :param delimiters: (optional) User delimiters other than ":"
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbs_up_sign:"))
         Python is fun 👍
@@ -62,11 +65,13 @@ def demojize(string):
         Python is fun :thumbs_up_sign:
         >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
         Unicode is tricky :hushed_face:
+        >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=(" __", "__ ")))
+        Unicode is tricky :hushed_face:
     """
 
     def replace(match):
         val = unicode_codes.UNICODE_EMOJI.get(match.group(0), match.group(0))
-        return val
+        return delimiters[0] + val[1:-1] + delimiters[1]
 
     return get_emoji_regexp().sub(replace, string)
 
