@@ -29,7 +29,7 @@ soup = BeautifulSoup(response.text, "html.parser")
 #     soup = BeautifulSoup(f.read())
 
 header = [
-    'Count', 'Code', 'Browser', 'B&W*', 'Apple', 'Andr', 'Twit', 'Wind', 'GMail',
+    'Count', 'Code', 'Browser', 'B&W*', 'Apple', 'Andr', 'One', 'Twit', 'Wind', 'GMail',
     'DCM', 'KDDI', 'SB', 'Name', 'Version', 'Default', 'Annotations'
 ]
 
