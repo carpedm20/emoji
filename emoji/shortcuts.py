@@ -2,8 +2,8 @@ __author__ = 'ynh'
 
 __all__ = ['SHORTCUTS']
 
-SHORTCUTS = {u':)': u':smiley:',
-             u':-)': u':smiley:',
+SHORTCUTS = {u':)': u':blush:',
+             u':-)': u':blush:',
              u':D': u':smiley:',
              u';D': u':joy:',
              u';-D': u':joy:',
