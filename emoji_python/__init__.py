@@ -24,7 +24,7 @@ from emoji.unicode_codes import UNICODE_EMOJI
 from emoji.unicode_codes import UNICODE_EMOJI_ALIAS
 
 
-__version__ = '0.3.9'
+__version__ = '0.3.10'
 __author__ = 'Taehoon Kim and Kevin Wurster'
 __email__ = 'carpedm20@gmail.com and wursterk@gmail.com'
 __source__ = 'https://github.com/carpedm20/emoji/'
