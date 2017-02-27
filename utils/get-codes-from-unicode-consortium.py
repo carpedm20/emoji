@@ -46,11 +46,11 @@ for row in soup.find('table').find_all('tr'):
                 _code.append(c.replace('+', '000'))
         code = ' '.join(_code)
         name = d['Name'].replace(' ', '_') \
-        				.replace(':', '') \
-        				.replace(',', '') \
-        				.replace('“', '') \
-        				.replace('”', '') \
-        				.strip()
+                        .replace(':', '') \
+                        .replace(',', '') \
+                        .replace('“', '') \
+                        .replace('”', '') \
+                        .strip()
         char = "u'" + code.replace('U', '\\U') + "',"
         output[name] = char
 
