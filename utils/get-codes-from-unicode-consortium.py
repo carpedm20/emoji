@@ -45,9 +45,14 @@ for row in soup.find('table').find_all('tr'):
             else:
                 _code.append(c.replace('+', '000'))
         code = ' '.join(_code)
-        name = d['Name'].replace(' ', '_').strip()
+        name = d['Name'].replace(' ', '_') \
+        				.replace(':', '') \
+        				.replace(',', '') \
+        				.replace('“', '') \
+        				.replace('”', '') \
+        				.strip()
         char = "u'" + code.replace('U', '\\U') + "',"
         output[name] = char
 
 for name in sorted(output.keys()):
-    print("    '%s': %s" % (name, output[name]))
+    print("    u':%s:': %s" % (name, output[name]))

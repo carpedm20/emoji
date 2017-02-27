@@ -45,8 +45,8 @@ def test_emojize_invalid_emoji():
 
 def test_alias():
     # When use_aliases=False aliases should be passed through untouched
-    assert emoji.emojize(':camel:', use_aliases=False) == ':camel:'
-    assert emoji.emojize(':camel:', use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE[':camel:']
+    assert emoji.emojize(':soccer:', use_aliases=False) == ':soccer:'
+    assert emoji.emojize(':soccer:', use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE[':soccer:']
 
 def test_invalid_alias():
     # Invalid aliases should be passed through untouched
