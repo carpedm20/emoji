@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup
 from collections import OrderedDict
 
 
-url = 'http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html'
+url = 'http://www.unicode.org/emoji/charts/emoji-list.html'
 
 
 response = requests.get(url)
@@ -29,8 +29,7 @@ soup = BeautifulSoup(response.text, "html.parser")
 #     soup = BeautifulSoup(f.read())
 
 header = [
-    'Count', 'Code', 'Browser', 'B&W*', 'Apple', 'Andr', 'One', 'Twit', 'Wind', 'GMail',
-    'DCM', 'KDDI', 'SB', 'Name', 'Version', 'Default', 'Annotations'
+    'Count', 'Code', 'Sample', 'Name'
 ]
 
 output = {}
