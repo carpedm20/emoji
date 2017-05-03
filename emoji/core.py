@@ -99,7 +99,7 @@ def emoji_lis(string):
     >>>[{'location': 15, 'emoji': '😁'}]
     """
     _entities = []
-    for pos,c in enumerate(str):
+    for pos,c in enumerate(string):
         if c in emoji.UNICODE_EMOJI:
             _entities.append({
                 "location":pos,
