@@ -96,7 +96,7 @@ def get_emoji_regexp():
 def emoji_lis(string):
     """Return the location and emoji in list of dic format
     >>>emoji.emoji_lis("Hi, I am fine. 😁")
-    >>>[{'loc': 15, 'emoji': '😁'}]
+    >>>[{'location': 15, 'emoji': '😁'}]
     """
     _entities = []
     for pos,c in enumerate(str):
