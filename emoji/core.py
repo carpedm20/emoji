@@ -16,7 +16,7 @@ import sys
 from emoji import unicode_codes
 
 
-__all__ = ['emojize', 'demojize', 'get_emoji_regexp']
+__all__ = ['emojize', 'demojize', 'get_emoji_regexp','emoji_lis']
 
 
 PY2 = sys.version_info[0] is 2
@@ -92,3 +92,17 @@ def get_emoji_regexp():
         pattern = u'(' + u'|'.join(re.escape(u) for u in emojis) + u')'
         _EMOJI_REGEXP = re.compile(pattern)
     return _EMOJI_REGEXP
+
+def emoji_lis(string):
+    """Return the location and emoji in list of dic format
+    >>>emoji.emoji_lis("Hi, I am fine. 😁")
+    >>>[{'location': 15, 'emoji': '😁'}]
+    """
+    _entities = []
+    for pos,c in enumerate(string):
+        if c in emoji.UNICODE_EMOJI:
+            _entities.append({
+                "location":pos,
+                "emoji": c
+                })
+    return _entities
