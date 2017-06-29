@@ -25,6 +25,7 @@ _EMOJI_REGEXP = None
 _DEFAULT_DELIMITER = ":"
 
 def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
+    raise Exception("monkeys")
 
     """Replace emoji names in a string with unicode codes.
 
@@ -39,7 +40,7 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
         >>> print(emoji.emojize("Python is fun __thumbs_up_sign__", delimiters = ("__", "__")))
         Python is fun 👍
     """
- 
+
     pattern = re.compile(u'(%s[a-zA-Z0-9\+\-_&.ô’Åéãíç()!#*]+%s)' % delimiters)
 
     def replace(match):
