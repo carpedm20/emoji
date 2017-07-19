@@ -95,12 +95,12 @@ def get_emoji_regexp():
 
 def emoji_lis(string):
     """Return the location and emoji in list of dic format
-    >>>emoji.emoji_lis("Hi, I am fine. 😁")
+    >>>emoji.emoji_lis("Hi, I am fine. 😁".decode('utf-8'))
     >>>[{'location': 15, 'emoji': '😁'}]
     """
     _entities = []
     for pos,c in enumerate(string):
-        if c in emoji.UNICODE_EMOJI:
+        if c in unicode_codes.UNICODE_EMOJI:
             _entities.append({
                 "location":pos,
                 "emoji": c
