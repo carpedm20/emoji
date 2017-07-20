@@ -16,18 +16,18 @@ You need to "import emoji"
 
 .. code-block:: python
 
-    >>> print(emoji.demojize(u"Python is fun 👍"))
+    >>> print(emoji.demojize(u"Python is fun 👍".decode('utf-8')))
     Python is fun :thumbs_up_sign:
     >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
     Unicode is tricky :hushed_face:
     >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=(" __", "__ ")))
     Unicode is tricky __hushed_face__:
 
-2) **Return a list of emojis**. Return a list of dictionaries, where for each emoji is returned: 
+2) **Return a list of emoji infos**. Return a list of dictionaries, where the following infos are encoded: 
 
- Markup : * The location 
-          * The emoji unicode
-          * The CLDR Short Name
+    * The location 
+    * The emoji unicode
+    * The CLDR Short Name
 
 *Note that the location is a span of indices (where the emoji charaters start and where they end) as some emojis are composed of more then one unicode charater.*
 
