@@ -10,7 +10,7 @@ Current version in this project is v5 (last update: 20 July 2017)
 
 Functionalities
 ------------
-You need to "import emoji"
+*(All examples assume you already imported emoji)*
 
 1) **Replace each emoji with the CLDR Short Name**
 
@@ -23,13 +23,15 @@ You need to "import emoji"
     >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=(" __", "__ ")))
     Unicode is tricky __hushed_face__:
 
-2) **Return a list of emoji infos**. Return a list of dictionaries, where the following infos are encoded: 
+2) **Return a list of emoji infos**. 
 
-    * The location 
-    * The emoji unicode
-    * The CLDR Short Name
+Return a list of dictionaries, where the following infos are encoded: 
 
-*Note that the location is a span of indices (where the emoji charaters start and where they end) as some emojis are composed of more then one unicode charater.*
+* The CLDR Short Name
+* The emoji unicode
+* The location span
+
+*Note: some emojis are composed of more than one Unicode charaters.*
 
 .. code-block:: python
 
@@ -39,7 +41,9 @@ You need to "import emoji"
     [{'cldr': u':man_juggling_light_skin_tone:', 'emoji': u'\U0001f939\U0001f3fb\u200d\u2642\ufe0f', 'location': (15, 20)}]
     
 
-3) **Replace all emojis with "replacement" string**. Default replacement is empty string, equivalent to removing all emojis
+3) **Replace all emojis with "replacement" string**. 
+
+Default replacement is empty string, equivalent to removing all emojis
 
 .. code-block:: python
 
