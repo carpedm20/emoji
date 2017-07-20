@@ -96,7 +96,7 @@ def get_emoji_regexp():
 
 def emoji_list(text):
     """Return the location, the emoji unicode, and the CLDR Short Name in list of dic format
-    >>>emoji.emoji_lis("Hi, I am fine. 😁".decode('utf-8'))
+    >>>emoji.emoji_list("Hi, I am fine. 😁".decode('utf-8'))
     >>>[{'cldr': u':grinning_face_with_smiling_eyes:', 'emoji': u'\U0001f601', 'location': (15, 16)}]
     """
     _entities = []
@@ -115,5 +115,7 @@ def replace_emoji(text, replacement=''):
     """
     Replace all emojis with "replacement" string.
     Default replacement is empty string, equivalent to removing all emojis
+    >>>emoji.replace_emoji("Hi, I am fine. 😁".decode('utf-8'), replacement='***')
+    >>>Hi, I am fine. ***
     """
     return get_emoji_regexp().sub(replacement, text)
