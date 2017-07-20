@@ -1,72 +1,64 @@
 Emoji
 =====
 
-Emoji for Python.  This project was inspired by `kyokomi <https://github.com/kyokomi/emoji>`__.
+Emoji library for Python.  This project is a fork of `karpedm20 <https://github.com/carpedm20/emoji>`__.
+Tested on Python2.7
 
+The entire set of Emoji codes is defined by the `unicode consortium <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
+Current version in this project is v5 (last update: 20 July 2017)
 
-Example
--------
+Functionalities
+------------
+You need to "import emoji"
 
-The entire set of Emoji codes as defined by the `unicode consortium <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
-is supported in addition to a bunch of `aliases <http://www.emoji-cheat-sheet.com/>`__.  By
-default only the official list is enabled but doing ``emoji.emojize(use_aliases=True)`` enables
-both the full list and aliases.
+1) Replace each emoji with the CLDR Short Name
 
 .. code-block:: python
 
-    >> import emoji
     >> print(emoji.emojize('Python is :thumbs_up_sign:'))
     Python is 👍
     >> print(emoji.emojize('Python is :thumbsup:', use_aliases=True))
     Python is 👍
 
+2) Return the list of emojis (unicode, CLDR name, location)
+
+.. code-block:: python
+
+    >> print(emoji.emojize('Python is :thumbs_up_sign:'))
+    [{'cldr': u':grinning_face_with_smiling_eyes:', 'emoji': u'\U0001f601', 'location': (15, 16)}]
+
+3) Replace all emojis with "replacement" string. Default replacement is empty string, equivalent to removing all emojis
+
+.. code-block:: python
+
+    >> emoji.replace_emoji("Hi, I am fine. 😁".decode('utf-8'), replacement='***')
+    >> Hi, I am fine. ***
+
+4) From alias/name to emoji
+
+.. code-block:: python
+
+    >> print(emoji.emojize('Python is :thumbs_up_sign:'))
+    Python is 👍
+    >> print(emoji.emojize('Python is :thumbsup:', use_aliases=True))
+    Python is 👍
 
 Installation
 ------------
-
-Via pip:
-
-.. code-block:: console
-
-    $ pip install emoji --upgrade
 
 From master branch:
 
 .. code-block:: console
 
-    $ git clone https://github.com/carpedm20/emoji.git
+    $ git clone https://github.com/fvancesco/emoji.git
     $ cd emoji
     $ python setup.py install
-
-
-Developing
-----------
-
-.. code-block:: console
-
-    $ git clone https://github.com/carpedm20/emoji.git
-    $ cd emoji
-    $ pip install -e .\[dev\]
-    $ nosetests
-
-The ``utils/get-codes-from-unicode-consortium.py`` may help when updating
-``unicode_codes.py`` but is not guaranteed to work.  Generally speaking it
-scrapes a table on the Unicode Consortium's website with
-`BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`_ and prints the
-contents to ``stdout`` in a more useful format.
 
 
 Link
 ----
 
 `Emoji Cheat Sheet <http://www.emoji-cheat-sheet.com/>`__
-
 `Official unicode list <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
+`Word Embeddig of Emojis (US, UK, ESP, ITA) <http://sempub.taln.upf.edu/tw/cosmopolitan/>`__
 
-
-Authors
--------
-
-Taehoon Kim / `@carpedm20 <http://carpedm20.github.io/about/>`__
-
-Kevin Wurster / `@geowurster <http://twitter.com/geowurster/>`__

@@ -1,8 +1,9 @@
 #!/usr/bin/python
 # coding: utf-8
 
+#Use this to update the images and 
 #Save emoji images with Apple rendering
-#and create unicode_codes.py for emoji project
+#and create unicode_codes.txt for emoji project
 
 import os
 import urllib2
@@ -33,7 +34,7 @@ if __name__ == "__main__":
     if not os.path.exists("images_name"):
         os.makedirs("images_name")
 
-    fd = open("unicode_codes.py.txt", "w")
+    fd = open("unicode_codes.txt", "w") #copy this to unicode_codes.py
 
     for tr in rows:
         if tr.xpath('td[@class="code"]'):
