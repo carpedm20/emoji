@@ -31,7 +31,6 @@ def emojize(text, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DEL
     :param text: string contains emoji names.
     :param use_aliases: (optional) Enable emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
     :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER
-        >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbsup:", use_aliases=True))
         Python is fun 👍
         >>> print(emoji.emojize("Python is fun :thumbs_up_sign:"))
@@ -58,15 +57,12 @@ def demojize(text, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
 
     :param text: String contains unicode characters. MUST BE UNICODE.
     :param delimiters: (optional) User delimiters other than _DEFAULT_DELIMITER
-        >>> import emoji
-        >>> print(emoji.emojize("Python is fun :thumbs_up_sign:"))
-        Python is fun 👍
         >>> print(emoji.demojize(u"Python is fun 👍"))
         Python is fun :thumbs_up_sign:
         >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
         Unicode is tricky :hushed_face:
         >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=(" __", "__ ")))
-        Unicode is tricky :hushed_face:
+        Unicode is tricky __hushed_face__:
     """
 
     def replace(match):
@@ -115,6 +111,8 @@ def replace_emoji(text, replacement=''):
     """
     Replace all emojis with "replacement" string.
     Default replacement is empty string, equivalent to removing all emojis
+    >>>emoji.replace_emoji("Hi, I am fine. 😁".decode('utf-8'))
+    >>>Hi, I am fine.
     >>>emoji.replace_emoji("Hi, I am fine. 😁".decode('utf-8'), replacement='***')
     >>>Hi, I am fine. ***
     """
