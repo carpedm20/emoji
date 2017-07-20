@@ -12,7 +12,7 @@ Functionalities
 ------------
 You need to "import emoji"
 
-1) Replace each emoji with the CLDR Short Name
+1) **Replace each emoji with the CLDR Short Name**
 
 .. code-block:: python
 
@@ -23,7 +23,13 @@ You need to "import emoji"
     >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=(" __", "__ ")))
     Unicode is tricky __hushed_face__:
 
-2) Return the location, the emoji unicode, and the CLDR Short Name in list of dic format. Note that the location is a span of indices (where the emoji charaters start and where they end) as some emojis are composed of more then one unicode charater.
+2) **Return a list of emojis**. Return a list of dictionaries, where for each emoji is returned: 
+
+ Markup : * The location 
+          * The emoji unicode
+          * The CLDR Short Name
+
+*Note that the location is a span of indices (where the emoji charaters start and where they end) as some emojis are composed of more then one unicode charater.*
 
 .. code-block:: python
 
@@ -33,7 +39,7 @@ You need to "import emoji"
     [{'cldr': u':man_juggling_light_skin_tone:', 'emoji': u'\U0001f939\U0001f3fb\u200d\u2642\ufe0f', 'location': (15, 20)}]
     
 
-3) Replace all emojis with "replacement" string. Default replacement is empty string, equivalent to removing all emojis
+3) **Replace all emojis with "replacement" string**. Default replacement is empty string, equivalent to removing all emojis
 
 .. code-block:: python
 
@@ -42,7 +48,7 @@ You need to "import emoji"
     >>> emoji.replace_emoji("Hi, I am fine. 😁".decode('utf-8'), replacement='***')
     >>> Hi, I am fine. ***
 
-4) From alias/name to emoji
+4) **Replace alias/name with emoji**
 
 .. code-block:: python
 
@@ -63,7 +69,7 @@ From master branch:
     $ python setup.py install
 
 
-Link
+Links
 ----
 
 `Official unicode list <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
