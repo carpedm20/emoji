@@ -94,15 +94,16 @@ def get_emoji_regexp():
     return _EMOJI_REGEXP
 
 def emoji_lis(string):
-    """Return the location and emoji in list of dic format
+    """Return the location, the emoji unicode, and the CLDR Short Name in list of dic format
     >>>emoji.emoji_lis("Hi, I am fine. 😁".decode('utf-8'))
     >>>[{'location': 15, 'emoji': '😁'}]
     """
     _entities = []
-    for pos,c in enumerate(string):
-        if c in unicode_codes.UNICODE_EMOJI:
-            _entities.append({
-                "location":pos,
-                "emoji": c
-                })
+    def replace(match):
+        em = match.group(0)
+        val = emoji.unicode_codes.UNICODE_EMOJI.get(em, None)
+        if val:
+            _entities.append({"location": match.span(), "emoji": em, "cldr":val})
+        return em
+    emoji.get_emoji_regexp().sub(replace, string)
     return _entities
