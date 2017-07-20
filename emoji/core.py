@@ -24,11 +24,11 @@ PY2 = sys.version_info[0] is 2
 _EMOJI_REGEXP = None
 _DEFAULT_DELIMITER = ":"
 
-def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
+def emojize(text, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
 
-    """Replace emoji names in a string with unicode codes.
+    """Replace emoji names in a text with unicode codes.
 
-    :param string: String contains emoji names.
+    :param text: string contains emoji names.
     :param use_aliases: (optional) Enable emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
     :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER
         >>> import emoji
@@ -49,14 +49,14 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
         else:
             return unicode_codes.EMOJI_UNICODE.get(mg, mg)
 
-    return pattern.sub(replace, string)
+    return pattern.sub(replace, text)
 
 
-def demojize(string, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
+def demojize(text, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
 
-    """Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
+    """Replace unicode emoji in a text with emoji shortcodes. Useful for storage.
 
-    :param string: String contains unicode characters. MUST BE UNICODE.
+    :param text: String contains unicode characters. MUST BE UNICODE.
     :param delimiters: (optional) User delimiters other than _DEFAULT_DELIMITER
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbs_up_sign:"))
@@ -73,7 +73,7 @@ def demojize(string, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
         val = unicode_codes.UNICODE_EMOJI.get(match.group(0), match.group(0))
         return delimiters[0] + val[1:-1] + delimiters[1]
 
-    return get_emoji_regexp().sub(replace, string)
+    return get_emoji_regexp().sub(replace, text)
 
 
 def get_emoji_regexp():
@@ -94,7 +94,7 @@ def get_emoji_regexp():
     return _EMOJI_REGEXP
 
 
-def emoji_lis(string):
+def emoji_lis(text):
     """Return the location, the emoji unicode, and the CLDR Short Name in list of dic format
     >>>emoji.emoji_lis("Hi, I am fine. 😁".decode('utf-8'))
     >>>[{'cldr': u':grinning_face_with_smiling_eyes:', 'emoji': u'\U0001f601', 'location': (15, 16)}]
@@ -106,5 +106,13 @@ def emoji_lis(string):
         if val:
             _entities.append({"location": match.span(), "emoji": em, "cldr":val})
         return em
-    get_emoji_regexp().sub(replace, string)
+
+    get_emoji_regexp().sub(replace, text)
     return _entities
+
+
+def remove_emoji(text):
+    """
+    Remove all emojis from text
+    """
+    return get_emoji_regexp().sub("", text)
