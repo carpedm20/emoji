@@ -14,7 +14,7 @@ You need to "import emoji"
 
 1) Replace each emoji with the CLDR Short Name
 
-
+.. code-block:: python
 
     >>> print(emoji.demojize(u"Python is fun 👍"))
     Python is fun :thumbs_up_sign:
@@ -25,6 +25,8 @@ You need to "import emoji"
 
 2) Return the location, the emoji unicode, and the CLDR Short Name in list of dic format. Note that the location is a span of indices (where the emoji charaters start and where they end) as some emojis are composed of more then one unicode charater.
 
+.. code-block:: python
+
     >>> emoji.emoji_list("Hi, I am fine. 😁".decode('utf-8'))
     [{'cldr': u':grinning_face_with_smiling_eyes:', 'emoji': u'\U0001f601', 'location': (15, 16)}]
     >>> emoji.emoji_list("Hi, I am fine. 🤹🏻‍♂️".decode('utf-8'))
@@ -33,12 +35,16 @@ You need to "import emoji"
 
 3) Replace all emojis with "replacement" string. Default replacement is empty string, equivalent to removing all emojis
 
+.. code-block:: python
+
     >>> emoji.replace_emoji("Hi, I am fine. 😁".decode('utf-8'))
     >>> Hi, I am fine.
     >>> emoji.replace_emoji("Hi, I am fine. 😁".decode('utf-8'), replacement='***')
     >>> Hi, I am fine. ***
 
 4) From alias/name to emoji
+
+.. code-block:: python
 
     >>> print(emoji.emojize('Python is :thumbs_up_sign:'))
     Python is 👍
