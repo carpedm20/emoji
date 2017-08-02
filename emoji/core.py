@@ -16,13 +16,13 @@ import sys
 from emoji import unicode_codes
 
 
-__all__ = ['emojize', 'demojize', 'get_emoji_regexp','emoji_lis']
+__all__ = ['emojize', 'demojize', 'get_emoji_regexp','emoji_list']
 
 
 PY2 = sys.version_info[0] is 2
 
 _EMOJI_REGEXP = None
-_DEFAULT_DELIMITER = ":"
+_DEFAULT_DELIMITER = "_"
 
 def emojize(text, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
 
@@ -31,11 +31,11 @@ def emojize(text, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DEL
     :param text: string contains emoji names.
     :param use_aliases: (optional) Enable emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
     :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER
-        >>> print(emoji.emojize("Python is fun :thumbsup:", use_aliases=True))
+        >>> print(emoji.emojize("Python is fun _thumbsup_", use_aliases=True))
         Python is fun 👍
-        >>> print(emoji.emojize("Python is fun :thumbs_up_sign:"))
+        >>> print(emoji.emojize("Python is fun _thumbs_up_"))
         Python is fun 👍
-        >>> print(emoji.emojize("Python is fun __thumbs_up_sign__", delimiters = ("__", "__")))
+        >>> print(emoji.emojize("Python is fun ~~thumbs_up_sign~~", delimiters = ("~~", "~~")))
         Python is fun 👍
     """
  
@@ -61,13 +61,15 @@ def demojize(text, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
         Python is fun :thumbs_up_sign:
         >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
         Unicode is tricky :hushed_face:
-        >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=(" __", "__ ")))
-        Unicode is tricky __hushed_face__:
+        >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=("-->", "<--")))
+        Unicode is tricky -->hushed_face<--
     """
 
     def replace(match):
         val = unicode_codes.UNICODE_EMOJI.get(match.group(0), match.group(0))
-        return delimiters[0] + val[1:-1] + delimiters[1]
+        #val[1:-1] we remove the colon before and after in the name and add the delimiters
+        #the colons are present in the name in order to use the emojize funcion (see above)
+        return delimiters[0] +  val[1:-1]  + delimiters[1] 
 
     return get_emoji_regexp().sub(replace, text)
 
@@ -93,15 +95,17 @@ def get_emoji_regexp():
 def emoji_list(text):
     """Return the location, the emoji unicode, and the CLDR Short Name in list of dic format
     >>>emoji.emoji_list("Hi, I am fine. 😁".decode('utf-8'))
-    >>>[{'cldr': u':grinning_face_with_smiling_eyes:', 'emoji': u'\U0001f601', 'location': (15, 16)}]
+    [{'code': u'\U0001f601', 'location': (15, 16), 'name': u'beaming_face_with_smiling_eyes'}]
+
     """
     _entities = []
     def replace(match):
-        em = match.group(0)
-        val = unicode_codes.UNICODE_EMOJI.get(em, None)
-        if val:
-            _entities.append({"location": match.span(), "emoji": em, "cldr":val})
-        return em
+        l = match.span()
+        c = match.group(0)
+        n = unicode_codes.UNICODE_EMOJI.get(c, None)
+        if n:
+            _entities.append({"location": l, "code": c, "name":n})
+        return c
 
     get_emoji_regexp().sub(replace, text)
     return _entities

@@ -1,9 +1,17 @@
 #!/usr/bin/python
 # coding: utf-8
 
-#Use this to update the images and 
-#Save emoji images with Apple rendering
-#and create unicode_codes.txt for emoji project
+"""
+Extract the full list of emoji and names from the Unicode Consortium and
+apply as much formatting as possible so the codes can be dropped into the
+emoji registry file (emoji/unicode_code.py).
+
+Also save images (Apple rendering) in the folders images_code/ and images_name
+
+Tested on Python2.7
+
+http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html
+"""
 
 import os
 import urllib2
@@ -16,8 +24,8 @@ def get_html(url):
     
 def save_image(img_data):
     img_to_write = base64.b64decode(img_data.replace("data:image/png;base64,", ""))
-    fh1 = open("images_code/%s.png" % code.replace(" ", "_"), "wb")
-    fh2 = open("images_name/%s.png" % name.replace(" ", "_"), "wb")
+    fh1 = open("images_code/%s.png" % code.replace("\\",""), "wb")
+    fh2 = open("images_name/%s.png" % name, "wb")
     fh1.write(img_to_write)
     fh2.write(img_to_write)
     fh1.close()
@@ -40,7 +48,7 @@ if __name__ == "__main__":
         if tr.xpath('td[@class="code"]'):
 
             name = tr.xpath('td[@class="name"][1]//text()')[0]
-            keywords = tr.xpath('td[@class="name"][2]//text()')[0]
+            #keywords = tr.xpath('td[@class="name"][2]//text()')[0]
             img_data = tr.xpath('td[@class="andr"]/a/img/@src')[0]
             code = tr.xpath('td[@class="code"]//text()')[0]
             _code = []
@@ -49,7 +57,7 @@ if __name__ == "__main__":
                     _code.append(c.replace('+', '0000'))
                 else:
                     _code.append(c.replace('+', '000'))
-            code = ' '.join(_code).replace('U', '\\U')
+            code = ''.join(_code).replace('U', '\\U')
 
             name = name.replace(' ', '_') \
                         .replace(':', '') \
@@ -59,7 +67,7 @@ if __name__ == "__main__":
                         .strip()
             
             #fd.write("%s\t%s\t%s\t%s.png\n" % (code, name.encode("utf8"), keywords.encode("utf8"), code.replace(" ", "_")))
-            fd.write("\tu':%s:': u'%s',\n" % (name.encode("utf8"), code.replace(" ", "")))
+            fd.write("    u':%s:': u'%s',\n" % (name.encode("utf8"), code))
 
             save_image(img_data)
             save_image(img_data)
