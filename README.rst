@@ -11,29 +11,27 @@ Functionalities
 ------------
 *(All examples assume you already imported emoji)*
 
-1. **Replace each emoji with the CLDR Short Name**
+1. **Replace each emoji (UNICODE) with the CLDR Short Name**
 
 Default delimiter is colon *:CLDR_Short_Name:* (see `this <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__ for the CLDR names).
 
 .. code-block:: python
 
-    >>> print(emoji.demojize("Python is fun 👍".decode('utf-8')))
-    Python is fun :thumbs_up_sign:
     >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
-    Unicode is tricky :hushed_face:
+    Unicode is tricky _hushed_face_
     >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=("-|", "|-")))
     Unicode is tricky -|hushed_face|-
-    
-2. **Replace alias/name with emoji**
+    >>> print(emoji.demojize("Be careful, this is only one emoji! 👩🏻‍⚖️".decode('utf-8')))
+    Be careful, this is only one emoji! _woman_judge_light_skin_tone_
+
+2. **Replace each CLDR emoji name with the emoji (UNICODE)**
 
 See `this <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__ for the CLDR names and `this <http://www.emoji-cheat-sheet.com/>`__ for the aliases.
 
 .. code-block:: python
 
-    >>> print(emoji.emojize('Python is :smiling_face_with_sunglasses:'))
-    Python is 😎
-    >>> print(emoji.emojize('Python is :sunglasses:', use_aliases=True))
-    Python is 😎
+    >>> print(emoji.emojize('Bring the UNICODE back! _smiling_face_with_sunglasses_'))
+    Bring the UNICODE back! 😎
 
 3. **Return a list of emoji infos**. 
 
@@ -51,7 +49,6 @@ Return a list of the emojis included in the text, organised in a list of diction
     [{'code': u'\U0001f601', 'location': (14, 15), 'name': u'beaming_face_with_smiling_eyes'},
      {'code': u'\U0001f939\U0001f3fb\u200d\u2642\ufe0f', 'location': (41, 46), 'name': u'man_juggling_light_skin_tone'}]
 
-
 4. **Replace all emojis with "replacement" string**. 
 
 Default replacement is empty string, equivalent to removing all emojis.
@@ -63,6 +60,16 @@ Default replacement is empty string, equivalent to removing all emojis.
     >>> emoji.replace_emoji("Hi, I am fine. 😁".decode('utf-8'), replacement='***')
     Hi, I am fine. ***
 
+5. **Get all the existing emojis**. 
+
+Return a set of all the existing emojis (CLDR names or UNICODE)
+
+.. code-block:: python
+
+    >>> s = emoji.set_cldr()
+    set([u'_British_Virgin_Islands_', ... , u'_Angola_'])
+    >>> s = emoji.set_unicode()
+    set([u'\U0001f1ee\U0001f1e8' , ... , u'\U0001f9d6\U0001f3ff'])
 
 Installation
 ------------

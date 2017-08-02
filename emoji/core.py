@@ -16,7 +16,7 @@ import sys
 from emoji import unicode_codes
 
 
-__all__ = ['emojize', 'demojize', 'get_emoji_regexp','emoji_list']
+__all__ = ['emojize', 'demojize', 'get_emoji_regexp','emoji_list','replace_emoji', 'set_cldr', 'set_unicode']
 
 
 PY2 = sys.version_info[0] is 2
@@ -35,7 +35,7 @@ def emojize(text, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DEL
         Python is fun 👍
         >>> print(emoji.emojize("Python is fun _thumbs_up_"))
         Python is fun 👍
-        >>> print(emoji.emojize("Python is fun ~~thumbs_up_sign~~", delimiters = ("~~", "~~")))
+        >>> print(emoji.emojize("Python is fun ~~thumbs_up~~", delimiters = ("~~", "~~")))
         Python is fun 👍
     """
  
@@ -58,9 +58,9 @@ def demojize(text, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
     :param text: String contains unicode characters. MUST BE UNICODE.
     :param delimiters: (optional) User delimiters other than _DEFAULT_DELIMITER
         >>> print(emoji.demojize(u"Python is fun 👍"))
-        Python is fun :thumbs_up_sign:
+        Python is fun _thumbs_up_sign_
         >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
-        Unicode is tricky :hushed_face:
+        Unicode is tricky _hushed_face_
         >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=("-->", "<--")))
         Unicode is tricky -->hushed_face<--
     """
@@ -121,3 +121,17 @@ def replace_emoji(text, replacement=''):
     >>>Hi, I am fine. ***
     """
     return get_emoji_regexp().sub(replacement, text)
+
+
+def set_cldr():
+    """
+    Return complete set of emojis (CLDR names)
+    """
+    return set(unicode_codes.EMOJI_UNICODE.keys())
+
+
+def set_unicode():
+    """
+    Return complete set of emojis (UNICODE)
+    """
+    return set(unicode_codes.UNICODE_EMOJI.keys())

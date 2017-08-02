@@ -3,33 +3,26 @@
 
 """
 emoji for Python
-~~~~~~~~~~~~~~~~
-
-emoji terminal output for Python.
-
-    >>> import emoji
-    >>> print(emoji.emojize('Python is :thumbsup:', use_aliases=True))
-    Python is 👍
-    >> print(emoji.emojize('Python is :thumbs_up_sign:'))
-    Python is 👍
 """
-
 
 from emoji.core import emojize
 from emoji.core import demojize
 from emoji.core import get_emoji_regexp
 from emoji.core import emoji_list
 from emoji.core import replace_emoji
+from emoji.core import set_cldr
+from emoji.core import set_unicode
+
 from emoji.unicode_codes import EMOJI_ALIAS_UNICODE
 from emoji.unicode_codes import EMOJI_UNICODE
 from emoji.unicode_codes import UNICODE_EMOJI
 from emoji.unicode_codes import UNICODE_EMOJI_ALIAS
 
 
-__version__ = '0.4.5'
-__author__ = 'Taehoon Kim and Kevin Wurster'
-__email__ = 'carpedm20@gmail.com and wursterk@gmail.com'
-__source__ = 'https://github.com/carpedm20/emoji/'
+__version__ = '0.2'
+__author__ = 'Francesco Barbieri and Roberto Carlini'
+__email__ = 'francesco.barbieri@upf.edu and roberto.carlini@upf.edu '
+__source__ = 'https://github.com/fvancesco/emoji/'
 __license__ = '''
 New BSD License
 
