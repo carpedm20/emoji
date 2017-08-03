@@ -13,7 +13,7 @@ Functionalities
 
 1. **Replace each emoji (UNICODE) with the CLDR Short Name**
 
-Default delimiter is colon *:CLDR_Short_Name:* (see `this <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__ for the CLDR names).
+Default delimiter is underscore *_CLDR_Short_Name_* (see `this <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__ for the CLDR names).
 
 .. code-block:: python
 
@@ -33,9 +33,9 @@ See `this <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__ for 
     >>> print(emoji.emojize('Bring the UNICODE back! _smiling_face_with_sunglasses_'))
     Bring the UNICODE back! 😎
 
-3. **Return a list of emoji infos**. 
+3. **Return a list of emoji information**. 
 
-Return a list of the emojis included in the text, organised in a list of dictionaries, where the following infos are encoded for each emoji: 
+Return a list of the emojis included in the text, organised in a list of dictionaries, where the following information are encoded for each emoji: 
 
 * The emoji Unicode (key: code)
 * The location span (key: location)
