@@ -24,14 +24,19 @@ def get_html(url):
     
 def save_image(img_data):
     img_to_write = base64.b64decode(img_data.replace("data:image/png;base64,", ""))
-    fh1 = open("images_code/%s.png" % code.replace("\\",""), "wb")
-    fh2 = open("images_name/%s.png" % name, "wb")
+    fh1 = open("images_unicode/%s.png" % code.replace("\\",""), "wb")
+    fh2 = open("images_cldr/%s.png" % name, "wb")
     fh1.write(img_to_write)
     fh2.write(img_to_write)
     fh1.close()
     fh2.close()
 
 if __name__ == "__main__":
+    
+    for d in ["images_unicode", "images_cldr"]:
+        if not os.path.exists(d):
+            os.makedirs(d)
+
     emoji_list_html = get_html("http://unicode.org/emoji/charts/emoji-list.html")
 
     tree = etree.HTML(emoji_list_html)
@@ -60,16 +65,15 @@ if __name__ == "__main__":
             code = ''.join(_code).replace('U', '\\U')
 
             name = name.replace(' ', '_') \
+                        .replace('-', '') \
                         .replace(':', '') \
                         .replace(',', '') \
-                        .replace('“'.decode('utf-8'), '') \
-                        .replace('”'.decode('utf-8'), '') \
+                        .replace(u'“', '') \
+                        .replace(u'”', '') \
                         .strip()
             
             #fd.write("%s\t%s\t%s\t%s.png\n" % (code, name.encode("utf8"), keywords.encode("utf8"), code.replace(" ", "_")))
             fd.write("    u':%s:': u'%s',\n" % (name.encode("utf8"), code))
-
-            save_image(img_data)
             save_image(img_data)
             
     fd.close()

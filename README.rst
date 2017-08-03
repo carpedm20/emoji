@@ -60,9 +60,9 @@ Default replacement is empty string, equivalent to removing all emojis.
     >>> emoji.replace_emoji("Hi, I am fine. 😁".decode('utf-8'), replacement='***')
     Hi, I am fine. ***
 
-5. **Get all the existing emojis**. 
+5. **Get all existing emojis**. 
 
-Return a set of all the existing emojis (CLDR names or UNICODE)
+Return a set of all existing emojis (CLDR names or UNICODE)
 
 .. code-block:: python
 
@@ -83,9 +83,9 @@ From master branch:
     $ python setup.py install
 
 
-Utils
+Images
 ------------
-In the folder *utils/* you can find a program to download the code and the images (Apple rendering) of the last emojis. The program will save the emoji images in two folders, where the images are named with the Unicode code in one case, and with the CLDR name in the other case. (for instance this emoji 👍 is saved as images_name/thumbs_up.png and images_code/U0001F44D.png)
+In the folder *utils/* there are file images of all emojis. They are named with the UNICODE code in one case, and with the CLDR name in the other case (for example, this emoji 👍 is saved as images_cldr/thumbs_up.png and images_unicode/U0001F44D.png). There is also a script to download the codes and the images (Apple rendering) of the last emojis.
 
 Links
 ----
