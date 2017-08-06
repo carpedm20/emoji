@@ -16,7 +16,7 @@ import sys
 from emoji import unicode_codes
 
 
-__all__ = ['emojize', 'demojize', 'get_emoji_regexp','emoji_list','replace_emoji', 'set_cldr', 'set_unicode']
+__all__ = ['emojize', 'demojize', 'get_emoji_regexp','emoji_list','replace_emoji', 'set_cldr', 'set_unicode','print_html']
 
 
 PY2 = sys.version_info[0] is 2
@@ -135,3 +135,14 @@ def set_unicode():
     Return complete set of emojis (UNICODE)
     """
     return set(unicode_codes.UNICODE_EMOJI.keys())
+
+def print_html(text, html_file="emoji.html"):
+    """
+    append string to emoji.html file (with emojis replaced by images so can be visualized)
+    emoji.html will be created if it does not exist
+    """
+    with open(html_file,"a") as out_html:
+        left = "<img src=\"https://raw.githubusercontent.com/fvancesco/emoji/master/utils/images_cldr/"
+        right = ".png\" height=\"16\" width=\"16\">"
+        replaced_text = demojize(text.decode('utf-8'), delimiters=(left, right)) 
+        out_html.write("<p>"+replaced_text+"<\p>\n")    

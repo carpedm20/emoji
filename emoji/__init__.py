@@ -12,6 +12,7 @@ from emoji.core import emoji_list
 from emoji.core import replace_emoji
 from emoji.core import set_cldr
 from emoji.core import set_unicode
+from emoji.core import print_html
 
 from emoji.unicode_codes import EMOJI_ALIAS_UNICODE
 from emoji.unicode_codes import EMOJI_UNICODE
