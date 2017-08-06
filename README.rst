@@ -75,8 +75,8 @@ Return a set of all existing emojis (CLDR names or UNICODE)
 
 Visualize emojis with the browser. This function append to an html file a text where the emojis are replaced by the link to the corrisponding image (useful if your terminal do not visualize emojis). Default file is "./emoji.html", but you can append the text to another file using the *html_file* argument. 
  
-    >>> print_html(text)
-    >>> print_html(text, html_file="path_to_other_file.html")
+    >>> print_html("Visualize this emoji in html file 😎")
+    >>> print_html("Visualize this emoji in html file 😎", html_file="path_to_other_file.html")
 
 
 Installation
