@@ -145,4 +145,4 @@ def print_html(text, html_file="emoji.html"):
         left = "<img src=\"https://raw.githubusercontent.com/fvancesco/emoji/master/utils/images_cldr/"
         right = ".png\" height=\"16\" width=\"16\">"
         replaced_text = demojize(text.decode('utf-8'), delimiters=(left, right)) 
-        out_html.write("<p>"+replaced_text+"<\p>\n")    
+        out_html.write("<p>"+replaced_text+"</p>\n")    

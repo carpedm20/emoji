@@ -78,6 +78,7 @@ Visualize emojis with browser. This function appends to an html file a text wher
     >>> emoji.print_html("Visualize this emoji in html file 😎")
     >>> emoji.print_html("Visualize this emoji in html file 😎", html_file="path_to_other_file.html")
 
+The html file will look like `this <https://fvancesco.github.io/tmp/emoji.html>`__.
 
 Installation
 ------------
@@ -95,7 +96,6 @@ Images
 ------------
 In the folder *utils/* there are file images of all emojis. They are named with the UNICODE code in one case, and with the CLDR name in the other case (for example, this emoji 👍 is saved as images_cldr/thumbs_up.png and images_unicode/U0001F44D.png). There is also a script to download the codes and the images (Apple rendering) of the last emojis.
 
-The html file will look like `this <https://raw.githubusercontent.com/fvancesco/emoji/master/utils/emoji.html>`__. 
 
 Links
 ----
