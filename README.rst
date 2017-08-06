@@ -33,7 +33,7 @@ See `this <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__ for 
     >>> print(emoji.emojize('Bring the UNICODE back! _smiling_face_with_sunglasses_'))
     Bring the UNICODE back! 😎
 
-3. **Return a list of emoji information**. 
+3. **Return a list of emoji information**
 
 Return a list of the emojis included in the text, organised in a list of dictionaries, where the following information are encoded for each emoji: 
 
@@ -49,7 +49,7 @@ Return a list of the emojis included in the text, organised in a list of diction
     [{'code': u'\U0001f601', 'location': (14, 15), 'name': u'beaming_face_with_smiling_eyes'},
      {'code': u'\U0001f939\U0001f3fb\u200d\u2642\ufe0f', 'location': (41, 46), 'name': u'man_juggling_light_skin_tone'}]
 
-4. **Replace all emojis with "replacement" string**. 
+4. **Replace all emojis with "replacement" string** 
 
 Default replacement is empty string, equivalent to removing all emojis.
 
@@ -60,7 +60,7 @@ Default replacement is empty string, equivalent to removing all emojis.
     >>> emoji.replace_emoji("Hi, I am fine. 😁".decode('utf-8'), replacement='***')
     Hi, I am fine. ***
 
-5. **Get all existing emojis**. 
+5. **Get all existing emojis**
 
 Return a set of all existing emojis (CLDR names or UNICODE)
 
@@ -73,10 +73,10 @@ Return a set of all existing emojis (CLDR names or UNICODE)
 
 6. **Visualize emojis in html file**
 
-Visualize emojis with the browser. This function append to an html file a text where the emojis are replaced by the link to the corrisponding image (useful if your terminal do not visualize emojis). Default file is "./emoji.html", but you can append the text to another file using the *html_file* argument. 
+Visualize emojis with browser. This function appends to an html file a text where the emojis are replaced by the link to the corrisponding image (useful if your terminal do not visualize emojis). Default file is "./emoji.html", but you can append the text to another file using the *html_file* argument. 
  
-    >>> print_html("Visualize this emoji in html file 😎")
-    >>> print_html("Visualize this emoji in html file 😎", html_file="path_to_other_file.html")
+    >>> emoji.print_html("Visualize this emoji in html file 😎")
+    >>> emoji.print_html("Visualize this emoji in html file 😎", html_file="path_to_other_file.html")
 
 
 Installation
