@@ -2,14 +2,13 @@ Emoji
 =====
 
 Emoji library for Python.  This project is a fork of `karpedm20 <https://github.com/carpedm20/emoji>`__.
-Tested on Python2.7
 
 The entire set of Emoji codes is defined by the `unicode consortium <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__.
 Current emoji version used in this project is **v5** (last update: 20 July 2017)
 
 Functionalities
 ------------
-*(All examples assume you already imported emoji)*
+*(All examples assume you already imported emoji and that you use Python2.7. For Python3 you need to remove all the .decode(utf-8) from the examples)*
 
 1. **Replace each emoji (UNICODE) with the CLDR Short Name**
 
