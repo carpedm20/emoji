@@ -15,10 +15,12 @@ both the full list and aliases.
 .. code-block:: python
 
     >> import emoji
-    >> print(emoji.emojize('Python is :thumbs_up_sign:'))
+    >> print(emoji.emojize('Python is :thumbs_up:'))
     Python is 👍
     >> print(emoji.emojize('Python is :thumbsup:', use_aliases=True))
     Python is 👍
+    >> print(emoji.demojize('Python is 👍'))
+    Python is :thumbs_up:
 
 
 Installation
