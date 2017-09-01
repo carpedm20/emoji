@@ -10,29 +10,7 @@ Functionalities
 ------------
 *(All examples assume you already imported emoji and that you use Python2.7. For Python3 you need to remove all the .decode(utf-8) from the examples)*
 
-1. **Replace each emoji (UNICODE) with the CLDR Short Name**
-
-Default delimiter is underscore *_CLDR_Short_Name_* (see `this <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__ for the CLDR names).
-
-.. code-block:: python
-
-    >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
-    Unicode is tricky _hushed_face_
-    >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=("-|", "|-")))
-    Unicode is tricky -|hushed_face|-
-    >>> print(emoji.demojize("Be careful, this is only one emoji! 👩🏻‍⚖️".decode('utf-8')))
-    Be careful, this is only one emoji! _woman_judge_light_skin_tone_
-
-2. **Replace each CLDR emoji name with the emoji (UNICODE)**
-
-See `this <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__ for the CLDR names and `this <http://www.emoji-cheat-sheet.com/>`__ for the aliases.
-
-.. code-block:: python
-
-    >>> print(emoji.emojize('Bring the UNICODE back! _smiling_face_with_sunglasses_'))
-    Bring the UNICODE back! 😎
-
-3. **Return a list of emoji information**
+1. **Return a list of emoji information (or if there are emojis)**
 
 Return a list of the emojis included in the text, organised in a list of dictionaries, where the following information are encoded for each emoji: 
 
@@ -48,7 +26,9 @@ Return a list of the emojis included in the text, organised in a list of diction
     [{'code': u'\U0001f601', 'location': (14, 15), 'name': u'beaming_face_with_smiling_eyes'},
      {'code': u'\U0001f939\U0001f3fb\u200d\u2642\ufe0f', 'location': (41, 46), 'name': u'man_juggling_light_skin_tone'}]
 
-4. **Replace all emojis with "replacement" string** 
+Use len(emoji_list) if you want to see the number of emojis in a text.
+
+2. **Replace all emojis with "replacement" string** 
 
 Default replacement is empty string, equivalent to removing all emojis.
 
@@ -58,6 +38,28 @@ Default replacement is empty string, equivalent to removing all emojis.
     Hi, I am fine.
     >>> emoji.replace_emoji("Hi, I am fine. 😁".decode('utf-8'), replacement='***')
     Hi, I am fine. ***
+
+3. **Replace each emoji (UNICODE) with the CLDR Short Name**
+
+Default delimiter is underscore *_CLDR_Short_Name_* (see `this <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__ for the CLDR names).
+
+.. code-block:: python
+
+    >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
+    Unicode is tricky _hushed_face_
+    >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=("-|", "|-")))
+    Unicode is tricky -|hushed_face|-
+    >>> print(emoji.demojize("Be careful, this is only one emoji! 👩🏻‍⚖️".decode('utf-8')))
+    Be careful, this is only one emoji! _woman_judge_light_skin_tone_
+
+4. **Replace each CLDR emoji name with the emoji (UNICODE)**
+
+See `this <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__ for the CLDR names and `this <http://www.emoji-cheat-sheet.com/>`__ for the aliases.
+
+.. code-block:: python
+
+    >>> print(emoji.emojize('Bring the UNICODE back! _smiling_face_with_sunglasses_'))
+    Bring the UNICODE back! 😎
 
 5. **Get all existing emojis**
 
@@ -89,6 +91,7 @@ From master branch:
     $ cd emoji
     $ python setup.py install
 
+If you do not want to install it, just copy in the classpath of your program the folder emoji/emoji (the one that contains core.py and unicode.py) and import the core funcions in your program with "from emoji import core" and use it with "core.demojize(...)".   
 
 Images
 ------------
