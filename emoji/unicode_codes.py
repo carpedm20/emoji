@@ -3588,6 +3588,7 @@ EMOJI_ALIAS_UNICODE = dict(EMOJI_UNICODE.items(), **{
     u':+1:': u'\U0001F44D',
     u':thumbsup:': u'\U0001F44D',
     u':__1:': u'\U0001F44E',
+    u':-1:': u'\U0001F44E',
     u':thumbsdown:': u'\U0001F44E',
     u':thunder_cloud_and_rain:': u'\U000026C8',
     u':ticket:': u'\U0001F3AB',
