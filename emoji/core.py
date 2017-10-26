@@ -106,3 +106,11 @@ def emoji_lis(string):
                 "emoji": c
                 })
     return _entities
+
+def emoji_count(string):
+   """Returns the count of emojis in a string"""
+   c=0
+   for i in string:
+     if i in emoji.UNICODE_EMOJI:
+	      c=c+1
+   print(c)
