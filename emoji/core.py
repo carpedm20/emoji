@@ -113,4 +113,4 @@ def emoji_count(string):
    for i in string:
      if i in emoji.UNICODE_EMOJI:
 	      c=c+1
-   print(c)
+   return(c)
