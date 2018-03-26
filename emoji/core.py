@@ -62,10 +62,8 @@ def demojize(string, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
         >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍
         >>> print(emoji.demojize(u"Python is fun 👍"))
-        Python is fun :thumbs_up_sign:
-        >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8')))
-        Unicode is tricky :hushed_face:
-        >>> print(emoji.demojize("Unicode is tricky 😯".decode('utf-8'), delimiters=(" __", "__ ")))
+        Python is fun :thumbs_up:
+        >>> print(emoji.demojize(u"Unicode is tricky 😯", delimiters=(" __", "__ ")))
         Unicode is tricky :hushed_face:
     """
 
