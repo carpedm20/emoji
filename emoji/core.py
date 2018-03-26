@@ -34,9 +34,9 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbsup:", use_aliases=True))
         Python is fun 👍
-        >>> print(emoji.emojize("Python is fun :thumbs_up_sign:"))
+        >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍
-        >>> print(emoji.emojize("Python is fun __thumbs_up_sign__", delimiters = ("__", "__")))
+        >>> print(emoji.emojize("Python is fun __thumbs_up__", delimiters = ("__", "__")))
         Python is fun 👍
     """
  
@@ -59,7 +59,7 @@ def demojize(string, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
     :param string: String contains unicode characters. MUST BE UNICODE.
     :param delimiters: (optional) User delimiters other than _DEFAULT_DELIMITER
         >>> import emoji
-        >>> print(emoji.emojize("Python is fun :thumbs_up_sign:"))
+        >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍
         >>> print(emoji.demojize(u"Python is fun 👍"))
         Python is fun :thumbs_up_sign:
