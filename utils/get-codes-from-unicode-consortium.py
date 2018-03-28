@@ -44,13 +44,26 @@ for row in soup.find('table').find_all('tr'):
                 _code.append(c.replace('+', '0000'))
             else:
                 _code.append(c.replace('+', '000'))
-        code = ' '.join(_code)
-        name = d['Name'].replace(' ', '_') \
-                        .replace(':', '') \
+        code = ''.join(_code)
+
+        """
+            replace semi-colons, commas,
+            open smart quote, close smart quote,
+            and asterisk (⊛) symbol used to
+            denote newly added emojis
+
+            replace spaces after trimming for the
+            asterisk case
+        """
+
+        name = d['Name'].replace(':', '') \
                         .replace(',', '') \
-                        .replace('“', '') \
-                        .replace('”', '') \
-                        .strip()
+                        .replace(u'\u201c', '') \
+                        .replace(u'\u201d', '') \
+                        .replace(u'\u229b', '')\
+                        .strip()\
+                        .replace(' ', '_')
+
         char = "u'" + code.replace('U', '\\U') + "',"
         output[name] = char
 
