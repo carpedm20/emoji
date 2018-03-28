@@ -19,6 +19,8 @@ both the full list and aliases.
     Python is 👍
     >> print(emoji.emojize('Python is :thumbsup:', use_aliases=True))
     Python is 👍
+    >> print(emoji.demojize('Python is 👍'))
+    Python is :thumbs_up:
 
 
 Installation
