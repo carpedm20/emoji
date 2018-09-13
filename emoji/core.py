@@ -98,7 +98,7 @@ def emoji_lis(string):
     """
     _entities = []
     for pos,c in enumerate(string):
-        if c in emoji.UNICODE_EMOJI:
+        if c in unicode_codes.UNICODE_EMOJI:
             _entities.append({
                 "location":pos,
                 "emoji": c
@@ -109,7 +109,7 @@ def emoji_count(string):
    """Returns the count of emojis in a string"""
    c=0
    for i in string:
-     if i in emoji.UNICODE_EMOJI:
+     if i in unicode_codes.UNICODE_EMOJI:
 	      c=c+1
    return(c)
    
