@@ -18,6 +18,8 @@ emoji terminal output for Python.
 from emoji.core import emojize
 from emoji.core import demojize
 from emoji.core import get_emoji_regexp
+from emoji.core import emoji_count
+from emoji.core import emoji_lis
 from emoji.unicode_codes import EMOJI_ALIAS_UNICODE
 from emoji.unicode_codes import EMOJI_UNICODE
 from emoji.unicode_codes import UNICODE_EMOJI
