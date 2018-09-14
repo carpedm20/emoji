@@ -25,10 +25,10 @@ from emoji.unicode_codes import EMOJI_UNICODE
 from emoji.unicode_codes import UNICODE_EMOJI
 from emoji.unicode_codes import UNICODE_EMOJI_ALIAS
 
-
-__version__ = '0.5.0'
+__version__ = '0.5.1'
 __author__ = 'Taehoon Kim and Kevin Wurster'
-__email__ = 'carpedm20@gmail.com' # and wursterk@gmail.com
+__email__ = 'carpedm20@gmail.com'
+# and wursterk@gmail.com
 __source__ = 'https://github.com/carpedm20/emoji/'
 __license__ = '''
 New BSD License
