@@ -146,3 +146,9 @@ def print_html(text, html_file="emoji.html"):
         right = ".png\" height=\"16\" width=\"16\">"
         replaced_text = demojize(text, delimiters=(left, right)) 
         out_html.write("<p>"+replaced_text+"</p>\n")    
+
+skin_list = ['🏻','🏼','🏽','🏾','🏿']
+def remove_skin(text):
+    rx = '[' + re.escape(''.join(skin_list)) + ']'
+    tx = re.sub(rx, '', text)
+    return tx
