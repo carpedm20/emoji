@@ -4,7 +4,7 @@ Emoji
 Emoji library for Python.  This project is a fork of `karpedm20 <https://github.com/carpedm20/emoji>`__.
 
 The entire set of Emoji codes is defined by the `unicode consortium <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__.
-Current emoji version used in this project is **v5** (last update: 20 July 2017)
+Current emoji version used in this project is **v11** (last update: 13th of November 2018)
 
 Functionalities
 ------------
