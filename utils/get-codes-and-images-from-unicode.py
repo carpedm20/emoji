@@ -8,18 +8,18 @@ emoji registry file (emoji/unicode_code.py).
 
 Also save images (Apple rendering) in the folders images_code/ and images_name
 
-Tested on Python2.7
+Tested on Python3.6
 
 http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html
 """
 
 import os
-import urllib2
+from urllib.request import urlopen
 import base64
 from lxml import etree
 
 def get_html(url):
-    response = urllib2.urlopen(url)
+    response = urlopen(url)
     return response.read()
     
 def save_image(img_data):
