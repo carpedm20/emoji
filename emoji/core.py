@@ -39,7 +39,7 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
         >>> print(emoji.emojize("Python is fun __thumbs_up__", delimiters = ("__", "__")))
         Python is fun 👍
     """
- 
+
     pattern = re.compile(u'(%s[a-zA-Z0-9\+\-_&.ô’Åéãíç()!#*]+%s)' % delimiters)
 
     def replace(match):
@@ -71,7 +71,7 @@ def demojize(string, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
         val = unicode_codes.UNICODE_EMOJI.get(match.group(0), match.group(0))
         return delimiters[0] + val[1:-1] + delimiters[1]
 
-    return get_emoji_regexp().sub(replace, string)
+    return re.sub(u'\ufe0f','',(get_emoji_regexp().sub(replace, string)))
 
 
 def get_emoji_regexp():
@@ -112,4 +112,4 @@ def emoji_count(string):
      if i in unicode_codes.UNICODE_EMOJI:
 	      c=c+1
    return(c)
-   
+
