@@ -2710,6 +2710,11 @@ EMOJI_UNICODE = {
     u':zombie:': u'\U0001F9DF',
     u':zzz:': u'\U0001F4A4',
     u':Åland_Islands:': u'\U0001F1E6\U0001F1FD',
+    u':light_skin_tone:': u'\U0001F3FB',
+    u':medium_light_skin_tone:': u'\U0001F3FC',
+    u':medium_skin_tone:': u'\U0001F3FD',
+    u':medium_dark_skin_tone:': u'\U0001F3FE',
+    u':dark_skin_tone:': u'\U0001F3FF',
 }
 
 EMOJI_ALIAS_UNICODE = dict(EMOJI_UNICODE.items(), **{
