@@ -440,7 +440,7 @@ EMOJI_UNICODE = {
     u':ballot_box_with_ballot:': u'\U0001F5F3',
     u':ballot_box_with_check:': u'\U00002611',
     u':banana:': u'\U0001F34C',
-    u':banjo:': u'\U0001FA90',
+    u':banjo:': u'\U0001FA95',
     u':bank:': u'\U0001F3E6',
     u':bar_chart:': u'\U0001F4CA',
     u':barber_pole:': u'\U0001F488',
