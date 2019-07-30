@@ -52,11 +52,11 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
     return pattern.sub(replace, string)
 
 
-def demojize(string, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
+def demojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
 
     """Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
-
     :param string: String contains unicode characters. MUST BE UNICODE.
+    :param use_aliases: (optional) Return emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
     :param delimiters: (optional) User delimiters other than _DEFAULT_DELIMITER
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbs_up:"))
@@ -68,7 +68,8 @@ def demojize(string, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
     """
 
     def replace(match):
-        val = unicode_codes.UNICODE_EMOJI.get(match.group(0), match.group(0))
+        codes_dict = unicode_codes.UNICODE_EMOJI_ALIAS if use_aliases else unicode_codes.UNICODE_EMOJI
+        val = codes_dict.get(match.group(0), match.group(0))
         return delimiters[0] + val[1:-1] + delimiters[1]
 
     return re.sub(u'\ufe0f','',(get_emoji_regexp().sub(replace, string)))
