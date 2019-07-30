@@ -2710,6 +2710,11 @@ EMOJI_UNICODE = {
     u':zombie:': u'\U0001F9DF',
     u':zzz:': u'\U0001F4A4',
     u':Åland_Islands:': u'\U0001F1E6\U0001F1FD',
+    u':light_skin_tone:': u'\U0001F3FB',
+    u':medium_light_skin_tone:': u'\U0001F3FC',
+    u':medium_skin_tone:': u'\U0001F3FD',
+    u':medium_dark_skin_tone:': u'\U0001F3FE',
+    u':dark_skin_tone:': u'\U0001F3FF',
     u':regional_indicator_symbol_letter_a:': u'\U0001F1E6',
     u':regional_indicator_symbol_letter_b:': u'\U0001F1E7',
     u':regional_indicator_symbol_letter_c:': u'\U0001F1E8',
@@ -2736,6 +2741,7 @@ EMOJI_UNICODE = {
     u':regional_indicator_symbol_letter_x:': u'\U0001F1FD',
     u':regional_indicator_symbol_letter_y:': u'\U0001F1FE',
     u':regional_indicator_symbol_letter_z:': u'\U0001F1FF',
+  
 }
 
 EMOJI_ALIAS_UNICODE = dict(EMOJI_UNICODE.items(), **{
