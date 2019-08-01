@@ -19,7 +19,7 @@ from emoji import unicode_codes
 __all__ = ['emojize', 'demojize', 'get_emoji_regexp','emoji_lis']
 
 
-PY2 = sys.version_info[0] is 2
+PY2 = sys.version_info[0] == 2
 
 _EMOJI_REGEXP = None
 _DEFAULT_DELIMITER = ":"
