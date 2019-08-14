@@ -3840,6 +3840,7 @@ EMOJI_ALIAS_UNICODE = dict(EMOJI_UNICODE.items(), **{
     u':ring:': u'\U0001F48D',
     u':sweet_potato:': u'\U0001F360',
     u':robot_face:': u'\U0001F916',
+    u':robot:': u'\U0001F916',
     u':rocket:': u'\U0001F680',
     u':rolled__up_newspaper:': u'\U0001F5DE',
     u':roller_coaster:': u'\U0001F3A2',
