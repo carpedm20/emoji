@@ -84,7 +84,7 @@ def get_emoji_regexp():
     global _EMOJI_REGEXP
     # Build emoji regexp once
     if _EMOJI_REGEXP is None:
-        # Sort emojis by length to make sure mulit-character emojis are
+        # Sort emojis by length to make sure multi-character emojis are
         # matched first
         emojis = sorted(unicode_codes.EMOJI_UNICODE.values(), key=len,
                         reverse=True)
