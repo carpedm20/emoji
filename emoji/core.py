@@ -19,7 +19,7 @@ from emoji import unicode_codes
 __all__ = ['emojize', 'demojize', 'get_emoji_regexp','emoji_lis']
 
 
-PY2 = sys.version_info[0] is 2
+PY2 = sys.version_info[0] == 2
 
 _EMOJI_REGEXP = None
 _DEFAULT_DELIMITER = ":"
@@ -40,7 +40,7 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
         Python is fun 👍
     """
 
-    pattern = re.compile(u'(%s[a-zA-Z0-9\+\-_&.ô’Åéãíç()!#*]+%s)' % delimiters)
+    pattern = re.compile(u'(%s[a-zA-Z0-9\\+\\-_&.ô’Åéãíç()!#*]+%s)' % delimiters)
 
     def replace(match):
         mg = match.group(1).replace(delimiters[0], _DEFAULT_DELIMITER).replace(delimiters[1], _DEFAULT_DELIMITER)
