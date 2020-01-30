@@ -71,4 +71,7 @@ setup(
     url=source,
     version=version,
     zip_safe=True,
+    entry_points={
+        'console_scripts': ['emoji=emoji.__main__:main'],
+    }
 )
