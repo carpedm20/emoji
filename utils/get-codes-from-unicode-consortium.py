@@ -40,7 +40,7 @@ for row in soup.find('table').find_all('tr'):
     if d:
         _code = []
         for c in d['Code'].split(' '):
-            if len(c) is 6:
+            if len(c) == 6:
                 _code.append(c.replace('+', '0000'))
             else:
                 _code.append(c.replace('+', '000'))
