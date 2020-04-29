@@ -16,7 +16,7 @@ import sys
 from emoji import unicode_codes
 
 
-__all__ = ['emojize', 'demojize', 'get_emoji_regexp','emoji_lis']
+__all__ = ['emojize', 'demojize', 'get_emoji_regexp','emoji_lis', 'distinct_emoji_lis']
 
 
 PY2 = sys.version_info[0] == 2
@@ -114,3 +114,7 @@ def emoji_count(string):
 	      c=c+1
    return(c)
 
+def distinct_emoji_lis(string):
+    """Resturns distinct list of emojis from the string"""
+    distinct_list = list({c for c in string if c in unicode_codes.UNICODE_EMOJI})
+    return distinct_list
