@@ -23,14 +23,14 @@ PY2 = sys.version_info[0] == 2
 
 _EMOJI_REGEXP = None
 _DEFAULT_DELIMITER = ":"
-
-def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
+def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER),variant=None):
 
     """Replace emoji names in a string with unicode codes.
 
     :param string: String contains emoji names.
     :param use_aliases: (optional) Enable emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
     :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER
+    :param variant: （optional) Choose variation selector between "base"(None), VS-15 ("text_type") and VS-16 ("emoji_type")
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbsup:", use_aliases=True))
         Python is fun 👍
@@ -38,17 +38,24 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
         Python is fun 👍
         >>> print(emoji.emojize("Python is fun __thumbs_up__", delimiters = ("__", "__")))
         Python is fun 👍
+        >>> print(emoji.emojize("Python is fun :red_heart:"))
+        Python is fun ❤
+        >>> print(emoji.emojize("Python is fun :red_heart:",variant="emoji_type"))
+        Python is fun ❤️ #red heart, not black heart
     """
-
     pattern = re.compile(u'(%s[a-zA-Z0-9\\+\\-_&.ô’Åéãíç()!#*]+%s)' % delimiters)
-
     def replace(match):
         mg = match.group(1).replace(delimiters[0], _DEFAULT_DELIMITER).replace(delimiters[1], _DEFAULT_DELIMITER)
         if use_aliases:
-            return unicode_codes.EMOJI_ALIAS_UNICODE.get(mg, mg)
+            emj = unicode_codes.EMOJI_ALIAS_UNICODE.get(mg, mg)
         else:
-            return unicode_codes.EMOJI_UNICODE.get(mg, mg)
-
+            emj = unicode_codes.EMOJI_UNICODE.get(mg, mg)
+        if variant==None:
+            return emj
+        elif variant=="text_type":
+            return emj+u'\uFE0E'
+        elif variant=="emoji_type":
+            return emj+u'\uFE0F'
     return pattern.sub(replace, string)
 
 
