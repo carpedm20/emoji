@@ -63,8 +63,8 @@ def demojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_
         Python is fun 👍
         >>> print(emoji.demojize(u"Python is fun 👍"))
         Python is fun :thumbs_up:
-        >>> print(emoji.demojize(u"Unicode is tricky 😯", delimiters=(" __", "__ ")))
-        Unicode is tricky :hushed_face:
+        >>> print(emoji.demojize(u"Unicode is tricky 😯", delimiters=("__", "__")))
+        Unicode is tricky __hushed_face__
     """
 
     def replace(match):
