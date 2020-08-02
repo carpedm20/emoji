@@ -4104,6 +4104,7 @@ EMOJI_ALIAS_UNICODE = dict(EMOJI_UNICODE.items(), **{
     u':rice:': u'\U0001F35A',
     u':cookie:': u'\U0001F36A',
     u':egg:': u'\U0001F373',
+    u':egg2:': u'\U0001F95A',
     u':copyright:': u'\U000000A9',
     u':couch_and_lamp:': u'\U0001F6CB',
     u':couple_with_heart:': u'\U0001F491',
