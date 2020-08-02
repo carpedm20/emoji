@@ -47,9 +47,11 @@ def test_alias():
     assert emoji.emojize(':soccer:', use_aliases=False) == ':soccer:'
     assert emoji.emojize(':soccer:', use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE[':soccer:']
 
+
 def test_invalid_alias():
     # Invalid aliases should be passed through untouched
     assert emoji.emojize(':tester:', use_aliases=True) == ':tester:'
+
 
 def test_demojize_name_only():
     for name in emoji.EMOJI_UNICODE.keys():
@@ -57,8 +59,17 @@ def test_demojize_name_only():
         roundtrip = emoji.demojize(oneway)
         assert name == roundtrip, "%s != %s" % (name, roundtrip)
 
+
 def test_demojize_complicated_string():
     constructed = u"testing :baby::emoji_modifier_fitzpatrick_type-3: with :eyes: :eyes::eyes: modifiers :baby::emoji_modifier_fitzpatrick_type-5: to symbols ヒㇿ"
     emojid = emoji.emojize(constructed)
     destructed = emoji.demojize(emojid)
     assert constructed == destructed, "%s != %s" % (constructed, destructed)
+
+def test_emoji_lis():
+    assert emoji.emoji_lis("Hi, I am fine. 😁") == [{'location': 15, 'emoji': '😁'}] 
+    assert emoji.emoji_lis("Hi") == []
+
+def test_emoji_count():
+    assert emoji.emoji_count("Hi, I am fine. 😁") == 1 
+    assert emoji.emoji_count("Hi") == 0
