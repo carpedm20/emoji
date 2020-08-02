@@ -9,7 +9,6 @@ Unittests for emoji.core
 from __future__ import unicode_literals
 
 import emoji
-from nose.tools import assert_raises
 
 
 def test_emojize_name_only():
