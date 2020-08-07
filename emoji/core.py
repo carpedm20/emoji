@@ -99,20 +99,26 @@ def get_emoji_regexp():
         _EMOJI_REGEXP = re.compile(pattern)
     return _EMOJI_REGEXP
 
+
 def emoji_lis(string):
-    """Return the location and emoji in list of dic format
-    >>>emoji.emoji_lis("Hi, I am fine. 😁")
-    >>>[{'location': 15, 'emoji': '😁'}]
+    """
+    Returns the location and emoji in list of dict format
+    >>> emoji.emoji_lis("Hi, I am fine. 😁")
+    >>> [{'location': 15, 'emoji': '😁'}]
     """
     _entities = []
-    for pos,c in enumerate(string):
-        if c in unicode_codes.UNICODE_EMOJI:
+
+    for match in get_emoji_regexp().finditer(string):
             _entities.append({
-                "location":pos,
-                "emoji": c
-                })
+                "location": match.start(),
+                "emoji": match.group()
+            })
+
     return _entities
 
+
 def emoji_count(string):
-   """Returns the count of emojis in a string"""
-   return sum(1 for i in string if i in unicode_codes.UNICODE_EMOJI)
+    """
+    Returns the count of emojis in a string
+    """
+    return len(emoji_lis(string))
