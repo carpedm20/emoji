@@ -59,7 +59,7 @@ setup(
     keywords=['emoji'],
     extras_require={
         'dev': [
-            'nose',
+            'pytest',
             'coverage',
             'coveralls'
         ]
