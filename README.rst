@@ -9,7 +9,7 @@ Example
 
 The entire set of Emoji codes as defined by the `unicode consortium <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
 is supported in addition to a bunch of `aliases <http://www.emoji-cheat-sheet.com/>`__.  By
-default only the official list is enabled but doing ``emoji.emojize(use_aliases=True)`` enables
+default, only the official list is enabled but doing ``emoji.emojize(use_aliases=True)`` enables
 both the full list and aliases.
 
 .. code-block:: python
@@ -26,6 +26,21 @@ both the full list and aliases.
     >>> print(emoji.emojize("Python is fun :red_heart:",variant="emoji_type"))
     Python is fun ❤️ #red heart, not black heart
 
+..
+
+By default, the language is English (``language='en'``) but Spanish (``'es'``) and Portuguese (``'pt'``) are also supported.
+.. code-block:: python
+
+    >> print(emoji.emojize('Python es :pulgar_hacia_arriba:', language='es'))
+    Python es 👍
+    >> print(emoji.demojize('Python es 👍', language='es'))
+    Python es :pulgar_hacia_arriba:
+    >>> print(emoji.emojize("Python es :polegar_para_cima:", language='pt'))
+    Python es 👍
+    >>> print(emoji.demojize("Python es 👍", language='pt'))
+    Python es :polegar_para_cima:️
+
+..
 
 Installation
 ------------
@@ -62,12 +77,23 @@ scrapes a table on the Unicode Consortium's website with
 contents to ``stdout`` in a more useful format.
 
 
-Link
+Links
 ----
+
+For English:
 
 `Emoji Cheat Sheet <http://www.emoji-cheat-sheet.com/>`__
 
 `Official unicode list <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
+
+For Spanish:
+
+`Unicode list <https://emojiterra.com/es/puntos-de-codigo/>`__
+
+For Portuguese:
+
+`Unicode list <https://emojiterra.com/pt/pontos-de-codigo/>`__
+
 
 
 Authors
