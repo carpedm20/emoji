@@ -36,9 +36,9 @@ By default, the language is English (``language='en'``) but Spanish (``'es'``) a
     Python es 👍
     >> print(emoji.demojize('Python es 👍', language='es'))
     Python es :pulgar_hacia_arriba:
-    >>> print(emoji.emojize("Python es :polegar_para_cima:", language='pt'))
+    >>> print(emoji.emojize("Python é :polegar_para_cima:", language='pt'))
     Python é 👍
-    >>> print(emoji.demojize("Python es 👍", language='pt'))
+    >>> print(emoji.demojize("Python é 👍", language='pt'))
     Python é :polegar_para_cima:️
 
 ..
