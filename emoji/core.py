@@ -23,7 +23,8 @@ PY2 = sys.version_info[0] == 2
 
 _EMOJI_REGEXP = None
 _DEFAULT_DELIMITER = ":"
-def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER),variant=None):
+
+def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER),variant=None, language='en'):
 
     """Replace emoji names in a string with unicode codes.
 
@@ -43,13 +44,14 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
         >>> print(emoji.emojize("Python is fun :red_heart:",variant="emoji_type"))
         Python is fun ❤️ #red heart, not black heart
     """
+    EMOJI_UNICODE = unicode_codes.EMOJI_UNICODE[language]
     pattern = re.compile(u'(%s[a-zA-Z0-9\\+\\-_&.ô’Åéãíç()!#*]+%s)' % delimiters)
     def replace(match):
         mg = match.group(1).replace(delimiters[0], _DEFAULT_DELIMITER).replace(delimiters[1], _DEFAULT_DELIMITER)
         if use_aliases:
             emj = unicode_codes.EMOJI_ALIAS_UNICODE.get(mg, mg)
         else:
-            emj = unicode_codes.EMOJI_UNICODE.get(mg, mg)
+            emj = EMOJI_UNICODE.get(mg, mg)
         if variant==None:
             return emj
         elif variant=="text_type":
@@ -59,7 +61,7 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
     return pattern.sub(replace, string)
 
 
-def demojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER)):
+def demojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_DELIMITER), language='en'):
 
     """Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
     :param string: String contains unicode characters. MUST BE UNICODE.
@@ -73,16 +75,16 @@ def demojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_
         >>> print(emoji.demojize(u"Unicode is tricky 😯", delimiters=("__", "__")))
         Unicode is tricky __hushed_face__
     """
-
+    UNICODE_EMOJI = unicode_codes.UNICODE_EMOJI[language]
     def replace(match):
-        codes_dict = unicode_codes.UNICODE_EMOJI_ALIAS if use_aliases else unicode_codes.UNICODE_EMOJI
+        codes_dict = unicode_codes.UNICODE_EMOJI_ALIAS if use_aliases else UNICODE_EMOJI
         val = codes_dict.get(match.group(0), match.group(0))
         return delimiters[0] + val[1:-1] + delimiters[1]
 
-    return re.sub(u'\ufe0f','',(get_emoji_regexp().sub(replace, string)))
+    return re.sub(u'\ufe0f','',(get_emoji_regexp(language).sub(replace, string)))
 
 
-def get_emoji_regexp():
+def get_emoji_regexp(language='en'):
 
     """Returns compiled regular expression that matches emojis defined in
     ``emoji.UNICODE_EMOJI_ALIAS``. The regular expression is only compiled once.
@@ -90,17 +92,18 @@ def get_emoji_regexp():
 
     global _EMOJI_REGEXP
     # Build emoji regexp once
+    EMOJI_UNICODE = unicode_codes.EMOJI_UNICODE[language]
     if _EMOJI_REGEXP is None:
         # Sort emojis by length to make sure multi-character emojis are
         # matched first
-        emojis = sorted(unicode_codes.EMOJI_UNICODE.values(), key=len,
+        emojis = sorted(EMOJI_UNICODE.values(), key=len,
                         reverse=True)
         pattern = u'(' + u'|'.join(re.escape(u) for u in emojis) + u')'
         _EMOJI_REGEXP = re.compile(pattern)
     return _EMOJI_REGEXP
 
 
-def emoji_lis(string):
+def emoji_lis(string, language='en'):
     """
     Returns the location and emoji in list of dict format
     >>> emoji.emoji_lis("Hi, I am fine. 😁")
@@ -108,7 +111,7 @@ def emoji_lis(string):
     """
     _entities = []
 
-    for match in get_emoji_regexp().finditer(string):
+    for match in get_emoji_regexp(language).finditer(string):
             _entities.append({
                 "location": match.start(),
                 "emoji": match.group()
