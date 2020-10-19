@@ -81,17 +81,17 @@ contents to ``stdout`` in a more useful format.
 Links
 ----
 
-For English:
+**For English:**
 
 `Emoji Cheat Sheet <http://www.emoji-cheat-sheet.com/>`__
 
 `Official unicode list <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
 
-For Spanish:
+**For Spanish:**
 
 `Unicode list <https://emojiterra.com/es/puntos-de-codigo/>`__
 
-For Portuguese:
+**For Portuguese:**
 
 `Unicode list <https://emojiterra.com/pt/pontos-de-codigo/>`__
 
