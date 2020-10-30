@@ -6,7 +6,7 @@ Data literal storing emoji names and unicode codes
 """
 
 
-__all__ = ['EMOJI_UNICODE', 'UNICODE_EMOJI', 'EMOJI_ALIAS_UNICODE', 'UNICODE_EMOJI_ALIAS']
+__all__ = ['EMOJI_UNICODE', 'UNICODE_EMOJI', 'EMOJI_ALIAS_UNICODE', 'UNICODE_EMOJI_ALIAS', 'UNICODE_EMOJI_VARIATION_SEQUENCE']
 
 
 EMOJI_UNICODE = {
@@ -5212,3 +5212,15 @@ EMOJI_ALIAS_UNICODE = dict(EMOJI_UNICODE.items(), **{
 
 UNICODE_EMOJI = {v: k for k, v in EMOJI_UNICODE.items()}
 UNICODE_EMOJI_ALIAS = {v: k for k, v in EMOJI_ALIAS_UNICODE.items()}
+
+import pkgutil
+import re
+
+data = pkgutil.get_data(__name__, "emoji-variation-sequences.txt")
+text = data.decode('utf8')
+text = re.sub('#.*[\n]', '', text)
+text = re.sub('(text|emoji) style;', '', text)
+text = re.sub('\s*(FE0E\s*|FE0F\s*)', '', text)
+text = re.split(';\s*', text)
+emoji_variation_sequences_list = list(dict.fromkeys(text))[:-1]
+UNICODE_EMOJI_VARIATION_SEQUENCE = [('\\u' + code).encode('utf8').decode('unicode-escape') for code in emoji_variation_sequences_list]

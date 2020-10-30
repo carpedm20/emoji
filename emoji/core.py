@@ -50,12 +50,16 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
             emj = unicode_codes.EMOJI_ALIAS_UNICODE.get(mg, mg)
         else:
             emj = unicode_codes.EMOJI_UNICODE.get(mg, mg)
-        if variant==None:
+
+        if emj in unicode_codes.UNICODE_EMOJI_VARIATION_SEQUENCE:
+            if variant==None:
+                return emj
+            elif variant=="text_type":
+                return emj+u'\uFE0E'
+            elif variant=="emoji_type":
+                return emj+u'\uFE0F'
+        else:
             return emj
-        elif variant=="text_type":
-            return emj+u'\uFE0E'
-        elif variant=="emoji_type":
-            return emj+u'\uFE0F'
     return pattern.sub(replace, string)
 
 

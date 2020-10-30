@@ -25,6 +25,7 @@ from emoji.unicode_codes import EMOJI_ALIAS_UNICODE
 from emoji.unicode_codes import EMOJI_UNICODE
 from emoji.unicode_codes import UNICODE_EMOJI
 from emoji.unicode_codes import UNICODE_EMOJI_ALIAS
+from emoji.unicode_codes import UNICODE_EMOJI_VARIATION_SEQUENCE
 
 __all__ = [
     # emoji.core
