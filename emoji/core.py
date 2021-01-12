@@ -49,7 +49,7 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
     def replace(match):
         mg = match.group(1).replace(delimiters[0], _DEFAULT_DELIMITER).replace(delimiters[1], _DEFAULT_DELIMITER)
         if use_aliases:
-            emj = unicode_codes.EMOJI_ALIAS_UNICODE.get(mg, mg)
+            emj = unicode_codes.EMOJI_ALIAS_UNICODE_ENGLISH.get(mg, mg)
         else:
             emj = EMOJI_UNICODE.get(mg, mg)
         if variant==None:

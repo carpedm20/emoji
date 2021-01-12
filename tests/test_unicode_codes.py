@@ -13,7 +13,7 @@ def test_emoji_names():
 
     for use_aliases, group in (
             (False, emoji.unicode_codes.EMOJI_UNICODE),
-            (True, emoji.unicode_codes.EMOJI_ALIAS_UNICODE)):
+            (True, emoji.unicode_codes.EMOJI_ALIAS_UNICODE_ENGLISH)):
         for name, ucode in group.items():
             assert name.startswith(':') and name.endswith(':') and len(name) >= 3
             emj = emoji.emojize(name, use_aliases=use_aliases)
@@ -23,4 +23,4 @@ def test_emoji_names():
 def test_compare_normal_and_aliases():
     # There should always be more aliases than normal codes since the aliases contain
     # the normal codes
-    assert len(emoji.EMOJI_UNICODE) < len(emoji.EMOJI_ALIAS_UNICODE)
+    assert len(emoji.EMOJI_UNICODE) < len(emoji.EMOJI_ALIAS_UNICODE_ENGLISH)
