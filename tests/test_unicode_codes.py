@@ -9,10 +9,10 @@ Unittests for emoji.unicode_codes
 import emoji
 
 
-def test_emoji_names():
+def test_emoji_english_names():
 
     for use_aliases, group in (
-            (False, emoji.unicode_codes.EMOJI_UNICODE),
+            (False, emoji.unicode_codes.EMOJI_UNICODE['en']),
             (True, emoji.unicode_codes.EMOJI_ALIAS_UNICODE_ENGLISH)):
         for name, ucode in group.items():
             assert name.startswith(':') and name.endswith(':') and len(name) >= 3
