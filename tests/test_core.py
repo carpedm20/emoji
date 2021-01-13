@@ -12,10 +12,11 @@ import emoji
 
 
 def test_emojize_name_only():
-    for name in emoji.EMOJI_UNICODE.keys():
-        actual = emoji.emojize(name, False)
-        expected = emoji.EMOJI_UNICODE[name]
-        assert expected == actual, "%s != %s" % (expected, actual)
+    for lang_code, emoji_pack in emoji.EMOJI_UNICODE.items():
+        for name in emoji_pack.keys():
+            actual = emoji.emojize(name, False, language=lang_code)
+            expected = emoji_pack[name]
+            assert expected == actual, "%s != %s" % (expected, actual)
 
 
 def test_emojize_complicated_string():
