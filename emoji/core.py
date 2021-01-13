@@ -45,7 +45,7 @@ def emojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_D
         Python is fun ❤️ #red heart, not black heart
     """
     EMOJI_UNICODE = unicode_codes.EMOJI_UNICODE[language]
-    pattern = re.compile(u'(%s[a-zA-Z0-9\\+\\-_&.ô’Åéãíç()!#*]+%s)' % delimiters)
+    pattern = re.compile(u'(%s[A-zÀ-ÿ0-9\\-_&.’”“()!#*+?–]+%s)' % delimiters)
     def replace(match):
         mg = match.group(1).replace(delimiters[0], _DEFAULT_DELIMITER).replace(delimiters[1], _DEFAULT_DELIMITER)
         if use_aliases:
