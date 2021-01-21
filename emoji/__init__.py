@@ -15,16 +15,8 @@ emoji terminal output for Python.
 """
 
 
-from emoji.core import emojize
-from emoji.core import demojize
-from emoji.core import get_emoji_regexp
-from emoji.core import emoji_count
-from emoji.core import emoji_lis
-from emoji.core import distinct_emoji_lis
-from emoji.unicode_codes import EMOJI_UNICODE, UNICODE_EMOJI
-from emoji.unicode_codes import EMOJI_ALIAS_UNICODE_ENGLISH, UNICODE_EMOJI_ALIAS_ENGLISH
-
-
+from emoji.core import *
+from emoji.unicode_codes import *
 
 __all__ = [
     # emoji.core
@@ -32,7 +24,7 @@ __all__ = [
     # emoji.unicode_codes
     'EMOJI_UNICODE_ENGLISH', 'EMOJI_UNICODE_SPANISH', 'EMOJI_UNICODE_PORTUGUESE',
     'UNICODE_EMOJI_ENGLISH', 'UNICODE_EMOJI_SPANISH', 'UNICODE_EMOJI_PORTUGUESE',
-    'EMOJI_ALIAS_UNICODE_ENGLISH', 'UNICODE_EMOJI_ALIAS_ENGLISH'
+    'EMOJI_ALIAS_UNICODE_ENGLISH', 'UNICODE_EMOJI_ALIAS_ENGLISH',
 ]
 __version__ = '0.6.0'
 __author__ = 'Taehoon Kim and Kevin Wurster'

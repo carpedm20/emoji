@@ -2,16 +2,13 @@
 # -*- coding: UTF-8 -*-
 
 
-"""
-Setup script for emoji
-"""
+"""Setup script for emoji."""
 
 
-from codecs import open
 import os
+from codecs import open
 
 from setuptools import setup
-
 
 with open('README.rst', encoding='utf-8') as f:
     readme_content = f.read().strip()
@@ -61,8 +58,8 @@ setup(
         'dev': [
             'pytest',
             'coverage',
-            'coveralls'
-        ]
+            'coveralls',
+        ],
     },
     include_package_data=True,
     license="New BSD",
