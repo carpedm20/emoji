@@ -28,7 +28,7 @@ both the full list and aliases.
 
 ..
 
-By default, the language is English (``language='en'``) but Spanish (``'es'``) and Portuguese (``'pt'``) are also supported.
+By default, the language is English (``language='en'``) but Spanish (``'es'``), Portuguese (``'pt'``) and Italian (``'it'``) are also supported.
 
 .. code-block:: python
 
