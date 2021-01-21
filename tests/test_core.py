@@ -12,10 +12,11 @@ import emoji
 
 
 def test_emojize_name_only():
-    for name in emoji.EMOJI_UNICODE.keys():
-        actual = emoji.emojize(name, False)
-        expected = emoji.EMOJI_UNICODE[name]
-        assert expected == actual, "%s != %s" % (expected, actual)
+    for lang_code, emoji_pack in emoji.EMOJI_UNICODE.items():
+        for name in emoji_pack.keys():
+            actual = emoji.emojize(name, False, language=lang_code)
+            expected = emoji_pack[name]
+            assert expected == actual, "%s != %s" % (expected, actual)
 
 
 def test_emojize_complicated_string():
@@ -45,7 +46,7 @@ def test_emojize_invalid_emoji():
 def test_alias():
     # When use_aliases=False aliases should be passed through untouched
     assert emoji.emojize(':soccer:', use_aliases=False) == ':soccer:'
-    assert emoji.emojize(':soccer:', use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE[':soccer:']
+    assert emoji.emojize(':soccer:', use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE_ENGLISH[':soccer:']
 
 
 def test_invalid_alias():
