@@ -13,23 +13,23 @@ http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html
 """
 
 
-import requests
-from bs4 import BeautifulSoup
 from collections import OrderedDict
 
+import requests
+from bs4 import BeautifulSoup
 
 url = 'http://www.unicode.org/emoji/charts/emoji-list.html'
 
 
 response = requests.get(url)
 response.raise_for_status()
-soup = BeautifulSoup(response.text, "html.parser")
+soup = BeautifulSoup(response.text, 'html.parser')
 
 # with open('utils/content.html') as f:
 #     soup = BeautifulSoup(f.read())
 
 header = [
-    'Count', 'Code', 'Sample', 'Name'
+    'Count', 'Code', 'Sample', 'Name',
 ]
 
 output = {}

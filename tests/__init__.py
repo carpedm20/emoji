@@ -1,6 +1,6 @@
-"""
-Unittests for emoji
-"""
+# -*- coding: UTF-8 -*-
+
+"""Unittests for emoji."""
 
 
 from . import *
