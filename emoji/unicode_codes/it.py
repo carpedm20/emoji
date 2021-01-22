@@ -2899,7 +2899,7 @@ EMOJI_UNICODE_ITALIAN = {
 	u':pulsante_di_riproduzione:': u'\U000025B6\U0000FE0F',
 	u':pulsante_di_avanzamento_rapido:': u'\U000023E9',
 	u':traccia_successiva:': u'\U000023ED\U0000FE0F',
-	u':pulsante_riproduci/pausa:': u'\U000023EF\U0000FE0F',
+	u':pulsante_riproduci_pausa:': u'\U000023EF\U0000FE0F',
 	u':pulsante_di_riavvolgimento:': u'\U000025C0\U0000FE0F',
 	u':pulsante_di_riavvolgimento_rapido:': u'\U000023EA',
 	u':pulsante_traccia_precedente:': u'\U000023EE\U0000FE0F',
