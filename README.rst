@@ -79,7 +79,7 @@ contents to ``stdout`` in a more useful format.
 
 
 Links
-----
+-----
 
 **For English:**
 
@@ -95,6 +95,9 @@ Links
 
 `Unicode list <https://emojiterra.com/pt/pontos-de-codigo/>`__
 
+**For Italian:**
+
+`Unicode list <https://emojiterra.com/it/punti-di-codice/>`__
 
 
 Authors

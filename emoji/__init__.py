@@ -26,7 +26,8 @@ __all__ = [
     'UNICODE_EMOJI_ENGLISH', 'UNICODE_EMOJI_SPANISH', 'UNICODE_EMOJI_PORTUGUESE', 'UNICODE_EMOJI_ITALIAN',
     'EMOJI_ALIAS_UNICODE_ENGLISH', 'UNICODE_EMOJI_ALIAS_ENGLISH',
 ]
-__version__ = '1.0.0'
+
+__version__ = '1.1.0'
 __author__ = 'Taehoon Kim and Kevin Wurster'
 __email__ = 'carpedm20@gmail.com'
 # and wursterk@gmail.com

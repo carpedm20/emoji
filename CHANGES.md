@@ -1,6 +1,16 @@
 emoji
 =====
 
+
+1.1.0
+-----
+* Added support of Italian naming of emojis
+
+1.0.1
+-----
+* Added Python 3.8 and 3.9 as supported versions
+* Minot bug fixing
+
 1.0.0
 -----
 * Added support of Spanish naming of emojis
@@ -16,7 +26,6 @@ emoji
 * Restored default functionality - #6
 * Removed `emoji.decode()` - #10
 * Added `use_aliases` to `emoji.emojize()` to enable the GitHub aliases and others - #8
-
 
 0.2
 ---
