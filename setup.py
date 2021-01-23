@@ -64,7 +64,7 @@ setup(
     include_package_data=True,
     license="New BSD",
     long_description=readme_content,
-    packages=['emoji'],
+    packages=['emoji', 'emoji.unicode_codes'],
     url=source,
     version=version,
     zip_safe=True,
