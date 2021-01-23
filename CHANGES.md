@@ -1,6 +1,7 @@
 emoji
 =====
 
+
 1.1.0
 -----
 * Added support of Italian naming of emojis
