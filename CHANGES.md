@@ -1,20 +1,23 @@
 emoji
 =====
 
+1.1.1
+-----
+* Emoji extractor refactored 
 
 1.1.0
 -----
-* Added support of Italian naming of emojis
+* Added support for Italian naming of emojis
+* Added Python 3.8 and 3.9 as supported versions
 
 1.0.1
 -----
-* Added Python 3.8 and 3.9 as supported versions
-* Minot bug fixing
+* Bug fixing
 
 1.0.0
 -----
-* Added support of Spanish naming of emojis
-* Added support of Portuguese naming of emojis
+* Added support for Spanish naming of emojis
+* Added support for Portuguese naming of emojis
 * Emoji packs split by language to different modules
 
 0.3.5
