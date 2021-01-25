@@ -1,6 +1,12 @@
 emoji
 =====
 
+1.2.0
+-----
+* Emojis of English version updated to the Emoji Charts v13.1
+* Added all emoji modifiers
+* Current count of emojis - 3521
+
 1.1.1
 -----
 * Emoji extractor refactored 
