@@ -72,6 +72,12 @@ def test_emoji_lis():
     assert emoji.emoji_lis('Hello 🇫🇷👌') == [{'emoji': '🇫🇷', 'location': 6}, {'emoji': '👌', 'location': 8}]
 
 
+def test_distinct_emoji_lis():
+    assert emoji.distinct_emoji_lis('Hi, I am fine. 😁') == ['😁']
+    assert emoji.distinct_emoji_lis('Hi') == []
+    assert emoji.distinct_emoji_lis('Hello 🇫🇷👌') == ['🇫🇷', '👌']
+
+
 def test_emoji_count():
     assert emoji.emoji_count('Hi, I am fine. 😁') == 1
     assert emoji.emoji_count('Hi') == 0
