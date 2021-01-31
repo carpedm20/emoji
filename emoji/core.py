@@ -139,9 +139,9 @@ def emoji_lis(string, language='en'):
 
 def distinct_emoji_lis(string):
     """Returns distinct list of emojis from the string."""
-    distinct_list = list(
-        {c for c in string if c in unicode_codes.UNICODE_EMOJI}
-    )
+    distinct_list = [
+        e['emoji'] for e in emoji_lis(string)
+    ]
     return distinct_list
 
 
