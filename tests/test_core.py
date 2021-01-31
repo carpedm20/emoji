@@ -75,7 +75,8 @@ def test_emoji_lis():
 def test_distinct_emoji_lis():
     assert emoji.distinct_emoji_lis('Hi, I am fine. 😁') == ['😁']
     assert emoji.distinct_emoji_lis('Hi') == []
-    assert emoji.distinct_emoji_lis('Hello 🇫🇷👌') == ['🇫🇷', '👌']
+    assert set(emoji.distinct_emoji_lis('Hello 🇫🇷👌')) == {'🇫🇷', '👌'}
+    assert emoji.distinct_emoji_lis('Hi, I am fine. 😁😁😁😁') == ['😁']
 
 
 def test_emoji_count():

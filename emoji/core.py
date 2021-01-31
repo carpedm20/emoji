@@ -137,11 +137,11 @@ def emoji_lis(string, language='en'):
     return _entities
 
 
-def distinct_emoji_lis(string):
+def distinct_emoji_lis(string, language='en'):
     """Returns distinct list of emojis from the string."""
-    distinct_list = [
-        e['emoji'] for e in emoji_lis(string)
-    ]
+    distinct_list = list(
+        {e['emoji'] for e in emoji_lis(string, language)}
+    )
     return distinct_list
 
 
