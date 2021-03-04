@@ -102,6 +102,12 @@ def demojize(
     return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
 
 
+def replace_emoji(string, language='en', replace=''):
+    """Replace unicode emoji in a customizable string.
+    """
+    return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
+
+
 def get_emoji_regexp(language='en'):
 
     """Returns compiled regular expression that matches emojis defined in
