@@ -1,6 +1,10 @@
 emoji
 =====
 
+1.2.1
+-----
+* Added replace_emoji
+
 1.2.0
 -----
 * Emojis of English version updated to the Emoji Charts v13.1
