@@ -18,6 +18,7 @@ from emoji import unicode_codes
 __all__ = [
     'emojize', 'demojize', 'get_emoji_regexp',
     'emoji_lis', 'distinct_emoji_lis', 'emoji_count',
+    'replace_emoji',
 ]
 
 
@@ -102,7 +103,7 @@ def demojize(
     return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
 
 
-def replace_emoji(string, language='en', replace=''):
+def replace_emoji(string, replace='', language='en', ):
     """Replace unicode emoji in a customizable string.
     """
     return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))

@@ -69,7 +69,7 @@ Developing
     $ git clone https://github.com/carpedm20/emoji.git
     $ cd emoji
     $ pip install -e .\[dev\]
-    $ nosetests
+    $ pytest
 
 The ``utils/get-codes-from-unicode-consortium.py`` may help when updating
 ``unicode_codes.py`` but is not guaranteed to work.  Generally speaking it

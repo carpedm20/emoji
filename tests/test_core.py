@@ -83,3 +83,10 @@ def test_emoji_count():
     assert emoji.emoji_count('Hi, I am fine. 😁') == 1
     assert emoji.emoji_count('Hi') == 0
     assert emoji.emoji_count('Hello 🇫🇷👌') == 2
+
+
+def test_replace_emoji():
+    assert emoji.replace_emoji('Hi, I am fine. 😁') == 'Hi, I am fine. '
+    assert emoji.replace_emoji('Hi') == 'Hi'
+    assert emoji.replace_emoji('Hello 🇫🇷👌') == 'Hello '
+    assert emoji.replace_emoji('Hello 🇫🇷👌', 'x') == 'Hello xx'

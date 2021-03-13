@@ -20,7 +20,7 @@ from emoji.unicode_codes import *
 
 __all__ = [
     # emoji.core
-    'emojize', 'demojize', 'get_emoji_regexp', 'emoji_count', 'emoji_lis',
+    'emojize', 'demojize', 'get_emoji_regexp', 'emoji_count', 'emoji_lis', 'replace_emoji',
     # emoji.unicode_codes
     'EMOJI_UNICODE_ENGLISH', 'EMOJI_UNICODE_SPANISH', 'EMOJI_UNICODE_PORTUGUESE', 'EMOJI_UNICODE_ITALIAN',
     'UNICODE_EMOJI_ENGLISH', 'UNICODE_EMOJI_SPANISH', 'UNICODE_EMOJI_PORTUGUESE', 'UNICODE_EMOJI_ITALIAN',
