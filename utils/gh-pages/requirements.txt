@@ -1,0 +1,2 @@
+django>=3.1.0
+django-htmlmin>=0.11.0
