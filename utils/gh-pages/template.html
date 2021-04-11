@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>emoji overview</title>
+  <meta name="description" content="Overview of all emoji made availabe by the carpedm20/emoji python package. Search through all emoji and copy their unicode, HTML entities or python code">
+  <meta property="og:image" content="https://raw.githubusercontent.com/carpedm20/emoji/master/example/example.png">
+
+  <link rel="stylesheet" href="main.css">
+  <script src="main.js"></script>
+</head>
+
+<body>
+
+<h1>List of all emojis in the <a href="https://github.com/carpedm20/emoji">emoji</a> python package</h1>
+
+<div class="controls">
+  <div class="spinnerholder"></div>
+  <div class="search"><span class="search_icon">🔍</span><input type="text" id="search_full" placeholder="Search" /></div>
+  <br>
+  {% for entry in lists %}
+    <input type="checkbox" id="enable_list_{{ entry.name }}" data-name="{{ entry.name }}" {% if entry.name == defaultListName %} checked {% endif %} {% if not entry.emojis %} class="notloaded" {% endif %} title="{{ entry.name }}">
+    <label for="enable_list_{{ entry.name }}" title="{{ entry.name }}">{{ entry.pretty }}</label>
+  {% endfor %}
+  <br>
+  <input type="checkbox" id="enable_more_columns"><label for="enable_more_columns">Show more columns</label>
+
+</div>
+
+<div id="emoji_table_holder">
+<table id="emoji_table">
+  <tr class="header">
+    <th>emoji</th>
+    <th>name</th>
+    <th>unicode</th>
+    <th>char name</th>
+    <th>xml/html</th>
+  </tr>
+  {% for entry in lists %}
+  {% if entry.emojis %}
+    <tr class="{{ entry.name }} listheader" data-language-arg="{{ entry.languageArg }}">
+      <th>{{ entry.pretty }}</th>
+      <th colspan="5">{{ entry.name }}</th>
+    </tr>
+    {% for emoji in entry.emojis %}
+      <tr class="{{ entry.name }}">
+        <td>{{ emoji.code }}</td>
+        <td>{{ emoji.name }}</td>
+        <td>{{ emoji.unicode }}</td>
+        <td>{{ emoji.charname }}</td>
+      </tr>
+    {% endfor %}
+  {% else %}
+    <!-- Omitted {{ entry.name }} because no emojis were found -->
+  {% endif %}
+  {% endfor %}
+
+  <tr class="headerend">
+    <th colspan="6">The end. No more results.</th>
+  </tr>
+</table>
+</div>
+
+<div class="modal" style="display:none">
+  <div class="content">
+    <samp class="emoji copiable"></samp>
+    <samp class="name copiable"></samp>
+    Python unicode: <samp class="unicode copiable"></samp>
+    Python unicode name: <samp class="charname copiable"></samp>
+    XML/HTML: <samp class="xml copiable"></samp>
+    Python example: <div class="example"><code class="code emojize copiable"></code><code class="demojize copiable"></code></div>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="https://github.com/carpedm20/">github</a> / <a href="https://pypi.org/project/emoji/">pypi</a>
+</div>
+
+</body>
+</html>

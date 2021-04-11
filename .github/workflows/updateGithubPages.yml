@@ -1,0 +1,52 @@
+name: updateGithubPages
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+jobs:
+  generateGHPages:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install package
+      run: |
+        python -m pip install --upgrade pip setuptools
+        python setup.py install
+    - name: Retain directory utils/gh-pages
+      run: |
+        cp -R utils/gh-pages ..
+    - name: Switch to branch gh-pages
+      run: |
+        git stash
+        git config --global user.name github-actions
+        git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
+        git fetch origin
+        if ! git checkout -b gh-pages origin/gh-pages; then
+            echo Create new orphan branch gh-pages;
+            git checkout --orphan gh-pages;
+            git rm -rf .;
+        fi;
+    - name: Install requirements
+      run: |
+        python -m pip install -r ../gh-pages/requirements.txt
+    - name: Generate HTML
+      run: |
+        python ../gh-pages/generatePages.py -minify
+    - name: Move files into repository
+      run: |
+        mv ../gh-pages/index.html .
+        mv ../gh-pages/all.html .
+        mv ../gh-pages/main.css .
+        mv ../gh-pages/main.js .
+    - name: git commit & push
+      run: |
+        git add index.html all.html main.css main.js
+        # Use "|| true" or "--allow-empty"  otherwise the action fails for empty commits
+        git commit -m "Updated gh-pages" || true
+        git push -u origin gh-pages
