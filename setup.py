@@ -4,15 +4,14 @@
 
 """Setup script for emoji."""
 
-
 import os
+import sys
 from codecs import open
 
 from setuptools import setup
 
 with open('README.rst', encoding='utf-8') as f:
     readme_content = f.read().strip()
-
 
 author = email = source = version = None
 with open(os.path.join('emoji', '__init__.py'), encoding='utf-8') as f:
@@ -28,7 +27,7 @@ with open(os.path.join('emoji', '__init__.py'), encoding='utf-8') as f:
         elif None not in (version, author, email, source):
             break
 
-setup(
+setup_args = dict(
     name='emoji',
     author=author,
     author_email=email,
@@ -53,6 +52,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Multimedia :: Graphics :: Presentation',
         'Topic :: Software Development :: Libraries :: Python Modules',
+        'Typing :: Typed'
     ],
     description="Emoji for Python",
     keywords=['emoji'],
@@ -71,3 +71,11 @@ setup(
     version=version,
     zip_safe=True,
 )
+
+if sys.version_info[0] >= 3 and sys.version_info[1] >= 5:
+    setup_args["package_data"] = {
+        "emoji": ["py.typed", "*.pyi"],
+        "emoji.unicode_codes": ["py.typed", "*.pyi"]
+    }
+
+setup(**setup_args)

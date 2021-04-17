@@ -33,7 +33,7 @@ def emojize(
         use_aliases=False,
         delimiters=(_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
         variant=None,
-        language='en',
+        language='en'
 ):
     """Replace emoji names in a string with unicode codes.
 
@@ -78,7 +78,7 @@ def demojize(
         string,
         use_aliases=False,
         delimiters=(_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
-        language='en',
+        language='en'
 ):
     """Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
     :param string: String contains unicode characters. MUST BE UNICODE.
@@ -103,7 +103,7 @@ def demojize(
     return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
 
 
-def replace_emoji(string, replace='', language='en', ):
+def replace_emoji(string, replace='', language='en'):
     """Replace unicode emoji in a customizable string.
     """
     return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
