@@ -81,6 +81,12 @@ contents to ``stdout`` in a more useful format.
 Links
 -----
 
+**Overview of all emoji:**
+
+`https://carpedm20.github.io/emoji/ <https://carpedm20.github.io/emoji/>`__
+
+(auto-generated list of the emoji that are supported by the current version of this package)
+
 **For English:**
 
 `Emoji Cheat Sheet <http://www.emoji-cheat-sheet.com/>`__
