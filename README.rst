@@ -25,6 +25,8 @@ both the full list and aliases.
     Python is fun ❤
     >>> print(emoji.emojize("Python is fun :red_heart:",variant="emoji_type"))
     Python is fun ❤️ #red heart, not black heart
+    >>> print(emoji.is_emoji("👍"))
+    True
 
 ..
 
