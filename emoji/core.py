@@ -9,7 +9,6 @@ Core components for emoji.
 
 """
 
-
 import re
 import sys
 
@@ -18,9 +17,8 @@ from emoji import unicode_codes
 __all__ = [
     'emojize', 'demojize', 'get_emoji_regexp',
     'emoji_lis', 'distinct_emoji_lis', 'emoji_count',
-    'replace_emoji',
+    'replace_emoji', 'is_emoji',
 ]
-
 
 PY2 = sys.version_info[0] == 2
 
@@ -68,9 +66,10 @@ def emojize(
         if variant is None:
             return emj
         elif variant == "text_type":
-            return emj+u'\uFE0E'
+            return emj + u'\uFE0E'
         elif variant == "emoji_type":
-            return emj+u'\uFE0F'
+            return emj + u'\uFE0F'
+
     return pattern.sub(replace, string)
 
 
@@ -110,7 +109,6 @@ def replace_emoji(string, replace='', language='en', ):
 
 
 def get_emoji_regexp(language='en'):
-
     """Returns compiled regular expression that matches emojis defined in
     ``emoji.UNICODE_EMOJI_ALIAS``. The regular expression is only compiled once.
     """
@@ -155,3 +153,11 @@ def distinct_emoji_lis(string, language='en'):
 def emoji_count(string):
     """Returns the count of emojis in a string."""
     return len(emoji_lis(string))
+
+
+def is_emoji(string):
+    """Returns True if the string is an emoji"""
+    return string in unicode_codes.UNICODE_EMOJI['en'] or \
+           string in unicode_codes.UNICODE_EMOJI['es'] or \
+           string in unicode_codes.UNICODE_EMOJI['it'] or \
+           string in unicode_codes.UNICODE_EMOJI['pt']
