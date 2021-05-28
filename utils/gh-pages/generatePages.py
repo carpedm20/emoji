@@ -15,7 +15,7 @@ except ImportError:
     sys.path.insert(0, include)
     import emoji
     print("Imported emoji from %s" %
-          os.path.abspath(os.path.join(include, "flag")))
+          os.path.abspath(os.path.join(include, "emoji")))
 
 # Configuration
 OUT_DIR = os.path.abspath(os.path.dirname(__file__))
