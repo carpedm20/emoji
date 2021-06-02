@@ -15,7 +15,7 @@ except ImportError:
     sys.path.insert(0, include)
     import emoji
     print("Imported emoji from %s" %
-          os.path.abspath(os.path.join(include, "flag")))
+          os.path.abspath(os.path.join(include, "emoji")))
 
 # Configuration
 OUT_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -28,7 +28,8 @@ languages = {
     "UNICODE_EMOJI_ALIAS_ENGLISH": emoji.emojize(":United_Kingdom:alias"),
     "UNICODE_EMOJI_SPANISH": emoji.emojize(":Spain:"),
     "UNICODE_EMOJI_PORTUGUESE": emoji.emojize(":Portugal:"),
-    "UNICODE_EMOJI_ITALIAN": emoji.emojize(":Italy:")
+    "UNICODE_EMOJI_ITALIAN": emoji.emojize(":Italy:"),
+    "UNICODE_EMOJI_FRENCH" : emoji.emojize(":France:")
 }
 language_args = {
     "UNICODE_EMOJI_ALIAS_ENGLISH": 'language="en", use_aliases=True'
