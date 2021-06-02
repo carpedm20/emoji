@@ -1,6 +1,10 @@
 emoji
 =====
 
+1.3.0
+-----
+* Added support for French naming of emojis
+
 1.2.1
 -----
 * Added replace_emoji
