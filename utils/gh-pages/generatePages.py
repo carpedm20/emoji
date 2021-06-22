@@ -29,7 +29,8 @@ languages = {
     "UNICODE_EMOJI_SPANISH": emoji.emojize(":Spain:"),
     "UNICODE_EMOJI_PORTUGUESE": emoji.emojize(":Portugal:"),
     "UNICODE_EMOJI_ITALIAN": emoji.emojize(":Italy:"),
-    "UNICODE_EMOJI_FRENCH" : emoji.emojize(":France:")
+    "UNICODE_EMOJI_FRENCH": emoji.emojize(":France:"),
+    "UNICODE_EMOJI_GERMAN": emoji.emojize(":Germany:")
 }
 language_args = {
     "UNICODE_EMOJI_ALIAS_ENGLISH": 'language="en", use_aliases=True'
