@@ -28,7 +28,7 @@ both the full list and aliases.
 
 ..
 
-By default, the language is English (``language='en'``) but Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``) and French (``'fr'``) are also supported.
+By default, the language is English (``language='en'``) but Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``), French (``'fr'``) and German (``'de'``) are also supported.
 
 .. code-block:: python
 
@@ -108,6 +108,10 @@ Links
 **For French:**
 
 `Unicode list <https://emojiterra.com/fr/points-de-code/>`__
+
+**For German:**
+
+`Unicode list <https://emojiterra.com/de/codepoints/>`__
 
 
 Authors
