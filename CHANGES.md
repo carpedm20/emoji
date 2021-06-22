@@ -1,6 +1,10 @@
 emoji
 =====
 
+1.4.0
+-----
+* Added support for German naming of emojis
+
 1.3.0
 -----
 * Added support for French naming of emojis
