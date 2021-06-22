@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Data literal storing emoji English names and Unicode codes."""
+"""Data literal storing emoji German names and Unicode codes."""
 
 __all__ = ['EMOJI_UNICODE_GERMAN', 'UNICODE_EMOJI_GERMAN',]
 
