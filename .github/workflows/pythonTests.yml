@@ -1,5 +1,12 @@
 name: Test python package
-on: [push, workflow_dispatch]
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore:
+      - 'gh-pages'
+  pull_request:
+    branches-ignore:
+      - 'gh-pages'
 jobs:
   pytest:
     runs-on: ubuntu-latest
