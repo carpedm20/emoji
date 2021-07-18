@@ -1,6 +1,12 @@
 emoji
 =====
 
+
+1.4.1
+-----
+* Fix some French emoji names not being matched
+* Drop seemingly accidentally added colons from German emoji names
+
 1.4.0
 -----
 * Added support for German naming of emojis
