@@ -1,6 +1,9 @@
 emoji
 =====
 
+1.4.2
+-----
+* Delimiter for German time naming changed from ":" to "."
 
 1.4.1
 -----

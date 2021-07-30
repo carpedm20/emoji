@@ -28,7 +28,10 @@ both the full list and aliases.
 
 ..
 
-By default, the language is English (``language='en'``) but Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``), French (``'fr'``) and German (``'de'``) are also supported.
+By default, the language is English (``language='en'``) but  also supported languages are:
+
+Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``), French (``'fr'``), German (``'de'``)
+
 
 .. code-block:: python
 
@@ -120,3 +123,7 @@ Authors
 Taehoon Kim / `@carpedm20 <http://carpedm20.github.io/about/>`__
 
 Kevin Wurster / `@geowurster <http://twitter.com/geowurster/>`__
+
+Maintainer
+-------
+Tahir Jalilov / `@TahirJalilov <https://github.com/TahirJalilov>`__

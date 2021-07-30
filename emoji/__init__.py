@@ -29,15 +29,15 @@ __all__ = [
     'EMOJI_ALIAS_UNICODE_ENGLISH', 'UNICODE_EMOJI_ALIAS_ENGLISH',
 ]
 
-__version__ = '1.4.1'
-__author__ = 'Taehoon Kim and Kevin Wurster'
+__version__ = '1.4.2'
+__author__ = 'Taehoon Kim, Kevin Wurster and Tahir Jalilov'
 __email__ = 'carpedm20@gmail.com'
-# and wursterk@gmail.com
+# and wursterk@gmail.com, tahir.jalilov@gmail.com
 __source__ = 'https://github.com/carpedm20/emoji/'
 __license__ = '''
 New BSD License
 
-Copyright (c) 2014-2021, Taehoon Kim and Kevin Wurster
+Copyright (c) 2014-2021, Taehoon Kim, Kevin Wurster and Tahir Jalilov
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
