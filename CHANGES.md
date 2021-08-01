@@ -1,6 +1,11 @@
 emoji
 =====
 
+UNRELEASED
+----------
+
+* Fix matching of non-ASCII emoji names on Python 2
+
 1.4.2
 -----
 * Delimiter for German time naming changed from ":" to "."
