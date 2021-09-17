@@ -1,9 +1,10 @@
 emoji
 =====
 
-UNRELEASED
-----------
-
+1.5.0
+-----
+* Emojis of English version updated to the Emoji Charts v14.0
+* Current count of emojis - 3633
 * Fix matching of non-ASCII emoji names on Python 2
 
 1.4.2

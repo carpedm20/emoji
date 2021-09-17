@@ -125,5 +125,5 @@ Taehoon Kim / `@carpedm20 <http://carpedm20.github.io/about/>`__
 Kevin Wurster / `@geowurster <http://twitter.com/geowurster/>`__
 
 Maintainer
--------
+----------
 Tahir Jalilov / `@TahirJalilov <https://github.com/TahirJalilov>`__
