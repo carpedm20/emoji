@@ -32,7 +32,6 @@ def test_consistency_across_languages():
         if lang_code == reference_code:
             continue
         ref_set = set(emoji.EMOJI_UNICODE[reference_code].values())
-        current_dict = dict(emoji_pack.items())
         for name, emj in emoji_pack.items():
             if emj not in ref_set:
                 if emj in emoji_pack.values() and emj in emoji.EMOJI_UNICODE[reference_code].values():
@@ -55,7 +54,6 @@ def test_consistency_across_languages():
 
             assert emj in ref_set
             ref_set.remove(emj)
-            del current_dict[name]
 
         if len(ref_set) > 0:
             print("The following emoji from %r do not appear in %r" % (reference_code, lang_code))
