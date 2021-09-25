@@ -3,7 +3,6 @@
 
 """Unittests for emoji.core"""
 
-
 from __future__ import unicode_literals
 
 import emoji
@@ -90,3 +89,9 @@ def test_replace_emoji():
     assert emoji.replace_emoji('Hi') == 'Hi'
     assert emoji.replace_emoji('Hello 🇫🇷👌') == 'Hello '
     assert emoji.replace_emoji('Hello 🇫🇷👌', 'x') == 'Hello xx'
+
+
+def test_is_emoji():
+    assert emoji.is_emoji('😁')
+    assert not emoji.is_emoji('H')
+    assert emoji.is_emoji('🇫🇷')
