@@ -23,6 +23,7 @@ __all__ = [
 PY2 = sys.version_info[0] == 2
 
 _EMOJI_REGEXP = None
+_EMOJI_ALL_REGEXP = None
 _DEFAULT_DELIMITER = ':'
 
 
@@ -99,13 +100,15 @@ def demojize(
         val = codes_dict.get(match.group(0), match.group(0))
         return delimiters[0] + val[1:-1] + delimiters[1]
 
-    return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
+    return re.sub(u'\ufe0f', '', (get_all_emoji_regexp().sub(replace, string)))
 
 
-def replace_emoji(string, replace='', language='en', ):
+def replace_emoji(string, replace='', language='en', version=None):
     """Replace unicode emoji in a customizable string.
     """
-    return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
+
+    return re.sub(u'\ufe0f', '', (get_all_emoji_regexp().sub(replace, string)))
+
 
 
 def get_emoji_regexp(language='en'):
@@ -124,6 +127,20 @@ def get_emoji_regexp(language='en'):
         _EMOJI_REGEXP = re.compile(pattern)
     return _EMOJI_REGEXP
 
+def get_all_emoji_regexp():
+    """Returns compiled regular expression that matches emojis defined in
+    ``emoji.unicode_codes.EMOJI_DATA``. The regular expression is only compiled once.
+    """
+
+    global _EMOJI_ALL_REGEXP
+    # Build emoji regexp once
+    if _EMOJI_ALL_REGEXP is None:
+        # Sort emojis by length to make sure multi-character emojis are
+        # matched first
+        emojis = sorted(unicode_codes.EMOJI_DATA, key=len, reverse=True)
+        pattern = u'(' + u'|'.join(re.escape(u) for u in emojis) + u')'
+        _EMOJI_ALL_REGEXP = re.compile(pattern)
+    return _EMOJI_ALL_REGEXP
 
 def emoji_lis(string, language='en'):
     """
