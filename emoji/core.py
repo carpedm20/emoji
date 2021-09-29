@@ -105,10 +105,25 @@ def demojize(
 
 def replace_emoji(string, replace='', language='en', version=None):
     """Replace unicode emoji in a customizable string.
+    # TODO describe parameters
+    :param version: Max version, only replace emoji above this version
     """
 
-    return re.sub(u'\ufe0f', '', (get_all_emoji_regexp().sub(replace, string)))
+    if version is None:
+        return re.sub(u'\ufe0f', '', (get_all_emoji_regexp().sub(replace, string)))
 
+    def replace_fct(match):
+        val = unicode_codes.UNICODE_EMOJI['en'].get(match.group(0), match.group(0))
+        emj = match.group(0)
+
+        if emj in unicode_codes.EMOJI_DATA and unicode_codes.EMOJI_DATA[emj]['E'] > version:
+            if callable(replace):
+                return replace(emj, val, unicode_codes.EMOJI_DATA[emj]['E'])
+            else:
+                return str(replace)
+        return match.group(0)
+
+    return get_all_emoji_regexp().sub(replace_fct, string)
 
 
 def get_emoji_regexp(language='en'):
