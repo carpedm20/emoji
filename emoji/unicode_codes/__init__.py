@@ -6,6 +6,7 @@ from emoji.unicode_codes.pt import *
 from emoji.unicode_codes.it import *
 from emoji.unicode_codes.fr import *
 from emoji.unicode_codes.de import *
+from emoji.unicode_codes.versions import *
 
 
 __all__ = [
@@ -16,7 +17,8 @@ __all__ = [
     'EMOJI_UNICODE_PORTUGUESE', 'UNICODE_EMOJI_PORTUGUESE',
     'EMOJI_UNICODE_ITALIAN', 'UNICODE_EMOJI_ITALIAN',
     'EMOJI_UNICODE_FRENCH', 'UNICODE_EMOJI_FRENCH',
-    'EMOJI_UNICODE_GERMAN', 'UNICODE_EMOJI_GERMAN'
+    'EMOJI_UNICODE_GERMAN', 'UNICODE_EMOJI_GERMAN',
+    'EMOJI_DATA'
 ]
 
 
