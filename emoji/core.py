@@ -22,7 +22,7 @@ __all__ = [
 
 PY2 = sys.version_info[0] == 2
 
-_EMOJI_REGEXP = None
+_EMOJI_REGEXP = {}
 _EMOJI_ALL_REGEXP = None
 _DEFAULT_DELIMITER = ':'
 
@@ -100,7 +100,7 @@ def demojize(
         val = codes_dict.get(match.group(0), match.group(0))
         return delimiters[0] + val[1:-1] + delimiters[1]
 
-    return re.sub(u'\ufe0f', '', (get_all_emoji_regexp().sub(replace, string)))
+    return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
 
 
 def replace_emoji(string, replace='', language='en', version=None):
@@ -128,22 +128,25 @@ def replace_emoji(string, replace='', language='en', version=None):
 
 def get_emoji_regexp(language='en'):
     """Returns compiled regular expression that matches emojis defined in
-    ``emoji.UNICODE_EMOJI_ALIAS``. The regular expression is only compiled once.
+    ``emoji.EMOJI_UNICODE[language]``. The regular expression is only compiled once
+    per language.
+    It contains only emoji that are fully-qualified and translated in the language.
     """
 
-    global _EMOJI_REGEXP
-    # Build emoji regexp once
+    if language == 'en':
+        return get_all_emoji_regexp()
+
     EMOJI_UNICODE = unicode_codes.EMOJI_UNICODE[language]
-    if _EMOJI_REGEXP is None:
+    if language not in _EMOJI_REGEXP:
         # Sort emojis by length to make sure multi-character emojis are
         # matched first
         emojis = sorted(EMOJI_UNICODE.values(), key=len, reverse=True)
         pattern = u'(' + u'|'.join(re.escape(u) for u in emojis) + u')'
-        _EMOJI_REGEXP = re.compile(pattern)
-    return _EMOJI_REGEXP
+        _EMOJI_REGEXP[language] = re.compile(pattern)
+    return _EMOJI_REGEXP[language]
 
 def get_all_emoji_regexp():
-    """Returns compiled regular expression that matches emojis defined in
+    """Returns compiled regular expression that matches all emoji defined in
     ``emoji.unicode_codes.EMOJI_DATA``. The regular expression is only compiled once.
     """
 
@@ -165,7 +168,7 @@ def emoji_lis(string, language='en'):
     """
     _entities = []
 
-    for match in get_emoji_regexp(language).finditer(string):
+    for match in get_all_emoji_regexp().finditer(string):
         _entities.append({
             'location': match.start(),
             'emoji': match.group(),
@@ -189,7 +192,4 @@ def emoji_count(string):
 
 def is_emoji(string):
     """Returns True if the string is an emoji"""
-    return string in unicode_codes.UNICODE_EMOJI['en'] or \
-           string in unicode_codes.UNICODE_EMOJI['es'] or \
-           string in unicode_codes.UNICODE_EMOJI['it'] or \
-           string in unicode_codes.UNICODE_EMOJI['pt']
+    return string in unicode_codes.EMOJI_DATA
