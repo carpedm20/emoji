@@ -5,9 +5,6 @@
 
 from __future__ import unicode_literals
 
-import sys
-sys.path.append('..')
-
 import re
 import emoji
 
