@@ -7,6 +7,7 @@ from __future__ import unicode_literals
 
 import re
 import emoji
+import pytest
 
 
 def test_emojize_name_only():
@@ -58,6 +59,16 @@ def test_emojize_variant():
     assert emoji.emojize(':admission_tickets:', variant=None) ==  emoji.emojize(':admission_tickets:')
     assert emoji.emojize(':admission_tickets:', variant='text_type') == remove_variant(emoji.EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0e'
     assert emoji.emojize(':admission_tickets:', variant='emoji_type') == remove_variant(emoji.EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0f'
+
+    with pytest.raises(Exception):
+        emoji.emojize(':admission_tickets:', variant=False)
+
+    with pytest.raises(Exception):
+        emoji.emojize(':admission_tickets:', variant=True)
+
+    with pytest.raises(Exception):
+        emoji.emojize(':admission_tickets:', variant='wrong')
+
 
 def test_demojize_removes_variant():
     # demojize should remove all variant indicators \ufe0e and \ufe0f from the string
