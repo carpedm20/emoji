@@ -22,8 +22,7 @@ __all__ = [
 
 PY2 = sys.version_info[0] == 2
 
-_EMOJI_REGEXP = {}
-_EMOJI_ALL_REGEXP = None
+_EMOJI_REGEXP = None
 _DEFAULT_DELIMITER = ':'
 
 
@@ -115,13 +114,15 @@ def demojize(
         >>> print(emoji.demojize(u"Unicode is tricky 😯", delimiters=("__", "__")))
         Unicode is tricky __hushed_face__
     """
-    UNICODE_EMOJI = unicode_codes.UNICODE_EMOJI[language]
+
+    codes_dict = unicode_codes.UNICODE_EMOJI_ALIAS_ENGLISH if use_aliases else unicode_codes.UNICODE_EMOJI[language]
 
     def replace(match):
-        codes_dict = unicode_codes.UNICODE_EMOJI_ALIAS_ENGLISH if use_aliases else UNICODE_EMOJI
-        val = codes_dict.get(match.group(0), match.group(0))
+        emj = match.group(0)
+        val = codes_dict.get(emj, None)
+        if val is None:
+            return emj
         if version is not None:
-            emj = match.group(0)
             if emj in unicode_codes.EMOJI_DATA and unicode_codes.EMOJI_DATA[emj]['E'] > version:
                 if callable(handle_version):
                     return handle_version(emj, unicode_codes.EMOJI_DATA[emj])
@@ -131,18 +132,18 @@ def demojize(
                     return ''
         return delimiters[0] + val[1:-1] + delimiters[1]
 
-    return get_emoji_regexp(language).sub(replace, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
+    return get_emoji_regexp().sub(replace, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
 
 
-def replace_emoji(string, replace='', language='en', version=None):
+def replace_emoji(string, replace='', version=None):
     """Replace unicode emoji in a customizable string.
     # TODO describe parameters
     :param version: Max version, only replace emoji above this version
-    :param language: No longer used
+    :param language: Parameter is no longer used
     """
 
     if version is None:
-        return get_all_emoji_regexp().sub(replace, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
+        return get_emoji_regexp().sub(replace, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
 
     def replace_fct(match):
         emj = match.group(0)
@@ -154,52 +155,36 @@ def replace_emoji(string, replace='', language='en', version=None):
                 return str(replace)
         return match.group(0)
 
-    return get_all_emoji_regexp().sub(replace_fct, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
+    return get_emoji_regexp().sub(replace_fct, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
 
 
-def get_emoji_regexp(language='en'):
-    """Returns compiled regular expression that matches emojis defined in
-    ``emoji.EMOJI_UNICODE[language]``. The regular expression is only compiled once
-    per language.
-    It contains only emoji that are fully-qualified and translated in the language.
+def get_emoji_regexp(language=None):
+    """Returns compiled regular expression that matches all emojis defined in
+    ``emoji.EMOJI_DATA``. The regular expression is only compiled once.
+    :param language: Parameter is no longer used
     """
 
-    if language == 'en':
-        return get_all_emoji_regexp()
-
-    EMOJI_UNICODE = unicode_codes.EMOJI_UNICODE[language]
-    if language not in _EMOJI_REGEXP:
-        # Sort emojis by length to make sure multi-character emojis are
-        # matched first
-        emojis = sorted(EMOJI_UNICODE.values(), key=len, reverse=True)
-        pattern = u'(' + u'|'.join(re.escape(u) for u in emojis) + u')'
-        _EMOJI_REGEXP[language] = re.compile(pattern)
-    return _EMOJI_REGEXP[language]
-
-def get_all_emoji_regexp():
-    """Returns compiled regular expression that matches all emoji defined in
-    ``emoji.unicode_codes.EMOJI_DATA``. The regular expression is only compiled once.
-    """
-
-    global _EMOJI_ALL_REGEXP
+    global _EMOJI_REGEXP
     # Build emoji regexp once
-    if _EMOJI_ALL_REGEXP is None:
+    if _EMOJI_REGEXP is None:
         # Sort emojis by length to make sure multi-character emojis are
         # matched first
         emojis = sorted(unicode_codes.EMOJI_DATA, key=len, reverse=True)
         pattern = u'(' + u'|'.join(re.escape(u) for u in emojis) + u')'
-        _EMOJI_ALL_REGEXP = re.compile(pattern)
-    return _EMOJI_ALL_REGEXP
+        _EMOJI_REGEXP = re.compile(pattern)
+    return _EMOJI_REGEXP
 
-def emoji_lis(string, language='en'):
+
+def emoji_lis(string, language=None):
     """
     Returns the location and emoji in list of dict format.
     >>> emoji.emoji_lis("Hi, I am fine. 😁")
     >>> [{'location': 15, 'emoji': '😁'}]
+    :param language: Parameter is no longer used
     """
     _entities = []
 
-    for match in get_all_emoji_regexp().finditer(string):
+    for match in get_emoji_regexp().finditer(string):
         _entities.append({
             'location': match.start(),
             'emoji': match.group(),
@@ -208,10 +193,12 @@ def emoji_lis(string, language='en'):
     return _entities
 
 
-def distinct_emoji_lis(string, language='en'):
-    """Returns distinct list of emojis from the string."""
+def distinct_emoji_lis(string, language=None):
+    """Returns distinct list of emojis from the string.
+    :param language: Parameter is no longer used
+    """
     distinct_list = list(
-        {e['emoji'] for e in emoji_lis(string, language)}
+        {e['emoji'] for e in emoji_lis(string)}
     )
     return distinct_list
 
@@ -243,7 +230,7 @@ def version(string):
     def f(e, emoji_data):
         version.append(emoji_data['E'])
         return ''
-    replace_emoji(string, replace=f, language='en', version=0.0)
+    replace_emoji(string, replace=f, version=0.0)
     if version:
         return version[0]
     emojize(string, language='en', version=0.0, handle_version=f)
