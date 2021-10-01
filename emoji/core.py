@@ -17,7 +17,7 @@ from emoji import unicode_codes
 __all__ = [
     'emojize', 'demojize', 'get_emoji_regexp',
     'emoji_lis', 'distinct_emoji_lis', 'emoji_count',
-    'replace_emoji', 'is_emoji',
+    'replace_emoji', 'is_emoji', 'version',
 ]
 
 PY2 = sys.version_info[0] == 2
@@ -218,3 +218,30 @@ def emoji_count(string):
 def is_emoji(string):
     """Returns True if the string is an emoji"""
     return string in unicode_codes.EMOJI_DATA
+
+
+def version(string):
+    """ TODO """
+
+    # Try dictionary lookup
+    if string in unicode_codes.EMOJI_DATA:
+        return unicode_codes.EMOJI_DATA[string]['E']
+
+    if string in unicode_codes.EMOJI_UNICODE['en']:
+        emj_code = unicode_codes.EMOJI_UNICODE['en'][string]
+        if emj_code in unicode_codes.EMOJI_DATA:
+            return unicode_codes.EMOJI_DATA[emj_code]['E']
+
+    # Try to find first emoji in string
+    version = []
+    def f(e, n, v):
+        version.append(v)
+        return ''
+    replace_emoji(string, replace=f, language='en', version=0.0)
+    if version:
+        return version[0]
+    emojize(string, language='en', version=0.0, handle_version=f)
+    if version:
+        return version[0]
+
+    raise Exception("No emoji found in string")
