@@ -33,6 +33,8 @@ def emojize(
         delimiters=(_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
         variant=None,
         language='en',
+        version=None,
+        handle_version=None
 ):
     """Replace emoji names in a string with unicode codes.
 
@@ -41,6 +43,8 @@ def emojize(
     :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER
     :param variant: (optional) Choose variation selector between "base"(None), VS-15 ("text_type") and VS-16 ("emoji_type")
     :param language: Choose language of emoji name
+    :param version TODO
+    :param handle_version TODO
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbsup:", use_aliases=True))
         Python is fun 👍
@@ -64,6 +68,14 @@ def emojize(
             emj = unicode_codes.EMOJI_ALIAS_UNICODE_ENGLISH.get(mg, mg)
         else:
             emj = EMOJI_UNICODE.get(mg, mg)
+        if version is not None:
+            if emj in unicode_codes.EMOJI_DATA and unicode_codes.EMOJI_DATA[emj]['E'] > version:
+                if callable(handle_version):
+                    return handle_version(emj, mg, unicode_codes.EMOJI_DATA[emj]['E'])
+                elif handle_version is not None:
+                    return str(handle_version)
+                else:
+                    return ''
         if variant is None:
             return emj
         elif variant == "text_type":
@@ -79,12 +91,16 @@ def demojize(
         use_aliases=False,
         delimiters=(_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
         language='en',
+        version=None,
+        handle_version=None
 ):
     """Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
     :param string: String contains unicode characters. MUST BE UNICODE.
     :param use_aliases: (optional) Return emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
     :param delimiters: (optional) User delimiters other than _DEFAULT_DELIMITER
     :param language: Choose language of emoji name
+    :param version TODO
+    :param handle_version TODO
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍
@@ -98,6 +114,15 @@ def demojize(
     def replace(match):
         codes_dict = unicode_codes.UNICODE_EMOJI_ALIAS_ENGLISH if use_aliases else UNICODE_EMOJI
         val = codes_dict.get(match.group(0), match.group(0))
+        if version is not None:
+            emj = match.group(0)
+            if emj in unicode_codes.EMOJI_DATA and unicode_codes.EMOJI_DATA[emj]['E'] > version:
+                if callable(handle_version):
+                    return handle_version(emj, val, unicode_codes.EMOJI_DATA[emj]['E'])
+                elif handle_version is not None:
+                    return str(handle_version)
+                else:
+                    return ''
         return delimiters[0] + val[1:-1] + delimiters[1]
 
     return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
