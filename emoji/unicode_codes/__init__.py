@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from emoji.unicode_codes.versions import *
+from emoji.unicode_codes.data_dict import *
 
 
 __all__ = [
