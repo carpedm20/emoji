@@ -131,7 +131,7 @@ def demojize(
                     return ''
         return delimiters[0] + val[1:-1] + delimiters[1]
 
-    return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
+    return get_emoji_regexp(language).sub(replace, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
 
 
 def replace_emoji(string, replace='', language='en', version=None):
@@ -142,7 +142,7 @@ def replace_emoji(string, replace='', language='en', version=None):
     """
 
     if version is None:
-        return re.sub(u'\ufe0f', '', (get_all_emoji_regexp().sub(replace, string)))
+        return get_all_emoji_regexp().sub(replace, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
 
     def replace_fct(match):
         emj = match.group(0)
@@ -154,7 +154,7 @@ def replace_emoji(string, replace='', language='en', version=None):
                 return str(replace)
         return match.group(0)
 
-    return get_all_emoji_regexp().sub(replace_fct, string)
+    return get_all_emoji_regexp().sub(replace_fct, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
 
 
 def get_emoji_regexp(language='en'):
