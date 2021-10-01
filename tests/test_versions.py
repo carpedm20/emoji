@@ -14,7 +14,9 @@ def test_emoji_versions_complete_emojize():
         for name in emoji_pack.keys():
             version = []
 
-            def f(e, n, v):
+            def f(e, d):
+                v = d['E']
+                n = d[lang_code]
                 assert n == name
                 assert isinstance(v, (int, float))
                 assert v >= 0.6
@@ -32,7 +34,8 @@ def test_emoji_versions_complete_demojize():
         for name in emoji_pack.keys():
             version = []
 
-            def f(e, n, v):
+            def f(e, d):
+                v = d['E']
                 assert isinstance(v, (int, float))
                 assert v >= 0.6
                 version.append(v)
@@ -44,6 +47,25 @@ def test_emoji_versions_complete_demojize():
                 print(emoji.emojize(name, language=lang_code).encode("unicode-escape").decode("utf-8"))
                 print(emoji.demojize(emoji.emojize(name, language=lang_code), language=lang_code).encode("unicode-escape").decode("utf-8"))
             assert len(version) == 1
+
+
+def test_method_version():
+    # Test method "emoji.version()"
+
+    assert emoji.version(":snake:") == 0.6
+    assert emoji.version(u"\U0001F40D") == 0.6
+
+    assert emoji.version(":brain:") == 5
+    assert emoji.version(u"\U0001F9E0") == 5
+
+    assert emoji.version("prefix :people_hugging: suffix") == 13
+    assert emoji.version(u"prefix \U0001FAC2 suffix") == 13
+
+    assert emoji.version("u':pouring_liquid::people_hugging:") == 14
+    assert emoji.version(u"\U0001FAD7\U0001FAC2") == 14
+
+    with pytest.raises(Exception):
+        emoji.version("test")
 
 
 def test_method_replace_version():
