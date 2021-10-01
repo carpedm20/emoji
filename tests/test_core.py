@@ -34,6 +34,18 @@ def test_emojize_complicated_string():
     expected = emoji.emojize(actual, False)
     assert expected == actual, '%s != %s' % (expected, actual)
 
+def test_emojize_languages():
+    for lang_code, emoji_pack in emoji.EMOJI_UNICODE.items():
+        for name, emj in emoji_pack.items():
+            assert emoji.emojize(name, language=lang_code) == emj
+
+def test_demojize_languages():
+    for lang_code, emoji_pack in emoji.UNICODE_EMOJI.items():
+        for emj, name in emoji_pack.items():
+            assert emoji.demojize(emj, language=lang_code) == name
+
+
+
 
 def test_emojize_invalid_emoji():
     string = '__---___--Invalid__--__-Name'
@@ -68,7 +80,8 @@ def test_demojize_complicated_string():
 def test_emoji_lis():
     assert emoji.emoji_lis('Hi, I am fine. 😁') == [{'location': 15, 'emoji': '😁'}]
     assert emoji.emoji_lis('Hi') == []
-    assert emoji.emoji_lis('Hello 🇫🇷👌') == [{'emoji': '🇫🇷', 'location': 6}, {'emoji': '👌', 'location': 8}]
+    if len('Hello 🇫🇷👌') < 10:  # skip this test on python with UCS-2 as the string length/positions are different
+        assert emoji.emoji_lis('Hello 🇫🇷👌') == [{'emoji': '🇫🇷', 'location': 6}, {'emoji': '👌', 'location': 8}]
 
 
 def test_distinct_emoji_lis():
