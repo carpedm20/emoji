@@ -63,6 +63,7 @@ def extract_emojis(emojis_lines: list, sequences_lines: list) -> dict:
             version_str = separated_line[1]
             emoji_name = (
                 "_".join(separated_name)
+                .removeprefix("flag:_")
                 .replace(":", "")
                 .replace(",", "")
                 .replace("\u201c", "")
