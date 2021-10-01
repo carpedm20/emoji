@@ -5,6 +5,7 @@
 
 from __future__ import unicode_literals
 
+import re
 import emoji
 
 
@@ -45,6 +46,18 @@ def test_demojize_languages():
             assert emoji.demojize(emj, language=lang_code) == name
 
 
+def test_emojize_variant():
+    remove_variant = lambda s: re.sub(u'[\ufe0e\ufe0f]$', '', s)
+
+    assert emoji.emojize(':Taurus:', variant=None) == emoji.EMOJI_UNICODE['en'][':Taurus:']
+    assert emoji.emojize(':Taurus:', variant=None) ==  emoji.emojize(':Taurus:')
+    assert emoji.emojize(':Taurus:', variant='text_type') == remove_variant(emoji.EMOJI_UNICODE['en'][':Taurus:']) + u'\ufe0e'
+    assert emoji.emojize(':Taurus:', variant='emoji_type') == remove_variant(emoji.EMOJI_UNICODE['en'][':Taurus:']) + u'\ufe0f'
+
+    assert emoji.emojize(':admission_tickets:', variant=None) == emoji.EMOJI_UNICODE['en'][':admission_tickets:']
+    assert emoji.emojize(':admission_tickets:', variant=None) ==  emoji.emojize(':admission_tickets:')
+    assert emoji.emojize(':admission_tickets:', variant='text_type') == remove_variant(emoji.EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0e'
+    assert emoji.emojize(':admission_tickets:', variant='emoji_type') == remove_variant(emoji.EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0f'
 
 
 def test_emojize_invalid_emoji():
