@@ -5,6 +5,9 @@
 
 from __future__ import unicode_literals
 
+import sys
+sys.path.append('..')
+
 import re
 import emoji
 
@@ -58,6 +61,23 @@ def test_emojize_variant():
     assert emoji.emojize(':admission_tickets:', variant=None) ==  emoji.emojize(':admission_tickets:')
     assert emoji.emojize(':admission_tickets:', variant='text_type') == remove_variant(emoji.EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0e'
     assert emoji.emojize(':admission_tickets:', variant='emoji_type') == remove_variant(emoji.EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0f'
+
+def test_demojize_removes_variant():
+    # demojize should remove all variant indicators \ufe0e and \ufe0f from the string
+    text = "".join([emoji.emojize(':Taurus:', variant='text_type'),
+           emoji.emojize(':Taurus:', variant='emoji_type'),
+           emoji.emojize(':admission_tickets:', variant='text_type'),
+           emoji.emojize(':admission_tickets:', variant='emoji_type'),
+           emoji.emojize(':alien:', variant='text_type'),
+           emoji.emojize(':alien:', variant='emoji_type'),
+           emoji.emojize(':atom_symbol:', variant='text_type'),
+           emoji.emojize(':atom_symbol:', variant='emoji_type')])
+
+    for lang_code in emoji.UNICODE_EMOJI:
+        result = emoji.demojize(text, language=lang_code)
+        assert '\ufe0e' not in result
+        assert '\ufe0f' not in result
+        print(result)
 
 
 def test_emojize_invalid_emoji():
