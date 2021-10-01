@@ -71,7 +71,7 @@ def emojize(
         if version is not None:
             if emj in unicode_codes.EMOJI_DATA and unicode_codes.EMOJI_DATA[emj]['E'] > version:
                 if callable(handle_version):
-                    return handle_version(emj, mg, unicode_codes.EMOJI_DATA[emj]['E'])
+                    return handle_version(emj, unicode_codes.EMOJI_DATA[emj])
                 elif handle_version is not None:
                     return str(handle_version)
                 else:
@@ -118,7 +118,7 @@ def demojize(
             emj = match.group(0)
             if emj in unicode_codes.EMOJI_DATA and unicode_codes.EMOJI_DATA[emj]['E'] > version:
                 if callable(handle_version):
-                    return handle_version(emj, val, unicode_codes.EMOJI_DATA[emj]['E'])
+                    return handle_version(emj, unicode_codes.EMOJI_DATA[emj])
                 elif handle_version is not None:
                     return str(handle_version)
                 else:
@@ -132,18 +132,18 @@ def replace_emoji(string, replace='', language='en', version=None):
     """Replace unicode emoji in a customizable string.
     # TODO describe parameters
     :param version: Max version, only replace emoji above this version
+    :param language: No longer used
     """
 
     if version is None:
         return re.sub(u'\ufe0f', '', (get_all_emoji_regexp().sub(replace, string)))
 
     def replace_fct(match):
-        val = unicode_codes.UNICODE_EMOJI['en'].get(match.group(0), match.group(0))
         emj = match.group(0)
 
         if emj in unicode_codes.EMOJI_DATA and unicode_codes.EMOJI_DATA[emj]['E'] > version:
             if callable(replace):
-                return replace(emj, val, unicode_codes.EMOJI_DATA[emj]['E'])
+                return replace(emj, unicode_codes.EMOJI_DATA[emj])
             else:
                 return str(replace)
         return match.group(0)
@@ -234,8 +234,8 @@ def version(string):
 
     # Try to find first emoji in string
     version = []
-    def f(e, n, v):
-        version.append(v)
+    def f(e, emoji_data):
+        version.append(emoji_data['E'])
         return ''
     replace_emoji(string, replace=f, language='en', version=0.0)
     if version:
