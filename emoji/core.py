@@ -76,12 +76,18 @@ def emojize(
                     return str(handle_version)
                 else:
                     return ''
-        if variant is None:
+        if variant is None or 'variant' not in unicode_codes.EMOJI_DATA[emj]:
             return emj
-        elif variant == "text_type":
+
+        if emj[-1] == u'\uFE0E' or emj[-1] == u'\uFE0F':
+            # Remove an existing variant
+            emj = emj[0:-1]
+        if variant == "text_type":
             return emj + u'\uFE0E'
         elif variant == "emoji_type":
             return emj + u'\uFE0F'
+        else:
+            raise Exception("Parameter 'variant' must be either None, 'text_type' or 'emoji_type'")
 
     return pattern.sub(replace, string)
 
