@@ -69,6 +69,11 @@ def test_emojize_variant():
     with pytest.raises(Exception):
         emoji.emojize(':admission_tickets:', variant='wrong')
 
+    assert emoji.emojize(":football:", use_aliases=False) == ':football:'
+    assert emoji.emojize(":football:", variant="text_type", use_aliases=False) == ':football:'
+    assert emoji.emojize(":football:", use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE_ENGLISH[':football:']
+    assert emoji.emojize(":football:", variant="emoji_type", use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE_ENGLISH[':football:']
+
 
 def test_demojize_removes_variant():
     # demojize should remove all variant indicators \ufe0e and \ufe0f from the string
@@ -97,11 +102,16 @@ def test_alias():
     # When use_aliases=False aliases should be passed through untouched
     assert emoji.emojize(':soccer:', use_aliases=False) == ':soccer:'
     assert emoji.emojize(':soccer:', use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE_ENGLISH[':soccer:']
+    assert emoji.emojize(':football:', use_aliases=False) == ':football:'
+    assert emoji.emojize(':football:', use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE_ENGLISH[':football:']
 
 
 def test_invalid_alias():
     # Invalid aliases should be passed through untouched
     assert emoji.emojize(':tester:', use_aliases=True) == ':tester:'
+    assert emoji.emojize(':footbal:', use_aliases=True) == ':footbal:'
+    assert emoji.emojize(':socer:', use_aliases=True) == ':socer:'
+    emoji.emojize(':socer:', use_aliases=True, variant="text_type") == ':socer:'
 
 
 def test_demojize_name_only():

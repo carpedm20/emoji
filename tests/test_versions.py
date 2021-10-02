@@ -64,8 +64,13 @@ def test_method_version():
     assert emoji.version("u':pouring_liquid::people_hugging:") == 14
     assert emoji.version(u"\U0001FAD7\U0001FAC2") == 14
 
+    assert emoji.emojize(':123:', version=5, variant="text_type") == ':123:'
+
     with pytest.raises(Exception):
         emoji.version("test")
+
+    with pytest.raises(Exception):
+        emoji.version("u':snak:")
 
 
 def test_method_replace_version():
