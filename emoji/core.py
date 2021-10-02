@@ -64,9 +64,13 @@ def emojize(
             delimiters[1], _DEFAULT_DELIMITER
         )
         if use_aliases:
-            emj = unicode_codes.EMOJI_ALIAS_UNICODE_ENGLISH.get(mg, mg)
+            emj = unicode_codes.EMOJI_ALIAS_UNICODE_ENGLISH.get(mg)
         else:
-            emj = EMOJI_UNICODE.get(mg, mg)
+            emj = EMOJI_UNICODE.get(mg)
+
+        if emj is None:
+            return mg
+
         if version is not None:
             if emj in unicode_codes.EMOJI_DATA and unicode_codes.EMOJI_DATA[emj]['E'] > version:
                 if callable(handle_version):
@@ -75,6 +79,7 @@ def emojize(
                     return str(handle_version)
                 else:
                     return ''
+
         if variant is None or 'variant' not in unicode_codes.EMOJI_DATA[emj]:
             return emj
 
@@ -119,7 +124,7 @@ def demojize(
 
     def replace(match):
         emj = match.group(0)
-        val = codes_dict.get(emj, None)
+        val = codes_dict.get(emj)
         if val is None:
             return emj
         if version is not None:
