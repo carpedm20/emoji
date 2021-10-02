@@ -60,13 +60,13 @@ def test_emojize_variant():
     assert emoji.emojize(':admission_tickets:', variant='text_type') == remove_variant(emoji.EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0e'
     assert emoji.emojize(':admission_tickets:', variant='emoji_type') == remove_variant(emoji.EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0f'
 
-    with pytest.raises(Exception):
+    with pytest.raises(ValueError):
         emoji.emojize(':admission_tickets:', variant=False)
 
-    with pytest.raises(Exception):
+    with pytest.raises(ValueError):
         emoji.emojize(':admission_tickets:', variant=True)
 
-    with pytest.raises(Exception):
+    with pytest.raises(ValueError):
         emoji.emojize(':admission_tickets:', variant='wrong')
 
     assert emoji.emojize(":football:", use_aliases=False) == ':football:'
@@ -149,10 +149,15 @@ def test_emoji_count():
 
 
 def test_replace_emoji():
-    assert emoji.replace_emoji('Hi, I am fine. 😁') == 'Hi, I am fine. '
+    assert emoji.replace_emoji(u'Hi, I am fine. 😁') == 'Hi, I am fine. '
     assert emoji.replace_emoji('Hi') == 'Hi'
     assert emoji.replace_emoji('Hello 🇫🇷👌') == 'Hello '
     assert emoji.replace_emoji('Hello 🇫🇷👌', 'x') == 'Hello xx'
+
+    def replace(emj, data):
+        assert emj in ["🇫🇷", "👌"]
+        return 'x'
+    assert emoji.replace_emoji('Hello 🇫🇷👌', replace) == 'Hello xx'
 
 
 def test_is_emoji():
