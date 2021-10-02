@@ -42,8 +42,22 @@ def emojize(
     :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER
     :param variant: (optional) Choose variation selector between "base"(None), VS-15 ("text_type") and VS-16 ("emoji_type")
     :param language: Choose language of emoji name
-    :param version TODO
-    :param handle_version TODO
+    :param version: (optional) Max version. If set to an Emoji Version,
+        all emoji above this version will be ignored.
+    :param handle_version: (optional) Replace the emoji above ``version``
+        instead of ignoring it. handle_version can be either a string or a
+        callable; If it is a callable, it's passed the unicode emoji and the
+        data dict from emoji.EMOJI_DATA and must return a replacement string
+        to be used. handle_version(emj: str, data: dict) -> str
+        data = {
+            'en' : ':airplane:',
+            'status' : fully_qualified,
+            'E' : 0.6,
+            'de': u':flugzeug:',
+            'es': u':avión:',
+            ...
+        }
+    :raises ValueError: if ``variant`` is neither None, 'text_type' or 'emoji_type'
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbsup:", use_aliases=True))
         Python is fun 👍
@@ -91,7 +105,7 @@ def emojize(
         elif variant == "emoji_type":
             return emj + u'\uFE0F'
         else:
-            raise Exception("Parameter 'variant' must be either None, 'text_type' or 'emoji_type'")
+            raise ValueError("Parameter 'variant' must be either None, 'text_type' or 'emoji_type'")
 
     return pattern.sub(replace, string)
 
@@ -108,9 +122,22 @@ def demojize(
     :param string: String contains unicode characters. MUST BE UNICODE.
     :param use_aliases: (optional) Return emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
     :param delimiters: (optional) User delimiters other than _DEFAULT_DELIMITER
-    :param language: Choose language of emoji name
-    :param version TODO
-    :param handle_version TODO
+    :param language: (optional) Choose language of emoji name
+    :param version: (optional) Max version. If set to an Emoji Version,
+        all emoji above this version will be removed.
+    :param handle_version: (optional) Replace the emoji above ``version``
+        instead of removing it. handle_version can be either a string or a
+        callable; If it is a callable, it's passed the unicode emoji and the
+        data dict from emoji.EMOJI_DATA and must return a replacement string
+        to be used. handle_version(emj: str, data: dict) -> str
+        data = {
+            'en' : ':airplane:',
+            'status' : fully_qualified,
+            'E' : 0.6,
+            'de': u':flugzeug:',
+            'es': u':avión:',
+            ...
+        }
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍
@@ -140,14 +167,19 @@ def demojize(
     return get_emoji_regexp().sub(replace, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
 
 
-def replace_emoji(string, replace='', version=None):
+def replace_emoji(string, replace='', language=None, version=-1):
     """Replace unicode emoji in a customizable string.
-    # TODO describe parameters
-    :param version: Max version, only replace emoji above this version
-    :param language: Parameter is no longer used
+    :param string: String contains unicode characters. MUST BE UNICODE.
+    :param replace: (optional) replace can be either a string or a callable;
+        If it is a callable, it's passed the unicode emoji and the data dict from
+        emoji.EMOJI_DATA and must return a replacement string to be used.
+        replace(str, dict) -> str
+    :param version: (optional) Max version. If set to an Emoji Version,
+        only emoji above this version will be replaced.
+    :param language: (optional) Parameter is no longer used
     """
 
-    if version is None:
+    if version <= 0 and not callable(replace):
         return get_emoji_regexp().sub(replace, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
 
     def replace_fct(match):
@@ -158,7 +190,7 @@ def replace_emoji(string, replace='', version=None):
                 return replace(emj, unicode_codes.EMOJI_DATA[emj])
             else:
                 return str(replace)
-        return match.group(0)
+        return emj
 
     return get_emoji_regexp().sub(replace_fct, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
 
@@ -166,7 +198,7 @@ def replace_emoji(string, replace='', version=None):
 def get_emoji_regexp(language=None):
     """Returns compiled regular expression that matches all emojis defined in
     ``emoji.EMOJI_DATA``. The regular expression is only compiled once.
-    :param language: Parameter is no longer used
+    :param language: (optional) Parameter is no longer used
     """
 
     global _EMOJI_REGEXP
@@ -185,7 +217,7 @@ def emoji_lis(string, language=None):
     Returns the location and emoji in list of dict format.
     >>> emoji.emoji_lis("Hi, I am fine. 😁")
     >>> [{'location': 15, 'emoji': '😁'}]
-    :param language: Parameter is no longer used
+    :param language: (optional) Parameter is no longer used
     """
     _entities = []
 
@@ -200,7 +232,7 @@ def emoji_lis(string, language=None):
 
 def distinct_emoji_lis(string, language=None):
     """Returns distinct list of emojis from the string.
-    :param language: Parameter is no longer used
+    :param language: (optional) Parameter is no longer used
     """
     distinct_list = list(
         {e['emoji'] for e in emoji_lis(string)}
@@ -219,7 +251,15 @@ def is_emoji(string):
 
 
 def version(string):
-    """ TODO """
+    """Returns the Emoji Version of the emoji.
+    See http://www.unicode.org/reports/tr51/#Versioning for more information.
+    >>> emoji.version("😁")
+    >>> 0.6
+    >>> emoji.version(":butterfly:")
+    >>> 3
+    :param string: An emoji or a text containig an emoji
+    :raises ValueError: if ``string`` does not contain an emoji
+    """
 
     # Try dictionary lookup
     if string in unicode_codes.EMOJI_DATA:
@@ -235,11 +275,15 @@ def version(string):
     def f(e, emoji_data):
         version.append(emoji_data['E'])
         return ''
-    replace_emoji(string, replace=f, version=0.0)
+    replace_emoji(string, replace=f, version=-1)
     if version:
         return version[0]
-    emojize(string, language='en', version=0.0, handle_version=f)
+    emojize(string, use_aliases=True, version=-1, handle_version=f)
     if version:
         return version[0]
+    for lang_code in unicode_codes.EMOJI_UNICODE:
+        emojize(string, language=lang_code, version=-1, handle_version=f)
+        if version:
+            return version[0]
 
-    raise Exception("No emoji found in string")
+    raise ValueError("No emoji found in string")
