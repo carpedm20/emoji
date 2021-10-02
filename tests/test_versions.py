@@ -57,19 +57,24 @@ def test_method_version():
 
     assert emoji.version(":brain:") == 5
     assert emoji.version(u"\U0001F9E0") == 5
+    assert emoji.version(":cerebro:") == 5
 
     assert emoji.version("prefix :people_hugging: suffix") == 13
     assert emoji.version(u"prefix \U0001FAC2 suffix") == 13
+
+    assert emoji.version(u"\U0001F611") == 1
+    assert emoji.version(":expressionless_face:") == 1
+    assert emoji.version(":expressionless:") == 1
 
     assert emoji.version("u':pouring_liquid::people_hugging:") == 14
     assert emoji.version(u"\U0001FAD7\U0001FAC2") == 14
 
     assert emoji.emojize(':123:', version=5, variant="text_type") == ':123:'
 
-    with pytest.raises(Exception):
+    with pytest.raises(ValueError):
         emoji.version("test")
 
-    with pytest.raises(Exception):
+    with pytest.raises(ValueError):
         emoji.version("u':snak:")
 
 
@@ -78,4 +83,13 @@ def test_method_replace_version():
 
     assert emoji.replace_emoji(u"\U0001F40D\U0001F9E0\U0001FAC2\U0001FAD7\U0001FAC2", version=6) == u"\U0001F40D\U0001F9E0"
 
-    # TODO
+    assert emoji.replace_emoji(u'Hi, I am fine. 😁', version=0) == u'Hi, I am fine. '
+    assert emoji.replace_emoji(u'Hi', version=0) == u'Hi'
+    assert emoji.replace_emoji(u'Hello 🇫🇷👌', version=0) == u'Hello '
+    assert emoji.replace_emoji(u'Hello 🇫🇷👌', u'x', version=0,) == u'Hello xx'
+    assert emoji.replace_emoji(u'Hello 🇫🇷👌', u'x', version=1,) == u'Hello 🇫🇷👌'
+
+    def replace(emj, data):
+        assert emj in [u"🇫🇷", u"👌"]
+        return u'x'
+    assert emoji.replace_emoji(u'Hello 🇫🇷👌', replace, version=0.1) == u'Hello xx'
