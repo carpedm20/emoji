@@ -90,7 +90,6 @@ def test_demojize_removes_variant():
         result = emoji.demojize(text, language=lang_code)
         assert '\ufe0e' not in result
         assert '\ufe0f' not in result
-        print(result)
 
 
 def test_emojize_invalid_emoji():
