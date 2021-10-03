@@ -157,14 +157,14 @@ def extract_names(xml, lang):
                 .replace(":", "")
                 .replace(",", "")
                 .replace('"', "")
-                .replace("\u201c", "")
-                .replace("\u201d", "")
                 .replace("\u201e", "")
                 .replace("\u201f", "")
                 .replace("\u229b", "")
                 .strip()
                 .replace(" ", "_")
             ) + ":"
+            if lang == "de":
+                emoji_name = emoji_name.replace("\u201c", "").replace("\u201d", "")
 
             if emj in data and data[emj] != emoji_name:
                 print(
@@ -200,11 +200,18 @@ if __name__ == "__main__":
     # Find latest release tag at https://cldr.unicode.org/index/downloads
     github_tag = 'release-39'
     languages = {
+        # Update names in other languages:
         'de': extract_names(get_language_data_from_url(github_tag, 'de'), 'de'),
         'es': extract_names(get_language_data_from_url(github_tag, 'es'), 'es'),
         'fr': extract_names(get_language_data_from_url(github_tag, 'fr'), 'fr'),
         'pt': extract_names(get_language_data_from_url(github_tag, 'pt'), 'pt'),
         'it': extract_names(get_language_data_from_url(github_tag, 'it'), 'it'),
+        # Do not update names in other languages:
+        #'de': emoji_pkg.UNICODE_EMOJI['de'],
+        #'es': emoji_pkg.UNICODE_EMOJI['es'],
+        #'fr': emoji_pkg.UNICODE_EMOJI['fr'],
+        #'pt': emoji_pkg.UNICODE_EMOJI['pt'],
+        #'it': emoji_pkg.UNICODE_EMOJI['it'],
     }
     github_alias = get_emoji_from_github_api()
 
@@ -237,7 +244,7 @@ if __name__ == "__main__":
             alias_name = emoji_pkg.UNICODE_EMOJI_ALIAS_ENGLISH[emj][1:-1]
         elif emj in github_alias:
             if github_alias[emj] != v["en"]:
-                new_aliases.append(f"# alias NEW {github_alias[emj]} FOR {emj} \t{code}")
+                new_aliases.append(f"# alias NEW {github_alias[emj]} FOR {code}")
             alias_name = github_alias[emj]
         elif 'variant' in v:
             alternative = re.sub(r"\\U0000FE0[EF]$", "", code)
@@ -247,7 +254,7 @@ if __name__ == "__main__":
             elif emj_no_variant in github_alias:
                 alias_name = github_alias[emj_no_variant]
                 if github_alias[emj_no_variant] != v["en"]:
-                    new_aliases.append(f"# alias NEW {github_alias[emj_no_variant]} FOR {emj} \t{code}")
+                    new_aliases.append(f"# alias NEW {github_alias[emj_no_variant]} FOR {code}")
 
         alias = ",\n        'alias' : u':%s:'" % (alias_name, ) if alias_name and alias_name != v["en"] else ''
         variant = ",\n        'variant': True" if 'variant' in v else ''

@@ -99,6 +99,7 @@ EMOJI_DATA = {
         'en' : u':A_button_(blood_type):',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':a:',
         'variant': True,
         'de': u':großbuchstabe_a_in_rotem_quadrat:',
         'es': u':grupo_sanguíneo_a:',
@@ -333,6 +334,7 @@ EMOJI_DATA = {
         'en' : u':B_button_(blood_type):',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':b:',
         'variant': True,
         'de': u':großbuchstabe_b_in_rotem_quadrat:',
         'es': u':grupo_sanguíneo_b:',
@@ -1594,8 +1596,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_akzeptieren:',
         'es': u':ideograma_japonés_para_aceptable:',
         'fr': u':bouton_accepter_en_japonais:',
-        'pt': u':botão_japonês_de_aceitável:',
-        'it': u':ideogramma_giapponese_di_accettabile:'
+        'pt': u':botão_japonês_de_“aceitável”:',
+        'it': u':ideogramma_giapponese_di_“accettabile”:'
     },
     u'\U0001F238': {
         'en' : u':Japanese_application_button:',
@@ -1605,8 +1607,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_anwenden:',
         'es': u':ideograma_japonés_para_aplicación:',
         'fr': u':bouton_application_en_japonais:',
-        'pt': u':botão_japonês_de_aplicação:',
-        'it': u':ideogramma_giapponese_di_candidatura:'
+        'pt': u':botão_japonês_de_“aplicação”:',
+        'it': u':ideogramma_giapponese_di_“candidatura”:'
     },
     u'\U0001F250': {
         'en' : u':Japanese_bargain_button:',
@@ -1616,8 +1618,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_schnäppchen:',
         'es': u':ideograma_japonés_para_ganga:',
         'fr': u':bouton_bonne_affaire_en_japonais:',
-        'pt': u':botão_japonês_de_barganha:',
-        'it': u':ideogramma_giapponese_di_occasione:'
+        'pt': u':botão_japonês_de_“barganha”:',
+        'it': u':ideogramma_giapponese_di_“occasione”:'
     },
     u'\U0001F3EF': {
         'en' : u':Japanese_castle:',
@@ -1634,12 +1636,13 @@ EMOJI_DATA = {
         'en' : u':Japanese_congratulations_button:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':congratulations:',
         'variant': True,
         'de': u':schriftzeichen_für_gratulation:',
         'es': u':ideograma_japonés_para_enhorabuena:',
         'fr': u':bouton_félicitations_en_japonais:',
-        'pt': u':botão_japonês_de_parabéns:',
-        'it': u':ideogramma_giapponese_di_congratulazioni:'
+        'pt': u':botão_japonês_de_“parabéns”:',
+        'it': u':ideogramma_giapponese_di_“congratulazioni”:'
     },
     u'\U00003297': {
         'en' : u':Japanese_congratulations_button:',
@@ -1650,8 +1653,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_gratulation:',
         'es': u':ideograma_japonés_para_enhorabuena:',
         'fr': u':bouton_félicitations_en_japonais:',
-        'pt': u':botão_japonês_de_parabéns:',
-        'it': u':ideogramma_giapponese_di_congratulazioni:'
+        'pt': u':botão_japonês_de_“parabéns”:',
+        'it': u':ideogramma_giapponese_di_“congratulazioni”:'
     },
     u'\U0001F239': {
         'en' : u':Japanese_discount_button:',
@@ -1661,8 +1664,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_rabatt:',
         'es': u':ideograma_japonés_para_descuento:',
         'fr': u':bouton_réduction_en_japonais:',
-        'pt': u':botão_japonês_de_desconto:',
-        'it': u':ideogramma_giapponese_di_sconto:'
+        'pt': u':botão_japonês_de_“desconto”:',
+        'it': u':ideogramma_giapponese_di_“sconto”:'
     },
     u'\U0001F38E': {
         'en' : u':Japanese_dolls:',
@@ -1684,8 +1687,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_gratis:',
         'es': u':ideograma_japonés_para_gratis:',
         'fr': u':bouton_gratuit_en_japonais:',
-        'pt': u':botão_japonês_de_gratuito:',
-        'it': u':ideogramma_giapponese_di_gratis:'
+        'pt': u':botão_japonês_de_“gratuito”:',
+        'it': u':ideogramma_giapponese_di_“gratis”:'
     },
     u'\U0001F201': {
         'en' : u':Japanese_here_button:',
@@ -1695,19 +1698,20 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_koko:',
         'es': u':ideograma_japonés_para_aquí:',
         'fr': u':bouton_ici_en_japonais:',
-        'pt': u':botão_japonês_de_aqui:',
-        'it': u':ideogramma_giapponese_per_qui:'
+        'pt': u':botão_japonês_de_“aqui”:',
+        'it': u':ideogramma_giapponese_per_“qui”:'
     },
     u'\U0001F237\U0000FE0F': {
         'en' : u':Japanese_monthly_amount_button:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':u6708:',
         'variant': True,
         'de': u':schriftzeichen_für_monatsbetrag:',
         'es': u':ideograma_japonés_para_cantidad_mensual:',
         'fr': u':bouton_montant_mensuel_en_japonais:',
-        'pt': u':botão_japonês_de_quantidade_mensal:',
-        'it': u':ideogramma_giapponese_di_importo_mensile:'
+        'pt': u':botão_japonês_de_“quantidade_mensal”:',
+        'it': u':ideogramma_giapponese_di_“importo_mensile”:'
     },
     u'\U0001F237': {
         'en' : u':Japanese_monthly_amount_button:',
@@ -1718,8 +1722,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_monatsbetrag:',
         'es': u':ideograma_japonés_para_cantidad_mensual:',
         'fr': u':bouton_montant_mensuel_en_japonais:',
-        'pt': u':botão_japonês_de_quantidade_mensal:',
-        'it': u':ideogramma_giapponese_di_importo_mensile:'
+        'pt': u':botão_japonês_de_“quantidade_mensal”:',
+        'it': u':ideogramma_giapponese_di_“importo_mensile”:'
     },
     u'\U0001F235': {
         'en' : u':Japanese_no_vacancy_button:',
@@ -1729,8 +1733,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_kein_zimmer_frei:',
         'es': u':ideograma_japonés_para_completo:',
         'fr': u':bouton_complet_en_japonais:',
-        'pt': u':botão_japonês_de_sem_vagas:',
-        'it': u':ideogramma_giapponese_di_nessun_posto_libero:'
+        'pt': u':botão_japonês_de_“sem_vagas”:',
+        'it': u':ideogramma_giapponese_di_“nessun_posto_libero”:'
     },
     u'\U0001F236': {
         'en' : u':Japanese_not_free_of_charge_button:',
@@ -1740,8 +1744,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_nicht_gratis:',
         'es': u':ideograma_japonés_para_de_pago:',
         'fr': u':bouton_pas_gratuit_en_japonais:',
-        'pt': u':botão_japonês_de_não_gratuito:',
-        'it': u':ideogramma_giapponese_di_a_pagamento:'
+        'pt': u':botão_japonês_de_“não_gratuito”:',
+        'it': u':ideogramma_giapponese_di_“a_pagamento”:'
     },
     u'\U0001F23A': {
         'en' : u':Japanese_open_for_business_button:',
@@ -1751,8 +1755,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_geöffnet:',
         'es': u':ideograma_japonés_para_abierto:',
         'fr': u':bouton_ouvert_pour_affaires_en_japonais:',
-        'pt': u':botão_japonês_de_aberto_para_negócios:',
-        'it': u':ideogramma_giapponese_di_aperto_al_pubblico:'
+        'pt': u':botão_japonês_de_“aberto_para_negócios”:',
+        'it': u':ideogramma_giapponese_di_“aperto_al_pubblico”:'
     },
     u'\U0001F234': {
         'en' : u':Japanese_passing_grade_button:',
@@ -1762,8 +1766,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_note_zum_bestehen:',
         'es': u':ideograma_japonés_para_aprobado:',
         'fr': u':bouton_note_pour_réussir_en_japonais:',
-        'pt': u':botão_japonês_de_nota_mínima:',
-        'it': u':ideogramma_giapponese_di_voto_di_sufficienza:'
+        'pt': u':botão_japonês_de_“nota_mínima”:',
+        'it': u':ideogramma_giapponese_di_“voto_di_sufficienza”:'
     },
     u'\U0001F3E3': {
         'en' : u':Japanese_post_office:',
@@ -1784,8 +1788,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_verbieten:',
         'es': u':ideograma_japonés_para_prohibido:',
         'fr': u':bouton_interdit_en_japonais:',
-        'pt': u':botão_japonês_de_proibido:',
-        'it': u':ideogramma_giapponese_di_proibito:'
+        'pt': u':botão_japonês_de_“proibido”:',
+        'it': u':ideogramma_giapponese_di_“proibito”:'
     },
     u'\U0001F22F': {
         'en' : u':Japanese_reserved_button:',
@@ -1796,19 +1800,20 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_reserviert:',
         'es': u':ideograma_japonés_para_reservado:',
         'fr': u':bouton_réservé_en_japonais:',
-        'pt': u':botão_japonês_de_reservado:',
-        'it': u':ideogramma_giapponese_di_riservato:'
+        'pt': u':botão_japonês_de_“reservado”:',
+        'it': u':ideogramma_giapponese_di_“riservato”:'
     },
     u'\U00003299\U0000FE0F': {
         'en' : u':Japanese_secret_button:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':secret:',
         'variant': True,
         'de': u':schriftzeichen_für_geheimnis:',
         'es': u':ideograma_japonés_para_secreto:',
         'fr': u':bouton_secret_en_japonais:',
-        'pt': u':botão_japonês_de_segredo:',
-        'it': u':ideogramma_giapponese_di_segreto:'
+        'pt': u':botão_japonês_de_“segredo”:',
+        'it': u':ideogramma_giapponese_di_“segreto”:'
     },
     u'\U00003299': {
         'en' : u':Japanese_secret_button:',
@@ -1819,19 +1824,20 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_geheimnis:',
         'es': u':ideograma_japonés_para_secreto:',
         'fr': u':bouton_secret_en_japonais:',
-        'pt': u':botão_japonês_de_segredo:',
-        'it': u':ideogramma_giapponese_di_segreto:'
+        'pt': u':botão_japonês_de_“segredo”:',
+        'it': u':ideogramma_giapponese_di_“segreto”:'
     },
     u'\U0001F202\U0000FE0F': {
         'en' : u':Japanese_service_charge_button:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':sa:',
         'variant': True,
         'de': u':schriftzeichen_sa:',
         'es': u':ideograma_japonés_para_de_cortesía:',
         'fr': u':bouton_frais_de_service_en_japonais:',
-        'pt': u':botão_japonês_de_taxa_de_serviço:',
-        'it': u':ideogramma_giapponese_di_costo_del_servizio:'
+        'pt': u':botão_japonês_de_“taxa_de_serviço”:',
+        'it': u':ideogramma_giapponese_di_“costo_del_servizio”:'
     },
     u'\U0001F202': {
         'en' : u':Japanese_service_charge_button:',
@@ -1842,8 +1848,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_sa:',
         'es': u':ideograma_japonés_para_de_cortesía:',
         'fr': u':bouton_frais_de_service_en_japonais:',
-        'pt': u':botão_japonês_de_taxa_de_serviço:',
-        'it': u':ideogramma_giapponese_di_costo_del_servizio:'
+        'pt': u':botão_japonês_de_“taxa_de_serviço”:',
+        'it': u':ideogramma_giapponese_di_“costo_del_servizio”:'
     },
     u'\U0001F530': {
         'en' : u':Japanese_symbol_for_beginner:',
@@ -1854,7 +1860,7 @@ EMOJI_DATA = {
         'es': u':símbolo_japonés_para_principiante:',
         'fr': u':symbole_japonais_de_débutant:',
         'pt': u':símbolo_japonês_de_principiante:',
-        'it': u':ideogramma_giapponese_di_principiante:'
+        'it': u':ideogramma_giapponese_di_“principiante”:'
     },
     u'\U0001F233': {
         'en' : u':Japanese_vacancy_button:',
@@ -1864,8 +1870,8 @@ EMOJI_DATA = {
         'de': u':schriftzeichen_für_zimmer_frei:',
         'es': u':ideograma_japonés_para_vacante:',
         'fr': u':bouton_chambres_disponibles_en_japonais:',
-        'pt': u':botão_japonês_de_vago:',
-        'it': u':ideogramma_giapponese_di_posto_libero:'
+        'pt': u':botão_japonês_de_“vago”:',
+        'it': u':ideogramma_giapponese_di_“posto_libero”:'
     },
     u'\U0001F1EF\U0001F1EA': {
         'en' : u':Jersey:',
@@ -2654,6 +2660,7 @@ EMOJI_DATA = {
         'en' : u':O_button_(blood_type):',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':o2:',
         'variant': True,
         'de': u':großbuchstabe_o_in_rotem_quadrat:',
         'es': u':grupo_sanguíneo_tipo_o:',
@@ -2699,6 +2706,7 @@ EMOJI_DATA = {
         'en' : u':P_button:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':parking:',
         'variant': True,
         'de': u':großbuchstabe_p_in_blauem_quadrat:',
         'es': u':aparcamiento:',
@@ -3742,7 +3750,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'alias' : u':vs:',
-        'de': u':schriftzug_vs_in_orangem_quadrat:',
+        'de': u':großbuchstaben_vs_in_orangefarbenem_quadrat:',
         'es': u':botón_vs:',
         'fr': u':bouton_vs:',
         'pt': u':botão_vs:',
@@ -4848,6 +4856,7 @@ EMOJI_DATA = {
         'en' : u':balance_scale:',
         'status' : fully_qualified,
         'E' : 1,
+        'alias' : u':scales:',
         'variant': True,
         'de': u':waage:',
         'es': u':balanza:',
@@ -5253,6 +5262,7 @@ EMOJI_DATA = {
         'en' : u':biohazard:',
         'status' : fully_qualified,
         'E' : 1,
+        'alias' : u':biohazard_sign:',
         'variant': True,
         'de': u':biogefährdung:',
         'es': u':riesgo_biológico:',
@@ -5324,7 +5334,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'variant': True,
-        'de': u':schwarzer_punkt:',
+        'de': u':schwarzer_kreis:',
         'es': u':círculo_negro:',
         'fr': u':disque_noir:',
         'pt': u':círculo_preto:',
@@ -5485,7 +5495,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'alias' : u':large_blue_circle:',
-        'de': u':blauer_punkt:',
+        'de': u':blauer_kreis:',
         'es': u':círculo_azul_grande:',
         'fr': u':disque_bleu:',
         'pt': u':círculo_azul:',
@@ -5505,7 +5515,7 @@ EMOJI_DATA = {
         'en' : u':blue_square:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':blaues_quadrat:',
+        'de': u':blaues_viereck:',
         'es': u':cuadrado_azul:',
         'fr': u':carré_bleu:',
         'pt': u':quadrado_azul:',
@@ -5838,7 +5848,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 1,
         'alias' : u':high_brightness:',
-        'de': u':heller-taste:',
+        'de': u':taste_heller:',
         'es': u':brillo_alto:',
         'fr': u':luminosité_élevée:',
         'pt': u':botão_de_aumentar_brilho:',
@@ -5850,7 +5860,7 @@ EMOJI_DATA = {
         'E' : 5,
         'de': u':brokkoli:',
         'es': u':brócoli:',
-        'fr': u':brocoli:',
+        'fr': u':broccoli:',
         'pt': u':brócolis:',
         'it': u':broccoli:'
     },
@@ -5878,7 +5888,7 @@ EMOJI_DATA = {
         'en' : u':brown_circle:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':brauner_punkt:',
+        'de': u':brauner_kreis:',
         'es': u':círculo_marrón:',
         'fr': u':disque_marron:',
         'pt': u':círculo_marrom:',
@@ -5898,7 +5908,7 @@ EMOJI_DATA = {
         'en' : u':brown_square:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':braunes_quadrat:',
+        'de': u':braunes_viereck:',
         'es': u':cuadrado_marrón:',
         'fr': u':carré_marron:',
         'pt': u':quadrado_marrom:',
@@ -6278,7 +6288,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.7,
         'variant': True,
-        'de': u':karteireiter:',
+        'de': u':karteibahnen:',
         'es': u':separador_de_fichas:',
         'fr': u':intercalaires:',
         'pt': u':divisores_de_pastas:',
@@ -6289,7 +6299,7 @@ EMOJI_DATA = {
         'status' : unqualified,
         'E' : 0.7,
         'variant': True,
-        'de': u':karteireiter:',
+        'de': u':karteibahnen:',
         'es': u':separador_de_fichas:',
         'fr': u':intercalaires:',
         'pt': u':divisores_de_pastas:',
@@ -6450,7 +6460,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'alias' : u':chart:',
-        'de': u':steigende_kurve_mit_yen-zeichen:',
+        'de': u':steigender_trend_mit_yen-zeichen:',
         'es': u':mercado_al_alza:',
         'fr': u':courbe_avec_yen_en_hausse:',
         'pt': u':gráfico_subindo_com_iene:',
@@ -6460,8 +6470,9 @@ EMOJI_DATA = {
         'en' : u':check_box_with_check:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':ballot_box_with_check:',
         'variant': True,
-        'de': u':abgehaktes_kästchen:',
+        'de': u':abstimmungsfeld_mit_häkchen:',
         'es': u':casilla_con_marca_de_verificación:',
         'fr': u':case_cochée:',
         'pt': u':caixa_de_seleção_marcada_com_tique:',
@@ -6473,7 +6484,7 @@ EMOJI_DATA = {
         'E' : 0.6,
         'alias' : u':ballot_box_with_check:',
         'variant': True,
-        'de': u':abgehaktes_kästchen:',
+        'de': u':abstimmungsfeld_mit_häkchen:',
         'es': u':casilla_con_marca_de_verificación:',
         'fr': u':case_cochée:',
         'pt': u':caixa_de_seleção_marcada_com_tique:',
@@ -6483,12 +6494,13 @@ EMOJI_DATA = {
         'en' : u':check_mark:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':heavy_check_mark:',
         'variant': True,
         'de': u':kräftiges_häkchen:',
         'es': u':marca_de_verificación:',
         'fr': u':coche:',
         'pt': u':marca_de_seleção:',
-        'it': u':segno_di_spunta:'
+        'it': u':segno_di_spunta_nero:'
     },
     u'\U00002714': {
         'en' : u':check_mark:',
@@ -6500,7 +6512,7 @@ EMOJI_DATA = {
         'es': u':marca_de_verificación:',
         'fr': u':coche:',
         'pt': u':marca_de_seleção:',
-        'it': u':segno_di_spunta:'
+        'it': u':segno_di_spunta_nero:'
     },
     u'\U00002705': {
         'en' : u':check_mark_button:',
@@ -6511,7 +6523,7 @@ EMOJI_DATA = {
         'es': u':botón_de_marca_de_verificación:',
         'fr': u':bouton_coché:',
         'pt': u':marca_de_seleção_branca:',
-        'it': u':pulsante_segno_di_spunta:'
+        'it': u':segno_di_spunta:'
     },
     u'\U0001F9C0': {
         'en' : u':cheese_wedge:',
@@ -6744,6 +6756,7 @@ EMOJI_DATA = {
         'en' : u':circled_M:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':m:',
         'variant': True,
         'de': u':buchstabe_m_in_kreis:',
         'es': u':m_en_círculo:',
@@ -6810,6 +6823,7 @@ EMOJI_DATA = {
         'en' : u':clamp:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':compression:',
         'variant': True,
         'de': u':schraubzwinge:',
         'es': u':tornillo_de_banco:',
@@ -6950,7 +6964,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'variant': True,
-        'de': u':klemmbrett:',
+        'de': u':zwischenablage:',
         'es': u':portapapeles:',
         'fr': u':porte-bloc:',
         'pt': u':prancheta:',
@@ -7059,6 +7073,7 @@ EMOJI_DATA = {
         'en' : u':cloud_with_lightning_and_rain:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':thunder_cloud_and_rain:',
         'variant': True,
         'de': u':wolke_mit_blitz_und_regen:',
         'es': u':nube_con_rayo_y_lluvia:',
@@ -7136,6 +7151,7 @@ EMOJI_DATA = {
         'en' : u':club_suit:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':clubs:',
         'variant': True,
         'de': u':kreuz:',
         'es': u':palo_de_tréboles:',
@@ -7308,6 +7324,7 @@ EMOJI_DATA = {
         'en' : u':computer_mouse:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':three_button_mouse:',
         'variant': True,
         'de': u':computermaus:',
         'es': u':ratón_de_ordenador:',
@@ -7363,7 +7380,7 @@ EMOJI_DATA = {
         'en' : u':construction:',
         'status' : fully_qualified,
         'E' : 0.6,
-        'de': u':baustellenabsperrung:',
+        'de': u':baustellenschild:',
         'es': u':obras:',
         'fr': u':travaux:',
         'pt': u':em_construção:',
@@ -7455,7 +7472,7 @@ EMOJI_DATA = {
         'en' : u':convenience_store:',
         'status' : fully_qualified,
         'E' : 0.6,
-        'de': u':minimarkt:',
+        'de': u':bedarfsartikelgeschäft:',
         'es': u':tienda_24_horas:',
         'fr': u':supérette:',
         'pt': u':loja_de_conveniência:',
@@ -7607,7 +7624,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 1,
         'alias' : u':arrows_counterclockwise:',
-        'de': u':pfeile_gegen_den_uhrzeigersinn:',
+        'de': u':kreisförmige_pfeile_gegen_den_uhrzeigersinn:',
         'es': u':flechas_en_sentido_antihorario:',
         'fr': u':flèches_dans_le_sens_antihoraire:',
         'pt': u':botão_de_setas_em_sentido_anti-horário:',
@@ -8688,6 +8705,7 @@ EMOJI_DATA = {
         'en' : u':crayon:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':lower_left_crayon:',
         'variant': True,
         'de': u':wachsmalstift:',
         'es': u':lápiz_de_cera:',
@@ -8785,7 +8803,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'alias' : u':negative_squared_cross_mark:',
-        'de': u':angekreuztes_kästchen:',
+        'de': u':kreuzsymbol_im_quadrat:',
         'es': u':botón_con_marca_de_cruz:',
         'fr': u':bouton_croix:',
         'pt': u':botão_de_xis:',
@@ -9055,6 +9073,7 @@ EMOJI_DATA = {
         'en' : u':dagger:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':dagger_knife:',
         'variant': True,
         'de': u':dolch:',
         'es': u':puñal:',
@@ -9082,7 +9101,7 @@ EMOJI_DATA = {
         'es': u':dango:',
         'fr': u':brochette_de_bonbons:',
         'pt': u':dango:',
-        'it': u':dango:'
+        'it': u':dolcetto:'
     },
     u'\U0001F3FF': {
         'en' : u':dark_skin_tone:',
@@ -9119,12 +9138,7 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0000200D\U00002642': {
         'en' : u':deaf_man:',
         'status' : minimally_qualified,
-        'E' : 12,
-        'de': u':gehörloser_mann:',
-        'es': u':hombre_sordo:',
-        'fr': u':homme_sourd:',
-        'pt': u':homem_surdo:',
-        'it': u':uomo_con_problemi_di_udito:'
+        'E' : 12
     },
     u'\U0001F9CF\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':deaf_man_dark_skin_tone:',
@@ -9274,12 +9288,7 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0000200D\U00002640': {
         'en' : u':deaf_woman:',
         'status' : minimally_qualified,
-        'E' : 12,
-        'de': u':gehörlose_frau:',
-        'es': u':mujer_sorda:',
-        'fr': u':femme_sourde:',
-        'pt': u':mulher_surda:',
-        'it': u':donna_con_problemi_di_udito:'
+        'E' : 12
     },
     u'\U0001F9CF\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':deaf_woman_dark_skin_tone:',
@@ -9401,6 +9410,7 @@ EMOJI_DATA = {
         'en' : u':derelict_house:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':derelict_house_building:',
         'variant': True,
         'de': u':verfallenes_haus:',
         'es': u':casa_abandonada:',
@@ -9490,6 +9500,7 @@ EMOJI_DATA = {
         'en' : u':detective:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':sleuth_or_spy:',
         'variant': True,
         'de': u':detektiv(in):',
         'es': u':detective:',
@@ -9563,6 +9574,7 @@ EMOJI_DATA = {
         'en' : u':diamond_suit:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':diamonds:',
         'variant': True,
         'de': u':karo:',
         'es': u':palo_de_diamantes:',
@@ -9630,7 +9642,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'alias' : u':heavy_division_sign:',
-        'de': u':geteilt_durch:',
+        'de': u':divisionszeichen:',
         'es': u':división:',
         'fr': u':signe_diviser:',
         'pt': u':símbolo_de_divisão:',
@@ -9771,6 +9783,7 @@ EMOJI_DATA = {
         'en' : u':double_exclamation_mark:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':bangbang:',
         'variant': True,
         'de': u':doppeltes_ausrufezeichen:',
         'es': u':exclamación_doble:',
@@ -9804,6 +9817,7 @@ EMOJI_DATA = {
         'en' : u':dove:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':dove_of_peace:',
         'variant': True,
         'de': u':taube:',
         'es': u':paloma:',
@@ -9827,6 +9841,7 @@ EMOJI_DATA = {
         'en' : u':down-left_arrow:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_lower_left:',
         'variant': True,
         'de': u':pfeil_nach_links_unten:',
         'es': u':flecha_hacia_la_esquina_inferior_izquierda:',
@@ -9850,6 +9865,7 @@ EMOJI_DATA = {
         'en' : u':down-right_arrow:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_lower_right:',
         'variant': True,
         'de': u':pfeil_nach_rechts_unten:',
         'es': u':flecha_hacia_la_esquina_inferior_derecha:',
@@ -9873,6 +9889,7 @@ EMOJI_DATA = {
         'en' : u':down_arrow:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_down:',
         'variant': True,
         'de': u':pfeil_nach_unten:',
         'es': u':flecha_hacia_abajo:',
@@ -9901,7 +9918,7 @@ EMOJI_DATA = {
         'es': u':cara_con_sudor_frío:',
         'fr': u':visage_démoralisé_avec_goutte_de_sueur:',
         'pt': u':rosto_cabisbaixo_com_gota_de_suor:',
-        'it': u':faccina_abbattuta_sudata:'
+        'it': u':faccina_sudata:'
     },
     u'\U0001F53D': {
         'en' : u':downwards_button:',
@@ -10111,7 +10128,7 @@ EMOJI_DATA = {
         'en' : u':ear_with_hearing_aid:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':ohr_mit_hörgerät:',
+        'de': u':ohr_mit_hörhilfe:',
         'es': u':oreja_con_audífono:',
         'fr': u':oreille_appareillée:',
         'pt': u':ouvido_com_aparelho_auditivo:',
@@ -10192,8 +10209,9 @@ EMOJI_DATA = {
         'en' : u':eight-pointed_star:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':eight_pointed_black_star:',
         'variant': True,
-        'de': u':achtstrahliger_stern:',
+        'de': u':stern_mit_acht_zacken:',
         'es': u':estrella_de_ocho_puntas:',
         'fr': u':étoile_huit_branches:',
         'pt': u':estrela_de_oito_pontas:',
@@ -10205,7 +10223,7 @@ EMOJI_DATA = {
         'E' : 0.6,
         'alias' : u':eight_pointed_black_star:',
         'variant': True,
-        'de': u':achtstrahliger_stern:',
+        'de': u':stern_mit_acht_zacken:',
         'es': u':estrella_de_ocho_puntas:',
         'fr': u':étoile_huit_branches:',
         'pt': u':estrela_de_oito_pontas:',
@@ -10215,6 +10233,7 @@ EMOJI_DATA = {
         'en' : u':eight-spoked_asterisk:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':eight_spoked_asterisk:',
         'variant': True,
         'de': u':achtzackiger_stern:',
         'es': u':asterisco_de_ocho_puntas:',
@@ -10262,6 +10281,7 @@ EMOJI_DATA = {
         'en' : u':eject_button:',
         'status' : fully_qualified,
         'E' : 1,
+        'alias' : u':eject_symbol:',
         'variant': True,
         'de': u':auswerfen:',
         'es': u':expulsar:',
@@ -10285,7 +10305,7 @@ EMOJI_DATA = {
         'en' : u':electric_plug:',
         'status' : fully_qualified,
         'E' : 0.6,
-        'de': u':netzstecker:',
+        'de': u':stromstecker:',
         'es': u':enchufe_eléctrico:',
         'fr': u':câble_avec_fiche_électrique:',
         'pt': u':tomada_elétrica:',
@@ -10470,6 +10490,7 @@ EMOJI_DATA = {
         'en' : u':exclamation_question_mark:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':interrobang:',
         'variant': True,
         'de': u':ausrufe-_und_fragezeichen:',
         'es': u':exclamación_e_interrogación:',
@@ -10555,12 +10576,7 @@ EMOJI_DATA = {
     u'\U0001F441\U0000200D\U0001F5E8': {
         'en' : u':eye_in_speech_bubble:',
         'status' : unqualified,
-        'E' : 2,
-        'de': u':auge_in_sprechblase:',
-        'es': u':ojo_en_bocadillo_de_texto:',
-        'fr': u':œil_dans_une_bulle_de_bd:',
-        'pt': u':olho_no_balão_de_diálogo:',
-        'it': u':occhio_nel_fumetto:'
+        'E' : 2
     },
     u'\U0001F440': {
         'en' : u':eyes:',
@@ -10586,12 +10602,7 @@ EMOJI_DATA = {
     u'\U0001F62E\U0000200D\U0001F4A8': {
         'en' : u':face_exhaling:',
         'status' : fully_qualified,
-        'E' : 13.1,
-        'de': u':gesicht_das_ausatmet:',
-        'es': u':cara_exhalando:',
-        'fr': u':visage_expirant:',
-        'pt': u':rosto_exalando:',
-        'it': u':faccina_che_espira:'
+        'E' : 13.1
     },
     u'\U0001F979': {
         'en' : u':face_holding_back_tears:',
@@ -10606,12 +10617,7 @@ EMOJI_DATA = {
     u'\U0001F636\U0000200D\U0001F32B': {
         'en' : u':face_in_clouds:',
         'status' : minimally_qualified,
-        'E' : 13.1,
-        'de': u':gesicht_in_wolken:',
-        'es': u':cara_en_las_nubes:',
-        'fr': u':visage_dans_les_nuages:',
-        'pt': u':rosto_nas_nuvens:',
-        'it': u':testa_tra_le_nuvole:'
+        'E' : 13.1
     },
     u'\U0001F60B': {
         'en' : u':face_savoring_food:',
@@ -10747,12 +10753,7 @@ EMOJI_DATA = {
     u'\U0001F635\U0000200D\U0001F4AB': {
         'en' : u':face_with_spiral_eyes:',
         'status' : fully_qualified,
-        'E' : 13.1,
-        'de': u':gesicht_mit_spiralen_als_augen:',
-        'es': u':cara_con_ojos_de_espiral:',
-        'fr': u':visage_aux_yeux_en_spirales:',
-        'pt': u':rosto_com_olhos_em_espiral:',
-        'it': u':faccina_con_occhi_a_spirale:'
+        'E' : 13.1
     },
     u'\U0001F624': {
         'en' : u':face_with_steam_from_nose:',
@@ -11753,6 +11754,7 @@ EMOJI_DATA = {
         'en' : u':fleur-de-lis:',
         'status' : fully_qualified,
         'E' : 1,
+        'alias' : u':fleur__de__lis:',
         'variant': True,
         'de': u':lilie:',
         'es': u':flor_de_lis:',
@@ -11851,7 +11853,7 @@ EMOJI_DATA = {
         'es': u':cartas_de_flores:',
         'fr': u':jeu_des_fleurs:',
         'pt': u':carta_de_flores:',
-        'it': u':carta_da_gioco_hanafuda:'
+        'it': u':carta_da_gioco:'
     },
     u'\U0001F633': {
         'en' : u':flushed_face:',
@@ -11880,7 +11882,7 @@ EMOJI_DATA = {
         'E' : 11,
         'de': u':frisbee:',
         'es': u':disco_volador:',
-        'fr': u':disque_volant:',
+        'fr': u':disque-volant:',
         'pt': u':frisbee:',
         'it': u':frisbee:'
     },
@@ -11902,7 +11904,7 @@ EMOJI_DATA = {
         'de': u':nebel:',
         'es': u':niebla:',
         'fr': u':brouillard:',
-        'pt': u':nevoeiro:',
+        'pt': u':neblina:',
         'it': u':nebbia:'
     },
     u'\U0001F32B': {
@@ -11913,7 +11915,7 @@ EMOJI_DATA = {
         'de': u':nebel:',
         'es': u':niebla:',
         'fr': u':brouillard:',
-        'pt': u':nevoeiro:',
+        'pt': u':neblina:',
         'it': u':nebbia:'
     },
     u'\U0001F301': {
@@ -12124,6 +12126,7 @@ EMOJI_DATA = {
         'en' : u':fountain_pen:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':lower_left_fountain_pen:',
         'variant': True,
         'de': u':füllhalter:',
         'es': u':estilográfica:',
@@ -12191,6 +12194,7 @@ EMOJI_DATA = {
         'en' : u':framed_picture:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':frame_with_picture:',
         'variant': True,
         'de': u':gerahmtes_bild:',
         'es': u':cuadro_enmarcado:',
@@ -12256,6 +12260,7 @@ EMOJI_DATA = {
         'en' : u':frowning_face:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':white_frowning_face:',
         'variant': True,
         'de': u':düsteres_gesicht:',
         'es': u':cara_con_el_ceño_fruncido:',
@@ -12671,7 +12676,7 @@ EMOJI_DATA = {
         'en' : u':green_circle:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':grüner_punkt:',
+        'de': u':grüner_kreis:',
         'es': u':círculo_verde:',
         'fr': u':disque_vert:',
         'pt': u':círculo_verde:',
@@ -12701,7 +12706,7 @@ EMOJI_DATA = {
         'en' : u':green_square:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':grünes_quadrat:',
+        'de': u':grünes_viereck:',
         'es': u':cuadrado_verde:',
         'fr': u':carré_vert:',
         'pt': u':quadrado_verde:',
@@ -12970,6 +12975,7 @@ EMOJI_DATA = {
         'en' : u':hand_with_fingers_splayed:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':raised_hand_with_fingers_splayed:',
         'variant': True,
         'de': u':hand_mit_gespreizten_fingern:',
         'es': u':mano_abierta:',
@@ -13259,12 +13265,7 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0000200D\U00002695': {
         'en' : u':health_worker:',
         'status' : minimally_qualified,
-        'E' : 12.1,
-        'de': u':arzt/ärztin:',
-        'es': u':profesional_sanitario:',
-        'fr': u':professionnel_de_la_santé_(tous_genres):',
-        'pt': u':profissional_de_saúde:',
-        'it': u':persona_che_lavora_nella_sanità:'
+        'E' : 12.1
     },
     u'\U0001F9D1\U0001F3FF\U0000200D\U00002695\U0000FE0F': {
         'en' : u':health_worker_dark_skin_tone:',
@@ -13366,6 +13367,7 @@ EMOJI_DATA = {
         'en' : u':heart_exclamation:',
         'status' : fully_qualified,
         'E' : 1,
+        'alias' : u':heavy_heart_exclamation_mark_ornament:',
         'variant': True,
         'de': u':herz_als_ausrufezeichen:',
         'es': u':exclamación_de_corazón:',
@@ -13423,17 +13425,13 @@ EMOJI_DATA = {
     u'\U00002764\U0000200D\U0001F525': {
         'en' : u':heart_on_fire:',
         'status' : unqualified,
-        'E' : 13.1,
-        'de': u':herz_in_flammen:',
-        'es': u':corazón_en_llamas:',
-        'fr': u':cœur_enflammé:',
-        'pt': u':coração_em_chamas:',
-        'it': u':cuore_in_fiamme:'
+        'E' : 13.1
     },
     u'\U00002665\U0000FE0F': {
         'en' : u':heart_suit:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':hearts:',
         'variant': True,
         'de': u':herz:',
         'es': u':palo_de_corazones:',
@@ -13479,9 +13477,9 @@ EMOJI_DATA = {
         'en' : u':heavy_dollar_sign:',
         'status' : fully_qualified,
         'E' : 0.6,
-        'de': u':dollarzeichen_extrafett:',
+        'de': u':dollarzeichen:',
         'es': u':símbolo_de_dólar:',
-        'fr': u':symbole_dollar:',
+        'fr': u':dollar:',
         'pt': u':cifrão:',
         'it': u':dollaro:'
     },
@@ -13560,7 +13558,7 @@ EMOJI_DATA = {
         'variant': True,
         'de': u':hochspannung:',
         'es': u':alto_voltaje:',
-        'fr': u':haute_tension:',
+        'fr': u':symbole_de_haute_tension:',
         'pt': u':alta_tensão:',
         'it': u':alta_tensione:'
     },
@@ -13653,7 +13651,7 @@ EMOJI_DATA = {
         'en' : u':hook:',
         'status' : fully_qualified,
         'E' : 13,
-        'de': u':haken:',
+        'de': u':angelhaken:',
         'es': u':gancho:',
         'fr': u':crochet:',
         'pt': u':gancho:',
@@ -13819,6 +13817,7 @@ EMOJI_DATA = {
         'en' : u':hot_springs:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':hotsprings:',
         'variant': True,
         'de': u':heiße_quellen:',
         'es': u':aguas_termales:',
@@ -13869,7 +13868,7 @@ EMOJI_DATA = {
         'de': u':laufende_sanduhr:',
         'es': u':reloj_de_arena_con_tiempo:',
         'fr': u':sablier_avec_sable_qui_coule:',
-        'pt': u':ampulheta_contando_o_tempo:',
+        'pt': u':ampulheta_cheia_em_cima:',
         'it': u':clessidra_che_scorre:'
     },
     u'\U0001F3E0': {
@@ -13879,7 +13878,7 @@ EMOJI_DATA = {
         'variant': True,
         'de': u':haus:',
         'es': u':casa:',
-        'fr': u':maison:',
+        'fr': u':pavillon:',
         'pt': u':casa:',
         'it': u':casa:'
     },
@@ -13897,6 +13896,7 @@ EMOJI_DATA = {
         'en' : u':houses:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':house_buildings:',
         'variant': True,
         'de': u':wohnhäuser:',
         'es': u':casas:',
@@ -14061,6 +14061,7 @@ EMOJI_DATA = {
         'en' : u':index_pointing_up:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':point_up:',
         'variant': True,
         'de': u':nach_oben_weisender_zeigefinger_von_vorne:',
         'es': u':dedo_índice_hacia_arriba:',
@@ -14156,6 +14157,7 @@ EMOJI_DATA = {
         'en' : u':information:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':information_source:',
         'variant': True,
         'de': u':buchstabe_i_in_blauem_quadrat:',
         'es': u':información:',
@@ -14302,12 +14304,7 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0000200D\U00002696': {
         'en' : u':judge:',
         'status' : minimally_qualified,
-        'E' : 12.1,
-        'de': u':richter(in):',
-        'es': u':fiscal:',
-        'fr': u':juge:',
-        'pt': u':juiz_no_tribunal:',
-        'it': u':giudice:'
+        'E' : 12.1
     },
     u'\U0001F9D1\U0001F3FF\U0000200D\U00002696\U0000FE0F': {
         'en' : u':judge_dark_skin_tone:',
@@ -14440,7 +14437,6 @@ EMOJI_DATA = {
         'en' : u':keycap_#:',
         'status' : fully_qualified,
         'E' : 0.6,
-        'alias' : u':hash:',
         'de': u':taste_#:',
         'es': u':teclas_#:',
         'fr': u':touches_#:',
@@ -15925,6 +15921,7 @@ EMOJI_DATA = {
         'en' : u':last_track_button:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':black_left__pointing_double_triangle_with_vertical_bar:',
         'variant': True,
         'de': u':vorheriger_titel:',
         'es': u':pista_anterior:',
@@ -15981,7 +15978,7 @@ EMOJI_DATA = {
         'en' : u':leafy_green:',
         'status' : fully_qualified,
         'E' : 11,
-        'de': u':blattgemüse:',
+        'de': u':grünzeug:',
         'es': u':verdura_de_hoja_verde:',
         'fr': u':légume_à_feuilles_vertes:',
         'pt': u':verdura:',
@@ -16061,6 +16058,7 @@ EMOJI_DATA = {
         'en' : u':left-right_arrow:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':left_right_arrow:',
         'variant': True,
         'de': u':pfeil_nach_links_und_rechts:',
         'es': u':flecha_izquierda_y_derecha:',
@@ -16084,6 +16082,7 @@ EMOJI_DATA = {
         'en' : u':left_arrow:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_left:',
         'variant': True,
         'de': u':pfeil_nach_links:',
         'es': u':flecha_hacia_la_izquierda:',
@@ -16107,6 +16106,7 @@ EMOJI_DATA = {
         'en' : u':left_arrow_curving_right:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_right_hook:',
         'variant': True,
         'de': u':geschwungener_pfeil_nach_rechts:',
         'es': u':flecha_izquierda_curvándose_a_la_derecha:',
@@ -16616,7 +16616,7 @@ EMOJI_DATA = {
         'en' : u':lungs:',
         'status' : fully_qualified,
         'E' : 13,
-        'de': u':lunge:',
+        'de': u':lungen:',
         'es': u':pulmones:',
         'fr': u':poumons:',
         'pt': u':pulmões:',
@@ -16927,12 +16927,7 @@ EMOJI_DATA = {
     u'\U0001F9D4\U0000200D\U00002642': {
         'en' : u':man_beard:',
         'status' : minimally_qualified,
-        'E' : 13.1,
-        'de': u':mann_bart:',
-        'es': u':hombre_barba:',
-        'fr': u':homme_barbu:',
-        'pt': u':homem_barbudo:',
-        'it': u':uomo_con_la_barba:'
+        'E' : 13.1
     },
     u'\U0001F6B4\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_biking:',
@@ -16947,12 +16942,7 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0000200D\U00002642': {
         'en' : u':man_biking:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':radfahrer:',
-        'es': u':hombre_en_bicicleta:',
-        'fr': u':cycliste_homme:',
-        'pt': u':homem_ciclista:',
-        'it': u':ciclista_uomo:'
+        'E' : 4
     },
     u'\U0001F6B4\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_biking_dark_skin_tone:',
@@ -17042,12 +17032,7 @@ EMOJI_DATA = {
     u'\U0001F471\U0000200D\U00002642': {
         'en' : u':man_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':mann_blond:',
-        'es': u':hombre_rubio:',
-        'fr': u':homme_blond:',
-        'pt': u':homem_cabelo_loiro:',
-        'it': u':uomo_biondo:'
+        'E' : 4
     },
     u'\U000026F9\U0000FE0F\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_bouncing_ball:',
@@ -17072,12 +17057,7 @@ EMOJI_DATA = {
     u'\U000026F9\U0000200D\U00002642': {
         'en' : u':man_bouncing_ball:',
         'status' : unqualified,
-        'E' : 4,
-        'de': u':mann_mit_ball:',
-        'es': u':hombre_botando_un_balón:',
-        'fr': u':homme_avec_ballon:',
-        'pt': u':homem_jogando_basquete:',
-        'it': u':uomo_che_fa_rimbalzare_una_palla:'
+        'E' : 4
     },
     u'\U000026F9\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_bouncing_ball_dark_skin_tone:',
@@ -17167,12 +17147,7 @@ EMOJI_DATA = {
     u'\U0001F647\U0000200D\U00002642': {
         'en' : u':man_bowing:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':sich_verbeugender_mann:',
-        'es': u':hombre_haciendo_una_reverencia:',
-        'fr': u':homme_qui_s’incline:',
-        'pt': u':homem_fazendo_reverência:',
-        'it': u':uomo_che_fa_inchino_profondo:'
+        'E' : 4
     },
     u'\U0001F647\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_bowing_dark_skin_tone:',
@@ -17262,12 +17237,7 @@ EMOJI_DATA = {
     u'\U0001F938\U0000200D\U00002642': {
         'en' : u':man_cartwheeling:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':rad_schlagender_mann:',
-        'es': u':hombre_dando_una_voltereta_lateral:',
-        'fr': u':homme_faisant_la_roue:',
-        'pt': u':homem_fazendo_estrela:',
-        'it': u':uomo_che_fa_la_ruota:'
+        'E' : 4
     },
     u'\U0001F938\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_cartwheeling_dark_skin_tone:',
@@ -17357,12 +17327,7 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0000200D\U00002642': {
         'en' : u':man_climbing:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':bergsteiger:',
-        'es': u':hombre_escalando:',
-        'fr': u':homme_qui_grimpe:',
-        'pt': u':homem_escalando:',
-        'it': u':scalatore:'
+        'E' : 5
     },
     u'\U0001F9D7\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_climbing_dark_skin_tone:',
@@ -17452,12 +17417,7 @@ EMOJI_DATA = {
     u'\U0001F477\U0000200D\U00002642': {
         'en' : u':man_construction_worker:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':bauarbeiter:',
-        'es': u':profesional_de_la_construcción_hombre:',
-        'fr': u':ouvrier_du_bâtiment:',
-        'pt': u':pedreiro:',
-        'it': u':operaio_edile_uomo:'
+        'E' : 4
     },
     u'\U0001F477\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_construction_worker_dark_skin_tone:',
@@ -17762,12 +17722,7 @@ EMOJI_DATA = {
     u'\U0001F575\U0000200D\U00002642': {
         'en' : u':man_detective:',
         'status' : unqualified,
-        'E' : 4,
-        'de': u':detektiv:',
-        'es': u':detective_hombre:',
-        'fr': u':détective_homme:',
-        'pt': u':detetive_homem:',
-        'it': u':investigatore:'
+        'E' : 4
     },
     u'\U0001F575\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_detective_dark_skin_tone:',
@@ -17857,12 +17812,7 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0000200D\U00002642': {
         'en' : u':man_elf:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':elf:',
-        'es': u':elfo_hombre:',
-        'fr': u':elfe_homme:',
-        'pt': u':elfo_homem:',
-        'it': u':elfo_uomo:'
+        'E' : 5
     },
     u'\U0001F9DD\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_elf_dark_skin_tone:',
@@ -17952,12 +17902,7 @@ EMOJI_DATA = {
     u'\U0001F926\U0000200D\U00002642': {
         'en' : u':man_facepalming:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':sich_an_den_kopf_fassender_mann:',
-        'es': u':hombre_con_la_mano_en_la_frente:',
-        'fr': u':homme_avec_la_paume_sur_le_visage:',
-        'pt': u':homem_decepcionado:',
-        'it': u':uomo_esasperato:'
+        'E' : 4
     },
     u'\U0001F926\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_facepalming_dark_skin_tone:',
@@ -18107,12 +18052,7 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0000200D\U00002642': {
         'en' : u':man_fairy:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':männliche_fee:',
-        'es': u':hada_hombre:',
-        'fr': u':féetaud:',
-        'pt': u':homem_fada:',
-        'it': u':folletto_alato:'
+        'E' : 5
     },
     u'\U0001F9DA\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_fairy_dark_skin_tone:',
@@ -18382,12 +18322,7 @@ EMOJI_DATA = {
     u'\U0001F64D\U0000200D\U00002642': {
         'en' : u':man_frowning:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':missmutiger_mann:',
-        'es': u':hombre_frunciendo_el_ceño:',
-        'fr': u':homme_fronçant_les_sourcils:',
-        'pt': u':homem_franzindo_a_sobrancelha:',
-        'it': u':uomo_corrucciato:'
+        'E' : 4
     },
     u'\U0001F64D\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_frowning_dark_skin_tone:',
@@ -18477,12 +18412,7 @@ EMOJI_DATA = {
     u'\U0001F9DE\U0000200D\U00002642': {
         'en' : u':man_genie:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':männlicher_flaschengeist:',
-        'es': u':genio_hombre:',
-        'fr': u':génie_homme:',
-        'pt': u':homem_gênio:',
-        'it': u':genio_uomo:'
+        'E' : 5
     },
     u'\U0001F645\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_gesturing_NO:',
@@ -18497,12 +18427,7 @@ EMOJI_DATA = {
     u'\U0001F645\U0000200D\U00002642': {
         'en' : u':man_gesturing_NO:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':mann_mit_überkreuzten_armen:',
-        'es': u':hombre_haciendo_el_gesto_de_no:',
-        'fr': u':homme_faisant_un_geste_d’interdiction:',
-        'pt': u':homem_fazendo_gesto_de_não:',
-        'it': u':uomo_con_gesto_di_rifiuto:'
+        'E' : 4
     },
     u'\U0001F645\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_gesturing_NO_dark_skin_tone:',
@@ -18592,12 +18517,7 @@ EMOJI_DATA = {
     u'\U0001F646\U0000200D\U00002642': {
         'en' : u':man_gesturing_OK:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':mann_mit_händen_auf_dem_kopf:',
-        'es': u':hombre_haciendo_el_gesto_de_de_acuerdo:',
-        'fr': u':homme_faisant_un_geste_d’acceptation:',
-        'pt': u':homem_fazendo_gesto_de_ok:',
-        'it': u':uomo_con_gesto_ok:'
+        'E' : 4
     },
     u'\U0001F646\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_gesturing_OK_dark_skin_tone:',
@@ -18687,12 +18607,7 @@ EMOJI_DATA = {
     u'\U0001F487\U0000200D\U00002642': {
         'en' : u':man_getting_haircut:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':mann_beim_haareschneiden:',
-        'es': u':hombre_cortándose_el_pelo:',
-        'fr': u':homme_qui_se_fait_couper_les_cheveux:',
-        'pt': u':homem_cortando_o_cabelo:',
-        'it': u':taglio_di_capelli_per_uomo:'
+        'E' : 4
     },
     u'\U0001F487\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_getting_haircut_dark_skin_tone:',
@@ -18782,12 +18697,7 @@ EMOJI_DATA = {
     u'\U0001F486\U0000200D\U00002642': {
         'en' : u':man_getting_massage:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':mann_der_eine_kopfmassage_bekommt:',
-        'es': u':hombre_recibiendo_masaje:',
-        'fr': u':homme_qui_se_fait_masser:',
-        'pt': u':homem_recebendo_massagem_facial:',
-        'it': u':uomo_che_riceve_un_massaggio:'
+        'E' : 4
     },
     u'\U0001F486\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_getting_massage_dark_skin_tone:',
@@ -18887,12 +18797,7 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0000200D\U00002642': {
         'en' : u':man_golfing:',
         'status' : unqualified,
-        'E' : 4,
-        'de': u':golfer:',
-        'es': u':hombre_jugando_al_golf:',
-        'fr': u':golfeur:',
-        'pt': u':homem_golfista:',
-        'it': u':golfista_uomo:'
+        'E' : 4
     },
     u'\U0001F3CC\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_golfing_dark_skin_tone:',
@@ -18982,12 +18887,7 @@ EMOJI_DATA = {
     u'\U0001F482\U0000200D\U00002642': {
         'en' : u':man_guard:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':wachsoldat:',
-        'es': u':guardia_hombre:',
-        'fr': u':garde_homme:',
-        'pt': u':guarda_homem:',
-        'it': u':guardia_uomo:'
+        'E' : 4
     },
     u'\U0001F482\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_guard_dark_skin_tone:',
@@ -19077,12 +18977,7 @@ EMOJI_DATA = {
     u'\U0001F468\U0000200D\U00002695': {
         'en' : u':man_health_worker:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':arzt:',
-        'es': u':profesional_sanitario_hombre:',
-        'fr': u':professionnel_de_la_santé:',
-        'pt': u':homem_profissional_da_saúde:',
-        'it': u':operatore_sanitario:'
+        'E' : 4
     },
     u'\U0001F468\U0001F3FF\U0000200D\U00002695\U0000FE0F': {
         'en' : u':man_health_worker_dark_skin_tone:',
@@ -19172,12 +19067,7 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0000200D\U00002642': {
         'en' : u':man_in_lotus_position:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':mann_im_lotossitz:',
-        'es': u':hombre_en_posición_de_loto:',
-        'fr': u':homme_dans_la_posture_du_lotus:',
-        'pt': u':homem_na_posição_de_lótus:',
-        'it': u':uomo_in_posizione_del_loto:'
+        'E' : 5
     },
     u'\U0001F9D8\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_in_lotus_position_dark_skin_tone:',
@@ -19387,12 +19277,7 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0000200D\U00002642': {
         'en' : u':man_in_steamy_room:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':mann_in_dampfsauna:',
-        'es': u':hombre_en_una_sauna:',
-        'fr': u':homme_au_hammam:',
-        'pt': u':homem_na_sauna:',
-        'it': u':uomo_in_sauna:'
+        'E' : 5
     },
     u'\U0001F9D6\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_in_steamy_room_dark_skin_tone:',
@@ -19482,12 +19367,7 @@ EMOJI_DATA = {
     u'\U0001F935\U0000200D\U00002642': {
         'en' : u':man_in_tuxedo:',
         'status' : minimally_qualified,
-        'E' : 13,
-        'de': u':mann_im_smoking:',
-        'es': u':hombre_con_esmoquin:',
-        'fr': u':homme_en_smoking:',
-        'pt': u':homem_de_smoking:',
-        'it': u':uomo_in_smoking:'
+        'E' : 13
     },
     u'\U0001F935\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_in_tuxedo_dark_skin_tone:',
@@ -19577,12 +19457,7 @@ EMOJI_DATA = {
     u'\U0001F468\U0000200D\U00002696': {
         'en' : u':man_judge:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':richter:',
-        'es': u':fiscal_hombre:',
-        'fr': u':juge_homme:',
-        'pt': u':juiz:',
-        'it': u':giudice_uomo:'
+        'E' : 4
     },
     u'\U0001F468\U0001F3FF\U0000200D\U00002696\U0000FE0F': {
         'en' : u':man_judge_dark_skin_tone:',
@@ -19672,12 +19547,7 @@ EMOJI_DATA = {
     u'\U0001F939\U0000200D\U00002642': {
         'en' : u':man_juggling:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':jongleur:',
-        'es': u':hombre_haciendo_malabares:',
-        'fr': u':jongleur:',
-        'pt': u':homem_malabarista:',
-        'it': u':giocoliere_uomo:'
+        'E' : 4
     },
     u'\U0001F939\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_juggling_dark_skin_tone:',
@@ -19767,12 +19637,7 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0000200D\U00002642': {
         'en' : u':man_kneeling:',
         'status' : minimally_qualified,
-        'E' : 12,
-        'de': u':kniender_mann:',
-        'es': u':hombre_de_rodillas:',
-        'fr': u':homme_à_genoux:',
-        'pt': u':homem_ajoelhando:',
-        'it': u':uomo_inginocchiato:'
+        'E' : 12
     },
     u'\U0001F9CE\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_kneeling_dark_skin_tone:',
@@ -19872,12 +19737,7 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0000200D\U00002642': {
         'en' : u':man_lifting_weights:',
         'status' : unqualified,
-        'E' : 4,
-        'de': u':gewichtheber:',
-        'es': u':hombre_levantando_pesas:',
-        'fr': u':homme_haltérophile:',
-        'pt': u':homem_levantando_peso:',
-        'it': u':uomo_che_solleva_pesi:'
+        'E' : 4
     },
     u'\U0001F3CB\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_lifting_weights_dark_skin_tone:',
@@ -20042,12 +19902,7 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0000200D\U00002642': {
         'en' : u':man_mage:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':magier:',
-        'es': u':mago:',
-        'fr': u':mage_homme:',
-        'pt': u':homem_mago:',
-        'it': u':mago_uomo:'
+        'E' : 5
     },
     u'\U0001F9D9\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_mage_dark_skin_tone:',
@@ -20422,12 +20277,7 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0000200D\U00002642': {
         'en' : u':man_mountain_biking:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':mountainbiker:',
-        'es': u':hombre_en_bicicleta_de_montaña:',
-        'fr': u':homme_en_vtt:',
-        'pt': u':homem_fazendo_mountain_bike:',
-        'it': u':ciclista_uomo_di_mountain_bike:'
+        'E' : 4
     },
     u'\U0001F6B5\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_mountain_biking_dark_skin_tone:',
@@ -20577,12 +20427,7 @@ EMOJI_DATA = {
     u'\U0001F468\U0000200D\U00002708': {
         'en' : u':man_pilot:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':pilot:',
-        'es': u':piloto_hombre:',
-        'fr': u':pilote_homme:',
-        'pt': u':piloto_de_avião_homem:',
-        'it': u':pilota_uomo:'
+        'E' : 4
     },
     u'\U0001F468\U0001F3FF\U0000200D\U00002708\U0000FE0F': {
         'en' : u':man_pilot_dark_skin_tone:',
@@ -20672,12 +20517,7 @@ EMOJI_DATA = {
     u'\U0001F93E\U0000200D\U00002642': {
         'en' : u':man_playing_handball:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':handballspieler:',
-        'es': u':hombre_jugando_al_balonmano:',
-        'fr': u':handballeur:',
-        'pt': u':jogador_de_handebol:',
-        'it': u':pallamanista_uomo:'
+        'E' : 4
     },
     u'\U0001F93E\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_playing_handball_dark_skin_tone:',
@@ -20767,12 +20607,7 @@ EMOJI_DATA = {
     u'\U0001F93D\U0000200D\U00002642': {
         'en' : u':man_playing_water_polo:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':wasserballspieler:',
-        'es': u':hombre_jugando_al_waterpolo:',
-        'fr': u':joueur_de_water-polo:',
-        'pt': u':homem_jogando_polo_aquático:',
-        'it': u':pallanuotista_uomo:'
+        'E' : 4
     },
     u'\U0001F93D\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_playing_water_polo_dark_skin_tone:',
@@ -20862,12 +20697,7 @@ EMOJI_DATA = {
     u'\U0001F46E\U0000200D\U00002642': {
         'en' : u':man_police_officer:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':polizist:',
-        'es': u':agente_de_policía_hombre:',
-        'fr': u':policier:',
-        'pt': u':policial_homem:',
-        'it': u':poliziotto_uomo:'
+        'E' : 4
     },
     u'\U0001F46E\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_police_officer_dark_skin_tone:',
@@ -20957,12 +20787,7 @@ EMOJI_DATA = {
     u'\U0001F64E\U0000200D\U00002642': {
         'en' : u':man_pouting:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':schmollender_mann:',
-        'es': u':hombre_haciendo_pucheros:',
-        'fr': u':homme_qui_boude:',
-        'pt': u':homem_fazendo_bico:',
-        'it': u':uomo_imbronciato:'
+        'E' : 4
     },
     u'\U0001F64E\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_pouting_dark_skin_tone:',
@@ -21052,12 +20877,7 @@ EMOJI_DATA = {
     u'\U0001F64B\U0000200D\U00002642': {
         'en' : u':man_raising_hand:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':mann_mit_erhobenem_arm:',
-        'es': u':hombre_con_la_mano_levantada:',
-        'fr': u':homme_qui_lève_la_main:',
-        'pt': u':homem_levantando_a_mão:',
-        'it': u':uomo_con_mano_alzata:'
+        'E' : 4
     },
     u'\U0001F64B\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_raising_hand_dark_skin_tone:',
@@ -21157,12 +20977,7 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0000200D\U00002642': {
         'en' : u':man_rowing_boat:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':mann_im_ruderboot:',
-        'es': u':hombre_remando_en_un_bote:',
-        'fr': u':rameur_dans_une_barque:',
-        'pt': u':homem_remando:',
-        'it': u':uomo_in_barca_a_remi:'
+        'E' : 4
     },
     u'\U0001F6A3\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_rowing_boat_dark_skin_tone:',
@@ -21252,12 +21067,7 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0000200D\U00002642': {
         'en' : u':man_running:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':laufender_mann:',
-        'es': u':hombre_corriendo:',
-        'fr': u':homme_qui_court:',
-        'pt': u':homem_correndo:',
-        'it': u':uomo_che_corre:'
+        'E' : 4
     },
     u'\U0001F3C3\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_running_dark_skin_tone:',
@@ -21407,12 +21217,7 @@ EMOJI_DATA = {
     u'\U0001F937\U0000200D\U00002642': {
         'en' : u':man_shrugging:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':schulterzuckender_mann:',
-        'es': u':hombre_encogido_de_hombros:',
-        'fr': u':homme_qui_hausse_les_épaules:',
-        'pt': u':homem_dando_de_ombros:',
-        'it': u':uomo_che_scrolla_le_spalle:'
+        'E' : 4
     },
     u'\U0001F937\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_shrugging_dark_skin_tone:',
@@ -21562,12 +21367,7 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0000200D\U00002642': {
         'en' : u':man_standing:',
         'status' : minimally_qualified,
-        'E' : 12,
-        'de': u':stehender_mann:',
-        'es': u':hombre_de_pie:',
-        'fr': u':homme_debout:',
-        'pt': u':homem_em_pé:',
-        'it': u':uomo_in_piedi:'
+        'E' : 12
     },
     u'\U0001F9CD\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_standing_dark_skin_tone:',
@@ -21717,12 +21517,7 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0000200D\U00002642': {
         'en' : u':man_superhero:',
         'status' : minimally_qualified,
-        'E' : 11,
-        'de': u':superheld:',
-        'es': u':superhéroe:',
-        'fr': u':super-héros_homme:',
-        'pt': u':homem_super-herói:',
-        'it': u':supereroe_uomo:'
+        'E' : 11
     },
     u'\U0001F9B8\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_superhero_dark_skin_tone:',
@@ -21812,12 +21607,7 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0000200D\U00002642': {
         'en' : u':man_supervillain:',
         'status' : minimally_qualified,
-        'E' : 11,
-        'de': u':männlicher_bösewicht:',
-        'es': u':supervillano:',
-        'fr': u':super-vilain_homme:',
-        'pt': u':homem_supervilão:',
-        'it': u':supercattivo_uomo:'
+        'E' : 11
     },
     u'\U0001F9B9\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_supervillain_dark_skin_tone:',
@@ -21907,12 +21697,7 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0000200D\U00002642': {
         'en' : u':man_surfing:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':surfer:',
-        'es': u':hombre_haciendo_surf:',
-        'fr': u':surfeur:',
-        'pt': u':homem_surfista:',
-        'it': u':surfista_uomo:'
+        'E' : 4
     },
     u'\U0001F3C4\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_surfing_dark_skin_tone:',
@@ -22002,12 +21787,7 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0000200D\U00002642': {
         'en' : u':man_swimming:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':schwimmer:',
-        'es': u':hombre_nadando:',
-        'fr': u':nageur:',
-        'pt': u':homem_nadando:',
-        'it': u':nuotatore:'
+        'E' : 4
     },
     u'\U0001F3CA\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_swimming_dark_skin_tone:',
@@ -22217,12 +21997,7 @@ EMOJI_DATA = {
     u'\U0001F481\U0000200D\U00002642': {
         'en' : u':man_tipping_hand:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':infoschalter-mitarbeiter:',
-        'es': u':empleado_de_mostrador_de_información:',
-        'fr': u':homme_paume_vers_le_haut:',
-        'pt': u':homem_com_a_palma_virada_para_cima:',
-        'it': u':uomo_al_punto_informazioni:'
+        'E' : 4
     },
     u'\U0001F481\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_tipping_hand_dark_skin_tone:',
@@ -22312,12 +22087,7 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0000200D\U00002642': {
         'en' : u':man_vampire:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':männlicher_vampir:',
-        'es': u':vampiro_hombre:',
-        'fr': u':vampire_homme:',
-        'pt': u':homem_vampiro:',
-        'it': u':vampiro_uomo:'
+        'E' : 5
     },
     u'\U0001F9DB\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_vampire_dark_skin_tone:',
@@ -22407,12 +22177,7 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0000200D\U00002642': {
         'en' : u':man_walking:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':fußgänger:',
-        'es': u':hombre_caminando:',
-        'fr': u':homme_qui_marche:',
-        'pt': u':homem_andando:',
-        'it': u':uomo_che_cammina:'
+        'E' : 4
     },
     u'\U0001F6B6\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_walking_dark_skin_tone:',
@@ -22502,12 +22267,7 @@ EMOJI_DATA = {
     u'\U0001F473\U0000200D\U00002642': {
         'en' : u':man_wearing_turban:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':mann_mit_turban:',
-        'es': u':hombre_con_turbante:',
-        'fr': u':homme_en_turban:',
-        'pt': u':homem_com_turbante:',
-        'it': u':uomo_con_turbante:'
+        'E' : 4
     },
     u'\U0001F473\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_wearing_turban_dark_skin_tone:',
@@ -22607,12 +22367,7 @@ EMOJI_DATA = {
     u'\U0001F470\U0000200D\U00002642': {
         'en' : u':man_with_veil:',
         'status' : minimally_qualified,
-        'E' : 13,
-        'de': u':mann_mit_schleier:',
-        'es': u':hombre_con_velo:',
-        'fr': u':homme_avec_voile:',
-        'pt': u':noivo_com_véu:',
-        'it': u':sposo_con_velo:'
+        'E' : 13
     },
     u'\U0001F470\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':man_with_veil_dark_skin_tone:',
@@ -22762,12 +22517,7 @@ EMOJI_DATA = {
     u'\U0001F9DF\U0000200D\U00002642': {
         'en' : u':man_zombie:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':männlicher_zombie:',
-        'es': u':zombi_hombre:',
-        'fr': u':zombie_homme:',
-        'pt': u':homem_zumbi:',
-        'it': u':zombie_uomo:'
+        'E' : 5
     },
     u'\U0001F96D': {
         'en' : u':mango:',
@@ -23050,7 +22800,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 1,
         'alias' : u':two_men_holding_hands:',
-        'de': u':händchen_haltende_männer:',
+        'de': u':händchenhaltende_männer:',
         'es': u':hombres_de_la_mano:',
         'fr': u':deux_hommes_se_tenant_la_main:',
         'pt': u':dois_homens_de_mãos_dadas:',
@@ -23319,12 +23069,7 @@ EMOJI_DATA = {
     u'\U0001F46F\U0000200D\U00002642': {
         'en' : u':men_with_bunny_ears:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':männer_mit_hasenohren:',
-        'es': u':hombres_con_orejas_de_conejo:',
-        'fr': u':hommes_avec_des_oreilles_de_lapin:',
-        'pt': u':homens_com_orelhas_de_coelho:',
-        'it': u':uomini_con_orecchie_da_coniglio:'
+        'E' : 4
     },
     u'\U0001F93C\U0000200D\U00002642\U0000FE0F': {
         'en' : u':men_wrestling:',
@@ -23339,12 +23084,7 @@ EMOJI_DATA = {
     u'\U0001F93C\U0000200D\U00002642': {
         'en' : u':men_wrestling:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':ringende_männer:',
-        'es': u':hombres_luchando:',
-        'fr': u':lutteurs:',
-        'pt': u':homens_lutando:',
-        'it': u':lottatori:'
+        'E' : 4
     },
     u'\U00002764\U0000FE0F\U0000200D\U0001FA79': {
         'en' : u':mending_heart:',
@@ -23354,12 +23094,7 @@ EMOJI_DATA = {
     u'\U00002764\U0000200D\U0001FA79': {
         'en' : u':mending_heart:',
         'status' : unqualified,
-        'E' : 13.1,
-        'de': u':herz_mit_verband:',
-        'es': u':corazón_curándose:',
-        'fr': u':cœur_avec_bandages:',
-        'pt': u':coração_remendado:',
-        'it': u':cuore_guarito:'
+        'E' : 13.1
     },
     u'\U0001F54E': {
         'en' : u':menorah:',
@@ -23397,12 +23132,7 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0000200D\U00002640': {
         'en' : u':mermaid:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':meerjungfrau:',
-        'es': u':sirena:',
-        'fr': u':sirène:',
-        'pt': u':sereia:',
-        'it': u':sirena_donna:'
+        'E' : 5
     },
     u'\U0001F9DC\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':mermaid_dark_skin_tone:',
@@ -23492,12 +23222,7 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0000200D\U00002642': {
         'en' : u':merman:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':wassermann:',
-        'es': u':sirena_hombre:',
-        'fr': u':triton:',
-        'pt': u':sereio:',
-        'it': u':tritone:'
+        'E' : 5
     },
     u'\U0001F9DC\U0001F3FF\U0000200D\U00002642\U0000FE0F': {
         'en' : u':merman_dark_skin_tone:',
@@ -23793,9 +23518,9 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'alias' : u':heavy_minus_sign:',
-        'de': u':minus:',
+        'de': u':minuszeichen:',
         'es': u':menos:',
-        'fr': u':moins:',
+        'fr': u':signe_moins:',
         'pt': u':símbolo_de_subtração:',
         'it': u':simbolo_della_sottrazione:'
     },
@@ -23955,7 +23680,7 @@ EMOJI_DATA = {
         'en' : u':mosquito:',
         'status' : fully_qualified,
         'E' : 11,
-        'de': u':mücke:',
+        'de': u':moskito:',
         'es': u':mosquito:',
         'fr': u':moustique:',
         'pt': u':mosquito:',
@@ -23997,6 +23722,7 @@ EMOJI_DATA = {
         'en' : u':motorcycle:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':racing_motorcycle:',
         'variant': True,
         'de': u':motorrad:',
         'es': u':moto:',
@@ -24088,7 +23814,7 @@ EMOJI_DATA = {
         'es': u':teleférico_de_montaña:',
         'fr': u':téléphérique:',
         'pt': u':cabo_suspenso_usado_em_teleféricos_nas_montanhas:',
-        'it': u':funivia:'
+        'it': u':funicolare:'
     },
     u'\U0001F69E': {
         'en' : u':mountain_railway:',
@@ -24125,7 +23851,7 @@ EMOJI_DATA = {
         'en' : u':mouse_trap:',
         'status' : fully_qualified,
         'E' : 13,
-        'de': u':mausefalle:',
+        'de': u':mäusefalle:',
         'es': u':trampa_de_ratones:',
         'fr': u':tapette_à_souris:',
         'pt': u':ratoeira:',
@@ -24156,8 +23882,9 @@ EMOJI_DATA = {
         'en' : u':multiply:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':heavy_multiplication_x:',
         'variant': True,
-        'de': u':mal:',
+        'de': u':multiplikationszeichen:',
         'es': u':multiplicación:',
         'fr': u':signe_multiplier:',
         'pt': u':sinal_de_multiplicação:',
@@ -24169,7 +23896,7 @@ EMOJI_DATA = {
         'E' : 0.6,
         'alias' : u':heavy_multiplication_x:',
         'variant': True,
-        'de': u':mal:',
+        'de': u':multiplikationszeichen:',
         'es': u':multiplicación:',
         'fr': u':signe_multiplier:',
         'pt': u':sinal_de_multiplicação:',
@@ -24407,7 +24134,7 @@ EMOJI_DATA = {
         'de': u':nazar-amulett:',
         'es': u':ojo_turco:',
         'fr': u':mauvais_œil:',
-        'pt': u':olho_grego:',
+        'pt': u':olho_turco:',
         'it': u':occhio_di_allah:'
     },
     u'\U0001F454': {
@@ -24491,6 +24218,7 @@ EMOJI_DATA = {
         'en' : u':next_track_button:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':black_right__pointing_double_triangle_with_vertical_bar:',
         'variant': True,
         'de': u':nächster_titel:',
         'es': u':pista_siguiente:',
@@ -25052,7 +24780,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 5,
         'de': u':älterer_erwachsener:',
-        'es': u':persona_mayor:',
+        'es': u':persona_adulta_madura:',
         'fr': u':personne_âgée:',
         'pt': u':idoso:',
         'it': u':persona_anziana:'
@@ -25121,6 +24849,7 @@ EMOJI_DATA = {
         'en' : u':om:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':om_symbol:',
         'variant': True,
         'de': u':om:',
         'es': u':om:',
@@ -25145,7 +24874,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.7,
         'variant': True,
-        'de': u':auto_von_vorne:',
+        'de': u':vorderansicht_auto:',
         'es': u':coche_próximo:',
         'fr': u':voiture_de_face:',
         'pt': u':carro_se_aproximando:',
@@ -25156,7 +24885,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.7,
         'variant': True,
-        'de': u':bus_von_vorne:',
+        'de': u':vorderansicht_bus:',
         'es': u':autobús_próximo:',
         'fr': u':bus_de_face:',
         'pt': u':ônibus_se_aproximando:',
@@ -25238,7 +24967,7 @@ EMOJI_DATA = {
         'en' : u':oncoming_taxi:',
         'status' : fully_qualified,
         'E' : 1,
-        'de': u':taxi_von_vorne:',
+        'de': u':vorderansicht_taxi:',
         'es': u':taxi_próximo:',
         'fr': u':taxi_de_face:',
         'pt': u':táxi_se_aproximando:',
@@ -25419,7 +25148,7 @@ EMOJI_DATA = {
         'en' : u':orange_circle:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':oranger_punkt:',
+        'de': u':oranger_kreis:',
         'es': u':círculo_naranja:',
         'fr': u':disque_orange:',
         'pt': u':círculo_laranja:',
@@ -25439,7 +25168,7 @@ EMOJI_DATA = {
         'en' : u':orange_square:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':oranges_quadrat:',
+        'de': u':oranges_viereck:',
         'es': u':cuadrado_naranja:',
         'fr': u':carré_orange:',
         'pt': u':quadrado_laranja:',
@@ -25574,6 +25303,7 @@ EMOJI_DATA = {
         'en' : u':paintbrush:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':lower_left_paintbrush:',
         'variant': True,
         'de': u':pinsel:',
         'es': u':pincel:',
@@ -25853,6 +25583,7 @@ EMOJI_DATA = {
         'en' : u':pause_button:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':double_vertical_bar:',
         'variant': True,
         'de': u':pause:',
         'es': u':pausa:',
@@ -25949,6 +25680,7 @@ EMOJI_DATA = {
         'en' : u':pen:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':lower_left_ballpoint_pen:',
         'variant': True,
         'de': u':kugelschreiber:',
         'es': u':bolígrafo:',
@@ -26018,7 +25750,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 12,
         'de': u':sich_an_den_händen_haltende_personen:',
-        'es': u':dos_personas_de_la_mano:',
+        'es': u':dos_personas_dándose_la_mano:',
         'fr': u':deux_personnes_se_tenant_la_main:',
         'pt': u':pessoas_de_mãos_dadas:',
         'it': u':persone_che_si_tengono_per_mano:'
@@ -26350,11 +26082,11 @@ EMOJI_DATA = {
         'en' : u':person_beard:',
         'status' : fully_qualified,
         'E' : 5,
-        'de': u':person_bart:',
+        'de': u':mann_bart:',
         'es': u':hombre_con_barba:',
-        'fr': u':personne_barbue:',
+        'fr': u':homme_barbu:',
         'pt': u':homem_barba:',
-        'it': u':persona_con_la_barba:'
+        'it': u':uomo_con_la_barba:'
     },
     u'\U0001F6B4': {
         'en' : u':person_biking:',
@@ -26432,6 +26164,7 @@ EMOJI_DATA = {
         'en' : u':person_bouncing_ball:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':person_with_ball:',
         'variant': True,
         'de': u':person_mit_ball:',
         'es': u':persona_botando_un_balón:',
@@ -26960,7 +26693,7 @@ EMOJI_DATA = {
         'de': u':person_mit_überkreuzten_armen:',
         'es': u':persona_haciendo_el_gesto_de_no:',
         'fr': u':personne_faisant_un_geste_d’interdiction:',
-        'pt': u':pessoa_fazendo_gesto_de_não:',
+        'pt': u':pessoa_fazendo_gesto_de_“não”:',
         'it': u':persona_che_fa_segno_di_no:'
     },
     u'\U0001F645\U0001F3FF': {
@@ -27021,7 +26754,7 @@ EMOJI_DATA = {
         'de': u':person_mit_händen_auf_dem_kopf:',
         'es': u':persona_haciendo_el_gesto_de_de_acuerdo:',
         'fr': u':personne_faisant_un_geste_d’acceptation:',
-        'pt': u':pessoa_fazendo_gesto_de_ok:',
+        'pt': u':pessoa_fazendo_gesto_de_“ok”:',
         'it': u':persona_con_gesto_ok:'
     },
     u'\U0001F646\U0001F3FF': {
@@ -27140,7 +26873,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'alias' : u':massage:',
-        'de': u':person_die_eine_kopfmassage_bekommt:',
+        'de': u':person,_die_eine_kopfmassage_bekommt:',
         'es': u':persona_recibiendo_masaje:',
         'fr': u':personne_qui_se_fait_masser:',
         'pt': u':pessoa_recebendo_massagem_facial:',
@@ -27200,6 +26933,7 @@ EMOJI_DATA = {
         'en' : u':person_golfing:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':golfer:',
         'variant': True,
         'de': u':golfer(in):',
         'es': u':golfista:',
@@ -27574,6 +27308,7 @@ EMOJI_DATA = {
         'en' : u':person_in_suit_levitating:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':man_in_business_suit_levitating:',
         'variant': True,
         'de': u':schwebender_mann_im_anzug:',
         'es': u':hombre_trajeado_levitando:',
@@ -27827,6 +27562,7 @@ EMOJI_DATA = {
         'en' : u':person_lifting_weights:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':weight_lifter:',
         'variant': True,
         'de': u':gewichtheber(in):',
         'es': u':persona_levantando_pesas:',
@@ -29438,12 +29174,7 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0000200D\U00002708': {
         'en' : u':pilot:',
         'status' : minimally_qualified,
-        'E' : 12.1,
-        'de': u':pilot(in):',
-        'es': u':piloto:',
-        'fr': u':pilote:',
-        'pt': u':piloto:',
-        'it': u':pilota:'
+        'E' : 12.1
     },
     u'\U0001F9D1\U0001F3FF\U0000200D\U00002708\U0000FE0F': {
         'en' : u':pilot_dark_skin_tone:',
@@ -29685,12 +29416,7 @@ EMOJI_DATA = {
     u'\U0001F3F4\U0000200D\U00002620': {
         'en' : u':pirate_flag:',
         'status' : minimally_qualified,
-        'E' : 11,
-        'de': u':piratenflagge:',
-        'es': u':bandera_pirata:',
-        'fr': u':drapeau_de_pirate:',
-        'pt': u':bandeira_de_pirata:',
-        'it': u':bandiera_dei_pirati:'
+        'E' : 11
     },
     u'\U0001F355': {
         'en' : u':pizza:',
@@ -29716,7 +29442,7 @@ EMOJI_DATA = {
         'en' : u':placard:',
         'status' : fully_qualified,
         'E' : 13,
-        'de': u':protestschild:',
+        'de': u':plakat:',
         'es': u':letrero:',
         'fr': u':pancarte:',
         'pt': u':placa:',
@@ -29726,7 +29452,7 @@ EMOJI_DATA = {
         'en' : u':place_of_worship:',
         'status' : fully_qualified,
         'E' : 1,
-        'de': u':religiöse_stätte:',
+        'de': u':kultstätte:',
         'es': u':lugar_de_culto:',
         'fr': u':lieu_de_culte:',
         'pt': u':local_de_culto:',
@@ -29736,6 +29462,7 @@ EMOJI_DATA = {
         'en' : u':play_button:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_forward:',
         'variant': True,
         'de': u':wiedergabe:',
         'es': u':reproducir:',
@@ -29759,12 +29486,13 @@ EMOJI_DATA = {
         'en' : u':play_or_pause_button:',
         'status' : fully_qualified,
         'E' : 1,
+        'alias' : u':black_right__pointing_triangle_with_double_vertical_bar:',
         'variant': True,
         'de': u':wiedergabe_oder_pause:',
         'es': u':reproducir_o_pausa:',
         'fr': u':bouton_lecture/pause:',
         'pt': u':botão_de_reproduzir_ou_pausar:',
-        'it': u':pulsante_riproduci/pausa:'
+        'it': u':pulsante_riproduci_pausa:'
     },
     u'\U000023EF': {
         'en' : u':play_or_pause_button:',
@@ -29776,7 +29504,7 @@ EMOJI_DATA = {
         'es': u':reproducir_o_pausa:',
         'fr': u':bouton_lecture/pause:',
         'pt': u':botão_de_reproduzir_ou_pausar:',
-        'it': u':pulsante_riproduci/pausa:'
+        'it': u':pulsante_riproduci_pausa:'
     },
     u'\U0001F6DD': {
         'en' : u':playground_slide:',
@@ -29797,7 +29525,7 @@ EMOJI_DATA = {
         'en' : u':plunger:',
         'status' : fully_qualified,
         'E' : 13,
-        'de': u':saugglocke:',
+        'de': u':pömpel:',
         'es': u':desatascador:',
         'fr': u':ventouse:',
         'pt': u':desentupidor:',
@@ -29808,9 +29536,9 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'alias' : u':heavy_plus_sign:',
-        'de': u':plus:',
+        'de': u':pluszeichen:',
         'es': u':más:',
-        'fr': u':plus:',
+        'fr': u':signe_plus:',
         'pt': u':símbolo_de_adição:',
         'it': u':simbolo_dell’addizione:'
     },
@@ -29827,12 +29555,7 @@ EMOJI_DATA = {
     u'\U0001F43B\U0000200D\U00002744': {
         'en' : u':polar_bear:',
         'status' : minimally_qualified,
-        'E' : 13,
-        'de': u':eisbär:',
-        'es': u':oso_polar:',
-        'fr': u':ours_polaire:',
-        'pt': u':urso_polar:',
-        'it': u':orso_polare:'
+        'E' : 13
     },
     u'\U0001F693': {
         'en' : u':police_car:',
@@ -29933,7 +29656,7 @@ EMOJI_DATA = {
         'alias' : u':8ball:',
         'de': u':billardkugel:',
         'es': u':bola_negra_de_billar:',
-        'fr': u':boule_de_billard:',
+        'fr': u':billard:',
         'pt': u':bilhar:',
         'it': u':palla_da_biliardo:'
     },
@@ -29987,7 +29710,7 @@ EMOJI_DATA = {
         'es': u':olla_de_comida:',
         'fr': u':marmite:',
         'pt': u':panela:',
-        'it': u':pentola_di_cibo:'
+        'it': u':ciotola_di_cibo:'
     },
     u'\U0001F6B0': {
         'en' : u':potable_water:',
@@ -30363,7 +30086,7 @@ EMOJI_DATA = {
         'en' : u':purple_circle:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':lila_punkt:',
+        'de': u':lila_kreis:',
         'es': u':círculo_morado:',
         'fr': u':disque_violet:',
         'pt': u':círculo_roxo:',
@@ -30383,7 +30106,7 @@ EMOJI_DATA = {
         'en' : u':purple_square:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':lila_quadrat:',
+        'de': u':lila_viereck:',
         'es': u':cuadrado_morado:',
         'fr': u':carré_violet:',
         'pt': u':quadrado_roxo:',
@@ -30497,6 +30220,7 @@ EMOJI_DATA = {
         'en' : u':radioactive:',
         'status' : fully_qualified,
         'E' : 1,
+        'alias' : u':radioactive_sign:',
         'variant': True,
         'de': u':radioaktiv:',
         'es': u':radiactivo:',
@@ -30520,7 +30244,7 @@ EMOJI_DATA = {
         'en' : u':railway_car:',
         'status' : fully_qualified,
         'E' : 0.6,
-        'de': u':eisenbahnwagen:',
+        'de': u':straßenbahnwagen:',
         'es': u':vagón:',
         'fr': u':wagon:',
         'pt': u':vagão_de_trem:',
@@ -30571,12 +30295,7 @@ EMOJI_DATA = {
     u'\U0001F3F3\U0000200D\U0001F308': {
         'en' : u':rainbow_flag:',
         'status' : unqualified,
-        'E' : 4,
-        'de': u':regenbogenflagge:',
-        'es': u':bandera_del_arcoíris:',
-        'fr': u':drapeau_arc-en-ciel:',
-        'pt': u':bandeira_do_arco-íris:',
-        'it': u':bandiera_arcobaleno:'
+        'E' : 4
     },
     u'\U0001F91A': {
         'en' : u':raised_back_of_hand:',
@@ -30865,6 +30584,7 @@ EMOJI_DATA = {
         'en' : u':record_button:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':black_circle_for_record:',
         'variant': True,
         'de': u':aufnehmen:',
         'es': u':grabar:',
@@ -30888,6 +30608,7 @@ EMOJI_DATA = {
         'en' : u':recycling_symbol:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':recycle:',
         'variant': True,
         'de': u':recycling-symbol:',
         'es': u':símbolo_de_reciclaje:',
@@ -30922,7 +30643,7 @@ EMOJI_DATA = {
         'en' : u':red_circle:',
         'status' : fully_qualified,
         'E' : 0.6,
-        'de': u':roter_punkt:',
+        'de': u':roter_kreis:',
         'es': u':círculo_rojo_grande:',
         'fr': u':disque_rouge:',
         'pt': u':círculo_vermelho:',
@@ -30936,7 +30657,7 @@ EMOJI_DATA = {
         'es': u':sobre_rojo:',
         'fr': u':enveloppe_rouge:',
         'pt': u':envelope_vermelho:',
-        'it': u':busta_hongbao:'
+        'it': u':busta_rossa:'
     },
     u'\U00002757': {
         'en' : u':red_exclamation_mark:',
@@ -30945,9 +30666,9 @@ EMOJI_DATA = {
         'alias' : u':heavy_exclamation_mark:',
         'variant': True,
         'de': u':rotes_ausrufezeichen:',
-        'es': u':exclamación_roja:',
-        'fr': u':point_d’exclamation_rouge:',
-        'pt': u':ponto_de_exclamação_vermelho:',
+        'es': u':signo_de_exclamación:',
+        'fr': u':point_d’exclamation:',
+        'pt': u':ponto_de_exclamação:',
         'it': u':punto_esclamativo_rosso:'
     },
     u'\U0001F9B0': {
@@ -30964,6 +30685,7 @@ EMOJI_DATA = {
         'en' : u':red_heart:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':heart:',
         'variant': True,
         'de': u':rotes_herz:',
         'es': u':corazón_rojo:',
@@ -31001,16 +30723,16 @@ EMOJI_DATA = {
         'alias' : u':question:',
         'variant': True,
         'de': u':rotes_fragezeichen:',
-        'es': u':interrogación_roja:',
-        'fr': u':point_d’interrogation_rouge:',
-        'pt': u':ponto_de_interrogação_vermelho:',
+        'es': u':signo_de_interrogación:',
+        'fr': u':point_d’interrogation:',
+        'pt': u':ponto_de_interrogação:',
         'it': u':punto_interrogativo_rosso:'
     },
     u'\U0001F7E5': {
         'en' : u':red_square:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':rotes_quadrat:',
+        'de': u':rotes_viereck:',
         'es': u':cuadrado_rojo:',
         'fr': u':carré_rouge:',
         'pt': u':quadrado_vermelho:',
@@ -31119,6 +30841,7 @@ EMOJI_DATA = {
         'en' : u':rescue_worker’s_helmet:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':helmet_with_white_cross:',
         'variant': True,
         'de': u':rettungshelm:',
         'es': u':casco_con_una_cruz_blanca:',
@@ -31152,6 +30875,7 @@ EMOJI_DATA = {
         'en' : u':reverse_button:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_backward:',
         'variant': True,
         'de': u':pfeil_zurück:',
         'es': u':retroceso:',
@@ -31198,7 +30922,7 @@ EMOJI_DATA = {
         'de': u':pinke_schleife:',
         'es': u':lazo:',
         'fr': u':ruban:',
-        'pt': u':laço_de_fita:',
+        'pt': u':fita:',
         'it': u':fiocco:'
     },
     u'\U0001F359': {
@@ -31307,6 +31031,7 @@ EMOJI_DATA = {
         'en' : u':right_arrow:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_right:',
         'variant': True,
         'de': u':pfeil_nach_rechts:',
         'es': u':flecha_hacia_la_derecha:',
@@ -31330,6 +31055,7 @@ EMOJI_DATA = {
         'en' : u':right_arrow_curving_down:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_heading_down:',
         'variant': True,
         'de': u':geschwungener_pfeil_nach_unten:',
         'es': u':flecha_derecha_curvándose_hacia_abajo:',
@@ -31353,6 +31079,7 @@ EMOJI_DATA = {
         'en' : u':right_arrow_curving_left:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':leftwards_arrow_with_hook:',
         'variant': True,
         'de': u':geschwungener_pfeil_nach_links:',
         'es': u':flecha_derecha_curvándose_a_la_izquierda:',
@@ -31376,6 +31103,7 @@ EMOJI_DATA = {
         'en' : u':right_arrow_curving_up:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_heading_up:',
         'variant': True,
         'de': u':geschwungener_pfeil_nach_oben:',
         'es': u':flecha_derecha_curvándose_hacia_arriba:',
@@ -31506,6 +31234,7 @@ EMOJI_DATA = {
         'en' : u':rolled-up_newspaper:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':rolled__up_newspaper:',
         'variant': True,
         'de': u':zusammengerollte_zeitung:',
         'es': u':periódico_enrollado:',
@@ -31677,7 +31406,7 @@ EMOJI_DATA = {
         'alias' : u':boat:',
         'variant': True,
         'de': u':segelboot:',
-        'es': u':velero:',
+        'es': u':barco_de_vela:',
         'fr': u':voilier:',
         'pt': u':barco_a_vela:',
         'it': u':barca_a_vela:'
@@ -31690,7 +31419,7 @@ EMOJI_DATA = {
         'es': u':sake:',
         'fr': u':saké:',
         'pt': u':saquê:',
-        'it': u':sakè:'
+        'it': u':sake:'
     },
     u'\U0001F9C2': {
         'en' : u':salt:',
@@ -31796,7 +31525,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'de': u':schule:',
-        'es': u':colegio:',
+        'es': u':edificio_de_colegio:',
         'fr': u':école:',
         'pt': u':escola:',
         'it': u':scuola:'
@@ -32638,6 +32367,7 @@ EMOJI_DATA = {
         'en' : u':smiling_face:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':relaxed:',
         'variant': True,
         'de': u':lächelndes_gesicht:',
         'es': u':cara_sonriente:',
@@ -32748,7 +32478,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'alias' : u':smirk:',
-        'de': u':süffisant_lächelndes_gesicht:',
+        'de': u':selbstgefällig_grinsendes_gesicht:',
         'es': u':cara_sonriendo_con_superioridad:',
         'fr': u':visage_avec_un_sourire_malin:',
         'pt': u':rosto_com_sorriso_maroto:',
@@ -32788,6 +32518,7 @@ EMOJI_DATA = {
         'en' : u':snow-capped_mountain:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':snow_capped_mountain:',
         'variant': True,
         'de': u':schneebedeckter_berg:',
         'es': u':montaña_con_nieve:',
@@ -32980,6 +32711,7 @@ EMOJI_DATA = {
         'en' : u':spade_suit:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':spades:',
         'variant': True,
         'de': u':pik:',
         'es': u':palo_de_picas:',
@@ -33110,6 +32842,7 @@ EMOJI_DATA = {
         'en' : u':speaking_head:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':speaking_head_in_silhouette:',
         'variant': True,
         'de': u':sprechender_kopf:',
         'es': u':cabeza_parlante:',
@@ -33197,6 +32930,7 @@ EMOJI_DATA = {
         'en' : u':spiral_calendar:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':spiral_calendar_pad:',
         'variant': True,
         'de': u':spiralkalender:',
         'es': u':calendario_de_espiral:',
@@ -33220,6 +32954,7 @@ EMOJI_DATA = {
         'en' : u':spiral_notepad:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':spiral_note_pad:',
         'variant': True,
         'de': u':notizblock:',
         'es': u':bloc_de_notas_de_espiral:',
@@ -33392,6 +33127,7 @@ EMOJI_DATA = {
         'en' : u':star_of_David:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':star_of_david:',
         'variant': True,
         'de': u':davidstern:',
         'es': u':estrella_de_david:',
@@ -33446,6 +33182,7 @@ EMOJI_DATA = {
         'en' : u':stop_button:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':black_square_for_stop:',
         'variant': True,
         'de': u':stopp:',
         'es': u':detener:',
@@ -33613,6 +33350,7 @@ EMOJI_DATA = {
         'en' : u':sun:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':sunny:',
         'variant': True,
         'de': u':sonne:',
         'es': u':sol:',
@@ -33648,6 +33386,7 @@ EMOJI_DATA = {
         'en' : u':sun_behind_large_cloud:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':white_sun_behind_cloud:',
         'variant': True,
         'de': u':sonne_hinter_großer_wolke:',
         'es': u':sol_detrás_de_una_nube_grande:',
@@ -33671,6 +33410,7 @@ EMOJI_DATA = {
         'en' : u':sun_behind_rain_cloud:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':white_sun_behind_cloud_with_rain:',
         'variant': True,
         'de': u':sonne_hinter_regenwolke:',
         'es': u':sol_detrás_de_una_nube_con_lluvia:',
@@ -33694,6 +33434,7 @@ EMOJI_DATA = {
         'en' : u':sun_behind_small_cloud:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':white_sun_with_small_cloud:',
         'variant': True,
         'de': u':sonne_hinter_kleiner_wolke:',
         'es': u':sol_detrás_de_una_nube_pequeña:',
@@ -33792,7 +33533,7 @@ EMOJI_DATA = {
         'en' : u':superhero:',
         'status' : fully_qualified,
         'E' : 11,
-        'de': u':superheld(in):',
+        'de': u':held:',
         'es': u':personaje_de_superhéroe:',
         'fr': u':super-héros:',
         'pt': u':super-herói:',
@@ -33926,7 +33667,7 @@ EMOJI_DATA = {
         'es': u':ferrocarril_de_suspensión:',
         'fr': u':train_suspendu:',
         'pt': u':estrada_de_ferro_suspensa:',
-        'it': u':ferrovia_sospesa:'
+        'it': u':funivia:'
     },
     u'\U0001F9A2': {
         'en' : u':swan:',
@@ -34008,7 +33749,7 @@ EMOJI_DATA = {
         'es': u':tamal:',
         'fr': u':tamal:',
         'pt': u':tamale:',
-        'it': u':tamale:'
+        'it': u':tamal:'
     },
     u'\U0001F38B': {
         'en' : u':tanabata_tree:',
@@ -34018,7 +33759,7 @@ EMOJI_DATA = {
         'es': u':árbol_de_tanabata:',
         'fr': u':arbre_à_vœux:',
         'pt': u':árvore_de_tanabata:',
-        'it': u':albero_di_tanabata:'
+        'it': u':albero_decorato:'
     },
     u'\U0001F34A': {
         'en' : u':tangerine:',
@@ -34660,6 +34401,7 @@ EMOJI_DATA = {
         'en' : u':tornado:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':cloud_with_tornado:',
         'variant': True,
         'de': u':wirbelsturm:',
         'es': u':tornado:',
@@ -34715,6 +34457,7 @@ EMOJI_DATA = {
         'en' : u':trade_mark:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':tm:',
         'variant': True,
         'de': u':markenzeichen:',
         'es': u':símbolo_de_marca_comercial:',
@@ -34759,7 +34502,7 @@ EMOJI_DATA = {
         'en' : u':tram_car:',
         'status' : fully_qualified,
         'E' : 1,
-        'de': u':straßenbahnwagen:',
+        'de': u':tramwagen:',
         'es': u':vagón_de_tranvía:',
         'fr': u':wagon_de_tramway:',
         'pt': u':bonde:',
@@ -34788,19 +34531,14 @@ EMOJI_DATA = {
     u'\U0001F3F3\U0000200D\U000026A7': {
         'en' : u':transgender_flag:',
         'status' : unqualified,
-        'E' : 13,
-        'de': u':transgender-flagge:',
-        'es': u':bandera_transgénero:',
-        'fr': u':drapeau_transgenre:',
-        'pt': u':bandeira_transgênero:',
-        'it': u':bandiera_transgender:'
+        'E' : 13
     },
     u'\U000026A7\U0000FE0F': {
         'en' : u':transgender_symbol:',
         'status' : fully_qualified,
         'E' : 13,
         'variant': True,
-        'de': u':transgender-symbol:',
+        'de': u':symbol_für_transgender:',
         'es': u':símbolo_de_transgénero:',
         'fr': u':symbole_de_la_communauté_transgenre:',
         'pt': u':símbolo_transgênero:',
@@ -34811,7 +34549,7 @@ EMOJI_DATA = {
         'status' : unqualified,
         'E' : 13,
         'variant': True,
-        'de': u':transgender-symbol:',
+        'de': u':symbol_für_transgender:',
         'es': u':símbolo_de_transgénero:',
         'fr': u':symbole_de_la_communauté_transgenre:',
         'pt': u':símbolo_transgênero:',
@@ -34822,7 +34560,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'alias' : u':triangular_flag_on_post:',
-        'de': u':wimpel:',
+        'de': u':dreiecksflagge:',
         'es': u':bandera_triangular:',
         'fr': u':drapeau_triangulaire:',
         'pt': u':bandeira_triangular:',
@@ -34861,7 +34599,7 @@ EMOJI_DATA = {
         'de': u':oberleitungsbus:',
         'es': u':trolebús:',
         'fr': u':trolleybus:',
-        'pt': u':trólebus:',
+        'pt': u':ônibus_movido_a_eletricidade:',
         'it': u':filobus:'
     },
     u'\U0001F3C6': {
@@ -35106,6 +34844,7 @@ EMOJI_DATA = {
         'en' : u':up-down_arrow:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_up_down:',
         'variant': True,
         'de': u':pfeil_nach_oben_und_unten:',
         'es': u':flecha_arriba_y_abajo:',
@@ -35129,6 +34868,7 @@ EMOJI_DATA = {
         'en' : u':up-left_arrow:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_upper_left:',
         'variant': True,
         'de': u':pfeil_nach_links_oben:',
         'es': u':flecha_hacia_la_esquina_superior_izquierda:',
@@ -35152,6 +34892,7 @@ EMOJI_DATA = {
         'en' : u':up-right_arrow:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_upper_right:',
         'variant': True,
         'de': u':pfeil_nach_rechts_oben:',
         'es': u':flecha_hacia_la_esquina_superior_derecha:',
@@ -35175,6 +34916,7 @@ EMOJI_DATA = {
         'en' : u':up_arrow:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':arrow_up:',
         'variant': True,
         'de': u':pfeil_nach_oben:',
         'es': u':flecha_hacia_arriba:',
@@ -35300,6 +35042,7 @@ EMOJI_DATA = {
         'en' : u':victory_hand:',
         'status' : fully_qualified,
         'E' : 0.6,
+        'alias' : u':v:',
         'variant': True,
         'de': u':victory-geste:',
         'es': u':mano_con_señal_de_victoria:',
@@ -35604,11 +35347,11 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'alias' : u':gun:',
-        'de': u':wasserpistole:',
-        'es': u':pistola_de_agua:',
-        'fr': u':pistolet_à_eau:',
-        'pt': u':pistola_d’água:',
-        'it': u':pistola_ad_acqua:'
+        'de': u':pistole:',
+        'es': u':pistola:',
+        'fr': u':pistolet:',
+        'pt': u':pistola:',
+        'it': u':pistola:'
     },
     u'\U0001F30A': {
         'en' : u':water_wave:',
@@ -35821,7 +35564,7 @@ EMOJI_DATA = {
         'en' : u':white_cane:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':blindenstock:',
+        'de': u':gehstock:',
         'es': u':bastón:',
         'fr': u':canne_blanche:',
         'pt': u':bengala_para_cegos:',
@@ -35832,7 +35575,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 0.6,
         'variant': True,
-        'de': u':weißer_punkt:',
+        'de': u':weißer_kreis:',
         'es': u':círculo_blanco:',
         'fr': u':disque_blanc:',
         'pt': u':círculo_branco:',
@@ -35853,6 +35596,7 @@ EMOJI_DATA = {
         'en' : u':white_flag:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':waving_white_flag:',
         'variant': True,
         'de': u':weiße_flagge:',
         'es': u':bandera_blanca:',
@@ -36014,6 +35758,7 @@ EMOJI_DATA = {
         'en' : u':wind_face:',
         'status' : fully_qualified,
         'E' : 0.7,
+        'alias' : u':wind_blowing_face:',
         'variant': True,
         'de': u':wind:',
         'es': u':cara_de_viento:',
@@ -36494,12 +36239,7 @@ EMOJI_DATA = {
     u'\U0001F9D4\U0000200D\U00002640': {
         'en' : u':woman_beard:',
         'status' : minimally_qualified,
-        'E' : 13.1,
-        'de': u':frau_bart:',
-        'es': u':mujer_barba:',
-        'fr': u':femme_barbue:',
-        'pt': u':mulher_barba:',
-        'it': u':donna_con_la_barba:'
+        'E' : 13.1
     },
     u'\U0001F6B4\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_biking:',
@@ -36514,12 +36254,7 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0000200D\U00002640': {
         'en' : u':woman_biking:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':radfahrerin:',
-        'es': u':mujer_en_bicicleta:',
-        'fr': u':cycliste_femme:',
-        'pt': u':mulher_ciclista:',
-        'it': u':ciclista_donna:'
+        'E' : 4
     },
     u'\U0001F6B4\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_biking_dark_skin_tone:',
@@ -36609,12 +36344,7 @@ EMOJI_DATA = {
     u'\U0001F471\U0000200D\U00002640': {
         'en' : u':woman_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':frau_blond:',
-        'es': u':mujer_rubia:',
-        'fr': u':femme_blonde:',
-        'pt': u':mulher_cabelo_loiro:',
-        'it': u':donna_bionda:'
+        'E' : 4
     },
     u'\U000026F9\U0000FE0F\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_bouncing_ball:',
@@ -36639,12 +36369,7 @@ EMOJI_DATA = {
     u'\U000026F9\U0000200D\U00002640': {
         'en' : u':woman_bouncing_ball:',
         'status' : unqualified,
-        'E' : 4,
-        'de': u':frau_mit_ball:',
-        'es': u':mujer_botando_un_balón:',
-        'fr': u':femme_avec_ballon:',
-        'pt': u':mulher_jogando_basquete:',
-        'it': u':donna_che_fa_rimbalzare_una_palla:'
+        'E' : 4
     },
     u'\U000026F9\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_bouncing_ball_dark_skin_tone:',
@@ -36734,12 +36459,7 @@ EMOJI_DATA = {
     u'\U0001F647\U0000200D\U00002640': {
         'en' : u':woman_bowing:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':sich_verbeugende_frau:',
-        'es': u':mujer_haciendo_una_reverencia:',
-        'fr': u':femme_qui_s’incline:',
-        'pt': u':mulher_fazendo_reverência:',
-        'it': u':donna_che_fa_inchino_profondo:'
+        'E' : 4
     },
     u'\U0001F647\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_bowing_dark_skin_tone:',
@@ -36829,12 +36549,7 @@ EMOJI_DATA = {
     u'\U0001F938\U0000200D\U00002640': {
         'en' : u':woman_cartwheeling:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':rad_schlagende_frau:',
-        'es': u':mujer_dando_una_voltereta_lateral:',
-        'fr': u':femme_faisant_la_roue:',
-        'pt': u':mulher_fazendo_estrela:',
-        'it': u':donna_che_fa_la_ruota:'
+        'E' : 4
     },
     u'\U0001F938\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_cartwheeling_dark_skin_tone:',
@@ -36924,12 +36639,7 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0000200D\U00002640': {
         'en' : u':woman_climbing:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':bergsteigerin:',
-        'es': u':mujer_escalando:',
-        'fr': u':femme_qui_grimpe:',
-        'pt': u':mulher_escalando:',
-        'it': u':scalatrice:'
+        'E' : 5
     },
     u'\U0001F9D7\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_climbing_dark_skin_tone:',
@@ -37019,12 +36729,7 @@ EMOJI_DATA = {
     u'\U0001F477\U0000200D\U00002640': {
         'en' : u':woman_construction_worker:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':bauarbeiterin:',
-        'es': u':profesional_de_la_construcción_mujer:',
-        'fr': u':ouvrière_du_bâtiment:',
-        'pt': u':pedreira:',
-        'it': u':operaia_edile:'
+        'E' : 4
     },
     u'\U0001F477\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_construction_worker_dark_skin_tone:',
@@ -37330,12 +37035,7 @@ EMOJI_DATA = {
     u'\U0001F575\U0000200D\U00002640': {
         'en' : u':woman_detective:',
         'status' : unqualified,
-        'E' : 4,
-        'de': u':detektivin:',
-        'es': u':detective_mujer:',
-        'fr': u':détective_femme:',
-        'pt': u':detetive_mulher:',
-        'it': u':investigatrice:'
+        'E' : 4
     },
     u'\U0001F575\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_detective_dark_skin_tone:',
@@ -37425,12 +37125,7 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0000200D\U00002640': {
         'en' : u':woman_elf:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':elfe:',
-        'es': u':elfa:',
-        'fr': u':elfe_femme:',
-        'pt': u':elfa:',
-        'it': u':elfo_donna:'
+        'E' : 5
     },
     u'\U0001F9DD\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_elf_dark_skin_tone:',
@@ -37520,12 +37215,7 @@ EMOJI_DATA = {
     u'\U0001F926\U0000200D\U00002640': {
         'en' : u':woman_facepalming:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':sich_an_den_kopf_fassende_frau:',
-        'es': u':mujer_con_la_mano_en_la_frente:',
-        'fr': u':femme_avec_la_paume_sur_le_visage:',
-        'pt': u':mulher_decepcionada:',
-        'it': u':donna_esasperata:'
+        'E' : 4
     },
     u'\U0001F926\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_facepalming_dark_skin_tone:',
@@ -37675,12 +37365,7 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0000200D\U00002640': {
         'en' : u':woman_fairy:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':fee:',
-        'es': u':hada_mujer:',
-        'fr': u':fée:',
-        'pt': u':mulher_fada:',
-        'it': u':fata_donna:'
+        'E' : 5
     },
     u'\U0001F9DA\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_fairy_dark_skin_tone:',
@@ -37950,12 +37635,7 @@ EMOJI_DATA = {
     u'\U0001F64D\U0000200D\U00002640': {
         'en' : u':woman_frowning:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':missmutige_frau:',
-        'es': u':mujer_frunciendo_el_ceño:',
-        'fr': u':femme_fronçant_les_sourcils:',
-        'pt': u':mulher_franzindo_a_sobrancelha:',
-        'it': u':donna_corrucciata:'
+        'E' : 4
     },
     u'\U0001F64D\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_frowning_dark_skin_tone:',
@@ -38045,12 +37725,7 @@ EMOJI_DATA = {
     u'\U0001F9DE\U0000200D\U00002640': {
         'en' : u':woman_genie:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':weiblicher_flaschengeist:',
-        'es': u':genio_mujer:',
-        'fr': u':génie_femme:',
-        'pt': u':mulher_gênio:',
-        'it': u':genio_donna:'
+        'E' : 5
     },
     u'\U0001F645\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_gesturing_NO:',
@@ -38065,12 +37740,7 @@ EMOJI_DATA = {
     u'\U0001F645\U0000200D\U00002640': {
         'en' : u':woman_gesturing_NO:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':frau_mit_überkreuzten_armen:',
-        'es': u':mujer_haciendo_el_gesto_de_no:',
-        'fr': u':femme_faisant_un_geste_d’interdiction:',
-        'pt': u':mulher_fazendo_gesto_de_não:',
-        'it': u':donna_con_gesto_di_rifiuto:'
+        'E' : 4
     },
     u'\U0001F645\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_gesturing_NO_dark_skin_tone:',
@@ -38160,12 +37830,7 @@ EMOJI_DATA = {
     u'\U0001F646\U0000200D\U00002640': {
         'en' : u':woman_gesturing_OK:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':frau_mit_händen_auf_dem_kopf:',
-        'es': u':mujer_haciendo_el_gesto_de_de_acuerdo:',
-        'fr': u':femme_faisant_un_geste_d’acceptation:',
-        'pt': u':mulher_fazendo_gesto_de_ok:',
-        'it': u':donna_con_gesto_ok:'
+        'E' : 4
     },
     u'\U0001F646\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_gesturing_OK_dark_skin_tone:',
@@ -38255,12 +37920,7 @@ EMOJI_DATA = {
     u'\U0001F487\U0000200D\U00002640': {
         'en' : u':woman_getting_haircut:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':frau_beim_haareschneiden:',
-        'es': u':mujer_cortándose_el_pelo:',
-        'fr': u':femme_qui_se_fait_couper_les_cheveux:',
-        'pt': u':mulher_cortando_o_cabelo:',
-        'it': u':taglio_di_capelli_per_donna:'
+        'E' : 4
     },
     u'\U0001F487\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_getting_haircut_dark_skin_tone:',
@@ -38350,12 +38010,7 @@ EMOJI_DATA = {
     u'\U0001F486\U0000200D\U00002640': {
         'en' : u':woman_getting_massage:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':frau_die_eine_kopfmassage_bekommt:',
-        'es': u':mujer_recibiendo_masaje:',
-        'fr': u':femme_qui_se_fait_masser:',
-        'pt': u':mulher_recebendo_massagem_facial:',
-        'it': u':donna_che_riceve_un_massaggio:'
+        'E' : 4
     },
     u'\U0001F486\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_getting_massage_dark_skin_tone:',
@@ -38455,12 +38110,7 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0000200D\U00002640': {
         'en' : u':woman_golfing:',
         'status' : unqualified,
-        'E' : 4,
-        'de': u':golferin:',
-        'es': u':mujer_jugando_al_golf:',
-        'fr': u':golfeuse:',
-        'pt': u':mulher_golfista:',
-        'it': u':golfista_donna:'
+        'E' : 4
     },
     u'\U0001F3CC\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_golfing_dark_skin_tone:',
@@ -38550,12 +38200,7 @@ EMOJI_DATA = {
     u'\U0001F482\U0000200D\U00002640': {
         'en' : u':woman_guard:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':wachsoldatin:',
-        'es': u':guardia_mujer:',
-        'fr': u':garde_femme:',
-        'pt': u':guarda_mulher:',
-        'it': u':guardia_donna:'
+        'E' : 4
     },
     u'\U0001F482\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_guard_dark_skin_tone:',
@@ -38645,12 +38290,7 @@ EMOJI_DATA = {
     u'\U0001F469\U0000200D\U00002695': {
         'en' : u':woman_health_worker:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':ärztin:',
-        'es': u':profesional_sanitario_mujer:',
-        'fr': u':professionnelle_de_la_santé:',
-        'pt': u':mulher_profissional_da_saúde:',
-        'it': u':operatrice_sanitaria:'
+        'E' : 4
     },
     u'\U0001F469\U0001F3FF\U0000200D\U00002695\U0000FE0F': {
         'en' : u':woman_health_worker_dark_skin_tone:',
@@ -38740,12 +38380,7 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0000200D\U00002640': {
         'en' : u':woman_in_lotus_position:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':frau_im_lotossitz:',
-        'es': u':mujer_en_posición_de_loto:',
-        'fr': u':femme_dans_la_posture_du_lotus:',
-        'pt': u':mulher_na_posição_de_lótus:',
-        'it': u':donna_in_posizione_del_loto:'
+        'E' : 5
     },
     u'\U0001F9D8\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_in_lotus_position_dark_skin_tone:',
@@ -38955,12 +38590,7 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0000200D\U00002640': {
         'en' : u':woman_in_steamy_room:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':frau_in_dampfsauna:',
-        'es': u':mujer_en_una_sauna:',
-        'fr': u':femme_au_hammam:',
-        'pt': u':mulher_na_sauna:',
-        'it': u':donna_in_sauna:'
+        'E' : 5
     },
     u'\U0001F9D6\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_in_steamy_room_dark_skin_tone:',
@@ -39050,12 +38680,7 @@ EMOJI_DATA = {
     u'\U0001F935\U0000200D\U00002640': {
         'en' : u':woman_in_tuxedo:',
         'status' : minimally_qualified,
-        'E' : 13,
-        'de': u':frau_im_smoking:',
-        'es': u':mujer_con_esmoquin:',
-        'fr': u':femme_en_smoking:',
-        'pt': u':mulher_de_smoking:',
-        'it': u':donna_in_smoking:'
+        'E' : 13
     },
     u'\U0001F935\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_in_tuxedo_dark_skin_tone:',
@@ -39145,12 +38770,7 @@ EMOJI_DATA = {
     u'\U0001F469\U0000200D\U00002696': {
         'en' : u':woman_judge:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':richterin:',
-        'es': u':fiscal_mujer:',
-        'fr': u':juge_femme:',
-        'pt': u':juíza:',
-        'it': u':giudice_donna:'
+        'E' : 4
     },
     u'\U0001F469\U0001F3FF\U0000200D\U00002696\U0000FE0F': {
         'en' : u':woman_judge_dark_skin_tone:',
@@ -39240,12 +38860,7 @@ EMOJI_DATA = {
     u'\U0001F939\U0000200D\U00002640': {
         'en' : u':woman_juggling:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':jongleurin:',
-        'es': u':mujer_haciendo_malabares:',
-        'fr': u':jongleuse:',
-        'pt': u':mulher_malabarista:',
-        'it': u':giocoliere_donna:'
+        'E' : 4
     },
     u'\U0001F939\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_juggling_dark_skin_tone:',
@@ -39335,12 +38950,7 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0000200D\U00002640': {
         'en' : u':woman_kneeling:',
         'status' : minimally_qualified,
-        'E' : 12,
-        'de': u':kniende_frau:',
-        'es': u':mujer_de_rodillas:',
-        'fr': u':femme_à_genoux:',
-        'pt': u':mulher_ajoelhando:',
-        'it': u':donna_inginocchiata:'
+        'E' : 12
     },
     u'\U0001F9CE\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_kneeling_dark_skin_tone:',
@@ -39440,12 +39050,7 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0000200D\U00002640': {
         'en' : u':woman_lifting_weights:',
         'status' : unqualified,
-        'E' : 4,
-        'de': u':gewichtheberin:',
-        'es': u':mujer_levantando_pesas:',
-        'fr': u':femme_haltérophile:',
-        'pt': u':mulher_levantando_peso:',
-        'it': u':donna_che_solleva_pesi:'
+        'E' : 4
     },
     u'\U0001F3CB\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_lifting_weights_dark_skin_tone:',
@@ -39610,12 +39215,7 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0000200D\U00002640': {
         'en' : u':woman_mage:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':magierin:',
-        'es': u':maga:',
-        'fr': u':mage_femme:',
-        'pt': u':maga:',
-        'it': u':maga:'
+        'E' : 5
     },
     u'\U0001F9D9\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_mage_dark_skin_tone:',
@@ -39990,12 +39590,7 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0000200D\U00002640': {
         'en' : u':woman_mountain_biking:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':mountainbikerin:',
-        'es': u':mujer_en_bicicleta_de_montaña:',
-        'fr': u':femme_en_vtt:',
-        'pt': u':mulher_fazendo_mountain_bike:',
-        'it': u':ciclista_donna_di_mountain_bike:'
+        'E' : 4
     },
     u'\U0001F6B5\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_mountain_biking_dark_skin_tone:',
@@ -40145,12 +39740,7 @@ EMOJI_DATA = {
     u'\U0001F469\U0000200D\U00002708': {
         'en' : u':woman_pilot:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':pilotin:',
-        'es': u':piloto_mujer:',
-        'fr': u':pilote_femme:',
-        'pt': u':piloto_de_avião_mulher:',
-        'it': u':pilota_donna:'
+        'E' : 4
     },
     u'\U0001F469\U0001F3FF\U0000200D\U00002708\U0000FE0F': {
         'en' : u':woman_pilot_dark_skin_tone:',
@@ -40240,12 +39830,7 @@ EMOJI_DATA = {
     u'\U0001F93E\U0000200D\U00002640': {
         'en' : u':woman_playing_handball:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':handballspielerin:',
-        'es': u':mujer_jugando_al_balonmano:',
-        'fr': u':handballeuse:',
-        'pt': u':jogadora_de_handebol:',
-        'it': u':pallamanista_donna:'
+        'E' : 4
     },
     u'\U0001F93E\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_playing_handball_dark_skin_tone:',
@@ -40335,12 +39920,7 @@ EMOJI_DATA = {
     u'\U0001F93D\U0000200D\U00002640': {
         'en' : u':woman_playing_water_polo:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':wasserballspielerin:',
-        'es': u':mujer_jugando_al_waterpolo:',
-        'fr': u':joueuse_de_water-polo:',
-        'pt': u':mulher_jogando_polo_aquático:',
-        'it': u':pallanuotista_donna:'
+        'E' : 4
     },
     u'\U0001F93D\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_playing_water_polo_dark_skin_tone:',
@@ -40430,12 +40010,7 @@ EMOJI_DATA = {
     u'\U0001F46E\U0000200D\U00002640': {
         'en' : u':woman_police_officer:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':polizistin:',
-        'es': u':agente_de_policía_mujer:',
-        'fr': u':policière:',
-        'pt': u':policial_mulher:',
-        'it': u':poliziotta:'
+        'E' : 4
     },
     u'\U0001F46E\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_police_officer_dark_skin_tone:',
@@ -40525,12 +40100,7 @@ EMOJI_DATA = {
     u'\U0001F64E\U0000200D\U00002640': {
         'en' : u':woman_pouting:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':schmollende_frau:',
-        'es': u':mujer_haciendo_pucheros:',
-        'fr': u':femme_qui_boude:',
-        'pt': u':mulher_fazendo_bico:',
-        'it': u':donna_imbronciata:'
+        'E' : 4
     },
     u'\U0001F64E\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_pouting_dark_skin_tone:',
@@ -40620,12 +40190,7 @@ EMOJI_DATA = {
     u'\U0001F64B\U0000200D\U00002640': {
         'en' : u':woman_raising_hand:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':frau_mit_erhobenem_arm:',
-        'es': u':mujer_con_la_mano_levantada:',
-        'fr': u':femme_qui_lève_la_main:',
-        'pt': u':mulher_levantando_a_mão:',
-        'it': u':donna_con_mano_alzata:'
+        'E' : 4
     },
     u'\U0001F64B\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_raising_hand_dark_skin_tone:',
@@ -40725,12 +40290,7 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0000200D\U00002640': {
         'en' : u':woman_rowing_boat:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':frau_im_ruderboot:',
-        'es': u':mujer_remando_en_un_bote:',
-        'fr': u':rameuse_dans_une_barque:',
-        'pt': u':mulher_remando:',
-        'it': u':donna_in_barca_a_remi:'
+        'E' : 4
     },
     u'\U0001F6A3\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_rowing_boat_dark_skin_tone:',
@@ -40820,12 +40380,7 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0000200D\U00002640': {
         'en' : u':woman_running:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':laufende_frau:',
-        'es': u':mujer_corriendo:',
-        'fr': u':femme_qui_court:',
-        'pt': u':mulher_correndo:',
-        'it': u':donna_che_corre:'
+        'E' : 4
     },
     u'\U0001F3C3\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_running_dark_skin_tone:',
@@ -40975,12 +40530,7 @@ EMOJI_DATA = {
     u'\U0001F937\U0000200D\U00002640': {
         'en' : u':woman_shrugging:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':schulterzuckende_frau:',
-        'es': u':mujer_encogida_de_hombros:',
-        'fr': u':femme_qui_hausse_les_épaules:',
-        'pt': u':mulher_dando_de_ombros:',
-        'it': u':donna_che_scrolla_le_spalle:'
+        'E' : 4
     },
     u'\U0001F937\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_shrugging_dark_skin_tone:',
@@ -41130,12 +40680,7 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0000200D\U00002640': {
         'en' : u':woman_standing:',
         'status' : minimally_qualified,
-        'E' : 12,
-        'de': u':stehende_frau:',
-        'es': u':mujer_de_pie:',
-        'fr': u':femme_debout:',
-        'pt': u':mulher_em_pé:',
-        'it': u':donna_in_piedi:'
+        'E' : 12
     },
     u'\U0001F9CD\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_standing_dark_skin_tone:',
@@ -41285,12 +40830,7 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0000200D\U00002640': {
         'en' : u':woman_superhero:',
         'status' : minimally_qualified,
-        'E' : 11,
-        'de': u':heldin:',
-        'es': u':superheroína:',
-        'fr': u':super-héroïne:',
-        'pt': u':super-heroína:',
-        'it': u':supereroina:'
+        'E' : 11
     },
     u'\U0001F9B8\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_superhero_dark_skin_tone:',
@@ -41380,12 +40920,7 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0000200D\U00002640': {
         'en' : u':woman_supervillain:',
         'status' : minimally_qualified,
-        'E' : 11,
-        'de': u':weiblicher_bösewicht:',
-        'es': u':supervillana:',
-        'fr': u':super-vilain_femme:',
-        'pt': u':supervilã:',
-        'it': u':supercattiva:'
+        'E' : 11
     },
     u'\U0001F9B9\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_supervillain_dark_skin_tone:',
@@ -41475,12 +41010,7 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0000200D\U00002640': {
         'en' : u':woman_surfing:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':surferin:',
-        'es': u':mujer_haciendo_surf:',
-        'fr': u':surfeuse:',
-        'pt': u':mulher_surfista:',
-        'it': u':surfista_donna:'
+        'E' : 4
     },
     u'\U0001F3C4\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_surfing_dark_skin_tone:',
@@ -41570,12 +41100,7 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0000200D\U00002640': {
         'en' : u':woman_swimming:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':schwimmerin:',
-        'es': u':mujer_nadando:',
-        'fr': u':nageuse:',
-        'pt': u':mulher_nadando:',
-        'it': u':nuotatrice:'
+        'E' : 4
     },
     u'\U0001F3CA\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_swimming_dark_skin_tone:',
@@ -41785,12 +41310,7 @@ EMOJI_DATA = {
     u'\U0001F481\U0000200D\U00002640': {
         'en' : u':woman_tipping_hand:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':infoschalter-mitarbeiterin:',
-        'es': u':empleada_de_mostrador_de_información:',
-        'fr': u':femme_paume_vers_le_haut:',
-        'pt': u':mulher_com_a_palma_virada_para_cima:',
-        'it': u':donna_al_punto_informazioni:'
+        'E' : 4
     },
     u'\U0001F481\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_tipping_hand_dark_skin_tone:',
@@ -41880,12 +41400,7 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0000200D\U00002640': {
         'en' : u':woman_vampire:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':weiblicher_vampir:',
-        'es': u':vampiresa:',
-        'fr': u':vampire_femme:',
-        'pt': u':mulher_vampira:',
-        'it': u':vampira:'
+        'E' : 5
     },
     u'\U0001F9DB\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_vampire_dark_skin_tone:',
@@ -41975,12 +41490,7 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0000200D\U00002640': {
         'en' : u':woman_walking:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':fußgängerin:',
-        'es': u':mujer_caminando:',
-        'fr': u':femme_qui_marche:',
-        'pt': u':mulher_andando:',
-        'it': u':donna_che_cammina:'
+        'E' : 4
     },
     u'\U0001F6B6\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_walking_dark_skin_tone:',
@@ -42070,12 +41580,7 @@ EMOJI_DATA = {
     u'\U0001F473\U0000200D\U00002640': {
         'en' : u':woman_wearing_turban:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':frau_mit_turban:',
-        'es': u':mujer_con_turbante:',
-        'fr': u':femme_en_turban:',
-        'pt': u':mulher_com_turbante:',
-        'it': u':donna_con_turbante:'
+        'E' : 4
     },
     u'\U0001F473\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_wearing_turban_dark_skin_tone:',
@@ -42235,12 +41740,7 @@ EMOJI_DATA = {
     u'\U0001F470\U0000200D\U00002640': {
         'en' : u':woman_with_veil:',
         'status' : minimally_qualified,
-        'E' : 13,
-        'de': u':frau_mit_schleier:',
-        'es': u':mujer_con_velo:',
-        'fr': u':femme_avec_voile:',
-        'pt': u':noiva_com_véu:',
-        'it': u':sposa_con_velo:'
+        'E' : 13
     },
     u'\U0001F470\U0001F3FF\U0000200D\U00002640\U0000FE0F': {
         'en' : u':woman_with_veil_dark_skin_tone:',
@@ -42390,12 +41890,7 @@ EMOJI_DATA = {
     u'\U0001F9DF\U0000200D\U00002640': {
         'en' : u':woman_zombie:',
         'status' : minimally_qualified,
-        'E' : 5,
-        'de': u':weiblicher_zombie:',
-        'es': u':zombi_mujer:',
-        'fr': u':zombie_femme:',
-        'pt': u':mulher_zumbi:',
-        'it': u':zombie_donna:'
+        'E' : 5
     },
     u'\U0001F462': {
         'en' : u':woman’s_boot:',
@@ -42446,7 +41941,7 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 1,
         'alias' : u':two_women_holding_hands:',
-        'de': u':händchen_haltende_frauen:',
+        'de': u':händchenhaltende_frauen:',
         'es': u':mujeres_de_la_mano:',
         'fr': u':deux_femmes_se_tenant_la_main:',
         'pt': u':duas_mulheres_de_mãos_dadas:',
@@ -42715,12 +42210,7 @@ EMOJI_DATA = {
     u'\U0001F46F\U0000200D\U00002640': {
         'en' : u':women_with_bunny_ears:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':frauen_mit_hasenohren:',
-        'es': u':mujeres_con_orejas_de_conejo:',
-        'fr': u':femmes_avec_des_oreilles_de_lapin:',
-        'pt': u':mulheres_com_orelhas_de_coelho:',
-        'it': u':donne_con_orecchie_da_coniglio:'
+        'E' : 4
     },
     u'\U0001F93C\U0000200D\U00002640\U0000FE0F': {
         'en' : u':women_wrestling:',
@@ -42735,12 +42225,7 @@ EMOJI_DATA = {
     u'\U0001F93C\U0000200D\U00002640': {
         'en' : u':women_wrestling:',
         'status' : minimally_qualified,
-        'E' : 4,
-        'de': u':ringende_frauen:',
-        'es': u':mujeres_luchando:',
-        'fr': u':lutteuses:',
-        'pt': u':mulheres_lutando:',
-        'it': u':lottatrici:'
+        'E' : 4
     },
     u'\U0001F6BA': {
         'en' : u':women’s_room:',
@@ -42939,7 +42424,7 @@ EMOJI_DATA = {
         'en' : u':yellow_circle:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':gelber_punkt:',
+        'de': u':gelber_kreis:',
         'es': u':círculo_amarillo:',
         'fr': u':disque_jaune:',
         'pt': u':círculo_amarelo:',
@@ -42959,7 +42444,7 @@ EMOJI_DATA = {
         'en' : u':yellow_square:',
         'status' : fully_qualified,
         'E' : 12,
-        'de': u':gelbes_quadrat:',
+        'de': u':gelbes_viereck:',
         'es': u':cuadrado_amarillo:',
         'fr': u':carré_jaune:',
         'pt': u':quadrado_amarelo:',
