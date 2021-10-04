@@ -1,6 +1,15 @@
 emoji
 =====
 
+1.6.0
+-----
+* Fix Unicode of some emoji in the language files
+* is_emoji function added
+* Added dict of dict with emoji data include emoji versions and statuses
+* emoji.version(string) method added
+* Included 'variant' in the dict of dicts
+
+
 1.5.0
 -----
 * Emojis of English version updated to the Emoji Charts v14.0
