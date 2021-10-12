@@ -71,8 +71,8 @@ def test_emojize_variant():
 
     assert emoji.emojize(":football:", use_aliases=False) == ':football:'
     assert emoji.emojize(":football:", variant="text_type", use_aliases=False) == ':football:'
-    assert emoji.emojize(":football:", use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE_ENGLISH[':football:']
-    assert emoji.emojize(":football:", variant="emoji_type", use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE_ENGLISH[':football:']
+    assert emoji.emojize(":football:", use_aliases=True) ==  u'\U0001F3C8'
+    assert emoji.emojize(":football:", variant="emoji_type", use_aliases=True) ==  u'\U0001F3C8'
 
 
 def test_demojize_removes_variant():
@@ -100,9 +100,13 @@ def test_emojize_invalid_emoji():
 def test_alias():
     # When use_aliases=False aliases should be passed through untouched
     assert emoji.emojize(':soccer:', use_aliases=False) == ':soccer:'
-    assert emoji.emojize(':soccer:', use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE_ENGLISH[':soccer:']
+    assert emoji.emojize(':soccer:', use_aliases=True) == u'\U000026BD'
     assert emoji.emojize(':football:', use_aliases=False) == ':football:'
-    assert emoji.emojize(':football:', use_aliases=True) == emoji.EMOJI_ALIAS_UNICODE_ENGLISH[':football:']
+    assert emoji.emojize(':football:', use_aliases=True) ==  u'\U0001F3C8'
+    # Multiple aliases for one emoji:
+    assert emoji.emojize(':thumbsup:', use_aliases=True) == emoji.emojize(':+1:', use_aliases=True)
+    assert emoji.emojize(':thumbsup:', use_aliases=True) == emoji.emojize(':thumbs_up:', use_aliases=True)
+    assert emoji.emojize(':thumbsup:', use_aliases=True) == u'\U0001f44d'
 
 
 def test_invalid_alias():
