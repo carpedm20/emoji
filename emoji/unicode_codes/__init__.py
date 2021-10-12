@@ -29,8 +29,12 @@ def get_unicode_emoji_dict(lang):
 EMOJI_UNICODE_ENGLISH = get_emoji_unicode_dict('en')
 UNICODE_EMOJI_ENGLISH = get_unicode_emoji_dict('en')
 
-EMOJI_ALIAS_UNICODE_ENGLISH = dict(EMOJI_UNICODE_ENGLISH.items(), **get_emoji_unicode_dict('alias'))
-UNICODE_EMOJI_ALIAS_ENGLISH = dict(UNICODE_EMOJI_ENGLISH.items(), **get_unicode_emoji_dict('alias'))
+EMOJI_ALIAS_UNICODE_ENGLISH = dict(EMOJI_UNICODE_ENGLISH.items())
+for emj, data in EMOJI_DATA.items():
+    if 'alias' in data and data['status'] <= STATUS['fully_qualified']:
+        for alias in data['alias']:
+            EMOJI_ALIAS_UNICODE_ENGLISH[alias] = emj
+UNICODE_EMOJI_ALIAS_ENGLISH = {v: k for k, v in EMOJI_ALIAS_UNICODE_ENGLISH.items()}
 
 EMOJI_UNICODE_GERMAN = get_emoji_unicode_dict('de')
 UNICODE_EMOJI_GERMAN = get_unicode_emoji_dict('de')
