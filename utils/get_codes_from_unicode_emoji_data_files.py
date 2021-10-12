@@ -21,6 +21,7 @@ include = os.path.relpath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, include)
 import emoji as emoji_pkg
 
+
 def get_text_from_url(url: str) -> str:
     """Get text from url"""
 
@@ -185,7 +186,7 @@ def get_emoji_from_github_api() -> dict:
         m = pattern.search(img)
         if m:
             emj = "".join(chr(int(h, 16)) for h in m.group(1).split('-'))
-            output[emj] = name
+            output[name] = emj
         else:
             pass # Special Github emoji that is not part of Unicode
 
@@ -238,25 +239,42 @@ if __name__ == "__main__":
                     language_str += ",\n        '%s': u'%s'" % (
                         lang, languages[lang][emj_no_variant])
 
-        # Add alias from UNICODE_EMOJI_ALIAS_ENGLISH and from Github API
-        alias_name = None
-        if emj in emoji_pkg.UNICODE_EMOJI_ALIAS_ENGLISH:
-            alias_name = emoji_pkg.UNICODE_EMOJI_ALIAS_ENGLISH[emj][1:-1]
-        elif emj in github_alias:
-            if github_alias[emj] != v["en"]:
-                new_aliases.append(f"# alias NEW {github_alias[emj]} FOR {code}")
-            alias_name = github_alias[emj]
-        elif 'variant' in v:
+        # Add existing alias from EMOJI_DATA
+        aliases = set()
+        if emj in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj]:
+            aliases.update(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias'])
+
+        if 'variant' in v:
             alternative = re.sub(r"\\U0000FE0[EF]$", "", code)
             emj_no_variant = escapedToUnicodeMap[alternative]
-            if emj_no_variant in emoji_pkg.UNICODE_EMOJI_ALIAS_ENGLISH:
-                alias_name = emoji_pkg.UNICODE_EMOJI_ALIAS_ENGLISH[emj_no_variant][1:-1]
-            elif emj_no_variant in github_alias:
-                alias_name = github_alias[emj_no_variant]
-                if github_alias[emj_no_variant] != v["en"]:
-                    new_aliases.append(f"# alias NEW {github_alias[emj_no_variant]} FOR {code}")
+            if emj_no_variant in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj_no_variant]:
+                aliases.update(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj_no_variant]['alias'])
 
-        alias = ",\n        'alias' : u':%s:'" % (alias_name, ) if alias_name and alias_name != v["en"] else ''
+        # Add alias from  Github API
+        for gh_alias in github_alias:
+            if emj == github_alias[gh_alias]:
+                aliases.add(gh_alias)
+            elif 'variant' in v and emj_no_variant == github_alias[gh_alias]:
+                aliases.add(gh_alias)
+
+        # Remove if alias is same as 'en'-name
+        if v["en"] in aliases:
+            aliases.remove(v["en"])
+
+        if any("flag" in a for a in aliases):
+            # Only :flag_for_COUNTRY: alias for flags
+            aliases = set(a for a in aliases if "flag" in a)
+
+        # Store new aliases to print them at the end after the dict of dicts
+        if emj in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj]:
+            for a in aliases.difference(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias']):
+                new_aliases.append(f"# alias NEW {a} FOR {code}")
+
+        # Print dict of dicts
+        alias = ''
+        if len(aliases) > 0:
+            alias_list_str = ", ".join(["u':%s:'" % (a, ) for a in aliases])
+            alias = ",\n        'alias' : [%s]" % (alias_list_str, )
         variant = ",\n        'variant': True" if 'variant' in v else ''
         print(f"""    u'{code}': {{
         'en' : u':{v["en"]}:',
