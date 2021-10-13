@@ -25,3 +25,12 @@ def test_compare_normal_and_aliases():
     assert len(emoji.EMOJI_UNICODE) < len(emoji.EMOJI_ALIAS_UNICODE_ENGLISH)
 
 
+def test_no_alias_duplicates():
+    # There should not be two emoji with the same alias
+    # (aliases still can be the same as another 'en'-name)
+    all_aliases = set()
+    for data in emoji.EMOJI_DATA.values():
+        if data['status'] <= emoji.STATUS['fully_qualified'] and'alias' in data:
+            for alias in data['alias']:
+                assert alias not in all_aliases
+                all_aliases.add(alias)
