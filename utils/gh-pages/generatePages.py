@@ -24,16 +24,16 @@ TEMPLATE_FILE = os.path.join(TEMPLATE_DIR, "template.html")
 data = {"defaultListName": 'UNICODE_EMOJI_ENGLISH'}
 
 languages = {
-    "UNICODE_EMOJI_ENGLISH": emoji.emojize(":United_Kingdom:"),
-    "UNICODE_EMOJI_ALIAS_ENGLISH": emoji.emojize(":United_Kingdom:alias"),
-    "UNICODE_EMOJI_SPANISH": emoji.emojize(":Spain:"),
-    "UNICODE_EMOJI_PORTUGUESE": emoji.emojize(":Portugal:"),
-    "UNICODE_EMOJI_ITALIAN": emoji.emojize(":Italy:"),
-    "UNICODE_EMOJI_FRENCH": emoji.emojize(":France:"),
-    "UNICODE_EMOJI_GERMAN": emoji.emojize(":Germany:")
+    "EMOJI_UNICODE_ENGLISH": emoji.emojize(":United_Kingdom:"),
+    "EMOJI_ALIAS_UNICODE_ENGLISH": emoji.emojize(":United_Kingdom:alias"),
+    "EMOJI_UNICODE_SPANISH": emoji.emojize(":Spain:"),
+    "EMOJI_UNICODE_PORTUGUESE": emoji.emojize(":Portugal:"),
+    "EMOJI_UNICODE_ITALIAN": emoji.emojize(":Italy:"),
+    "EMOJI_UNICODE_FRENCH": emoji.emojize(":France:"),
+    "EMOJI_UNICODE_GERMAN": emoji.emojize(":Germany:")
 }
 language_args = {
-    "UNICODE_EMOJI_ALIAS_ENGLISH": 'language="en", use_aliases=True'
+    "EMOJI_ALIAS_UNICODE_ENGLISH": 'language="en", use_aliases=True'
 }
 
 
@@ -53,14 +53,14 @@ for code, unicode_emojis in emoji.UNICODE_EMOJI.items():
 
 data["lists"] = lists = []
 for var_name in emoji.__all__:
-    if not var_name.startswith("UNICODE_EMOJI_"):
+    if not var_name.startswith(("EMOJI_UNICODE_", "EMOJI_ALIAS_UNICODE_")):
         continue
 
     var_name_pretty = languages[var_name] if var_name in languages else var_name
     language_arg = language_args[var_name] if var_name in language_args else "[TODO]"
 
     emoji_list = []
-    for code, name in getattr(emoji, var_name).items():
+    for name, code in getattr(emoji, var_name).items():
         emoji_list.append({
             "code": code,
             "name": name,
