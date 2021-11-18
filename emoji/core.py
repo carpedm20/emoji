@@ -11,6 +11,7 @@ Core components for emoji.
 
 import re
 import sys
+import warnings
 
 from emoji import unicode_codes
 
@@ -23,6 +24,7 @@ __all__ = [
 PY2 = sys.version_info[0] == 2
 
 _EMOJI_REGEXP = None
+_SEARCH_TREE = None
 _DEFAULT_DELIMITER = ':'
 
 
@@ -74,18 +76,21 @@ def emojize(
     :raises ValueError: if ``variant`` is neither None, 'text_type' or 'emoji_type'
 
     """
-    EMOJI_UNICODE = unicode_codes.EMOJI_UNICODE[language]
+
+    if use_aliases and (language not in ('en', 'alias')):
+        warnings.warn("use_aliases=True is only supported in combination with language='en', use emojize(string, language='alias') for short", stacklevel=2)
+
+    use_aliases = (use_aliases and language == 'en') or language == 'alias'
+
+    EMOJI_UNICODE = unicode_codes.EMOJI_ALIAS_UNICODE_ENGLISH if use_aliases else unicode_codes.EMOJI_UNICODE[language]
     pattern = re.compile(u'(%s[\\w\\-&.’”“()!#*+?–,/]+%s)' % delimiters, flags=re.UNICODE)
 
     def replace(match):
         mg = match.group(1).replace(delimiters[0], _DEFAULT_DELIMITER).replace(
             delimiters[1], _DEFAULT_DELIMITER
         )
-        if use_aliases:
-            emj = unicode_codes.EMOJI_ALIAS_UNICODE_ENGLISH.get(mg)
-        else:
-            emj = EMOJI_UNICODE.get(mg)
 
+        emj = EMOJI_UNICODE.get(mg)
         if emj is None:
             return mg
 
@@ -156,24 +161,61 @@ def demojize(
 
     """
 
-    codes_dict = unicode_codes.UNICODE_EMOJI_ALIAS_ENGLISH if use_aliases else unicode_codes.UNICODE_EMOJI[language]
+    if language == 'alias':
+        language = 'en'
+        use_aliases = True
+    else:
+        if use_aliases and language != 'en':
+            warnings.warn("use_aliases=True is only supported in combination with language='en', use demojize(string, language='alias') for short", stacklevel=2)
+        use_aliases = use_aliases and language == 'en'
 
-    def replace(match):
-        emj = match.group(0)
-        val = codes_dict.get(emj)
-        if val is None:
-            return emj
-        if version is not None:
-            if emj in unicode_codes.EMOJI_DATA and unicode_codes.EMOJI_DATA[emj]['E'] > version:
-                if callable(handle_version):
-                    return handle_version(emj, unicode_codes.EMOJI_DATA[emj])
-                elif handle_version is not None:
-                    return str(handle_version)
+    tree = _get_search_tree()
+    result = []
+    i = 0
+    length = len(string)
+    while i < length:
+        consumed = False
+        char = string[i]
+        if char in tree:
+            j = i + 1
+            sub_tree = tree[char]
+            while j < length and string[j] in sub_tree:
+                sub_tree = sub_tree[string[j]]
+                j += 1
+            if 'data' in sub_tree:
+                emj_data = sub_tree['data']
+                code_points = string[i:j]
+                replace_str = None
+                if version is not None and emj_data['E'] > version:
+                    if callable(handle_version):
+                        emj_data = emj_data.copy()
+                        emj_data['match_start'] = i
+                        emj_data['match_end'] = j
+                        replace_str = handle_version(code_points, emj_data)
+                    elif handle_version is not None:
+                        replace_str = str(handle_version)
+                    else:
+                        replace_str = None
+                elif language in emj_data:
+                    if use_aliases and 'alias' in emj_data:
+                        replace_str = delimiters[0] + emj_data['alias'][0][1:-1] + delimiters[1]
+                    else:
+                        replace_str = delimiters[0] + emj_data[language][1:-1] + delimiters[1]
                 else:
-                    return ''
-        return delimiters[0] + val[1:-1] + delimiters[1]
+                    # The emoji exists, but it is not translated, so we keep the emoji
+                    # TODO write a test for this case
+                    replace_str = code_points
 
-    return get_emoji_regexp().sub(replace, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
+                i = j - 1
+                consumed = True
+                if replace_str:
+                    result.append(replace_str)
+
+        if not consumed and char != u'\ufe0e' and char != u'\ufe0f':
+            result.append(char)
+        i += 1
+
+    return "".join(result)
 
 
 def replace_emoji(string, replace='', language=None, version=-1):
@@ -189,20 +231,17 @@ def replace_emoji(string, replace='', language=None, version=-1):
     :param language: (optional) Parameter is no longer used
     """
 
-    if version <= 0 and not callable(replace):
-        return get_emoji_regexp().sub(replace, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
-
-    def replace_fct(match):
-        emj = match.group(0)
-
-        if emj in unicode_codes.EMOJI_DATA and unicode_codes.EMOJI_DATA[emj]['E'] > version:
+    if version > -1:
+        def f(emj, emj_data):
+            if emj_data['E'] <= version:
+                return emj  # Do not replace emj
             if callable(replace):
-                return replace(emj, unicode_codes.EMOJI_DATA[emj])
-            else:
-                return str(replace)
-        return emj
+                return replace(emj, emj_data)
+            return str(replace)
 
-    return get_emoji_regexp().sub(replace_fct, string).replace(u'\ufe0e', '').replace(u'\ufe0f', '')
+        return demojize(string, use_aliases=False, language='en', version=-1, handle_version=f)
+    else:
+        return demojize(string, use_aliases=False, language='en', version=-1, handle_version=replace)
 
 
 def get_emoji_regexp(language=None):
@@ -232,12 +271,14 @@ def emoji_lis(string, language=None):
     """
     _entities = []
 
-    for match in get_emoji_regexp().finditer(string):
+    def f(emj, emj_data):
         _entities.append({
-            'location': match.start(),
-            'emoji': match.group(),
+            'location': emj_data['match_start'],
+            'emoji': emj,
         })
 
+    demojize(string, use_aliases=False, language='en',
+             version=-1, handle_version=f)
     return _entities
 
 
@@ -300,3 +341,65 @@ def version(string):
             return version[0]
 
     raise ValueError("No emoji found in string")
+
+def _get_search_tree():
+    """
+    Generate a search tree for demojize()
+    Example of a search tree::
+
+        EMOJI_DATA =
+        {'a': {'en': ':Apple:'},
+        'b': {'en': ':Bus:'},
+        'ba': {'en': ':Bat:'},
+        'band': {'en': ':Beatles:'},
+        'bandit': {'en': ':Outlaw:'},
+        'bank': {'en': ':BankOfEngland:'},
+        'bb': {'en': ':BB-gun:'},
+        'c': {'en': ':Car:'}}
+
+        _SEARCH_TREE =
+        {'a': {'data': {'en': ':Apple:'}},
+        'b': {'a': {'data': {'en': ':Bat:'},
+                    'n': {'d': {'data': {'en': ':Beatles:'},
+                                'i': {'t': {'data': {'en': ':Outlaw:'}}}},
+                        'k': {'data': {'en': ':BankOfEngland:'}}}},
+            'b': {'data': {'en': ':BB-gun:'}},
+            'data': {'en': ':Bus:'}},
+        'c': {'data': {'en': ':Car:'}}}
+
+                   _SEARCH_TREE
+                 /     |        ⧵
+               /       |          ⧵
+            a          b             c
+            |        / |  ⧵          |
+            |       /  |    ⧵        |
+        :Apple:   ba  :Bus:  bb     :Car:
+                 /  ⧵         |
+                /    ⧵        |
+              :Bat:    ban     :BB-gun:
+                     /     ⧵
+                    /       ⧵
+                 band       bank
+                /   ⧵         |
+               /     ⧵        |
+            bandi :Beatles:  :BankOfEngland:
+               |
+            bandit
+               |
+           :Outlaw:
+
+
+    """
+    global _SEARCH_TREE
+    if _SEARCH_TREE is None:
+        _SEARCH_TREE = {}
+        for emj in unicode_codes.EMOJI_DATA:
+            sub_tree = _SEARCH_TREE
+            lastidx = len(emj) - 1
+            for i, char in enumerate(emj):
+                if char not in sub_tree:
+                    sub_tree[char] = {}
+                sub_tree = sub_tree[char]
+                if i == lastidx:
+                    sub_tree['data'] = unicode_codes.EMOJI_DATA[emj]
+    return _SEARCH_TREE
