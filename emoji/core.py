@@ -78,7 +78,8 @@ def emojize(
     """
 
     if use_aliases and (language not in ('en', 'alias')):
-        warnings.warn("use_aliases=True is only supported in combination with language='en', use emojize(string, language='alias') for short", stacklevel=2)
+        warnings.warn("use_aliases=True is only supported for language='en'. "
+                      "It is recommended to use emojize(string, language='alias') instead", stacklevel=2)
 
     use_aliases = (use_aliases and language == 'en') or language == 'alias'
 
@@ -166,7 +167,8 @@ def demojize(
         use_aliases = True
     else:
         if use_aliases and language != 'en':
-            warnings.warn("use_aliases=True is only supported in combination with language='en', use demojize(string, language='alias') for short", stacklevel=2)
+            warnings.warn("use_aliases=True is only supported for language='en'. "
+                          "It is recommended to use demojize(string, language='alias') instead", stacklevel=2)
         use_aliases = use_aliases and language == 'en'
 
     tree = _get_search_tree()
@@ -203,7 +205,6 @@ def demojize(
                         replace_str = delimiters[0] + emj_data[language][1:-1] + delimiters[1]
                 else:
                     # The emoji exists, but it is not translated, so we keep the emoji
-                    # TODO write a test for this case
                     replace_str = code_points
 
                 i = j - 1
@@ -326,6 +327,7 @@ def version(string):
 
     # Try to find first emoji in string
     version = []
+
     def f(e, emoji_data):
         version.append(emoji_data['E'])
         return ''
@@ -341,6 +343,7 @@ def version(string):
             return version[0]
 
     raise ValueError("No emoji found in string")
+
 
 def _get_search_tree():
     """
