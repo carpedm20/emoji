@@ -11,6 +11,11 @@ import emoji
 import pytest
 
 
+def ascii(s):
+    # return escaped Code points \U000AB123
+    return s.encode("unicode-escape").decode()
+
+
 def test_emojize_name_only():
     for lang_code, emoji_pack in emoji.EMOJI_UNICODE.items():
         for name in emoji_pack.keys():
@@ -108,6 +113,8 @@ def test_emojize_invalid_emoji():
     string = '__---___--Invalid__--__-Name'
     assert emoji.emojize(string, False) == string
 
+    string = ':: baby:: :_: : : :  : :-: :+:'
+    assert emoji.emojize(string, False) == string
 
 def test_alias():
     # When use_aliases=False aliases should be passed through untouched
@@ -162,20 +169,28 @@ def test_invalid_alias():
                   variant="text_type") == ':socer:'
 
 
-@pytest.mark.filterwarnings("ignore")
 def test_alias_wrong_language():
     # Alias with wrong languages
     thailand = u'🇹🇭'
     with pytest.warns(UserWarning) as w:
         emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="es")
-    assert emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="es") == ':flag_for_Thailand:'
+    with pytest.warns(UserWarning) as w:
+        assert emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="de") == thailand
+    with pytest.warns(UserWarning) as w:
+        assert emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="es") == thailand
+    assert emoji.emojize(':flag_for_Thailand:', use_aliases=False, language="es") == ':flag_for_Thailand:'
     assert emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="en") == thailand
+    assert emoji.emojize(':flag_for_Thailand:', use_aliases=False, language="alias") == thailand
+    assert emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="alias") == thailand
 
     with pytest.warns(UserWarning) as w:
         emoji.demojize(thailand, use_aliases=True, language="es")
-    assert emoji.demojize(thailand, use_aliases=True, language="es") == ':bandera_tailandia:'
+    with pytest.warns(UserWarning) as w:
+        assert emoji.demojize(thailand, use_aliases=True, language="es") == ':flag_for_Thailand:'
+    assert emoji.demojize(thailand, use_aliases=False, language="es") == ':bandera_tailandia:'
     assert emoji.demojize(thailand, use_aliases=True, language="en") == ':flag_for_Thailand:'
-
+    assert emoji.demojize(thailand, use_aliases=False, language="alias") == ':flag_for_Thailand:'
+    assert emoji.demojize(thailand, use_aliases=True, language="alias") == ':flag_for_Thailand:'
 
 def test_demojize_name_only():
     for emj, item in emoji.EMOJI_DATA.items():
@@ -200,10 +215,22 @@ def test_demojize_complicated_string():
 
 def test_demojize_delimiters():
     for e in [u'\U000026BD', u'\U0001f44d', u'\U0001F3C8']:
-        for d in [(":", ":"), ("a", "b"), ("123", "456"), (u"😁", u"👌")]:
+        for d in [(":", ":"), ("a", "b"), ("!", "!!"), ("123", "456"), (u"😁", u"👌")]:
             s = emoji.demojize(e, delimiters=d)
             assert s.startswith(d[0])
             assert s.endswith(d[1])
+
+    text = u"Example of a text with an emoji%sin a sentence"
+    for e in [u'\U000026BD', u'\U0001f44d', u'\U0001F3C8']:
+        for d in [(":", ":"), ("!", "-!-"), ("-", "-"), (":", "::"), ("::", "::"), (u"😁", u"👌")]:
+            text_with_unicode = text % e
+            demojized_text = emoji.demojize(text_with_unicode, delimiters=d)
+            assert text_with_unicode != demojized_text
+            assert e not in demojized_text
+            assert emoji.emojize(demojized_text, delimiters=d) == text_with_unicode
+            text_with_emoji = text % emoji.demojize(e, delimiters=d)
+            assert demojized_text == text_with_emoji
+            assert emoji.emojize(text_with_emoji, delimiters=d) == text_with_unicode
 
 
 def test_emoji_lis():
@@ -266,7 +293,7 @@ def test_untranslated():
             # untranslated
             value = emoji.emojize(item['en'], language='en')
             roundtrip = emoji.demojize(value, language='es')
-            assert roundtrip == value, '%s != %s (from %s)' % (roundtrip.encode("unicode-escape").decode(), value.encode("unicode-escape").decode(), item['en'])
+            assert roundtrip == value, '%s != %s (from %s)' % (ascii(roundtrip), ascii(value), item['en'])
         else:
             # translated
             value = emoji.emojize(item['en'], language='en')
@@ -377,5 +404,28 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
 
 def test_text_multiple_times():
+    # Run test_text() multiple times because it relies on a random text
     for i in range(100):
         test_text()
+
+
+def test_invalid_chars():
+    invalidchar = u"\U0001F20F"
+    assert emoji.demojize(invalidchar) == invalidchar, "%r != %r" % (ascii(emoji.demojize(invalidchar)), ascii(invalidchar))
+    assert emoji.demojize(invalidchar) == invalidchar, "%r != %r" % (ascii(emoji.demojize(invalidchar)), ascii(invalidchar))
+
+    invalidchar = u"u\2302 ⌂"
+    assert emoji.demojize(invalidchar) == invalidchar, "%r != %r" % (ascii(emoji.demojize(invalidchar)), ascii(invalidchar))
+    assert emoji.demojize(invalidchar) == invalidchar, "%r != %r" % (ascii(emoji.demojize(invalidchar)), ascii(invalidchar))
+
+
+def test_combine_with_component():
+    text = u"Example of a combined emoji%sin a sentence"
+
+    combined = emoji.emojize(text % u":woman_dark_skin_tone:")
+    seperated = emoji.emojize(text % u":woman::dark_skin_tone:")
+    assert combined == seperated,  "%r != %r" % (ascii(combined), ascii(seperated))
+
+    combined = emoji.emojize(text % u":woman_dark_skin_tone_white_hair:")
+    seperated = emoji.emojize(text % u":woman::dark_skin_tone:\u200d:white_hair:")
+    assert combined == seperated,  "%r != %r" % (ascii(combined), ascii(seperated))

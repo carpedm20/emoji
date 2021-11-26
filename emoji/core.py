@@ -54,7 +54,8 @@ def emojize(
     :param use_aliases: (optional) Enable emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
     :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER
     :param variant: (optional) Choose variation selector between "base"(None), VS-15 ("text_type") and VS-16 ("emoji_type")
-    :param language: Choose language of emoji name
+    :param language: Choose language of emoji name: language code 'es', 'de', etc. or 'alias'
+        to use English aliases
     :param version: (optional) Max version. If set to an Emoji Version,
         all emoji above this version will be ignored.
     :param handle_version: (optional) Replace the emoji above ``version``
@@ -77,23 +78,21 @@ def emojize(
 
     """
 
-    if use_aliases and (language not in ('en', 'alias')):
-        warnings.warn("use_aliases=True is only supported for language='en'. "
-                      "It is recommended to use emojize(string, language='alias') instead", stacklevel=2)
-
-    use_aliases = (use_aliases and language == 'en') or language == 'alias'
+    if use_aliases or language == 'alias':
+        if language not in ('en', 'alias'):
+            warnings.warn("use_aliases=True is only supported for language='en'. "
+                          "It is recommended to use emojize(string, language='alias') instead", stacklevel=2)
+        use_aliases = True
+        language = 'en'
 
     EMOJI_UNICODE = unicode_codes.EMOJI_ALIAS_UNICODE_ENGLISH if use_aliases else unicode_codes.EMOJI_UNICODE[language]
     pattern = re.compile(u'(%s[\\w\\-&.’”“()!#*+?–,/]+%s)' % delimiters, flags=re.UNICODE)
 
     def replace(match):
-        mg = match.group(1).replace(delimiters[0], _DEFAULT_DELIMITER).replace(
-            delimiters[1], _DEFAULT_DELIMITER
-        )
-
-        emj = EMOJI_UNICODE.get(mg)
+        mg = match.group(1)[len(delimiters[0]):-len(delimiters[1])]
+        emj = EMOJI_UNICODE.get(_DEFAULT_DELIMITER + mg + _DEFAULT_DELIMITER)
         if emj is None:
-            return mg
+            return match.group(1)
 
         if version is not None:
             if emj in unicode_codes.EMOJI_DATA and unicode_codes.EMOJI_DATA[emj]['E'] > version:
@@ -140,7 +139,8 @@ def demojize(
     :param string: String contains unicode characters. MUST BE UNICODE.
     :param use_aliases: (optional) Return emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
     :param delimiters: (optional) User delimiters other than ``_DEFAULT_DELIMITER``
-    :param language: (optional) Choose language of emoji name
+    :param language: Choose language of emoji name: language code 'es', 'de', etc. or 'alias'
+        to use English aliases
     :param version: (optional) Max version. If set to an Emoji Version,
         all emoji above this version will be removed.
     :param handle_version: (optional) Replace the emoji above ``version``
@@ -165,11 +165,10 @@ def demojize(
     if language == 'alias':
         language = 'en'
         use_aliases = True
-    else:
-        if use_aliases and language != 'en':
+    elif use_aliases and language != 'en':
             warnings.warn("use_aliases=True is only supported for language='en'. "
                           "It is recommended to use demojize(string, language='alias') instead", stacklevel=2)
-        use_aliases = use_aliases and language == 'en'
+            language = 'en'
 
     tree = _get_search_tree()
     result = []
