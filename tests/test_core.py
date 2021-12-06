@@ -116,6 +116,7 @@ def test_emojize_invalid_emoji():
     string = ':: baby:: :_: : : :  : :-: :+:'
     assert emoji.emojize(string, False) == string
 
+
 def test_alias():
     # When use_aliases=False aliases should be passed through untouched
     assert emoji.emojize(':soccer:', use_aliases=False) == ':soccer:'
@@ -165,7 +166,7 @@ def test_invalid_alias():
     assert emoji.emojize(':tester:', use_aliases=True) == ':tester:'
     assert emoji.emojize(':footbal:', use_aliases=True) == ':footbal:'
     assert emoji.emojize(':socer:', use_aliases=True) == ':socer:'
-    emoji.emojize(':socer:', use_aliases=True,
+    assert emoji.emojize(':socer:', use_aliases=True,
                   variant="text_type") == ':socer:'
 
 
@@ -191,6 +192,7 @@ def test_alias_wrong_language():
     assert emoji.demojize(thailand, use_aliases=True, language="en") == ':flag_for_Thailand:'
     assert emoji.demojize(thailand, use_aliases=False, language="alias") == ':flag_for_Thailand:'
     assert emoji.demojize(thailand, use_aliases=True, language="alias") == ':flag_for_Thailand:'
+
 
 def test_demojize_name_only():
     for emj, item in emoji.EMOJI_DATA.items():
@@ -282,7 +284,6 @@ def test_long_emoji():
     assert emoji.demojize('\U0001F46B\U0001F3FB\U0001F46B\U0001F3FB\U0001F469\U0001F3FB\U0000200D\U0001F91D\U0000200D\U0001F468\U0001F3FF\U0001FAF1\U0001F3FD\U0001FAF1\U0001F3FD\U0000200D\U0001FAF2\U0001F3FF') == ':woman_and_man_holding_hands_light_skin_tone::woman_and_man_holding_hands_light_skin_tone::woman_and_man_holding_hands_light_skin_tone_dark_skin_tone::rightwards_hand_medium_skin_tone::handshake_medium_skin_tone_dark_skin_tone:'
     s = ":crossed_fingers_medium-light_skin_tone::crossed_fingers::crossed_fingers_dark_skin_tone:"
     assert emoji.demojize(emoji.demojize(s)) == s
-
 
 
 def test_untranslated():

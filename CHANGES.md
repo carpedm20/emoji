@@ -1,6 +1,12 @@
 emoji
 =====
 
+1.6.2
+-----
+* Improve performance of demojize()
+* Added more tests
+* Added warning when someone uses any other language than 'en' with use_aliases=True in emojize()
+
 1.6.1
 -----
 * Allow multiple aliases
@@ -13,7 +19,6 @@ emoji
 * Added dict of dict with emoji data include emoji versions and statuses
 * emoji.version(string) method added
 * Included 'variant' in the dict of dicts
-
 
 1.5.0
 -----

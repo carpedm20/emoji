@@ -8,6 +8,8 @@ import re
 import emoji
 
 _all_languages = None
+
+
 def all_languages():
     """List of all language keys in EMOJI_DATA"""
 
@@ -47,6 +49,7 @@ def check_duplicate_names(lang):
         else:
             assert name not in seen
             seen[name] = 0
+
 
 def test_duplicate_names():
     """Check that there are no duplicate names in the fully_qualified except for differnt variants"""
