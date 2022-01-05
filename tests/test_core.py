@@ -256,6 +256,7 @@ def test_emoji_count():
     assert emoji.emoji_count('Hi, I am fine. 😁') == 1
     assert emoji.emoji_count('Hi') == 0
     assert emoji.emoji_count('Hello 🇫🇷👌') == 2
+    assert emoji.emoji_count('Hello 🇵🇱🍺🇵🇱', unique=True) == 2
 
 
 def test_replace_emoji():

@@ -293,8 +293,13 @@ def distinct_emoji_lis(string, language=None):
     return distinct_list
 
 
-def emoji_count(string):
-    """Returns the count of emojis in a string."""
+def emoji_count(string, unique=False):
+    """Returns the count of emojis in a string.
+
+    :param unique: (optional) True if count only unique emojis
+    """
+    if unique:
+        return len(distinct_emoji_lis(string))
     return len(emoji_lis(string))
 
 
