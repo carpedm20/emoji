@@ -1,6 +1,10 @@
 emoji
 =====
 
+1.6.3
+-----
+* Added support for counting unique emojis
+
 1.6.2
 -----
 * Improve performance of demojize()
