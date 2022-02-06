@@ -21,7 +21,7 @@
   <div class="search"><span class="search_icon">🔍</span><input type="text" id="search_full" placeholder="Search" /></div>
   <br>
   {% for entry in lists %}
-    <input type="checkbox" id="enable_list_{{ entry.name }}" data-name="{{ entry.name }}" {% if entry.name == defaultListName %} checked {% endif %} {% if not entry.emojis %} class="notloaded" {% endif %} title="{{ entry.name }}">
+    <input type="checkbox" id="enable_list_{{ entry.name }}" data-name="{{ entry.name }}" {% if entry.name == defaultLang %} checked {% endif %} {% if not entry.emojis %} class="notloaded" {% endif %} title="{{ entry.name }}">
     <label for="enable_list_{{ entry.name }}" title="{{ entry.name }}">{{ entry.pretty }}</label>
   {% endfor %}
   <br>

@@ -39,7 +39,7 @@ def emojize(
 ):
     """Replace emoji names in a string with unicode codes.
         >>> import emoji
-        >>> print(emoji.emojize("Python is fun :thumbsup:", use_aliases=True))
+        >>> print(emoji.emojize("Python is fun :thumbsup:", language='alias'))
         Python is fun 👍
         >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍

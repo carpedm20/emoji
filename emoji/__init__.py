@@ -8,9 +8,9 @@ emoji for Python
 emoji terminal output for Python.
 
     >>> import emoji
-    >>> print(emoji.emojize('Python is :thumbsup:', use_aliases=True))
+    >>> print(emoji.emojize('Python is :thumbsup:', language='alias'))
     Python is 👍
-    >> print(emoji.emojize('Python is :thumbs_up:'))
+    >>> print(emoji.emojize('Python is :thumbs_up:'))
     Python is 👍
 """
 
@@ -21,7 +21,7 @@ from emoji.unicode_codes import *
 __all__ = [
     # emoji.core
     'emojize', 'demojize', 'get_emoji_regexp', 'emoji_count', 'emoji_lis',
-    'replace_emoji', 'version',
+    'distinct_emoji_lis', 'replace_emoji', 'version', 'is_emoji',
     # emoji.unicode_codes
     'EMOJI_UNICODE_ENGLISH', 'EMOJI_UNICODE_SPANISH', 'EMOJI_UNICODE_PORTUGUESE',
     'EMOJI_UNICODE_ITALIAN', 'EMOJI_UNICODE_FRENCH', 'EMOJI_UNICODE_GERMAN',
