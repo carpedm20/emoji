@@ -19,6 +19,7 @@ __all__ = [
     'emojize', 'demojize', 'get_emoji_regexp',
     'emoji_lis', 'distinct_emoji_lis', 'emoji_count',
     'replace_emoji', 'is_emoji', 'version',
+    'emoji_list', 'distinct_emoji_list',
 ]
 
 PY2 = sys.version_info[0] == 2
@@ -27,10 +28,20 @@ _EMOJI_REGEXP = None
 _SEARCH_TREE = None
 _DEFAULT_DELIMITER = ':'
 
+class _DeprecatedParameter:
+    pass
+
+def _deprecation(message, stacklevel=3):
+    message = (message + "\n") if message else ""
+    warnings.warn("%sTo hide this warning, pin/downgrade the package to 'emoji~=1.6.3'" % (message, ), DeprecationWarning, stacklevel=stacklevel)
+
+def _deprecation_removed(name, message=""):
+    _deprecation("'emoji.%s' is deprecated and will be removed in version 2.0.0. %s" % (name, message), 4)
+
 
 def emojize(
         string,
-        use_aliases=False,
+        use_aliases=_DeprecatedParameter,
         delimiters=(_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
         variant=None,
         language='en',
@@ -51,7 +62,7 @@ def emojize(
         Python is fun ❤️ #red heart, not black heart
 
     :param string: String contains emoji names.
-    :param use_aliases: (optional) Enable emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
+    :param use_aliases: (optional) Deprecated. Use language='alias' instead
     :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER
     :param variant: (optional) Choose variation selector between "base"(None), VS-15 ("text_type") and VS-16 ("emoji_type")
     :param language: Choose language of emoji name: language code 'es', 'de', etc. or 'alias'
@@ -77,6 +88,11 @@ def emojize(
     :raises ValueError: if ``variant`` is neither None, 'text_type' or 'emoji_type'
 
     """
+
+    if use_aliases is _DeprecatedParameter:
+        use_aliases = False
+    else:
+        _deprecation("The parameter 'use_aliases' in emoji.emojize() is deprecated and will be removed in version 2.0.0. Use language='alias' instead.")
 
     if use_aliases or language == 'alias':
         if language not in ('en', 'alias'):
@@ -121,7 +137,7 @@ def emojize(
 
 def demojize(
         string,
-        use_aliases=False,
+        use_aliases=_DeprecatedParameter,
         delimiters=(_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
         language='en',
         version=None,
@@ -137,7 +153,7 @@ def demojize(
         Unicode is tricky __hushed_face__
 
     :param string: String contains unicode characters. MUST BE UNICODE.
-    :param use_aliases: (optional) Return emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
+    :param use_aliases: (optional) Deprecated. Use language='alias' instead
     :param delimiters: (optional) User delimiters other than ``_DEFAULT_DELIMITER``
     :param language: Choose language of emoji name: language code 'es', 'de', etc. or 'alias'
         to use English aliases
@@ -161,6 +177,11 @@ def demojize(
             })
 
     """
+
+    if use_aliases is _DeprecatedParameter:
+        use_aliases = False
+    else:
+        _deprecation("The parameter 'use_aliases' in emoji.demojize() is deprecated and will be removed in version 2.0.0. Use language='alias' instead.")
 
     if language == 'alias':
         language = 'en'
@@ -218,7 +239,7 @@ def demojize(
     return "".join(result)
 
 
-def replace_emoji(string, replace='', language=None, version=-1):
+def replace_emoji(string, replace='', language=_DeprecatedParameter, version=-1):
     """Replace unicode emoji in a customizable string.
 
     :param string: String contains unicode characters. MUST BE UNICODE.
@@ -228,8 +249,11 @@ def replace_emoji(string, replace='', language=None, version=-1):
         replace(str, dict) -> str
     :param version: (optional) Max version. If set to an Emoji Version,
         only emoji above this version will be replaced.
-    :param language: (optional) Parameter is no longer used
+    :param language: (optional) Deprecated and has no effect
     """
+
+    if language is not _DeprecatedParameter:
+        _deprecation("The parameter 'language' in emoji.replace_emoji() is deprecated and will be removed in version 2.0.0.")
 
     if version > -1:
         def f(emj, emj_data):
@@ -239,9 +263,9 @@ def replace_emoji(string, replace='', language=None, version=-1):
                 return replace(emj, emj_data)
             return str(replace)
 
-        return demojize(string, use_aliases=False, language='en', version=-1, handle_version=f)
+        return demojize(string, language='en', version=-1, handle_version=f)
     else:
-        return demojize(string, use_aliases=False, language='en', version=-1, handle_version=replace)
+        return demojize(string, language='en', version=-1, handle_version=replace)
 
 
 def get_emoji_regexp(language=None):
@@ -250,6 +274,8 @@ def get_emoji_regexp(language=None):
 
     :param language: (optional) Parameter is no longer used
     """
+
+    _deprecation_removed("get_emoji_regexp()", "If you want to remove emoji from a string, consider the method emoji.replace_emoji(str, replace='').")
 
     global _EMOJI_REGEXP
     # Build emoji regexp once
@@ -262,13 +288,16 @@ def get_emoji_regexp(language=None):
     return _EMOJI_REGEXP
 
 
-def emoji_lis(string, language=None):
+def emoji_lis(string, language=_DeprecatedParameter):
     """Returns the location and emoji in list of dict format.
         >>> emoji.emoji_lis("Hi, I am fine. 😁")
-        >>> [{'location': 15, 'emoji': '😁'}]
+        [{'location': 15, 'emoji': '😁'}]
 
-    :param language: (optional) Parameter is no longer used
+    :param language: (optional) Deprecated and has no effect
     """
+
+    _deprecation_removed("emoji_lis()", "Use method emoji.emoji_list(str) instead.")
+
     _entities = []
 
     def f(emj, emj_data):
@@ -277,18 +306,52 @@ def emoji_lis(string, language=None):
             'emoji': emj,
         })
 
-    demojize(string, use_aliases=False, language='en',
+    demojize(string, language='en',
              version=-1, handle_version=f)
     return _entities
 
 
-def distinct_emoji_lis(string, language=None):
+def emoji_list(string):
+    """Returns the location and emoji in list of dict format.
+        >>> emoji.emoji_list("Hi, I am fine. 😁")
+        [{'match_start': 15, 'match_end': 16, 'emoji': '😁'}]y
+
+    """
+
+    _entities = []
+
+    def f(emj, emj_data):
+        _entities.append({
+            'match_start': emj_data['match_start'],
+            'match_end': emj_data['match_end'],
+            'emoji': emj,
+        })
+
+    demojize(string, language='en',
+             version=-1, handle_version=f)
+    return _entities
+
+
+def distinct_emoji_lis(string, language=_DeprecatedParameter):
     """Returns distinct list of emojis from the string.
 
-    :param language: (optional) Parameter is no longer used
+    :param language: (optional) Deprecated and has no effect
     """
+
+    _deprecation_removed("distinct_emoji_lis()", "Use method emoji.distinct_emoji_list(str) instead.")
+
     distinct_list = list(
         {e['emoji'] for e in emoji_lis(string)}
+    )
+    return distinct_list
+
+
+def distinct_emoji_list(string):
+    """Returns distinct list of emojis from the string.
+    """
+
+    distinct_list = list(
+        {e['emoji'] for e in emoji_list(string)}
     )
     return distinct_list
 
@@ -338,7 +401,7 @@ def version(string):
     replace_emoji(string, replace=f, version=-1)
     if version:
         return version[0]
-    emojize(string, use_aliases=True, version=-1, handle_version=f)
+    emojize(string, language='alias', version=-1, handle_version=f)
     if version:
         return version[0]
     for lang_code in unicode_codes.EMOJI_UNICODE:
