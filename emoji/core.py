@@ -28,12 +28,15 @@ _EMOJI_REGEXP = None
 _SEARCH_TREE = None
 _DEFAULT_DELIMITER = ':'
 
+
 class _DeprecatedParameter:
     pass
+
 
 def _deprecation(message, stacklevel=3):
     message = (message + "\n") if message else ""
     warnings.warn("%sTo hide this warning, pin/downgrade the package to 'emoji~=1.6.3'" % (message, ), DeprecationWarning, stacklevel=stacklevel)
+
 
 def _deprecation_removed(name, message=""):
     _deprecation("'emoji.%s' is deprecated and will be removed in version 2.0.0. %s" % (name, message), 4)
@@ -187,9 +190,8 @@ def demojize(
         language = 'en'
         use_aliases = True
     elif use_aliases and language != 'en':
-            warnings.warn("use_aliases=True is only supported for language='en'. "
-                          "It is recommended to use demojize(string, language='alias') instead", stacklevel=2)
-            language = 'en'
+        warnings.warn("use_aliases=True is only supported for language='en'. It is recommended to use demojize(string, language='alias') instead", stacklevel=2)
+        language = 'en'
 
     tree = _get_search_tree()
     result = []
