@@ -252,6 +252,23 @@ def test_distinct_emoji_lis():
     assert emoji.distinct_emoji_lis('Hi, I am fine. 😁😁😁😁') == ['😁']
 
 
+def test_emoji_list():
+    assert emoji.emoji_list('Hi, I am 👌 test')[0]['match_start'] == 9
+    assert emoji.emoji_list('Hi') == []
+    if len('Hello 🇫🇷👌') < 10:  # skip these tests on python with UCS-2 as the string length/positions are different
+        assert emoji.emoji_list('Hi, I am fine. 😁') == [
+            {'match_start': 15, 'match_end': 16, 'emoji': '😁'}]
+        assert emoji.emoji_list('Hello 🇫🇷👌') == [
+            {'emoji': '🇫🇷', 'match_start': 6, 'match_end': 8}, {'emoji': '👌', 'match_start': 8, 'match_end': 9}]
+
+
+def test_distinct_emoji_list():
+    assert emoji.distinct_emoji_list('Hi, I am fine. 😁') == ['😁']
+    assert emoji.distinct_emoji_list('Hi') == []
+    assert set(emoji.distinct_emoji_list('Hello 🇫🇷👌')) == {'🇫🇷', '👌'}
+    assert emoji.distinct_emoji_list('Hi, I am fine. 😁😁😁😁') == ['😁']
+
+
 def test_emoji_count():
     assert emoji.emoji_count('Hi, I am fine. 😁') == 1
     assert emoji.emoji_count('Hi') == 0

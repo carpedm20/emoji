@@ -1,6 +1,12 @@
 emoji
 =====
 
+1.7.0
+-----
+* Added `emoji_list()` and `distinct_emoji_list()`
+* Added deprecation warnings for several functions and variables that will be removed in version 2.0.0.
+  If you don't want to see these warnings, you can stay with 1.6.x. For example in pip/requirements.txt you can pin to 1.6.x with `emoji~=1.6.3`.
+
 1.6.3
 -----
 * Added support for counting unique emojis
