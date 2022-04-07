@@ -7,19 +7,19 @@ Emoji for Python.  This project was inspired by `kyokomi <https://github.com/kyo
 Example
 -------
 
-The entire set of Emoji codes as defined by the `unicode consortium <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
+The entire set of Emoji codes as defined by the `unicode consortium <https://unicode.org/emoji/charts/full-emoji-list.html>`__
 is supported in addition to a bunch of `aliases <http://www.emoji-cheat-sheet.com/>`__.  By
 default, only the official list is enabled but doing ``emoji.emojize(language='alias')`` enables
 both the full list and aliases.
 
 .. code-block:: python
 
-    >> import emoji
-    >> print(emoji.emojize('Python is :thumbs_up:'))
+    >>> import emoji
+    >>> print(emoji.emojize('Python is :thumbs_up:'))
     Python is 👍
-    >> print(emoji.emojize('Python is :thumbsup:', language='alias'))
+    >>> print(emoji.emojize('Python is :thumbsup:', language='alias'))
     Python is 👍
-    >> print(emoji.demojize('Python is 👍'))
+    >>> print(emoji.demojize('Python is 👍'))
     Python is :thumbs_up:
     >>> print(emoji.emojize("Python is fun :red_heart:"))
     Python is fun ❤
@@ -37,9 +37,9 @@ Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``), French (``'fr'``)
 
 .. code-block:: python
 
-    >> print(emoji.emojize('Python es :pulgar_hacia_arriba:', language='es'))
+    >>> print(emoji.emojize('Python es :pulgar_hacia_arriba:', language='es'))
     Python es 👍
-    >> print(emoji.demojize('Python es 👍', language='es'))
+    >>> print(emoji.demojize('Python es 👍', language='es'))
     Python es :pulgar_hacia_arriba:
     >>> print(emoji.emojize("Python é :polegar_para_cima:", language='pt'))
     Python é 👍
@@ -85,6 +85,10 @@ contents to ``stdout`` in a more useful format.
 
 Links
 -----
+
+**Documentation**
+
+`https://carpedm20.github.io/emoji/docs/ <https://carpedm20.github.io/emoji/docs/>`__
 
 **Overview of all emoji:**
 
