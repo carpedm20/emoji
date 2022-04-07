@@ -52,17 +52,16 @@ def emojize(
         handle_version=None
 ):
     """Replace emoji names in a string with unicode codes.
-        >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbsup:", language='alias'))
         Python is fun 👍
         >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍
         >>> print(emoji.emojize("Python is fun __thumbs_up__", delimiters = ("__", "__")))
         Python is fun 👍
-        >>> print(emoji.emojize("Python is fun :red_heart:",variant="text_type"))
-        Python is fun ❤
-        >>> print(emoji.emojize("Python is fun :red_heart:",variant="emoji_type"))
-        Python is fun ❤️ #red heart, not black heart
+        >>> print(emoji.emojize("Python is fun :red_heart:", variant="text_type"))
+        Python is fun ❤︎
+        >>> print(emoji.emojize("Python is fun :red_heart:", variant="emoji_type")) # Red heart, not black heart
+        Python is fun ❤️
 
     :param string: String contains emoji names.
     :param use_aliases: (optional) Deprecated. Use language='alias' instead
@@ -147,7 +146,6 @@ def demojize(
         handle_version=None
 ):
     """Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
-        >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍
         >>> print(emoji.demojize(u"Python is fun 👍"))
@@ -275,6 +273,9 @@ def get_emoji_regexp(language=None):
     ``emoji.EMOJI_DATA``. The regular expression is only compiled once.
 
     :param language: (optional) Parameter is no longer used
+
+    .. deprecated:: 1.7.0
+        Use :func:`replace_emoji` to remove or replace emoji and :func:`emoji_list` to find emoji.
     """
 
     _deprecation_removed("get_emoji_regexp()", "If you want to remove emoji from a string, consider the method emoji.replace_emoji(str, replace='').")
@@ -296,6 +297,9 @@ def emoji_lis(string, language=_DeprecatedParameter):
         [{'location': 15, 'emoji': '😁'}]
 
     :param language: (optional) Deprecated and has no effect
+
+    .. deprecated:: 1.7.0
+        Use method :func:`emoji_list` instead.
     """
 
     _deprecation_removed("emoji_lis()", "Use method emoji.emoji_list(str) instead.")
@@ -315,8 +319,9 @@ def emoji_lis(string, language=_DeprecatedParameter):
 
 def emoji_list(string):
     """Returns the location and emoji in list of dict format.
+
         >>> emoji.emoji_list("Hi, I am fine. 😁")
-        [{'match_start': 15, 'match_end': 16, 'emoji': '😁'}]y
+        [{'match_start': 15, 'match_end': 16, 'emoji': '😁'}]
 
     """
 
@@ -338,6 +343,9 @@ def distinct_emoji_lis(string, language=_DeprecatedParameter):
     """Returns distinct list of emojis from the string.
 
     :param language: (optional) Deprecated and has no effect
+
+    .. deprecated:: 1.7.0
+        Use method :func:`distinct_emoji_list` instead.
     """
 
     _deprecation_removed("distinct_emoji_lis()", "Use method emoji.distinct_emoji_list(str) instead.")
@@ -377,9 +385,9 @@ def version(string):
     """Returns the Emoji Version of the emoji.
       See http://www.unicode.org/reports/tr51/#Versioning for more information.
         >>> emoji.version("😁")
-        >>> 0.6
+        0.6
         >>> emoji.version(":butterfly:")
-        >>> 3
+        3
 
     :param string: An emoji or a text containig an emoji
     :raises ValueError: if ``string`` does not contain an emoji
