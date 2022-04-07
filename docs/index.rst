@@ -189,15 +189,15 @@ For the functions :func:`emojize` and :func:`demojize` the parameter ``version``
 replace emoji above the specified version with the value of the parameter ``handle_version``.
 It defaults to an empty string, but can be set to any string or a function that returns a string.
 
-For example the `:croissant:` 🥐 emoji was added in Emoji 3.0 (Unicode 9.0) in 2016 and
-`:T-Rex:` 🦖 was added later in Emoji 5.0 (Unicode 10.0) in 2017:
+For example the ``:croissant:`` 🥐 emoji was added in Emoji 3.0 (Unicode 9.0) in 2016 and
+``:T-Rex:`` 🦖 was added later in Emoji 5.0 (Unicode 10.0) in 2017:
 
 .. doctest::
 
     >>> emoji.replace_emoji('A 🦖 is eating a 🥐', replace='[Unsupported emoji]', version=1.0)
     'A [Unsupported emoji] is eating a [Unsupported emoji]'
 
-    >>> emoji.replace_emoji('A 🦖 is eating a 🥐', replace=lambda: chars, data_dict: emj_data['en'], version=3.0)
+    >>> emoji.replace_emoji('A 🦖 is eating a 🥐', replace=lambda chars, data_dict: data_dict['en'], version=3.0)
     'A :T-Rex: is eating a 🥐'
 
     >>> emoji.emojize('A :T-Rex: is eating a :croissant:', version=3.0)
@@ -222,7 +222,8 @@ You can find the version of an emoji with :func:`version`:
     3
     >>> emoji.version('🏌️‍♀️')
     4
-
+    >>> emoji.version('🦖')
+    5
 ..
 
 

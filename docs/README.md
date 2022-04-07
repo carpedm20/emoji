@@ -16,9 +16,15 @@
 
 Building the documentation with [Sphinx](https://www.sphinx-doc.org/):
 
-```sh
+```bash
 git clone https://github.com/carpedm20/emoji.git
 cd emoji/docs
 pip install -r requirements.txt
 make html
+```
+
+Test code in code blocks:
+
+```bash
+make doctest
 ```
