@@ -12,3 +12,13 @@
 | [`version()`](https://carpedm20.github.io/emoji/docs/#emoji.version)                          | Unicode/Emoji version of an emoji                            |
 | [`EMOJI_DATA`](https://carpedm20.github.io/emoji/docs/#emoji.EMOJI_DATA)                      | Dict of all emoji                                            |
 | [`STATUS`](https://carpedm20.github.io/emoji/docs/#emoji.STATUS)                              | Dict of Unicode/Emoji status                                 |
+
+
+Building the documentation with [Sphinx](https://www.sphinx-doc.org/):
+
+```sh
+git clone https://github.com/carpedm20/emoji.git
+cd emoji/docs
+pip install -r requirements.txt
+make html
+```
