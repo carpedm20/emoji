@@ -364,8 +364,8 @@ def emoji_count(string, unique=False):
     :param unique: (optional) True if count only unique emojis
     """
     if unique:
-        return len(distinct_emoji_lis(string))
-    return len(emoji_lis(string))
+        return len(distinct_emoji_list(string))
+    return len(emoji_list(string))
 
 
 def is_emoji(string):
