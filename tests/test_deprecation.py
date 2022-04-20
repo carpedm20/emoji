@@ -4,7 +4,6 @@
 """Unittests for deprecation warnings"""
 
 import sys
-
 import emoji
 import pytest
 
