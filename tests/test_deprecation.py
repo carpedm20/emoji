@@ -39,9 +39,9 @@ def test_deprecation_distinct_emoji_lis():
 
 @pytest.mark.filterwarnings("error")
 def test_deprecation_emojize_use_aliases():
-    with pytest.warns(DeprecationWarning) :
+    with pytest.warns(DeprecationWarning):
         emoji.emojize("test", True)
-    with pytest.warns(DeprecationWarning) :
+    with pytest.warns(DeprecationWarning):
         emoji.emojize("test", use_aliases=True)
     with pytest.warns(DeprecationWarning):
         emoji.emojize("test", use_aliases=False)
@@ -72,6 +72,6 @@ def test_deprecation_module_variables():
     if sys.version_info[0] == 3 and sys.version_info[1] >= 7:
         with pytest.warns(DeprecationWarning):
             for _ in emoji.EMOJI_UNICODE_ENGLISH:
-             pass
+                pass
     for _ in emoji.EMOJI_DATA:
         pass
