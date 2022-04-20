@@ -10,17 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.9
+    - name: Set up Python 3.10
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+        python-version: "3.10"
     - name: Install package
       run: |
         python -m pip install --upgrade pip setuptools
         python setup.py install
-    - name: Retain directory utils/gh-pages
+    - name: Retain directories
       run: |
         cp -R utils/gh-pages ..
+        cp -R docs ..
+        cp -R emoji ../emoji_module
     - name: Switch to branch gh-pages
       run: |
         git stash
@@ -35,18 +37,29 @@ jobs:
     - name: Install requirements
       run: |
         python -m pip install -r ../gh-pages/requirements.txt
+        python -m pip install -r ../docs/requirements.txt
     - name: Generate HTML
       run: |
         python ../gh-pages/generatePages.py -minify
+    - name: Move emoji module in correct path for sphinx links
+      run: |
+        mkdir -p ../emoji/
+        mv ../emoji_module/* ../emoji/
+    - name: Generate sphinx
+      run: |
+        make --directory ../docs html
     - name: Move files into repository
       run: |
         mv ../gh-pages/index.html .
         mv ../gh-pages/all.html .
         mv ../gh-pages/main.css .
         mv ../gh-pages/main.js .
+        rm -R docs
+        mv ../docs/_build/html docs
+        touch .nojekyll
     - name: git commit & push
       run: |
-        git add index.html all.html main.css main.js
+        git add index.html all.html main.css main.js docs .nojekyll
         # Use "|| true" or "--allow-empty"  otherwise the action fails for empty commits
         git commit -m "Updated gh-pages" || true
         git push -u origin gh-pages
