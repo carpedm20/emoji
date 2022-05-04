@@ -54,7 +54,7 @@ jobs:
         mv ../gh-pages/all.html .
         mv ../gh-pages/main.css .
         mv ../gh-pages/main.js .
-        rm -R docs
+        rm -R docs || true
         mv ../docs/_build/html docs
         touch .nojekyll
     - name: git commit & push
