@@ -11,15 +11,21 @@ import emoji
 import pytest
 
 
+# Build all language packs (i.e. fill the cache):
+emoji.emojize("", language="alias")
+for lang_code in emoji.LANGUAGES:
+    emoji.emojize("", language=lang_code)
+
+
 def ascii(s):
     # return escaped Code points \U000AB123
     return s.encode("unicode-escape").decode()
 
 
 def test_emojize_name_only():
-    for lang_code, emoji_pack in emoji.EMOJI_UNICODE.items():
+    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():
         for name in emoji_pack.keys():
-            actual = emoji.emojize(name, False, language=lang_code)
+            actual = emoji.emojize(name, language=lang_code)
             expected = emoji_pack[name]
             assert expected == actual, '%s != %s' % (expected, actual)
 
@@ -35,22 +41,22 @@ def test_emojize_complicated_string():
         ':flag_for_Curaçao:': u'\U0001F1E8\U0001F1FC'
     }
     string = ' complicated! '.join(list(name_code.keys()))
-    actual = emoji.emojize(string, False)
+    actual = emoji.emojize(string)
     expected = string
     for name, code in name_code.items():
         expected = expected.replace(name, code)
-    expected = emoji.emojize(actual, False)
+    expected = emoji.emojize(actual)
     assert expected == actual, '%s != %s' % (expected, actual)
 
 
 def test_emojize_languages():
-    for lang_code, emoji_pack in emoji.EMOJI_UNICODE.items():
+    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():
         for name, emj in emoji_pack.items():
             assert emoji.emojize(name, language=lang_code) == emj
 
 
 def test_demojize_languages():
-    for lang_code, emoji_pack in emoji.EMOJI_UNICODE.items():
+    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():
         for name, emj in emoji_pack.items():
             assert emoji.demojize(emj, language=lang_code) == name
 
@@ -59,21 +65,21 @@ def test_emojize_variant():
     def remove_variant(s): return re.sub(u'[\ufe0e\ufe0f]$', '', s)
 
     assert emoji.emojize(
-        ':Taurus:', variant=None) == emoji.EMOJI_UNICODE['en'][':Taurus:']
+        ':Taurus:', variant=None) == emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']
     assert emoji.emojize(':Taurus:', variant=None) == emoji.emojize(':Taurus:')
     assert emoji.emojize(':Taurus:', variant='text_type') == remove_variant(
-        emoji.EMOJI_UNICODE['en'][':Taurus:']) + u'\ufe0e'
+        emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']) + u'\ufe0e'
     assert emoji.emojize(':Taurus:', variant='emoji_type') == remove_variant(
-        emoji.EMOJI_UNICODE['en'][':Taurus:']) + u'\ufe0f'
+        emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']) + u'\ufe0f'
 
     assert emoji.emojize(
-        ':admission_tickets:', variant=None) == emoji.EMOJI_UNICODE['en'][':admission_tickets:']
+        ':admission_tickets:', variant=None) == emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']
     assert emoji.emojize(':admission_tickets:', variant=None) == emoji.emojize(
         ':admission_tickets:')
     assert emoji.emojize(':admission_tickets:', variant='text_type') == remove_variant(
-        emoji.EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0e'
+        emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0e'
     assert emoji.emojize(':admission_tickets:', variant='emoji_type') == remove_variant(
-        emoji.EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0f'
+        emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']) + u'\ufe0f'
 
     with pytest.raises(ValueError):
         emoji.emojize(':admission_tickets:', variant=False)
@@ -84,12 +90,10 @@ def test_emojize_variant():
     with pytest.raises(ValueError):
         emoji.emojize(':admission_tickets:', variant='wrong')
 
-    assert emoji.emojize(":football:", use_aliases=False) == ':football:'
-    assert emoji.emojize(":football:", variant="text_type",
-                         use_aliases=False) == ':football:'
-    assert emoji.emojize(":football:", use_aliases=True) == u'\U0001F3C8'
-    assert emoji.emojize(":football:", variant="emoji_type",
-                         use_aliases=True) == u'\U0001F3C8'
+    assert emoji.emojize(":football:") == ':football:'
+    assert emoji.emojize(":football:", variant="text_type") == ':football:'
+    assert emoji.emojize(":football:", language="alias") == u'\U0001F3C8'
+    assert emoji.emojize(":football:", variant="emoji_type", language="alias") == u'\U0001F3C8'
 
 
 def test_demojize_removes_variant():
@@ -103,7 +107,7 @@ def test_demojize_removes_variant():
                     emoji.emojize(':atom_symbol:', variant='text_type'),
                     emoji.emojize(':atom_symbol:', variant='emoji_type')])
 
-    for lang_code in emoji.UNICODE_EMOJI:
+    for lang_code in emoji.LANGUAGES:
         result = emoji.demojize(text, language=lang_code)
         assert '\ufe0e' not in result
         assert '\ufe0f' not in result
@@ -111,98 +115,99 @@ def test_demojize_removes_variant():
 
 def test_emojize_invalid_emoji():
     string = '__---___--Invalid__--__-Name'
-    assert emoji.emojize(string, False) == string
+    assert emoji.emojize(string) == string
 
     string = ':: baby:: :_: : : :  : :-: :+:'
-    assert emoji.emojize(string, False) == string
+    assert emoji.emojize(string) == string
+
+def test_emojize_version():
+    assert emoji.emojize("Flags like :Belgium: are in version 2.0", version=1.0) == "Flags like  are in version 2.0"
+    assert emoji.emojize("Flags like :Belgium: are in version 2.0", version=1.9) == "Flags like  are in version 2.0"
+    assert emoji.emojize("Flags like :Belgium: are in version 2.0", version=2.0) == "Flags like 🇧🇪 are in version 2.0"
+    assert emoji.emojize("Flags like :Belgium: are in version 2.0", version=3.0) == "Flags like 🇧🇪 are in version 2.0"
+    assert emoji.emojize("Boxing gloves :boxing_glove: are in version 3.0", version=0) == "Boxing gloves  are in version 3.0"
+    assert emoji.emojize("Boxing gloves :boxing_glove: are in version 3.0", version=1) == "Boxing gloves  are in version 3.0"
+    assert emoji.emojize("Boxing gloves :boxing_glove: are in version 3.0", version=2) == "Boxing gloves  are in version 3.0"
+    assert emoji.emojize("Boxing gloves :boxing_glove: are in version 3.0", version=3) == "Boxing gloves 🥊 are in version 3.0"
+    assert emoji.emojize("Boxing gloves :boxing_glove: are in version 3.0", version=4) == "Boxing gloves 🥊 are in version 3.0"
+
+    assert emoji.emojize("Biking :man_biking: is in 4.0", version=3.0, handle_version='<emoji>') == "Biking <emoji> is in 4.0"
+    assert emoji.emojize("Biking :man_biking: is in 4.0", version=3.0, handle_version=lambda e, data: '<emoji>') == "Biking <emoji> is in 4.0"
+    assert emoji.emojize("Biking :man_biking: is in 4.0", version=3.0, handle_version=lambda e, data: data["fr"]) == "Biking :cycliste_homme: is in 4.0"
+
+    def f(emj, data):
+        assert data['E'] == 5
+
+    assert emoji.emojize(':bowl_with_spoon:', version=-
+                         1, handle_version=f) == ''
+    assert emoji.emojize(':bowl_with_spoon:') == u'\U0001F963'
+    assert emoji.emojize(':bowl_with_spoon:', version=4) == ''
+    assert emoji.emojize(':bowl_with_spoon:', version=4.9) == ''
+    assert emoji.emojize(':bowl_with_spoon:', version=5) == u'\U0001F963'
+    assert emoji.emojize(':bowl_with_spoon:', version=5.1) == u'\U0001F963'
+    assert emoji.emojize(':bowl_with_spoon:', version=6) == u'\U0001F963'
+    assert emoji.emojize(':bowl_with_spoon:', version=4,
+                         handle_version='abc') == 'abc'
+    assert emoji.emojize(':bowl_with_spoon:', version=4,
+                         handle_version=None) == ''
+    assert emoji.emojize(':bowl_with_spoon:', version=4,
+                         handle_version='') == ''
+    assert emoji.emojize(':bowl_with_spoon:', version=4,
+                         handle_version=lambda e, d: str(d['E'])) == '5'
 
 
 def test_alias():
-    # When use_aliases=False aliases should be passed through untouched
-    assert emoji.emojize(':soccer:', use_aliases=False) == ':soccer:'
-    assert emoji.emojize(':soccer:', use_aliases=True) == u'\U000026BD'
-    assert emoji.emojize(':football:', use_aliases=False) == ':football:'
-    assert emoji.emojize(':football:', use_aliases=True) == u'\U0001F3C8'
+    # When lanugage != "alias" aliases should be passed through untouched
+    assert emoji.emojize(':soccer:') == ':soccer:'
+    assert emoji.emojize(':soccer:', language="alias") == u'\U000026BD'
+    assert emoji.emojize(':football:') == ':football:'
+    assert emoji.emojize(':football:', language="alias") == u'\U0001F3C8'
     # Multiple aliases for one emoji:
-    assert emoji.emojize(':thumbsup:', use_aliases=True) == emoji.emojize(
-        ':+1:', use_aliases=True)
-    assert emoji.emojize(':thumbsup:', use_aliases=True) == emoji.emojize(
-        ':thumbs_up:', use_aliases=True)
-    assert emoji.emojize(':thumbsup:', use_aliases=True) == u'\U0001f44d'
+    assert emoji.emojize(':thumbsup:', language="alias") == emoji.emojize(
+        ':+1:', language="alias")
+    assert emoji.emojize(':thumbsup:', language="alias") == emoji.emojize(
+        ':thumbs_up:', language="alias")
+    assert emoji.emojize(':thumbsup:', language="alias") == u'\U0001f44d'
 
     thumbsup = u'\U0001f44d'
-    assert emoji.demojize(thumbsup, use_aliases=True) != thumbsup
-    assert emoji.demojize(thumbsup, use_aliases=True) != ':thumbs_up:'
-    assert emoji.demojize(thumbsup, use_aliases=True) != emoji.demojize(
-        thumbsup, use_aliases=False)
+    assert emoji.demojize(thumbsup, language="alias") != thumbsup
+    assert emoji.demojize(thumbsup, language="alias") != ':thumbs_up:'
+    assert emoji.demojize(thumbsup, language="alias") != emoji.demojize(thumbsup)
 
     thailand = u'🇹🇭'
-    assert emoji.demojize(thailand, use_aliases=True) != thailand
-    assert emoji.demojize(thailand, use_aliases=True) != ':Thailand:'
-    assert emoji.demojize(thailand, use_aliases=True) != emoji.demojize(
-        thailand, use_aliases=False)
-    assert emoji.demojize(thailand, use_aliases=True, version=1.0) != emoji.demojize(
-        thailand, use_aliases=True)
+    assert emoji.demojize(thailand, language="alias") != thailand
+    assert emoji.demojize(thailand, language="alias") != ':Thailand:'
+    assert emoji.demojize(thailand, language="alias") != emoji.demojize(thailand)
+    assert emoji.demojize(thailand, language="alias", version=1.0) != emoji.demojize(
+        thailand, language="alias")
 
     # No alias
     for emj, emoji_data in emoji.EMOJI_DATA.items():
         if emoji_data['status'] != emoji.STATUS['fully_qualified']:
             continue
         if 'alias' not in emoji_data:
-            assert emoji.emojize(emoji_data['en'], use_aliases=True) != emoji_data['en']
-            assert emoji.demojize(emj, use_aliases=True) == emoji_data['en']
-
-    # language='alias'
-    assert emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="en") == thailand
-    assert emoji.emojize(':flag_for_Thailand:', language="alias") == thailand
-    assert emoji.emojize(':flag_for_Thailand:', language="alias", use_aliases=True) == thailand
-    assert emoji.demojize(thailand, use_aliases=True, language="en") == ':flag_for_Thailand:'
-    assert emoji.demojize(thailand, language="alias") ==':flag_for_Thailand:'
-    assert emoji.demojize(thailand, language="alias", use_aliases=True) ==':flag_for_Thailand:'
+            assert emoji.emojize(emoji_data['en'], language="alias") != emoji_data['en']
+            assert emoji.demojize(emj, language="alias") == emoji_data['en']
 
 
 def test_invalid_alias():
     # Invalid aliases should be passed through untouched
-    assert emoji.emojize(':tester:', use_aliases=True) == ':tester:'
-    assert emoji.emojize(':footbal:', use_aliases=True) == ':footbal:'
-    assert emoji.emojize(':socer:', use_aliases=True) == ':socer:'
-    assert emoji.emojize(':socer:', use_aliases=True,
+    assert emoji.emojize(':tester:', language="alias") == ':tester:'
+    assert emoji.emojize(':footbal:', language="alias") == ':footbal:'
+    assert emoji.emojize(':socer:', language="alias") == ':socer:'
+    assert emoji.emojize(':socer:', language="alias",
                   variant="text_type") == ':socer:'
-
-
-def test_alias_wrong_language():
-    # Alias with wrong languages
-    thailand = u'🇹🇭'
-    with pytest.warns(UserWarning) as w:
-        emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="es")
-    with pytest.warns(UserWarning) as w:
-        assert emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="de") == thailand
-    with pytest.warns(UserWarning) as w:
-        assert emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="es") == thailand
-    assert emoji.emojize(':flag_for_Thailand:', use_aliases=False, language="es") == ':flag_for_Thailand:'
-    assert emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="en") == thailand
-    assert emoji.emojize(':flag_for_Thailand:', use_aliases=False, language="alias") == thailand
-    assert emoji.emojize(':flag_for_Thailand:', use_aliases=True, language="alias") == thailand
-
-    with pytest.warns(UserWarning) as w:
-        emoji.demojize(thailand, use_aliases=True, language="es")
-    with pytest.warns(UserWarning) as w:
-        assert emoji.demojize(thailand, use_aliases=True, language="es") == ':flag_for_Thailand:'
-    assert emoji.demojize(thailand, use_aliases=False, language="es") == ':bandera_tailandia:'
-    assert emoji.demojize(thailand, use_aliases=True, language="en") == ':flag_for_Thailand:'
-    assert emoji.demojize(thailand, use_aliases=False, language="alias") == ':flag_for_Thailand:'
-    assert emoji.demojize(thailand, use_aliases=True, language="alias") == ':flag_for_Thailand:'
 
 
 def test_demojize_name_only():
     for emj, item in emoji.EMOJI_DATA.items():
         if item['status'] != emoji.STATUS['fully_qualified']:
             continue
-        for lang_code in emoji.UNICODE_EMOJI:
+        for lang_code in emoji.LANGUAGES:
             if not lang_code in item:
                 continue
             name = item[lang_code]
-            oneway = emoji.emojize(name, use_aliases=False, language=lang_code)
+            oneway = emoji.emojize(name, language=lang_code)
             assert oneway == emj
             roundtrip = emoji.demojize(oneway, language=lang_code)
             assert name == roundtrip, '%s != %s' % (name, roundtrip)
@@ -233,23 +238,6 @@ def test_demojize_delimiters():
             text_with_emoji = text % emoji.demojize(e, delimiters=d)
             assert demojized_text == text_with_emoji
             assert emoji.emojize(text_with_emoji, delimiters=d) == text_with_unicode
-
-
-def test_emoji_lis():
-    assert emoji.emoji_lis('Hi, I am 👌 test')[0]['location'] == 9
-    assert emoji.emoji_lis('Hi') == []
-    if len('Hello 🇫🇷👌') < 10:  # skip these tests on python with UCS-2 as the string length/positions are different
-        assert emoji.emoji_lis('Hi, I am fine. 😁') == [
-            {'location': 15, 'emoji': '😁'}]
-        assert emoji.emoji_lis('Hello 🇫🇷👌') == [
-            {'emoji': '🇫🇷', 'location': 6}, {'emoji': '👌', 'location': 8}]
-
-
-def test_distinct_emoji_lis():
-    assert emoji.distinct_emoji_lis('Hi, I am fine. 😁') == ['😁']
-    assert emoji.distinct_emoji_lis('Hi') == []
-    assert set(emoji.distinct_emoji_lis('Hello 🇫🇷👌')) == {'🇫🇷', '👌'}
-    assert emoji.distinct_emoji_lis('Hi, I am fine. 😁😁😁😁') == ['😁']
 
 
 def test_emoji_list():
@@ -342,8 +330,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
     def add_random_emoji(text, lst, select=lambda emj_data: emj_data['en']):
 
-        text = text
-
         emoji_list = []
         text_with_unicode = u""
         text_with_placeholder = u""
@@ -377,7 +363,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
         return s.replace(u'\u200d', '').replace(u'\ufe0f', '')
 
     all_emoji_list = list(emoji.EMOJI_DATA.items())
-    qualified_emoji_list = list((emj, item) for emj, item in emoji.EMOJI_DATA.items() if item['status'] == emoji.STATUS['fully_qualified'])
+    qualified_emoji_list = [(emj, item) for emj, item in emoji.EMOJI_DATA.items() if item['status'] == emoji.STATUS['fully_qualified']]
 
     # qualified emoji
     text_with_unicode, text_with_placeholder, emoji_list = add_random_emoji(text, qualified_emoji_list)
@@ -385,8 +371,8 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
     assert emoji.emojize(text_with_placeholder) == text_with_unicode
     if not UCS2:
         assert emoji.replace_emoji(text_with_unicode, u'') == text
-    assert set(emoji.distinct_emoji_lis(text_with_unicode)) == set(emoji_list)
-    for i, lis in enumerate(emoji.emoji_lis(text_with_unicode)):
+    assert set(emoji.distinct_emoji_list(text_with_unicode)) == set(emoji_list)
+    for i, lis in enumerate(emoji.emoji_list(text_with_unicode)):
         assert lis['emoji'] == emoji_list[i]
 
     # qualified emoji from "es"
@@ -396,19 +382,19 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
     assert emoji.emojize(text_with_placeholder, language="es") == text_with_unicode
     if not UCS2:
         assert emoji.replace_emoji(text_with_unicode, u'') == text
-    assert set(emoji.distinct_emoji_lis(text_with_unicode)) == set(emoji_list)
-    for i, lis in enumerate(emoji.emoji_lis(text_with_unicode)):
+    assert set(emoji.distinct_emoji_list(text_with_unicode)) == set(emoji_list)
+    for i, lis in enumerate(emoji.emoji_list(text_with_unicode)):
         assert lis['emoji'] == emoji_list[i]
 
     # qualified emoji from "alias"
     selector = lambda emoji_data: emoji_data["alias"][0] if "alias" in emoji_data else False
     text_with_unicode, text_with_placeholder, emoji_list = add_random_emoji(text, qualified_emoji_list, selector)
-    assert emoji.demojize(text_with_unicode, use_aliases=True) == text_with_placeholder
-    assert emoji.emojize(text_with_placeholder, use_aliases=True) == text_with_unicode
+    assert emoji.demojize(text_with_unicode, language="alias") == text_with_placeholder
+    assert emoji.emojize(text_with_placeholder, language="alias") == text_with_unicode
     if not UCS2:
         assert emoji.replace_emoji(text_with_unicode, u'') == text
-    assert set(emoji.distinct_emoji_lis(text_with_unicode)) == set(emoji_list)
-    for i, lis in enumerate(emoji.emoji_lis(text_with_unicode)):
+    assert set(emoji.distinct_emoji_list(text_with_unicode)) == set(emoji_list)
+    for i, lis in enumerate(emoji.emoji_list(text_with_unicode)):
         assert lis['emoji'] == emoji_list[i]
 
     # all emoji
@@ -417,8 +403,8 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
     assert clean(emoji.emojize(text_with_placeholder)) == clean(text_with_unicode)
     if not UCS2:
         assert emoji.replace_emoji(text_with_unicode, u'') == text
-    assert set(emoji.distinct_emoji_lis(text_with_unicode)) == set(emoji_list)
-    for i, lis in enumerate(emoji.emoji_lis(text_with_unicode)):
+    assert set(emoji.distinct_emoji_list(text_with_unicode)) == set(emoji_list)
+    for i, lis in enumerate(emoji.emoji_list(text_with_unicode)):
         assert lis['emoji'] == emoji_list[i]
 
 

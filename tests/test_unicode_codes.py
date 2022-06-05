@@ -7,22 +7,30 @@
 import emoji
 
 
+# Build all language packs (i.e. fill the cache):
+emoji.emojize("", language="alias")
+for lang_code in emoji.LANGUAGES:
+    emoji.emojize("", language=lang_code)
+
+
 def test_emoji_english_names():
 
-    for use_aliases, group in (
-            (False, emoji.unicode_codes.EMOJI_UNICODE['en']),
-            (True, emoji.unicode_codes.EMOJI_ALIAS_UNICODE_ENGLISH)
+    for language, group in (
+            ('en', emoji.unicode_codes._EMOJI_UNICODE['en']),
+            ('alias', emoji.unicode_codes._ALIASES_UNICODE)
     ):
         for name, ucode in group.items():
             assert name.startswith(':') and name.endswith(':') and len(name) >= 3
-            emj = emoji.emojize(name, use_aliases=use_aliases)
+            emj = emoji.emojize(name, language=language)
             assert emj == ucode, '%s != %s' % (emoji.emojize(name), ucode)
 
 
 def test_compare_normal_and_aliases():
     # There should always be more aliases than normal codes
     # since the aliases contain the normal codes
-    assert len(emoji.EMOJI_UNICODE) < len(emoji.EMOJI_ALIAS_UNICODE_ENGLISH)
+
+    assert len(emoji.unicode_codes._EMOJI_UNICODE['en']) < len(
+        emoji.unicode_codes._ALIASES_UNICODE)
 
 
 def test_no_alias_duplicates():
@@ -30,7 +38,7 @@ def test_no_alias_duplicates():
     # (aliases still can be the same as another 'en'-name)
     all_aliases = set()
     for data in emoji.EMOJI_DATA.values():
-        if data['status'] <= emoji.STATUS['fully_qualified'] and'alias' in data:
+        if data['status'] <= emoji.STATUS['fully_qualified'] and 'alias' in data:
             for alias in data['alias']:
                 assert alias not in all_aliases
                 all_aliases.add(alias)

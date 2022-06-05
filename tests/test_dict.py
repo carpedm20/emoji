@@ -7,22 +7,15 @@
 import re
 import emoji
 
-_all_languages = None
+def test_all_languages_list():
+    """Compare all language keys in EMOJI_DATA with the emoji.LANGUAGES list"""
 
+    langs = set()
+    for item in emoji.EMOJI_DATA.values():
+        langs.update(item.keys())
+    all_languages = {lang for lang in langs if len(lang) == 2 and lang.lower() == lang}
 
-def all_languages():
-    """List of all language keys in EMOJI_DATA"""
-
-    global _all_languages
-
-    if _all_languages is None:
-        langs = set()
-        for item in emoji.EMOJI_DATA.values():
-            langs.update(item.keys())
-        _all_languages = [lang for lang in langs if len(lang) == 2 and lang.lower() == lang]
-
-    return _all_languages
-
+    assert set(emoji.LANGUAGES) == all_languages
 
 def test_emoji_versions():
     """Check that every emoji has a valid version"""
@@ -53,7 +46,7 @@ def check_duplicate_names(lang):
 
 def test_duplicate_names():
     """Check that there are no duplicate names in the fully_qualified except for differnt variants"""
-    for lang in all_languages():
+    for lang in emoji.LANGUAGES:
         check_duplicate_names(lang)
 
 
@@ -62,7 +55,7 @@ def test_name_valid():
 
     pattern = re.compile(r":[^:\s]+:")
     for item in emoji.EMOJI_DATA.values():
-        for lang in all_languages():
+        for lang in emoji.LANGUAGES:
             if lang in item:
                 name = item[lang]
                 assert pattern.match(name)
