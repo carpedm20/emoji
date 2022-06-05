@@ -40,10 +40,10 @@ def emojize(
         Python is fun 👍
         >>> print(emoji.emojize("Python is fun __thumbs_up__", delimiters = ("__", "__")))
         Python is fun 👍
-        >>> print(emoji.emojize("Python is fun :red_heart:",variant="text_type"))
+        >>> print(emoji.emojize("Python is fun :red_heart:", variant="text_type"))
         Python is fun ❤
-        >>> print(emoji.emojize("Python is fun :red_heart:",variant="emoji_type"))
-        Python is fun ❤️ #red heart, not black heart
+        >>> print(emoji.emojize("Python is fun :red_heart:", variant="emoji_type"))
+        Python is fun ❤️ # red heart, not black heart
 
     :param string: String contains emoji names.
     :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER
@@ -283,6 +283,7 @@ def is_emoji(string):
 def version(string):
     """
     Returns the Emoji Version of the emoji.
+
     See http://www.unicode.org/reports/tr51/#Versioning for more information.
         >>> emoji.version("😁")
         0.6
