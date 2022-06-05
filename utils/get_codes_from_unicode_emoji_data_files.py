@@ -205,7 +205,7 @@ if __name__ == "__main__":
     emoji_sequences_source = get_emoji_variation_sequence_from_url('14.0.0')
     emojis = extract_emojis(emoji_source, emoji_sequences_source)
     # Find latest release tag at https://cldr.unicode.org/index/downloads
-    github_tag = 'release-40'
+    github_tag = 'release-41'
     languages = {
         # Update names in other languages:
         'de': extract_names(get_language_data_from_url(github_tag, 'de'), 'de'),
@@ -249,6 +249,7 @@ if __name__ == "__main__":
         aliases = set()
         if emj in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj]:
             aliases.update(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias'])
+        old_aliases = set(aliases)
 
         if 'variant' in v:
             alternative = re.sub(r"\\U0000FE0[EF]$", "", code)
@@ -275,6 +276,11 @@ if __name__ == "__main__":
         if emj in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj]:
             for a in aliases.difference(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias']):
                 new_aliases.append(f"# alias NEW {a} FOR {code}")
+
+        # Try to keep order of aliases intact
+        if aliases == old_aliases and emj in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj]:
+            # Use list instead of set, if there are no new aliases to keep the order intact
+            aliases = [a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias']]
 
         # Print dict of dicts
         alias = ''
