@@ -28,3 +28,9 @@ Test code in code blocks:
 ```bash
 make doctest
 ```
+
+Test coverage of documentation:
+
+```bash
+make coverage
+```
