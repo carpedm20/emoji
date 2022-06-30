@@ -29,7 +29,7 @@ The main purpose of this package is converting unicode emoji to emoji names and 
 versa with :func:`emojize` and :func:`demojize`.
 
 The entire set of Emoji codes as defined by the `unicode consortium <https://unicode.org/emoji/charts/full-emoji-list.html>`__
-is supported in addition to a bunch of `aliases <http://www.emoji-cheat-sheet.com/>`__.
+is supported in addition to a bunch of `aliases <https://www.webfx.com/tools/emoji-cheat-sheet/>`__.
 By default, only the official list is enabled but doing ``emoji.emojize(language='alias')``
 enables both the full list and aliases.
 
@@ -236,7 +236,7 @@ non-English short codes
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The names of emoji in non-English languages have changed, because the data files were updated to
-the new version 40. See https://cldr.unicode.org/index/downloads.
+the new version 41. See https://cldr.unicode.org/index/downloads.
 
 That means some ``:short-code-emoji:`` with non-English names will no longer work in 2.0.0.
 :func:`emojize` will ignore the old codes.
@@ -355,29 +355,29 @@ Links
 
 **For English:**
 
-`Emoji Cheat Sheet <http://www.emoji-cheat-sheet.com/>`__
+`Emoji Cheat Sheet <https://www.webfx.com/tools/emoji-cheat-sheet/>`__
 
-`Official unicode list <http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html>`__
+`Official unicode list <http://www.unicode.org/emoji/charts/full-emoji-list.html>`__
 
 **For Spanish:**
 
-`Unicode list <https://emojiterra.com/es/puntos-de-codigo/>`__
+`Unicode list <https://emojiterra.com/es/lista-es/>`__
 
 **For Portuguese:**
 
-`Unicode list <https://emojiterra.com/pt/pontos-de-codigo/>`__
+`Unicode list <https://emojiterra.com/pt/lista/>`__
 
 **For Italian:**
 
-`Unicode list <https://emojiterra.com/it/punti-di-codice/>`__
+`Unicode list <https://emojiterra.com/it/lista-it/>`__
 
 **For French:**
 
-`Unicode list <https://emojiterra.com/fr/points-de-code/>`__
+`Unicode list <https://emojiterra.com/fr/liste-fr/>`__
 
 **For German:**
 
-`Unicode list <https://emojiterra.com/de/codepoints/>`__
+`Unicode list <https://emojiterra.com/de/liste/>`__
 
 
 

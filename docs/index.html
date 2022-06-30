@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>emoji &#8212; emoji  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <link rel="canonical" href="https://carpedm20.github.io/emoji/docs/index.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -36,10 +37,10 @@
           <div class="body" role="main">
             
   <section id="emoji">
-<h1><a class="toc-backref" href="#id1">emoji</a><a class="headerlink" href="#emoji" title="Permalink to this headline">¶</a></h1>
-<p>Release v1.7.0. (<a class="reference internal" href="install.html#install"><span class="std std-ref">Installation</span></a>)</p>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">emoji</a><a class="headerlink" href="#emoji" title="Permalink to this heading">¶</a></h1>
+<p>Release v2.0.0. (<a class="reference internal" href="install.html#install"><span class="std std-ref">Installation</span></a>)</p>
 <p>emoji supports Python 2.7 and 3.4+</p>
-<div class="contents topic" id="table-of-contents">
+<nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#emoji" id="id1">emoji</a></p>
@@ -65,13 +66,13 @@
 <li><p><a class="reference internal" href="#links" id="id12">Links</a></p></li>
 <li><p><a class="reference internal" href="#indices-and-tables" id="id13">Indices and tables</a></p></li>
 </ul>
-</div>
+</nav>
 <section id="usage-and-examples">
-<h2><a class="toc-backref" href="#id2">Usage and Examples</a><a class="headerlink" href="#usage-and-examples" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Usage and Examples</a><a class="headerlink" href="#usage-and-examples" title="Permalink to this heading">¶</a></h2>
 <p>The main purpose of this package is converting unicode emoji to emoji names and vice
 versa with <a class="reference internal" href="api.html#emoji.emojize" title="emoji.emojize"><code class="xref py py-func docutils literal notranslate"><span class="pre">emojize()</span></code></a> and <a class="reference internal" href="api.html#emoji.demojize" title="emoji.demojize"><code class="xref py py-func docutils literal notranslate"><span class="pre">demojize()</span></code></a>.</p>
 <p>The entire set of Emoji codes as defined by the <a class="reference external" href="https://unicode.org/emoji/charts/full-emoji-list.html">unicode consortium</a>
-is supported in addition to a bunch of <a class="reference external" href="http://www.emoji-cheat-sheet.com/">aliases</a>.
+is supported in addition to a bunch of <a class="reference external" href="https://www.webfx.com/tools/emoji-cheat-sheet/">aliases</a>.
 By default, only the official list is enabled but doing <code class="docutils literal notranslate"><span class="pre">emoji.emojize(language='alias')</span></code>
 enables both the full list and aliases.</p>
 <div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;Python is :thumbs_up:&#39;</span><span class="p">))</span>
@@ -87,7 +88,7 @@ enables both the full list and aliases.</p>
 </pre></div>
 </div>
 <section id="languages">
-<h3><a class="toc-backref" href="#id3">Languages</a><a class="headerlink" href="#languages" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Languages</a><a class="headerlink" href="#languages" title="Permalink to this heading">¶</a></h3>
 <p>By default, the language is English (<code class="docutils literal notranslate"><span class="pre">language='en'</span></code>) but  also supported languages are:</p>
 <p>Spanish (<code class="docutils literal notranslate"><span class="pre">'es'</span></code>), Portuguese (<code class="docutils literal notranslate"><span class="pre">'pt'</span></code>), Italian (<code class="docutils literal notranslate"><span class="pre">'it'</span></code>), French (<code class="docutils literal notranslate"><span class="pre">'fr'</span></code>), German (<code class="docutils literal notranslate"><span class="pre">'de'</span></code>)</p>
 <div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;Python es :pulgar_hacia_arriba:&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;es&#39;</span><span class="p">))</span>
@@ -102,7 +103,7 @@ enables both the full list and aliases.</p>
 </div>
 </section>
 <section id="extracting-emoji">
-<h3><a class="toc-backref" href="#id4">Extracting emoji</a><a class="headerlink" href="#extracting-emoji" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Extracting emoji</a><a class="headerlink" href="#extracting-emoji" title="Permalink to this heading">¶</a></h3>
 <p>The function <a class="reference internal" href="api.html#emoji.emoji_list" title="emoji.emoji_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">emoji_list()</span></code></a> finds all emoji in string and their position.
 Keep in mind that an emoji can span over multiple characters:</p>
 <div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_list</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">)</span>
@@ -154,7 +155,7 @@ to <code class="docutils literal notranslate"><span class="pre">'fully_qualified
 Unicode Standard <a class="reference external" href="http://www.unicode.org/reports/tr51/#Emoji_Variation_Selector_Notes">http://www.unicode.org/reports/tr51/#Emoji_Variation_Selector_Notes</a></p>
 </section>
 <section id="replacing-and-removing-emoji">
-<h3><a class="toc-backref" href="#id5">Replacing and removing emoji</a><a class="headerlink" href="#replacing-and-removing-emoji" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Replacing and removing emoji</a><a class="headerlink" href="#replacing-and-removing-emoji" title="Permalink to this heading">¶</a></h3>
 <p>With <a class="reference internal" href="api.html#emoji.replace_emoji" title="emoji.replace_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">replace_emoji()</span></code></a> you can replace, filter, escape or remove emoji in a string:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="go">&#39;Python is &#39;</span>
@@ -181,7 +182,7 @@ Unicode Standard <a class="reference external" href="http://www.unicode.org/repo
 </div>
 </section>
 <section id="emoji-versions">
-<h3><a class="toc-backref" href="#id6">Emoji versions</a><a class="headerlink" href="#emoji-versions" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Emoji versions</a><a class="headerlink" href="#emoji-versions" title="Permalink to this heading">¶</a></h3>
 <p>The parameter <code class="docutils literal notranslate"><span class="pre">version</span></code> in <a class="reference internal" href="api.html#emoji.replace_emoji" title="emoji.replace_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">replace_emoji()</span></code></a> allows to replace only emoji above
 that <a class="reference internal" href="api.html#emoji-version"><span class="std std-ref">Emoji version</span></a> to prevent incompatibility with older platforms.</p>
 <p>For the functions <a class="reference internal" href="api.html#emoji.emojize" title="emoji.emojize"><code class="xref py py-func docutils literal notranslate"><span class="pre">emojize()</span></code></a> and <a class="reference internal" href="api.html#emoji.demojize" title="emoji.demojize"><code class="xref py py-func docutils literal notranslate"><span class="pre">demojize()</span></code></a> the parameter <code class="docutils literal notranslate"><span class="pre">version</span></code> will
@@ -220,19 +221,19 @@ It defaults to an empty string, but can be set to any string or a function that 
 </section>
 </section>
 <section id="migrating-to-version-2-0-0">
-<h2><a class="toc-backref" href="#id7">Migrating to version 2.0.0</a><a class="headerlink" href="#migrating-to-version-2-0-0" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Migrating to version 2.0.0</a><a class="headerlink" href="#migrating-to-version-2-0-0" title="Permalink to this heading">¶</a></h2>
 <p>There a two major, breaking changes in version 2.0.0</p>
 <section id="non-english-short-codes">
-<h3><a class="toc-backref" href="#id8">non-English short codes</a><a class="headerlink" href="#non-english-short-codes" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">non-English short codes</a><a class="headerlink" href="#non-english-short-codes" title="Permalink to this heading">¶</a></h3>
 <p>The names of emoji in non-English languages have changed, because the data files were updated to
-the new version 40. See <a class="reference external" href="https://cldr.unicode.org/index/downloads">https://cldr.unicode.org/index/downloads</a>.</p>
+the new version 41. See <a class="reference external" href="https://cldr.unicode.org/index/downloads">https://cldr.unicode.org/index/downloads</a>.</p>
 <p>That means some <code class="docutils literal notranslate"><span class="pre">:short-code-emoji:</span></code> with non-English names will no longer work in 2.0.0.
 <a class="reference internal" href="api.html#emoji.emojize" title="emoji.emojize"><code class="xref py py-func docutils literal notranslate"><span class="pre">emojize()</span></code></a> will ignore the old codes.</p>
 <p>This may be a problem if you have previously stored <code class="docutils literal notranslate"><span class="pre">:short-code-emoji:</span></code> with non-English names
 for example in a database or if your users have stored them.</p>
 </section>
 <section id="regular-expression">
-<h3><a class="toc-backref" href="#id9">Regular expression</a><a class="headerlink" href="#regular-expression" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Regular expression</a><a class="headerlink" href="#regular-expression" title="Permalink to this heading">¶</a></h3>
 <p>The function <code class="docutils literal notranslate"><span class="pre">get_emoji_regexp()</span></code> was removed in 2.0.0. Internally the module no longer uses
 a regular expression when scanning for emoji in a string (e.g. in <a class="reference internal" href="api.html#emoji.demojize" title="emoji.demojize"><code class="xref py py-func docutils literal notranslate"><span class="pre">demojize()</span></code></a>).</p>
 <p>The regular expression was slow in Python 3 and it failed to correctly find certain combinations
@@ -263,7 +264,7 @@ expression yourself like this:</p>
 </section>
 </section>
 <section id="common-problems">
-<h2><a class="toc-backref" href="#id10">Common problems</a><a class="headerlink" href="#common-problems" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Common problems</a><a class="headerlink" href="#common-problems" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">UnicodeWarning</span><span class="p">:</span> <span class="n">Unicode</span> <span class="n">unequal</span> <span class="n">comparison</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">convert</span> <span class="n">both</span> <span class="n">arguments</span> <span class="n">to</span> <span class="n">Unicode</span> <span class="o">-</span> <span class="n">interpreting</span> <span class="n">them</span> <span class="k">as</span> <span class="n">being</span> <span class="n">unequal</span>
 </pre></div>
 </div>
@@ -274,7 +275,7 @@ You should only pass unicode strings to this module.</p>
 information on Unicode in Python 2.7.</p>
 </section>
 <section id="the-api-documentation">
-<h2><a class="toc-backref" href="#id11">The API documentation</a><a class="headerlink" href="#the-api-documentation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">The API documentation</a><a class="headerlink" href="#the-api-documentation" title="Permalink to this heading">¶</a></h2>
 <p>Reference documentation of all functions and properties in the module:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -282,10 +283,6 @@ information on Unicode in Python 2.7.</p>
 </ul>
 </div>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 68%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head" colspan="2"><p>API Reference</p></th>
 </tr>
@@ -318,7 +315,7 @@ information on Unicode in Python 2.7.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.version" title="emoji.version"><code class="xref py py-func docutils literal notranslate"><span class="pre">version()</span></code></a></p></td>
 <td><p>Find Unicode/Emoji version of an emoji</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.get_emoji_regexp" title="emoji.get_emoji_regexp"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_emoji_regexp()</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">get_emoji_regexp()</span></code></p></td>
 <td><p>Returns compiled regular expression that matches all emojis</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Module variables:</strong></p></td>
@@ -335,26 +332,26 @@ information on Unicode in Python 2.7.</p>
 </section>
 </section>
 <section id="links">
-<h1><a class="toc-backref" href="#id12">Links</a><a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id12" role="doc-backlink">Links</a><a class="headerlink" href="#links" title="Permalink to this heading">¶</a></h1>
 <p><strong>Overview of all emoji:</strong></p>
 <p><a class="reference external" href="https://carpedm20.github.io/emoji/">https://carpedm20.github.io/emoji/</a></p>
 <p>(auto-generated list of the emoji that are supported by the current version of this package)</p>
 <p><strong>For English:</strong></p>
-<p><a class="reference external" href="http://www.emoji-cheat-sheet.com/">Emoji Cheat Sheet</a></p>
-<p><a class="reference external" href="http://www.unicode.org/Public/emoji/1.0/full-emoji-list.html">Official unicode list</a></p>
+<p><a class="reference external" href="https://www.webfx.com/tools/emoji-cheat-sheet/">Emoji Cheat Sheet</a></p>
+<p><a class="reference external" href="http://www.unicode.org/emoji/charts/full-emoji-list.html">Official unicode list</a></p>
 <p><strong>For Spanish:</strong></p>
-<p><a class="reference external" href="https://emojiterra.com/es/puntos-de-codigo/">Unicode list</a></p>
+<p><a class="reference external" href="https://emojiterra.com/es/lista-es/">Unicode list</a></p>
 <p><strong>For Portuguese:</strong></p>
-<p><a class="reference external" href="https://emojiterra.com/pt/pontos-de-codigo/">Unicode list</a></p>
+<p><a class="reference external" href="https://emojiterra.com/pt/lista/">Unicode list</a></p>
 <p><strong>For Italian:</strong></p>
-<p><a class="reference external" href="https://emojiterra.com/it/punti-di-codice/">Unicode list</a></p>
+<p><a class="reference external" href="https://emojiterra.com/it/lista-it/">Unicode list</a></p>
 <p><strong>For French:</strong></p>
-<p><a class="reference external" href="https://emojiterra.com/fr/points-de-code/">Unicode list</a></p>
+<p><a class="reference external" href="https://emojiterra.com/fr/liste-fr/">Unicode list</a></p>
 <p><strong>For German:</strong></p>
-<p><a class="reference external" href="https://emojiterra.com/de/codepoints/">Unicode list</a></p>
+<p><a class="reference external" href="https://emojiterra.com/de/liste/">Unicode list</a></p>
 </section>
 <section id="indices-and-tables">
-<h1><a class="toc-backref" href="#id13">Indices and tables</a><a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id13" role="doc-backlink">Indices and tables</a><a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation of emoji</a></li>
@@ -430,7 +427,7 @@ information on Unicode in Python 2.7.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -447,7 +444,7 @@ information on Unicode in Python 2.7.</p>
       
       
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

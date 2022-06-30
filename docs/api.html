@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>API Reference &#8212; emoji  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <link rel="canonical" href="https://carpedm20.github.io/emoji/docs/api.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -37,12 +38,8 @@
           <div class="body" role="main">
             
   <section id="api-reference">
-<span id="api"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<span id="api"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 68%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head" colspan="2"><p>Table of Contents</p></th>
 </tr>
@@ -75,7 +72,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#emoji.version" title="emoji.version"><code class="xref py py-func docutils literal notranslate"><span class="pre">version()</span></code></a></p></td>
 <td><p>Find Unicode/Emoji version of an emoji</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.get_emoji_regexp" title="emoji.get_emoji_regexp"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_emoji_regexp()</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">get_emoji_regexp()</span></code></p></td>
 <td><p>Returns compiled regular expression that matches all emojis</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Module variables:</strong></p></td>
@@ -90,7 +87,7 @@
 </tbody>
 </table>
 <span class="target" id="module-emoji"></span><section id="emoji-for-python">
-<h2>emoji for Python<a class="headerlink" href="#emoji-for-python" title="Permalink to this headline">¶</a></h2>
+<h2>emoji for Python<a class="headerlink" href="#emoji-for-python" title="Permalink to this heading">¶</a></h2>
 <p>emoji terminal output for Python.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">emoji</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;Python is :thumbsup:&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;alias&#39;</span><span class="p">))</span>
@@ -101,9 +98,10 @@
 </div>
 <dl class="py function">
 <dt class="sig sig-object py" id="emoji.demojize">
-<span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">demojize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_aliases=&lt;class</span> <span class="pre">'emoji.core._DeprecatedParameter'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiters=(':'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">':')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language='en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_version=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#demojize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.demojize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">demojize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(':',</span> <span class="pre">':')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#demojize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.demojize" title="Permalink to this definition">¶</a></dt>
 <dd><dl>
-<dt>Replace unicode emoji in a string with emoji shortcodes. Useful for storage.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun :thumbs_up:&quot;</span><span class="p">))</span>
+<dt>Replace unicode emoji in a string with emoji shortcodes. Useful for storage.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">emoji</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun :thumbs_up:&quot;</span><span class="p">))</span>
 <span class="go">Python is fun 👍</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Python is fun 👍&quot;</span><span class="p">))</span>
 <span class="go">Python is fun :thumbs_up:</span>
@@ -114,10 +112,9 @@
 </dd>
 </dl>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>string</strong> – String contains unicode characters. MUST BE UNICODE.</p></li>
-<li><p><strong>use_aliases</strong> – (optional) Deprecated. Use language=’alias’ instead</p></li>
 <li><p><strong>delimiters</strong> – (optional) User delimiters other than <code class="docutils literal notranslate"><span class="pre">_DEFAULT_DELIMITER</span></code></p></li>
 <li><p><strong>language</strong> – Choose language of emoji name: language code ‘es’, ‘de’, etc. or ‘alias’
 to use English aliases</p></li>
@@ -147,20 +144,6 @@ The passed data is in the form of:</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="emoji.distinct_emoji_lis">
-<span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">distinct_emoji_lis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language=&lt;class</span> <span class="pre">'emoji.core._DeprecatedParameter'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#distinct_emoji_lis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.distinct_emoji_lis" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns distinct list of emojis from the string.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>language</strong> – (optional) Deprecated and has no effect</p>
-</dd>
-</dl>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 1.7.0: </span>Use method <a class="reference internal" href="#emoji.distinct_emoji_list" title="emoji.distinct_emoji_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">distinct_emoji_list()</span></code></a> instead.</p>
-</div>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="emoji.distinct_emoji_list">
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">distinct_emoji_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#distinct_emoji_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.distinct_emoji_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns distinct list of emojis from the string.</p>
@@ -171,65 +154,47 @@ The passed data is in the form of:</p>
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">emoji_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#emoji_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.emoji_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the count of emojis in a string.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>unique</strong> – (optional) True if count only unique emojis</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="emoji.emoji_lis">
-<span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">emoji_lis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language=&lt;class</span> <span class="pre">'emoji.core._DeprecatedParameter'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#emoji_lis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.emoji_lis" title="Permalink to this definition">¶</a></dt>
-<dd><dl>
-<dt>Returns the location and emoji in list of dict format.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_lis</span><span class="p">(</span><span class="s2">&quot;Hi, I am fine. 😁&quot;</span><span class="p">)</span>
-<span class="go">[{&#39;location&#39;: 15, &#39;emoji&#39;: &#39;😁&#39;}]</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>language</strong> – (optional) Deprecated and has no effect</p>
-</dd>
-</dl>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 1.7.0: </span>Use method <a class="reference internal" href="#emoji.emoji_list" title="emoji.emoji_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">emoji_list()</span></code></a> instead.</p>
-</div>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="emoji.emoji_list">
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">emoji_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#emoji_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.emoji_list" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the location and emoji in list of dict format.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_list</span><span class="p">(</span><span class="s2">&quot;Hi, I am fine. 😁&quot;</span><span class="p">)</span>
+<dd><dl>
+<dt>Returns the location and emoji in list of dict format.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_list</span><span class="p">(</span><span class="s2">&quot;Hi, I am fine. 😁&quot;</span><span class="p">)</span>
 <span class="go">[{&#39;match_start&#39;: 15, &#39;match_end&#39;: 16, &#39;emoji&#39;: &#39;😁&#39;}]</span>
 </pre></div>
 </div>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="emoji.emojize">
-<span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">emojize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_aliases=&lt;class</span> <span class="pre">'emoji.core._DeprecatedParameter'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiters=(':'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">':')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variant=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language='en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_version=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#emojize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.emojize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">emojize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(':',</span> <span class="pre">':')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#emojize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.emojize" title="Permalink to this definition">¶</a></dt>
 <dd><dl>
-<dt>Replace emoji names in a string with unicode codes.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun :thumbsup:&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;alias&#39;</span><span class="p">))</span>
+<dt>Replace emoji names in a string with unicode codes.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">emoji</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun :thumbsup:&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;alias&#39;</span><span class="p">))</span>
 <span class="go">Python is fun 👍</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun :thumbs_up:&quot;</span><span class="p">))</span>
 <span class="go">Python is fun 👍</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun __thumbs_up__&quot;</span><span class="p">,</span> <span class="n">delimiters</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">,</span> <span class="s2">&quot;__&quot;</span><span class="p">)))</span>
 <span class="go">Python is fun 👍</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun :red_heart:&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;text_type&quot;</span><span class="p">))</span>
-<span class="go">Python is fun ❤︎</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun :red_heart:&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;emoji_type&quot;</span><span class="p">))</span> <span class="c1"># Red heart, not black heart</span>
-<span class="go">Python is fun ❤️</span>
+<span class="go">Python is fun ❤</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun :red_heart:&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;emoji_type&quot;</span><span class="p">))</span>
+<span class="go">Python is fun ❤️ # red heart, not black heart</span>
 </pre></div>
 </div>
 </dd>
 </dl>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>string</strong> – String contains emoji names.</p></li>
-<li><p><strong>use_aliases</strong> – (optional) Deprecated. Use language=’alias’ instead</p></li>
 <li><p><strong>delimiters</strong> – (optional) Use delimiters other than _DEFAULT_DELIMITER</p></li>
 <li><p><strong>variant</strong> – (optional) Choose variation selector between “base”(None), VS-15 (“text_type”) and VS-16 (“emoji_type”)</p></li>
 <li><p><strong>language</strong> – Choose language of emoji name: language code ‘es’, ‘de’, etc. or ‘alias’
@@ -255,39 +220,24 @@ to be used:</p>
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">variant</span></code> is neither None, ‘text_type’ or ‘emoji_type’</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="emoji.get_emoji_regexp">
-<span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">get_emoji_regexp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#get_emoji_regexp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.get_emoji_regexp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns compiled regular expression that matches all emojis defined in
-<code class="docutils literal notranslate"><span class="pre">emoji.EMOJI_DATA</span></code>. The regular expression is only compiled once.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>language</strong> – (optional) Parameter is no longer used</p>
-</dd>
-</dl>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 1.7.0: </span>Use <a class="reference internal" href="#emoji.replace_emoji" title="emoji.replace_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">replace_emoji()</span></code></a> to remove or replace emoji and <a class="reference internal" href="#emoji.emoji_list" title="emoji.emoji_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">emoji_list()</span></code></a> to find emoji.</p>
-</div>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="emoji.is_emoji">
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">is_emoji</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#is_emoji"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.is_emoji" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if the string is an emoji</p>
+<dd><p>Returns True if the string is an emoji.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="emoji.replace_emoji">
-<span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">replace_emoji</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace=''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language=&lt;class</span> <span class="pre">'emoji.core._DeprecatedParameter'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version=-1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#replace_emoji"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.replace_emoji" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">replace_emoji</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#replace_emoji"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.replace_emoji" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replace unicode emoji in a customizable string.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>string</strong> – String contains unicode characters. MUST BE UNICODE.</p></li>
 <li><p><strong>replace</strong> – (optional) replace can be either a string or a callable;
@@ -296,7 +246,6 @@ emoji.EMOJI_DATA and must return a replacement string to be used.
 replace(str, dict) -&gt; str</p></li>
 <li><p><strong>version</strong> – (optional) Max version. If set to an Emoji Version,
 only emoji above this version will be replaced.</p></li>
-<li><p><strong>language</strong> – (optional) Deprecated and has no effect</p></li>
 </ul>
 </dd>
 </dl>
@@ -305,8 +254,8 @@ only emoji above this version will be replaced.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="emoji.version">
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.version" title="Permalink to this definition">¶</a></dt>
-<dd><dl>
-<dt>Returns the Emoji Version of the emoji.</dt><dd><dl>
+<dd><p>Returns the Emoji Version of the emoji.</p>
+<dl>
 <dt>See <a class="reference external" href="http://www.unicode.org/reports/tr51/#Versioning">http://www.unicode.org/reports/tr51/#Versioning</a> for more information.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;😁&quot;</span><span class="p">)</span>
 <span class="go">0.6</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;:butterfly:&quot;</span><span class="p">)</span>
@@ -315,13 +264,11 @@ only emoji above this version will be replaced.</p></li>
 </div>
 </dd>
 </dl>
-</dd>
-</dl>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>string</strong> – An emoji or a text containig an emoji</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">string</span></code> does not contain an emoji</p>
 </dd>
 </dl>
@@ -329,7 +276,7 @@ only emoji above this version will be replaced.</p></li>
 
 </section>
 <section id="emoji-data">
-<h2>EMOJI_DATA<a class="headerlink" href="#emoji-data" title="Permalink to this headline">¶</a></h2>
+<h2>EMOJI_DATA<a class="headerlink" href="#emoji-data" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="emoji.EMOJI_DATA">
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">EMOJI_DATA</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#emoji.EMOJI_DATA" title="Permalink to this definition">¶</a></dt>
@@ -356,7 +303,7 @@ only emoji above this version will be replaced.</p></li>
 <p><strong>Source code:</strong> <a class="reference external" href="https://github.com/carpedm20/emoji/raw/master/emoji/unicode_codes/data_dict.py">emoji/unicode_codes/data_dict.py</a> <strong>(2MB)</strong></p>
 </section>
 <section id="emoji-status">
-<h2>Emoji status<a class="headerlink" href="#emoji-status" title="Permalink to this headline">¶</a></h2>
+<h2>Emoji status<a class="headerlink" href="#emoji-status" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="emoji.STATUS">
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">STATUS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#emoji.STATUS" title="Permalink to this definition">¶</a></dt>
@@ -378,6 +325,8 @@ only emoji above this version will be replaced.</p></li>
     <span class="s2">&quot;unqualified&quot;</span> <span class="p">:</span> <span class="n">unqualified</span>
 <span class="p">}</span>
 
+<span class="n">LANGUAGES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="s1">&#39;pt&#39;</span><span class="p">,</span> <span class="s1">&#39;it&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">]</span>
+
 </pre></div>
 </div>
 </div>
@@ -385,7 +334,7 @@ only emoji above this version will be replaced.</p></li>
 
 </section>
 <section id="emoji-version">
-<span id="id1"></span><h2>Emoji version<a class="headerlink" href="#emoji-version" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Emoji version<a class="headerlink" href="#emoji-version" title="Permalink to this heading">¶</a></h2>
 <p>Every emoji in <a class="reference internal" href="#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">emoji.EMOJI_DATA</span></code></a> has a version number. The number refers to the release of
 that emoji in the Unicode Standard.
 It is stored in the key <code class="docutils literal notranslate"><span class="pre">'E'</span></code>. For example the emoji 🥇 <code class="docutils literal notranslate"><span class="pre">:1st_place_medal:</span></code> is version
@@ -489,7 +438,7 @@ the “Data File Comment” column:</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -506,7 +455,7 @@ the “Data File Comment” column:</p>
       
       
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
