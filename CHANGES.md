@@ -1,6 +1,20 @@
 emoji
 =====
 
+2.0.0
+-----
+* Removed the old dicts EMOJI_UNICODE_*, UNICODE_EMOJI_*
+* Removed unused language=None parameters
+* Removed use_alias parameter
+* Removed the get_regexp method
+* Removed emoji_lis
+* Removed distinct_emoji_lis
+* Made the list of languages public: emoji.LANGUAGES = ['en','es','pt','it','fr','de']
+* Updated translations to release-41 (no changes compared to release-40)
+* Generate a documentation for the public functions from the docstrings with Sphinx
+* Added some more examples to the README: e.g. how to replace/remove emojis
+* Total count of emojis:  4702
+
 1.7.0
 -----
 * Added `emoji_list()` and `distinct_emoji_list()`
