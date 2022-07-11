@@ -38,7 +38,7 @@ def emojize(
         Python is fun 👍
         >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍
-        >>> print(emoji.emojize("Python is fun __thumbs_up__", delimiters = ("__", "__")))
+        >>> print(emoji.emojize("Python is fun {thumbs_up}", delimiters = ("{", "}")))
         Python is fun 👍
         >>> print(emoji.emojize("Python is fun :red_heart:", variant="text_type"))
         Python is fun ❤
@@ -46,7 +46,8 @@ def emojize(
         Python is fun ❤️ # red heart, not black heart
 
     :param string: String contains emoji names.
-    :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER
+    :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER. Each delimiter
+        should contain at least one character that is not part of a-zA-Z0-9 and ``_-–&.’”“()!?#*+,/\``
     :param variant: (optional) Choose variation selector between "base"(None), VS-15 ("text_type") and VS-16 ("emoji_type")
     :param language: Choose language of emoji name: language code 'es', 'de', etc. or 'alias'
         to use English aliases
@@ -78,7 +79,7 @@ def emojize(
         language_pack = unicode_codes.get_emoji_unicode_dict(language)
 
     pattern = re.compile(u'(%s[\\w\\-&.’”“()!#*+?–,/]+%s)' %
-                         delimiters, flags=re.UNICODE)
+                         (re.escape(delimiters[0]), re.escape(delimiters[1])), flags=re.UNICODE)
 
     def replace(match):
         mg = match.group(1)[len(delimiters[0]):-len(delimiters[1])]

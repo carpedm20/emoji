@@ -222,20 +222,22 @@ def test_demojize_complicated_string():
 
 def test_demojize_delimiters():
     for e in [u'\U000026BD', u'\U0001f44d', u'\U0001F3C8']:
-        for d in [(":", ":"), ("a", "b"), ("!", "!!"), ("123", "456"), (u"😁", u"👌")]:
+        for d in [(":", ":"), ("}", "}"), ("!$", "!!$"), ("[123", "456]"), (u"😁", u"👌"), ("[", "]")]:
             s = emoji.demojize(e, delimiters=d)
             assert s.startswith(d[0])
             assert s.endswith(d[1])
 
-    text = u"Example of a text with an emoji%sin a sentence"
+    text = u"Example with an emoji%sin a sentence and %s %s %s %s multiple emoji %s%s%s%s%s in a row"
     for e in [u'\U000026BD', u'\U0001f44d', u'\U0001F3C8']:
-        for d in [(":", ":"), ("!", "-!-"), ("-", "-"), (":", "::"), ("::", "::"), (u"😁", u"👌")]:
-            text_with_unicode = text % e
+        for d in [(":", ":"), ("{", "}"), ("!$", "$!"), (":", "::"), ("::", "::"), (u"😁", u"👌"), ("[", "]")]:
+            print("delimiter: %s" % (d, ))
+            text_with_unicode = text % ((e, ) * 10)
             demojized_text = emoji.demojize(text_with_unicode, delimiters=d)
-            assert text_with_unicode != demojized_text
+            assert text_with_unicode != demojized_text, (text_with_unicode, demojized_text)
             assert e not in demojized_text
             assert emoji.emojize(demojized_text, delimiters=d) == text_with_unicode
-            text_with_emoji = text % emoji.demojize(e, delimiters=d)
+            de = emoji.demojize(e, delimiters=d)
+            text_with_emoji = text % ((de, ) * 10)
             assert demojized_text == text_with_emoji
             assert emoji.emojize(text_with_emoji, delimiters=d) == text_with_unicode
 
