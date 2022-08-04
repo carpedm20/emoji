@@ -1,7 +1,0 @@
-# -*- coding: utf-8 -*-
-
-from .types import _EMOJI_UNICODE_T, _UNICODE_EMOJI_T
-
-EMOJI_UNICODE_PORTUGUESE: _EMOJI_UNICODE_T = ...
-
-UNICODE_EMOJI_PORTUGUESE: _UNICODE_EMOJI_T = ...

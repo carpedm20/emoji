@@ -57,4 +57,4 @@ if __name__ == '__main__':
 
     for emoji_name, emoji_code in sorted(total.items()):
         print(f"    u':{emoji_name}:': u'{emoji_code}'", end=',\n')
-    print('\nTotal count of emojis: ', len(total))  # can be checked here: http://www.unicode.org/emoji/charts/emoji-counts.html
+    print('\nTotal count of emojis: ', len(total))

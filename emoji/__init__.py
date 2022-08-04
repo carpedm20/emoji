@@ -8,9 +8,9 @@ emoji for Python
 emoji terminal output for Python.
 
     >>> import emoji
-    >>> print(emoji.emojize('Python is :thumbsup:', use_aliases=True))
+    >>> print(emoji.emojize('Python is :thumbsup:', language='alias'))
     Python is 👍
-    >> print(emoji.emojize('Python is :thumbs_up:'))
+    >>> print(emoji.emojize('Python is :thumbs_up:'))
     Python is 👍
 """
 
@@ -20,22 +20,21 @@ from emoji.unicode_codes import *
 
 __all__ = [
     # emoji.core
-    'emojize', 'demojize', 'get_emoji_regexp', 'emoji_count', 'emoji_lis', 'replace_emoji',
+    'emojize', 'demojize', 'emoji_count', 'emoji_list',
+    'distinct_emoji_list', 'replace_emoji', 'version', 'is_emoji',
     # emoji.unicode_codes
-    'EMOJI_UNICODE_ENGLISH', 'EMOJI_UNICODE_SPANISH', 'EMOJI_UNICODE_PORTUGUESE', 'EMOJI_UNICODE_ITALIAN',
-    'UNICODE_EMOJI_ENGLISH', 'UNICODE_EMOJI_SPANISH', 'UNICODE_EMOJI_PORTUGUESE', 'UNICODE_EMOJI_ITALIAN',
-    'EMOJI_ALIAS_UNICODE_ENGLISH', 'UNICODE_EMOJI_ALIAS_ENGLISH',
+    'EMOJI_DATA', 'STATUS', 'LANGUAGES',
 ]
 
-__version__ = '1.2.1'
-__author__ = 'Taehoon Kim and Kevin Wurster'
+__version__ = '2.0.0'
+__author__ = 'Taehoon Kim, Kevin Wurster and Tahir Jalilov'
 __email__ = 'carpedm20@gmail.com'
-# and wursterk@gmail.com
+# and wursterk@gmail.com, tahir.jalilov@gmail.com
 __source__ = 'https://github.com/carpedm20/emoji/'
 __license__ = '''
 New BSD License
 
-Copyright (c) 2014-2021, Taehoon Kim and Kevin Wurster
+Copyright (c) 2014-2021, Taehoon Kim, Kevin Wurster and Tahir Jalilov
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

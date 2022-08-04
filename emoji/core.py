@@ -9,82 +9,122 @@ Core components for emoji.
 
 """
 
-
 import re
-import sys
 
 from emoji import unicode_codes
 
 __all__ = [
-    'emojize', 'demojize', 'get_emoji_regexp',
-    'emoji_lis', 'distinct_emoji_lis', 'emoji_count',
-    'replace_emoji',
+    'emojize', 'demojize',
+    'emoji_list', 'distinct_emoji_list', 'emoji_count',
+    'replace_emoji', 'is_emoji', 'version',
 ]
 
-
-PY2 = sys.version_info[0] == 2
-
-_EMOJI_REGEXP = None
+_SEARCH_TREE = None
 _DEFAULT_DELIMITER = ':'
 
 
 def emojize(
         string,
-        use_aliases=False,
         delimiters=(_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
         variant=None,
-        language='en'
+        language='en',
+        version=None,
+        handle_version=None
 ):
-    """Replace emoji names in a string with unicode codes.
-
-    :param string: String contains emoji names.
-    :param use_aliases: (optional) Enable emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
-    :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER
-    :param variant: (optional) Choose variation selector between "base"(None), VS-15 ("text_type") and VS-16 ("emoji_type")
-    :param language: Choose language of emoji name
+    """
+    Replace emoji names in a string with unicode codes.
         >>> import emoji
-        >>> print(emoji.emojize("Python is fun :thumbsup:", use_aliases=True))
+        >>> print(emoji.emojize("Python is fun :thumbsup:", language='alias'))
         Python is fun 👍
         >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍
-        >>> print(emoji.emojize("Python is fun __thumbs_up__", delimiters = ("__", "__")))
+        >>> print(emoji.emojize("Python is fun {thumbs_up}", delimiters = ("{", "}")))
         Python is fun 👍
-        >>> print(emoji.emojize("Python is fun :red_heart:"))
+        >>> print(emoji.emojize("Python is fun :red_heart:", variant="text_type"))
         Python is fun ❤
-        >>> print(emoji.emojize("Python is fun :red_heart:",variant="emoji_type"))
-        Python is fun ❤️ #red heart, not black heart
+        >>> print(emoji.emojize("Python is fun :red_heart:", variant="emoji_type"))
+        Python is fun ❤️ # red heart, not black heart
+
+    :param string: String contains emoji names.
+    :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER. Each delimiter
+        should contain at least one character that is not part of a-zA-Z0-9 and ``_-–&.’”“()!?#*+,/\``
+    :param variant: (optional) Choose variation selector between "base"(None), VS-15 ("text_type") and VS-16 ("emoji_type")
+    :param language: Choose language of emoji name: language code 'es', 'de', etc. or 'alias'
+        to use English aliases
+    :param version: (optional) Max version. If set to an Emoji Version,
+        all emoji above this version will be ignored.
+    :param handle_version: (optional) Replace the emoji above ``version``
+        instead of ignoring it. handle_version can be either a string or a
+        callable; If it is a callable, it's passed the unicode emoji and the
+        data dict from emoji.EMOJI_DATA and must return a replacement string
+        to be used::
+
+            handle_version(u'\\U0001F6EB', {
+                'en' : ':airplane_departure:',
+                'status' : fully_qualified,
+                'E' : 1,
+                'alias' : [u':flight_departure:'],
+                'de': u':abflug:',
+                'es': u':avión_despegando:',
+                ...
+            })
+
+    :raises ValueError: if ``variant`` is neither None, 'text_type' or 'emoji_type'
+
     """
-    EMOJI_UNICODE = unicode_codes.EMOJI_UNICODE[language]
-    pattern = re.compile(u'(%s[A-zÀ-ÿ0-9\\-_&.’”“()!#*+?–]+%s)' % delimiters)
+
+    if language == 'alias':
+        language_pack = unicode_codes.get_aliases_unicode_dict()
+    else:
+        language_pack = unicode_codes.get_emoji_unicode_dict(language)
+
+    pattern = re.compile(u'(%s[\\w\\-&.’”“()!#*+?–,/]+%s)' %
+                         (re.escape(delimiters[0]), re.escape(delimiters[1])), flags=re.UNICODE)
 
     def replace(match):
-        mg = match.group(1).replace(delimiters[0], _DEFAULT_DELIMITER).replace(
-            delimiters[1], _DEFAULT_DELIMITER
-        )
-        if use_aliases:
-            emj = unicode_codes.EMOJI_ALIAS_UNICODE_ENGLISH.get(mg, mg)
-        else:
-            emj = EMOJI_UNICODE.get(mg, mg)
-        if variant is None:
+        mg = match.group(1)[len(delimiters[0]):-len(delimiters[1])]
+        emj = language_pack.get(_DEFAULT_DELIMITER + mg + _DEFAULT_DELIMITER)
+        if emj is None:
+            return match.group(1)
+
+        if version is not None and unicode_codes.EMOJI_DATA[emj]['E'] > version:
+            if callable(handle_version):
+                emj_data = unicode_codes.EMOJI_DATA[emj].copy()
+                emj_data['match_start'] = match.start()
+                emj_data['match_end'] = match.end()
+                return handle_version(emj, emj_data)
+
+            elif handle_version is not None:
+                return str(handle_version)
+            else:
+                return ''
+
+        if variant is None or 'variant' not in unicode_codes.EMOJI_DATA[emj]:
             return emj
-        elif variant == "text_type":
-            return emj+u'\uFE0E'
+
+        if emj[-1] == u'\uFE0E' or emj[-1] == u'\uFE0F':
+            # Remove an existing variant
+            emj = emj[0:-1]
+        if variant == "text_type":
+            return emj + u'\uFE0E'
         elif variant == "emoji_type":
-            return emj+u'\uFE0F'
+            return emj + u'\uFE0F'
+        else:
+            raise ValueError(
+                "Parameter 'variant' must be either None, 'text_type' or 'emoji_type'")
+
     return pattern.sub(replace, string)
 
 
 def demojize(
         string,
-        use_aliases=False,
         delimiters=(_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
-        language='en'
+        language='en',
+        version=None,
+        handle_version=None
 ):
-    """Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
-    :param string: String contains unicode characters. MUST BE UNICODE.
-    :param use_aliases: (optional) Return emoji aliases.  See ``emoji.UNICODE_EMOJI_ALIAS``.
-    :param delimiters: (optional) User delimiters other than _DEFAULT_DELIMITER
-    :param language: Choose language of emoji name
+    """
+    Replace unicode emoji in a string with emoji shortcodes. Useful for storage.
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍
@@ -92,66 +132,256 @@ def demojize(
         Python is fun :thumbs_up:
         >>> print(emoji.demojize(u"Unicode is tricky 😯", delimiters=("__", "__")))
         Unicode is tricky __hushed_face__
+
+    :param string: String contains unicode characters. MUST BE UNICODE.
+    :param delimiters: (optional) User delimiters other than ``_DEFAULT_DELIMITER``
+    :param language: Choose language of emoji name: language code 'es', 'de', etc. or 'alias'
+        to use English aliases
+    :param version: (optional) Max version. If set to an Emoji Version,
+        all emoji above this version will be removed.
+    :param handle_version: (optional) Replace the emoji above ``version``
+        instead of removing it. handle_version can be either a string or a
+        callable ``handle_version(emj: str, data: dict) -> str``; If it is
+        a callable, it's passed the unicode emoji and the data dict from
+        emoji.EMOJI_DATA and must return a replacement string  to be used.
+        The passed data is in the form of::
+
+            handle_version(u'\\U0001F6EB', {
+                'en' : ':airplane_departure:',
+                'status' : fully_qualified,
+                'E' : 1,
+                'alias' : [u':flight_departure:'],
+                'de': u':abflug:',
+                'es': u':avión_despegando:',
+                ...
+            })
+
     """
-    UNICODE_EMOJI = unicode_codes.UNICODE_EMOJI[language]
 
-    def replace(match):
-        codes_dict = unicode_codes.UNICODE_EMOJI_ALIAS_ENGLISH if use_aliases else UNICODE_EMOJI
-        val = codes_dict.get(match.group(0), match.group(0))
-        return delimiters[0] + val[1:-1] + delimiters[1]
+    if language == 'alias':
+        language = 'en'
+        _use_aliases = True
+    else:
+        _use_aliases = False
 
-    return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
+    tree = _get_search_tree()
+    result = []
+    i = 0
+    length = len(string)
+    while i < length:
+        consumed = False
+        char = string[i]
+        if char in tree:
+            j = i + 1
+            sub_tree = tree[char]
+            while j < length and string[j] in sub_tree:
+                sub_tree = sub_tree[string[j]]
+                j += 1
+            if 'data' in sub_tree:
+                emj_data = sub_tree['data']
+                code_points = string[i:j]
+                replace_str = None
+                if version is not None and emj_data['E'] > version:
+                    if callable(handle_version):
+                        emj_data = emj_data.copy()
+                        emj_data['match_start'] = i
+                        emj_data['match_end'] = j
+                        replace_str = handle_version(code_points, emj_data)
+                    elif handle_version is not None:
+                        replace_str = str(handle_version)
+                    else:
+                        replace_str = None
+                elif language in emj_data:
+                    if _use_aliases and 'alias' in emj_data:
+                        replace_str = delimiters[0] + emj_data['alias'][0][1:-1] + delimiters[1]
+                    else:
+                        replace_str = delimiters[0] + emj_data[language][1:-1] + delimiters[1]
+                else:
+                    # The emoji exists, but it is not translated, so we keep the emoji
+                    replace_str = code_points
+
+                i = j - 1
+                consumed = True
+                if replace_str:
+                    result.append(replace_str)
+
+        if not consumed and char != u'\ufe0e' and char != u'\ufe0f':
+            result.append(char)
+        i += 1
+
+    return "".join(result)
 
 
-def replace_emoji(string, replace='', language='en'):
-    """Replace unicode emoji in a customizable string.
+def replace_emoji(string, replace='',  version=-1):
     """
-    return re.sub(u'\ufe0f', '', (get_emoji_regexp(language).sub(replace, string)))
+    Replace unicode emoji in a customizable string.
 
-
-def get_emoji_regexp(language='en'):
-
-    """Returns compiled regular expression that matches emojis defined in
-    ``emoji.UNICODE_EMOJI_ALIAS``. The regular expression is only compiled once.
+    :param string: String contains unicode characters. MUST BE UNICODE.
+    :param replace: (optional) replace can be either a string or a callable;
+        If it is a callable, it's passed the unicode emoji and the data dict from
+        emoji.EMOJI_DATA and must return a replacement string to be used.
+        replace(str, dict) -> str
+    :param version: (optional) Max version. If set to an Emoji Version,
+        only emoji above this version will be replaced.
     """
 
-    global _EMOJI_REGEXP
-    # Build emoji regexp once
-    EMOJI_UNICODE = unicode_codes.EMOJI_UNICODE[language]
-    if _EMOJI_REGEXP is None:
-        # Sort emojis by length to make sure multi-character emojis are
-        # matched first
-        emojis = sorted(EMOJI_UNICODE.values(), key=len, reverse=True)
-        pattern = u'(' + u'|'.join(re.escape(u) for u in emojis) + u')'
-        _EMOJI_REGEXP = re.compile(pattern)
-    return _EMOJI_REGEXP
+    if version > -1:
+        def f(emj, emj_data):
+            if emj_data['E'] <= version:
+                return emj  # Do not replace emj
+            if callable(replace):
+                return replace(emj, emj_data)
+            return str(replace)
+
+        return demojize(string, language='en', version=-1, handle_version=f)
+    else:
+        return demojize(string, language='en', version=-1, handle_version=replace)
 
 
-def emoji_lis(string, language='en'):
+def emoji_list(string):
     """
     Returns the location and emoji in list of dict format.
-    >>> emoji.emoji_lis("Hi, I am fine. 😁")
-    >>> [{'location': 15, 'emoji': '😁'}]
+        >>> emoji.emoji_list("Hi, I am fine. 😁")
+        [{'match_start': 15, 'match_end': 16, 'emoji': '😁'}]
     """
     _entities = []
 
-    for match in get_emoji_regexp(language).finditer(string):
+    def f(emj, emj_data):
         _entities.append({
-            'location': match.start(),
-            'emoji': match.group(),
+            'match_start': emj_data['match_start'],
+            'match_end': emj_data['match_end'],
+            'emoji': emj,
         })
 
+    demojize(string, language='en', version=-1, handle_version=f)
     return _entities
 
 
-def distinct_emoji_lis(string, language='en'):
+def distinct_emoji_list(string):
     """Returns distinct list of emojis from the string."""
     distinct_list = list(
-        {e['emoji'] for e in emoji_lis(string, language)}
+        {e['emoji'] for e in emoji_list(string)}
     )
     return distinct_list
 
 
-def emoji_count(string):
-    """Returns the count of emojis in a string."""
-    return len(emoji_lis(string))
+def emoji_count(string, unique=False):
+    """
+    Returns the count of emojis in a string.
+
+    :param unique: (optional) True if count only unique emojis
+    """
+    if unique:
+        return len(distinct_emoji_list(string))
+    return len(emoji_list(string))
+
+
+def is_emoji(string):
+    """Returns True if the string is an emoji."""
+    return string in unicode_codes.EMOJI_DATA
+
+
+def version(string):
+    """
+    Returns the Emoji Version of the emoji.
+
+    See http://www.unicode.org/reports/tr51/#Versioning for more information.
+        >>> emoji.version("😁")
+        0.6
+        >>> emoji.version(":butterfly:")
+        3
+
+    :param string: An emoji or a text containig an emoji
+    :raises ValueError: if ``string`` does not contain an emoji
+    """
+    # Try dictionary lookup
+    if string in unicode_codes.EMOJI_DATA:
+        return unicode_codes.EMOJI_DATA[string]['E']
+
+    language_pack = unicode_codes.get_emoji_unicode_dict('en')
+    if string in language_pack:
+        emj_code = language_pack[string]
+        if emj_code in unicode_codes.EMOJI_DATA:
+            return unicode_codes.EMOJI_DATA[emj_code]['E']
+
+    # Try to find first emoji in string
+    version = []
+
+    def f(e, emoji_data):
+        version.append(emoji_data['E'])
+        return ''
+    replace_emoji(string, replace=f, version=-1)
+    if version:
+        return version[0]
+    emojize(string, language='alias', version=-1, handle_version=f)
+    if version:
+        return version[0]
+    for lang_code in unicode_codes._EMOJI_UNICODE:
+        emojize(string, language=lang_code, version=-1, handle_version=f)
+        if version:
+            return version[0]
+
+    raise ValueError("No emoji found in string")
+
+
+def _get_search_tree():
+    """
+    Generate a search tree for demojize().
+    Example of a search tree::
+
+        EMOJI_DATA =
+        {'a': {'en': ':Apple:'},
+        'b': {'en': ':Bus:'},
+        'ba': {'en': ':Bat:'},
+        'band': {'en': ':Beatles:'},
+        'bandit': {'en': ':Outlaw:'},
+        'bank': {'en': ':BankOfEngland:'},
+        'bb': {'en': ':BB-gun:'},
+        'c': {'en': ':Car:'}}
+
+        _SEARCH_TREE =
+        {'a': {'data': {'en': ':Apple:'}},
+        'b': {'a': {'data': {'en': ':Bat:'},
+                    'n': {'d': {'data': {'en': ':Beatles:'},
+                                'i': {'t': {'data': {'en': ':Outlaw:'}}}},
+                        'k': {'data': {'en': ':BankOfEngland:'}}}},
+            'b': {'data': {'en': ':BB-gun:'}},
+            'data': {'en': ':Bus:'}},
+        'c': {'data': {'en': ':Car:'}}}
+
+                   _SEARCH_TREE
+                 /     |        ⧵
+               /       |          ⧵
+            a          b             c
+            |        / |  ⧵          |
+            |       /  |    ⧵        |
+        :Apple:   ba  :Bus:  bb     :Car:
+                 /  ⧵         |
+                /    ⧵        |
+              :Bat:    ban     :BB-gun:
+                     /     ⧵
+                    /       ⧵
+                 band       bank
+                /   ⧵         |
+               /     ⧵        |
+            bandi :Beatles:  :BankOfEngland:
+               |
+            bandit
+               |
+           :Outlaw:
+
+
+    """
+    global _SEARCH_TREE
+    if _SEARCH_TREE is None:
+        _SEARCH_TREE = {}
+        for emj in unicode_codes.EMOJI_DATA:
+            sub_tree = _SEARCH_TREE
+            lastidx = len(emj) - 1
+            for i, char in enumerate(emj):
+                if char not in sub_tree:
+                    sub_tree[char] = {}
+                sub_tree = sub_tree[char]
+                if i == lastidx:
+                    sub_tree['data'] = unicode_codes.EMOJI_DATA[emj]
+    return _SEARCH_TREE
