@@ -1,13 +1,6 @@
-# -*- coding: utf-8 -*-
-from typing import Dict
+from .data_dict import *
 
-from .en import *
-from .es import *
-from .pt import *
-from .it import *
+__all__ = ["get_emoji_unicode_dict", "get_aliases_unicode_dict", "EMOJI_DATA", "STATUS", "LANGUAGES"]
 
-from .types import _EMOJI_UNICODE_T, _UNICODE_EMOJI_T
-
-EMOJI_UNICODE: Dict[str, _EMOJI_UNICODE_T] = ...
-
-UNICODE_EMOJI: Dict[str, _UNICODE_EMOJI_T] = ...
+def get_emoji_unicode_dict(lang: str) -> dict[str, str]: ...
+def get_aliases_unicode_dict() -> dict[str, str]: ...
