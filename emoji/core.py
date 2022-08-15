@@ -78,7 +78,7 @@ def emojize(
     else:
         language_pack = unicode_codes.get_emoji_unicode_dict(language)
 
-    pattern = re.compile(u'(%s[\\w\\-&.’”“()!#*+?–,/]+%s)' %
+    pattern = re.compile(u'(%s[\\w\\-&.’”“()!#*+?–,/ًٌٍَُِّْؤئيإأآةك‌ٔء«»]+%s)' %
                          (re.escape(delimiters[0]), re.escape(delimiters[1])), flags=re.UNICODE)
 
     def replace(match):
