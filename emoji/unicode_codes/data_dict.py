@@ -45,93 +45,6 @@ STATUS = {
 LANGUAGES = ['en', 'es', 'pt', 'it', 'fr', 'de', 'fa']
 
 EMOJI_DATA = {
-    # fa: CHANGED :خنده_دندانی: TO :خندهٔ_دندانی: 		(Original: خندهٔ دندانی)
-# fa: CHANGED :بوسه_خجالتی: TO :بوسهٔ_خجالتی: 		(Original: بوسهٔ خجالتی)
-# fa: CHANGED :چهره_خندان_با_اشک: TO :چهرهٔ_خندان_با_اشک: 		(Original: چهرهٔ خندان با اشک)
-# fa: CHANGED :یه_تپه_گه: TO :یه_تپهٔ_گه: 		(Original: یه تپهٔ گه)
-# fa: CHANGED :گربه_خندان: TO :گربهٔ_خندان: 		(Original: گربهٔ خندان)
-# fa: CHANGED :گربه_خندان_با_اشک_شوق: TO :گربهٔ_خندان_با_اشک_شوق: 		(Original: گربهٔ خندان با اشک شوق)
-# fa: CHANGED :گربه_خندان_عاشق: TO :گربهٔ_خندان_عاشق: 		(Original: گربهٔ خندان عاشق)
-# fa: CHANGED :گربه_و_بوسه_خجالتی: TO :گربه_و_بوسهٔ_خجالتی: 		(Original: گربه و بوسهٔ خجالتی)
-# fa: CHANGED :گربه_بهت_زده: TO :گربهٔ_بهت_زده: 		(Original: گربهٔ بهت‌زده)
-# fa: CHANGED :گربه_گریان: TO :گربهٔ_گریان: 		(Original: گربهٔ گریان)
-# fa: CHANGED :گربه_اخمو: TO :گربهٔ_اخمو: 		(Original: گربهٔ اخمو)
-# fa: CHANGED :نامه_عاشقانه: TO :نامهٔ_عاشقانه: 		(Original: نامهٔ عاشقانه)
-# fa: CHANGED :عضله_بازو: TO :عضلهٔ_بازو: 		(Original: عضلهٔ بازو)
-# fa: CHANGED :نقشه_اروپا-افریقا_روی_کره: TO :نقشهٔ_اروپا-افریقا_روی_کره: 		(Original: نقشهٔ اروپا-افریقا روی کره)
-# fa: CHANGED :نقشه_قاره_امریکا_روی_کره: TO :نقشهٔ_قارهٔ_امریکا_روی_کره: 		(Original: نقشهٔ قارهٔ امریکا روی کره)
-# fa: CHANGED :نقشه_آسیا-اقیانوسیه_روی_کره: TO :نقشهٔ_آسیا-اقیانوسیه_روی_کره: 		(Original: نقشهٔ آسیا-اقیانوسیه روی کره)
-# fa: CHANGED :نقشه_جهان: TO :نقشهٔ_جهان: 		(Original: نقشهٔ جهان)
-# fa: CHANGED :نقشه_ژاپن: TO :نقشهٔ_ژاپن: 		(Original: نقشهٔ ژاپن)
-# fa: CHANGED :قله_برفی: TO :قلهٔ_برفی: 		(Original: قلهٔ برفی)
-# fa: CHANGED :جزیره_خالی_از_سکنه: TO :جزیرهٔ_خالی_از_سکنه: 		(Original: جزیرهٔ خالی از سکنه)
-# fa: CHANGED :خانه_متروکه: TO :خانهٔ_متروکه: 		(Original: خانهٔ متروکه)
-# fa: CHANGED :خانه_حیاط_دار: TO :خانهٔ_حیاط_دار: 		(Original: خانهٔ حیاط‌دار)
-# fa: CHANGED :پست_خانه_ژاپنی: TO :پست_خانهٔ_ژاپنی: 		(Original: پست‌خانهٔ ژاپنی)
-# fa: CHANGED :اداره_پست: TO :ادارهٔ_پست: 		(Original: ادارهٔ پست)
-# fa: CHANGED :قلعه_ژاپنی: TO :قلعهٔ_ژاپنی: 		(Original: قلعهٔ ژاپنی)
-# fa: CHANGED :مجسمه_آزادی: TO :مجسمهٔ_آزادی: 		(Original: مجسمهٔ آزادی)
-# fa: CHANGED :چشمه_آب_گرم: TO :چشمهٔ_آب_گرم: 		(Original: چشمهٔ آب گرم)
-# fa: CHANGED :تخته_اسکیت: TO :تختهٔ_اسکیت: 		(Original: تختهٔ اسکیت)
-# fa: CHANGED :آئین_مشاهده_ماه_کامل: TO :آئین_مشاهدهٔ_ماه_کامل: 		(Original: آئین مشاهدهٔ ماه کامل)
-# fa: CHANGED :هدیه_کادوشده: TO :هدیهٔ_کادوشده: 		(Original: هدیهٔ کادوشده)
-# fa: CHANGED :درجه_تنظیم_کننده: TO :درجهٔ_تنظیم_کننده: 		(Original: درجهٔ تنظیم‌کننده)
-# fa: CHANGED :رایانه_کیفی: TO :رایانهٔ_کیفی: 		(Original: رایانهٔ کیفی)
-# fa: CHANGED :رایانه_میزی: TO :رایانهٔ_میزی: 		(Original: رایانهٔ میزی)
-# fa: CHANGED :حلقه_فیلم: TO :حلقهٔ_فیلم: 		(Original: حلقهٔ فیلم)
-# fa: CHANGED :صفحه_تاشده: TO :صفحهٔ_تاشده: 		(Original: صفحهٔ تاشده)
-# fa: CHANGED :صفحه_روبه_بالا: TO :صفحهٔ_روبه_بالا: 		(Original: صفحهٔ روبه‌بالا)
-# fa: CHANGED :کیسه_پول: TO :کیسهٔ_پول: 		(Original: کیسهٔ پول)
-# fa: CHANGED :پاکت_نامه_ورودی: TO :پاکت_نامهٔ_ورودی: 		(Original: پاکت نامهٔ ورودی)
-# fa: CHANGED :پوشه_باز: TO :پوشهٔ_باز: 		(Original: پوشهٔ باز)
-# fa: CHANGED :دفترچه_یادداشت_سیمی: TO :دفترچهٔ_یادداشت_سیمی: 		(Original: دفترچهٔ یادداشت سیمی)
-# fa: CHANGED :تخته_گیره_دار: TO :تختهٔ_گیره_دار: 		(Original: تختهٔ گیره‌دار)
-# fa: CHANGED :گیره_کاغذ: TO :گیرهٔ_کاغذ: 		(Original: گیرهٔ کاغذ)
-# fa: CHANGED :زنجیره_گیره: TO :زنجیرهٔ_گیره: 		(Original: زنجیرهٔ گیره)
-# fa: CHANGED :حلقه_زنجیر: TO :حلقهٔ_زنجیر: 		(Original: حلقهٔ زنجیر)
-# fa: CHANGED :لوله_آزمایشگاه: TO :لولهٔ_آزمایشگاه: 		(Original: لولهٔ آزمایشگاه)
-# fa: CHANGED :ستاره_داود: TO :ستارهٔ_داود: 		(Original: ستارهٔ داود)
-# fa: CHANGED :ستاره_شش_پر: TO :ستارهٔ_شش_پر: 		(Original: ستارهٔ شش‌پر)
-# fa: CHANGED :دکمه_پخش_تصادفی: TO :دکمهٔ_پخش_تصادفی: 		(Original: دکمهٔ پخش تصادفی)
-# fa: CHANGED :دکمه_تکرار: TO :دکمهٔ_تکرار: 		(Original: دکمهٔ تکرار)
-# fa: CHANGED :دکمه_یک_بار_تکرار: TO :دکمهٔ_یک_بار_تکرار: 		(Original: دکمهٔ یک‌بار تکرار)
-# fa: CHANGED :دکمه_پخش: TO :دکمهٔ_پخش: 		(Original: دکمهٔ پخش)
-# fa: CHANGED :دکمه_سریع_به_جلو: TO :دکمهٔ_سریع_به_جلو: 		(Original: دکمهٔ سریع به جلو)
-# fa: CHANGED :دکمه_آهنگ_بعدی: TO :دکمهٔ_آهنگ_بعدی: 		(Original: دکمهٔ آهنگ بعدی)
-# fa: CHANGED :دکمه_پخش_یا_مکث: TO :دکمهٔ_پخش_یا_مکث: 		(Original: دکمهٔ پخش یا مکث)
-# fa: CHANGED :دکمه_برگرداندن: TO :دکمهٔ_برگرداندن: 		(Original: دکمهٔ برگرداندن)
-# fa: CHANGED :دکمه_سریع_به_عقب: TO :دکمهٔ_سریع_به_عقب: 		(Original: دکمهٔ سریع به عقب)
-# fa: CHANGED :دکمه_آهنگ_قبلی: TO :دکمهٔ_آهنگ_قبلی: 		(Original: دکمهٔ آهنگ قبلی)
-# fa: CHANGED :دکمه_بالا: TO :دکمهٔ_بالا: 		(Original: دکمهٔ بالا)
-# fa: CHANGED :دکمه_سریع_به_بالا: TO :دکمهٔ_سریع_به_بالا: 		(Original: دکمهٔ سریع به بالا)
-# fa: CHANGED :دکمه_پایین: TO :دکمهٔ_پایین: 		(Original: دکمهٔ پایین)
-# fa: CHANGED :دکمه_سریع_به_پایین: TO :دکمهٔ_سریع_به_پایین: 		(Original: دکمهٔ سریع به پایین)
-# fa: CHANGED :دکمه_مکث: TO :دکمهٔ_مکث: 		(Original: دکمهٔ مکث)
-# fa: CHANGED :دکمه_توقف: TO :دکمهٔ_توقف: 		(Original: دکمهٔ توقف)
-# fa: CHANGED :دکمه_ضبط: TO :دکمهٔ_ضبط: 		(Original: دکمهٔ ضبط)
-# fa: CHANGED :دکمه_خروج: TO :دکمهٔ_خروج: 		(Original: دکمهٔ خروج)
-# fa: CHANGED :دکمه_تار_کردن_صفحه: TO :دکمهٔ_تار_کردن_صفحه: 		(Original: دکمهٔ تار کردن صفحه)
-# fa: CHANGED :دکمه_روشن_کردن_صفحه: TO :دکمهٔ_روشن_کردن_صفحه: 		(Original: دکمهٔ روشن کردن صفحه)
-# fa: CHANGED :نیزه_سه_شاخه: TO :نیزهٔ_سه_شاخه: 		(Original: نیزهٔ سه‌شاخه)
-# fa: CHANGED :دکمه_cl: TO :دکمهٔ_cl: 		(Original: دکمهٔ CL)
-# fa: CHANGED :دکمه_cool: TO :دکمهٔ_cool: 		(Original: دکمهٔ COOL)
-# fa: CHANGED :دکمه_free: TO :دکمهٔ_free: 		(Original: دکمهٔ FREE)
-# fa: CHANGED :دکمه_شناسایی: TO :دکمهٔ_شناسایی: 		(Original: دکمهٔ شناسایی)
-# fa: CHANGED :دکمه_new: TO :دکمهٔ_new: 		(Original: دکمهٔ NEW)
-# fa: CHANGED :دکمه_ng: TO :دکمهٔ_ng: 		(Original: دکمهٔ NG)
-# fa: CHANGED :دکمه_ok: TO :دکمهٔ_ok: 		(Original: دکمهٔ OK)
-# fa: CHANGED :دکمه_!up: TO :دکمهٔ_!up: 		(Original: دکمهٔ !UP)
-# fa: CHANGED :دکمه_vs: TO :دکمهٔ_vs: 		(Original: دکمهٔ VS)
-# fa: CHANGED :دکمه_«اینجا»_به_ژاپنی: TO :دکمهٔ_«اینجا»_به_ژاپنی: 		(Original: دکمهٔ «اینجا» به ژاپنی)
-# fa: CHANGED :دکمه_«هزینه_خدمات»_به_ژاپنی: TO :دکمهٔ_«هزینهٔ_خدمات»_به_ژاپنی: 		(Original: دکمهٔ «هزینهٔ خدمات» به ژاپنی)
-# fa: CHANGED :دکمه_«مقدار_ماهانه»_به_ژاپنی: TO :دکمهٔ_«مقدار_ماهانه»_به_ژاپنی: 		(Original: دکمهٔ «مقدار ماهانه» به ژاپنی)
-# fa: CHANGED :دکمه_غیرمجانی_به_ژاپنی: TO :دکمهٔ_غیرمجانی_به_ژاپنی: 		(Original: دکمهٔ غیرمجانی به ژاپنی)
-# fa: CHANGED :دکمه_«قیمت_مناسب»_به_ژاپنی: TO :دکمهٔ_«قیمت_مناسب»_به_ژاپنی: 		(Original: دکمهٔ «قیمت مناسب» به ژاپنی)
-# fa: CHANGED :دکمۀ_«نمره_قبولی»_به_ژاپنی: TO :دکمۀ_«نمرهٔ_قبولی»_به_ژاپنی: 		(Original: دکمۀ «نمرهٔ قبولی» به ژاپنی)
-# fa: CHANGED :دکمه_«تبریک»_به_ژاپنی: TO :دکمهٔ_«تبریک»_به_ژاپنی: 		(Original: دکمهٔ «تبریک» به ژاپنی)
-# fa: CHANGED :دکمه_«راز»_به_ژاپنی: TO :دکمهٔ_«راز»_به_ژاپنی: 		(Original: دکمهٔ «راز» به ژاپنی)
-# fa: CHANGED :دکمه_«پُر»_به_ژاپنی: TO :دکمهٔ_«پُر»_به_ژاپنی: 		(Original: دکمهٔ «پُر» به ژاپنی)
-# fa: CHANGED :دکمه_رادیویی: TO :دکمهٔ_رادیویی: 		(Original: دکمهٔ رادیویی)
     u'\U0001F947': { # 🥇
         'en' : ':1st_place_medal:',
         'status' : fully_qualified,
@@ -696,7 +609,7 @@ EMOJI_DATA = {
         'fr': ':bouton_effacer:',
         'pt': u':botão_cl:',
         'it': ':pulsante_cl:',
-        'fa': u':دکمه_cl:'
+        'fa': u':دکمهٔ_cl:'
     },
     u'\U0001F192': { # 🆒
         'en' : ':COOL_button:',
@@ -708,7 +621,7 @@ EMOJI_DATA = {
         'fr': ':bouton_cool:',
         'pt': u':botão_cool:',
         'it': ':pulsante_cool:',
-        'fa': u':دکمه_cool:'
+        'fa': u':دکمهٔ_cool:'
     },
     u'\U0001F1F0\U0001F1ED': { # 🇰🇭
         'en' : ':Cambodia:',
@@ -1232,7 +1145,7 @@ EMOJI_DATA = {
         'fr': ':bouton_gratuit:',
         'pt': u':botão_free:',
         'it': ':pulsante_free:',
-        'fa': u':دکمه_free:'
+        'fa': u':دکمهٔ_free:'
     },
     u'\U0001F1EB\U0001F1F0': { # 🇫🇰
         'en' : ':Falkland_Islands:',
@@ -1576,7 +1489,7 @@ EMOJI_DATA = {
         'fr': ':bouton_identifiant:',
         'pt': u':botão_id:',
         'it': ':pulsante_id:',
-        'fa': u':دکمه_شناسایی:'
+        'fa': u':دکمهٔ_شناسایی:'
     },
     u'\U0001F1EE\U0001F1F8': { # 🇮🇸
         'en' : ':Iceland:',
@@ -1733,7 +1646,7 @@ EMOJI_DATA = {
         'fr': ':bouton_bonne_affaire_en_japonais:',
         'pt': u':botão_japonês_de_“barganha”:',
         'it': u':ideogramma_giapponese_di_“occasione”:',
-        'fa': u':دکمه_«قیمت_مناسب»_به_ژاپنی:'
+        'fa': u':دکمهٔ_«قیمت_مناسب»_به_ژاپنی:'
     },
     u'\U0001F3EF': { # 🏯
         'en' : ':Japanese_castle:',
@@ -1745,7 +1658,7 @@ EMOJI_DATA = {
         'fr': u':château_japonais:',
         'pt': u':castelo_japonês:',
         'it': ':castello_giapponese:',
-        'fa': u':قلعه_ژاپنی:'
+        'fa': u':قلعهٔ_ژاپنی:'
     },
     u'\U00003297\U0000FE0F': { # ㊗️
         'en' : ':Japanese_congratulations_button:',
@@ -1771,7 +1684,7 @@ EMOJI_DATA = {
         'fr': u':bouton_félicitations_en_japonais:',
         'pt': u':botão_japonês_de_“parabéns”:',
         'it': u':ideogramma_giapponese_di_“congratulazioni”:',
-        'fa': u':دکمه_«تبریک»_به_ژاپنی:'
+        'fa': u':دکمهٔ_«تبریک»_به_ژاپنی:'
     },
     u'\U0001F239': { # 🈹
         'en' : ':Japanese_discount_button:',
@@ -1820,7 +1733,7 @@ EMOJI_DATA = {
         'fr': ':bouton_ici_en_japonais:',
         'pt': u':botão_japonês_de_“aqui”:',
         'it': u':ideogramma_giapponese_per_“qui”:',
-        'fa': u':دکمه_«اینجا»_به_ژاپنی:'
+        'fa': u':دکمهٔ_«اینجا»_به_ژاپنی:'
     },
     u'\U0001F237\U0000FE0F': { # 🈷️
         'en' : ':Japanese_monthly_amount_button:',
@@ -1846,7 +1759,7 @@ EMOJI_DATA = {
         'fr': ':bouton_montant_mensuel_en_japonais:',
         'pt': u':botão_japonês_de_“quantidade_mensal”:',
         'it': u':ideogramma_giapponese_di_“importo_mensile”:',
-        'fa': u':دکمه_«مقدار_ماهانه»_به_ژاپنی:'
+        'fa': u':دکمهٔ_«مقدار_ماهانه»_به_ژاپنی:'
     },
     u'\U0001F235': { # 🈵
         'en' : ':Japanese_no_vacancy_button:',
@@ -1858,7 +1771,7 @@ EMOJI_DATA = {
         'fr': ':bouton_complet_en_japonais:',
         'pt': u':botão_japonês_de_“sem_vagas”:',
         'it': u':ideogramma_giapponese_di_“nessun_posto_libero”:',
-        'fa': u':دکمه_«پُر»_به_ژاپنی:'
+        'fa': u':دکمهٔ_«پُر»_به_ژاپنی:'
     },
     u'\U0001F236': { # 🈶
         'en' : ':Japanese_not_free_of_charge_button:',
@@ -1870,7 +1783,7 @@ EMOJI_DATA = {
         'fr': ':bouton_pas_gratuit_en_japonais:',
         'pt': u':botão_japonês_de_“não_gratuito”:',
         'it': u':ideogramma_giapponese_di_“a_pagamento”:',
-        'fa': u':دکمه_غیرمجانی_به_ژاپنی:'
+        'fa': u':دکمهٔ_غیرمجانی_به_ژاپنی:'
     },
     u'\U0001F23A': { # 🈺
         'en' : ':Japanese_open_for_business_button:',
@@ -1894,7 +1807,7 @@ EMOJI_DATA = {
         'fr': u':bouton_note_pour_réussir_en_japonais:',
         'pt': u':botão_japonês_de_“nota_mínima”:',
         'it': u':ideogramma_giapponese_di_“voto_di_sufficienza”:',
-        'fa': u':دکمۀ_«نمره_قبولی»_به_ژاپنی:'
+        'fa': u':دکمۀ_«نمرهٔ_قبولی»_به_ژاپنی:'
     },
     u'\U0001F3E3': { # 🏣
         'en' : ':Japanese_post_office:',
@@ -1906,7 +1819,7 @@ EMOJI_DATA = {
         'fr': ':bureau_de_poste_japonais:',
         'pt': u':correio_japonês:',
         'it': ':ufficio_postale_giapponese:',
-        'fa': u':پست_خانه_ژاپنی:'
+        'fa': u':پست_خانهٔ_ژاپنی:'
     },
     u'\U0001F232': { # 🈲
         'en' : ':Japanese_prohibited_button:',
@@ -1957,7 +1870,7 @@ EMOJI_DATA = {
         'fr': ':bouton_secret_en_japonais:',
         'pt': u':botão_japonês_de_“segredo”:',
         'it': u':ideogramma_giapponese_di_“segreto”:',
-        'fa': u':دکمه_«راز»_به_ژاپنی:'
+        'fa': u':دکمهٔ_«راز»_به_ژاپنی:'
     },
     u'\U0001F202\U0000FE0F': { # 🈂️
         'en' : ':Japanese_service_charge_button:',
@@ -1983,7 +1896,7 @@ EMOJI_DATA = {
         'fr': ':bouton_frais_de_service_en_japonais:',
         'pt': u':botão_japonês_de_“taxa_de_serviço”:',
         'it': u':ideogramma_giapponese_di_“costo_del_servizio”:',
-        'fa': u':دکمه_«هزینه_خدمات»_به_ژاپنی:'
+        'fa': u':دکمهٔ_«هزینهٔ_خدمات»_به_ژاپنی:'
     },
     u'\U0001F530': { # 🔰
         'en' : ':Japanese_symbol_for_beginner:',
@@ -2536,7 +2449,7 @@ EMOJI_DATA = {
         'fr': ':bouton_nouveau:',
         'pt': u':botão_new:',
         'it': ':pulsante_new:',
-        'fa': u':دکمه_new:'
+        'fa': u':دکمهٔ_new:'
     },
     u'\U0001F196': { # 🆖
         'en' : ':NG_button:',
@@ -2548,7 +2461,7 @@ EMOJI_DATA = {
         'fr': ':bouton_pas_bien:',
         'pt': u':botão_ng:',
         'it': ':pulsante_ng:',
-        'fa': u':دکمه_ng:'
+        'fa': u':دکمهٔ_ng:'
     },
     u'\U0001F1F3\U0001F1E6': { # 🇳🇦
         'en' : ':Namibia:',
@@ -2725,7 +2638,7 @@ EMOJI_DATA = {
         'fr': ':bouton_ok:',
         'pt': u':botão_ok:',
         'it': ':pulsante_ok:',
-        'fa': u':دکمه_ok:'
+        'fa': u':دکمهٔ_ok:'
     },
     u'\U0001F44C': { # 👌
         'en' : ':OK_hand:',
@@ -3495,7 +3408,7 @@ EMOJI_DATA = {
         'fr': u':statue_de_la_liberté:',
         'pt': u':estátua_da_liberdade:',
         'it': u':statua_della_libertà:',
-        'fa': u':مجسمه_آزادی:'
+        'fa': u':مجسمهٔ_آزادی:'
     },
     u'\U0001F1F8\U0001F1E9': { # 🇸🇩
         'en' : ':Sudan:',
@@ -3820,7 +3733,7 @@ EMOJI_DATA = {
         'fr': ':bouton_vers_le_haut:',
         'pt': u':botão_up!:',
         'it': ':pulsante_up!:',
-        'fa': u':دکمه_!up:'
+        'fa': u':دکمهٔ_!up:'
     },
     u'\U0001F1FA\U0001F1EC': { # 🇺🇬
         'en' : ':Uganda:',
@@ -3920,7 +3833,7 @@ EMOJI_DATA = {
         'fr': ':bouton_vs:',
         'pt': u':botão_vs:',
         'it': ':pulsante_vs:',
-        'fa': u':دکمه_vs:'
+        'fa': u':دکمهٔ_vs:'
     },
     u'\U0001F1FB\U0001F1FA': { # 🇻🇺
         'en' : ':Vanuatu:',
@@ -5321,7 +5234,7 @@ EMOJI_DATA = {
         'fr': ':visage_souriant_aux_yeux_rieurs:',
         'pt': ':rosto_contente_com_olhos_sorridentes:',
         'it': ':faccina_raggiante_con_occhi_felici:',
-        'fa': u':خنده_دندانی:'
+        'fa': u':خندهٔ_دندانی:'
     },
     u'\U0001FAD8': { # 🫘
         'en' : ':beans:',
@@ -6182,7 +6095,7 @@ EMOJI_DATA = {
         'fr': u':luminosité_élevée:',
         'pt': u':botão_de_aumentar_brilho:',
         'it': u':luminosità_elevata:',
-        'fa': u':دکمه_روشن_کردن_صفحه:'
+        'fa': u':دکمهٔ_روشن_کردن_صفحه:'
     },
     u'\U0001F966': { # 🥦
         'en' : ':broccoli:',
@@ -6772,7 +6685,7 @@ EMOJI_DATA = {
         'fr': ':chat_qui_pleure_de_joie:',
         'pt': u':rosto_de_gato_com_lágrimas_de_alegria:',
         'it': ':gatto_con_lacrime_di_gioia:',
-        'fa': u':گربه_خندان_با_اشک_شوق:'
+        'fa': u':گربهٔ_خندان_با_اشک_شوق:'
     },
     u'\U0001F63C': { # 😼
         'en' : ':cat_with_wry_smile:',
@@ -7397,7 +7310,7 @@ EMOJI_DATA = {
         'fr': ':porte-bloc:',
         'pt': ':prancheta:',
         'it': ':portablocco:',
-        'fa': u':تخته_گیره_دار:'
+        'fa': u':تختهٔ_گیره_دار:'
     },
     u'\U0001F503': { # 🔃
         'en' : ':clockwise_vertical_arrows:',
@@ -9439,7 +9352,7 @@ EMOJI_DATA = {
         'fr': ':chat_qui_pleure:',
         'pt': ':rosto_de_gato_chorando:',
         'it': ':gatto_che_piange:',
-        'fa': u':گربه_گریان:'
+        'fa': u':گربهٔ_گریان:'
     },
     u'\U0001F622': { # 😢
         'en' : ':crying_face:',
@@ -9980,7 +9893,7 @@ EMOJI_DATA = {
         'fr': u':maison_abandonnée:',
         'pt': ':casa_abandonada:',
         'it': ':casa_in_rovina:',
-        'fa': u':خانه_متروکه:'
+        'fa': u':خانهٔ_متروکه:'
     },
     u'\U0001F3DC\U0000FE0F': { # 🏜️
         'en' : ':desert:',
@@ -10028,7 +9941,7 @@ EMOJI_DATA = {
         'fr': u':île_déserte:',
         'pt': ':ilha_deserta:',
         'it': ':isola_deserta:',
-        'fa': u':جزیره_خالی_از_سکنه:'
+        'fa': u':جزیرهٔ_خالی_از_سکنه:'
     },
     u'\U0001F5A5\U0000FE0F': { # 🖥️
         'en' : ':desktop_computer:',
@@ -10052,7 +9965,7 @@ EMOJI_DATA = {
         'fr': ':ordinateur_de_bureau:',
         'pt': ':computador_de_mesa:',
         'it': ':computer_fisso:',
-        'fa': u':رایانه_میزی:'
+        'fa': u':رایانهٔ_میزی:'
     },
     u'\U0001F575\U0000FE0F': { # 🕵️
         'en' : ':detective:',
@@ -10178,7 +10091,7 @@ EMOJI_DATA = {
         'fr': u':luminosité_faible:',
         'pt': u':botão_de_diminuir_brilho:',
         'it': u':luminosità_bassa:',
-        'fa': u':دکمه_تار_کردن_صفحه:'
+        'fa': u':دکمهٔ_تار_کردن_صفحه:'
     },
     u'\U0001F61E': { # 😞
         'en' : ':disappointed_face:',
@@ -10351,7 +10264,7 @@ EMOJI_DATA = {
         'fr': u':étoile_à_6_branches:',
         'pt': ':estrela_de_seis_pontas:',
         'it': ':stella_a_sei_punte:',
-        'fa': u':ستاره_شش_پر:'
+        'fa': u':ستارهٔ_شش_پر:'
     },
     u'\U000027BF': { # ➿
         'en' : ':double_curly_loop:',
@@ -10528,7 +10441,7 @@ EMOJI_DATA = {
         'fr': ':petit_triangle_bas:',
         'pt': u':botão_apontando_para_baixo:',
         'it': ':pulsante_a_triangolo_rivolto_verso_il_basso:',
-        'fa': u':دکمه_پایین:'
+        'fa': u':دکمهٔ_پایین:'
     },
     u'\U0001F409': { # 🐉
         'en' : ':dragon:',
@@ -10923,7 +10836,7 @@ EMOJI_DATA = {
         'fr': u':bouton_éjecter:',
         'pt': u':botão_ejetar:',
         'it': ':pulsante_di_espulsione:',
-        'fa': u':دکمه_خروج:'
+        'fa': u':دکمهٔ_خروج:'
     },
     u'\U0001F50C': { # 🔌
         'en' : ':electric_plug:',
@@ -12028,7 +11941,7 @@ EMOJI_DATA = {
         'fr': ':bouton_avance_rapide:',
         'pt': u':botão_avançar:',
         'it': ':pulsante_di_avanzamento_rapido:',
-        'fa': u':دکمه_سریع_به_جلو:'
+        'fa': u':دکمهٔ_سریع_به_جلو:'
     },
     u'\U000023EC': { # ⏬
         'en' : ':fast_down_button:',
@@ -12040,7 +11953,7 @@ EMOJI_DATA = {
         'fr': u':double_flèche_vers_le_bas:',
         'pt': u':botão_de_avanço_para_baixo:',
         'it': ':doppia_freccia_in_basso:',
-        'fa': u':دکمه_سریع_به_پایین:'
+        'fa': u':دکمهٔ_سریع_به_پایین:'
     },
     u'\U000023EA': { # ⏪
         'en' : ':fast_reverse_button:',
@@ -12053,7 +11966,7 @@ EMOJI_DATA = {
         'fr': ':bouton_retour_rapide:',
         'pt': u':botão_de_retroceder:',
         'it': ':pulsante_di_riavvolgimento_rapido:',
-        'fa': u':دکمه_سریع_به_عقب:'
+        'fa': u':دکمهٔ_سریع_به_عقب:'
     },
     u'\U000023EB': { # ⏫
         'en' : ':fast_up_button:',
@@ -12065,7 +11978,7 @@ EMOJI_DATA = {
         'fr': u':double_flèche_vers_le_haut:',
         'pt': u':botão_de_avanço_para_cima:',
         'it': ':pulsante_doppia_freccia_in_alto:',
-        'fa': u':دکمه_سریع_به_بالا:'
+        'fa': u':دکمهٔ_سریع_به_بالا:'
     },
     u'\U0001F4E0': { # 📠
         'en' : ':fax_machine:',
@@ -12232,7 +12145,7 @@ EMOJI_DATA = {
         'fr': ':pellicule:',
         'pt': ':rolo_de_filmes:',
         'it': ':pellicola_cinematografica:',
-        'fa': u':حلقه_فیلم:'
+        'fa': u':حلقهٔ_فیلم:'
     },
     u'\U0001F4FD\U0000FE0F': { # 📽️
         'en' : ':film_projector:',
@@ -12552,7 +12465,7 @@ EMOJI_DATA = {
         'fr': u':biceps_contracté:',
         'pt': u':bíceps:',
         'it': ':bicipite:',
-        'fa': u':عضله_بازو:'
+        'fa': u':عضلهٔ_بازو:'
     },
     u'\U0001F4AA\U0001F3FF': { # 💪🏿
         'en' : ':flexed_biceps_dark_skin_tone:',
@@ -13345,7 +13258,7 @@ EMOJI_DATA = {
         'fr': u':globe_tourné_sur_les_amériques:',
         'pt': u':globo_mostrando_as_américas:',
         'it': ':america:',
-        'fa': u':نقشه_قاره_امریکا_روی_کره:'
+        'fa': u':نقشهٔ_قارهٔ_امریکا_روی_کره:'
     },
     u'\U0001F30F': { # 🌏
         'en' : ':globe_showing_Asia-Australia:',
@@ -13358,7 +13271,7 @@ EMOJI_DATA = {
         'fr': u':globe_tourné_sur_l’asie_et_l’australie:',
         'pt': u':globo_mostrando_ásia_e_oceania:',
         'it': ':asia_e_australia:',
-        'fa': u':نقشه_آسیا-اقیانوسیه_روی_کره:'
+        'fa': u':نقشهٔ_آسیا-اقیانوسیه_روی_کره:'
     },
     u'\U0001F30D': { # 🌍
         'en' : ':globe_showing_Europe-Africa:',
@@ -13371,7 +13284,7 @@ EMOJI_DATA = {
         'fr': u':globe_tourné_sur_l’afrique_et_l’europe:',
         'pt': u':globo_mostrando_europa_e_áfrica:',
         'it': ':europa_e_africa:',
-        'fa': u':نقشه_اروپا-افریقا_روی_کره:'
+        'fa': u':نقشهٔ_اروپا-افریقا_روی_کره:'
     },
     u'\U0001F310': { # 🌐
         'en' : ':globe_with_meridians:',
@@ -13575,7 +13488,7 @@ EMOJI_DATA = {
         'fr': ':chat_qui_sourit:',
         'pt': ':rosto_de_gato_sorrindo:',
         'it': ':gatto_che_sorride:',
-        'fa': u':گربه_خندان:'
+        'fa': u':گربهٔ_خندان:'
     },
     u'\U0001F638': { # 😸
         'en' : ':grinning_cat_with_smiling_eyes:',
@@ -14777,7 +14690,7 @@ EMOJI_DATA = {
         'fr': ':sources_chaudes:',
         'pt': ':chamas:',
         'it': ':sorgenti_termali:',
-        'fa': u':چشمه_آب_گرم:'
+        'fa': u':چشمهٔ_آب_گرم:'
     },
     u'\U0001F3E8': { # 🏨
         'en' : ':hotel:',
@@ -14837,7 +14750,7 @@ EMOJI_DATA = {
         'fr': ':maison_avec_jardin:',
         'pt': ':casa_com_jardim:',
         'it': ':casa_con_giardino:',
-        'fa': u':خانه_حیاط_دار:'
+        'fa': u':خانهٔ_حیاط_دار:'
     },
     u'\U0001F3D8\U0000FE0F': { # 🏘️
         'en' : ':houses:',
@@ -14991,7 +14904,7 @@ EMOJI_DATA = {
         'fr': u':message_reçu:',
         'pt': ':envelope_chegando:',
         'it': ':posta_in_arrivo:',
-        'fa': u':پاکت_نامه_ورودی:'
+        'fa': u':پاکت_نامهٔ_ورودی:'
     },
     u'\U0001FAF5': { # 🫵
         'en' : ':index_pointing_at_the_viewer:',
@@ -16726,7 +16639,7 @@ EMOJI_DATA = {
         'fr': ':chat_qui_fait_un_bisou:',
         'pt': ':rosto_de_gato_mandando_um_beijo:',
         'it': ':gatto_che_manda_baci:',
-        'fa': u':گربه_و_بوسه_خجالتی:'
+        'fa': u':گربه_و_بوسهٔ_خجالتی:'
     },
     u'\U0001F617': { # 😗
         'en' : ':kissing_face:',
@@ -16750,7 +16663,7 @@ EMOJI_DATA = {
         'fr': u':visage_faisant_un_bisou_avec_les_yeux_fermés:',
         'pt': ':rosto_beijando_com_olhos_fechados:',
         'it': ':faccina_che_bacia_con_occhi_chiusi:',
-        'fa': u':بوسه_خجالتی:'
+        'fa': u':بوسهٔ_خجالتی:'
     },
     u'\U0001F619': { # 😙
         'en' : ':kissing_face_with_smiling_eyes:',
@@ -16900,7 +16813,7 @@ EMOJI_DATA = {
         'fr': ':ordinateur_portable:',
         'pt': ':laptop:',
         'it': ':computer_portatile:',
-        'fa': u':رایانه_کیفی:'
+        'fa': u':رایانهٔ_کیفی:'
     },
     u'\U0001F537': { # 🔷
         'en' : ':large_blue_diamond:',
@@ -16972,7 +16885,7 @@ EMOJI_DATA = {
         'fr': u':bouton_piste_précédente:',
         'pt': u':botão_de_faixa_anterior:',
         'it': ':pulsante_traccia_precedente:',
-        'fa': u':دکمه_آهنگ_قبلی:'
+        'fa': u':دکمهٔ_آهنگ_قبلی:'
     },
     u'\U0000271D\U0000FE0F': { # ✝️
         'en' : ':latin_cross:',
@@ -17348,7 +17261,7 @@ EMOJI_DATA = {
         'fr': ':curseur_de_niveau:',
         'pt': ':controle_de_volume:',
         'it': ':cursore_del_volume:',
-        'fa': u':درجه_تنظیم_کننده:'
+        'fa': u':درجهٔ_تنظیم_کننده:'
     },
     u'\U0001F4A1': { # 💡
         'en' : ':light_bulb:',
@@ -17394,7 +17307,7 @@ EMOJI_DATA = {
         'fr': u':chaînons:',
         'pt': ':link:',
         'it': ':collegamento:',
-        'fa': u':حلقه_زنجیر:'
+        'fa': u':حلقهٔ_زنجیر:'
     },
     u'\U0001F587\U0000FE0F': { # 🖇️
         'en' : ':linked_paperclips:',
@@ -17420,7 +17333,7 @@ EMOJI_DATA = {
         'fr': ':trombones:',
         'pt': ':clipes_de_papel_conectados:',
         'it': ':graffette_attaccate:',
-        'fa': u':زنجیره_گیره:'
+        'fa': u':زنجیرهٔ_گیره:'
     },
     u'\U0001F981': { # 🦁
         'en' : ':lion:',
@@ -17688,7 +17601,7 @@ EMOJI_DATA = {
         'fr': u':lettre_d’amour:',
         'pt': ':carta_de_amor:',
         'it': u':lettera_d’amore:',
-        'fa': u':نامه_عاشقانه:'
+        'fa': u':نامهٔ_عاشقانه:'
     },
     u'\U0001FAAB': { # 🪫
         'en' : ':low_battery:',
@@ -24017,7 +23930,7 @@ EMOJI_DATA = {
         'fr': ':carte_du_japon:',
         'pt': u':mapa_do_japão:',
         'it': ':mappa_del_giappone:',
-        'fa': u':نقشه_ژاپن:'
+        'fa': u':نقشهٔ_ژاپن:'
     },
     u'\U0001F341': { # 🍁
         'en' : ':maple_leaf:',
@@ -25120,7 +25033,7 @@ EMOJI_DATA = {
         'fr': u':sac_plein_d’argent:',
         'pt': ':saco_de_dinheiro:',
         'it': ':sacco_di_soldi:',
-        'fa': u':کیسه_پول:'
+        'fa': u':کیسهٔ_پول:'
     },
     u'\U0001F4B8': { # 💸
         'en' : ':money_with_wings:',
@@ -25187,7 +25100,7 @@ EMOJI_DATA = {
         'fr': u':cérémonie_de_la_lune:',
         'pt': u':contemplação_da_lua:',
         'it': ':contemplazione_della_luna:',
-        'fa': u':آئین_مشاهده_ماه_کامل:'
+        'fa': u':آئین_مشاهدهٔ_ماه_کامل:'
     },
     u'\U0001F54C': { # 🕌
         'en' : ':mosque:',
@@ -25810,7 +25723,7 @@ EMOJI_DATA = {
         'fr': ':bouton_piste_suivante:',
         'pt': u':botão_de_próxima_faixa:',
         'it': ':traccia_successiva:',
-        'fa': u':دکمه_آهنگ_بعدی:'
+        'fa': u':دکمهٔ_آهنگ_بعدی:'
     },
     u'\U0001F303': { # 🌃
         'en' : ':night_with_stars:',
@@ -26654,7 +26567,7 @@ EMOJI_DATA = {
         'fr': ':dossier_ouvert:',
         'pt': ':pasta_de_arquivos_aberta:',
         'it': ':cartella_aperta:',
-        'fa': u':پوشه_باز:'
+        'fa': u':پوشهٔ_باز:'
     },
     u'\U0001F450': { # 👐
         'en' : ':open_hands:',
@@ -26912,7 +26825,7 @@ EMOJI_DATA = {
         'fr': ':page:',
         'pt': u':página_voltada_para_cima:',
         'it': ':pagina:',
-        'fa': u':صفحه_روبه_بالا:'
+        'fa': u':صفحهٔ_روبه_بالا:'
     },
     u'\U0001F4C3': { # 📃
         'en' : ':page_with_curl:',
@@ -26923,7 +26836,7 @@ EMOJI_DATA = {
         'fr': u':page_enroulée:',
         'pt': u':página_dobrada:',
         'it': ':pagina_con_piega:',
-        'fa': u':صفحه_تاشده:'
+        'fa': u':صفحهٔ_تاشده:'
     },
     u'\U0001F4DF': { # 📟
         'en' : ':pager:',
@@ -27139,7 +27052,7 @@ EMOJI_DATA = {
         'fr': ':trombone:',
         'pt': ':clipe_de_papel:',
         'it': ':graffetta:',
-        'fa': u':گیره_کاغذ:'
+        'fa': u':گیرهٔ_کاغذ:'
     },
     u'\U0001FA82': { # 🪂
         'en' : ':parachute:',
@@ -27269,7 +27182,7 @@ EMOJI_DATA = {
         'fr': ':bouton_pause:',
         'pt': u':botão_pausar:',
         'it': ':pulsante_pausa:',
-        'fa': u':دکمه_مکث:'
+        'fa': u':دکمهٔ_مکث:'
     },
     u'\U0001F43E': { # 🐾
         'en' : ':paw_prints:',
@@ -30916,7 +30829,7 @@ EMOJI_DATA = {
         'fr': ':tas_de_crotte:',
         'pt': u':cocô:',
         'it': ':cacca:',
-        'fa': u':یه_تپه_گه:'
+        'fa': u':یه_تپهٔ_گه:'
     },
     u'\U0001F48A': { # 💊
         'en' : ':pill:',
@@ -31272,7 +31185,7 @@ EMOJI_DATA = {
         'fr': ':bouton_lecture:',
         'pt': u':botão_reproduzir:',
         'it': ':pulsante_di_riproduzione:',
-        'fa': u':دکمه_پخش:'
+        'fa': u':دکمهٔ_پخش:'
     },
     u'\U000023EF\U0000FE0F': { # ⏯️
         'en' : ':play_or_pause_button:',
@@ -31298,7 +31211,7 @@ EMOJI_DATA = {
         'fr': ':bouton_lecture/pause:',
         'pt': u':botão_de_reproduzir_ou_pausar:',
         'it': ':pulsante_riproduci/pausa:',
-        'fa': u':دکمه_پخش_یا_مکث:'
+        'fa': u':دکمهٔ_پخش_یا_مکث:'
     },
     u'\U0001F6DD': { # 🛝
         'en' : ':playground_slide:',
@@ -31495,7 +31408,7 @@ EMOJI_DATA = {
         'fr': ':bureau_de_poste:',
         'pt': ':correio:',
         'it': ':ufficio_postale:',
-        'fa': u':اداره_پست:'
+        'fa': u':ادارهٔ_پست:'
     },
     u'\U0001F4EF': { # 📯
         'en' : ':postal_horn:',
@@ -31607,7 +31520,7 @@ EMOJI_DATA = {
         'fr': ':chat_qui_boude:',
         'pt': ':rosto_de_gato_mal-humorado:',
         'it': ':gatto_imbronciato:',
-        'fa': u':گربه_اخمو:'
+        'fa': u':گربهٔ_اخمو:'
     },
     u'\U0001F621': { # 😡
         'en' : ':pouting_face:',
@@ -32081,7 +31994,7 @@ EMOJI_DATA = {
         'fr': ':bouton_radio:',
         'pt': u':botão_de_opção:',
         'it': ':pulsante_rotondo:',
-        'fa': u':دکمه_رادیویی:'
+        'fa': u':دکمهٔ_رادیویی:'
     },
     u'\U00002622\U0000FE0F': { # ☢️
         'en' : ':radioactive:',
@@ -32491,7 +32404,7 @@ EMOJI_DATA = {
         'fr': ':bouton_enregistrer:',
         'pt': u':botão_gravar:',
         'it': ':pulsante_di_registrazione:',
-        'fa': u':دکمه_ضبط:'
+        'fa': u':دکمهٔ_ضبط:'
     },
     u'\U0000267B\U0000FE0F': { # ♻️
         'en' : ':recycling_symbol:',
@@ -32733,7 +32646,7 @@ EMOJI_DATA = {
         'fr': u':bouton_répétition:',
         'pt': u':botão_de_repetir:',
         'it': ':pulsante_di_ripetizione_della_riproduzione:',
-        'fa': u':دکمه_تکرار:'
+        'fa': u':دکمهٔ_تکرار:'
     },
     u'\U0001F502': { # 🔂
         'en' : ':repeat_single_button:',
@@ -32745,7 +32658,7 @@ EMOJI_DATA = {
         'fr': u':bouton_répétition_de_la_piste:',
         'pt': u':botão_de_repetir_uma_única_faixa:',
         'it': ':pulsante_di_ripetizione_della_riproduzione_di_una_traccia:',
-        'fa': u':دکمه_یک_بار_تکرار:'
+        'fa': u':دکمهٔ_یک_بار_تکرار:'
     },
     u'\U000026D1\U0000FE0F': { # ⛑️
         'en' : u':rescue_worker’s_helmet:',
@@ -32808,7 +32721,7 @@ EMOJI_DATA = {
         'fr': ':bouton_retour:',
         'pt': u':botão_de_voltar:',
         'it': ':pulsante_di_riavvolgimento:',
-        'fa': u':دکمه_برگرداندن:'
+        'fa': u':دکمهٔ_برگرداندن:'
     },
     u'\U0001F49E': { # 💞
         'en' : ':revolving_hearts:',
@@ -34021,7 +33934,7 @@ EMOJI_DATA = {
         'fr': u':bouton_lecture_aléatoire:',
         'pt': u':botão_de_músicas_aleatórias:',
         'it': ':pulsante_di_riproduzione_casuale:',
-        'fa': u':دکمه_پخش_تصادفی:'
+        'fa': u':دکمهٔ_پخش_تصادفی:'
     },
     u'\U0001F92B': { # 🤫
         'en' : ':shushing_face:',
@@ -34192,7 +34105,7 @@ EMOJI_DATA = {
         'fr': u':planche_à_roulettes:',
         'pt': ':skate:',
         'it': ':skateboard:',
-        'fa': u':تخته_اسکیت:'
+        'fa': u':تختهٔ_اسکیت:'
     },
     u'\U000026F7\U0000FE0F': { # ⛷️
         'en' : ':skier:',
@@ -34411,7 +34324,7 @@ EMOJI_DATA = {
         'fr': u':chat_souriant_aux_yeux_en_cœurs:',
         'pt': u':rosto_de_gato_sorridente_com_olhos_de_coração:',
         'it': ':gatto_innamorato:',
-        'fa': u':گربه_خندان_عاشق:'
+        'fa': u':گربهٔ_خندان_عاشق:'
     },
     u'\U0000263A\U0000FE0F': { # ☺️
         'en' : ':smiling_face:',
@@ -34532,7 +34445,7 @@ EMOJI_DATA = {
         'fr': ':visage_souriant_avec_une_larme:',
         'pt': u':rosto_sorridente_com_lágrima:',
         'it': ':faccina_sorridente_con_lacrima:',
-        'fa': u':چهره_خندان_با_اشک:'
+        'fa': u':چهرهٔ_خندان_با_اشک:'
     },
     u'\U0001F60F': { # 😏
         'en' : ':smirking_face:',
@@ -34603,7 +34516,7 @@ EMOJI_DATA = {
         'fr': u':montagne_enneigée:',
         'pt': ':montanha_com_neve:',
         'it': ':montagna_innevata:',
-        'fa': u':قله_برفی:'
+        'fa': u':قلهٔ_برفی:'
     },
     u'\U0001F3C2': { # 🏂
         'en' : ':snowboarder:',
@@ -35077,7 +34990,7 @@ EMOJI_DATA = {
         'fr': u':bloc-notes_à_spirale:',
         'pt': ':bloco_espiral:',
         'it': ':blocco_per_appunti_con_spirale:',
-        'fa': u':دفترچه_یادداشت_سیمی:'
+        'fa': u':دفترچهٔ_یادداشت_سیمی:'
     },
     u'\U0001F41A': { # 🐚
         'en' : ':spiral_shell:',
@@ -35268,7 +35181,7 @@ EMOJI_DATA = {
         'fr': u':étoile_de_david:',
         'pt': ':estrela_de_davi:',
         'it': ':stella_di_david:',
-        'fa': u':ستاره_داود:'
+        'fa': u':ستارهٔ_داود:'
     },
     u'\U0001F689': { # 🚉
         'en' : ':station:',
@@ -35328,7 +35241,7 @@ EMOJI_DATA = {
         'fr': ':bouton_stop:',
         'pt': u':botão_parar:',
         'it': ':pulsante_stop:',
-        'fa': u':دکمه_توقف:'
+        'fa': u':دکمهٔ_توقف:'
     },
     u'\U0001F6D1': { # 🛑
         'en' : ':stop_sign:',
@@ -36237,7 +36150,7 @@ EMOJI_DATA = {
         'fr': u':tube_à_essai:',
         'pt': ':tubo_de_ensaio:',
         'it': ':provetta:',
-        'fa': u':لوله_آزمایشگاه:'
+        'fa': u':لولهٔ_آزمایشگاه:'
     },
     u'\U0001F321\U0000FE0F': { # 🌡️
         'en' : ':thermometer:',
@@ -36818,7 +36731,7 @@ EMOJI_DATA = {
         'fr': ':trident:',
         'pt': ':emblema_de_tridente:',
         'it': ':tridente:',
-        'fa': u':نیزه_سه_شاخه:'
+        'fa': u':نیزهٔ_سه_شاخه:'
     },
     u'\U0001F9CC': { # 🧌
         'en' : ':troll:',
@@ -37234,7 +37147,7 @@ EMOJI_DATA = {
         'fr': ':petit_triangle_haut:',
         'pt': u':botão_apontando_para_cima:',
         'it': u':pulsante_a_triangolo_rivolto_verso_l’alto:',
-        'fa': u':دکمه_بالا:'
+        'fa': u':دکمهٔ_بالا:'
     },
     u'\U0001F9DB': { # 🧛
         'en' : ':vampire:',
@@ -37796,7 +37709,7 @@ EMOJI_DATA = {
         'fr': u':chat_fatigué:',
         'pt': ':rosto_de_gato_desolado:',
         'it': ':gatto_esterrefatto:',
-        'fa': u':گربه_بهت_زده:'
+        'fa': u':گربهٔ_بهت_زده:'
     },
     u'\U0001F629': { # 😩
         'en' : ':weary_face:',
@@ -44969,7 +44882,7 @@ EMOJI_DATA = {
         'fr': ':carte_du_monde:',
         'pt': u':mapa-múndi:',
         'it': ':mappa_mondiale:',
-        'fa': u':نقشه_جهان:'
+        'fa': u':نقشهٔ_جهان:'
     },
     u'\U0001FAB1': { # 🪱
         'en' : ':worm:',
@@ -45004,7 +44917,7 @@ EMOJI_DATA = {
         'fr': ':cadeau:',
         'pt': ':presente:',
         'it': ':regalo:',
-        'fa': u':هدیه_کادوشده:'
+        'fa': u':هدیهٔ_کادوشده:'
     },
     u'\U0001F527': { # 🔧
         'en' : ':wrench:',
