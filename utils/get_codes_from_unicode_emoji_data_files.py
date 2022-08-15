@@ -145,6 +145,8 @@ def extract_names(xml, lang):
         if annotation.get('type') == 'tts':
             emj = annotation.get('cp')
             text = annotation.text.strip()
+            # print(text)
+            # break
             # Fix German clock times "12:30 Uhr" -> "12.30 Uhr"
             text_replaced_colon = re.sub(r"(\d+):(\d+)", r"\1.\2", text)
             separated_name = text_replaced_colon.split(" ")
@@ -163,6 +165,14 @@ def extract_names(xml, lang):
             ) + ":"
             if lang == "de":
                 emoji_name = emoji_name.replace("\u201c", "").replace("\u201d", "")
+
+            if lang == "fa":
+                emoji_name = emoji_name.replace('\u200c',"_")
+                    # .replace("ۀ",'ه')
+                    
+                emoji_name = re.sub("_+","_",emoji_name)
+                emoji_name = re.sub(" +"," ",emoji_name)
+            
 
             if emj in data and data[emj] != emoji_name:
                 print(
@@ -213,6 +223,8 @@ if __name__ == "__main__":
         'fr': extract_names(get_language_data_from_url(github_tag, 'fr'), 'fr'),
         'pt': extract_names(get_language_data_from_url(github_tag, 'pt'), 'pt'),
         'it': extract_names(get_language_data_from_url(github_tag, 'it'), 'it'),
+        'fa': extract_names(get_language_data_from_url(github_tag, 'fa'), 'fa'),
+
         # Do not update names in other languages:
         #'de': get_UNICODE_EMOJI('de'),
         #'es': get_UNICODE_EMOJI('es'),
@@ -231,12 +243,15 @@ if __name__ == "__main__":
     for code, v in sorted(emojis.items(), key=lambda item: item[1]["en"]):
         language_str = ''
         emj = escapedToUnicodeMap[code]
-
         # add names in other languages
         for lang in languages:
             if emj in languages[lang]:
+                empji_name = languages[lang][emj]
+                if lang == 'fa':
+                    empji_name = empji_name.replace('هٔ','ه')
+                   
                 language_str += ",\n        '%s': %s" % (
-                    lang, u_string(languages[lang][emj]))
+                    lang, u_string(empji_name) )
             elif 'variant' in v:
                 # the language annotation uses the normal emoji (no variant), while the emoji-test.txt uses the emoji or text variant
                 alternative = re.sub(r"\\U0000FE0[EF]$", "", code) # Strip the variant
