@@ -167,7 +167,6 @@ def extract_names(xml, lang):
             if lang == "fa":
                 emoji_name = emoji_name.replace('\u200c',"_")
                 emoji_name = re.sub("_+","_",emoji_name)
-                emoji_name = re.sub(" +"," ",emoji_name)
             
 
             if emj in data and data[emj] != emoji_name:
@@ -243,7 +242,7 @@ if __name__ == "__main__":
         for lang in languages:
             if emj in languages[lang]:
                 language_str += ",\n        '%s': %s" % (
-                    lang, u_string(languages[lang][emj]) )
+                    lang, u_string(languages[lang][emj]))
             elif 'variant' in v:
                 # the language annotation uses the normal emoji (no variant), while the emoji-test.txt uses the emoji or text variant
                 alternative = re.sub(r"\\U0000FE0[EF]$", "", code) # Strip the variant
