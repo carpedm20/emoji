@@ -31,6 +31,7 @@ with open(os.path.join('emoji', '__init__.py'), encoding='utf-8') as f:
 setup(
     name='emoji',
     author=author,
+    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
     author_email=email,
     classifiers=[
         'Development Status :: 4 - Beta',
