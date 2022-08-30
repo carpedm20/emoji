@@ -111,4 +111,4 @@ emoji
 * Added ~400 codes to bring the emoji list up to date
 * emojize() regex now matches &.ô’Åéãíç
 * Unittests for API and to validate emoji formatting and parsing
-* decode() function to lookup emoji by their unicode code
+* decode() function to lookup emoji by their Unicode code
