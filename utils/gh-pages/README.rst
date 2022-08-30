@@ -1,14 +1,14 @@
-Emoji overview on github pages
+Emoji overview on GitHub Pages
 ==============================
 
 Generate a HTML website that contains all emoji and names that are currently supported.
 
-Github pages
--------------
+GitHub Pages
+------------
 
 https://carpedm20.github.io/emoji/
 
-On every release the content on the github pages is updated by a github action:
+On every release the content on the GitHub Pages is updated by a GitHub Action:
 `updateGithubPages.yml <../../.github/workflows/updateGithubPages.yml>`__.
 
 You can view the generated source in the `gh-pages <https://github.com/carpedm20/emoji/tree/gh-pages>`__ branch.
