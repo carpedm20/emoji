@@ -164,6 +164,11 @@ def extract_names(xml, lang):
             if lang == "de":
                 emoji_name = emoji_name.replace("\u201c", "").replace("\u201d", "")
 
+            if lang == "fa":
+                emoji_name = emoji_name.replace('\u200c',"_")
+                emoji_name = re.sub("_+","_",emoji_name)
+            
+
             if emj in data and data[emj] != emoji_name:
                 print(
                     f"# {lang}: CHANGED {data[emj]} TO {emoji_name} \t\t(Original: {text})")
@@ -213,6 +218,8 @@ if __name__ == "__main__":
         'fr': extract_names(get_language_data_from_url(github_tag, 'fr'), 'fr'),
         'pt': extract_names(get_language_data_from_url(github_tag, 'pt'), 'pt'),
         'it': extract_names(get_language_data_from_url(github_tag, 'it'), 'it'),
+        'fa': extract_names(get_language_data_from_url(github_tag, 'fa'), 'fa'),
+
         # Do not update names in other languages:
         #'de': get_UNICODE_EMOJI('de'),
         #'es': get_UNICODE_EMOJI('es'),
@@ -231,7 +238,6 @@ if __name__ == "__main__":
     for code, v in sorted(emojis.items(), key=lambda item: item[1]["en"]):
         language_str = ''
         emj = escapedToUnicodeMap[code]
-
         # add names in other languages
         for lang in languages:
             if emj in languages[lang]:
