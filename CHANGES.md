@@ -3,8 +3,8 @@ emoji
 
 2.1.0
 -----
-Added Farsi support
-Added Trove classifiers for Python 3.10 and 3.11
+* Added Farsi support
+* Added Trove classifiers for Python 3.10 and 3.11
 
 2.0.0
 -----
