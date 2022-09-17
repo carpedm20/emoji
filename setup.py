@@ -56,6 +56,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Multimedia :: Graphics :: Presentation',
         'Topic :: Software Development :: Libraries :: Python Modules',
+        'Typing :: Typed'
     ],
     description="Emoji for Python",
     keywords=['emoji'],
