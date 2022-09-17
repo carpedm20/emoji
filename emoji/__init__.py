@@ -26,7 +26,7 @@ __all__ = [
     'EMOJI_DATA', 'STATUS', 'LANGUAGES',
 ]
 
-__version__ = '2.0.0'
+__version__ = '2.1.0'
 __author__ = 'Taehoon Kim, Kevin Wurster and Tahir Jalilov'
 __email__ = 'carpedm20@gmail.com'
 # and wursterk@gmail.com, tahir.jalilov@gmail.com
@@ -34,7 +34,7 @@ __source__ = 'https://github.com/carpedm20/emoji/'
 __license__ = '''
 New BSD License
 
-Copyright (c) 2014-2021, Taehoon Kim, Kevin Wurster and Tahir Jalilov
+Copyright (c) 2014-2022, Taehoon Kim, Kevin Wurster and Tahir Jalilov
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
