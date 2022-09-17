@@ -25,10 +25,10 @@ emoji supports Python 2.7 and 3.4+
 Usage and Examples
 ------------------
 
-The main purpose of this package is converting unicode emoji to emoji names and vice
+The main purpose of this package is converting Unicode emoji to emoji names and vice
 versa with :func:`emojize` and :func:`demojize`.
 
-The entire set of Emoji codes as defined by the `unicode consortium <https://unicode.org/emoji/charts/full-emoji-list.html>`__
+The entire set of Emoji codes as defined by the `Unicode consortium <https://unicode.org/emoji/charts/full-emoji-list.html>`__
 is supported in addition to a bunch of `aliases <https://www.webfx.com/tools/emoji-cheat-sheet/>`__.
 By default, only the official list is enabled but doing ``emoji.emojize(language='alias')``
 enables both the full list and aliases.
@@ -251,7 +251,7 @@ The function ``get_emoji_regexp()`` was removed in 2.0.0. Internally the module 
 a regular expression when scanning for emoji in a string (e.g. in :func:`demojize`).
 
 The regular expression was slow in Python 3 and it failed to correctly find certain combinations
-of long emoji (emoji consisting of multiple unicode codepoints).
+of long emoji (emoji consisting of multiple Unicode codepoints).
 
 If you used the regular expression to remove emoji from strings, you can use :func:`replace_emoji`
 as shown in the examples above.
@@ -297,7 +297,7 @@ Common problems
 
 This exception is thrown in Python 2.7 if you passed a ``str`` string instead of a
 ``unicode`` string.
-You should only pass unicode strings to this module.
+You should only pass Unicode strings to this module.
 
 See https://python.readthedocs.io/en/v2.7.2/howto/unicode.html#the-unicode-type for more
 information on Unicode in Python 2.7.
@@ -318,11 +318,11 @@ Reference documentation of all functions and properties in the module:
 +=============================+==============================================================+
 | **Functions:**              |                                                              |
 +-----------------------------+--------------------------------------------------------------+
-| :func:`emojize`             | Replace emoji names with unicode codes                       |
+| :func:`emojize`             | Replace emoji names with Unicode codes                       |
 +-----------------------------+--------------------------------------------------------------+
-| :func:`demojize`            | Replace unicode emoji with emoji shortcodes                  |
+| :func:`demojize`            | Replace Unicode emoji with emoji shortcodes                  |
 +-----------------------------+--------------------------------------------------------------+
-| :func:`replace_emoji`       | Replace unicode emoji with a customizable string             |
+| :func:`replace_emoji`       | Replace Unicode emoji with a customizable string             |
 +-----------------------------+--------------------------------------------------------------+
 | :func:`emoji_list`          | Location of all emoji in a string                            |
 +-----------------------------+--------------------------------------------------------------+
@@ -357,7 +357,7 @@ Links
 
 `Emoji Cheat Sheet <https://www.webfx.com/tools/emoji-cheat-sheet/>`__
 
-`Official unicode list <http://www.unicode.org/emoji/charts/full-emoji-list.html>`__
+`Official Unicode list <http://www.unicode.org/emoji/charts/full-emoji-list.html>`__
 
 **For Spanish:**
 

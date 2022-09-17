@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>emoji &#8212; emoji  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -38,7 +38,7 @@
             
   <section id="emoji">
 <h1><a class="toc-backref" href="#id1" role="doc-backlink">emoji</a><a class="headerlink" href="#emoji" title="Permalink to this heading">¶</a></h1>
-<p>Release v2.0.0. (<a class="reference internal" href="install.html#install"><span class="std std-ref">Installation</span></a>)</p>
+<p>Release v2.1.0. (<a class="reference internal" href="install.html#install"><span class="std std-ref">Installation</span></a>)</p>
 <p>emoji supports Python 2.7 and 3.4+</p>
 <nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
@@ -69,9 +69,9 @@
 </nav>
 <section id="usage-and-examples">
 <h2><a class="toc-backref" href="#id2" role="doc-backlink">Usage and Examples</a><a class="headerlink" href="#usage-and-examples" title="Permalink to this heading">¶</a></h2>
-<p>The main purpose of this package is converting unicode emoji to emoji names and vice
+<p>The main purpose of this package is converting Unicode emoji to emoji names and vice
 versa with <a class="reference internal" href="api.html#emoji.emojize" title="emoji.emojize"><code class="xref py py-func docutils literal notranslate"><span class="pre">emojize()</span></code></a> and <a class="reference internal" href="api.html#emoji.demojize" title="emoji.demojize"><code class="xref py py-func docutils literal notranslate"><span class="pre">demojize()</span></code></a>.</p>
-<p>The entire set of Emoji codes as defined by the <a class="reference external" href="https://unicode.org/emoji/charts/full-emoji-list.html">unicode consortium</a>
+<p>The entire set of Emoji codes as defined by the <a class="reference external" href="https://unicode.org/emoji/charts/full-emoji-list.html">Unicode consortium</a>
 is supported in addition to a bunch of <a class="reference external" href="https://www.webfx.com/tools/emoji-cheat-sheet/">aliases</a>.
 By default, only the official list is enabled but doing <code class="docutils literal notranslate"><span class="pre">emoji.emojize(language='alias')</span></code>
 enables both the full list and aliases.</p>
@@ -237,7 +237,7 @@ for example in a database or if your users have stored them.</p>
 <p>The function <code class="docutils literal notranslate"><span class="pre">get_emoji_regexp()</span></code> was removed in 2.0.0. Internally the module no longer uses
 a regular expression when scanning for emoji in a string (e.g. in <a class="reference internal" href="api.html#emoji.demojize" title="emoji.demojize"><code class="xref py py-func docutils literal notranslate"><span class="pre">demojize()</span></code></a>).</p>
 <p>The regular expression was slow in Python 3 and it failed to correctly find certain combinations
-of long emoji (emoji consisting of multiple unicode codepoints).</p>
+of long emoji (emoji consisting of multiple Unicode codepoints).</p>
 <p>If you used the regular expression to remove emoji from strings, you can use <a class="reference internal" href="api.html#emoji.replace_emoji" title="emoji.replace_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">replace_emoji()</span></code></a>
 as shown in the examples above.</p>
 <p>If you want to extract emoji from strings, you can use <a class="reference internal" href="api.html#emoji.emoji_list" title="emoji.emoji_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">emoji_list()</span></code></a> as a replacement.</p>
@@ -270,7 +270,7 @@ expression yourself like this:</p>
 </div>
 <p>This exception is thrown in Python 2.7 if you passed a <code class="docutils literal notranslate"><span class="pre">str</span></code> string instead of a
 <code class="docutils literal notranslate"><span class="pre">unicode</span></code> string.
-You should only pass unicode strings to this module.</p>
+You should only pass Unicode strings to this module.</p>
 <p>See <a class="reference external" href="https://python.readthedocs.io/en/v2.7.2/howto/unicode.html#the-unicode-type">https://python.readthedocs.io/en/v2.7.2/howto/unicode.html#the-unicode-type</a> for more
 information on Unicode in Python 2.7.</p>
 </section>
@@ -292,13 +292,13 @@ information on Unicode in Python 2.7.</p>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.emojize" title="emoji.emojize"><code class="xref py py-func docutils literal notranslate"><span class="pre">emojize()</span></code></a></p></td>
-<td><p>Replace emoji names with unicode codes</p></td>
+<td><p>Replace emoji names with Unicode codes</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.demojize" title="emoji.demojize"><code class="xref py py-func docutils literal notranslate"><span class="pre">demojize()</span></code></a></p></td>
-<td><p>Replace unicode emoji with emoji shortcodes</p></td>
+<td><p>Replace Unicode emoji with emoji shortcodes</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.replace_emoji" title="emoji.replace_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">replace_emoji()</span></code></a></p></td>
-<td><p>Replace unicode emoji with a customizable string</p></td>
+<td><p>Replace Unicode emoji with a customizable string</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.emoji_list" title="emoji.emoji_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">emoji_list()</span></code></a></p></td>
 <td><p>Location of all emoji in a string</p></td>
@@ -338,7 +338,7 @@ information on Unicode in Python 2.7.</p>
 <p>(auto-generated list of the emoji that are supported by the current version of this package)</p>
 <p><strong>For English:</strong></p>
 <p><a class="reference external" href="https://www.webfx.com/tools/emoji-cheat-sheet/">Emoji Cheat Sheet</a></p>
-<p><a class="reference external" href="http://www.unicode.org/emoji/charts/full-emoji-list.html">Official unicode list</a></p>
+<p><a class="reference external" href="http://www.unicode.org/emoji/charts/full-emoji-list.html">Official Unicode list</a></p>
 <p><strong>For Spanish:</strong></p>
 <p><a class="reference external" href="https://emojiterra.com/es/lista-es/">Unicode list</a></p>
 <p><strong>For Portuguese:</strong></p>
@@ -399,9 +399,9 @@ information on Unicode in Python 2.7.</p>
 <hr />
 <ul>
     
-    <li class="toctree-l1"><a href="https://github.com/carpedm20/emoji">Github repository</a></li>
+    <li class="toctree-l1"><a href="https://github.com/carpedm20/emoji">GitHub repository</a></li>
     
-    <li class="toctree-l1"><a href="https://pypi.org/project/emoji/">emoji on PyPi</a></li>
+    <li class="toctree-l1"><a href="https://pypi.org/project/emoji/">emoji on PyPI</a></li>
     
     <li class="toctree-l1"><a href="https://carpedm20.github.io/emoji/">All supported emoji</a></li>
     
@@ -444,7 +444,7 @@ information on Unicode in Python 2.7.</p>
       
       
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

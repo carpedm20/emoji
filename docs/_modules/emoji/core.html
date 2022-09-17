@@ -69,13 +69,13 @@
         <span class="n">handle_version</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Replace emoji names in a string with unicode codes.</span>
+<span class="sd">    Replace emoji names in a string with Unicode codes.</span>
 <span class="sd">        &gt;&gt;&gt; import emoji</span>
 <span class="sd">        &gt;&gt;&gt; print(emoji.emojize(&quot;Python is fun :thumbsup:&quot;, language=&#39;alias&#39;))</span>
 <span class="sd">        Python is fun 👍</span>
 <span class="sd">        &gt;&gt;&gt; print(emoji.emojize(&quot;Python is fun :thumbs_up:&quot;))</span>
 <span class="sd">        Python is fun 👍</span>
-<span class="sd">        &gt;&gt;&gt; print(emoji.emojize(&quot;Python is fun __thumbs_up__&quot;, delimiters = (&quot;__&quot;, &quot;__&quot;)))</span>
+<span class="sd">        &gt;&gt;&gt; print(emoji.emojize(&quot;Python is fun {thumbs_up}&quot;, delimiters = (&quot;{&quot;, &quot;}&quot;)))</span>
 <span class="sd">        Python is fun 👍</span>
 <span class="sd">        &gt;&gt;&gt; print(emoji.emojize(&quot;Python is fun :red_heart:&quot;, variant=&quot;text_type&quot;))</span>
 <span class="sd">        Python is fun ❤</span>
@@ -83,7 +83,8 @@
 <span class="sd">        Python is fun ❤️ # red heart, not black heart</span>
 
 <span class="sd">    :param string: String contains emoji names.</span>
-<span class="sd">    :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER</span>
+<span class="sd">    :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER. Each delimiter</span>
+<span class="sd">        should contain at least one character that is not part of a-zA-Z0-9 and ``_-–&amp;.’”“()!?#*+,/\``</span>
 <span class="sd">    :param variant: (optional) Choose variation selector between &quot;base&quot;(None), VS-15 (&quot;text_type&quot;) and VS-16 (&quot;emoji_type&quot;)</span>
 <span class="sd">    :param language: Choose language of emoji name: language code &#39;es&#39;, &#39;de&#39;, etc. or &#39;alias&#39;</span>
 <span class="sd">        to use English aliases</span>
@@ -91,7 +92,7 @@
 <span class="sd">        all emoji above this version will be ignored.</span>
 <span class="sd">    :param handle_version: (optional) Replace the emoji above ``version``</span>
 <span class="sd">        instead of ignoring it. handle_version can be either a string or a</span>
-<span class="sd">        callable; If it is a callable, it&#39;s passed the unicode emoji and the</span>
+<span class="sd">        callable; If it is a callable, it&#39;s passed the Unicode emoji and the</span>
 <span class="sd">        data dict from emoji.EMOJI_DATA and must return a replacement string</span>
 <span class="sd">        to be used::</span>
 
@@ -114,8 +115,8 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">language_pack</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">get_emoji_unicode_dict</span><span class="p">(</span><span class="n">language</span><span class="p">)</span>
 
-    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;(</span><span class="si">%s</span><span class="s1">[</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">-&amp;.’”“()!#*+?–,/]+</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span>
-                         <span class="n">delimiters</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;(</span><span class="si">%s</span><span class="s1">[</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">-&amp;.’”“()!#*+?–,/ًٌٍَُِّْؤئيإأآةك‌ٔء«»]+</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span>
+                         <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
         <span class="n">mg</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="nb">len</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
@@ -160,7 +161,7 @@
         <span class="n">handle_version</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Replace unicode emoji in a string with emoji shortcodes. Useful for storage.</span>
+<span class="sd">    Replace Unicode emoji in a string with emoji shortcodes. Useful for storage.</span>
 <span class="sd">        &gt;&gt;&gt; import emoji</span>
 <span class="sd">        &gt;&gt;&gt; print(emoji.emojize(&quot;Python is fun :thumbs_up:&quot;))</span>
 <span class="sd">        Python is fun 👍</span>
@@ -169,7 +170,7 @@
 <span class="sd">        &gt;&gt;&gt; print(emoji.demojize(u&quot;Unicode is tricky 😯&quot;, delimiters=(&quot;__&quot;, &quot;__&quot;)))</span>
 <span class="sd">        Unicode is tricky __hushed_face__</span>
 
-<span class="sd">    :param string: String contains unicode characters. MUST BE UNICODE.</span>
+<span class="sd">    :param string: String contains Unicode characters. MUST BE UNICODE.</span>
 <span class="sd">    :param delimiters: (optional) User delimiters other than ``_DEFAULT_DELIMITER``</span>
 <span class="sd">    :param language: Choose language of emoji name: language code &#39;es&#39;, &#39;de&#39;, etc. or &#39;alias&#39;</span>
 <span class="sd">        to use English aliases</span>
@@ -178,7 +179,7 @@
 <span class="sd">    :param handle_version: (optional) Replace the emoji above ``version``</span>
 <span class="sd">        instead of removing it. handle_version can be either a string or a</span>
 <span class="sd">        callable ``handle_version(emj: str, data: dict) -&gt; str``; If it is</span>
-<span class="sd">        a callable, it&#39;s passed the unicode emoji and the data dict from</span>
+<span class="sd">        a callable, it&#39;s passed the Unicode emoji and the data dict from</span>
 <span class="sd">        emoji.EMOJI_DATA and must return a replacement string  to be used.</span>
 <span class="sd">        The passed data is in the form of::</span>
 
@@ -250,11 +251,11 @@
 
 <div class="viewcode-block" id="replace_emoji"><a class="viewcode-back" href="../../api.html#emoji.replace_emoji">[docs]</a><span class="k">def</span> <span class="nf">replace_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>  <span class="n">version</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Replace unicode emoji in a customizable string.</span>
+<span class="sd">    Replace Unicode emoji in a customizable string.</span>
 
-<span class="sd">    :param string: String contains unicode characters. MUST BE UNICODE.</span>
+<span class="sd">    :param string: String contains Unicode characters. MUST BE UNICODE.</span>
 <span class="sd">    :param replace: (optional) replace can be either a string or a callable;</span>
-<span class="sd">        If it is a callable, it&#39;s passed the unicode emoji and the data dict from</span>
+<span class="sd">        If it is a callable, it&#39;s passed the Unicode emoji and the data dict from</span>
 <span class="sd">        emoji.EMOJI_DATA and must return a replacement string to be used.</span>
 <span class="sd">        replace(str, dict) -&gt; str</span>
 <span class="sd">    :param version: (optional) Max version. If set to an Emoji Version,</span>
@@ -457,9 +458,9 @@
 <hr />
 <ul>
     
-    <li class="toctree-l1"><a href="https://github.com/carpedm20/emoji">Github repository</a></li>
+    <li class="toctree-l1"><a href="https://github.com/carpedm20/emoji">GitHub repository</a></li>
     
-    <li class="toctree-l1"><a href="https://pypi.org/project/emoji/">emoji on PyPi</a></li>
+    <li class="toctree-l1"><a href="https://pypi.org/project/emoji/">emoji on PyPI</a></li>
     
     <li class="toctree-l1"><a href="https://carpedm20.github.io/emoji/">All supported emoji</a></li>
     
@@ -503,7 +504,7 @@
       
       
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

@@ -12,11 +12,11 @@ API Reference
 +=============================+==============================================================+
 | **Functions:**              |                                                              |
 +-----------------------------+--------------------------------------------------------------+
-| :func:`emojize`             | Replace emoji names with unicode codes                       |
+| :func:`emojize`             | Replace emoji names with Unicode codes                       |
 +-----------------------------+--------------------------------------------------------------+
-| :func:`demojize`            | Replace unicode emoji with emoji shortcodes                  |
+| :func:`demojize`            | Replace Unicode emoji with emoji shortcodes                  |
 +-----------------------------+--------------------------------------------------------------+
-| :func:`replace_emoji`       | Replace unicode emoji with a customizable string             |
+| :func:`replace_emoji`       | Replace Unicode emoji with a customizable string             |
 +-----------------------------+--------------------------------------------------------------+
 | :func:`emoji_list`          | Location of all emoji in a string                            |
 +-----------------------------+--------------------------------------------------------------+
@@ -49,7 +49,7 @@ EMOJI_DATA
    :type: dict
    :canonical: emoji.unicode_codes.data_dict.EMOJI_DATA
 
-     Contains all emoji as keys and their names, unicode version and status
+     Contains all emoji as keys and their names, Unicode version and status
 
      .. code-block:: python
 

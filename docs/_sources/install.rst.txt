@@ -9,7 +9,7 @@ Via pip:
 
     $ pip install emoji --upgrade
 
-See https://pypi.org/project/emoji/ for more information on pip and PyPi
+See https://pypi.org/project/emoji/ for more information on pip and PyPI
 
 From master branch:
 
