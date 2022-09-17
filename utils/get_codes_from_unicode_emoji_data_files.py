@@ -177,7 +177,7 @@ def extract_names(xml, lang):
 
 
 def get_emoji_from_github_api() -> dict:
-    """Get emoji alias from Github API
+    """Get emoji alias from GitHub API
     """
 
     data = requests.get("https://api.github.com/emojis").json()
@@ -190,7 +190,7 @@ def get_emoji_from_github_api() -> dict:
             emj = "".join(chr(int(h, 16)) for h in m.group(1).split('-'))
             output[name] = emj
         else:
-            pass # Special Github emoji that is not part of Unicode
+            pass  # Special GitHub emoji that is not part of Unicode
 
     return output
 
@@ -263,7 +263,7 @@ if __name__ == "__main__":
             if emj_no_variant in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj_no_variant]:
                 aliases.update(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj_no_variant]['alias'])
 
-        # Add alias from  Github API
+        # Add alias from  GitHub API
         for gh_alias in github_alias:
             if emj == github_alias[gh_alias]:
                 aliases.add(gh_alias)

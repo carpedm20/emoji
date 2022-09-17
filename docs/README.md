@@ -2,9 +2,9 @@
 
 | **Module contents**                                                                           |                                                              |
 |-----------------------------------------------------------------------------------------------|--------------------------------------------------------------|
-| [`emojize()`](https://carpedm20.github.io/emoji/docs/#emoji.emojize)                          | Replace emoji names in with unicode codes                    |
-| [`demojize()`](https://carpedm20.github.io/emoji/docs/#emoji.demojize)                        | Replace unicode emoji with emoji shortcodes                  |
-| [`replace_emoji()`](https://carpedm20.github.io/emoji/docs/#emoji.replace_emoji)              | Replace unicode emoji with a customizable string             |
+| [`emojize()`](https://carpedm20.github.io/emoji/docs/#emoji.emojize)                          | Replace emoji names in with Unicode codes                    |
+| [`demojize()`](https://carpedm20.github.io/emoji/docs/#emoji.demojize)                        | Replace Unicode emoji with emoji shortcodes                  |
+| [`replace_emoji()`](https://carpedm20.github.io/emoji/docs/#emoji.replace_emoji)              | Replace Unicode emoji with a customizable string             |
 | [`emoji_list()`](https://carpedm20.github.io/emoji/docs/#emoji.emoji_list)                    | Location of all emoji in a string                            |
 | [`distinct_emoji_list()`](https://carpedm20.github.io/emoji/docs/#emoji.distinct_emoji_list)  | Distinct list of emojis in the string                        |
 | [`emoji_count()`](https://carpedm20.github.io/emoji/docs/#emoji.emoji_count)                  | Number of emojis in a string                                 |

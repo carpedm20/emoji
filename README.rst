@@ -7,7 +7,7 @@ Emoji for Python.  This project was inspired by `kyokomi <https://github.com/kyo
 Example
 -------
 
-The entire set of Emoji codes as defined by the `unicode consortium <https://unicode.org/emoji/charts/full-emoji-list.html>`__
+The entire set of Emoji codes as defined by the `Unicode consortium <https://unicode.org/emoji/charts/full-emoji-list.html>`__
 is supported in addition to a bunch of `aliases <https://www.webfx.com/tools/emoji-cheat-sheet/>`__.  By
 default, only the official list is enabled but doing ``emoji.emojize(language='alias')`` enables
 both the full list and aliases.
@@ -100,7 +100,7 @@ Links
 
 `Emoji Cheat Sheet <https://www.webfx.com/tools/emoji-cheat-sheet/>`__
 
-`Official unicode list <http://www.unicode.org/emoji/charts/full-emoji-list.html>`__
+`Official Unicode list <http://www.unicode.org/emoji/charts/full-emoji-list.html>`__
 
 **For Spanish:**
 
