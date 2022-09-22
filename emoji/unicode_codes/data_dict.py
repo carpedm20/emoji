@@ -9579,7 +9579,8 @@ EMOJI_DATA = {
         'es': ':hombre_sordo:',
         'fr': ':homme_sourd:',
         'pt': ':homem_surdo:',
-        'it': ':uomo_con_problemi_di_udito:'
+        'it': ':uomo_con_problemi_di_udito:',
+        'fa': u':مرد_ناشنوا:'
     },
     u'\U0001F9CF\U0000200D\U00002642': { # 🧏‍♂
         'en' : ':deaf_man:',
@@ -9605,7 +9606,12 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0001F3FF\U0000200D\U00002642': { # 🧏🏿‍♂
         'en' : ':deaf_man_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': u':gehörloser_mann_dunkle_hautfarbe:',
+        'es': ':hombre_sordo_tono_de_piel_oscuro:',
+        'fr': u':homme_sourd_peau_foncée:',
+        'pt': ':homem_surdo_pele_escura:',
+        'it': ':uomo_con_problemi_di_udito_carnagione_scura:'
     },
     u'\U0001F9CF\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🧏🏻‍♂️
         'en' : ':deaf_man_light_skin_tone:',
@@ -9620,7 +9626,12 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0001F3FB\U0000200D\U00002642': { # 🧏🏻‍♂
         'en' : ':deaf_man_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': u':gehörloser_mann_helle_hautfarbe:',
+        'es': ':hombre_sordo_tono_de_piel_claro:',
+        'fr': ':homme_sourd_peau_claire:',
+        'pt': ':homem_surdo_pele_clara:',
+        'it': ':uomo_con_problemi_di_udito_carnagione_chiara:'
     },
     u'\U0001F9CF\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🧏🏾‍♂️
         'en' : ':deaf_man_medium-dark_skin_tone:',
@@ -9635,7 +9646,12 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0001F3FE\U0000200D\U00002642': { # 🧏🏾‍♂
         'en' : ':deaf_man_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': u':gehörloser_mann_mitteldunkle_hautfarbe:',
+        'es': ':hombre_sordo_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_sourd_peau_mate:',
+        'pt': ':homem_surdo_pele_morena_escura:',
+        'it': ':uomo_con_problemi_di_udito_carnagione_abbastanza_scura:'
     },
     u'\U0001F9CF\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🧏🏼‍♂️
         'en' : ':deaf_man_medium-light_skin_tone:',
@@ -9650,7 +9666,12 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0001F3FC\U0000200D\U00002642': { # 🧏🏼‍♂
         'en' : ':deaf_man_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': u':gehörloser_mann_mittelhelle_hautfarbe:',
+        'es': ':hombre_sordo_tono_de_piel_claro_medio:',
+        'fr': ':homme_sourd_peau_moyennement_claire:',
+        'pt': ':homem_surdo_pele_morena_clara:',
+        'it': ':uomo_con_problemi_di_udito_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9CF\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🧏🏽‍♂️
         'en' : ':deaf_man_medium_skin_tone:',
@@ -9665,7 +9686,12 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0001F3FD\U0000200D\U00002642': { # 🧏🏽‍♂
         'en' : ':deaf_man_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': u':gehörloser_mann_mittlere_hautfarbe:',
+        'es': ':hombre_sordo_tono_de_piel_medio:',
+        'fr': u':homme_sourd_peau_légèrement_mate:',
+        'pt': ':homem_surdo_pele_morena:',
+        'it': ':uomo_con_problemi_di_udito_carnagione_olivastra:'
     },
     u'\U0001F9CF': { # 🧏
         'en' : ':deaf_person:',
@@ -9736,7 +9762,8 @@ EMOJI_DATA = {
         'es': ':mujer_sorda:',
         'fr': ':femme_sourde:',
         'pt': ':mulher_surda:',
-        'it': ':donna_con_problemi_di_udito:'
+        'it': ':donna_con_problemi_di_udito:',
+        'fa': u':زن_ناشنوا:'
     },
     u'\U0001F9CF\U0000200D\U00002640': { # 🧏‍♀
         'en' : ':deaf_woman:',
@@ -9762,7 +9789,12 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0001F3FF\U0000200D\U00002640': { # 🧏🏿‍♀
         'en' : ':deaf_woman_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': u':gehörlose_frau_dunkle_hautfarbe:',
+        'es': ':mujer_sorda_tono_de_piel_oscuro:',
+        'fr': u':femme_sourde_peau_foncée:',
+        'pt': ':mulher_surda_pele_escura:',
+        'it': ':donna_con_problemi_di_udito_carnagione_scura:'
     },
     u'\U0001F9CF\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🧏🏻‍♀️
         'en' : ':deaf_woman_light_skin_tone:',
@@ -9777,7 +9809,12 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0001F3FB\U0000200D\U00002640': { # 🧏🏻‍♀
         'en' : ':deaf_woman_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': u':gehörlose_frau_helle_hautfarbe:',
+        'es': ':mujer_sorda_tono_de_piel_claro:',
+        'fr': ':femme_sourde_peau_claire:',
+        'pt': ':mulher_surda_pele_clara:',
+        'it': ':donna_con_problemi_di_udito_carnagione_chiara:'
     },
     u'\U0001F9CF\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🧏🏾‍♀️
         'en' : ':deaf_woman_medium-dark_skin_tone:',
@@ -9792,7 +9829,12 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0001F3FE\U0000200D\U00002640': { # 🧏🏾‍♀
         'en' : ':deaf_woman_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': u':gehörlose_frau_mitteldunkle_hautfarbe:',
+        'es': ':mujer_sorda_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_sourde_peau_mate:',
+        'pt': ':mulher_surda_pele_morena_escura:',
+        'it': ':donna_con_problemi_di_udito_carnagione_abbastanza_scura:'
     },
     u'\U0001F9CF\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🧏🏼‍♀️
         'en' : ':deaf_woman_medium-light_skin_tone:',
@@ -9807,7 +9849,12 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0001F3FC\U0000200D\U00002640': { # 🧏🏼‍♀
         'en' : ':deaf_woman_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': u':gehörlose_frau_mittelhelle_hautfarbe:',
+        'es': ':mujer_sorda_tono_de_piel_claro_medio:',
+        'fr': ':femme_sourde_peau_moyennement_claire:',
+        'pt': ':mulher_surda_pele_morena_clara:',
+        'it': ':donna_con_problemi_di_udito_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9CF\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🧏🏽‍♀️
         'en' : ':deaf_woman_medium_skin_tone:',
@@ -9822,7 +9869,12 @@ EMOJI_DATA = {
     u'\U0001F9CF\U0001F3FD\U0000200D\U00002640': { # 🧏🏽‍♀
         'en' : ':deaf_woman_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': u':gehörlose_frau_mittlere_hautfarbe:',
+        'es': ':mujer_sorda_tono_de_piel_medio:',
+        'fr': u':femme_sourde_peau_légèrement_mate:',
+        'pt': ':mulher_surda_pele_morena:',
+        'it': ':donna_con_problemi_di_udito_carnagione_olivastra:'
     },
     u'\U0001F333': { # 🌳
         'en' : ':deciduous_tree:',
@@ -11125,12 +11177,23 @@ EMOJI_DATA = {
     u'\U0001F441\U0000200D\U0001F5E8\U0000FE0F': { # 👁‍🗨️
         'en' : ':eye_in_speech_bubble:',
         'status' : unqualified,
-        'E' : 2
+        'E' : 2,
+        'de': ':auge_in_sprechblase:',
+        'es': ':ojo_en_bocadillo_de_texto:',
+        'fr': u':œil_dans_une_bulle_de_bd:',
+        'pt': u':olho_no_balão_de_diálogo:',
+        'it': ':occhio_nel_fumetto:',
+        'fa': u':چشم_در_حباب_گفتار:'
     },
     u'\U0001F441\U0000FE0F\U0000200D\U0001F5E8': { # 👁️‍🗨
         'en' : ':eye_in_speech_bubble:',
         'status' : unqualified,
-        'E' : 2
+        'E' : 2,
+        'de': ':auge_in_sprechblase:',
+        'es': ':ojo_en_bocadillo_de_texto:',
+        'fr': u':œil_dans_une_bulle_de_bd:',
+        'pt': u':olho_no_balão_de_diálogo:',
+        'it': ':occhio_nel_fumetto:'
     },
     u'\U0001F441\U0000200D\U0001F5E8': { # 👁‍🗨
         'en' : ':eye_in_speech_bubble:',
@@ -11191,7 +11254,13 @@ EMOJI_DATA = {
     u'\U0001F636\U0000200D\U0001F32B\U0000FE0F': { # 😶‍🌫️
         'en' : ':face_in_clouds:',
         'status' : fully_qualified,
-        'E' : 13.1
+        'E' : 13.1,
+        'de': ':gesicht_in_wolken:',
+        'es': ':cara_en_las_nubes:',
+        'fr': ':visage_dans_les_nuages:',
+        'pt': ':rosto_nas_nuvens:',
+        'it': ':testa_tra_le_nuvole:',
+        'fa': u':صورتک_میان_ابر:'
     },
     u'\U0001F636\U0000200D\U0001F32B': { # 😶‍🌫
         'en' : ':face_in_clouds:',
@@ -14052,7 +14121,8 @@ EMOJI_DATA = {
         'es': ':profesional_sanitario:',
         'fr': u':professionnel_de_la_santé_(tous_genres):',
         'pt': u':profissional_de_saúde:',
-        'it': u':persona_che_lavora_nella_sanità:'
+        'it': u':persona_che_lavora_nella_sanità:',
+        'fa': u':مأمور_بهداشت:'
     },
     u'\U0001F9D1\U0000200D\U00002695': { # 🧑‍⚕
         'en' : ':health_worker:',
@@ -14078,7 +14148,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FF\U0000200D\U00002695': { # 🧑🏿‍⚕
         'en' : ':health_worker_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': u':arzt/ärztin_dunkle_hautfarbe:',
+        'es': ':profesional_sanitario_tono_de_piel_oscuro:',
+        'fr': u':professionnel_de_la_santé_(tous_genres)_peau_foncée:',
+        'pt': u':profissional_de_saúde_pele_escura:',
+        'it': u':persona_che_lavora_nella_sanità_carnagione_scura:'
     },
     u'\U0001F9D1\U0001F3FB\U0000200D\U00002695\U0000FE0F': { # 🧑🏻‍⚕️
         'en' : ':health_worker_light_skin_tone:',
@@ -14093,7 +14168,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FB\U0000200D\U00002695': { # 🧑🏻‍⚕
         'en' : ':health_worker_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': u':arzt/ärztin_helle_hautfarbe:',
+        'es': ':profesional_sanitario_tono_de_piel_claro:',
+        'fr': u':professionnel_de_la_santé_(tous_genres)_peau_claire:',
+        'pt': u':profissional_de_saúde_pele_clara:',
+        'it': u':persona_che_lavora_nella_sanità_carnagione_chiara:'
     },
     u'\U0001F9D1\U0001F3FE\U0000200D\U00002695\U0000FE0F': { # 🧑🏾‍⚕️
         'en' : ':health_worker_medium-dark_skin_tone:',
@@ -14108,7 +14188,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FE\U0000200D\U00002695': { # 🧑🏾‍⚕
         'en' : ':health_worker_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': u':arzt/ärztin_mitteldunkle_hautfarbe:',
+        'es': ':profesional_sanitario_tono_de_piel_oscuro_medio:',
+        'fr': u':professionnel_de_la_santé_(tous_genres)_peau_mate:',
+        'pt': u':profissional_de_saúde_pele_morena_escura:',
+        'it': u':persona_che_lavora_nella_sanità_carnagione_abbastanza_scura:'
     },
     u'\U0001F9D1\U0001F3FC\U0000200D\U00002695\U0000FE0F': { # 🧑🏼‍⚕️
         'en' : ':health_worker_medium-light_skin_tone:',
@@ -14123,7 +14208,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FC\U0000200D\U00002695': { # 🧑🏼‍⚕
         'en' : ':health_worker_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': u':arzt/ärztin_mittelhelle_hautfarbe:',
+        'es': ':profesional_sanitario_tono_de_piel_claro_medio:',
+        'fr': u':professionnel_de_la_santé_(tous_genres)_peau_moyennement_claire:',
+        'pt': u':profissional_de_saúde_pele_morena_clara:',
+        'it': u':persona_che_lavora_nella_sanità_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9D1\U0001F3FD\U0000200D\U00002695\U0000FE0F': { # 🧑🏽‍⚕️
         'en' : ':health_worker_medium_skin_tone:',
@@ -14138,7 +14228,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FD\U0000200D\U00002695': { # 🧑🏽‍⚕
         'en' : ':health_worker_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': u':arzt/ärztin_mittlere_hautfarbe:',
+        'es': ':profesional_sanitario_tono_de_piel_medio:',
+        'fr': u':professionnel_de_la_santé_(tous_genres)_peau_légèrement_mate:',
+        'pt': u':profissional_de_saúde_pele_morena:',
+        'it': u':persona_che_lavora_nella_sanità_carnagione_olivastra:'
     },
     u'\U0001F649': { # 🙉
         'en' : ':hear-no-evil_monkey:',
@@ -15206,7 +15301,8 @@ EMOJI_DATA = {
         'es': ':fiscal:',
         'fr': ':juge:',
         'pt': ':juiz_no_tribunal:',
-        'it': ':giudice:'
+        'it': ':giudice:',
+        'fa': u':قاضی:'
     },
     u'\U0001F9D1\U0000200D\U00002696': { # 🧑‍⚖
         'en' : ':judge:',
@@ -15232,7 +15328,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FF\U0000200D\U00002696': { # 🧑🏿‍⚖
         'en' : ':judge_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': ':richter(in)_dunkle_hautfarbe:',
+        'es': ':fiscal_tono_de_piel_oscuro:',
+        'fr': u':juge_peau_foncée:',
+        'pt': ':juiz_no_tribunal_pele_escura:',
+        'it': ':giudice_carnagione_scura:'
     },
     u'\U0001F9D1\U0001F3FB\U0000200D\U00002696\U0000FE0F': { # 🧑🏻‍⚖️
         'en' : ':judge_light_skin_tone:',
@@ -15247,7 +15348,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FB\U0000200D\U00002696': { # 🧑🏻‍⚖
         'en' : ':judge_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': ':richter(in)_helle_hautfarbe:',
+        'es': ':fiscal_tono_de_piel_claro:',
+        'fr': ':juge_peau_claire:',
+        'pt': ':juiz_no_tribunal_pele_clara:',
+        'it': ':giudice_carnagione_chiara:'
     },
     u'\U0001F9D1\U0001F3FE\U0000200D\U00002696\U0000FE0F': { # 🧑🏾‍⚖️
         'en' : ':judge_medium-dark_skin_tone:',
@@ -15262,7 +15368,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FE\U0000200D\U00002696': { # 🧑🏾‍⚖
         'en' : ':judge_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': ':richter(in)_mitteldunkle_hautfarbe:',
+        'es': ':fiscal_tono_de_piel_oscuro_medio:',
+        'fr': ':juge_peau_mate:',
+        'pt': ':juiz_no_tribunal_pele_morena_escura:',
+        'it': ':giudice_carnagione_abbastanza_scura:'
     },
     u'\U0001F9D1\U0001F3FC\U0000200D\U00002696\U0000FE0F': { # 🧑🏼‍⚖️
         'en' : ':judge_medium-light_skin_tone:',
@@ -15277,7 +15388,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FC\U0000200D\U00002696': { # 🧑🏼‍⚖
         'en' : ':judge_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': ':richter(in)_mittelhelle_hautfarbe:',
+        'es': ':fiscal_tono_de_piel_claro_medio:',
+        'fr': ':juge_peau_moyennement_claire:',
+        'pt': ':juiz_no_tribunal_pele_morena_clara:',
+        'it': ':giudice_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9D1\U0001F3FD\U0000200D\U00002696\U0000FE0F': { # 🧑🏽‍⚖️
         'en' : ':judge_medium_skin_tone:',
@@ -15292,7 +15408,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FD\U0000200D\U00002696': { # 🧑🏽‍⚖
         'en' : ':judge_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': ':richter(in)_mittlere_hautfarbe:',
+        'es': ':fiscal_tono_de_piel_medio:',
+        'fr': u':juge_peau_légèrement_mate:',
+        'pt': ':juiz_no_tribunal_pele_morena:',
+        'it': ':giudice_carnagione_olivastra:'
     },
     u'\U0001F54B': { # 🕋
         'en' : ':kaaba:',
@@ -17949,7 +18070,13 @@ EMOJI_DATA = {
     u'\U0001F9D4\U0000200D\U00002642\U0000FE0F': { # 🧔‍♂️
         'en' : ':man_beard:',
         'status' : fully_qualified,
-        'E' : 13.1
+        'E' : 13.1,
+        'de': ':mann_bart:',
+        'es': ':hombre_barba:',
+        'fr': ':homme_barbu:',
+        'pt': ':homem_barbudo:',
+        'it': ':uomo_con_la_barba:',
+        'fa': u':مرد_ریش:'
     },
     u'\U0001F9D4\U0000200D\U00002642': { # 🧔‍♂
         'en' : ':man_beard:',
@@ -17970,7 +18097,8 @@ EMOJI_DATA = {
         'es': ':hombre_en_bicicleta:',
         'fr': ':cycliste_homme:',
         'pt': ':homem_ciclista:',
-        'it': ':ciclista_uomo:'
+        'it': ':ciclista_uomo:',
+        'fa': u':دوچرخه_سوار_مرد:'
     },
     u'\U0001F6B4\U0000200D\U00002642': { # 🚴‍♂
         'en' : ':man_biking:',
@@ -17996,7 +18124,12 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0001F3FF\U0000200D\U00002642': { # 🚴🏿‍♂
         'en' : ':man_biking_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':radfahrer_dunkle_hautfarbe:',
+        'es': ':hombre_en_bicicleta_tono_de_piel_oscuro:',
+        'fr': u':cycliste_homme_peau_foncée:',
+        'pt': ':homem_ciclista_pele_escura:',
+        'it': ':ciclista_uomo_carnagione_scura:'
     },
     u'\U0001F6B4\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🚴🏻‍♂️
         'en' : ':man_biking_light_skin_tone:',
@@ -18011,7 +18144,12 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0001F3FB\U0000200D\U00002642': { # 🚴🏻‍♂
         'en' : ':man_biking_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':radfahrer_helle_hautfarbe:',
+        'es': ':hombre_en_bicicleta_tono_de_piel_claro:',
+        'fr': ':cycliste_homme_peau_claire:',
+        'pt': ':homem_ciclista_pele_clara:',
+        'it': ':ciclista_uomo_carnagione_chiara:'
     },
     u'\U0001F6B4\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🚴🏾‍♂️
         'en' : ':man_biking_medium-dark_skin_tone:',
@@ -18026,7 +18164,12 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0001F3FE\U0000200D\U00002642': { # 🚴🏾‍♂
         'en' : ':man_biking_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':radfahrer_mitteldunkle_hautfarbe:',
+        'es': ':hombre_en_bicicleta_tono_de_piel_oscuro_medio:',
+        'fr': ':cycliste_homme_peau_mate:',
+        'pt': ':homem_ciclista_pele_morena_escura:',
+        'it': ':ciclista_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F6B4\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🚴🏼‍♂️
         'en' : ':man_biking_medium-light_skin_tone:',
@@ -18041,7 +18184,12 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0001F3FC\U0000200D\U00002642': { # 🚴🏼‍♂
         'en' : ':man_biking_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':radfahrer_mittelhelle_hautfarbe:',
+        'es': ':hombre_en_bicicleta_tono_de_piel_claro_medio:',
+        'fr': ':cycliste_homme_peau_moyennement_claire:',
+        'pt': ':homem_ciclista_pele_morena_clara:',
+        'it': ':ciclista_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F6B4\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🚴🏽‍♂️
         'en' : ':man_biking_medium_skin_tone:',
@@ -18056,7 +18204,12 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0001F3FD\U0000200D\U00002642': { # 🚴🏽‍♂
         'en' : ':man_biking_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':radfahrer_mittlere_hautfarbe:',
+        'es': ':hombre_en_bicicleta_tono_de_piel_medio:',
+        'fr': u':cycliste_homme_peau_légèrement_mate:',
+        'pt': ':homem_ciclista_pele_morena:',
+        'it': ':ciclista_uomo_carnagione_olivastra:'
     },
     u'\U0001F471\U0000200D\U00002642\U0000FE0F': { # 👱‍♂️
         'en' : ':man_blond_hair:',
@@ -18066,7 +18219,8 @@ EMOJI_DATA = {
         'es': ':hombre_rubio:',
         'fr': ':homme_blond:',
         'pt': ':homem_cabelo_loiro:',
-        'it': ':uomo_biondo:'
+        'it': ':uomo_biondo:',
+        'fa': u':مرد_مو_بور:'
     },
     u'\U0001F471\U0000200D\U00002642': { # 👱‍♂
         'en' : ':man_blond_hair:',
@@ -18092,12 +18246,23 @@ EMOJI_DATA = {
     u'\U000026F9\U0000200D\U00002642\U0000FE0F': { # ⛹‍♂️
         'en' : ':man_bouncing_ball:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_ball:',
+        'es': u':hombre_botando_un_balón:',
+        'fr': ':homme_avec_ballon:',
+        'pt': ':homem_jogando_basquete:',
+        'it': ':uomo_che_fa_rimbalzare_una_palla:',
+        'fa': u':مرد_و_توپ:'
     },
     u'\U000026F9\U0000FE0F\U0000200D\U00002642': { # ⛹️‍♂
         'en' : ':man_bouncing_ball:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_ball:',
+        'es': u':hombre_botando_un_balón:',
+        'fr': ':homme_avec_ballon:',
+        'pt': ':homem_jogando_basquete:',
+        'it': ':uomo_che_fa_rimbalzare_una_palla:'
     },
     u'\U000026F9\U0000200D\U00002642': { # ⛹‍♂
         'en' : ':man_bouncing_ball:',
@@ -18123,7 +18288,12 @@ EMOJI_DATA = {
     u'\U000026F9\U0001F3FF\U0000200D\U00002642': { # ⛹🏿‍♂
         'en' : ':man_bouncing_ball_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_ball_dunkle_hautfarbe:',
+        'es': u':hombre_botando_un_balón_tono_de_piel_oscuro:',
+        'fr': u':homme_avec_ballon_peau_foncée:',
+        'pt': ':homem_jogando_basquete_pele_escura:',
+        'it': ':uomo_che_fa_rimbalzare_una_palla_carnagione_scura:'
     },
     u'\U000026F9\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # ⛹🏻‍♂️
         'en' : ':man_bouncing_ball_light_skin_tone:',
@@ -18138,7 +18308,12 @@ EMOJI_DATA = {
     u'\U000026F9\U0001F3FB\U0000200D\U00002642': { # ⛹🏻‍♂
         'en' : ':man_bouncing_ball_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_ball_helle_hautfarbe:',
+        'es': u':hombre_botando_un_balón_tono_de_piel_claro:',
+        'fr': ':homme_avec_ballon_peau_claire:',
+        'pt': ':homem_jogando_basquete_pele_clara:',
+        'it': ':uomo_che_fa_rimbalzare_una_palla_carnagione_chiara:'
     },
     u'\U000026F9\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # ⛹🏾‍♂️
         'en' : ':man_bouncing_ball_medium-dark_skin_tone:',
@@ -18153,7 +18328,12 @@ EMOJI_DATA = {
     u'\U000026F9\U0001F3FE\U0000200D\U00002642': { # ⛹🏾‍♂
         'en' : ':man_bouncing_ball_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_ball_mitteldunkle_hautfarbe:',
+        'es': u':hombre_botando_un_balón_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_avec_ballon_peau_mate:',
+        'pt': ':homem_jogando_basquete_pele_morena_escura:',
+        'it': ':uomo_che_fa_rimbalzare_una_palla_carnagione_abbastanza_scura:'
     },
     u'\U000026F9\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # ⛹🏼‍♂️
         'en' : ':man_bouncing_ball_medium-light_skin_tone:',
@@ -18168,7 +18348,12 @@ EMOJI_DATA = {
     u'\U000026F9\U0001F3FC\U0000200D\U00002642': { # ⛹🏼‍♂
         'en' : ':man_bouncing_ball_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_ball_mittelhelle_hautfarbe:',
+        'es': u':hombre_botando_un_balón_tono_de_piel_claro_medio:',
+        'fr': ':homme_avec_ballon_peau_moyennement_claire:',
+        'pt': ':homem_jogando_basquete_pele_morena_clara:',
+        'it': ':uomo_che_fa_rimbalzare_una_palla_carnagione_abbastanza_chiara:'
     },
     u'\U000026F9\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # ⛹🏽‍♂️
         'en' : ':man_bouncing_ball_medium_skin_tone:',
@@ -18183,7 +18368,12 @@ EMOJI_DATA = {
     u'\U000026F9\U0001F3FD\U0000200D\U00002642': { # ⛹🏽‍♂
         'en' : ':man_bouncing_ball_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_ball_mittlere_hautfarbe:',
+        'es': u':hombre_botando_un_balón_tono_de_piel_medio:',
+        'fr': u':homme_avec_ballon_peau_légèrement_mate:',
+        'pt': ':homem_jogando_basquete_pele_morena:',
+        'it': ':uomo_che_fa_rimbalzare_una_palla_carnagione_olivastra:'
     },
     u'\U0001F647\U0000200D\U00002642\U0000FE0F': { # 🙇‍♂️
         'en' : ':man_bowing:',
@@ -18193,7 +18383,8 @@ EMOJI_DATA = {
         'es': ':hombre_haciendo_una_reverencia:',
         'fr': u':homme_qui_s’incline:',
         'pt': u':homem_fazendo_reverência:',
-        'it': ':uomo_che_fa_inchino_profondo:'
+        'it': ':uomo_che_fa_inchino_profondo:',
+        'fa': u':مرد_تعظیم_می_کند:'
     },
     u'\U0001F647\U0000200D\U00002642': { # 🙇‍♂
         'en' : ':man_bowing:',
@@ -18219,7 +18410,12 @@ EMOJI_DATA = {
     u'\U0001F647\U0001F3FF\U0000200D\U00002642': { # 🙇🏿‍♂
         'en' : ':man_bowing_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_verbeugender_mann_dunkle_hautfarbe:',
+        'es': ':hombre_haciendo_una_reverencia_tono_de_piel_oscuro:',
+        'fr': u':homme_qui_s’incline_peau_foncée:',
+        'pt': u':homem_fazendo_reverência_pele_escura:',
+        'it': ':uomo_che_fa_inchino_profondo_carnagione_scura:'
     },
     u'\U0001F647\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🙇🏻‍♂️
         'en' : ':man_bowing_light_skin_tone:',
@@ -18234,7 +18430,12 @@ EMOJI_DATA = {
     u'\U0001F647\U0001F3FB\U0000200D\U00002642': { # 🙇🏻‍♂
         'en' : ':man_bowing_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_verbeugender_mann_helle_hautfarbe:',
+        'es': ':hombre_haciendo_una_reverencia_tono_de_piel_claro:',
+        'fr': u':homme_qui_s’incline_peau_claire:',
+        'pt': u':homem_fazendo_reverência_pele_clara:',
+        'it': ':uomo_che_fa_inchino_profondo_carnagione_chiara:'
     },
     u'\U0001F647\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🙇🏾‍♂️
         'en' : ':man_bowing_medium-dark_skin_tone:',
@@ -18249,7 +18450,12 @@ EMOJI_DATA = {
     u'\U0001F647\U0001F3FE\U0000200D\U00002642': { # 🙇🏾‍♂
         'en' : ':man_bowing_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_verbeugender_mann_mitteldunkle_hautfarbe:',
+        'es': ':hombre_haciendo_una_reverencia_tono_de_piel_oscuro_medio:',
+        'fr': u':homme_qui_s’incline_peau_mate:',
+        'pt': u':homem_fazendo_reverência_pele_morena_escura:',
+        'it': ':uomo_che_fa_inchino_profondo_carnagione_abbastanza_scura:'
     },
     u'\U0001F647\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🙇🏼‍♂️
         'en' : ':man_bowing_medium-light_skin_tone:',
@@ -18264,7 +18470,12 @@ EMOJI_DATA = {
     u'\U0001F647\U0001F3FC\U0000200D\U00002642': { # 🙇🏼‍♂
         'en' : ':man_bowing_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_verbeugender_mann_mittelhelle_hautfarbe:',
+        'es': ':hombre_haciendo_una_reverencia_tono_de_piel_claro_medio:',
+        'fr': u':homme_qui_s’incline_peau_moyennement_claire:',
+        'pt': u':homem_fazendo_reverência_pele_morena_clara:',
+        'it': ':uomo_che_fa_inchino_profondo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F647\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🙇🏽‍♂️
         'en' : ':man_bowing_medium_skin_tone:',
@@ -18279,7 +18490,12 @@ EMOJI_DATA = {
     u'\U0001F647\U0001F3FD\U0000200D\U00002642': { # 🙇🏽‍♂
         'en' : ':man_bowing_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_verbeugender_mann_mittlere_hautfarbe:',
+        'es': ':hombre_haciendo_una_reverencia_tono_de_piel_medio:',
+        'fr': u':homme_qui_s’incline_peau_légèrement_mate:',
+        'pt': u':homem_fazendo_reverência_pele_morena:',
+        'it': ':uomo_che_fa_inchino_profondo_carnagione_olivastra:'
     },
     u'\U0001F938\U0000200D\U00002642\U0000FE0F': { # 🤸‍♂️
         'en' : ':man_cartwheeling:',
@@ -18289,7 +18505,8 @@ EMOJI_DATA = {
         'es': ':hombre_haciendo_una_voltereta_lateral:',
         'fr': ':homme_faisant_la_roue:',
         'pt': ':homem_fazendo_estrela:',
-        'it': ':uomo_che_fa_la_ruota:'
+        'it': ':uomo_che_fa_la_ruota:',
+        'fa': u':مردِ_چرخ_وفلک_زن:'
     },
     u'\U0001F938\U0000200D\U00002642': { # 🤸‍♂
         'en' : ':man_cartwheeling:',
@@ -18315,7 +18532,12 @@ EMOJI_DATA = {
     u'\U0001F938\U0001F3FF\U0000200D\U00002642': { # 🤸🏿‍♂
         'en' : ':man_cartwheeling_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':rad_schlagender_mann_dunkle_hautfarbe:',
+        'es': ':hombre_haciendo_una_voltereta_lateral_tono_de_piel_oscuro:',
+        'fr': u':homme_faisant_la_roue_peau_foncée:',
+        'pt': ':homem_fazendo_estrela_pele_escura:',
+        'it': ':uomo_che_fa_la_ruota_carnagione_scura:'
     },
     u'\U0001F938\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🤸🏻‍♂️
         'en' : ':man_cartwheeling_light_skin_tone:',
@@ -18330,7 +18552,12 @@ EMOJI_DATA = {
     u'\U0001F938\U0001F3FB\U0000200D\U00002642': { # 🤸🏻‍♂
         'en' : ':man_cartwheeling_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':rad_schlagender_mann_helle_hautfarbe:',
+        'es': ':hombre_haciendo_una_voltereta_lateral_tono_de_piel_claro:',
+        'fr': ':homme_faisant_la_roue_peau_claire:',
+        'pt': ':homem_fazendo_estrela_pele_clara:',
+        'it': ':uomo_che_fa_la_ruota_carnagione_chiara:'
     },
     u'\U0001F938\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🤸🏾‍♂️
         'en' : ':man_cartwheeling_medium-dark_skin_tone:',
@@ -18345,7 +18572,12 @@ EMOJI_DATA = {
     u'\U0001F938\U0001F3FE\U0000200D\U00002642': { # 🤸🏾‍♂
         'en' : ':man_cartwheeling_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':rad_schlagender_mann_mitteldunkle_hautfarbe:',
+        'es': ':hombre_haciendo_una_voltereta_lateral_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_faisant_la_roue_peau_mate:',
+        'pt': ':homem_fazendo_estrela_pele_morena_escura:',
+        'it': ':uomo_che_fa_la_ruota_carnagione_abbastanza_scura:'
     },
     u'\U0001F938\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🤸🏼‍♂️
         'en' : ':man_cartwheeling_medium-light_skin_tone:',
@@ -18360,7 +18592,12 @@ EMOJI_DATA = {
     u'\U0001F938\U0001F3FC\U0000200D\U00002642': { # 🤸🏼‍♂
         'en' : ':man_cartwheeling_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':rad_schlagender_mann_mittelhelle_hautfarbe:',
+        'es': ':hombre_haciendo_una_voltereta_lateral_tono_de_piel_claro_medio:',
+        'fr': ':homme_faisant_la_roue_peau_moyennement_claire:',
+        'pt': ':homem_fazendo_estrela_pele_morena_clara:',
+        'it': ':uomo_che_fa_la_ruota_carnagione_abbastanza_chiara:'
     },
     u'\U0001F938\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🤸🏽‍♂️
         'en' : ':man_cartwheeling_medium_skin_tone:',
@@ -18375,7 +18612,12 @@ EMOJI_DATA = {
     u'\U0001F938\U0001F3FD\U0000200D\U00002642': { # 🤸🏽‍♂
         'en' : ':man_cartwheeling_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':rad_schlagender_mann_mittlere_hautfarbe:',
+        'es': ':hombre_haciendo_una_voltereta_lateral_tono_de_piel_medio:',
+        'fr': u':homme_faisant_la_roue_peau_légèrement_mate:',
+        'pt': ':homem_fazendo_estrela_pele_morena:',
+        'it': ':uomo_che_fa_la_ruota_carnagione_olivastra:'
     },
     u'\U0001F9D7\U0000200D\U00002642\U0000FE0F': { # 🧗‍♂️
         'en' : ':man_climbing:',
@@ -18385,7 +18627,8 @@ EMOJI_DATA = {
         'es': ':hombre_escalando:',
         'fr': ':homme_qui_grimpe:',
         'pt': ':homem_escalando:',
-        'it': ':scalatore:'
+        'it': ':scalatore:',
+        'fa': u':مرد_کوه_نوردی_می_کند:'
     },
     u'\U0001F9D7\U0000200D\U00002642': { # 🧗‍♂
         'en' : ':man_climbing:',
@@ -18411,7 +18654,12 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0001F3FF\U0000200D\U00002642': { # 🧗🏿‍♂
         'en' : ':man_climbing_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':bergsteiger_dunkle_hautfarbe:',
+        'es': ':hombre_escalando_tono_de_piel_oscuro:',
+        'fr': u':homme_qui_grimpe_peau_foncée:',
+        'pt': ':homem_escalando_pele_escura:',
+        'it': ':scalatore_carnagione_scura:'
     },
     u'\U0001F9D7\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🧗🏻‍♂️
         'en' : ':man_climbing_light_skin_tone:',
@@ -18426,7 +18674,12 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0001F3FB\U0000200D\U00002642': { # 🧗🏻‍♂
         'en' : ':man_climbing_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':bergsteiger_helle_hautfarbe:',
+        'es': ':hombre_escalando_tono_de_piel_claro:',
+        'fr': ':homme_qui_grimpe_peau_claire:',
+        'pt': ':homem_escalando_pele_clara:',
+        'it': ':scalatore_carnagione_chiara:'
     },
     u'\U0001F9D7\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🧗🏾‍♂️
         'en' : ':man_climbing_medium-dark_skin_tone:',
@@ -18441,7 +18694,12 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0001F3FE\U0000200D\U00002642': { # 🧗🏾‍♂
         'en' : ':man_climbing_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':bergsteiger_mitteldunkle_hautfarbe:',
+        'es': ':hombre_escalando_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_qui_grimpe_peau_mate:',
+        'pt': ':homem_escalando_pele_morena_escura:',
+        'it': ':scalatore_carnagione_abbastanza_scura:'
     },
     u'\U0001F9D7\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🧗🏼‍♂️
         'en' : ':man_climbing_medium-light_skin_tone:',
@@ -18456,7 +18714,12 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0001F3FC\U0000200D\U00002642': { # 🧗🏼‍♂
         'en' : ':man_climbing_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':bergsteiger_mittelhelle_hautfarbe:',
+        'es': ':hombre_escalando_tono_de_piel_claro_medio:',
+        'fr': ':homme_qui_grimpe_peau_moyennement_claire:',
+        'pt': ':homem_escalando_pele_morena_clara:',
+        'it': ':scalatore_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9D7\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🧗🏽‍♂️
         'en' : ':man_climbing_medium_skin_tone:',
@@ -18471,7 +18734,12 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0001F3FD\U0000200D\U00002642': { # 🧗🏽‍♂
         'en' : ':man_climbing_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':bergsteiger_mittlere_hautfarbe:',
+        'es': ':hombre_escalando_tono_de_piel_medio:',
+        'fr': u':homme_qui_grimpe_peau_légèrement_mate:',
+        'pt': ':homem_escalando_pele_morena:',
+        'it': ':scalatore_carnagione_olivastra:'
     },
     u'\U0001F477\U0000200D\U00002642\U0000FE0F': { # 👷‍♂️
         'en' : ':man_construction_worker:',
@@ -18481,7 +18749,8 @@ EMOJI_DATA = {
         'es': u':profesional_de_la_construcción_hombre:',
         'fr': u':ouvrier_du_bâtiment:',
         'pt': ':pedreiro:',
-        'it': ':operaio_edile_uomo:'
+        'it': ':operaio_edile_uomo:',
+        'fa': u':کارگر_ساختمانی_مرد:'
     },
     u'\U0001F477\U0000200D\U00002642': { # 👷‍♂
         'en' : ':man_construction_worker:',
@@ -18507,7 +18776,12 @@ EMOJI_DATA = {
     u'\U0001F477\U0001F3FF\U0000200D\U00002642': { # 👷🏿‍♂
         'en' : ':man_construction_worker_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':bauarbeiter_dunkle_hautfarbe:',
+        'es': u':profesional_de_la_construcción_hombre_tono_de_piel_oscuro:',
+        'fr': u':ouvrier_du_bâtiment_peau_foncée:',
+        'pt': ':pedreiro_pele_escura:',
+        'it': ':operaio_edile_uomo_carnagione_scura:'
     },
     u'\U0001F477\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 👷🏻‍♂️
         'en' : ':man_construction_worker_light_skin_tone:',
@@ -18522,7 +18796,12 @@ EMOJI_DATA = {
     u'\U0001F477\U0001F3FB\U0000200D\U00002642': { # 👷🏻‍♂
         'en' : ':man_construction_worker_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':bauarbeiter_helle_hautfarbe:',
+        'es': u':profesional_de_la_construcción_hombre_tono_de_piel_claro:',
+        'fr': u':ouvrier_du_bâtiment_peau_claire:',
+        'pt': ':pedreiro_pele_clara:',
+        'it': ':operaio_edile_uomo_carnagione_chiara:'
     },
     u'\U0001F477\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 👷🏾‍♂️
         'en' : ':man_construction_worker_medium-dark_skin_tone:',
@@ -18537,7 +18816,12 @@ EMOJI_DATA = {
     u'\U0001F477\U0001F3FE\U0000200D\U00002642': { # 👷🏾‍♂
         'en' : ':man_construction_worker_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':bauarbeiter_mitteldunkle_hautfarbe:',
+        'es': u':profesional_de_la_construcción_hombre_tono_de_piel_oscuro_medio:',
+        'fr': u':ouvrier_du_bâtiment_peau_mate:',
+        'pt': ':pedreiro_pele_morena_escura:',
+        'it': ':operaio_edile_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F477\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 👷🏼‍♂️
         'en' : ':man_construction_worker_medium-light_skin_tone:',
@@ -18552,7 +18836,12 @@ EMOJI_DATA = {
     u'\U0001F477\U0001F3FC\U0000200D\U00002642': { # 👷🏼‍♂
         'en' : ':man_construction_worker_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':bauarbeiter_mittelhelle_hautfarbe:',
+        'es': u':profesional_de_la_construcción_hombre_tono_de_piel_claro_medio:',
+        'fr': u':ouvrier_du_bâtiment_peau_moyennement_claire:',
+        'pt': ':pedreiro_pele_morena_clara:',
+        'it': ':operaio_edile_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F477\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 👷🏽‍♂️
         'en' : ':man_construction_worker_medium_skin_tone:',
@@ -18567,7 +18856,12 @@ EMOJI_DATA = {
     u'\U0001F477\U0001F3FD\U0000200D\U00002642': { # 👷🏽‍♂
         'en' : ':man_construction_worker_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':bauarbeiter_mittlere_hautfarbe:',
+        'es': u':profesional_de_la_construcción_hombre_tono_de_piel_medio:',
+        'fr': u':ouvrier_du_bâtiment_peau_légèrement_mate:',
+        'pt': ':pedreiro_pele_morena:',
+        'it': ':operaio_edile_uomo_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F373': { # 👨‍🍳
         'en' : ':man_cook:',
@@ -18744,7 +19038,12 @@ EMOJI_DATA = {
     u'\U0001F471\U0001F3FF\U0000200D\U00002642': { # 👱🏿‍♂
         'en' : ':man_dark_skin_tone_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_dunkle_hautfarbe,_blond:',
+        'es': ':hombre_rubio_tono_de_piel_oscuro:',
+        'fr': u':homme_blond_peau_foncée:',
+        'pt': ':homem_pele_escura_e_cabelo_loiro:',
+        'it': ':uomo_biondo_carnagione_scura:'
     },
     u'\U0001F468\U0001F3FF\U0000200D\U0001F9B1': { # 👨🏿‍🦱
         'en' : ':man_dark_skin_tone_curly_hair:',
@@ -18789,12 +19088,23 @@ EMOJI_DATA = {
     u'\U0001F575\U0000200D\U00002642\U0000FE0F': { # 🕵‍♂️
         'en' : ':man_detective:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektiv:',
+        'es': ':detective_hombre:',
+        'fr': u':détective_homme:',
+        'pt': ':detetive_homem:',
+        'it': ':investigatore:',
+        'fa': u':کارآگاه_مرد:'
     },
     u'\U0001F575\U0000FE0F\U0000200D\U00002642': { # 🕵️‍♂
         'en' : ':man_detective:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektiv:',
+        'es': ':detective_hombre:',
+        'fr': u':détective_homme:',
+        'pt': ':detetive_homem:',
+        'it': ':investigatore:'
     },
     u'\U0001F575\U0000200D\U00002642': { # 🕵‍♂
         'en' : ':man_detective:',
@@ -18820,7 +19130,12 @@ EMOJI_DATA = {
     u'\U0001F575\U0001F3FF\U0000200D\U00002642': { # 🕵🏿‍♂
         'en' : ':man_detective_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektiv_dunkle_hautfarbe:',
+        'es': ':detective_hombre_tono_de_piel_oscuro:',
+        'fr': u':détective_homme_peau_foncée:',
+        'pt': ':detetive_homem_pele_escura:',
+        'it': ':investigatore_carnagione_scura:'
     },
     u'\U0001F575\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🕵🏻‍♂️
         'en' : ':man_detective_light_skin_tone:',
@@ -18835,7 +19150,12 @@ EMOJI_DATA = {
     u'\U0001F575\U0001F3FB\U0000200D\U00002642': { # 🕵🏻‍♂
         'en' : ':man_detective_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektiv_helle_hautfarbe:',
+        'es': ':detective_hombre_tono_de_piel_claro:',
+        'fr': u':détective_homme_peau_claire:',
+        'pt': ':detetive_homem_pele_clara:',
+        'it': ':investigatore_carnagione_chiara:'
     },
     u'\U0001F575\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🕵🏾‍♂️
         'en' : ':man_detective_medium-dark_skin_tone:',
@@ -18850,7 +19170,12 @@ EMOJI_DATA = {
     u'\U0001F575\U0001F3FE\U0000200D\U00002642': { # 🕵🏾‍♂
         'en' : ':man_detective_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektiv_mitteldunkle_hautfarbe:',
+        'es': ':detective_hombre_tono_de_piel_oscuro_medio:',
+        'fr': u':détective_homme_peau_mate:',
+        'pt': ':detetive_homem_pele_morena_escura:',
+        'it': ':investigatore_carnagione_abbastanza_scura:'
     },
     u'\U0001F575\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🕵🏼‍♂️
         'en' : ':man_detective_medium-light_skin_tone:',
@@ -18865,7 +19190,12 @@ EMOJI_DATA = {
     u'\U0001F575\U0001F3FC\U0000200D\U00002642': { # 🕵🏼‍♂
         'en' : ':man_detective_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektiv_mittelhelle_hautfarbe:',
+        'es': ':detective_hombre_tono_de_piel_claro_medio:',
+        'fr': u':détective_homme_peau_moyennement_claire:',
+        'pt': ':detetive_homem_pele_morena_clara:',
+        'it': ':investigatore_carnagione_abbastanza_chiara:'
     },
     u'\U0001F575\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🕵🏽‍♂️
         'en' : ':man_detective_medium_skin_tone:',
@@ -18880,7 +19210,12 @@ EMOJI_DATA = {
     u'\U0001F575\U0001F3FD\U0000200D\U00002642': { # 🕵🏽‍♂
         'en' : ':man_detective_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektiv_mittlere_hautfarbe:',
+        'es': ':detective_hombre_tono_de_piel_medio:',
+        'fr': u':détective_homme_peau_légèrement_mate:',
+        'pt': ':detetive_homem_pele_morena:',
+        'it': ':investigatore_carnagione_olivastra:'
     },
     u'\U0001F9DD\U0000200D\U00002642\U0000FE0F': { # 🧝‍♂️
         'en' : ':man_elf:',
@@ -18890,7 +19225,8 @@ EMOJI_DATA = {
         'es': ':elfo_hombre:',
         'fr': ':elfe_homme:',
         'pt': ':elfo_homem:',
-        'it': ':elfo_uomo:'
+        'it': ':elfo_uomo:',
+        'fa': u':اِلف_مرد:'
     },
     u'\U0001F9DD\U0000200D\U00002642': { # 🧝‍♂
         'en' : ':man_elf:',
@@ -18916,7 +19252,12 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0001F3FF\U0000200D\U00002642': { # 🧝🏿‍♂
         'en' : ':man_elf_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':elf_dunkle_hautfarbe:',
+        'es': ':elfo_hombre_tono_de_piel_oscuro:',
+        'fr': u':elfe_homme_peau_foncée:',
+        'pt': ':elfo_homem_pele_escura:',
+        'it': ':elfo_uomo_carnagione_scura:'
     },
     u'\U0001F9DD\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🧝🏻‍♂️
         'en' : ':man_elf_light_skin_tone:',
@@ -18931,7 +19272,12 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0001F3FB\U0000200D\U00002642': { # 🧝🏻‍♂
         'en' : ':man_elf_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':elf_helle_hautfarbe:',
+        'es': ':elfo_hombre_tono_de_piel_claro:',
+        'fr': ':elfe_homme_peau_claire:',
+        'pt': ':elfo_homem_pele_clara:',
+        'it': ':elfo_uomo_carnagione_chiara:'
     },
     u'\U0001F9DD\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🧝🏾‍♂️
         'en' : ':man_elf_medium-dark_skin_tone:',
@@ -18946,7 +19292,12 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0001F3FE\U0000200D\U00002642': { # 🧝🏾‍♂
         'en' : ':man_elf_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':elf_mitteldunkle_hautfarbe:',
+        'es': ':elfo_hombre_tono_de_piel_oscuro_medio:',
+        'fr': ':elfe_homme_peau_mate:',
+        'pt': ':elfo_homem_pele_morena_escura:',
+        'it': ':elfo_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F9DD\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🧝🏼‍♂️
         'en' : ':man_elf_medium-light_skin_tone:',
@@ -18961,7 +19312,12 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0001F3FC\U0000200D\U00002642': { # 🧝🏼‍♂
         'en' : ':man_elf_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':elf_mittelhelle_hautfarbe:',
+        'es': ':elfo_hombre_tono_de_piel_claro_medio:',
+        'fr': ':elfe_homme_peau_moyennement_claire:',
+        'pt': ':elfo_homem_pele_morena_clara:',
+        'it': ':elfo_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9DD\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🧝🏽‍♂️
         'en' : ':man_elf_medium_skin_tone:',
@@ -18976,7 +19332,12 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0001F3FD\U0000200D\U00002642': { # 🧝🏽‍♂
         'en' : ':man_elf_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':elf_mittlere_hautfarbe:',
+        'es': ':elfo_hombre_tono_de_piel_medio:',
+        'fr': u':elfe_homme_peau_légèrement_mate:',
+        'pt': ':elfo_homem_pele_morena:',
+        'it': ':elfo_uomo_carnagione_olivastra:'
     },
     u'\U0001F926\U0000200D\U00002642\U0000FE0F': { # 🤦‍♂️
         'en' : ':man_facepalming:',
@@ -18986,7 +19347,8 @@ EMOJI_DATA = {
         'es': ':hombre_con_la_mano_en_la_frente:',
         'fr': ':homme_avec_la_paume_sur_le_visage:',
         'pt': ':homem_decepcionado:',
-        'it': ':uomo_esasperato:'
+        'it': ':uomo_esasperato:',
+        'fa': u':مرد_با_کف_دست_به_پیشانی_می_زند:'
     },
     u'\U0001F926\U0000200D\U00002642': { # 🤦‍♂
         'en' : ':man_facepalming:',
@@ -19012,7 +19374,12 @@ EMOJI_DATA = {
     u'\U0001F926\U0001F3FF\U0000200D\U00002642': { # 🤦🏿‍♂
         'en' : ':man_facepalming_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_an_den_kopf_fassender_mann_dunkle_hautfarbe:',
+        'es': ':hombre_con_la_mano_en_la_frente_tono_de_piel_oscuro:',
+        'fr': u':homme_avec_la_paume_sur_le_visage_peau_foncée:',
+        'pt': ':homem_decepcionado_pele_escura:',
+        'it': ':uomo_esasperato_carnagione_scura:'
     },
     u'\U0001F926\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🤦🏻‍♂️
         'en' : ':man_facepalming_light_skin_tone:',
@@ -19027,7 +19394,12 @@ EMOJI_DATA = {
     u'\U0001F926\U0001F3FB\U0000200D\U00002642': { # 🤦🏻‍♂
         'en' : ':man_facepalming_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_an_den_kopf_fassender_mann_helle_hautfarbe:',
+        'es': ':hombre_con_la_mano_en_la_frente_tono_de_piel_claro:',
+        'fr': ':homme_avec_la_paume_sur_le_visage_peau_claire:',
+        'pt': ':homem_decepcionado_pele_clara:',
+        'it': ':uomo_esasperato_carnagione_chiara:'
     },
     u'\U0001F926\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🤦🏾‍♂️
         'en' : ':man_facepalming_medium-dark_skin_tone:',
@@ -19042,7 +19414,12 @@ EMOJI_DATA = {
     u'\U0001F926\U0001F3FE\U0000200D\U00002642': { # 🤦🏾‍♂
         'en' : ':man_facepalming_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_an_den_kopf_fassender_mann_mitteldunkle_hautfarbe:',
+        'es': ':hombre_con_la_mano_en_la_frente_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_avec_la_paume_sur_le_visage_peau_mate:',
+        'pt': ':homem_decepcionado_pele_morena_escura:',
+        'it': ':uomo_esasperato_carnagione_abbastanza_scura:'
     },
     u'\U0001F926\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🤦🏼‍♂️
         'en' : ':man_facepalming_medium-light_skin_tone:',
@@ -19057,7 +19434,12 @@ EMOJI_DATA = {
     u'\U0001F926\U0001F3FC\U0000200D\U00002642': { # 🤦🏼‍♂
         'en' : ':man_facepalming_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_an_den_kopf_fassender_mann_mittelhelle_hautfarbe:',
+        'es': ':hombre_con_la_mano_en_la_frente_tono_de_piel_claro_medio:',
+        'fr': ':homme_avec_la_paume_sur_le_visage_peau_moyennement_claire:',
+        'pt': ':homem_decepcionado_pele_morena_clara:',
+        'it': ':uomo_esasperato_carnagione_abbastanza_chiara:'
     },
     u'\U0001F926\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🤦🏽‍♂️
         'en' : ':man_facepalming_medium_skin_tone:',
@@ -19072,7 +19454,12 @@ EMOJI_DATA = {
     u'\U0001F926\U0001F3FD\U0000200D\U00002642': { # 🤦🏽‍♂
         'en' : ':man_facepalming_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_an_den_kopf_fassender_mann_mittlere_hautfarbe:',
+        'es': ':hombre_con_la_mano_en_la_frente_tono_de_piel_medio:',
+        'fr': u':homme_avec_la_paume_sur_le_visage_peau_légèrement_mate:',
+        'pt': ':homem_decepcionado_pele_morena:',
+        'it': ':uomo_esasperato_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F3ED': { # 👨‍🏭
         'en' : ':man_factory_worker:',
@@ -19143,7 +19530,8 @@ EMOJI_DATA = {
         'es': ':hada_hombre:',
         'fr': u':féetaud:',
         'pt': ':homem_fada:',
-        'it': ':folletto_alato:'
+        'it': ':folletto_alato:',
+        'fa': u':پری_مرد:'
     },
     u'\U0001F9DA\U0000200D\U00002642': { # 🧚‍♂
         'en' : ':man_fairy:',
@@ -19169,7 +19557,12 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0001F3FF\U0000200D\U00002642': { # 🧚🏿‍♂
         'en' : ':man_fairy_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': u':männliche_fee_dunkle_hautfarbe:',
+        'es': ':hada_hombre_tono_de_piel_oscuro:',
+        'fr': u':féetaud_peau_foncée:',
+        'pt': ':homem_fada_pele_escura:',
+        'it': ':folletto_alato_carnagione_scura:'
     },
     u'\U0001F9DA\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🧚🏻‍♂️
         'en' : ':man_fairy_light_skin_tone:',
@@ -19184,7 +19577,12 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0001F3FB\U0000200D\U00002642': { # 🧚🏻‍♂
         'en' : ':man_fairy_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': u':männliche_fee_helle_hautfarbe:',
+        'es': ':hada_hombre_tono_de_piel_claro:',
+        'fr': u':féetaud_peau_claire:',
+        'pt': ':homem_fada_pele_clara:',
+        'it': ':folletto_alato_carnagione_chiara:'
     },
     u'\U0001F9DA\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🧚🏾‍♂️
         'en' : ':man_fairy_medium-dark_skin_tone:',
@@ -19199,7 +19597,12 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0001F3FE\U0000200D\U00002642': { # 🧚🏾‍♂
         'en' : ':man_fairy_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': u':männliche_fee_mitteldunkle_hautfarbe:',
+        'es': ':hada_hombre_tono_de_piel_oscuro_medio:',
+        'fr': u':féetaud_peau_mate:',
+        'pt': ':homem_fada_pele_morena_escura:',
+        'it': ':folletto_alato_carnagione_abbastanza_scura:'
     },
     u'\U0001F9DA\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🧚🏼‍♂️
         'en' : ':man_fairy_medium-light_skin_tone:',
@@ -19214,7 +19617,12 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0001F3FC\U0000200D\U00002642': { # 🧚🏼‍♂
         'en' : ':man_fairy_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': u':männliche_fee_mittelhelle_hautfarbe:',
+        'es': ':hada_hombre_tono_de_piel_claro_medio:',
+        'fr': u':féetaud_peau_moyennement_claire:',
+        'pt': ':homem_fada_pele_morena_clara:',
+        'it': ':folletto_alato_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9DA\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🧚🏽‍♂️
         'en' : ':man_fairy_medium_skin_tone:',
@@ -19229,7 +19637,12 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0001F3FD\U0000200D\U00002642': { # 🧚🏽‍♂
         'en' : ':man_fairy_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': u':männliche_fee_mittlere_hautfarbe:',
+        'es': ':hada_hombre_tono_de_piel_medio:',
+        'fr': u':féetaud_peau_légèrement_mate:',
+        'pt': ':homem_fada_pele_morena:',
+        'it': ':folletto_alato_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F33E': { # 👨‍🌾
         'en' : ':man_farmer:',
@@ -19422,7 +19835,8 @@ EMOJI_DATA = {
         'es': u':hombre_frunciendo_el_ceño:',
         'fr': u':homme_fronçant_les_sourcils:',
         'pt': ':homem_franzindo_a_sobrancelha:',
-        'it': ':uomo_corrucciato:'
+        'it': ':uomo_corrucciato:',
+        'fa': u':مرد_اخم_می_کند:'
     },
     u'\U0001F64D\U0000200D\U00002642': { # 🙍‍♂
         'en' : ':man_frowning:',
@@ -19448,7 +19862,12 @@ EMOJI_DATA = {
     u'\U0001F64D\U0001F3FF\U0000200D\U00002642': { # 🙍🏿‍♂
         'en' : ':man_frowning_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':missmutiger_mann_dunkle_hautfarbe:',
+        'es': u':hombre_frunciendo_el_ceño_tono_de_piel_oscuro:',
+        'fr': u':homme_fronçant_les_sourcils_peau_foncée:',
+        'pt': ':homem_franzindo_a_sobrancelha_pele_escura:',
+        'it': ':uomo_corrucciato_carnagione_scura:'
     },
     u'\U0001F64D\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🙍🏻‍♂️
         'en' : ':man_frowning_light_skin_tone:',
@@ -19463,7 +19882,12 @@ EMOJI_DATA = {
     u'\U0001F64D\U0001F3FB\U0000200D\U00002642': { # 🙍🏻‍♂
         'en' : ':man_frowning_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':missmutiger_mann_helle_hautfarbe:',
+        'es': u':hombre_frunciendo_el_ceño_tono_de_piel_claro:',
+        'fr': u':homme_fronçant_les_sourcils_peau_claire:',
+        'pt': ':homem_franzindo_a_sobrancelha_pele_clara:',
+        'it': ':uomo_corrucciato_carnagione_chiara:'
     },
     u'\U0001F64D\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🙍🏾‍♂️
         'en' : ':man_frowning_medium-dark_skin_tone:',
@@ -19478,7 +19902,12 @@ EMOJI_DATA = {
     u'\U0001F64D\U0001F3FE\U0000200D\U00002642': { # 🙍🏾‍♂
         'en' : ':man_frowning_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':missmutiger_mann_mitteldunkle_hautfarbe:',
+        'es': u':hombre_frunciendo_el_ceño_tono_de_piel_oscuro_medio:',
+        'fr': u':homme_fronçant_les_sourcils_peau_mate:',
+        'pt': ':homem_franzindo_a_sobrancelha_pele_morena_escura:',
+        'it': ':uomo_corrucciato_carnagione_abbastanza_scura:'
     },
     u'\U0001F64D\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🙍🏼‍♂️
         'en' : ':man_frowning_medium-light_skin_tone:',
@@ -19493,7 +19922,12 @@ EMOJI_DATA = {
     u'\U0001F64D\U0001F3FC\U0000200D\U00002642': { # 🙍🏼‍♂
         'en' : ':man_frowning_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':missmutiger_mann_mittelhelle_hautfarbe:',
+        'es': u':hombre_frunciendo_el_ceño_tono_de_piel_claro_medio:',
+        'fr': u':homme_fronçant_les_sourcils_peau_moyennement_claire:',
+        'pt': ':homem_franzindo_a_sobrancelha_pele_morena_clara:',
+        'it': ':uomo_corrucciato_carnagione_abbastanza_chiara:'
     },
     u'\U0001F64D\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🙍🏽‍♂️
         'en' : ':man_frowning_medium_skin_tone:',
@@ -19508,7 +19942,12 @@ EMOJI_DATA = {
     u'\U0001F64D\U0001F3FD\U0000200D\U00002642': { # 🙍🏽‍♂
         'en' : ':man_frowning_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':missmutiger_mann_mittlere_hautfarbe:',
+        'es': u':hombre_frunciendo_el_ceño_tono_de_piel_medio:',
+        'fr': u':homme_fronçant_les_sourcils_peau_légèrement_mate:',
+        'pt': ':homem_franzindo_a_sobrancelha_pele_morena:',
+        'it': ':uomo_corrucciato_carnagione_olivastra:'
     },
     u'\U0001F9DE\U0000200D\U00002642\U0000FE0F': { # 🧞‍♂️
         'en' : ':man_genie:',
@@ -19518,7 +19957,8 @@ EMOJI_DATA = {
         'es': ':genio_hombre:',
         'fr': u':génie_homme:',
         'pt': u':homem_gênio:',
-        'it': ':genio_uomo:'
+        'it': ':genio_uomo:',
+        'fa': u':مرد_جن:'
     },
     u'\U0001F9DE\U0000200D\U00002642': { # 🧞‍♂
         'en' : ':man_genie:',
@@ -19539,7 +19979,8 @@ EMOJI_DATA = {
         'es': ':hombre_haciendo_el_gesto_de_no:',
         'fr': u':homme_faisant_un_geste_d’interdiction:',
         'pt': u':homem_fazendo_gesto_de_“não”:',
-        'it': ':uomo_con_gesto_di_rifiuto:'
+        'it': ':uomo_con_gesto_di_rifiuto:',
+        'fa': u':مرد_نمی_پذیرد:'
     },
     u'\U0001F645\U0000200D\U00002642': { # 🙅‍♂
         'en' : ':man_gesturing_NO:',
@@ -19565,7 +20006,12 @@ EMOJI_DATA = {
     u'\U0001F645\U0001F3FF\U0000200D\U00002642': { # 🙅🏿‍♂
         'en' : ':man_gesturing_NO_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':mann_mit_überkreuzten_armen_dunkle_hautfarbe:',
+        'es': ':hombre_haciendo_el_gesto_de_no_tono_de_piel_oscuro:',
+        'fr': u':homme_faisant_un_geste_d’interdiction_peau_foncée:',
+        'pt': u':homem_fazendo_gesto_de_“não”_pele_escura:',
+        'it': ':uomo_con_gesto_di_rifiuto_carnagione_scura:'
     },
     u'\U0001F645\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🙅🏻‍♂️
         'en' : ':man_gesturing_NO_light_skin_tone:',
@@ -19580,7 +20026,12 @@ EMOJI_DATA = {
     u'\U0001F645\U0001F3FB\U0000200D\U00002642': { # 🙅🏻‍♂
         'en' : ':man_gesturing_NO_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':mann_mit_überkreuzten_armen_helle_hautfarbe:',
+        'es': ':hombre_haciendo_el_gesto_de_no_tono_de_piel_claro:',
+        'fr': u':homme_faisant_un_geste_d’interdiction_peau_claire:',
+        'pt': u':homem_fazendo_gesto_de_“não”_pele_clara:',
+        'it': ':uomo_con_gesto_di_rifiuto_carnagione_chiara:'
     },
     u'\U0001F645\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🙅🏾‍♂️
         'en' : ':man_gesturing_NO_medium-dark_skin_tone:',
@@ -19595,7 +20046,12 @@ EMOJI_DATA = {
     u'\U0001F645\U0001F3FE\U0000200D\U00002642': { # 🙅🏾‍♂
         'en' : ':man_gesturing_NO_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':mann_mit_überkreuzten_armen_mitteldunkle_hautfarbe:',
+        'es': ':hombre_haciendo_el_gesto_de_no_tono_de_piel_oscuro_medio:',
+        'fr': u':homme_faisant_un_geste_d’interdiction_peau_mate:',
+        'pt': u':homem_fazendo_gesto_de_“não”_pele_morena_escura:',
+        'it': ':uomo_con_gesto_di_rifiuto_carnagione_abbastanza_scura:'
     },
     u'\U0001F645\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🙅🏼‍♂️
         'en' : ':man_gesturing_NO_medium-light_skin_tone:',
@@ -19610,7 +20066,12 @@ EMOJI_DATA = {
     u'\U0001F645\U0001F3FC\U0000200D\U00002642': { # 🙅🏼‍♂
         'en' : ':man_gesturing_NO_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':mann_mit_überkreuzten_armen_mittelhelle_hautfarbe:',
+        'es': ':hombre_haciendo_el_gesto_de_no_tono_de_piel_claro_medio:',
+        'fr': u':homme_faisant_un_geste_d’interdiction_peau_moyennement_claire:',
+        'pt': u':homem_fazendo_gesto_de_“não”_pele_morena_clara:',
+        'it': ':uomo_con_gesto_di_rifiuto_carnagione_abbastanza_chiara:'
     },
     u'\U0001F645\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🙅🏽‍♂️
         'en' : ':man_gesturing_NO_medium_skin_tone:',
@@ -19625,7 +20086,12 @@ EMOJI_DATA = {
     u'\U0001F645\U0001F3FD\U0000200D\U00002642': { # 🙅🏽‍♂
         'en' : ':man_gesturing_NO_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':mann_mit_überkreuzten_armen_mittlere_hautfarbe:',
+        'es': ':hombre_haciendo_el_gesto_de_no_tono_de_piel_medio:',
+        'fr': u':homme_faisant_un_geste_d’interdiction_peau_légèrement_mate:',
+        'pt': u':homem_fazendo_gesto_de_“não”_pele_morena:',
+        'it': ':uomo_con_gesto_di_rifiuto_carnagione_olivastra:'
     },
     u'\U0001F646\U0000200D\U00002642\U0000FE0F': { # 🙆‍♂️
         'en' : ':man_gesturing_OK:',
@@ -19635,7 +20101,8 @@ EMOJI_DATA = {
         'es': ':hombre_haciendo_el_gesto_de_de_acuerdo:',
         'fr': u':homme_faisant_un_geste_d’acceptation:',
         'pt': u':homem_fazendo_gesto_de_“ok”:',
-        'it': ':uomo_con_gesto_ok:'
+        'it': ':uomo_con_gesto_ok:',
+        'fa': u':مرد_می_پذیرد:'
     },
     u'\U0001F646\U0000200D\U00002642': { # 🙆‍♂
         'en' : ':man_gesturing_OK:',
@@ -19661,7 +20128,12 @@ EMOJI_DATA = {
     u'\U0001F646\U0001F3FF\U0000200D\U00002642': { # 🙆🏿‍♂
         'en' : ':man_gesturing_OK_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':mann_mit_händen_auf_dem_kopf_dunkle_hautfarbe:',
+        'es': ':hombre_haciendo_el_gesto_de_de_acuerdo_tono_de_piel_oscuro:',
+        'fr': u':homme_faisant_un_geste_d’acceptation_peau_foncée:',
+        'pt': u':homem_fazendo_gesto_de_“ok”_pele_escura:',
+        'it': ':uomo_con_gesto_ok_carnagione_scura:'
     },
     u'\U0001F646\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🙆🏻‍♂️
         'en' : ':man_gesturing_OK_light_skin_tone:',
@@ -19676,7 +20148,12 @@ EMOJI_DATA = {
     u'\U0001F646\U0001F3FB\U0000200D\U00002642': { # 🙆🏻‍♂
         'en' : ':man_gesturing_OK_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':mann_mit_händen_auf_dem_kopf_helle_hautfarbe:',
+        'es': ':hombre_haciendo_el_gesto_de_de_acuerdo_tono_de_piel_claro:',
+        'fr': u':homme_faisant_un_geste_d’acceptation_peau_claire:',
+        'pt': u':homem_fazendo_gesto_de_“ok”_pele_clara:',
+        'it': ':uomo_con_gesto_ok_carnagione_chiara:'
     },
     u'\U0001F646\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🙆🏾‍♂️
         'en' : ':man_gesturing_OK_medium-dark_skin_tone:',
@@ -19691,7 +20168,12 @@ EMOJI_DATA = {
     u'\U0001F646\U0001F3FE\U0000200D\U00002642': { # 🙆🏾‍♂
         'en' : ':man_gesturing_OK_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':mann_mit_händen_auf_dem_kopf_mitteldunkle_hautfarbe:',
+        'es': ':hombre_haciendo_el_gesto_de_de_acuerdo_tono_de_piel_oscuro_medio:',
+        'fr': u':homme_faisant_un_geste_d’acceptation_peau_mate:',
+        'pt': u':homem_fazendo_gesto_de_“ok”_pele_morena_escura:',
+        'it': ':uomo_con_gesto_ok_carnagione_abbastanza_scura:'
     },
     u'\U0001F646\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🙆🏼‍♂️
         'en' : ':man_gesturing_OK_medium-light_skin_tone:',
@@ -19706,7 +20188,12 @@ EMOJI_DATA = {
     u'\U0001F646\U0001F3FC\U0000200D\U00002642': { # 🙆🏼‍♂
         'en' : ':man_gesturing_OK_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':mann_mit_händen_auf_dem_kopf_mittelhelle_hautfarbe:',
+        'es': ':hombre_haciendo_el_gesto_de_de_acuerdo_tono_de_piel_claro_medio:',
+        'fr': u':homme_faisant_un_geste_d’acceptation_peau_moyennement_claire:',
+        'pt': u':homem_fazendo_gesto_de_“ok”_pele_morena_clara:',
+        'it': ':uomo_con_gesto_ok_carnagione_abbastanza_chiara:'
     },
     u'\U0001F646\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🙆🏽‍♂️
         'en' : ':man_gesturing_OK_medium_skin_tone:',
@@ -19721,7 +20208,12 @@ EMOJI_DATA = {
     u'\U0001F646\U0001F3FD\U0000200D\U00002642': { # 🙆🏽‍♂
         'en' : ':man_gesturing_OK_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':mann_mit_händen_auf_dem_kopf_mittlere_hautfarbe:',
+        'es': ':hombre_haciendo_el_gesto_de_de_acuerdo_tono_de_piel_medio:',
+        'fr': u':homme_faisant_un_geste_d’acceptation_peau_légèrement_mate:',
+        'pt': u':homem_fazendo_gesto_de_“ok”_pele_morena:',
+        'it': ':uomo_con_gesto_ok_carnagione_olivastra:'
     },
     u'\U0001F487\U0000200D\U00002642\U0000FE0F': { # 💇‍♂️
         'en' : ':man_getting_haircut:',
@@ -19731,7 +20223,8 @@ EMOJI_DATA = {
         'es': u':hombre_cortándose_el_pelo:',
         'fr': ':homme_qui_se_fait_couper_les_cheveux:',
         'pt': ':homem_cortando_o_cabelo:',
-        'it': ':taglio_di_capelli_per_uomo:'
+        'it': ':taglio_di_capelli_per_uomo:',
+        'fa': u':مرد_مو_کوتاه_می_کند:'
     },
     u'\U0001F487\U0000200D\U00002642': { # 💇‍♂
         'en' : ':man_getting_haircut:',
@@ -19757,7 +20250,12 @@ EMOJI_DATA = {
     u'\U0001F487\U0001F3FF\U0000200D\U00002642': { # 💇🏿‍♂
         'en' : ':man_getting_haircut_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_beim_haareschneiden_dunkle_hautfarbe:',
+        'es': u':hombre_cortándose_el_pelo_tono_de_piel_oscuro:',
+        'fr': u':homme_qui_se_fait_couper_les_cheveux_peau_foncée:',
+        'pt': ':homem_cortando_o_cabelo_pele_escura:',
+        'it': ':taglio_di_capelli_per_uomo_carnagione_scura:'
     },
     u'\U0001F487\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 💇🏻‍♂️
         'en' : ':man_getting_haircut_light_skin_tone:',
@@ -19772,7 +20270,12 @@ EMOJI_DATA = {
     u'\U0001F487\U0001F3FB\U0000200D\U00002642': { # 💇🏻‍♂
         'en' : ':man_getting_haircut_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_beim_haareschneiden_helle_hautfarbe:',
+        'es': u':hombre_cortándose_el_pelo_tono_de_piel_claro:',
+        'fr': ':homme_qui_se_fait_couper_les_cheveux_peau_claire:',
+        'pt': ':homem_cortando_o_cabelo_pele_clara:',
+        'it': ':taglio_di_capelli_per_uomo_carnagione_chiara:'
     },
     u'\U0001F487\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 💇🏾‍♂️
         'en' : ':man_getting_haircut_medium-dark_skin_tone:',
@@ -19787,7 +20290,12 @@ EMOJI_DATA = {
     u'\U0001F487\U0001F3FE\U0000200D\U00002642': { # 💇🏾‍♂
         'en' : ':man_getting_haircut_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_beim_haareschneiden_mitteldunkle_hautfarbe:',
+        'es': u':hombre_cortándose_el_pelo_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_qui_se_fait_couper_les_cheveux_peau_mate:',
+        'pt': ':homem_cortando_o_cabelo_pele_morena_escura:',
+        'it': ':taglio_di_capelli_per_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F487\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 💇🏼‍♂️
         'en' : ':man_getting_haircut_medium-light_skin_tone:',
@@ -19802,7 +20310,12 @@ EMOJI_DATA = {
     u'\U0001F487\U0001F3FC\U0000200D\U00002642': { # 💇🏼‍♂
         'en' : ':man_getting_haircut_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_beim_haareschneiden_mittelhelle_hautfarbe:',
+        'es': u':hombre_cortándose_el_pelo_tono_de_piel_claro_medio:',
+        'fr': ':homme_qui_se_fait_couper_les_cheveux_peau_moyennement_claire:',
+        'pt': ':homem_cortando_o_cabelo_pele_morena_clara:',
+        'it': ':taglio_di_capelli_per_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F487\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 💇🏽‍♂️
         'en' : ':man_getting_haircut_medium_skin_tone:',
@@ -19817,7 +20330,12 @@ EMOJI_DATA = {
     u'\U0001F487\U0001F3FD\U0000200D\U00002642': { # 💇🏽‍♂
         'en' : ':man_getting_haircut_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_beim_haareschneiden_mittlere_hautfarbe:',
+        'es': u':hombre_cortándose_el_pelo_tono_de_piel_medio:',
+        'fr': u':homme_qui_se_fait_couper_les_cheveux_peau_légèrement_mate:',
+        'pt': ':homem_cortando_o_cabelo_pele_morena:',
+        'it': ':taglio_di_capelli_per_uomo_carnagione_olivastra:'
     },
     u'\U0001F486\U0000200D\U00002642\U0000FE0F': { # 💆‍♂️
         'en' : ':man_getting_massage:',
@@ -19827,7 +20345,8 @@ EMOJI_DATA = {
         'es': ':hombre_recibiendo_masaje:',
         'fr': ':homme_qui_se_fait_masser:',
         'pt': ':homem_recebendo_massagem_facial:',
-        'it': ':uomo_che_riceve_un_massaggio:'
+        'it': ':uomo_che_riceve_un_massaggio:',
+        'fa': u':ماساژ_صورت_مرد:'
     },
     u'\U0001F486\U0000200D\U00002642': { # 💆‍♂
         'en' : ':man_getting_massage:',
@@ -19853,7 +20372,12 @@ EMOJI_DATA = {
     u'\U0001F486\U0001F3FF\U0000200D\U00002642': { # 💆🏿‍♂
         'en' : ':man_getting_massage_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann,_der_eine_kopfmassage_bekommt_dunkle_hautfarbe:',
+        'es': ':hombre_recibiendo_masaje_tono_de_piel_oscuro:',
+        'fr': u':homme_qui_se_fait_masser_peau_foncée:',
+        'pt': ':homem_recebendo_massagem_facial_pele_escura:',
+        'it': ':uomo_che_riceve_un_massaggio_carnagione_scura:'
     },
     u'\U0001F486\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 💆🏻‍♂️
         'en' : ':man_getting_massage_light_skin_tone:',
@@ -19868,7 +20392,12 @@ EMOJI_DATA = {
     u'\U0001F486\U0001F3FB\U0000200D\U00002642': { # 💆🏻‍♂
         'en' : ':man_getting_massage_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann,_der_eine_kopfmassage_bekommt_helle_hautfarbe:',
+        'es': ':hombre_recibiendo_masaje_tono_de_piel_claro:',
+        'fr': ':homme_qui_se_fait_masser_peau_claire:',
+        'pt': ':homem_recebendo_massagem_facial_pele_clara:',
+        'it': ':uomo_che_riceve_un_massaggio_carnagione_chiara:'
     },
     u'\U0001F486\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 💆🏾‍♂️
         'en' : ':man_getting_massage_medium-dark_skin_tone:',
@@ -19883,7 +20412,12 @@ EMOJI_DATA = {
     u'\U0001F486\U0001F3FE\U0000200D\U00002642': { # 💆🏾‍♂
         'en' : ':man_getting_massage_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann,_der_eine_kopfmassage_bekommt_mitteldunkle_hautfarbe:',
+        'es': ':hombre_recibiendo_masaje_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_qui_se_fait_masser_peau_mate:',
+        'pt': ':homem_recebendo_massagem_facial_pele_morena_escura:',
+        'it': ':uomo_che_riceve_un_massaggio_carnagione_abbastanza_scura:'
     },
     u'\U0001F486\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 💆🏼‍♂️
         'en' : ':man_getting_massage_medium-light_skin_tone:',
@@ -19898,7 +20432,12 @@ EMOJI_DATA = {
     u'\U0001F486\U0001F3FC\U0000200D\U00002642': { # 💆🏼‍♂
         'en' : ':man_getting_massage_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann,_der_eine_kopfmassage_bekommt_mittelhelle_hautfarbe:',
+        'es': ':hombre_recibiendo_masaje_tono_de_piel_claro_medio:',
+        'fr': ':homme_qui_se_fait_masser_peau_moyennement_claire:',
+        'pt': ':homem_recebendo_massagem_facial_pele_morena_clara:',
+        'it': ':uomo_che_riceve_un_massaggio_carnagione_abbastanza_chiara:'
     },
     u'\U0001F486\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 💆🏽‍♂️
         'en' : ':man_getting_massage_medium_skin_tone:',
@@ -19913,7 +20452,12 @@ EMOJI_DATA = {
     u'\U0001F486\U0001F3FD\U0000200D\U00002642': { # 💆🏽‍♂
         'en' : ':man_getting_massage_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann,_der_eine_kopfmassage_bekommt_mittlere_hautfarbe:',
+        'es': ':hombre_recibiendo_masaje_tono_de_piel_medio:',
+        'fr': u':homme_qui_se_fait_masser_peau_légèrement_mate:',
+        'pt': ':homem_recebendo_massagem_facial_pele_morena:',
+        'it': ':uomo_che_riceve_un_massaggio_carnagione_olivastra:'
     },
     u'\U0001F3CC\U0000FE0F\U0000200D\U00002642\U0000FE0F': { # 🏌️‍♂️
         'en' : ':man_golfing:',
@@ -19928,12 +20472,23 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0000200D\U00002642\U0000FE0F': { # 🏌‍♂️
         'en' : ':man_golfing:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golfer:',
+        'es': ':hombre_jugando_al_golf:',
+        'fr': ':golfeur:',
+        'pt': ':homem_golfista:',
+        'it': ':golfista_uomo:',
+        'fa': u':گلف_باز_مرد:'
     },
     u'\U0001F3CC\U0000FE0F\U0000200D\U00002642': { # 🏌️‍♂
         'en' : ':man_golfing:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golfer:',
+        'es': ':hombre_jugando_al_golf:',
+        'fr': ':golfeur:',
+        'pt': ':homem_golfista:',
+        'it': ':golfista_uomo:'
     },
     u'\U0001F3CC\U0000200D\U00002642': { # 🏌‍♂
         'en' : ':man_golfing:',
@@ -19959,7 +20514,12 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0001F3FF\U0000200D\U00002642': { # 🏌🏿‍♂
         'en' : ':man_golfing_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golfer_dunkle_hautfarbe:',
+        'es': ':hombre_jugando_al_golf_tono_de_piel_oscuro:',
+        'fr': u':golfeur_peau_foncée:',
+        'pt': ':homem_golfista_pele_escura:',
+        'it': ':golfista_uomo_carnagione_scura:'
     },
     u'\U0001F3CC\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🏌🏻‍♂️
         'en' : ':man_golfing_light_skin_tone:',
@@ -19974,7 +20534,12 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0001F3FB\U0000200D\U00002642': { # 🏌🏻‍♂
         'en' : ':man_golfing_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golfer_helle_hautfarbe:',
+        'es': ':hombre_jugando_al_golf_tono_de_piel_claro:',
+        'fr': ':golfeur_peau_claire:',
+        'pt': ':homem_golfista_pele_clara:',
+        'it': ':golfista_uomo_carnagione_chiara:'
     },
     u'\U0001F3CC\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🏌🏾‍♂️
         'en' : ':man_golfing_medium-dark_skin_tone:',
@@ -19989,7 +20554,12 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0001F3FE\U0000200D\U00002642': { # 🏌🏾‍♂
         'en' : ':man_golfing_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golfer_mitteldunkle_hautfarbe:',
+        'es': ':hombre_jugando_al_golf_tono_de_piel_oscuro_medio:',
+        'fr': ':golfeur_peau_mate:',
+        'pt': ':homem_golfista_pele_morena_escura:',
+        'it': ':golfista_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F3CC\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🏌🏼‍♂️
         'en' : ':man_golfing_medium-light_skin_tone:',
@@ -20004,7 +20574,12 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0001F3FC\U0000200D\U00002642': { # 🏌🏼‍♂
         'en' : ':man_golfing_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golfer_mittelhelle_hautfarbe:',
+        'es': ':hombre_jugando_al_golf_tono_de_piel_claro_medio:',
+        'fr': ':golfeur_peau_moyennement_claire:',
+        'pt': ':homem_golfista_pele_morena_clara:',
+        'it': ':golfista_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F3CC\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🏌🏽‍♂️
         'en' : ':man_golfing_medium_skin_tone:',
@@ -20019,7 +20594,12 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0001F3FD\U0000200D\U00002642': { # 🏌🏽‍♂
         'en' : ':man_golfing_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golfer_mittlere_hautfarbe:',
+        'es': ':hombre_jugando_al_golf_tono_de_piel_medio:',
+        'fr': u':golfeur_peau_légèrement_mate:',
+        'pt': ':homem_golfista_pele_morena:',
+        'it': ':golfista_uomo_carnagione_olivastra:'
     },
     u'\U0001F482\U0000200D\U00002642\U0000FE0F': { # 💂‍♂️
         'en' : ':man_guard:',
@@ -20029,7 +20609,8 @@ EMOJI_DATA = {
         'es': ':guardia_hombre:',
         'fr': ':garde_homme:',
         'pt': ':guarda_homem:',
-        'it': ':guardia_uomo:'
+        'it': ':guardia_uomo:',
+        'fa': u':گارد_مرد:'
     },
     u'\U0001F482\U0000200D\U00002642': { # 💂‍♂
         'en' : ':man_guard:',
@@ -20055,7 +20636,12 @@ EMOJI_DATA = {
     u'\U0001F482\U0001F3FF\U0000200D\U00002642': { # 💂🏿‍♂
         'en' : ':man_guard_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wachmann_dunkle_hautfarbe:',
+        'es': ':guardia_hombre_tono_de_piel_oscuro:',
+        'fr': u':garde_homme_peau_foncée:',
+        'pt': ':guarda_homem_pele_escura:',
+        'it': ':guardia_uomo_carnagione_scura:'
     },
     u'\U0001F482\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 💂🏻‍♂️
         'en' : ':man_guard_light_skin_tone:',
@@ -20070,7 +20656,12 @@ EMOJI_DATA = {
     u'\U0001F482\U0001F3FB\U0000200D\U00002642': { # 💂🏻‍♂
         'en' : ':man_guard_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wachmann_helle_hautfarbe:',
+        'es': ':guardia_hombre_tono_de_piel_claro:',
+        'fr': ':garde_homme_peau_claire:',
+        'pt': ':guarda_homem_pele_clara:',
+        'it': ':guardia_uomo_carnagione_chiara:'
     },
     u'\U0001F482\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 💂🏾‍♂️
         'en' : ':man_guard_medium-dark_skin_tone:',
@@ -20085,7 +20676,12 @@ EMOJI_DATA = {
     u'\U0001F482\U0001F3FE\U0000200D\U00002642': { # 💂🏾‍♂
         'en' : ':man_guard_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wachmann_mitteldunkle_hautfarbe:',
+        'es': ':guardia_hombre_tono_de_piel_oscuro_medio:',
+        'fr': ':garde_homme_peau_mate:',
+        'pt': ':guarda_homem_pele_morena_escura:',
+        'it': ':guardia_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F482\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 💂🏼‍♂️
         'en' : ':man_guard_medium-light_skin_tone:',
@@ -20100,7 +20696,12 @@ EMOJI_DATA = {
     u'\U0001F482\U0001F3FC\U0000200D\U00002642': { # 💂🏼‍♂
         'en' : ':man_guard_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wachmann_mittelhelle_hautfarbe:',
+        'es': ':guardia_hombre_tono_de_piel_claro_medio:',
+        'fr': ':garde_homme_peau_moyennement_claire:',
+        'pt': ':guarda_homem_pele_morena_clara:',
+        'it': ':guardia_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F482\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 💂🏽‍♂️
         'en' : ':man_guard_medium_skin_tone:',
@@ -20115,7 +20716,12 @@ EMOJI_DATA = {
     u'\U0001F482\U0001F3FD\U0000200D\U00002642': { # 💂🏽‍♂
         'en' : ':man_guard_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wachmann_mittlere_hautfarbe:',
+        'es': ':guardia_hombre_tono_de_piel_medio:',
+        'fr': u':garde_homme_peau_légèrement_mate:',
+        'pt': ':guarda_homem_pele_morena:',
+        'it': ':guardia_uomo_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U00002695\U0000FE0F': { # 👨‍⚕️
         'en' : ':man_health_worker:',
@@ -20125,7 +20731,8 @@ EMOJI_DATA = {
         'es': ':profesional_sanitario_hombre:',
         'fr': u':professionnel_de_la_santé:',
         'pt': u':homem_profissional_da_saúde:',
-        'it': ':operatore_sanitario:'
+        'it': ':operatore_sanitario:',
+        'fa': u':مددکار_بهداشت_مرد:'
     },
     u'\U0001F468\U0000200D\U00002695': { # 👨‍⚕
         'en' : ':man_health_worker:',
@@ -20151,7 +20758,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FF\U0000200D\U00002695': { # 👨🏿‍⚕
         'en' : ':man_health_worker_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':arzt_dunkle_hautfarbe:',
+        'es': ':profesional_sanitario_hombre_tono_de_piel_oscuro:',
+        'fr': u':professionnel_de_la_santé_peau_foncée:',
+        'pt': u':homem_profissional_da_saúde_pele_escura:',
+        'it': ':operatore_sanitario_carnagione_scura:'
     },
     u'\U0001F468\U0001F3FB\U0000200D\U00002695\U0000FE0F': { # 👨🏻‍⚕️
         'en' : ':man_health_worker_light_skin_tone:',
@@ -20166,7 +20778,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FB\U0000200D\U00002695': { # 👨🏻‍⚕
         'en' : ':man_health_worker_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':arzt_helle_hautfarbe:',
+        'es': ':profesional_sanitario_hombre_tono_de_piel_claro:',
+        'fr': u':professionnel_de_la_santé_peau_claire:',
+        'pt': u':homem_profissional_da_saúde_pele_clara:',
+        'it': ':operatore_sanitario_carnagione_chiara:'
     },
     u'\U0001F468\U0001F3FE\U0000200D\U00002695\U0000FE0F': { # 👨🏾‍⚕️
         'en' : ':man_health_worker_medium-dark_skin_tone:',
@@ -20181,7 +20798,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FE\U0000200D\U00002695': { # 👨🏾‍⚕
         'en' : ':man_health_worker_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':arzt_mitteldunkle_hautfarbe:',
+        'es': ':profesional_sanitario_hombre_tono_de_piel_oscuro_medio:',
+        'fr': u':professionnel_de_la_santé_peau_mate:',
+        'pt': u':homem_profissional_da_saúde_pele_morena_escura:',
+        'it': ':operatore_sanitario_carnagione_abbastanza_scura:'
     },
     u'\U0001F468\U0001F3FC\U0000200D\U00002695\U0000FE0F': { # 👨🏼‍⚕️
         'en' : ':man_health_worker_medium-light_skin_tone:',
@@ -20196,7 +20818,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FC\U0000200D\U00002695': { # 👨🏼‍⚕
         'en' : ':man_health_worker_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':arzt_mittelhelle_hautfarbe:',
+        'es': ':profesional_sanitario_hombre_tono_de_piel_claro_medio:',
+        'fr': u':professionnel_de_la_santé_peau_moyennement_claire:',
+        'pt': u':homem_profissional_da_saúde_pele_morena_clara:',
+        'it': ':operatore_sanitario_carnagione_abbastanza_chiara:'
     },
     u'\U0001F468\U0001F3FD\U0000200D\U00002695\U0000FE0F': { # 👨🏽‍⚕️
         'en' : ':man_health_worker_medium_skin_tone:',
@@ -20211,7 +20838,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FD\U0000200D\U00002695': { # 👨🏽‍⚕
         'en' : ':man_health_worker_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':arzt_mittlere_hautfarbe:',
+        'es': ':profesional_sanitario_hombre_tono_de_piel_medio:',
+        'fr': u':professionnel_de_la_santé_peau_légèrement_mate:',
+        'pt': u':homem_profissional_da_saúde_pele_morena:',
+        'it': ':operatore_sanitario_carnagione_olivastra:'
     },
     u'\U0001F9D8\U0000200D\U00002642\U0000FE0F': { # 🧘‍♂️
         'en' : ':man_in_lotus_position:',
@@ -20221,7 +20853,8 @@ EMOJI_DATA = {
         'es': u':hombre_en_posición_de_loto:',
         'fr': ':homme_dans_la_posture_du_lotus:',
         'pt': u':homem_na_posição_de_lótus:',
-        'it': ':uomo_in_posizione_del_loto:'
+        'it': ':uomo_in_posizione_del_loto:',
+        'fa': u':مرد_در_حالت_خلسه:'
     },
     u'\U0001F9D8\U0000200D\U00002642': { # 🧘‍♂
         'en' : ':man_in_lotus_position:',
@@ -20247,7 +20880,12 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0001F3FF\U0000200D\U00002642': { # 🧘🏿‍♂
         'en' : ':man_in_lotus_position_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':mann_im_lotossitz_dunkle_hautfarbe:',
+        'es': u':hombre_en_posición_de_loto_tono_de_piel_oscuro:',
+        'fr': u':homme_dans_la_posture_du_lotus_peau_foncée:',
+        'pt': u':homem_na_posição_de_lótus_pele_escura:',
+        'it': ':uomo_in_posizione_del_loto_carnagione_scura:'
     },
     u'\U0001F9D8\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🧘🏻‍♂️
         'en' : ':man_in_lotus_position_light_skin_tone:',
@@ -20262,7 +20900,12 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0001F3FB\U0000200D\U00002642': { # 🧘🏻‍♂
         'en' : ':man_in_lotus_position_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':mann_im_lotossitz_helle_hautfarbe:',
+        'es': u':hombre_en_posición_de_loto_tono_de_piel_claro:',
+        'fr': ':homme_dans_la_posture_du_lotus_peau_claire:',
+        'pt': u':homem_na_posição_de_lótus_pele_clara:',
+        'it': ':uomo_in_posizione_del_loto_carnagione_chiara:'
     },
     u'\U0001F9D8\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🧘🏾‍♂️
         'en' : ':man_in_lotus_position_medium-dark_skin_tone:',
@@ -20277,7 +20920,12 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0001F3FE\U0000200D\U00002642': { # 🧘🏾‍♂
         'en' : ':man_in_lotus_position_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':mann_im_lotossitz_mitteldunkle_hautfarbe:',
+        'es': u':hombre_en_posición_de_loto_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_dans_la_posture_du_lotus_peau_mate:',
+        'pt': u':homem_na_posição_de_lótus_pele_morena_escura:',
+        'it': ':uomo_in_posizione_del_loto_carnagione_abbastanza_scura:'
     },
     u'\U0001F9D8\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🧘🏼‍♂️
         'en' : ':man_in_lotus_position_medium-light_skin_tone:',
@@ -20292,7 +20940,12 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0001F3FC\U0000200D\U00002642': { # 🧘🏼‍♂
         'en' : ':man_in_lotus_position_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':mann_im_lotossitz_mittelhelle_hautfarbe:',
+        'es': u':hombre_en_posición_de_loto_tono_de_piel_claro_medio:',
+        'fr': ':homme_dans_la_posture_du_lotus_peau_moyennement_claire:',
+        'pt': u':homem_na_posição_de_lótus_pele_morena_clara:',
+        'it': ':uomo_in_posizione_del_loto_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9D8\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🧘🏽‍♂️
         'en' : ':man_in_lotus_position_medium_skin_tone:',
@@ -20307,7 +20960,12 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0001F3FD\U0000200D\U00002642': { # 🧘🏽‍♂
         'en' : ':man_in_lotus_position_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':mann_im_lotossitz_mittlere_hautfarbe:',
+        'es': u':hombre_en_posición_de_loto_tono_de_piel_medio:',
+        'fr': u':homme_dans_la_posture_du_lotus_peau_légèrement_mate:',
+        'pt': u':homem_na_posição_de_lótus_pele_morena:',
+        'it': ':uomo_in_posizione_del_loto_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F9BD': { # 👨‍🦽
         'en' : ':man_in_manual_wheelchair:',
@@ -20439,7 +21097,8 @@ EMOJI_DATA = {
         'es': ':hombre_en_una_sauna:',
         'fr': ':homme_au_hammam:',
         'pt': ':homem_na_sauna:',
-        'it': ':uomo_in_sauna:'
+        'it': ':uomo_in_sauna:',
+        'fa': u':مرد_در_حمام_بخار:'
     },
     u'\U0001F9D6\U0000200D\U00002642': { # 🧖‍♂
         'en' : ':man_in_steamy_room:',
@@ -20465,7 +21124,12 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0001F3FF\U0000200D\U00002642': { # 🧖🏿‍♂
         'en' : ':man_in_steamy_room_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':mann_in_dampfsauna_dunkle_hautfarbe:',
+        'es': ':hombre_en_una_sauna_tono_de_piel_oscuro:',
+        'fr': u':homme_au_hammam_peau_foncée:',
+        'pt': ':homem_na_sauna_pele_escura:',
+        'it': ':uomo_in_sauna_carnagione_scura:'
     },
     u'\U0001F9D6\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🧖🏻‍♂️
         'en' : ':man_in_steamy_room_light_skin_tone:',
@@ -20480,7 +21144,12 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0001F3FB\U0000200D\U00002642': { # 🧖🏻‍♂
         'en' : ':man_in_steamy_room_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':mann_in_dampfsauna_helle_hautfarbe:',
+        'es': ':hombre_en_una_sauna_tono_de_piel_claro:',
+        'fr': ':homme_au_hammam_peau_claire:',
+        'pt': ':homem_na_sauna_pele_clara:',
+        'it': ':uomo_in_sauna_carnagione_chiara:'
     },
     u'\U0001F9D6\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🧖🏾‍♂️
         'en' : ':man_in_steamy_room_medium-dark_skin_tone:',
@@ -20495,7 +21164,12 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0001F3FE\U0000200D\U00002642': { # 🧖🏾‍♂
         'en' : ':man_in_steamy_room_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':mann_in_dampfsauna_mitteldunkle_hautfarbe:',
+        'es': ':hombre_en_una_sauna_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_au_hammam_peau_mate:',
+        'pt': ':homem_na_sauna_pele_morena_escura:',
+        'it': ':uomo_in_sauna_carnagione_abbastanza_scura:'
     },
     u'\U0001F9D6\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🧖🏼‍♂️
         'en' : ':man_in_steamy_room_medium-light_skin_tone:',
@@ -20510,7 +21184,12 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0001F3FC\U0000200D\U00002642': { # 🧖🏼‍♂
         'en' : ':man_in_steamy_room_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':mann_in_dampfsauna_mittelhelle_hautfarbe:',
+        'es': ':hombre_en_una_sauna_tono_de_piel_claro_medio:',
+        'fr': ':homme_au_hammam_peau_moyennement_claire:',
+        'pt': ':homem_na_sauna_pele_morena_clara:',
+        'it': ':uomo_in_sauna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9D6\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🧖🏽‍♂️
         'en' : ':man_in_steamy_room_medium_skin_tone:',
@@ -20525,7 +21204,12 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0001F3FD\U0000200D\U00002642': { # 🧖🏽‍♂
         'en' : ':man_in_steamy_room_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':mann_in_dampfsauna_mittlere_hautfarbe:',
+        'es': ':hombre_en_una_sauna_tono_de_piel_medio:',
+        'fr': u':homme_au_hammam_peau_légèrement_mate:',
+        'pt': ':homem_na_sauna_pele_morena:',
+        'it': ':uomo_in_sauna_carnagione_olivastra:'
     },
     u'\U0001F935\U0000200D\U00002642\U0000FE0F': { # 🤵‍♂️
         'en' : ':man_in_tuxedo:',
@@ -20535,7 +21219,8 @@ EMOJI_DATA = {
         'es': ':hombre_con_esmoquin:',
         'fr': ':homme_en_smoking:',
         'pt': ':homem_de_smoking:',
-        'it': ':uomo_in_smoking:'
+        'it': ':uomo_in_smoking:',
+        'fa': u':مرد_با_کت_و_شلوار_و_پاپیون:'
     },
     u'\U0001F935\U0000200D\U00002642': { # 🤵‍♂
         'en' : ':man_in_tuxedo:',
@@ -20561,7 +21246,12 @@ EMOJI_DATA = {
     u'\U0001F935\U0001F3FF\U0000200D\U00002642': { # 🤵🏿‍♂
         'en' : ':man_in_tuxedo_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':mann_im_smoking_dunkle_hautfarbe:',
+        'es': ':hombre_con_esmoquin_tono_de_piel_oscuro:',
+        'fr': u':homme_en_smoking_peau_foncée:',
+        'pt': ':homem_de_smoking_pele_escura:',
+        'it': ':uomo_in_smoking_carnagione_scura:'
     },
     u'\U0001F935\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🤵🏻‍♂️
         'en' : ':man_in_tuxedo_light_skin_tone:',
@@ -20576,7 +21266,12 @@ EMOJI_DATA = {
     u'\U0001F935\U0001F3FB\U0000200D\U00002642': { # 🤵🏻‍♂
         'en' : ':man_in_tuxedo_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':mann_im_smoking_helle_hautfarbe:',
+        'es': ':hombre_con_esmoquin_tono_de_piel_claro:',
+        'fr': ':homme_en_smoking_peau_claire:',
+        'pt': ':homem_de_smoking_pele_clara:',
+        'it': ':uomo_in_smoking_carnagione_chiara:'
     },
     u'\U0001F935\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🤵🏾‍♂️
         'en' : ':man_in_tuxedo_medium-dark_skin_tone:',
@@ -20591,7 +21286,12 @@ EMOJI_DATA = {
     u'\U0001F935\U0001F3FE\U0000200D\U00002642': { # 🤵🏾‍♂
         'en' : ':man_in_tuxedo_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':mann_im_smoking_mitteldunkle_hautfarbe:',
+        'es': ':hombre_con_esmoquin_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_en_smoking_peau_mate:',
+        'pt': ':homem_de_smoking_pele_morena_escura:',
+        'it': ':uomo_in_smoking_carnagione_abbastanza_scura:'
     },
     u'\U0001F935\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🤵🏼‍♂️
         'en' : ':man_in_tuxedo_medium-light_skin_tone:',
@@ -20606,7 +21306,12 @@ EMOJI_DATA = {
     u'\U0001F935\U0001F3FC\U0000200D\U00002642': { # 🤵🏼‍♂
         'en' : ':man_in_tuxedo_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':mann_im_smoking_mittelhelle_hautfarbe:',
+        'es': ':hombre_con_esmoquin_tono_de_piel_claro_medio:',
+        'fr': ':homme_en_smoking_peau_moyennement_claire:',
+        'pt': ':homem_de_smoking_pele_morena_clara:',
+        'it': ':uomo_in_smoking_carnagione_abbastanza_chiara:'
     },
     u'\U0001F935\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🤵🏽‍♂️
         'en' : ':man_in_tuxedo_medium_skin_tone:',
@@ -20621,7 +21326,12 @@ EMOJI_DATA = {
     u'\U0001F935\U0001F3FD\U0000200D\U00002642': { # 🤵🏽‍♂
         'en' : ':man_in_tuxedo_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':mann_im_smoking_mittlere_hautfarbe:',
+        'es': ':hombre_con_esmoquin_tono_de_piel_medio:',
+        'fr': u':homme_en_smoking_peau_légèrement_mate:',
+        'pt': ':homem_de_smoking_pele_morena:',
+        'it': ':uomo_in_smoking_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U00002696\U0000FE0F': { # 👨‍⚖️
         'en' : ':man_judge:',
@@ -20631,7 +21341,8 @@ EMOJI_DATA = {
         'es': ':fiscal_hombre:',
         'fr': ':juge_homme:',
         'pt': ':juiz:',
-        'it': ':giudice_uomo:'
+        'it': ':giudice_uomo:',
+        'fa': u':قاضی_مرد:'
     },
     u'\U0001F468\U0000200D\U00002696': { # 👨‍⚖
         'en' : ':man_judge:',
@@ -20657,7 +21368,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FF\U0000200D\U00002696': { # 👨🏿‍⚖
         'en' : ':man_judge_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':richter_dunkle_hautfarbe:',
+        'es': ':fiscal_hombre_tono_de_piel_oscuro:',
+        'fr': u':juge_homme_peau_foncée:',
+        'pt': ':juiz_pele_escura:',
+        'it': ':giudice_uomo_carnagione_scura:'
     },
     u'\U0001F468\U0001F3FB\U0000200D\U00002696\U0000FE0F': { # 👨🏻‍⚖️
         'en' : ':man_judge_light_skin_tone:',
@@ -20672,7 +21388,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FB\U0000200D\U00002696': { # 👨🏻‍⚖
         'en' : ':man_judge_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':richter_helle_hautfarbe:',
+        'es': ':fiscal_hombre_tono_de_piel_claro:',
+        'fr': ':juge_homme_peau_claire:',
+        'pt': ':juiz_pele_clara:',
+        'it': ':giudice_uomo_carnagione_chiara:'
     },
     u'\U0001F468\U0001F3FE\U0000200D\U00002696\U0000FE0F': { # 👨🏾‍⚖️
         'en' : ':man_judge_medium-dark_skin_tone:',
@@ -20687,7 +21408,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FE\U0000200D\U00002696': { # 👨🏾‍⚖
         'en' : ':man_judge_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':richter_mitteldunkle_hautfarbe:',
+        'es': ':fiscal_hombre_tono_de_piel_oscuro_medio:',
+        'fr': ':juge_homme_peau_mate:',
+        'pt': ':juiz_pele_morena_escura:',
+        'it': ':giudice_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F468\U0001F3FC\U0000200D\U00002696\U0000FE0F': { # 👨🏼‍⚖️
         'en' : ':man_judge_medium-light_skin_tone:',
@@ -20702,7 +21428,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FC\U0000200D\U00002696': { # 👨🏼‍⚖
         'en' : ':man_judge_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':richter_mittelhelle_hautfarbe:',
+        'es': ':fiscal_hombre_tono_de_piel_claro_medio:',
+        'fr': ':juge_homme_peau_moyennement_claire:',
+        'pt': ':juiz_pele_morena_clara:',
+        'it': ':giudice_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F468\U0001F3FD\U0000200D\U00002696\U0000FE0F': { # 👨🏽‍⚖️
         'en' : ':man_judge_medium_skin_tone:',
@@ -20717,7 +21448,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FD\U0000200D\U00002696': { # 👨🏽‍⚖
         'en' : ':man_judge_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':richter_mittlere_hautfarbe:',
+        'es': ':fiscal_hombre_tono_de_piel_medio:',
+        'fr': u':juge_homme_peau_légèrement_mate:',
+        'pt': ':juiz_pele_morena:',
+        'it': ':giudice_uomo_carnagione_olivastra:'
     },
     u'\U0001F939\U0000200D\U00002642\U0000FE0F': { # 🤹‍♂️
         'en' : ':man_juggling:',
@@ -20727,7 +21463,8 @@ EMOJI_DATA = {
         'es': ':hombre_haciendo_malabares:',
         'fr': ':jongleur:',
         'pt': ':homem_malabarista:',
-        'it': ':giocoliere_uomo:'
+        'it': ':giocoliere_uomo:',
+        'fa': u':مرد_ژانگولربازی_می_کند:'
     },
     u'\U0001F939\U0000200D\U00002642': { # 🤹‍♂
         'en' : ':man_juggling:',
@@ -20753,7 +21490,12 @@ EMOJI_DATA = {
     u'\U0001F939\U0001F3FF\U0000200D\U00002642': { # 🤹🏿‍♂
         'en' : ':man_juggling_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':jongleur_dunkle_hautfarbe:',
+        'es': ':hombre_haciendo_malabares_tono_de_piel_oscuro:',
+        'fr': u':jongleur_peau_foncée:',
+        'pt': ':homem_malabarista_pele_escura:',
+        'it': ':giocoliere_uomo_carnagione_scura:'
     },
     u'\U0001F939\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🤹🏻‍♂️
         'en' : ':man_juggling_light_skin_tone:',
@@ -20768,7 +21510,12 @@ EMOJI_DATA = {
     u'\U0001F939\U0001F3FB\U0000200D\U00002642': { # 🤹🏻‍♂
         'en' : ':man_juggling_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':jongleur_helle_hautfarbe:',
+        'es': ':hombre_haciendo_malabares_tono_de_piel_claro:',
+        'fr': ':jongleur_peau_claire:',
+        'pt': ':homem_malabarista_pele_clara:',
+        'it': ':giocoliere_uomo_carnagione_chiara:'
     },
     u'\U0001F939\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🤹🏾‍♂️
         'en' : ':man_juggling_medium-dark_skin_tone:',
@@ -20783,7 +21530,12 @@ EMOJI_DATA = {
     u'\U0001F939\U0001F3FE\U0000200D\U00002642': { # 🤹🏾‍♂
         'en' : ':man_juggling_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':jongleur_mitteldunkle_hautfarbe:',
+        'es': ':hombre_haciendo_malabares_tono_de_piel_oscuro_medio:',
+        'fr': ':jongleur_peau_mate:',
+        'pt': ':homem_malabarista_pele_morena_escura:',
+        'it': ':giocoliere_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F939\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🤹🏼‍♂️
         'en' : ':man_juggling_medium-light_skin_tone:',
@@ -20798,7 +21550,12 @@ EMOJI_DATA = {
     u'\U0001F939\U0001F3FC\U0000200D\U00002642': { # 🤹🏼‍♂
         'en' : ':man_juggling_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':jongleur_mittelhelle_hautfarbe:',
+        'es': ':hombre_haciendo_malabares_tono_de_piel_claro_medio:',
+        'fr': ':jongleur_peau_moyennement_claire:',
+        'pt': ':homem_malabarista_pele_morena_clara:',
+        'it': ':giocoliere_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F939\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🤹🏽‍♂️
         'en' : ':man_juggling_medium_skin_tone:',
@@ -20813,7 +21570,12 @@ EMOJI_DATA = {
     u'\U0001F939\U0001F3FD\U0000200D\U00002642': { # 🤹🏽‍♂
         'en' : ':man_juggling_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':jongleur_mittlere_hautfarbe:',
+        'es': ':hombre_haciendo_malabares_tono_de_piel_medio:',
+        'fr': u':jongleur_peau_légèrement_mate:',
+        'pt': ':homem_malabarista_pele_morena:',
+        'it': ':giocoliere_uomo_carnagione_olivastra:'
     },
     u'\U0001F9CE\U0000200D\U00002642\U0000FE0F': { # 🧎‍♂️
         'en' : ':man_kneeling:',
@@ -20823,7 +21585,8 @@ EMOJI_DATA = {
         'es': ':hombre_de_rodillas:',
         'fr': u':homme_à_genoux:',
         'pt': ':homem_ajoelhando:',
-        'it': ':uomo_inginocchiato:'
+        'it': ':uomo_inginocchiato:',
+        'fa': u':مرد_زانوزده:'
     },
     u'\U0001F9CE\U0000200D\U00002642': { # 🧎‍♂
         'en' : ':man_kneeling:',
@@ -20849,7 +21612,12 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0001F3FF\U0000200D\U00002642': { # 🧎🏿‍♂
         'en' : ':man_kneeling_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':kniender_mann_dunkle_hautfarbe:',
+        'es': ':hombre_de_rodillas_tono_de_piel_oscuro:',
+        'fr': u':homme_à_genoux_peau_foncée:',
+        'pt': ':homem_ajoelhando_pele_escura:',
+        'it': ':uomo_inginocchiato_carnagione_scura:'
     },
     u'\U0001F9CE\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🧎🏻‍♂️
         'en' : ':man_kneeling_light_skin_tone:',
@@ -20864,7 +21632,12 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0001F3FB\U0000200D\U00002642': { # 🧎🏻‍♂
         'en' : ':man_kneeling_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':kniender_mann_helle_hautfarbe:',
+        'es': ':hombre_de_rodillas_tono_de_piel_claro:',
+        'fr': u':homme_à_genoux_peau_claire:',
+        'pt': ':homem_ajoelhando_pele_clara:',
+        'it': ':uomo_inginocchiato_carnagione_chiara:'
     },
     u'\U0001F9CE\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🧎🏾‍♂️
         'en' : ':man_kneeling_medium-dark_skin_tone:',
@@ -20879,7 +21652,12 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0001F3FE\U0000200D\U00002642': { # 🧎🏾‍♂
         'en' : ':man_kneeling_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':kniender_mann_mitteldunkle_hautfarbe:',
+        'es': ':hombre_de_rodillas_tono_de_piel_oscuro_medio:',
+        'fr': u':homme_à_genoux_peau_mate:',
+        'pt': ':homem_ajoelhando_pele_morena_escura:',
+        'it': ':uomo_inginocchiato_carnagione_abbastanza_scura:'
     },
     u'\U0001F9CE\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🧎🏼‍♂️
         'en' : ':man_kneeling_medium-light_skin_tone:',
@@ -20894,7 +21672,12 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0001F3FC\U0000200D\U00002642': { # 🧎🏼‍♂
         'en' : ':man_kneeling_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':kniender_mann_mittelhelle_hautfarbe:',
+        'es': ':hombre_de_rodillas_tono_de_piel_claro_medio:',
+        'fr': u':homme_à_genoux_peau_moyennement_claire:',
+        'pt': ':homem_ajoelhando_pele_morena_clara:',
+        'it': ':uomo_inginocchiato_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9CE\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🧎🏽‍♂️
         'en' : ':man_kneeling_medium_skin_tone:',
@@ -20909,7 +21692,12 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0001F3FD\U0000200D\U00002642': { # 🧎🏽‍♂
         'en' : ':man_kneeling_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':kniender_mann_mittlere_hautfarbe:',
+        'es': ':hombre_de_rodillas_tono_de_piel_medio:',
+        'fr': u':homme_à_genoux_peau_légèrement_mate:',
+        'pt': ':homem_ajoelhando_pele_morena:',
+        'it': ':uomo_inginocchiato_carnagione_olivastra:'
     },
     u'\U0001F3CB\U0000FE0F\U0000200D\U00002642\U0000FE0F': { # 🏋️‍♂️
         'en' : ':man_lifting_weights:',
@@ -20924,12 +21712,23 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0000200D\U00002642\U0000FE0F': { # 🏋‍♂️
         'en' : ':man_lifting_weights:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheber:',
+        'es': ':hombre_levantando_pesas:',
+        'fr': u':homme_haltérophile:',
+        'pt': ':homem_levantando_peso:',
+        'it': ':uomo_che_solleva_pesi:',
+        'fa': u':وزنه_بردار_مرد:'
     },
     u'\U0001F3CB\U0000FE0F\U0000200D\U00002642': { # 🏋️‍♂
         'en' : ':man_lifting_weights:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheber:',
+        'es': ':hombre_levantando_pesas:',
+        'fr': u':homme_haltérophile:',
+        'pt': ':homem_levantando_peso:',
+        'it': ':uomo_che_solleva_pesi:'
     },
     u'\U0001F3CB\U0000200D\U00002642': { # 🏋‍♂
         'en' : ':man_lifting_weights:',
@@ -20955,7 +21754,12 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0001F3FF\U0000200D\U00002642': { # 🏋🏿‍♂
         'en' : ':man_lifting_weights_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheber_dunkle_hautfarbe:',
+        'es': ':hombre_levantando_pesas_tono_de_piel_oscuro:',
+        'fr': u':homme_haltérophile_peau_foncée:',
+        'pt': ':homem_levantando_peso_pele_escura:',
+        'it': ':uomo_che_solleva_pesi_carnagione_scura:'
     },
     u'\U0001F3CB\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🏋🏻‍♂️
         'en' : ':man_lifting_weights_light_skin_tone:',
@@ -20970,7 +21774,12 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0001F3FB\U0000200D\U00002642': { # 🏋🏻‍♂
         'en' : ':man_lifting_weights_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheber_helle_hautfarbe:',
+        'es': ':hombre_levantando_pesas_tono_de_piel_claro:',
+        'fr': u':homme_haltérophile_peau_claire:',
+        'pt': ':homem_levantando_peso_pele_clara:',
+        'it': ':uomo_che_solleva_pesi_carnagione_chiara:'
     },
     u'\U0001F3CB\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🏋🏾‍♂️
         'en' : ':man_lifting_weights_medium-dark_skin_tone:',
@@ -20985,7 +21794,12 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0001F3FE\U0000200D\U00002642': { # 🏋🏾‍♂
         'en' : ':man_lifting_weights_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheber_mitteldunkle_hautfarbe:',
+        'es': ':hombre_levantando_pesas_tono_de_piel_oscuro_medio:',
+        'fr': u':homme_haltérophile_peau_mate:',
+        'pt': ':homem_levantando_peso_pele_morena_escura:',
+        'it': ':uomo_che_solleva_pesi_carnagione_abbastanza_scura:'
     },
     u'\U0001F3CB\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🏋🏼‍♂️
         'en' : ':man_lifting_weights_medium-light_skin_tone:',
@@ -21000,7 +21814,12 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0001F3FC\U0000200D\U00002642': { # 🏋🏼‍♂
         'en' : ':man_lifting_weights_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheber_mittelhelle_hautfarbe:',
+        'es': ':hombre_levantando_pesas_tono_de_piel_claro_medio:',
+        'fr': u':homme_haltérophile_peau_moyennement_claire:',
+        'pt': ':homem_levantando_peso_pele_morena_clara:',
+        'it': ':uomo_che_solleva_pesi_carnagione_abbastanza_chiara:'
     },
     u'\U0001F3CB\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🏋🏽‍♂️
         'en' : ':man_lifting_weights_medium_skin_tone:',
@@ -21015,7 +21834,12 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0001F3FD\U0000200D\U00002642': { # 🏋🏽‍♂
         'en' : ':man_lifting_weights_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheber_mittlere_hautfarbe:',
+        'es': ':hombre_levantando_pesas_tono_de_piel_medio:',
+        'fr': u':homme_haltérophile_peau_légèrement_mate:',
+        'pt': ':homem_levantando_peso_pele_morena:',
+        'it': ':uomo_che_solleva_pesi_carnagione_olivastra:'
     },
     u'\U0001F468\U0001F3FB': { # 👨🏻
         'en' : ':man_light_skin_tone:',
@@ -21060,7 +21884,12 @@ EMOJI_DATA = {
     u'\U0001F471\U0001F3FB\U0000200D\U00002642': { # 👱🏻‍♂
         'en' : ':man_light_skin_tone_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_helle_hautfarbe,_blond:',
+        'es': ':hombre_rubio_tono_de_piel_claro:',
+        'fr': ':homme_blond_peau_claire:',
+        'pt': ':homem_pele_clara_e_cabelo_loiro:',
+        'it': ':uomo_biondo_carnagione_chiara:'
     },
     u'\U0001F468\U0001F3FB\U0000200D\U0001F9B1': { # 👨🏻‍🦱
         'en' : ':man_light_skin_tone_curly_hair:',
@@ -21100,7 +21929,8 @@ EMOJI_DATA = {
         'es': ':mago:',
         'fr': ':mage_homme:',
         'pt': ':homem_mago:',
-        'it': ':mago_uomo:'
+        'it': ':mago_uomo:',
+        'fa': u':ساحر_مرد:'
     },
     u'\U0001F9D9\U0000200D\U00002642': { # 🧙‍♂
         'en' : ':man_mage:',
@@ -21126,7 +21956,12 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0001F3FF\U0000200D\U00002642': { # 🧙🏿‍♂
         'en' : ':man_mage_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':magier_dunkle_hautfarbe:',
+        'es': ':mago_tono_de_piel_oscuro:',
+        'fr': u':mage_homme_peau_foncée:',
+        'pt': ':homem_mago_pele_escura:',
+        'it': ':mago_uomo_carnagione_scura:'
     },
     u'\U0001F9D9\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🧙🏻‍♂️
         'en' : ':man_mage_light_skin_tone:',
@@ -21141,7 +21976,12 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0001F3FB\U0000200D\U00002642': { # 🧙🏻‍♂
         'en' : ':man_mage_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':magier_helle_hautfarbe:',
+        'es': ':mago_tono_de_piel_claro:',
+        'fr': ':mage_homme_peau_claire:',
+        'pt': ':homem_mago_pele_clara:',
+        'it': ':mago_uomo_carnagione_chiara:'
     },
     u'\U0001F9D9\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🧙🏾‍♂️
         'en' : ':man_mage_medium-dark_skin_tone:',
@@ -21156,7 +21996,12 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0001F3FE\U0000200D\U00002642': { # 🧙🏾‍♂
         'en' : ':man_mage_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':magier_mitteldunkle_hautfarbe:',
+        'es': ':mago_tono_de_piel_oscuro_medio:',
+        'fr': ':mage_homme_peau_mate:',
+        'pt': ':homem_mago_pele_morena_escura:',
+        'it': ':mago_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F9D9\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🧙🏼‍♂️
         'en' : ':man_mage_medium-light_skin_tone:',
@@ -21171,7 +22016,12 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0001F3FC\U0000200D\U00002642': { # 🧙🏼‍♂
         'en' : ':man_mage_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':magier_mittelhelle_hautfarbe:',
+        'es': ':mago_tono_de_piel_claro_medio:',
+        'fr': ':mage_homme_peau_moyennement_claire:',
+        'pt': ':homem_mago_pele_morena_clara:',
+        'it': ':mago_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9D9\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🧙🏽‍♂️
         'en' : ':man_mage_medium_skin_tone:',
@@ -21186,7 +22036,12 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0001F3FD\U0000200D\U00002642': { # 🧙🏽‍♂
         'en' : ':man_mage_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':magier_mittlere_hautfarbe:',
+        'es': ':mago_tono_de_piel_medio:',
+        'fr': u':mage_homme_peau_légèrement_mate:',
+        'pt': ':homem_mago_pele_morena:',
+        'it': ':mago_uomo_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F527': { # 👨‍🔧
         'en' : ':man_mechanic:',
@@ -21292,7 +22147,12 @@ EMOJI_DATA = {
     u'\U0001F471\U0001F3FE\U0000200D\U00002642': { # 👱🏾‍♂
         'en' : ':man_medium-dark_skin_tone_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mitteldunkle_hautfarbe,_blond:',
+        'es': ':hombre_rubio_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_blond_peau_mate:',
+        'pt': ':homem_pele_morena_escura_e_cabelo_loiro:',
+        'it': ':uomo_biondo_carnagione_abbastanza_scura:'
     },
     u'\U0001F468\U0001F3FE\U0000200D\U0001F9B1': { # 👨🏾‍🦱
         'en' : ':man_medium-dark_skin_tone_curly_hair:',
@@ -21367,7 +22227,12 @@ EMOJI_DATA = {
     u'\U0001F471\U0001F3FC\U0000200D\U00002642': { # 👱🏼‍♂
         'en' : ':man_medium-light_skin_tone_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mittelhelle_hautfarbe,_blond:',
+        'es': ':hombre_rubio_tono_de_piel_claro_medio:',
+        'fr': ':homme_blond_peau_moyennement_claire:',
+        'pt': ':homem_pele_morena_clara_e_cabelo_loiro:',
+        'it': ':uomo_biondo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F468\U0001F3FC\U0000200D\U0001F9B1': { # 👨🏼‍🦱
         'en' : ':man_medium-light_skin_tone_curly_hair:',
@@ -21442,7 +22307,12 @@ EMOJI_DATA = {
     u'\U0001F471\U0001F3FD\U0000200D\U00002642': { # 👱🏽‍♂
         'en' : ':man_medium_skin_tone_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mittlere_hautfarbe,_blond:',
+        'es': ':hombre_rubio_tono_de_piel_medio:',
+        'fr': u':homme_blond_peau_légèrement_mate:',
+        'pt': ':homem_pele_morena_e_cabelo_loiro:',
+        'it': ':uomo_biondo_carnagione_olivastra:'
     },
     u'\U0001F468\U0001F3FD\U0000200D\U0001F9B1': { # 👨🏽‍🦱
         'en' : ':man_medium_skin_tone_curly_hair:',
@@ -21482,7 +22352,8 @@ EMOJI_DATA = {
         'es': u':hombre_en_bicicleta_de_montaña:',
         'fr': ':homme_en_vtt:',
         'pt': ':homem_fazendo_mountain_bike:',
-        'it': ':ciclista_uomo_di_mountain_bike:'
+        'it': ':ciclista_uomo_di_mountain_bike:',
+        'fa': u':مرد_و_دوچرخه_سواری_کوهستان:'
     },
     u'\U0001F6B5\U0000200D\U00002642': { # 🚵‍♂
         'en' : ':man_mountain_biking:',
@@ -21508,7 +22379,12 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0001F3FF\U0000200D\U00002642': { # 🚵🏿‍♂
         'en' : ':man_mountain_biking_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mountainbiker_dunkle_hautfarbe:',
+        'es': u':hombre_en_bicicleta_de_montaña_tono_de_piel_oscuro:',
+        'fr': u':homme_en_vtt_peau_foncée:',
+        'pt': ':homem_fazendo_mountain_bike_pele_escura:',
+        'it': ':ciclista_uomo_di_mountain_bike_carnagione_scura:'
     },
     u'\U0001F6B5\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🚵🏻‍♂️
         'en' : ':man_mountain_biking_light_skin_tone:',
@@ -21523,7 +22399,12 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0001F3FB\U0000200D\U00002642': { # 🚵🏻‍♂
         'en' : ':man_mountain_biking_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mountainbiker_helle_hautfarbe:',
+        'es': u':hombre_en_bicicleta_de_montaña_tono_de_piel_claro:',
+        'fr': ':homme_en_vtt_peau_claire:',
+        'pt': ':homem_fazendo_mountain_bike_pele_clara:',
+        'it': ':ciclista_uomo_di_mountain_bike_carnagione_chiara:'
     },
     u'\U0001F6B5\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🚵🏾‍♂️
         'en' : ':man_mountain_biking_medium-dark_skin_tone:',
@@ -21538,7 +22419,12 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0001F3FE\U0000200D\U00002642': { # 🚵🏾‍♂
         'en' : ':man_mountain_biking_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mountainbiker_mitteldunkle_hautfarbe:',
+        'es': u':hombre_en_bicicleta_de_montaña_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_en_vtt_peau_mate:',
+        'pt': ':homem_fazendo_mountain_bike_pele_morena_escura:',
+        'it': ':ciclista_uomo_di_mountain_bike_carnagione_abbastanza_scura:'
     },
     u'\U0001F6B5\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🚵🏼‍♂️
         'en' : ':man_mountain_biking_medium-light_skin_tone:',
@@ -21553,7 +22439,12 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0001F3FC\U0000200D\U00002642': { # 🚵🏼‍♂
         'en' : ':man_mountain_biking_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mountainbiker_mittelhelle_hautfarbe:',
+        'es': u':hombre_en_bicicleta_de_montaña_tono_de_piel_claro_medio:',
+        'fr': ':homme_en_vtt_peau_moyennement_claire:',
+        'pt': ':homem_fazendo_mountain_bike_pele_morena_clara:',
+        'it': ':ciclista_uomo_di_mountain_bike_carnagione_abbastanza_chiara:'
     },
     u'\U0001F6B5\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🚵🏽‍♂️
         'en' : ':man_mountain_biking_medium_skin_tone:',
@@ -21568,7 +22459,12 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0001F3FD\U0000200D\U00002642': { # 🚵🏽‍♂
         'en' : ':man_mountain_biking_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mountainbiker_mittlere_hautfarbe:',
+        'es': u':hombre_en_bicicleta_de_montaña_tono_de_piel_medio:',
+        'fr': u':homme_en_vtt_peau_légèrement_mate:',
+        'pt': ':homem_fazendo_mountain_bike_pele_morena:',
+        'it': ':ciclista_uomo_di_mountain_bike_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F4BC': { # 👨‍💼
         'en' : ':man_office_worker:',
@@ -21639,7 +22535,8 @@ EMOJI_DATA = {
         'es': ':piloto_hombre:',
         'fr': ':pilote_homme:',
         'pt': u':piloto_de_avião_homem:',
-        'it': ':pilota_uomo:'
+        'it': ':pilota_uomo:',
+        'fa': u':خلبان_مرد:'
     },
     u'\U0001F468\U0000200D\U00002708': { # 👨‍✈
         'en' : ':man_pilot:',
@@ -21665,7 +22562,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FF\U0000200D\U00002708': { # 👨🏿‍✈
         'en' : ':man_pilot_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':pilot_dunkle_hautfarbe:',
+        'es': ':piloto_hombre_tono_de_piel_oscuro:',
+        'fr': u':pilote_homme_peau_foncée:',
+        'pt': u':piloto_de_avião_homem_pele_escura:',
+        'it': ':pilota_uomo_carnagione_scura:'
     },
     u'\U0001F468\U0001F3FB\U0000200D\U00002708\U0000FE0F': { # 👨🏻‍✈️
         'en' : ':man_pilot_light_skin_tone:',
@@ -21680,7 +22582,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FB\U0000200D\U00002708': { # 👨🏻‍✈
         'en' : ':man_pilot_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':pilot_helle_hautfarbe:',
+        'es': ':piloto_hombre_tono_de_piel_claro:',
+        'fr': ':pilote_homme_peau_claire:',
+        'pt': u':piloto_de_avião_homem_pele_clara:',
+        'it': ':pilota_uomo_carnagione_chiara:'
     },
     u'\U0001F468\U0001F3FE\U0000200D\U00002708\U0000FE0F': { # 👨🏾‍✈️
         'en' : ':man_pilot_medium-dark_skin_tone:',
@@ -21695,7 +22602,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FE\U0000200D\U00002708': { # 👨🏾‍✈
         'en' : ':man_pilot_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':pilot_mitteldunkle_hautfarbe:',
+        'es': ':piloto_hombre_tono_de_piel_oscuro_medio:',
+        'fr': ':pilote_homme_peau_mate:',
+        'pt': u':piloto_de_avião_homem_pele_morena_escura:',
+        'it': ':pilota_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F468\U0001F3FC\U0000200D\U00002708\U0000FE0F': { # 👨🏼‍✈️
         'en' : ':man_pilot_medium-light_skin_tone:',
@@ -21710,7 +22622,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FC\U0000200D\U00002708': { # 👨🏼‍✈
         'en' : ':man_pilot_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':pilot_mittelhelle_hautfarbe:',
+        'es': ':piloto_hombre_tono_de_piel_claro_medio:',
+        'fr': ':pilote_homme_peau_moyennement_claire:',
+        'pt': u':piloto_de_avião_homem_pele_morena_clara:',
+        'it': ':pilota_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F468\U0001F3FD\U0000200D\U00002708\U0000FE0F': { # 👨🏽‍✈️
         'en' : ':man_pilot_medium_skin_tone:',
@@ -21725,7 +22642,12 @@ EMOJI_DATA = {
     u'\U0001F468\U0001F3FD\U0000200D\U00002708': { # 👨🏽‍✈
         'en' : ':man_pilot_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':pilot_mittlere_hautfarbe:',
+        'es': ':piloto_hombre_tono_de_piel_medio:',
+        'fr': u':pilote_homme_peau_légèrement_mate:',
+        'pt': u':piloto_de_avião_homem_pele_morena:',
+        'it': ':pilota_uomo_carnagione_olivastra:'
     },
     u'\U0001F93E\U0000200D\U00002642\U0000FE0F': { # 🤾‍♂️
         'en' : ':man_playing_handball:',
@@ -21735,7 +22657,8 @@ EMOJI_DATA = {
         'es': ':hombre_jugando_al_balonmano:',
         'fr': ':handballeur:',
         'pt': ':jogador_de_handebol:',
-        'it': ':pallamanista_uomo:'
+        'it': ':pallamanista_uomo:',
+        'fa': u':هندبالیست_مرد:'
     },
     u'\U0001F93E\U0000200D\U00002642': { # 🤾‍♂
         'en' : ':man_playing_handball:',
@@ -21761,7 +22684,12 @@ EMOJI_DATA = {
     u'\U0001F93E\U0001F3FF\U0000200D\U00002642': { # 🤾🏿‍♂
         'en' : ':man_playing_handball_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':handballspieler_dunkle_hautfarbe:',
+        'es': ':hombre_jugando_al_balonmano_tono_de_piel_oscuro:',
+        'fr': u':handballeur_peau_foncée:',
+        'pt': ':jogador_de_handebol_pele_escura:',
+        'it': ':pallamanista_uomo_carnagione_scura:'
     },
     u'\U0001F93E\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🤾🏻‍♂️
         'en' : ':man_playing_handball_light_skin_tone:',
@@ -21776,7 +22704,12 @@ EMOJI_DATA = {
     u'\U0001F93E\U0001F3FB\U0000200D\U00002642': { # 🤾🏻‍♂
         'en' : ':man_playing_handball_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':handballspieler_helle_hautfarbe:',
+        'es': ':hombre_jugando_al_balonmano_tono_de_piel_claro:',
+        'fr': ':handballeur_peau_claire:',
+        'pt': ':jogador_de_handebol_pele_clara:',
+        'it': ':pallamanista_uomo_carnagione_chiara:'
     },
     u'\U0001F93E\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🤾🏾‍♂️
         'en' : ':man_playing_handball_medium-dark_skin_tone:',
@@ -21791,7 +22724,12 @@ EMOJI_DATA = {
     u'\U0001F93E\U0001F3FE\U0000200D\U00002642': { # 🤾🏾‍♂
         'en' : ':man_playing_handball_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':handballspieler_mitteldunkle_hautfarbe:',
+        'es': ':hombre_jugando_al_balonmano_tono_de_piel_oscuro_medio:',
+        'fr': ':handballeur_peau_mate:',
+        'pt': ':jogador_de_handebol_pele_morena_escura:',
+        'it': ':pallamanista_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F93E\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🤾🏼‍♂️
         'en' : ':man_playing_handball_medium-light_skin_tone:',
@@ -21806,7 +22744,12 @@ EMOJI_DATA = {
     u'\U0001F93E\U0001F3FC\U0000200D\U00002642': { # 🤾🏼‍♂
         'en' : ':man_playing_handball_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':handballspieler_mittelhelle_hautfarbe:',
+        'es': ':hombre_jugando_al_balonmano_tono_de_piel_claro_medio:',
+        'fr': ':handballeur_peau_moyennement_claire:',
+        'pt': ':jogador_de_handebol_pele_morena_clara:',
+        'it': ':pallamanista_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F93E\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🤾🏽‍♂️
         'en' : ':man_playing_handball_medium_skin_tone:',
@@ -21821,7 +22764,12 @@ EMOJI_DATA = {
     u'\U0001F93E\U0001F3FD\U0000200D\U00002642': { # 🤾🏽‍♂
         'en' : ':man_playing_handball_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':handballspieler_mittlere_hautfarbe:',
+        'es': ':hombre_jugando_al_balonmano_tono_de_piel_medio:',
+        'fr': u':handballeur_peau_légèrement_mate:',
+        'pt': ':jogador_de_handebol_pele_morena:',
+        'it': ':pallamanista_uomo_carnagione_olivastra:'
     },
     u'\U0001F93D\U0000200D\U00002642\U0000FE0F': { # 🤽‍♂️
         'en' : ':man_playing_water_polo:',
@@ -21831,7 +22779,8 @@ EMOJI_DATA = {
         'es': ':hombre_jugando_al_waterpolo:',
         'fr': ':joueur_de_water-polo:',
         'pt': u':homem_jogando_polo_aquático:',
-        'it': ':pallanuotista_uomo:'
+        'it': ':pallanuotista_uomo:',
+        'fa': u':واترپلو_مردان:'
     },
     u'\U0001F93D\U0000200D\U00002642': { # 🤽‍♂
         'en' : ':man_playing_water_polo:',
@@ -21857,7 +22806,12 @@ EMOJI_DATA = {
     u'\U0001F93D\U0001F3FF\U0000200D\U00002642': { # 🤽🏿‍♂
         'en' : ':man_playing_water_polo_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wasserballspieler_dunkle_hautfarbe:',
+        'es': ':hombre_jugando_al_waterpolo_tono_de_piel_oscuro:',
+        'fr': u':joueur_de_water-polo_peau_foncée:',
+        'pt': u':homem_jogando_polo_aquático_pele_escura:',
+        'it': ':pallanuotista_uomo_carnagione_scura:'
     },
     u'\U0001F93D\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🤽🏻‍♂️
         'en' : ':man_playing_water_polo_light_skin_tone:',
@@ -21872,7 +22826,12 @@ EMOJI_DATA = {
     u'\U0001F93D\U0001F3FB\U0000200D\U00002642': { # 🤽🏻‍♂
         'en' : ':man_playing_water_polo_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wasserballspieler_helle_hautfarbe:',
+        'es': ':hombre_jugando_al_waterpolo_tono_de_piel_claro:',
+        'fr': ':joueur_de_water-polo_peau_claire:',
+        'pt': u':homem_jogando_polo_aquático_pele_clara:',
+        'it': ':pallanuotista_uomo_carnagione_chiara:'
     },
     u'\U0001F93D\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🤽🏾‍♂️
         'en' : ':man_playing_water_polo_medium-dark_skin_tone:',
@@ -21887,7 +22846,12 @@ EMOJI_DATA = {
     u'\U0001F93D\U0001F3FE\U0000200D\U00002642': { # 🤽🏾‍♂
         'en' : ':man_playing_water_polo_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wasserballspieler_mitteldunkle_hautfarbe:',
+        'es': ':hombre_jugando_al_waterpolo_tono_de_piel_oscuro_medio:',
+        'fr': ':joueur_de_water-polo_peau_mate:',
+        'pt': u':homem_jogando_polo_aquático_pele_morena_escura:',
+        'it': ':pallanuotista_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F93D\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🤽🏼‍♂️
         'en' : ':man_playing_water_polo_medium-light_skin_tone:',
@@ -21902,7 +22866,12 @@ EMOJI_DATA = {
     u'\U0001F93D\U0001F3FC\U0000200D\U00002642': { # 🤽🏼‍♂
         'en' : ':man_playing_water_polo_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wasserballspieler_mittelhelle_hautfarbe:',
+        'es': ':hombre_jugando_al_waterpolo_tono_de_piel_claro_medio:',
+        'fr': ':joueur_de_water-polo_peau_moyennement_claire:',
+        'pt': u':homem_jogando_polo_aquático_pele_morena_clara:',
+        'it': ':pallanuotista_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F93D\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🤽🏽‍♂️
         'en' : ':man_playing_water_polo_medium_skin_tone:',
@@ -21917,7 +22886,12 @@ EMOJI_DATA = {
     u'\U0001F93D\U0001F3FD\U0000200D\U00002642': { # 🤽🏽‍♂
         'en' : ':man_playing_water_polo_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wasserballspieler_mittlere_hautfarbe:',
+        'es': ':hombre_jugando_al_waterpolo_tono_de_piel_medio:',
+        'fr': u':joueur_de_water-polo_peau_légèrement_mate:',
+        'pt': u':homem_jogando_polo_aquático_pele_morena:',
+        'it': ':pallanuotista_uomo_carnagione_olivastra:'
     },
     u'\U0001F46E\U0000200D\U00002642\U0000FE0F': { # 👮‍♂️
         'en' : ':man_police_officer:',
@@ -21927,7 +22901,8 @@ EMOJI_DATA = {
         'es': u':agente_de_policía_hombre:',
         'fr': ':policier:',
         'pt': ':policial_homem:',
-        'it': ':poliziotto_uomo:'
+        'it': ':poliziotto_uomo:',
+        'fa': u':پلیس_مرد:'
     },
     u'\U0001F46E\U0000200D\U00002642': { # 👮‍♂
         'en' : ':man_police_officer:',
@@ -21953,7 +22928,12 @@ EMOJI_DATA = {
     u'\U0001F46E\U0001F3FF\U0000200D\U00002642': { # 👮🏿‍♂
         'en' : ':man_police_officer_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':polizist_dunkle_hautfarbe:',
+        'es': u':agente_de_policía_hombre_tono_de_piel_oscuro:',
+        'fr': u':policier_peau_foncée:',
+        'pt': ':policial_homem_pele_escura:',
+        'it': ':poliziotto_uomo_carnagione_scura:'
     },
     u'\U0001F46E\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 👮🏻‍♂️
         'en' : ':man_police_officer_light_skin_tone:',
@@ -21968,7 +22948,12 @@ EMOJI_DATA = {
     u'\U0001F46E\U0001F3FB\U0000200D\U00002642': { # 👮🏻‍♂
         'en' : ':man_police_officer_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':polizist_helle_hautfarbe:',
+        'es': u':agente_de_policía_hombre_tono_de_piel_claro:',
+        'fr': ':policier_peau_claire:',
+        'pt': ':policial_homem_pele_clara:',
+        'it': ':poliziotto_uomo_carnagione_chiara:'
     },
     u'\U0001F46E\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 👮🏾‍♂️
         'en' : ':man_police_officer_medium-dark_skin_tone:',
@@ -21983,7 +22968,12 @@ EMOJI_DATA = {
     u'\U0001F46E\U0001F3FE\U0000200D\U00002642': { # 👮🏾‍♂
         'en' : ':man_police_officer_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':polizist_mitteldunkle_hautfarbe:',
+        'es': u':agente_de_policía_hombre_tono_de_piel_oscuro_medio:',
+        'fr': ':policier_peau_mate:',
+        'pt': ':policial_homem_pele_morena_escura:',
+        'it': ':poliziotto_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F46E\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 👮🏼‍♂️
         'en' : ':man_police_officer_medium-light_skin_tone:',
@@ -21998,7 +22988,12 @@ EMOJI_DATA = {
     u'\U0001F46E\U0001F3FC\U0000200D\U00002642': { # 👮🏼‍♂
         'en' : ':man_police_officer_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':polizist_mittelhelle_hautfarbe:',
+        'es': u':agente_de_policía_hombre_tono_de_piel_claro_medio:',
+        'fr': ':policier_peau_moyennement_claire:',
+        'pt': ':policial_homem_pele_morena_clara:',
+        'it': ':poliziotto_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F46E\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 👮🏽‍♂️
         'en' : ':man_police_officer_medium_skin_tone:',
@@ -22013,7 +23008,12 @@ EMOJI_DATA = {
     u'\U0001F46E\U0001F3FD\U0000200D\U00002642': { # 👮🏽‍♂
         'en' : ':man_police_officer_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':polizist_mittlere_hautfarbe:',
+        'es': u':agente_de_policía_hombre_tono_de_piel_medio:',
+        'fr': u':policier_peau_légèrement_mate:',
+        'pt': ':policial_homem_pele_morena:',
+        'it': ':poliziotto_uomo_carnagione_olivastra:'
     },
     u'\U0001F64E\U0000200D\U00002642\U0000FE0F': { # 🙎‍♂️
         'en' : ':man_pouting:',
@@ -22023,7 +23023,8 @@ EMOJI_DATA = {
         'es': ':hombre_haciendo_pucheros:',
         'fr': ':homme_qui_boude:',
         'pt': ':homem_fazendo_bico:',
-        'it': ':uomo_imbronciato:'
+        'it': ':uomo_imbronciato:',
+        'fa': u':مرد_اخم_وتخم_می_کند:'
     },
     u'\U0001F64E\U0000200D\U00002642': { # 🙎‍♂
         'en' : ':man_pouting:',
@@ -22049,7 +23050,12 @@ EMOJI_DATA = {
     u'\U0001F64E\U0001F3FF\U0000200D\U00002642': { # 🙎🏿‍♂
         'en' : ':man_pouting_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schmollender_mann_dunkle_hautfarbe:',
+        'es': ':hombre_haciendo_pucheros_tono_de_piel_oscuro:',
+        'fr': u':homme_qui_boude_peau_foncée:',
+        'pt': ':homem_fazendo_bico_pele_escura:',
+        'it': ':uomo_imbronciato_carnagione_scura:'
     },
     u'\U0001F64E\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🙎🏻‍♂️
         'en' : ':man_pouting_light_skin_tone:',
@@ -22064,7 +23070,12 @@ EMOJI_DATA = {
     u'\U0001F64E\U0001F3FB\U0000200D\U00002642': { # 🙎🏻‍♂
         'en' : ':man_pouting_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schmollender_mann_helle_hautfarbe:',
+        'es': ':hombre_haciendo_pucheros_tono_de_piel_claro:',
+        'fr': ':homme_qui_boude_peau_claire:',
+        'pt': ':homem_fazendo_bico_pele_clara:',
+        'it': ':uomo_imbronciato_carnagione_chiara:'
     },
     u'\U0001F64E\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🙎🏾‍♂️
         'en' : ':man_pouting_medium-dark_skin_tone:',
@@ -22079,7 +23090,12 @@ EMOJI_DATA = {
     u'\U0001F64E\U0001F3FE\U0000200D\U00002642': { # 🙎🏾‍♂
         'en' : ':man_pouting_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schmollender_mann_mitteldunkle_hautfarbe:',
+        'es': ':hombre_haciendo_pucheros_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_qui_boude_peau_mate:',
+        'pt': ':homem_fazendo_bico_pele_morena_escura:',
+        'it': ':uomo_imbronciato_carnagione_abbastanza_scura:'
     },
     u'\U0001F64E\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🙎🏼‍♂️
         'en' : ':man_pouting_medium-light_skin_tone:',
@@ -22094,7 +23110,12 @@ EMOJI_DATA = {
     u'\U0001F64E\U0001F3FC\U0000200D\U00002642': { # 🙎🏼‍♂
         'en' : ':man_pouting_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schmollender_mann_mittelhelle_hautfarbe:',
+        'es': ':hombre_haciendo_pucheros_tono_de_piel_claro_medio:',
+        'fr': ':homme_qui_boude_peau_moyennement_claire:',
+        'pt': ':homem_fazendo_bico_pele_morena_clara:',
+        'it': ':uomo_imbronciato_carnagione_abbastanza_chiara:'
     },
     u'\U0001F64E\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🙎🏽‍♂️
         'en' : ':man_pouting_medium_skin_tone:',
@@ -22109,7 +23130,12 @@ EMOJI_DATA = {
     u'\U0001F64E\U0001F3FD\U0000200D\U00002642': { # 🙎🏽‍♂
         'en' : ':man_pouting_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schmollender_mann_mittlere_hautfarbe:',
+        'es': ':hombre_haciendo_pucheros_tono_de_piel_medio:',
+        'fr': u':homme_qui_boude_peau_légèrement_mate:',
+        'pt': ':homem_fazendo_bico_pele_morena:',
+        'it': ':uomo_imbronciato_carnagione_olivastra:'
     },
     u'\U0001F64B\U0000200D\U00002642\U0000FE0F': { # 🙋‍♂️
         'en' : ':man_raising_hand:',
@@ -22119,7 +23145,8 @@ EMOJI_DATA = {
         'es': ':hombre_con_la_mano_levantada:',
         'fr': u':homme_qui_lève_la_main:',
         'pt': u':homem_levantando_a_mão:',
-        'it': ':uomo_con_mano_alzata:'
+        'it': ':uomo_con_mano_alzata:',
+        'fa': u':مرد_دستش_را_بالا_می_برد:'
     },
     u'\U0001F64B\U0000200D\U00002642': { # 🙋‍♂
         'en' : ':man_raising_hand:',
@@ -22145,7 +23172,12 @@ EMOJI_DATA = {
     u'\U0001F64B\U0001F3FF\U0000200D\U00002642': { # 🙋🏿‍♂
         'en' : ':man_raising_hand_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_erhobenem_arm_dunkle_hautfarbe:',
+        'es': ':hombre_con_la_mano_levantada_tono_de_piel_oscuro:',
+        'fr': u':homme_qui_lève_la_main_peau_foncée:',
+        'pt': u':homem_levantando_a_mão_pele_escura:',
+        'it': ':uomo_con_mano_alzata_carnagione_scura:'
     },
     u'\U0001F64B\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🙋🏻‍♂️
         'en' : ':man_raising_hand_light_skin_tone:',
@@ -22160,7 +23192,12 @@ EMOJI_DATA = {
     u'\U0001F64B\U0001F3FB\U0000200D\U00002642': { # 🙋🏻‍♂
         'en' : ':man_raising_hand_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_erhobenem_arm_helle_hautfarbe:',
+        'es': ':hombre_con_la_mano_levantada_tono_de_piel_claro:',
+        'fr': u':homme_qui_lève_la_main_peau_claire:',
+        'pt': u':homem_levantando_a_mão_pele_clara:',
+        'it': ':uomo_con_mano_alzata_carnagione_chiara:'
     },
     u'\U0001F64B\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🙋🏾‍♂️
         'en' : ':man_raising_hand_medium-dark_skin_tone:',
@@ -22175,7 +23212,12 @@ EMOJI_DATA = {
     u'\U0001F64B\U0001F3FE\U0000200D\U00002642': { # 🙋🏾‍♂
         'en' : ':man_raising_hand_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_erhobenem_arm_mitteldunkle_hautfarbe:',
+        'es': ':hombre_con_la_mano_levantada_tono_de_piel_oscuro_medio:',
+        'fr': u':homme_qui_lève_la_main_peau_mate:',
+        'pt': u':homem_levantando_a_mão_pele_morena_escura:',
+        'it': ':uomo_con_mano_alzata_carnagione_abbastanza_scura:'
     },
     u'\U0001F64B\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🙋🏼‍♂️
         'en' : ':man_raising_hand_medium-light_skin_tone:',
@@ -22190,7 +23232,12 @@ EMOJI_DATA = {
     u'\U0001F64B\U0001F3FC\U0000200D\U00002642': { # 🙋🏼‍♂
         'en' : ':man_raising_hand_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_erhobenem_arm_mittelhelle_hautfarbe:',
+        'es': ':hombre_con_la_mano_levantada_tono_de_piel_claro_medio:',
+        'fr': u':homme_qui_lève_la_main_peau_moyennement_claire:',
+        'pt': u':homem_levantando_a_mão_pele_morena_clara:',
+        'it': ':uomo_con_mano_alzata_carnagione_abbastanza_chiara:'
     },
     u'\U0001F64B\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🙋🏽‍♂️
         'en' : ':man_raising_hand_medium_skin_tone:',
@@ -22205,7 +23252,12 @@ EMOJI_DATA = {
     u'\U0001F64B\U0001F3FD\U0000200D\U00002642': { # 🙋🏽‍♂
         'en' : ':man_raising_hand_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_erhobenem_arm_mittlere_hautfarbe:',
+        'es': ':hombre_con_la_mano_levantada_tono_de_piel_medio:',
+        'fr': u':homme_qui_lève_la_main_peau_légèrement_mate:',
+        'pt': u':homem_levantando_a_mão_pele_morena:',
+        'it': ':uomo_con_mano_alzata_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F9B0': { # 👨‍🦰
         'en' : ':man_red_hair:',
@@ -22225,7 +23277,8 @@ EMOJI_DATA = {
         'es': ':hombre_remando_en_un_bote:',
         'fr': ':rameur_dans_une_barque:',
         'pt': ':homem_remando:',
-        'it': ':uomo_in_barca_a_remi:'
+        'it': ':uomo_in_barca_a_remi:',
+        'fa': u':پاروزن_مرد:'
     },
     u'\U0001F6A3\U0000200D\U00002642': { # 🚣‍♂
         'en' : ':man_rowing_boat:',
@@ -22251,7 +23304,12 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0001F3FF\U0000200D\U00002642': { # 🚣🏿‍♂
         'en' : ':man_rowing_boat_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_im_ruderboot_dunkle_hautfarbe:',
+        'es': ':hombre_remando_en_un_bote_tono_de_piel_oscuro:',
+        'fr': u':rameur_dans_une_barque_peau_foncée:',
+        'pt': ':homem_remando_pele_escura:',
+        'it': ':uomo_in_barca_a_remi_carnagione_scura:'
     },
     u'\U0001F6A3\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🚣🏻‍♂️
         'en' : ':man_rowing_boat_light_skin_tone:',
@@ -22266,7 +23324,12 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0001F3FB\U0000200D\U00002642': { # 🚣🏻‍♂
         'en' : ':man_rowing_boat_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_im_ruderboot_helle_hautfarbe:',
+        'es': ':hombre_remando_en_un_bote_tono_de_piel_claro:',
+        'fr': ':rameur_dans_une_barque_peau_claire:',
+        'pt': ':homem_remando_pele_clara:',
+        'it': ':uomo_in_barca_a_remi_carnagione_chiara:'
     },
     u'\U0001F6A3\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🚣🏾‍♂️
         'en' : ':man_rowing_boat_medium-dark_skin_tone:',
@@ -22281,7 +23344,12 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0001F3FE\U0000200D\U00002642': { # 🚣🏾‍♂
         'en' : ':man_rowing_boat_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_im_ruderboot_mitteldunkle_hautfarbe:',
+        'es': ':hombre_remando_en_un_bote_tono_de_piel_oscuro_medio:',
+        'fr': ':rameur_dans_une_barque_peau_mate:',
+        'pt': ':homem_remando_pele_morena_escura:',
+        'it': ':uomo_in_barca_a_remi_carnagione_abbastanza_scura:'
     },
     u'\U0001F6A3\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🚣🏼‍♂️
         'en' : ':man_rowing_boat_medium-light_skin_tone:',
@@ -22296,7 +23364,12 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0001F3FC\U0000200D\U00002642': { # 🚣🏼‍♂
         'en' : ':man_rowing_boat_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_im_ruderboot_mittelhelle_hautfarbe:',
+        'es': ':hombre_remando_en_un_bote_tono_de_piel_claro_medio:',
+        'fr': ':rameur_dans_une_barque_peau_moyennement_claire:',
+        'pt': ':homem_remando_pele_morena_clara:',
+        'it': ':uomo_in_barca_a_remi_carnagione_abbastanza_chiara:'
     },
     u'\U0001F6A3\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🚣🏽‍♂️
         'en' : ':man_rowing_boat_medium_skin_tone:',
@@ -22311,7 +23384,12 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0001F3FD\U0000200D\U00002642': { # 🚣🏽‍♂
         'en' : ':man_rowing_boat_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_im_ruderboot_mittlere_hautfarbe:',
+        'es': ':hombre_remando_en_un_bote_tono_de_piel_medio:',
+        'fr': u':rameur_dans_une_barque_peau_légèrement_mate:',
+        'pt': ':homem_remando_pele_morena:',
+        'it': ':uomo_in_barca_a_remi_carnagione_olivastra:'
     },
     u'\U0001F3C3\U0000200D\U00002642\U0000FE0F': { # 🏃‍♂️
         'en' : ':man_running:',
@@ -22321,7 +23399,8 @@ EMOJI_DATA = {
         'es': ':hombre_corriendo:',
         'fr': ':homme_qui_court:',
         'pt': ':homem_correndo:',
-        'it': ':uomo_che_corre:'
+        'it': ':uomo_che_corre:',
+        'fa': u':مرد_دونده:'
     },
     u'\U0001F3C3\U0000200D\U00002642': { # 🏃‍♂
         'en' : ':man_running:',
@@ -22347,7 +23426,12 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0001F3FF\U0000200D\U00002642': { # 🏃🏿‍♂
         'en' : ':man_running_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':laufender_mann_dunkle_hautfarbe:',
+        'es': ':hombre_corriendo_tono_de_piel_oscuro:',
+        'fr': u':homme_qui_court_peau_foncée:',
+        'pt': ':homem_correndo_pele_escura:',
+        'it': ':uomo_che_corre_carnagione_scura:'
     },
     u'\U0001F3C3\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🏃🏻‍♂️
         'en' : ':man_running_light_skin_tone:',
@@ -22362,7 +23446,12 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0001F3FB\U0000200D\U00002642': { # 🏃🏻‍♂
         'en' : ':man_running_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':laufender_mann_helle_hautfarbe:',
+        'es': ':hombre_corriendo_tono_de_piel_claro:',
+        'fr': ':homme_qui_court_peau_claire:',
+        'pt': ':homem_correndo_pele_clara:',
+        'it': ':uomo_che_corre_carnagione_chiara:'
     },
     u'\U0001F3C3\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🏃🏾‍♂️
         'en' : ':man_running_medium-dark_skin_tone:',
@@ -22377,7 +23466,12 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0001F3FE\U0000200D\U00002642': { # 🏃🏾‍♂
         'en' : ':man_running_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':laufender_mann_mitteldunkle_hautfarbe:',
+        'es': ':hombre_corriendo_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_qui_court_peau_mate:',
+        'pt': ':homem_correndo_pele_morena_escura:',
+        'it': ':uomo_che_corre_carnagione_abbastanza_scura:'
     },
     u'\U0001F3C3\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🏃🏼‍♂️
         'en' : ':man_running_medium-light_skin_tone:',
@@ -22392,7 +23486,12 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0001F3FC\U0000200D\U00002642': { # 🏃🏼‍♂
         'en' : ':man_running_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':laufender_mann_mittelhelle_hautfarbe:',
+        'es': ':hombre_corriendo_tono_de_piel_claro_medio:',
+        'fr': ':homme_qui_court_peau_moyennement_claire:',
+        'pt': ':homem_correndo_pele_morena_clara:',
+        'it': ':uomo_che_corre_carnagione_abbastanza_chiara:'
     },
     u'\U0001F3C3\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🏃🏽‍♂️
         'en' : ':man_running_medium_skin_tone:',
@@ -22407,7 +23506,12 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0001F3FD\U0000200D\U00002642': { # 🏃🏽‍♂
         'en' : ':man_running_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':laufender_mann_mittlere_hautfarbe:',
+        'es': ':hombre_corriendo_tono_de_piel_medio:',
+        'fr': u':homme_qui_court_peau_légèrement_mate:',
+        'pt': ':homem_correndo_pele_morena:',
+        'it': ':uomo_che_corre_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F52C': { # 👨‍🔬
         'en' : ':man_scientist:',
@@ -22478,7 +23582,8 @@ EMOJI_DATA = {
         'es': ':hombre_encogido_de_hombros:',
         'fr': u':homme_qui_hausse_les_épaules:',
         'pt': ':homem_dando_de_ombros:',
-        'it': ':uomo_che_scrolla_le_spalle:'
+        'it': ':uomo_che_scrolla_le_spalle:',
+        'fa': u':مرد_شانه_بالا_می_اندازد:'
     },
     u'\U0001F937\U0000200D\U00002642': { # 🤷‍♂
         'en' : ':man_shrugging:',
@@ -22504,7 +23609,12 @@ EMOJI_DATA = {
     u'\U0001F937\U0001F3FF\U0000200D\U00002642': { # 🤷🏿‍♂
         'en' : ':man_shrugging_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schulterzuckender_mann_dunkle_hautfarbe:',
+        'es': ':hombre_encogido_de_hombros_tono_de_piel_oscuro:',
+        'fr': u':homme_qui_hausse_les_épaules_peau_foncée:',
+        'pt': ':homem_dando_de_ombros_pele_escura:',
+        'it': ':uomo_che_scrolla_le_spalle_carnagione_scura:'
     },
     u'\U0001F937\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🤷🏻‍♂️
         'en' : ':man_shrugging_light_skin_tone:',
@@ -22519,7 +23629,12 @@ EMOJI_DATA = {
     u'\U0001F937\U0001F3FB\U0000200D\U00002642': { # 🤷🏻‍♂
         'en' : ':man_shrugging_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schulterzuckender_mann_helle_hautfarbe:',
+        'es': ':hombre_encogido_de_hombros_tono_de_piel_claro:',
+        'fr': u':homme_qui_hausse_les_épaules_peau_claire:',
+        'pt': ':homem_dando_de_ombros_pele_clara:',
+        'it': ':uomo_che_scrolla_le_spalle_carnagione_chiara:'
     },
     u'\U0001F937\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🤷🏾‍♂️
         'en' : ':man_shrugging_medium-dark_skin_tone:',
@@ -22534,7 +23649,12 @@ EMOJI_DATA = {
     u'\U0001F937\U0001F3FE\U0000200D\U00002642': { # 🤷🏾‍♂
         'en' : ':man_shrugging_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schulterzuckender_mann_mitteldunkle_hautfarbe:',
+        'es': ':hombre_encogido_de_hombros_tono_de_piel_oscuro_medio:',
+        'fr': u':homme_qui_hausse_les_épaules_peau_mate:',
+        'pt': ':homem_dando_de_ombros_pele_morena_escura:',
+        'it': ':uomo_che_scrolla_le_spalle_carnagione_abbastanza_scura:'
     },
     u'\U0001F937\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🤷🏼‍♂️
         'en' : ':man_shrugging_medium-light_skin_tone:',
@@ -22549,7 +23669,12 @@ EMOJI_DATA = {
     u'\U0001F937\U0001F3FC\U0000200D\U00002642': { # 🤷🏼‍♂
         'en' : ':man_shrugging_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schulterzuckender_mann_mittelhelle_hautfarbe:',
+        'es': ':hombre_encogido_de_hombros_tono_de_piel_claro_medio:',
+        'fr': u':homme_qui_hausse_les_épaules_peau_moyennement_claire:',
+        'pt': ':homem_dando_de_ombros_pele_morena_clara:',
+        'it': ':uomo_che_scrolla_le_spalle_carnagione_abbastanza_chiara:'
     },
     u'\U0001F937\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🤷🏽‍♂️
         'en' : ':man_shrugging_medium_skin_tone:',
@@ -22564,7 +23689,12 @@ EMOJI_DATA = {
     u'\U0001F937\U0001F3FD\U0000200D\U00002642': { # 🤷🏽‍♂
         'en' : ':man_shrugging_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schulterzuckender_mann_mittlere_hautfarbe:',
+        'es': ':hombre_encogido_de_hombros_tono_de_piel_medio:',
+        'fr': u':homme_qui_hausse_les_épaules_peau_légèrement_mate:',
+        'pt': ':homem_dando_de_ombros_pele_morena:',
+        'it': ':uomo_che_scrolla_le_spalle_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F3A4': { # 👨‍🎤
         'en' : ':man_singer:',
@@ -22635,7 +23765,8 @@ EMOJI_DATA = {
         'es': ':hombre_de_pie:',
         'fr': ':homme_debout:',
         'pt': u':homem_em_pé:',
-        'it': ':uomo_in_piedi:'
+        'it': ':uomo_in_piedi:',
+        'fa': u':مرد_ایستاده:'
     },
     u'\U0001F9CD\U0000200D\U00002642': { # 🧍‍♂
         'en' : ':man_standing:',
@@ -22661,7 +23792,12 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0001F3FF\U0000200D\U00002642': { # 🧍🏿‍♂
         'en' : ':man_standing_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':stehender_mann_dunkle_hautfarbe:',
+        'es': ':hombre_de_pie_tono_de_piel_oscuro:',
+        'fr': u':homme_debout_peau_foncée:',
+        'pt': u':homem_em_pé_pele_escura:',
+        'it': ':uomo_in_piedi_carnagione_scura:'
     },
     u'\U0001F9CD\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🧍🏻‍♂️
         'en' : ':man_standing_light_skin_tone:',
@@ -22676,7 +23812,12 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0001F3FB\U0000200D\U00002642': { # 🧍🏻‍♂
         'en' : ':man_standing_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':stehender_mann_helle_hautfarbe:',
+        'es': ':hombre_de_pie_tono_de_piel_claro:',
+        'fr': ':homme_debout_peau_claire:',
+        'pt': u':homem_em_pé_pele_clara:',
+        'it': ':uomo_in_piedi_carnagione_chiara:'
     },
     u'\U0001F9CD\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🧍🏾‍♂️
         'en' : ':man_standing_medium-dark_skin_tone:',
@@ -22691,7 +23832,12 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0001F3FE\U0000200D\U00002642': { # 🧍🏾‍♂
         'en' : ':man_standing_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':stehender_mann_mitteldunkle_hautfarbe:',
+        'es': ':hombre_de_pie_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_debout_peau_mate:',
+        'pt': u':homem_em_pé_pele_morena_escura:',
+        'it': ':uomo_in_piedi_carnagione_abbastanza_scura:'
     },
     u'\U0001F9CD\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🧍🏼‍♂️
         'en' : ':man_standing_medium-light_skin_tone:',
@@ -22706,7 +23852,12 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0001F3FC\U0000200D\U00002642': { # 🧍🏼‍♂
         'en' : ':man_standing_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':stehender_mann_mittelhelle_hautfarbe:',
+        'es': ':hombre_de_pie_tono_de_piel_claro_medio:',
+        'fr': ':homme_debout_peau_moyennement_claire:',
+        'pt': u':homem_em_pé_pele_morena_clara:',
+        'it': ':uomo_in_piedi_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9CD\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🧍🏽‍♂️
         'en' : ':man_standing_medium_skin_tone:',
@@ -22721,7 +23872,12 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0001F3FD\U0000200D\U00002642': { # 🧍🏽‍♂
         'en' : ':man_standing_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':stehender_mann_mittlere_hautfarbe:',
+        'es': ':hombre_de_pie_tono_de_piel_medio:',
+        'fr': u':homme_debout_peau_légèrement_mate:',
+        'pt': u':homem_em_pé_pele_morena:',
+        'it': ':uomo_in_piedi_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F393': { # 👨‍🎓
         'en' : ':man_student:',
@@ -22792,7 +23948,8 @@ EMOJI_DATA = {
         'es': u':superhéroe:',
         'fr': u':super-héros_homme:',
         'pt': u':homem_super-herói:',
-        'it': ':supereroe_uomo:'
+        'it': ':supereroe_uomo:',
+        'fa': u':ابرقهرمان_مرد:'
     },
     u'\U0001F9B8\U0000200D\U00002642': { # 🦸‍♂
         'en' : ':man_superhero:',
@@ -22818,7 +23975,12 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0001F3FF\U0000200D\U00002642': { # 🦸🏿‍♂
         'en' : ':man_superhero_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': ':superheld_dunkle_hautfarbe:',
+        'es': u':superhéroe_tono_de_piel_oscuro:',
+        'fr': u':super-héros_homme_peau_foncée:',
+        'pt': u':homem_super-herói_pele_escura:',
+        'it': ':supereroe_uomo_carnagione_scura:'
     },
     u'\U0001F9B8\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🦸🏻‍♂️
         'en' : ':man_superhero_light_skin_tone:',
@@ -22833,7 +23995,12 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0001F3FB\U0000200D\U00002642': { # 🦸🏻‍♂
         'en' : ':man_superhero_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': ':superheld_helle_hautfarbe:',
+        'es': u':superhéroe_tono_de_piel_claro:',
+        'fr': u':super-héros_homme_peau_claire:',
+        'pt': u':homem_super-herói_pele_clara:',
+        'it': ':supereroe_uomo_carnagione_chiara:'
     },
     u'\U0001F9B8\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🦸🏾‍♂️
         'en' : ':man_superhero_medium-dark_skin_tone:',
@@ -22848,7 +24015,12 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0001F3FE\U0000200D\U00002642': { # 🦸🏾‍♂
         'en' : ':man_superhero_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': ':superheld_mitteldunkle_hautfarbe:',
+        'es': u':superhéroe_tono_de_piel_oscuro_medio:',
+        'fr': u':super-héros_homme_peau_mate:',
+        'pt': u':homem_super-herói_pele_morena_escura:',
+        'it': ':supereroe_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F9B8\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🦸🏼‍♂️
         'en' : ':man_superhero_medium-light_skin_tone:',
@@ -22863,7 +24035,12 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0001F3FC\U0000200D\U00002642': { # 🦸🏼‍♂
         'en' : ':man_superhero_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': ':superheld_mittelhelle_hautfarbe:',
+        'es': u':superhéroe_tono_de_piel_claro_medio:',
+        'fr': u':super-héros_homme_peau_moyennement_claire:',
+        'pt': u':homem_super-herói_pele_morena_clara:',
+        'it': ':supereroe_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9B8\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🦸🏽‍♂️
         'en' : ':man_superhero_medium_skin_tone:',
@@ -22878,7 +24055,12 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0001F3FD\U0000200D\U00002642': { # 🦸🏽‍♂
         'en' : ':man_superhero_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': ':superheld_mittlere_hautfarbe:',
+        'es': u':superhéroe_tono_de_piel_medio:',
+        'fr': u':super-héros_homme_peau_légèrement_mate:',
+        'pt': u':homem_super-herói_pele_morena:',
+        'it': ':supereroe_uomo_carnagione_olivastra:'
     },
     u'\U0001F9B9\U0000200D\U00002642\U0000FE0F': { # 🦹‍♂️
         'en' : ':man_supervillain:',
@@ -22888,7 +24070,8 @@ EMOJI_DATA = {
         'es': ':supervillano:',
         'fr': ':super-vilain_homme:',
         'pt': u':homem_supervilão:',
-        'it': ':supercattivo_uomo:'
+        'it': ':supercattivo_uomo:',
+        'fa': u':ابرشرور_مرد:'
     },
     u'\U0001F9B9\U0000200D\U00002642': { # 🦹‍♂
         'en' : ':man_supervillain:',
@@ -22914,7 +24097,12 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0001F3FF\U0000200D\U00002642': { # 🦹🏿‍♂
         'en' : ':man_supervillain_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': u':männlicher_bösewicht_dunkle_hautfarbe:',
+        'es': ':supervillano_tono_de_piel_oscuro:',
+        'fr': u':super-vilain_homme_peau_foncée:',
+        'pt': u':homem_supervilão_pele_escura:',
+        'it': ':supercattivo_uomo_carnagione_scura:'
     },
     u'\U0001F9B9\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🦹🏻‍♂️
         'en' : ':man_supervillain_light_skin_tone:',
@@ -22929,7 +24117,12 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0001F3FB\U0000200D\U00002642': { # 🦹🏻‍♂
         'en' : ':man_supervillain_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': u':männlicher_bösewicht_helle_hautfarbe:',
+        'es': ':supervillano_tono_de_piel_claro:',
+        'fr': ':super-vilain_homme_peau_claire:',
+        'pt': u':homem_supervilão_pele_clara:',
+        'it': ':supercattivo_uomo_carnagione_chiara:'
     },
     u'\U0001F9B9\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🦹🏾‍♂️
         'en' : ':man_supervillain_medium-dark_skin_tone:',
@@ -22944,7 +24137,12 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0001F3FE\U0000200D\U00002642': { # 🦹🏾‍♂
         'en' : ':man_supervillain_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': u':männlicher_bösewicht_mitteldunkle_hautfarbe:',
+        'es': ':supervillano_tono_de_piel_oscuro_medio:',
+        'fr': ':super-vilain_homme_peau_mate:',
+        'pt': u':homem_supervilão_pele_morena_escura:',
+        'it': ':supercattivo_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F9B9\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🦹🏼‍♂️
         'en' : ':man_supervillain_medium-light_skin_tone:',
@@ -22959,7 +24157,12 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0001F3FC\U0000200D\U00002642': { # 🦹🏼‍♂
         'en' : ':man_supervillain_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': u':männlicher_bösewicht_mittelhelle_hautfarbe:',
+        'es': ':supervillano_tono_de_piel_claro_medio:',
+        'fr': ':super-vilain_homme_peau_moyennement_claire:',
+        'pt': u':homem_supervilão_pele_morena_clara:',
+        'it': ':supercattivo_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9B9\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🦹🏽‍♂️
         'en' : ':man_supervillain_medium_skin_tone:',
@@ -22974,7 +24177,12 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0001F3FD\U0000200D\U00002642': { # 🦹🏽‍♂
         'en' : ':man_supervillain_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': u':männlicher_bösewicht_mittlere_hautfarbe:',
+        'es': ':supervillano_tono_de_piel_medio:',
+        'fr': u':super-vilain_homme_peau_légèrement_mate:',
+        'pt': u':homem_supervilão_pele_morena:',
+        'it': ':supercattivo_uomo_carnagione_olivastra:'
     },
     u'\U0001F3C4\U0000200D\U00002642\U0000FE0F': { # 🏄‍♂️
         'en' : ':man_surfing:',
@@ -22984,7 +24192,8 @@ EMOJI_DATA = {
         'es': ':hombre_haciendo_surf:',
         'fr': ':surfeur:',
         'pt': ':homem_surfista:',
-        'it': ':surfista_uomo:'
+        'it': ':surfista_uomo:',
+        'fa': u':موج_سوار_مرد:'
     },
     u'\U0001F3C4\U0000200D\U00002642': { # 🏄‍♂
         'en' : ':man_surfing:',
@@ -23010,7 +24219,12 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0001F3FF\U0000200D\U00002642': { # 🏄🏿‍♂
         'en' : ':man_surfing_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':surfer_dunkle_hautfarbe:',
+        'es': ':hombre_haciendo_surf_tono_de_piel_oscuro:',
+        'fr': u':surfeur_peau_foncée:',
+        'pt': ':homem_surfista_pele_escura:',
+        'it': ':surfista_uomo_carnagione_scura:'
     },
     u'\U0001F3C4\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🏄🏻‍♂️
         'en' : ':man_surfing_light_skin_tone:',
@@ -23025,7 +24239,12 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0001F3FB\U0000200D\U00002642': { # 🏄🏻‍♂
         'en' : ':man_surfing_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':surfer_helle_hautfarbe:',
+        'es': ':hombre_haciendo_surf_tono_de_piel_claro:',
+        'fr': ':surfeur_peau_claire:',
+        'pt': ':homem_surfista_pele_clara:',
+        'it': ':surfista_uomo_carnagione_chiara:'
     },
     u'\U0001F3C4\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🏄🏾‍♂️
         'en' : ':man_surfing_medium-dark_skin_tone:',
@@ -23040,7 +24259,12 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0001F3FE\U0000200D\U00002642': { # 🏄🏾‍♂
         'en' : ':man_surfing_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':surfer_mitteldunkle_hautfarbe:',
+        'es': ':hombre_haciendo_surf_tono_de_piel_oscuro_medio:',
+        'fr': ':surfeur_peau_mate:',
+        'pt': ':homem_surfista_pele_morena_escura:',
+        'it': ':surfista_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F3C4\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🏄🏼‍♂️
         'en' : ':man_surfing_medium-light_skin_tone:',
@@ -23055,7 +24279,12 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0001F3FC\U0000200D\U00002642': { # 🏄🏼‍♂
         'en' : ':man_surfing_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':surfer_mittelhelle_hautfarbe:',
+        'es': ':hombre_haciendo_surf_tono_de_piel_claro_medio:',
+        'fr': ':surfeur_peau_moyennement_claire:',
+        'pt': ':homem_surfista_pele_morena_clara:',
+        'it': ':surfista_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F3C4\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🏄🏽‍♂️
         'en' : ':man_surfing_medium_skin_tone:',
@@ -23070,7 +24299,12 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0001F3FD\U0000200D\U00002642': { # 🏄🏽‍♂
         'en' : ':man_surfing_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':surfer_mittlere_hautfarbe:',
+        'es': ':hombre_haciendo_surf_tono_de_piel_medio:',
+        'fr': u':surfeur_peau_légèrement_mate:',
+        'pt': ':homem_surfista_pele_morena:',
+        'it': ':surfista_uomo_carnagione_olivastra:'
     },
     u'\U0001F3CA\U0000200D\U00002642\U0000FE0F': { # 🏊‍♂️
         'en' : ':man_swimming:',
@@ -23080,7 +24314,8 @@ EMOJI_DATA = {
         'es': ':hombre_nadando:',
         'fr': ':nageur:',
         'pt': ':homem_nadando:',
-        'it': ':nuotatore:'
+        'it': ':nuotatore:',
+        'fa': u':شناگر_مرد:'
     },
     u'\U0001F3CA\U0000200D\U00002642': { # 🏊‍♂
         'en' : ':man_swimming:',
@@ -23106,7 +24341,12 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0001F3FF\U0000200D\U00002642': { # 🏊🏿‍♂
         'en' : ':man_swimming_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schwimmer_dunkle_hautfarbe:',
+        'es': ':hombre_nadando_tono_de_piel_oscuro:',
+        'fr': u':nageur_peau_foncée:',
+        'pt': ':homem_nadando_pele_escura:',
+        'it': ':nuotatore_carnagione_scura:'
     },
     u'\U0001F3CA\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🏊🏻‍♂️
         'en' : ':man_swimming_light_skin_tone:',
@@ -23121,7 +24361,12 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0001F3FB\U0000200D\U00002642': { # 🏊🏻‍♂
         'en' : ':man_swimming_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schwimmer_helle_hautfarbe:',
+        'es': ':hombre_nadando_tono_de_piel_claro:',
+        'fr': ':nageur_peau_claire:',
+        'pt': ':homem_nadando_pele_clara:',
+        'it': ':nuotatore_carnagione_chiara:'
     },
     u'\U0001F3CA\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🏊🏾‍♂️
         'en' : ':man_swimming_medium-dark_skin_tone:',
@@ -23136,7 +24381,12 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0001F3FE\U0000200D\U00002642': { # 🏊🏾‍♂
         'en' : ':man_swimming_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schwimmer_mitteldunkle_hautfarbe:',
+        'es': ':hombre_nadando_tono_de_piel_oscuro_medio:',
+        'fr': ':nageur_peau_mate:',
+        'pt': ':homem_nadando_pele_morena_escura:',
+        'it': ':nuotatore_carnagione_abbastanza_scura:'
     },
     u'\U0001F3CA\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🏊🏼‍♂️
         'en' : ':man_swimming_medium-light_skin_tone:',
@@ -23151,7 +24401,12 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0001F3FC\U0000200D\U00002642': { # 🏊🏼‍♂
         'en' : ':man_swimming_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schwimmer_mittelhelle_hautfarbe:',
+        'es': ':hombre_nadando_tono_de_piel_claro_medio:',
+        'fr': ':nageur_peau_moyennement_claire:',
+        'pt': ':homem_nadando_pele_morena_clara:',
+        'it': ':nuotatore_carnagione_abbastanza_chiara:'
     },
     u'\U0001F3CA\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🏊🏽‍♂️
         'en' : ':man_swimming_medium_skin_tone:',
@@ -23166,7 +24421,12 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0001F3FD\U0000200D\U00002642': { # 🏊🏽‍♂
         'en' : ':man_swimming_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schwimmer_mittlere_hautfarbe:',
+        'es': ':hombre_nadando_tono_de_piel_medio:',
+        'fr': u':nageur_peau_légèrement_mate:',
+        'pt': ':homem_nadando_pele_morena:',
+        'it': ':nuotatore_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F3EB': { # 👨‍🏫
         'en' : ':man_teacher:',
@@ -23298,7 +24558,8 @@ EMOJI_DATA = {
         'es': u':empleado_de_mostrador_de_información:',
         'fr': ':homme_paume_vers_le_haut:',
         'pt': ':homem_com_a_palma_virada_para_cima:',
-        'it': ':uomo_con_suggerimento:'
+        'it': ':uomo_con_suggerimento:',
+        'fa': u':مرد_کمک_می_کند:'
     },
     u'\U0001F481\U0000200D\U00002642': { # 💁‍♂
         'en' : ':man_tipping_hand:',
@@ -23324,7 +24585,12 @@ EMOJI_DATA = {
     u'\U0001F481\U0001F3FF\U0000200D\U00002642': { # 💁🏿‍♂
         'en' : ':man_tipping_hand_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':infoschalter-mitarbeiter_dunkle_hautfarbe:',
+        'es': u':empleado_de_mostrador_de_información_tono_de_piel_oscuro:',
+        'fr': u':homme_paume_vers_le_haut_peau_foncée:',
+        'pt': ':homem_com_a_palma_virada_para_cima_pele_escura:',
+        'it': ':uomo_con_suggerimento_carnagione_scura:'
     },
     u'\U0001F481\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 💁🏻‍♂️
         'en' : ':man_tipping_hand_light_skin_tone:',
@@ -23339,7 +24605,12 @@ EMOJI_DATA = {
     u'\U0001F481\U0001F3FB\U0000200D\U00002642': { # 💁🏻‍♂
         'en' : ':man_tipping_hand_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':infoschalter-mitarbeiter_helle_hautfarbe:',
+        'es': u':empleado_de_mostrador_de_información_tono_de_piel_claro:',
+        'fr': ':homme_paume_vers_le_haut_peau_claire:',
+        'pt': ':homem_com_a_palma_virada_para_cima_pele_clara:',
+        'it': ':uomo_con_suggerimento_carnagione_chiara:'
     },
     u'\U0001F481\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 💁🏾‍♂️
         'en' : ':man_tipping_hand_medium-dark_skin_tone:',
@@ -23354,7 +24625,12 @@ EMOJI_DATA = {
     u'\U0001F481\U0001F3FE\U0000200D\U00002642': { # 💁🏾‍♂
         'en' : ':man_tipping_hand_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':infoschalter-mitarbeiter_mitteldunkle_hautfarbe:',
+        'es': u':empleado_de_mostrador_de_información_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_paume_vers_le_haut_peau_mate:',
+        'pt': ':homem_com_a_palma_virada_para_cima_pele_morena_escura:',
+        'it': ':uomo_con_suggerimento_carnagione_abbastanza_scura:'
     },
     u'\U0001F481\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 💁🏼‍♂️
         'en' : ':man_tipping_hand_medium-light_skin_tone:',
@@ -23369,7 +24645,12 @@ EMOJI_DATA = {
     u'\U0001F481\U0001F3FC\U0000200D\U00002642': { # 💁🏼‍♂
         'en' : ':man_tipping_hand_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':infoschalter-mitarbeiter_mittelhelle_hautfarbe:',
+        'es': u':empleado_de_mostrador_de_información_tono_de_piel_claro_medio:',
+        'fr': ':homme_paume_vers_le_haut_peau_moyennement_claire:',
+        'pt': ':homem_com_a_palma_virada_para_cima_pele_morena_clara:',
+        'it': ':uomo_con_suggerimento_carnagione_abbastanza_chiara:'
     },
     u'\U0001F481\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 💁🏽‍♂️
         'en' : ':man_tipping_hand_medium_skin_tone:',
@@ -23384,7 +24665,12 @@ EMOJI_DATA = {
     u'\U0001F481\U0001F3FD\U0000200D\U00002642': { # 💁🏽‍♂
         'en' : ':man_tipping_hand_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':infoschalter-mitarbeiter_mittlere_hautfarbe:',
+        'es': u':empleado_de_mostrador_de_información_tono_de_piel_medio:',
+        'fr': u':homme_paume_vers_le_haut_peau_légèrement_mate:',
+        'pt': ':homem_com_a_palma_virada_para_cima_pele_morena:',
+        'it': ':uomo_con_suggerimento_carnagione_olivastra:'
     },
     u'\U0001F9DB\U0000200D\U00002642\U0000FE0F': { # 🧛‍♂️
         'en' : ':man_vampire:',
@@ -23394,7 +24680,8 @@ EMOJI_DATA = {
         'es': ':vampiro_hombre:',
         'fr': ':vampire_homme:',
         'pt': ':homem_vampiro:',
-        'it': ':vampiro_uomo:'
+        'it': ':vampiro_uomo:',
+        'fa': u':خون_آشام_مرد:'
     },
     u'\U0001F9DB\U0000200D\U00002642': { # 🧛‍♂
         'en' : ':man_vampire:',
@@ -23420,7 +24707,12 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0001F3FF\U0000200D\U00002642': { # 🧛🏿‍♂
         'en' : ':man_vampire_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': u':männlicher_vampir_dunkle_hautfarbe:',
+        'es': ':vampiro_hombre_tono_de_piel_oscuro:',
+        'fr': u':vampire_homme_peau_foncée:',
+        'pt': ':homem_vampiro_pele_escura:',
+        'it': ':vampiro_uomo_carnagione_scura:'
     },
     u'\U0001F9DB\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🧛🏻‍♂️
         'en' : ':man_vampire_light_skin_tone:',
@@ -23435,7 +24727,12 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0001F3FB\U0000200D\U00002642': { # 🧛🏻‍♂
         'en' : ':man_vampire_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': u':männlicher_vampir_helle_hautfarbe:',
+        'es': ':vampiro_hombre_tono_de_piel_claro:',
+        'fr': ':vampire_homme_peau_claire:',
+        'pt': ':homem_vampiro_pele_clara:',
+        'it': ':vampiro_uomo_carnagione_chiara:'
     },
     u'\U0001F9DB\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🧛🏾‍♂️
         'en' : ':man_vampire_medium-dark_skin_tone:',
@@ -23450,7 +24747,12 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0001F3FE\U0000200D\U00002642': { # 🧛🏾‍♂
         'en' : ':man_vampire_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': u':männlicher_vampir_mitteldunkle_hautfarbe:',
+        'es': ':vampiro_hombre_tono_de_piel_oscuro_medio:',
+        'fr': ':vampire_homme_peau_mate:',
+        'pt': ':homem_vampiro_pele_morena_escura:',
+        'it': ':vampiro_uomo_carnagione_abbastanza_scura:'
     },
     u'\U0001F9DB\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🧛🏼‍♂️
         'en' : ':man_vampire_medium-light_skin_tone:',
@@ -23465,7 +24767,12 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0001F3FC\U0000200D\U00002642': { # 🧛🏼‍♂
         'en' : ':man_vampire_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': u':männlicher_vampir_mittelhelle_hautfarbe:',
+        'es': ':vampiro_hombre_tono_de_piel_claro_medio:',
+        'fr': ':vampire_homme_peau_moyennement_claire:',
+        'pt': ':homem_vampiro_pele_morena_clara:',
+        'it': ':vampiro_uomo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9DB\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🧛🏽‍♂️
         'en' : ':man_vampire_medium_skin_tone:',
@@ -23480,7 +24787,12 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0001F3FD\U0000200D\U00002642': { # 🧛🏽‍♂
         'en' : ':man_vampire_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': u':männlicher_vampir_mittlere_hautfarbe:',
+        'es': ':vampiro_hombre_tono_de_piel_medio:',
+        'fr': u':vampire_homme_peau_légèrement_mate:',
+        'pt': ':homem_vampiro_pele_morena:',
+        'it': ':vampiro_uomo_carnagione_olivastra:'
     },
     u'\U0001F6B6\U0000200D\U00002642\U0000FE0F': { # 🚶‍♂️
         'en' : ':man_walking:',
@@ -23490,7 +24802,8 @@ EMOJI_DATA = {
         'es': ':hombre_caminando:',
         'fr': ':homme_qui_marche:',
         'pt': ':homem_andando:',
-        'it': ':uomo_che_cammina:'
+        'it': ':uomo_che_cammina:',
+        'fa': u':مرد_پیاده_روی_می_کند:'
     },
     u'\U0001F6B6\U0000200D\U00002642': { # 🚶‍♂
         'en' : ':man_walking:',
@@ -23516,7 +24829,12 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0001F3FF\U0000200D\U00002642': { # 🚶🏿‍♂
         'en' : ':man_walking_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':fußgänger_dunkle_hautfarbe:',
+        'es': ':hombre_caminando_tono_de_piel_oscuro:',
+        'fr': u':homme_qui_marche_peau_foncée:',
+        'pt': ':homem_andando_pele_escura:',
+        'it': ':uomo_che_cammina_carnagione_scura:'
     },
     u'\U0001F6B6\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🚶🏻‍♂️
         'en' : ':man_walking_light_skin_tone:',
@@ -23531,7 +24849,12 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0001F3FB\U0000200D\U00002642': { # 🚶🏻‍♂
         'en' : ':man_walking_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':fußgänger_helle_hautfarbe:',
+        'es': ':hombre_caminando_tono_de_piel_claro:',
+        'fr': ':homme_qui_marche_peau_claire:',
+        'pt': ':homem_andando_pele_clara:',
+        'it': ':uomo_che_cammina_carnagione_chiara:'
     },
     u'\U0001F6B6\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🚶🏾‍♂️
         'en' : ':man_walking_medium-dark_skin_tone:',
@@ -23546,7 +24869,12 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0001F3FE\U0000200D\U00002642': { # 🚶🏾‍♂
         'en' : ':man_walking_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':fußgänger_mitteldunkle_hautfarbe:',
+        'es': ':hombre_caminando_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_qui_marche_peau_mate:',
+        'pt': ':homem_andando_pele_morena_escura:',
+        'it': ':uomo_che_cammina_carnagione_abbastanza_scura:'
     },
     u'\U0001F6B6\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🚶🏼‍♂️
         'en' : ':man_walking_medium-light_skin_tone:',
@@ -23561,7 +24889,12 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0001F3FC\U0000200D\U00002642': { # 🚶🏼‍♂
         'en' : ':man_walking_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':fußgänger_mittelhelle_hautfarbe:',
+        'es': ':hombre_caminando_tono_de_piel_claro_medio:',
+        'fr': ':homme_qui_marche_peau_moyennement_claire:',
+        'pt': ':homem_andando_pele_morena_clara:',
+        'it': ':uomo_che_cammina_carnagione_abbastanza_chiara:'
     },
     u'\U0001F6B6\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🚶🏽‍♂️
         'en' : ':man_walking_medium_skin_tone:',
@@ -23576,7 +24909,12 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0001F3FD\U0000200D\U00002642': { # 🚶🏽‍♂
         'en' : ':man_walking_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':fußgänger_mittlere_hautfarbe:',
+        'es': ':hombre_caminando_tono_de_piel_medio:',
+        'fr': u':homme_qui_marche_peau_légèrement_mate:',
+        'pt': ':homem_andando_pele_morena:',
+        'it': ':uomo_che_cammina_carnagione_olivastra:'
     },
     u'\U0001F473\U0000200D\U00002642\U0000FE0F': { # 👳‍♂️
         'en' : ':man_wearing_turban:',
@@ -23586,7 +24924,8 @@ EMOJI_DATA = {
         'es': ':hombre_con_turbante:',
         'fr': ':homme_en_turban:',
         'pt': ':homem_com_turbante:',
-        'it': ':uomo_con_turbante:'
+        'it': ':uomo_con_turbante:',
+        'fa': u':مرد_با_دستار:'
     },
     u'\U0001F473\U0000200D\U00002642': { # 👳‍♂
         'en' : ':man_wearing_turban:',
@@ -23612,7 +24951,12 @@ EMOJI_DATA = {
     u'\U0001F473\U0001F3FF\U0000200D\U00002642': { # 👳🏿‍♂
         'en' : ':man_wearing_turban_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_turban_dunkle_hautfarbe:',
+        'es': ':hombre_con_turbante_tono_de_piel_oscuro:',
+        'fr': u':homme_en_turban_peau_foncée:',
+        'pt': ':homem_com_turbante_pele_escura:',
+        'it': ':uomo_con_turbante_carnagione_scura:'
     },
     u'\U0001F473\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 👳🏻‍♂️
         'en' : ':man_wearing_turban_light_skin_tone:',
@@ -23627,7 +24971,12 @@ EMOJI_DATA = {
     u'\U0001F473\U0001F3FB\U0000200D\U00002642': { # 👳🏻‍♂
         'en' : ':man_wearing_turban_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_turban_helle_hautfarbe:',
+        'es': ':hombre_con_turbante_tono_de_piel_claro:',
+        'fr': ':homme_en_turban_peau_claire:',
+        'pt': ':homem_com_turbante_pele_clara:',
+        'it': ':uomo_con_turbante_carnagione_chiara:'
     },
     u'\U0001F473\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 👳🏾‍♂️
         'en' : ':man_wearing_turban_medium-dark_skin_tone:',
@@ -23642,7 +24991,12 @@ EMOJI_DATA = {
     u'\U0001F473\U0001F3FE\U0000200D\U00002642': { # 👳🏾‍♂
         'en' : ':man_wearing_turban_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_turban_mitteldunkle_hautfarbe:',
+        'es': ':hombre_con_turbante_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_en_turban_peau_mate:',
+        'pt': ':homem_com_turbante_pele_morena_escura:',
+        'it': ':uomo_con_turbante_carnagione_abbastanza_scura:'
     },
     u'\U0001F473\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 👳🏼‍♂️
         'en' : ':man_wearing_turban_medium-light_skin_tone:',
@@ -23657,7 +25011,12 @@ EMOJI_DATA = {
     u'\U0001F473\U0001F3FC\U0000200D\U00002642': { # 👳🏼‍♂
         'en' : ':man_wearing_turban_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_turban_mittelhelle_hautfarbe:',
+        'es': ':hombre_con_turbante_tono_de_piel_claro_medio:',
+        'fr': ':homme_en_turban_peau_moyennement_claire:',
+        'pt': ':homem_com_turbante_pele_morena_clara:',
+        'it': ':uomo_con_turbante_carnagione_abbastanza_chiara:'
     },
     u'\U0001F473\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 👳🏽‍♂️
         'en' : ':man_wearing_turban_medium_skin_tone:',
@@ -23672,7 +25031,12 @@ EMOJI_DATA = {
     u'\U0001F473\U0001F3FD\U0000200D\U00002642': { # 👳🏽‍♂
         'en' : ':man_wearing_turban_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mann_mit_turban_mittlere_hautfarbe:',
+        'es': ':hombre_con_turbante_tono_de_piel_medio:',
+        'fr': u':homme_en_turban_peau_légèrement_mate:',
+        'pt': ':homem_com_turbante_pele_morena:',
+        'it': ':uomo_con_turbante_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F9B3': { # 👨‍🦳
         'en' : ':man_white_hair:',
@@ -23692,7 +25056,8 @@ EMOJI_DATA = {
         'es': ':hombre_con_velo:',
         'fr': ':homme_avec_voile:',
         'pt': u':noivo_com_véu:',
-        'it': ':sposo_con_velo:'
+        'it': ':sposo_con_velo:',
+        'fa': u':مرد_با_تور_عروس:'
     },
     u'\U0001F470\U0000200D\U00002642': { # 👰‍♂
         'en' : ':man_with_veil:',
@@ -23718,7 +25083,12 @@ EMOJI_DATA = {
     u'\U0001F470\U0001F3FF\U0000200D\U00002642': { # 👰🏿‍♂
         'en' : ':man_with_veil_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':mann_mit_schleier_dunkle_hautfarbe:',
+        'es': ':hombre_con_velo_tono_de_piel_oscuro:',
+        'fr': u':homme_avec_voile_peau_foncée:',
+        'pt': u':noivo_com_véu_pele_escura:',
+        'it': ':sposo_con_velo_carnagione_scura:'
     },
     u'\U0001F470\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 👰🏻‍♂️
         'en' : ':man_with_veil_light_skin_tone:',
@@ -23733,7 +25103,12 @@ EMOJI_DATA = {
     u'\U0001F470\U0001F3FB\U0000200D\U00002642': { # 👰🏻‍♂
         'en' : ':man_with_veil_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':mann_mit_schleier_helle_hautfarbe:',
+        'es': ':hombre_con_velo_tono_de_piel_claro:',
+        'fr': ':homme_avec_voile_peau_claire:',
+        'pt': u':noivo_com_véu_pele_clara:',
+        'it': ':sposo_con_velo_carnagione_chiara:'
     },
     u'\U0001F470\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 👰🏾‍♂️
         'en' : ':man_with_veil_medium-dark_skin_tone:',
@@ -23748,7 +25123,12 @@ EMOJI_DATA = {
     u'\U0001F470\U0001F3FE\U0000200D\U00002642': { # 👰🏾‍♂
         'en' : ':man_with_veil_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':mann_mit_schleier_mitteldunkle_hautfarbe:',
+        'es': ':hombre_con_velo_tono_de_piel_oscuro_medio:',
+        'fr': ':homme_avec_voile_peau_mate:',
+        'pt': u':noivo_com_véu_pele_morena_escura:',
+        'it': ':sposo_con_velo_carnagione_abbastanza_scura:'
     },
     u'\U0001F470\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 👰🏼‍♂️
         'en' : ':man_with_veil_medium-light_skin_tone:',
@@ -23763,7 +25143,12 @@ EMOJI_DATA = {
     u'\U0001F470\U0001F3FC\U0000200D\U00002642': { # 👰🏼‍♂
         'en' : ':man_with_veil_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':mann_mit_schleier_mittelhelle_hautfarbe:',
+        'es': ':hombre_con_velo_tono_de_piel_claro_medio:',
+        'fr': ':homme_avec_voile_peau_moyennement_claire:',
+        'pt': u':noivo_com_véu_pele_morena_clara:',
+        'it': ':sposo_con_velo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F470\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 👰🏽‍♂️
         'en' : ':man_with_veil_medium_skin_tone:',
@@ -23778,7 +25163,12 @@ EMOJI_DATA = {
     u'\U0001F470\U0001F3FD\U0000200D\U00002642': { # 👰🏽‍♂
         'en' : ':man_with_veil_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':mann_mit_schleier_mittlere_hautfarbe:',
+        'es': ':hombre_con_velo_tono_de_piel_medio:',
+        'fr': u':homme_avec_voile_peau_légèrement_mate:',
+        'pt': u':noivo_com_véu_pele_morena:',
+        'it': ':sposo_con_velo_carnagione_olivastra:'
     },
     u'\U0001F468\U0000200D\U0001F9AF': { # 👨‍🦯
         'en' : ':man_with_white_cane:',
@@ -23849,7 +25239,8 @@ EMOJI_DATA = {
         'es': ':zombi_hombre:',
         'fr': ':zombie_homme:',
         'pt': ':homem_zumbi:',
-        'it': ':zombie_uomo:'
+        'it': ':zombie_uomo:',
+        'fa': u':مرده_متحرک_مرد:'
     },
     u'\U0001F9DF\U0000200D\U00002642': { # 🧟‍♂
         'en' : ':man_zombie:',
@@ -24435,7 +25826,8 @@ EMOJI_DATA = {
         'es': ':hombres_con_orejas_de_conejo:',
         'fr': ':hommes_avec_des_oreilles_de_lapin:',
         'pt': ':homens_com_orelhas_de_coelho:',
-        'it': ':uomini_con_orecchie_da_coniglio:'
+        'it': ':uomini_con_orecchie_da_coniglio:',
+        'fa': u':مردان_در_پارتی:'
     },
     u'\U0001F46F\U0000200D\U00002642': { # 👯‍♂
         'en' : ':men_with_bunny_ears:',
@@ -24456,7 +25848,8 @@ EMOJI_DATA = {
         'es': ':hombres_luchando:',
         'fr': ':lutteurs:',
         'pt': ':homens_lutando:',
-        'it': ':lottatori:'
+        'it': ':lottatori:',
+        'fa': u':کُشتی_گیر_مرد:'
     },
     u'\U0001F93C\U0000200D\U00002642': { # 🤼‍♂
         'en' : ':men_wrestling:',
@@ -24518,7 +25911,8 @@ EMOJI_DATA = {
         'es': ':sirena:',
         'fr': u':sirène:',
         'pt': ':sereia:',
-        'it': ':sirena_donna:'
+        'it': ':sirena_donna:',
+        'fa': u':پری_دریایی:'
     },
     u'\U0001F9DC\U0000200D\U00002640': { # 🧜‍♀
         'en' : ':mermaid:',
@@ -24544,7 +25938,12 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0001F3FF\U0000200D\U00002640': { # 🧜🏿‍♀
         'en' : ':mermaid_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':meerjungfrau_dunkle_hautfarbe:',
+        'es': ':sirena_tono_de_piel_oscuro:',
+        'fr': u':sirène_peau_foncée:',
+        'pt': ':sereia_pele_escura:',
+        'it': ':sirena_donna_carnagione_scura:'
     },
     u'\U0001F9DC\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🧜🏻‍♀️
         'en' : ':mermaid_light_skin_tone:',
@@ -24559,7 +25958,12 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0001F3FB\U0000200D\U00002640': { # 🧜🏻‍♀
         'en' : ':mermaid_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':meerjungfrau_helle_hautfarbe:',
+        'es': ':sirena_tono_de_piel_claro:',
+        'fr': u':sirène_peau_claire:',
+        'pt': ':sereia_pele_clara:',
+        'it': ':sirena_donna_carnagione_chiara:'
     },
     u'\U0001F9DC\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🧜🏾‍♀️
         'en' : ':mermaid_medium-dark_skin_tone:',
@@ -24574,7 +25978,12 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0001F3FE\U0000200D\U00002640': { # 🧜🏾‍♀
         'en' : ':mermaid_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':meerjungfrau_mitteldunkle_hautfarbe:',
+        'es': ':sirena_tono_de_piel_oscuro_medio:',
+        'fr': u':sirène_peau_mate:',
+        'pt': ':sereia_pele_morena_escura:',
+        'it': ':sirena_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F9DC\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🧜🏼‍♀️
         'en' : ':mermaid_medium-light_skin_tone:',
@@ -24589,7 +25998,12 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0001F3FC\U0000200D\U00002640': { # 🧜🏼‍♀
         'en' : ':mermaid_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':meerjungfrau_mittelhelle_hautfarbe:',
+        'es': ':sirena_tono_de_piel_claro_medio:',
+        'fr': u':sirène_peau_moyennement_claire:',
+        'pt': ':sereia_pele_morena_clara:',
+        'it': ':sirena_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9DC\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🧜🏽‍♀️
         'en' : ':mermaid_medium_skin_tone:',
@@ -24604,7 +26018,12 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0001F3FD\U0000200D\U00002640': { # 🧜🏽‍♀
         'en' : ':mermaid_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':meerjungfrau_mittlere_hautfarbe:',
+        'es': ':sirena_tono_de_piel_medio:',
+        'fr': u':sirène_peau_légèrement_mate:',
+        'pt': ':sereia_pele_morena:',
+        'it': ':sirena_donna_carnagione_olivastra:'
     },
     u'\U0001F9DC\U0000200D\U00002642\U0000FE0F': { # 🧜‍♂️
         'en' : ':merman:',
@@ -24614,7 +26033,8 @@ EMOJI_DATA = {
         'es': ':sirena_hombre:',
         'fr': ':triton:',
         'pt': ':sereio:',
-        'it': ':tritone:'
+        'it': ':tritone:',
+        'fa': u':دریامرد:'
     },
     u'\U0001F9DC\U0000200D\U00002642': { # 🧜‍♂
         'en' : ':merman:',
@@ -24640,7 +26060,12 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0001F3FF\U0000200D\U00002642': { # 🧜🏿‍♂
         'en' : ':merman_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':wassermann_dunkle_hautfarbe:',
+        'es': ':sirena_hombre_tono_de_piel_oscuro:',
+        'fr': u':triton_peau_foncée:',
+        'pt': ':sereio_pele_escura:',
+        'it': ':tritone_carnagione_scura:'
     },
     u'\U0001F9DC\U0001F3FB\U0000200D\U00002642\U0000FE0F': { # 🧜🏻‍♂️
         'en' : ':merman_light_skin_tone:',
@@ -24655,7 +26080,12 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0001F3FB\U0000200D\U00002642': { # 🧜🏻‍♂
         'en' : ':merman_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':wassermann_helle_hautfarbe:',
+        'es': ':sirena_hombre_tono_de_piel_claro:',
+        'fr': ':triton_peau_claire:',
+        'pt': ':sereio_pele_clara:',
+        'it': ':tritone_carnagione_chiara:'
     },
     u'\U0001F9DC\U0001F3FE\U0000200D\U00002642\U0000FE0F': { # 🧜🏾‍♂️
         'en' : ':merman_medium-dark_skin_tone:',
@@ -24670,7 +26100,12 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0001F3FE\U0000200D\U00002642': { # 🧜🏾‍♂
         'en' : ':merman_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':wassermann_mitteldunkle_hautfarbe:',
+        'es': ':sirena_hombre_tono_de_piel_oscuro_medio:',
+        'fr': ':triton_peau_mate:',
+        'pt': ':sereio_pele_morena_escura:',
+        'it': ':tritone_carnagione_abbastanza_scura:'
     },
     u'\U0001F9DC\U0001F3FC\U0000200D\U00002642\U0000FE0F': { # 🧜🏼‍♂️
         'en' : ':merman_medium-light_skin_tone:',
@@ -24685,7 +26120,12 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0001F3FC\U0000200D\U00002642': { # 🧜🏼‍♂
         'en' : ':merman_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':wassermann_mittelhelle_hautfarbe:',
+        'es': ':sirena_hombre_tono_de_piel_claro_medio:',
+        'fr': ':triton_peau_moyennement_claire:',
+        'pt': ':sereio_pele_morena_clara:',
+        'it': ':tritone_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9DC\U0001F3FD\U0000200D\U00002642\U0000FE0F': { # 🧜🏽‍♂️
         'en' : ':merman_medium_skin_tone:',
@@ -24700,7 +26140,12 @@ EMOJI_DATA = {
     u'\U0001F9DC\U0001F3FD\U0000200D\U00002642': { # 🧜🏽‍♂
         'en' : ':merman_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':wassermann_mittlere_hautfarbe:',
+        'es': ':sirena_hombre_tono_de_piel_medio:',
+        'fr': u':triton_peau_légèrement_mate:',
+        'pt': ':sereio_pele_morena:',
+        'it': ':tritone_carnagione_olivastra:'
     },
     u'\U0001F9DC': { # 🧜
         'en' : ':merperson:',
@@ -30850,7 +32295,8 @@ EMOJI_DATA = {
         'es': ':piloto:',
         'fr': ':pilote:',
         'pt': ':piloto:',
-        'it': ':pilota:'
+        'it': ':pilota:',
+        'fa': u':خلبان:'
     },
     u'\U0001F9D1\U0000200D\U00002708': { # 🧑‍✈
         'en' : ':pilot:',
@@ -30876,7 +32322,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FF\U0000200D\U00002708': { # 🧑🏿‍✈
         'en' : ':pilot_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': ':pilot(in)_dunkle_hautfarbe:',
+        'es': ':piloto_tono_de_piel_oscuro:',
+        'fr': u':pilote_peau_foncée:',
+        'pt': ':piloto_pele_escura:',
+        'it': ':pilota_carnagione_scura:'
     },
     u'\U0001F9D1\U0001F3FB\U0000200D\U00002708\U0000FE0F': { # 🧑🏻‍✈️
         'en' : ':pilot_light_skin_tone:',
@@ -30891,7 +32342,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FB\U0000200D\U00002708': { # 🧑🏻‍✈
         'en' : ':pilot_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': ':pilot(in)_helle_hautfarbe:',
+        'es': ':piloto_tono_de_piel_claro:',
+        'fr': ':pilote_peau_claire:',
+        'pt': ':piloto_pele_clara:',
+        'it': ':pilota_carnagione_chiara:'
     },
     u'\U0001F9D1\U0001F3FE\U0000200D\U00002708\U0000FE0F': { # 🧑🏾‍✈️
         'en' : ':pilot_medium-dark_skin_tone:',
@@ -30906,7 +32362,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FE\U0000200D\U00002708': { # 🧑🏾‍✈
         'en' : ':pilot_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': ':pilot(in)_mitteldunkle_hautfarbe:',
+        'es': ':piloto_tono_de_piel_oscuro_medio:',
+        'fr': ':pilote_peau_mate:',
+        'pt': ':piloto_pele_morena_escura:',
+        'it': ':pilota_carnagione_abbastanza_scura:'
     },
     u'\U0001F9D1\U0001F3FC\U0000200D\U00002708\U0000FE0F': { # 🧑🏼‍✈️
         'en' : ':pilot_medium-light_skin_tone:',
@@ -30921,7 +32382,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FC\U0000200D\U00002708': { # 🧑🏼‍✈
         'en' : ':pilot_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': ':pilot(in)_mittelhelle_hautfarbe:',
+        'es': ':piloto_tono_de_piel_claro_medio:',
+        'fr': ':pilote_peau_moyennement_claire:',
+        'pt': ':piloto_pele_morena_clara:',
+        'it': ':pilota_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9D1\U0001F3FD\U0000200D\U00002708\U0000FE0F': { # 🧑🏽‍✈️
         'en' : ':pilot_medium_skin_tone:',
@@ -30936,7 +32402,12 @@ EMOJI_DATA = {
     u'\U0001F9D1\U0001F3FD\U0000200D\U00002708': { # 🧑🏽‍✈
         'en' : ':pilot_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12.1
+        'E' : 12.1,
+        'de': ':pilot(in)_mittlere_hautfarbe:',
+        'es': ':piloto_tono_de_piel_medio:',
+        'fr': u':pilote_peau_légèrement_mate:',
+        'pt': ':piloto_pele_morena:',
+        'it': ':pilota_carnagione_olivastra:'
     },
     u'\U0001F90C': { # 🤌
         'en' : ':pinched_fingers:',
@@ -31103,7 +32574,8 @@ EMOJI_DATA = {
         'es': ':bandera_pirata:',
         'fr': ':drapeau_de_pirate:',
         'pt': ':bandeira_de_pirata:',
-        'it': ':bandiera_dei_pirati:'
+        'it': ':bandiera_dei_pirati:',
+        'fa': u':پرچم_دزدان_دریایی:'
     },
     u'\U0001F3F4\U0000200D\U00002620': { # 🏴‍☠
         'en' : ':pirate_flag:',
@@ -31266,7 +32738,8 @@ EMOJI_DATA = {
         'es': ':oso_polar:',
         'fr': ':ours_polaire:',
         'pt': ':urso_polar:',
-        'it': ':orso_polare:'
+        'it': ':orso_polare:',
+        'fa': u':خرس_قطبی:'
     },
     u'\U0001F43B\U0000200D\U00002744': { # 🐻‍❄
         'en' : ':polar_bear:',
@@ -36656,12 +38129,23 @@ EMOJI_DATA = {
     u'\U0001F3F3\U0000200D\U000026A7\U0000FE0F': { # 🏳‍⚧️
         'en' : ':transgender_flag:',
         'status' : unqualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':transgender-flagge:',
+        'es': u':bandera_transgénero:',
+        'fr': ':drapeau_transgenre:',
+        'pt': u':bandeira_transgênero:',
+        'it': ':bandiera_transgender:',
+        'fa': u':پرچم_تراجنسیتی:'
     },
     u'\U0001F3F3\U0000FE0F\U0000200D\U000026A7': { # 🏳️‍⚧
         'en' : ':transgender_flag:',
         'status' : unqualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':transgender-flagge:',
+        'es': u':bandera_transgénero:',
+        'fr': ':drapeau_transgenre:',
+        'pt': u':bandeira_transgênero:',
+        'it': ':bandiera_transgender:'
     },
     u'\U0001F3F3\U0000200D\U000026A7': { # 🏳‍⚧
         'en' : ':transgender_flag:',
@@ -38498,7 +39982,13 @@ EMOJI_DATA = {
     u'\U0001F9D4\U0000200D\U00002640\U0000FE0F': { # 🧔‍♀️
         'en' : ':woman_beard:',
         'status' : fully_qualified,
-        'E' : 13.1
+        'E' : 13.1,
+        'de': ':frau_bart:',
+        'es': ':mujer_barba:',
+        'fr': ':femme_barbue:',
+        'pt': ':mulher_barba:',
+        'it': ':donna_con_la_barba:',
+        'fa': u':زن_ریش:'
     },
     u'\U0001F9D4\U0000200D\U00002640': { # 🧔‍♀
         'en' : ':woman_beard:',
@@ -38519,7 +40009,8 @@ EMOJI_DATA = {
         'es': ':mujer_en_bicicleta:',
         'fr': ':cycliste_femme:',
         'pt': ':mulher_ciclista:',
-        'it': ':ciclista_donna:'
+        'it': ':ciclista_donna:',
+        'fa': u':دوچرخه_سوار_زن:'
     },
     u'\U0001F6B4\U0000200D\U00002640': { # 🚴‍♀
         'en' : ':woman_biking:',
@@ -38545,7 +40036,12 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0001F3FF\U0000200D\U00002640': { # 🚴🏿‍♀
         'en' : ':woman_biking_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':radfahrerin_dunkle_hautfarbe:',
+        'es': ':mujer_en_bicicleta_tono_de_piel_oscuro:',
+        'fr': u':cycliste_femme_peau_foncée:',
+        'pt': ':mulher_ciclista_pele_escura:',
+        'it': ':ciclista_donna_carnagione_scura:'
     },
     u'\U0001F6B4\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🚴🏻‍♀️
         'en' : ':woman_biking_light_skin_tone:',
@@ -38560,7 +40056,12 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0001F3FB\U0000200D\U00002640': { # 🚴🏻‍♀
         'en' : ':woman_biking_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':radfahrerin_helle_hautfarbe:',
+        'es': ':mujer_en_bicicleta_tono_de_piel_claro:',
+        'fr': ':cycliste_femme_peau_claire:',
+        'pt': ':mulher_ciclista_pele_clara:',
+        'it': ':ciclista_donna_carnagione_chiara:'
     },
     u'\U0001F6B4\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🚴🏾‍♀️
         'en' : ':woman_biking_medium-dark_skin_tone:',
@@ -38575,7 +40076,12 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0001F3FE\U0000200D\U00002640': { # 🚴🏾‍♀
         'en' : ':woman_biking_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':radfahrerin_mitteldunkle_hautfarbe:',
+        'es': ':mujer_en_bicicleta_tono_de_piel_oscuro_medio:',
+        'fr': ':cycliste_femme_peau_mate:',
+        'pt': ':mulher_ciclista_pele_morena_escura:',
+        'it': ':ciclista_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F6B4\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🚴🏼‍♀️
         'en' : ':woman_biking_medium-light_skin_tone:',
@@ -38590,7 +40096,12 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0001F3FC\U0000200D\U00002640': { # 🚴🏼‍♀
         'en' : ':woman_biking_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':radfahrerin_mittelhelle_hautfarbe:',
+        'es': ':mujer_en_bicicleta_tono_de_piel_claro_medio:',
+        'fr': ':cycliste_femme_peau_moyennement_claire:',
+        'pt': ':mulher_ciclista_pele_morena_clara:',
+        'it': ':ciclista_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F6B4\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🚴🏽‍♀️
         'en' : ':woman_biking_medium_skin_tone:',
@@ -38605,7 +40116,12 @@ EMOJI_DATA = {
     u'\U0001F6B4\U0001F3FD\U0000200D\U00002640': { # 🚴🏽‍♀
         'en' : ':woman_biking_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':radfahrerin_mittlere_hautfarbe:',
+        'es': ':mujer_en_bicicleta_tono_de_piel_medio:',
+        'fr': u':cycliste_femme_peau_légèrement_mate:',
+        'pt': ':mulher_ciclista_pele_morena:',
+        'it': ':ciclista_donna_carnagione_olivastra:'
     },
     u'\U0001F471\U0000200D\U00002640\U0000FE0F': { # 👱‍♀️
         'en' : ':woman_blond_hair:',
@@ -38615,7 +40131,8 @@ EMOJI_DATA = {
         'es': ':mujer_rubia:',
         'fr': ':femme_blonde:',
         'pt': ':mulher_cabelo_loiro:',
-        'it': ':donna_bionda:'
+        'it': ':donna_bionda:',
+        'fa': u':زن_موبور:'
     },
     u'\U0001F471\U0000200D\U00002640': { # 👱‍♀
         'en' : ':woman_blond_hair:',
@@ -38641,12 +40158,23 @@ EMOJI_DATA = {
     u'\U000026F9\U0000200D\U00002640\U0000FE0F': { # ⛹‍♀️
         'en' : ':woman_bouncing_ball:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_ball:',
+        'es': u':mujer_botando_un_balón:',
+        'fr': ':femme_avec_ballon:',
+        'pt': ':mulher_jogando_basquete:',
+        'it': ':donna_che_fa_rimbalzare_una_palla:',
+        'fa': u':زن_و_توپ:'
     },
     u'\U000026F9\U0000FE0F\U0000200D\U00002640': { # ⛹️‍♀
         'en' : ':woman_bouncing_ball:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_ball:',
+        'es': u':mujer_botando_un_balón:',
+        'fr': ':femme_avec_ballon:',
+        'pt': ':mulher_jogando_basquete:',
+        'it': ':donna_che_fa_rimbalzare_una_palla:'
     },
     u'\U000026F9\U0000200D\U00002640': { # ⛹‍♀
         'en' : ':woman_bouncing_ball:',
@@ -38672,7 +40200,12 @@ EMOJI_DATA = {
     u'\U000026F9\U0001F3FF\U0000200D\U00002640': { # ⛹🏿‍♀
         'en' : ':woman_bouncing_ball_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_ball_dunkle_hautfarbe:',
+        'es': u':mujer_botando_un_balón_tono_de_piel_oscuro:',
+        'fr': u':femme_avec_ballon_peau_foncée:',
+        'pt': ':mulher_jogando_basquete_pele_escura:',
+        'it': ':donna_che_fa_rimbalzare_una_palla_carnagione_scura:'
     },
     u'\U000026F9\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # ⛹🏻‍♀️
         'en' : ':woman_bouncing_ball_light_skin_tone:',
@@ -38687,7 +40220,12 @@ EMOJI_DATA = {
     u'\U000026F9\U0001F3FB\U0000200D\U00002640': { # ⛹🏻‍♀
         'en' : ':woman_bouncing_ball_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_ball_helle_hautfarbe:',
+        'es': u':mujer_botando_un_balón_tono_de_piel_claro:',
+        'fr': ':femme_avec_ballon_peau_claire:',
+        'pt': ':mulher_jogando_basquete_pele_clara:',
+        'it': ':donna_che_fa_rimbalzare_una_palla_carnagione_chiara:'
     },
     u'\U000026F9\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # ⛹🏾‍♀️
         'en' : ':woman_bouncing_ball_medium-dark_skin_tone:',
@@ -38702,7 +40240,12 @@ EMOJI_DATA = {
     u'\U000026F9\U0001F3FE\U0000200D\U00002640': { # ⛹🏾‍♀
         'en' : ':woman_bouncing_ball_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_ball_mitteldunkle_hautfarbe:',
+        'es': u':mujer_botando_un_balón_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_avec_ballon_peau_mate:',
+        'pt': ':mulher_jogando_basquete_pele_morena_escura:',
+        'it': ':donna_che_fa_rimbalzare_una_palla_carnagione_abbastanza_scura:'
     },
     u'\U000026F9\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # ⛹🏼‍♀️
         'en' : ':woman_bouncing_ball_medium-light_skin_tone:',
@@ -38717,7 +40260,12 @@ EMOJI_DATA = {
     u'\U000026F9\U0001F3FC\U0000200D\U00002640': { # ⛹🏼‍♀
         'en' : ':woman_bouncing_ball_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_ball_mittelhelle_hautfarbe:',
+        'es': u':mujer_botando_un_balón_tono_de_piel_claro_medio:',
+        'fr': ':femme_avec_ballon_peau_moyennement_claire:',
+        'pt': ':mulher_jogando_basquete_pele_morena_clara:',
+        'it': ':donna_che_fa_rimbalzare_una_palla_carnagione_abbastanza_chiara:'
     },
     u'\U000026F9\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # ⛹🏽‍♀️
         'en' : ':woman_bouncing_ball_medium_skin_tone:',
@@ -38732,7 +40280,12 @@ EMOJI_DATA = {
     u'\U000026F9\U0001F3FD\U0000200D\U00002640': { # ⛹🏽‍♀
         'en' : ':woman_bouncing_ball_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_ball_mittlere_hautfarbe:',
+        'es': u':mujer_botando_un_balón_tono_de_piel_medio:',
+        'fr': u':femme_avec_ballon_peau_légèrement_mate:',
+        'pt': ':mulher_jogando_basquete_pele_morena:',
+        'it': ':donna_che_fa_rimbalzare_una_palla_carnagione_olivastra:'
     },
     u'\U0001F647\U0000200D\U00002640\U0000FE0F': { # 🙇‍♀️
         'en' : ':woman_bowing:',
@@ -38742,7 +40295,8 @@ EMOJI_DATA = {
         'es': ':mujer_haciendo_una_reverencia:',
         'fr': u':femme_qui_s’incline:',
         'pt': u':mulher_fazendo_reverência:',
-        'it': ':donna_che_fa_inchino_profondo:'
+        'it': ':donna_che_fa_inchino_profondo:',
+        'fa': u':زن_تعظیم_می_کند:'
     },
     u'\U0001F647\U0000200D\U00002640': { # 🙇‍♀
         'en' : ':woman_bowing:',
@@ -38768,7 +40322,12 @@ EMOJI_DATA = {
     u'\U0001F647\U0001F3FF\U0000200D\U00002640': { # 🙇🏿‍♀
         'en' : ':woman_bowing_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_verbeugende_frau_dunkle_hautfarbe:',
+        'es': ':mujer_haciendo_una_reverencia_tono_de_piel_oscuro:',
+        'fr': u':femme_qui_s’incline_peau_foncée:',
+        'pt': u':mulher_fazendo_reverência_pele_escura:',
+        'it': ':donna_che_fa_inchino_profondo_carnagione_scura:'
     },
     u'\U0001F647\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🙇🏻‍♀️
         'en' : ':woman_bowing_light_skin_tone:',
@@ -38783,7 +40342,12 @@ EMOJI_DATA = {
     u'\U0001F647\U0001F3FB\U0000200D\U00002640': { # 🙇🏻‍♀
         'en' : ':woman_bowing_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_verbeugende_frau_helle_hautfarbe:',
+        'es': ':mujer_haciendo_una_reverencia_tono_de_piel_claro:',
+        'fr': u':femme_qui_s’incline_peau_claire:',
+        'pt': u':mulher_fazendo_reverência_pele_clara:',
+        'it': ':donna_che_fa_inchino_profondo_carnagione_chiara:'
     },
     u'\U0001F647\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🙇🏾‍♀️
         'en' : ':woman_bowing_medium-dark_skin_tone:',
@@ -38798,7 +40362,12 @@ EMOJI_DATA = {
     u'\U0001F647\U0001F3FE\U0000200D\U00002640': { # 🙇🏾‍♀
         'en' : ':woman_bowing_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_verbeugende_frau_mitteldunkle_hautfarbe:',
+        'es': ':mujer_haciendo_una_reverencia_tono_de_piel_oscuro_medio:',
+        'fr': u':femme_qui_s’incline_peau_mate:',
+        'pt': u':mulher_fazendo_reverência_pele_morena_escura:',
+        'it': ':donna_che_fa_inchino_profondo_carnagione_abbastanza_scura:'
     },
     u'\U0001F647\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🙇🏼‍♀️
         'en' : ':woman_bowing_medium-light_skin_tone:',
@@ -38813,7 +40382,12 @@ EMOJI_DATA = {
     u'\U0001F647\U0001F3FC\U0000200D\U00002640': { # 🙇🏼‍♀
         'en' : ':woman_bowing_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_verbeugende_frau_mittelhelle_hautfarbe:',
+        'es': ':mujer_haciendo_una_reverencia_tono_de_piel_claro_medio:',
+        'fr': u':femme_qui_s’incline_peau_moyennement_claire:',
+        'pt': u':mulher_fazendo_reverência_pele_morena_clara:',
+        'it': ':donna_che_fa_inchino_profondo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F647\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🙇🏽‍♀️
         'en' : ':woman_bowing_medium_skin_tone:',
@@ -38828,7 +40402,12 @@ EMOJI_DATA = {
     u'\U0001F647\U0001F3FD\U0000200D\U00002640': { # 🙇🏽‍♀
         'en' : ':woman_bowing_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_verbeugende_frau_mittlere_hautfarbe:',
+        'es': ':mujer_haciendo_una_reverencia_tono_de_piel_medio:',
+        'fr': u':femme_qui_s’incline_peau_légèrement_mate:',
+        'pt': u':mulher_fazendo_reverência_pele_morena:',
+        'it': ':donna_che_fa_inchino_profondo_carnagione_olivastra:'
     },
     u'\U0001F938\U0000200D\U00002640\U0000FE0F': { # 🤸‍♀️
         'en' : ':woman_cartwheeling:',
@@ -38838,7 +40417,8 @@ EMOJI_DATA = {
         'es': ':mujer_haciendo_voltereta_lateral:',
         'fr': ':femme_faisant_la_roue:',
         'pt': ':mulher_fazendo_estrela:',
-        'it': ':donna_che_fa_la_ruota:'
+        'it': ':donna_che_fa_la_ruota:',
+        'fa': u':زنِ_چرخ_وفلک_زن:'
     },
     u'\U0001F938\U0000200D\U00002640': { # 🤸‍♀
         'en' : ':woman_cartwheeling:',
@@ -38864,7 +40444,12 @@ EMOJI_DATA = {
     u'\U0001F938\U0001F3FF\U0000200D\U00002640': { # 🤸🏿‍♀
         'en' : ':woman_cartwheeling_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':rad_schlagende_frau_dunkle_hautfarbe:',
+        'es': ':mujer_haciendo_voltereta_lateral_tono_de_piel_oscuro:',
+        'fr': u':femme_faisant_la_roue_peau_foncée:',
+        'pt': ':mulher_fazendo_estrela_pele_escura:',
+        'it': ':donna_che_fa_la_ruota_carnagione_scura:'
     },
     u'\U0001F938\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🤸🏻‍♀️
         'en' : ':woman_cartwheeling_light_skin_tone:',
@@ -38879,7 +40464,12 @@ EMOJI_DATA = {
     u'\U0001F938\U0001F3FB\U0000200D\U00002640': { # 🤸🏻‍♀
         'en' : ':woman_cartwheeling_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':rad_schlagende_frau_helle_hautfarbe:',
+        'es': ':mujer_haciendo_voltereta_lateral_tono_de_piel_claro:',
+        'fr': ':femme_faisant_la_roue_peau_claire:',
+        'pt': ':mulher_fazendo_estrela_pele_clara:',
+        'it': ':donna_che_fa_la_ruota_carnagione_chiara:'
     },
     u'\U0001F938\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🤸🏾‍♀️
         'en' : ':woman_cartwheeling_medium-dark_skin_tone:',
@@ -38894,7 +40484,12 @@ EMOJI_DATA = {
     u'\U0001F938\U0001F3FE\U0000200D\U00002640': { # 🤸🏾‍♀
         'en' : ':woman_cartwheeling_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':rad_schlagende_frau_mitteldunkle_hautfarbe:',
+        'es': ':mujer_haciendo_voltereta_lateral_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_faisant_la_roue_peau_mate:',
+        'pt': ':mulher_fazendo_estrela_pele_morena_escura:',
+        'it': ':donna_che_fa_la_ruota_carnagione_abbastanza_scura:'
     },
     u'\U0001F938\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🤸🏼‍♀️
         'en' : ':woman_cartwheeling_medium-light_skin_tone:',
@@ -38909,7 +40504,12 @@ EMOJI_DATA = {
     u'\U0001F938\U0001F3FC\U0000200D\U00002640': { # 🤸🏼‍♀
         'en' : ':woman_cartwheeling_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':rad_schlagende_frau_mittelhelle_hautfarbe:',
+        'es': ':mujer_haciendo_voltereta_lateral_tono_de_piel_claro_medio:',
+        'fr': ':femme_faisant_la_roue_peau_moyennement_claire:',
+        'pt': ':mulher_fazendo_estrela_pele_morena_clara:',
+        'it': ':donna_che_fa_la_ruota_carnagione_abbastanza_chiara:'
     },
     u'\U0001F938\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🤸🏽‍♀️
         'en' : ':woman_cartwheeling_medium_skin_tone:',
@@ -38924,7 +40524,12 @@ EMOJI_DATA = {
     u'\U0001F938\U0001F3FD\U0000200D\U00002640': { # 🤸🏽‍♀
         'en' : ':woman_cartwheeling_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':rad_schlagende_frau_mittlere_hautfarbe:',
+        'es': ':mujer_haciendo_voltereta_lateral_tono_de_piel_medio:',
+        'fr': u':femme_faisant_la_roue_peau_légèrement_mate:',
+        'pt': ':mulher_fazendo_estrela_pele_morena:',
+        'it': ':donna_che_fa_la_ruota_carnagione_olivastra:'
     },
     u'\U0001F9D7\U0000200D\U00002640\U0000FE0F': { # 🧗‍♀️
         'en' : ':woman_climbing:',
@@ -38934,7 +40539,8 @@ EMOJI_DATA = {
         'es': ':mujer_escalando:',
         'fr': ':femme_qui_grimpe:',
         'pt': ':mulher_escalando:',
-        'it': ':scalatrice:'
+        'it': ':scalatrice:',
+        'fa': u':زن_کوه_نوردی_می_کند:'
     },
     u'\U0001F9D7\U0000200D\U00002640': { # 🧗‍♀
         'en' : ':woman_climbing:',
@@ -38960,7 +40566,12 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0001F3FF\U0000200D\U00002640': { # 🧗🏿‍♀
         'en' : ':woman_climbing_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':bergsteigerin_dunkle_hautfarbe:',
+        'es': ':mujer_escalando_tono_de_piel_oscuro:',
+        'fr': u':femme_qui_grimpe_peau_foncée:',
+        'pt': ':mulher_escalando_pele_escura:',
+        'it': ':scalatrice_carnagione_scura:'
     },
     u'\U0001F9D7\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🧗🏻‍♀️
         'en' : ':woman_climbing_light_skin_tone:',
@@ -38975,7 +40586,12 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0001F3FB\U0000200D\U00002640': { # 🧗🏻‍♀
         'en' : ':woman_climbing_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':bergsteigerin_helle_hautfarbe:',
+        'es': ':mujer_escalando_tono_de_piel_claro:',
+        'fr': ':femme_qui_grimpe_peau_claire:',
+        'pt': ':mulher_escalando_pele_clara:',
+        'it': ':scalatrice_carnagione_chiara:'
     },
     u'\U0001F9D7\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🧗🏾‍♀️
         'en' : ':woman_climbing_medium-dark_skin_tone:',
@@ -38990,7 +40606,12 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0001F3FE\U0000200D\U00002640': { # 🧗🏾‍♀
         'en' : ':woman_climbing_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':bergsteigerin_mitteldunkle_hautfarbe:',
+        'es': ':mujer_escalando_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_qui_grimpe_peau_mate:',
+        'pt': ':mulher_escalando_pele_morena_escura:',
+        'it': ':scalatrice_carnagione_abbastanza_scura:'
     },
     u'\U0001F9D7\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🧗🏼‍♀️
         'en' : ':woman_climbing_medium-light_skin_tone:',
@@ -39005,7 +40626,12 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0001F3FC\U0000200D\U00002640': { # 🧗🏼‍♀
         'en' : ':woman_climbing_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':bergsteigerin_mittelhelle_hautfarbe:',
+        'es': ':mujer_escalando_tono_de_piel_claro_medio:',
+        'fr': ':femme_qui_grimpe_peau_moyennement_claire:',
+        'pt': ':mulher_escalando_pele_morena_clara:',
+        'it': ':scalatrice_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9D7\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🧗🏽‍♀️
         'en' : ':woman_climbing_medium_skin_tone:',
@@ -39020,7 +40646,12 @@ EMOJI_DATA = {
     u'\U0001F9D7\U0001F3FD\U0000200D\U00002640': { # 🧗🏽‍♀
         'en' : ':woman_climbing_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':bergsteigerin_mittlere_hautfarbe:',
+        'es': ':mujer_escalando_tono_de_piel_medio:',
+        'fr': u':femme_qui_grimpe_peau_légèrement_mate:',
+        'pt': ':mulher_escalando_pele_morena:',
+        'it': ':scalatrice_carnagione_olivastra:'
     },
     u'\U0001F477\U0000200D\U00002640\U0000FE0F': { # 👷‍♀️
         'en' : ':woman_construction_worker:',
@@ -39030,7 +40661,8 @@ EMOJI_DATA = {
         'es': u':profesional_de_la_construcción_mujer:',
         'fr': u':ouvrière_du_bâtiment:',
         'pt': ':pedreira:',
-        'it': ':operaia_edile:'
+        'it': ':operaia_edile:',
+        'fa': u':کارگر_ساختمانی_زن:'
     },
     u'\U0001F477\U0000200D\U00002640': { # 👷‍♀
         'en' : ':woman_construction_worker:',
@@ -39056,7 +40688,12 @@ EMOJI_DATA = {
     u'\U0001F477\U0001F3FF\U0000200D\U00002640': { # 👷🏿‍♀
         'en' : ':woman_construction_worker_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':bauarbeiterin_dunkle_hautfarbe:',
+        'es': u':profesional_de_la_construcción_mujer_tono_de_piel_oscuro:',
+        'fr': u':ouvrière_du_bâtiment_peau_foncée:',
+        'pt': ':pedreira_pele_escura:',
+        'it': ':operaia_edile_carnagione_scura:'
     },
     u'\U0001F477\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 👷🏻‍♀️
         'en' : ':woman_construction_worker_light_skin_tone:',
@@ -39071,7 +40708,12 @@ EMOJI_DATA = {
     u'\U0001F477\U0001F3FB\U0000200D\U00002640': { # 👷🏻‍♀
         'en' : ':woman_construction_worker_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':bauarbeiterin_helle_hautfarbe:',
+        'es': u':profesional_de_la_construcción_mujer_tono_de_piel_claro:',
+        'fr': u':ouvrière_du_bâtiment_peau_claire:',
+        'pt': ':pedreira_pele_clara:',
+        'it': ':operaia_edile_carnagione_chiara:'
     },
     u'\U0001F477\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 👷🏾‍♀️
         'en' : ':woman_construction_worker_medium-dark_skin_tone:',
@@ -39086,7 +40728,12 @@ EMOJI_DATA = {
     u'\U0001F477\U0001F3FE\U0000200D\U00002640': { # 👷🏾‍♀
         'en' : ':woman_construction_worker_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':bauarbeiterin_mitteldunkle_hautfarbe:',
+        'es': u':profesional_de_la_construcción_mujer_tono_de_piel_oscuro_medio:',
+        'fr': u':ouvrière_du_bâtiment_peau_mate:',
+        'pt': ':pedreira_pele_morena_escura:',
+        'it': ':operaia_edile_carnagione_abbastanza_scura:'
     },
     u'\U0001F477\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 👷🏼‍♀️
         'en' : ':woman_construction_worker_medium-light_skin_tone:',
@@ -39101,7 +40748,12 @@ EMOJI_DATA = {
     u'\U0001F477\U0001F3FC\U0000200D\U00002640': { # 👷🏼‍♀
         'en' : ':woman_construction_worker_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':bauarbeiterin_mittelhelle_hautfarbe:',
+        'es': u':profesional_de_la_construcción_mujer_tono_de_piel_claro_medio:',
+        'fr': u':ouvrière_du_bâtiment_peau_moyennement_claire:',
+        'pt': ':pedreira_pele_morena_clara:',
+        'it': ':operaia_edile_carnagione_abbastanza_chiara:'
     },
     u'\U0001F477\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 👷🏽‍♀️
         'en' : ':woman_construction_worker_medium_skin_tone:',
@@ -39116,7 +40768,12 @@ EMOJI_DATA = {
     u'\U0001F477\U0001F3FD\U0000200D\U00002640': { # 👷🏽‍♀
         'en' : ':woman_construction_worker_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':bauarbeiterin_mittlere_hautfarbe:',
+        'es': u':profesional_de_la_construcción_mujer_tono_de_piel_medio:',
+        'fr': u':ouvrière_du_bâtiment_peau_légèrement_mate:',
+        'pt': ':pedreira_pele_morena:',
+        'it': ':operaia_edile_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F373': { # 👩‍🍳
         'en' : ':woman_cook:',
@@ -39294,7 +40951,12 @@ EMOJI_DATA = {
     u'\U0001F471\U0001F3FF\U0000200D\U00002640': { # 👱🏿‍♀
         'en' : ':woman_dark_skin_tone_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_dunkle_hautfarbe,_blond:',
+        'es': ':mujer_rubia_tono_de_piel_oscuro:',
+        'fr': u':femme_blonde_peau_foncée:',
+        'pt': ':mulher_pele_escura_e_cabelo_loiro:',
+        'it': ':donna_bionda_carnagione_scura:'
     },
     u'\U0001F469\U0001F3FF\U0000200D\U0001F9B1': { # 👩🏿‍🦱
         'en' : ':woman_dark_skin_tone_curly_hair:',
@@ -39339,12 +41001,23 @@ EMOJI_DATA = {
     u'\U0001F575\U0000200D\U00002640\U0000FE0F': { # 🕵‍♀️
         'en' : ':woman_detective:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektivin:',
+        'es': ':detective_mujer:',
+        'fr': u':détective_femme:',
+        'pt': ':detetive_mulher:',
+        'it': ':investigatrice:',
+        'fa': u':کارآگاه_زن:'
     },
     u'\U0001F575\U0000FE0F\U0000200D\U00002640': { # 🕵️‍♀
         'en' : ':woman_detective:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektivin:',
+        'es': ':detective_mujer:',
+        'fr': u':détective_femme:',
+        'pt': ':detetive_mulher:',
+        'it': ':investigatrice:'
     },
     u'\U0001F575\U0000200D\U00002640': { # 🕵‍♀
         'en' : ':woman_detective:',
@@ -39370,7 +41043,12 @@ EMOJI_DATA = {
     u'\U0001F575\U0001F3FF\U0000200D\U00002640': { # 🕵🏿‍♀
         'en' : ':woman_detective_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektivin_dunkle_hautfarbe:',
+        'es': ':detective_mujer_tono_de_piel_oscuro:',
+        'fr': u':détective_femme_peau_foncée:',
+        'pt': ':detetive_mulher_pele_escura:',
+        'it': ':investigatrice_carnagione_scura:'
     },
     u'\U0001F575\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🕵🏻‍♀️
         'en' : ':woman_detective_light_skin_tone:',
@@ -39385,7 +41063,12 @@ EMOJI_DATA = {
     u'\U0001F575\U0001F3FB\U0000200D\U00002640': { # 🕵🏻‍♀
         'en' : ':woman_detective_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektivin_helle_hautfarbe:',
+        'es': ':detective_mujer_tono_de_piel_claro:',
+        'fr': u':détective_femme_peau_claire:',
+        'pt': ':detetive_mulher_pele_clara:',
+        'it': ':investigatrice_carnagione_chiara:'
     },
     u'\U0001F575\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🕵🏾‍♀️
         'en' : ':woman_detective_medium-dark_skin_tone:',
@@ -39400,7 +41083,12 @@ EMOJI_DATA = {
     u'\U0001F575\U0001F3FE\U0000200D\U00002640': { # 🕵🏾‍♀
         'en' : ':woman_detective_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektivin_mitteldunkle_hautfarbe:',
+        'es': ':detective_mujer_tono_de_piel_oscuro_medio:',
+        'fr': u':détective_femme_peau_mate:',
+        'pt': ':detetive_mulher_pele_morena_escura:',
+        'it': ':investigatrice_carnagione_abbastanza_scura:'
     },
     u'\U0001F575\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🕵🏼‍♀️
         'en' : ':woman_detective_medium-light_skin_tone:',
@@ -39415,7 +41103,12 @@ EMOJI_DATA = {
     u'\U0001F575\U0001F3FC\U0000200D\U00002640': { # 🕵🏼‍♀
         'en' : ':woman_detective_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektivin_mittelhelle_hautfarbe:',
+        'es': ':detective_mujer_tono_de_piel_claro_medio:',
+        'fr': u':détective_femme_peau_moyennement_claire:',
+        'pt': ':detetive_mulher_pele_morena_clara:',
+        'it': ':investigatrice_carnagione_abbastanza_chiara:'
     },
     u'\U0001F575\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🕵🏽‍♀️
         'en' : ':woman_detective_medium_skin_tone:',
@@ -39430,7 +41123,12 @@ EMOJI_DATA = {
     u'\U0001F575\U0001F3FD\U0000200D\U00002640': { # 🕵🏽‍♀
         'en' : ':woman_detective_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':detektivin_mittlere_hautfarbe:',
+        'es': ':detective_mujer_tono_de_piel_medio:',
+        'fr': u':détective_femme_peau_légèrement_mate:',
+        'pt': ':detetive_mulher_pele_morena:',
+        'it': ':investigatrice_carnagione_olivastra:'
     },
     u'\U0001F9DD\U0000200D\U00002640\U0000FE0F': { # 🧝‍♀️
         'en' : ':woman_elf:',
@@ -39440,7 +41138,8 @@ EMOJI_DATA = {
         'es': ':elfa:',
         'fr': ':elfe_femme:',
         'pt': ':elfa:',
-        'it': ':elfo_donna:'
+        'it': ':elfo_donna:',
+        'fa': u':اِلف_زن:'
     },
     u'\U0001F9DD\U0000200D\U00002640': { # 🧝‍♀
         'en' : ':woman_elf:',
@@ -39466,7 +41165,12 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0001F3FF\U0000200D\U00002640': { # 🧝🏿‍♀
         'en' : ':woman_elf_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':elfe_dunkle_hautfarbe:',
+        'es': ':elfa_tono_de_piel_oscuro:',
+        'fr': u':elfe_femme_peau_foncée:',
+        'pt': ':elfa_pele_escura:',
+        'it': ':elfo_donna_carnagione_scura:'
     },
     u'\U0001F9DD\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🧝🏻‍♀️
         'en' : ':woman_elf_light_skin_tone:',
@@ -39481,7 +41185,12 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0001F3FB\U0000200D\U00002640': { # 🧝🏻‍♀
         'en' : ':woman_elf_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':elfe_helle_hautfarbe:',
+        'es': ':elfa_tono_de_piel_claro:',
+        'fr': ':elfe_femme_peau_claire:',
+        'pt': ':elfa_pele_clara:',
+        'it': ':elfo_donna_carnagione_chiara:'
     },
     u'\U0001F9DD\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🧝🏾‍♀️
         'en' : ':woman_elf_medium-dark_skin_tone:',
@@ -39496,7 +41205,12 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0001F3FE\U0000200D\U00002640': { # 🧝🏾‍♀
         'en' : ':woman_elf_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':elfe_mitteldunkle_hautfarbe:',
+        'es': ':elfa_tono_de_piel_oscuro_medio:',
+        'fr': ':elfe_femme_peau_mate:',
+        'pt': ':elfa_pele_morena_escura:',
+        'it': ':elfo_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F9DD\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🧝🏼‍♀️
         'en' : ':woman_elf_medium-light_skin_tone:',
@@ -39511,7 +41225,12 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0001F3FC\U0000200D\U00002640': { # 🧝🏼‍♀
         'en' : ':woman_elf_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':elfe_mittelhelle_hautfarbe:',
+        'es': ':elfa_tono_de_piel_claro_medio:',
+        'fr': ':elfe_femme_peau_moyennement_claire:',
+        'pt': ':elfa_pele_morena_clara:',
+        'it': ':elfo_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9DD\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🧝🏽‍♀️
         'en' : ':woman_elf_medium_skin_tone:',
@@ -39526,7 +41245,12 @@ EMOJI_DATA = {
     u'\U0001F9DD\U0001F3FD\U0000200D\U00002640': { # 🧝🏽‍♀
         'en' : ':woman_elf_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':elfe_mittlere_hautfarbe:',
+        'es': ':elfa_tono_de_piel_medio:',
+        'fr': u':elfe_femme_peau_légèrement_mate:',
+        'pt': ':elfa_pele_morena:',
+        'it': ':elfo_donna_carnagione_olivastra:'
     },
     u'\U0001F926\U0000200D\U00002640\U0000FE0F': { # 🤦‍♀️
         'en' : ':woman_facepalming:',
@@ -39536,7 +41260,8 @@ EMOJI_DATA = {
         'es': ':mujer_con_la_mano_en_la_frente:',
         'fr': ':femme_avec_la_paume_sur_le_visage:',
         'pt': ':mulher_decepcionada:',
-        'it': ':donna_esasperata:'
+        'it': ':donna_esasperata:',
+        'fa': u':زن_با_کف_دست_به_پیشانی_می_زند:'
     },
     u'\U0001F926\U0000200D\U00002640': { # 🤦‍♀
         'en' : ':woman_facepalming:',
@@ -39562,7 +41287,12 @@ EMOJI_DATA = {
     u'\U0001F926\U0001F3FF\U0000200D\U00002640': { # 🤦🏿‍♀
         'en' : ':woman_facepalming_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_an_den_kopf_fassende_frau_dunkle_hautfarbe:',
+        'es': ':mujer_con_la_mano_en_la_frente_tono_de_piel_oscuro:',
+        'fr': u':femme_avec_la_paume_sur_le_visage_peau_foncée:',
+        'pt': ':mulher_decepcionada_pele_escura:',
+        'it': ':donna_esasperata_carnagione_scura:'
     },
     u'\U0001F926\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🤦🏻‍♀️
         'en' : ':woman_facepalming_light_skin_tone:',
@@ -39577,7 +41307,12 @@ EMOJI_DATA = {
     u'\U0001F926\U0001F3FB\U0000200D\U00002640': { # 🤦🏻‍♀
         'en' : ':woman_facepalming_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_an_den_kopf_fassende_frau_helle_hautfarbe:',
+        'es': ':mujer_con_la_mano_en_la_frente_tono_de_piel_claro:',
+        'fr': ':femme_avec_la_paume_sur_le_visage_peau_claire:',
+        'pt': ':mulher_decepcionada_pele_clara:',
+        'it': ':donna_esasperata_carnagione_chiara:'
     },
     u'\U0001F926\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🤦🏾‍♀️
         'en' : ':woman_facepalming_medium-dark_skin_tone:',
@@ -39592,7 +41327,12 @@ EMOJI_DATA = {
     u'\U0001F926\U0001F3FE\U0000200D\U00002640': { # 🤦🏾‍♀
         'en' : ':woman_facepalming_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_an_den_kopf_fassende_frau_mitteldunkle_hautfarbe:',
+        'es': ':mujer_con_la_mano_en_la_frente_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_avec_la_paume_sur_le_visage_peau_mate:',
+        'pt': ':mulher_decepcionada_pele_morena_escura:',
+        'it': ':donna_esasperata_carnagione_abbastanza_scura:'
     },
     u'\U0001F926\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🤦🏼‍♀️
         'en' : ':woman_facepalming_medium-light_skin_tone:',
@@ -39607,7 +41347,12 @@ EMOJI_DATA = {
     u'\U0001F926\U0001F3FC\U0000200D\U00002640': { # 🤦🏼‍♀
         'en' : ':woman_facepalming_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_an_den_kopf_fassende_frau_mittelhelle_hautfarbe:',
+        'es': ':mujer_con_la_mano_en_la_frente_tono_de_piel_claro_medio:',
+        'fr': ':femme_avec_la_paume_sur_le_visage_peau_moyennement_claire:',
+        'pt': ':mulher_decepcionada_pele_morena_clara:',
+        'it': ':donna_esasperata_carnagione_abbastanza_chiara:'
     },
     u'\U0001F926\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🤦🏽‍♀️
         'en' : ':woman_facepalming_medium_skin_tone:',
@@ -39622,7 +41367,12 @@ EMOJI_DATA = {
     u'\U0001F926\U0001F3FD\U0000200D\U00002640': { # 🤦🏽‍♀
         'en' : ':woman_facepalming_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':sich_an_den_kopf_fassende_frau_mittlere_hautfarbe:',
+        'es': ':mujer_con_la_mano_en_la_frente_tono_de_piel_medio:',
+        'fr': u':femme_avec_la_paume_sur_le_visage_peau_légèrement_mate:',
+        'pt': ':mulher_decepcionada_pele_morena:',
+        'it': ':donna_esasperata_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F3ED': { # 👩‍🏭
         'en' : ':woman_factory_worker:',
@@ -39693,7 +41443,8 @@ EMOJI_DATA = {
         'es': ':hada_mujer:',
         'fr': u':fée:',
         'pt': ':mulher_fada:',
-        'it': ':fata_donna:'
+        'it': ':fata_donna:',
+        'fa': u':پری_زن:'
     },
     u'\U0001F9DA\U0000200D\U00002640': { # 🧚‍♀
         'en' : ':woman_fairy:',
@@ -39719,7 +41470,12 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0001F3FF\U0000200D\U00002640': { # 🧚🏿‍♀
         'en' : ':woman_fairy_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':fee_dunkle_hautfarbe:',
+        'es': ':hada_mujer_tono_de_piel_oscuro:',
+        'fr': u':fée_peau_foncée:',
+        'pt': ':mulher_fada_pele_escura:',
+        'it': ':fata_donna_carnagione_scura:'
     },
     u'\U0001F9DA\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🧚🏻‍♀️
         'en' : ':woman_fairy_light_skin_tone:',
@@ -39734,7 +41490,12 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0001F3FB\U0000200D\U00002640': { # 🧚🏻‍♀
         'en' : ':woman_fairy_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':fee_helle_hautfarbe:',
+        'es': ':hada_mujer_tono_de_piel_claro:',
+        'fr': u':fée_peau_claire:',
+        'pt': ':mulher_fada_pele_clara:',
+        'it': ':fata_donna_carnagione_chiara:'
     },
     u'\U0001F9DA\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🧚🏾‍♀️
         'en' : ':woman_fairy_medium-dark_skin_tone:',
@@ -39749,7 +41510,12 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0001F3FE\U0000200D\U00002640': { # 🧚🏾‍♀
         'en' : ':woman_fairy_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':fee_mitteldunkle_hautfarbe:',
+        'es': ':hada_mujer_tono_de_piel_oscuro_medio:',
+        'fr': u':fée_peau_mate:',
+        'pt': ':mulher_fada_pele_morena_escura:',
+        'it': ':fata_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F9DA\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🧚🏼‍♀️
         'en' : ':woman_fairy_medium-light_skin_tone:',
@@ -39764,7 +41530,12 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0001F3FC\U0000200D\U00002640': { # 🧚🏼‍♀
         'en' : ':woman_fairy_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':fee_mittelhelle_hautfarbe:',
+        'es': ':hada_mujer_tono_de_piel_claro_medio:',
+        'fr': u':fée_peau_moyennement_claire:',
+        'pt': ':mulher_fada_pele_morena_clara:',
+        'it': ':fata_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9DA\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🧚🏽‍♀️
         'en' : ':woman_fairy_medium_skin_tone:',
@@ -39779,7 +41550,12 @@ EMOJI_DATA = {
     u'\U0001F9DA\U0001F3FD\U0000200D\U00002640': { # 🧚🏽‍♀
         'en' : ':woman_fairy_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':fee_mittlere_hautfarbe:',
+        'es': ':hada_mujer_tono_de_piel_medio:',
+        'fr': u':fée_peau_légèrement_mate:',
+        'pt': ':mulher_fada_pele_morena:',
+        'it': ':fata_donna_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F33E': { # 👩‍🌾
         'en' : ':woman_farmer:',
@@ -39972,7 +41748,8 @@ EMOJI_DATA = {
         'es': u':mujer_frunciendo_el_ceño:',
         'fr': u':femme_fronçant_les_sourcils:',
         'pt': ':mulher_franzindo_a_sobrancelha:',
-        'it': ':donna_corrucciata:'
+        'it': ':donna_corrucciata:',
+        'fa': u':زن_اخم_می_کند:'
     },
     u'\U0001F64D\U0000200D\U00002640': { # 🙍‍♀
         'en' : ':woman_frowning:',
@@ -39998,7 +41775,12 @@ EMOJI_DATA = {
     u'\U0001F64D\U0001F3FF\U0000200D\U00002640': { # 🙍🏿‍♀
         'en' : ':woman_frowning_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':missmutige_frau_dunkle_hautfarbe:',
+        'es': u':mujer_frunciendo_el_ceño_tono_de_piel_oscuro:',
+        'fr': u':femme_fronçant_les_sourcils_peau_foncée:',
+        'pt': ':mulher_franzindo_a_sobrancelha_pele_escura:',
+        'it': ':donna_corrucciata_carnagione_scura:'
     },
     u'\U0001F64D\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🙍🏻‍♀️
         'en' : ':woman_frowning_light_skin_tone:',
@@ -40013,7 +41795,12 @@ EMOJI_DATA = {
     u'\U0001F64D\U0001F3FB\U0000200D\U00002640': { # 🙍🏻‍♀
         'en' : ':woman_frowning_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':missmutige_frau_helle_hautfarbe:',
+        'es': u':mujer_frunciendo_el_ceño_tono_de_piel_claro:',
+        'fr': u':femme_fronçant_les_sourcils_peau_claire:',
+        'pt': ':mulher_franzindo_a_sobrancelha_pele_clara:',
+        'it': ':donna_corrucciata_carnagione_chiara:'
     },
     u'\U0001F64D\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🙍🏾‍♀️
         'en' : ':woman_frowning_medium-dark_skin_tone:',
@@ -40028,7 +41815,12 @@ EMOJI_DATA = {
     u'\U0001F64D\U0001F3FE\U0000200D\U00002640': { # 🙍🏾‍♀
         'en' : ':woman_frowning_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':missmutige_frau_mitteldunkle_hautfarbe:',
+        'es': u':mujer_frunciendo_el_ceño_tono_de_piel_oscuro_medio:',
+        'fr': u':femme_fronçant_les_sourcils_peau_mate:',
+        'pt': ':mulher_franzindo_a_sobrancelha_pele_morena_escura:',
+        'it': ':donna_corrucciata_carnagione_abbastanza_scura:'
     },
     u'\U0001F64D\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🙍🏼‍♀️
         'en' : ':woman_frowning_medium-light_skin_tone:',
@@ -40043,7 +41835,12 @@ EMOJI_DATA = {
     u'\U0001F64D\U0001F3FC\U0000200D\U00002640': { # 🙍🏼‍♀
         'en' : ':woman_frowning_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':missmutige_frau_mittelhelle_hautfarbe:',
+        'es': u':mujer_frunciendo_el_ceño_tono_de_piel_claro_medio:',
+        'fr': u':femme_fronçant_les_sourcils_peau_moyennement_claire:',
+        'pt': ':mulher_franzindo_a_sobrancelha_pele_morena_clara:',
+        'it': ':donna_corrucciata_carnagione_abbastanza_chiara:'
     },
     u'\U0001F64D\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🙍🏽‍♀️
         'en' : ':woman_frowning_medium_skin_tone:',
@@ -40058,7 +41855,12 @@ EMOJI_DATA = {
     u'\U0001F64D\U0001F3FD\U0000200D\U00002640': { # 🙍🏽‍♀
         'en' : ':woman_frowning_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':missmutige_frau_mittlere_hautfarbe:',
+        'es': u':mujer_frunciendo_el_ceño_tono_de_piel_medio:',
+        'fr': u':femme_fronçant_les_sourcils_peau_légèrement_mate:',
+        'pt': ':mulher_franzindo_a_sobrancelha_pele_morena:',
+        'it': ':donna_corrucciata_carnagione_olivastra:'
     },
     u'\U0001F9DE\U0000200D\U00002640\U0000FE0F': { # 🧞‍♀️
         'en' : ':woman_genie:',
@@ -40068,7 +41870,8 @@ EMOJI_DATA = {
         'es': ':genio_mujer:',
         'fr': u':génie_femme:',
         'pt': u':mulher_gênio:',
-        'it': ':genio_donna:'
+        'it': ':genio_donna:',
+        'fa': u':زن_جن:'
     },
     u'\U0001F9DE\U0000200D\U00002640': { # 🧞‍♀
         'en' : ':woman_genie:',
@@ -40089,7 +41892,8 @@ EMOJI_DATA = {
         'es': ':mujer_haciendo_el_gesto_de_no:',
         'fr': u':femme_faisant_un_geste_d’interdiction:',
         'pt': u':mulher_fazendo_gesto_de_“não”:',
-        'it': ':donna_con_gesto_di_rifiuto:'
+        'it': ':donna_con_gesto_di_rifiuto:',
+        'fa': u':زن_نمی_پذیرد:'
     },
     u'\U0001F645\U0000200D\U00002640': { # 🙅‍♀
         'en' : ':woman_gesturing_NO:',
@@ -40115,7 +41919,12 @@ EMOJI_DATA = {
     u'\U0001F645\U0001F3FF\U0000200D\U00002640': { # 🙅🏿‍♀
         'en' : ':woman_gesturing_NO_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':frau_mit_überkreuzten_armen_dunkle_hautfarbe:',
+        'es': ':mujer_haciendo_el_gesto_de_no_tono_de_piel_oscuro:',
+        'fr': u':femme_faisant_un_geste_d’interdiction_peau_foncée:',
+        'pt': u':mulher_fazendo_gesto_de_“não”_pele_escura:',
+        'it': ':donna_con_gesto_di_rifiuto_carnagione_scura:'
     },
     u'\U0001F645\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🙅🏻‍♀️
         'en' : ':woman_gesturing_NO_light_skin_tone:',
@@ -40130,7 +41939,12 @@ EMOJI_DATA = {
     u'\U0001F645\U0001F3FB\U0000200D\U00002640': { # 🙅🏻‍♀
         'en' : ':woman_gesturing_NO_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':frau_mit_überkreuzten_armen_helle_hautfarbe:',
+        'es': ':mujer_haciendo_el_gesto_de_no_tono_de_piel_claro:',
+        'fr': u':femme_faisant_un_geste_d’interdiction_peau_claire:',
+        'pt': u':mulher_fazendo_gesto_de_“não”_pele_clara:',
+        'it': ':donna_con_gesto_di_rifiuto_carnagione_chiara:'
     },
     u'\U0001F645\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🙅🏾‍♀️
         'en' : ':woman_gesturing_NO_medium-dark_skin_tone:',
@@ -40145,7 +41959,12 @@ EMOJI_DATA = {
     u'\U0001F645\U0001F3FE\U0000200D\U00002640': { # 🙅🏾‍♀
         'en' : ':woman_gesturing_NO_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':frau_mit_überkreuzten_armen_mitteldunkle_hautfarbe:',
+        'es': ':mujer_haciendo_el_gesto_de_no_tono_de_piel_oscuro_medio:',
+        'fr': u':femme_faisant_un_geste_d’interdiction_peau_mate:',
+        'pt': u':mulher_fazendo_gesto_de_“não”_pele_morena_escura:',
+        'it': ':donna_con_gesto_di_rifiuto_carnagione_abbastanza_scura:'
     },
     u'\U0001F645\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🙅🏼‍♀️
         'en' : ':woman_gesturing_NO_medium-light_skin_tone:',
@@ -40160,7 +41979,12 @@ EMOJI_DATA = {
     u'\U0001F645\U0001F3FC\U0000200D\U00002640': { # 🙅🏼‍♀
         'en' : ':woman_gesturing_NO_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':frau_mit_überkreuzten_armen_mittelhelle_hautfarbe:',
+        'es': ':mujer_haciendo_el_gesto_de_no_tono_de_piel_claro_medio:',
+        'fr': u':femme_faisant_un_geste_d’interdiction_peau_moyennement_claire:',
+        'pt': u':mulher_fazendo_gesto_de_“não”_pele_morena_clara:',
+        'it': ':donna_con_gesto_di_rifiuto_carnagione_abbastanza_chiara:'
     },
     u'\U0001F645\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🙅🏽‍♀️
         'en' : ':woman_gesturing_NO_medium_skin_tone:',
@@ -40175,7 +41999,12 @@ EMOJI_DATA = {
     u'\U0001F645\U0001F3FD\U0000200D\U00002640': { # 🙅🏽‍♀
         'en' : ':woman_gesturing_NO_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':frau_mit_überkreuzten_armen_mittlere_hautfarbe:',
+        'es': ':mujer_haciendo_el_gesto_de_no_tono_de_piel_medio:',
+        'fr': u':femme_faisant_un_geste_d’interdiction_peau_légèrement_mate:',
+        'pt': u':mulher_fazendo_gesto_de_“não”_pele_morena:',
+        'it': ':donna_con_gesto_di_rifiuto_carnagione_olivastra:'
     },
     u'\U0001F646\U0000200D\U00002640\U0000FE0F': { # 🙆‍♀️
         'en' : ':woman_gesturing_OK:',
@@ -40185,7 +42014,8 @@ EMOJI_DATA = {
         'es': ':mujer_haciendo_el_gesto_de_de_acuerdo:',
         'fr': u':femme_faisant_un_geste_d’acceptation:',
         'pt': u':mulher_fazendo_gesto_de_“ok”:',
-        'it': ':donna_con_gesto_ok:'
+        'it': ':donna_con_gesto_ok:',
+        'fa': u':زن_می_پذیرد:'
     },
     u'\U0001F646\U0000200D\U00002640': { # 🙆‍♀
         'en' : ':woman_gesturing_OK:',
@@ -40211,7 +42041,12 @@ EMOJI_DATA = {
     u'\U0001F646\U0001F3FF\U0000200D\U00002640': { # 🙆🏿‍♀
         'en' : ':woman_gesturing_OK_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':frau_mit_händen_auf_dem_kopf_dunkle_hautfarbe:',
+        'es': ':mujer_haciendo_el_gesto_de_de_acuerdo_tono_de_piel_oscuro:',
+        'fr': u':femme_faisant_un_geste_d’acceptation_peau_foncée:',
+        'pt': u':mulher_fazendo_gesto_de_“ok”_pele_escura:',
+        'it': ':donna_con_gesto_ok_carnagione_scura:'
     },
     u'\U0001F646\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🙆🏻‍♀️
         'en' : ':woman_gesturing_OK_light_skin_tone:',
@@ -40226,7 +42061,12 @@ EMOJI_DATA = {
     u'\U0001F646\U0001F3FB\U0000200D\U00002640': { # 🙆🏻‍♀
         'en' : ':woman_gesturing_OK_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':frau_mit_händen_auf_dem_kopf_helle_hautfarbe:',
+        'es': ':mujer_haciendo_el_gesto_de_de_acuerdo_tono_de_piel_claro:',
+        'fr': u':femme_faisant_un_geste_d’acceptation_peau_claire:',
+        'pt': u':mulher_fazendo_gesto_de_“ok”_pele_clara:',
+        'it': ':donna_con_gesto_ok_carnagione_chiara:'
     },
     u'\U0001F646\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🙆🏾‍♀️
         'en' : ':woman_gesturing_OK_medium-dark_skin_tone:',
@@ -40241,7 +42081,12 @@ EMOJI_DATA = {
     u'\U0001F646\U0001F3FE\U0000200D\U00002640': { # 🙆🏾‍♀
         'en' : ':woman_gesturing_OK_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':frau_mit_händen_auf_dem_kopf_mitteldunkle_hautfarbe:',
+        'es': ':mujer_haciendo_el_gesto_de_de_acuerdo_tono_de_piel_oscuro_medio:',
+        'fr': u':femme_faisant_un_geste_d’acceptation_peau_mate:',
+        'pt': u':mulher_fazendo_gesto_de_“ok”_pele_morena_escura:',
+        'it': ':donna_con_gesto_ok_carnagione_abbastanza_scura:'
     },
     u'\U0001F646\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🙆🏼‍♀️
         'en' : ':woman_gesturing_OK_medium-light_skin_tone:',
@@ -40256,7 +42101,12 @@ EMOJI_DATA = {
     u'\U0001F646\U0001F3FC\U0000200D\U00002640': { # 🙆🏼‍♀
         'en' : ':woman_gesturing_OK_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':frau_mit_händen_auf_dem_kopf_mittelhelle_hautfarbe:',
+        'es': ':mujer_haciendo_el_gesto_de_de_acuerdo_tono_de_piel_claro_medio:',
+        'fr': u':femme_faisant_un_geste_d’acceptation_peau_moyennement_claire:',
+        'pt': u':mulher_fazendo_gesto_de_“ok”_pele_morena_clara:',
+        'it': ':donna_con_gesto_ok_carnagione_abbastanza_chiara:'
     },
     u'\U0001F646\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🙆🏽‍♀️
         'en' : ':woman_gesturing_OK_medium_skin_tone:',
@@ -40271,7 +42121,12 @@ EMOJI_DATA = {
     u'\U0001F646\U0001F3FD\U0000200D\U00002640': { # 🙆🏽‍♀
         'en' : ':woman_gesturing_OK_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':frau_mit_händen_auf_dem_kopf_mittlere_hautfarbe:',
+        'es': ':mujer_haciendo_el_gesto_de_de_acuerdo_tono_de_piel_medio:',
+        'fr': u':femme_faisant_un_geste_d’acceptation_peau_légèrement_mate:',
+        'pt': u':mulher_fazendo_gesto_de_“ok”_pele_morena:',
+        'it': ':donna_con_gesto_ok_carnagione_olivastra:'
     },
     u'\U0001F487\U0000200D\U00002640\U0000FE0F': { # 💇‍♀️
         'en' : ':woman_getting_haircut:',
@@ -40281,7 +42136,8 @@ EMOJI_DATA = {
         'es': u':mujer_cortándose_el_pelo:',
         'fr': ':femme_qui_se_fait_couper_les_cheveux:',
         'pt': ':mulher_cortando_o_cabelo:',
-        'it': ':taglio_di_capelli_per_donna:'
+        'it': ':taglio_di_capelli_per_donna:',
+        'fa': u':زن_مو_کوتاه_می_کند:'
     },
     u'\U0001F487\U0000200D\U00002640': { # 💇‍♀
         'en' : ':woman_getting_haircut:',
@@ -40307,7 +42163,12 @@ EMOJI_DATA = {
     u'\U0001F487\U0001F3FF\U0000200D\U00002640': { # 💇🏿‍♀
         'en' : ':woman_getting_haircut_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_beim_haareschneiden_dunkle_hautfarbe:',
+        'es': u':mujer_cortándose_el_pelo_tono_de_piel_oscuro:',
+        'fr': u':femme_qui_se_fait_couper_les_cheveux_peau_foncée:',
+        'pt': ':mulher_cortando_o_cabelo_pele_escura:',
+        'it': ':taglio_di_capelli_per_donna_carnagione_scura:'
     },
     u'\U0001F487\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 💇🏻‍♀️
         'en' : ':woman_getting_haircut_light_skin_tone:',
@@ -40322,7 +42183,12 @@ EMOJI_DATA = {
     u'\U0001F487\U0001F3FB\U0000200D\U00002640': { # 💇🏻‍♀
         'en' : ':woman_getting_haircut_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_beim_haareschneiden_helle_hautfarbe:',
+        'es': u':mujer_cortándose_el_pelo_tono_de_piel_claro:',
+        'fr': ':femme_qui_se_fait_couper_les_cheveux_peau_claire:',
+        'pt': ':mulher_cortando_o_cabelo_pele_clara:',
+        'it': ':taglio_di_capelli_per_donna_carnagione_chiara:'
     },
     u'\U0001F487\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 💇🏾‍♀️
         'en' : ':woman_getting_haircut_medium-dark_skin_tone:',
@@ -40337,7 +42203,12 @@ EMOJI_DATA = {
     u'\U0001F487\U0001F3FE\U0000200D\U00002640': { # 💇🏾‍♀
         'en' : ':woman_getting_haircut_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_beim_haareschneiden_mitteldunkle_hautfarbe:',
+        'es': u':mujer_cortándose_el_pelo_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_qui_se_fait_couper_les_cheveux_peau_mate:',
+        'pt': ':mulher_cortando_o_cabelo_pele_morena_escura:',
+        'it': ':taglio_di_capelli_per_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F487\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 💇🏼‍♀️
         'en' : ':woman_getting_haircut_medium-light_skin_tone:',
@@ -40352,7 +42223,12 @@ EMOJI_DATA = {
     u'\U0001F487\U0001F3FC\U0000200D\U00002640': { # 💇🏼‍♀
         'en' : ':woman_getting_haircut_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_beim_haareschneiden_mittelhelle_hautfarbe:',
+        'es': u':mujer_cortándose_el_pelo_tono_de_piel_claro_medio:',
+        'fr': ':femme_qui_se_fait_couper_les_cheveux_peau_moyennement_claire:',
+        'pt': ':mulher_cortando_o_cabelo_pele_morena_clara:',
+        'it': ':taglio_di_capelli_per_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F487\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 💇🏽‍♀️
         'en' : ':woman_getting_haircut_medium_skin_tone:',
@@ -40367,7 +42243,12 @@ EMOJI_DATA = {
     u'\U0001F487\U0001F3FD\U0000200D\U00002640': { # 💇🏽‍♀
         'en' : ':woman_getting_haircut_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_beim_haareschneiden_mittlere_hautfarbe:',
+        'es': u':mujer_cortándose_el_pelo_tono_de_piel_medio:',
+        'fr': u':femme_qui_se_fait_couper_les_cheveux_peau_légèrement_mate:',
+        'pt': ':mulher_cortando_o_cabelo_pele_morena:',
+        'it': ':taglio_di_capelli_per_donna_carnagione_olivastra:'
     },
     u'\U0001F486\U0000200D\U00002640\U0000FE0F': { # 💆‍♀️
         'en' : ':woman_getting_massage:',
@@ -40377,7 +42258,8 @@ EMOJI_DATA = {
         'es': ':mujer_recibiendo_masaje:',
         'fr': ':femme_qui_se_fait_masser:',
         'pt': ':mulher_recebendo_massagem_facial:',
-        'it': ':donna_che_riceve_un_massaggio:'
+        'it': ':donna_che_riceve_un_massaggio:',
+        'fa': u':ماساژ_صورت_زن:'
     },
     u'\U0001F486\U0000200D\U00002640': { # 💆‍♀
         'en' : ':woman_getting_massage:',
@@ -40403,7 +42285,12 @@ EMOJI_DATA = {
     u'\U0001F486\U0001F3FF\U0000200D\U00002640': { # 💆🏿‍♀
         'en' : ':woman_getting_massage_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau,_die_eine_kopfmassage_bekommt_dunkle_hautfarbe:',
+        'es': ':mujer_recibiendo_masaje_tono_de_piel_oscuro:',
+        'fr': u':femme_qui_se_fait_masser_peau_foncée:',
+        'pt': ':mulher_recebendo_massagem_facial_pele_escura:',
+        'it': ':donna_che_riceve_un_massaggio_carnagione_scura:'
     },
     u'\U0001F486\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 💆🏻‍♀️
         'en' : ':woman_getting_massage_light_skin_tone:',
@@ -40418,7 +42305,12 @@ EMOJI_DATA = {
     u'\U0001F486\U0001F3FB\U0000200D\U00002640': { # 💆🏻‍♀
         'en' : ':woman_getting_massage_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau,_die_eine_kopfmassage_bekommt_helle_hautfarbe:',
+        'es': ':mujer_recibiendo_masaje_tono_de_piel_claro:',
+        'fr': ':femme_qui_se_fait_masser_peau_claire:',
+        'pt': ':mulher_recebendo_massagem_facial_pele_clara:',
+        'it': ':donna_che_riceve_un_massaggio_carnagione_chiara:'
     },
     u'\U0001F486\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 💆🏾‍♀️
         'en' : ':woman_getting_massage_medium-dark_skin_tone:',
@@ -40433,7 +42325,12 @@ EMOJI_DATA = {
     u'\U0001F486\U0001F3FE\U0000200D\U00002640': { # 💆🏾‍♀
         'en' : ':woman_getting_massage_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau,_die_eine_kopfmassage_bekommt_mitteldunkle_hautfarbe:',
+        'es': ':mujer_recibiendo_masaje_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_qui_se_fait_masser_peau_mate:',
+        'pt': ':mulher_recebendo_massagem_facial_pele_morena_escura:',
+        'it': ':donna_che_riceve_un_massaggio_carnagione_abbastanza_scura:'
     },
     u'\U0001F486\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 💆🏼‍♀️
         'en' : ':woman_getting_massage_medium-light_skin_tone:',
@@ -40448,7 +42345,12 @@ EMOJI_DATA = {
     u'\U0001F486\U0001F3FC\U0000200D\U00002640': { # 💆🏼‍♀
         'en' : ':woman_getting_massage_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau,_die_eine_kopfmassage_bekommt_mittelhelle_hautfarbe:',
+        'es': ':mujer_recibiendo_masaje_tono_de_piel_claro_medio:',
+        'fr': ':femme_qui_se_fait_masser_peau_moyennement_claire:',
+        'pt': ':mulher_recebendo_massagem_facial_pele_morena_clara:',
+        'it': ':donna_che_riceve_un_massaggio_carnagione_abbastanza_chiara:'
     },
     u'\U0001F486\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 💆🏽‍♀️
         'en' : ':woman_getting_massage_medium_skin_tone:',
@@ -40463,7 +42365,12 @@ EMOJI_DATA = {
     u'\U0001F486\U0001F3FD\U0000200D\U00002640': { # 💆🏽‍♀
         'en' : ':woman_getting_massage_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau,_die_eine_kopfmassage_bekommt_mittlere_hautfarbe:',
+        'es': ':mujer_recibiendo_masaje_tono_de_piel_medio:',
+        'fr': u':femme_qui_se_fait_masser_peau_légèrement_mate:',
+        'pt': ':mulher_recebendo_massagem_facial_pele_morena:',
+        'it': ':donna_che_riceve_un_massaggio_carnagione_olivastra:'
     },
     u'\U0001F3CC\U0000FE0F\U0000200D\U00002640\U0000FE0F': { # 🏌️‍♀️
         'en' : ':woman_golfing:',
@@ -40478,12 +42385,23 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0000200D\U00002640\U0000FE0F': { # 🏌‍♀️
         'en' : ':woman_golfing:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golferin:',
+        'es': ':mujer_jugando_al_golf:',
+        'fr': ':golfeuse:',
+        'pt': ':mulher_golfista:',
+        'it': ':golfista_donna:',
+        'fa': u':گلف_باز_زن:'
     },
     u'\U0001F3CC\U0000FE0F\U0000200D\U00002640': { # 🏌️‍♀
         'en' : ':woman_golfing:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golferin:',
+        'es': ':mujer_jugando_al_golf:',
+        'fr': ':golfeuse:',
+        'pt': ':mulher_golfista:',
+        'it': ':golfista_donna:'
     },
     u'\U0001F3CC\U0000200D\U00002640': { # 🏌‍♀
         'en' : ':woman_golfing:',
@@ -40509,7 +42427,12 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0001F3FF\U0000200D\U00002640': { # 🏌🏿‍♀
         'en' : ':woman_golfing_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golferin_dunkle_hautfarbe:',
+        'es': ':mujer_jugando_al_golf_tono_de_piel_oscuro:',
+        'fr': u':golfeuse_peau_foncée:',
+        'pt': ':mulher_golfista_pele_escura:',
+        'it': ':golfista_donna_carnagione_scura:'
     },
     u'\U0001F3CC\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🏌🏻‍♀️
         'en' : ':woman_golfing_light_skin_tone:',
@@ -40524,7 +42447,12 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0001F3FB\U0000200D\U00002640': { # 🏌🏻‍♀
         'en' : ':woman_golfing_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golferin_helle_hautfarbe:',
+        'es': ':mujer_jugando_al_golf_tono_de_piel_claro:',
+        'fr': ':golfeuse_peau_claire:',
+        'pt': ':mulher_golfista_pele_clara:',
+        'it': ':golfista_donna_carnagione_chiara:'
     },
     u'\U0001F3CC\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🏌🏾‍♀️
         'en' : ':woman_golfing_medium-dark_skin_tone:',
@@ -40539,7 +42467,12 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0001F3FE\U0000200D\U00002640': { # 🏌🏾‍♀
         'en' : ':woman_golfing_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golferin_mitteldunkle_hautfarbe:',
+        'es': ':mujer_jugando_al_golf_tono_de_piel_oscuro_medio:',
+        'fr': ':golfeuse_peau_mate:',
+        'pt': ':mulher_golfista_pele_morena_escura:',
+        'it': ':golfista_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F3CC\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🏌🏼‍♀️
         'en' : ':woman_golfing_medium-light_skin_tone:',
@@ -40554,7 +42487,12 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0001F3FC\U0000200D\U00002640': { # 🏌🏼‍♀
         'en' : ':woman_golfing_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golferin_mittelhelle_hautfarbe:',
+        'es': ':mujer_jugando_al_golf_tono_de_piel_claro_medio:',
+        'fr': ':golfeuse_peau_moyennement_claire:',
+        'pt': ':mulher_golfista_pele_morena_clara:',
+        'it': ':golfista_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F3CC\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🏌🏽‍♀️
         'en' : ':woman_golfing_medium_skin_tone:',
@@ -40569,7 +42507,12 @@ EMOJI_DATA = {
     u'\U0001F3CC\U0001F3FD\U0000200D\U00002640': { # 🏌🏽‍♀
         'en' : ':woman_golfing_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':golferin_mittlere_hautfarbe:',
+        'es': ':mujer_jugando_al_golf_tono_de_piel_medio:',
+        'fr': u':golfeuse_peau_légèrement_mate:',
+        'pt': ':mulher_golfista_pele_morena:',
+        'it': ':golfista_donna_carnagione_olivastra:'
     },
     u'\U0001F482\U0000200D\U00002640\U0000FE0F': { # 💂‍♀️
         'en' : ':woman_guard:',
@@ -40579,7 +42522,8 @@ EMOJI_DATA = {
         'es': ':guardia_mujer:',
         'fr': ':garde_femme:',
         'pt': ':guarda_mulher:',
-        'it': ':guardia_donna:'
+        'it': ':guardia_donna:',
+        'fa': u':گارد_زن:'
     },
     u'\U0001F482\U0000200D\U00002640': { # 💂‍♀
         'en' : ':woman_guard:',
@@ -40605,7 +42549,12 @@ EMOJI_DATA = {
     u'\U0001F482\U0001F3FF\U0000200D\U00002640': { # 💂🏿‍♀
         'en' : ':woman_guard_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wachfrau_dunkle_hautfarbe:',
+        'es': ':guardia_mujer_tono_de_piel_oscuro:',
+        'fr': u':garde_femme_peau_foncée:',
+        'pt': ':guarda_mulher_pele_escura:',
+        'it': ':guardia_donna_carnagione_scura:'
     },
     u'\U0001F482\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 💂🏻‍♀️
         'en' : ':woman_guard_light_skin_tone:',
@@ -40620,7 +42569,12 @@ EMOJI_DATA = {
     u'\U0001F482\U0001F3FB\U0000200D\U00002640': { # 💂🏻‍♀
         'en' : ':woman_guard_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wachfrau_helle_hautfarbe:',
+        'es': ':guardia_mujer_tono_de_piel_claro:',
+        'fr': ':garde_femme_peau_claire:',
+        'pt': ':guarda_mulher_pele_clara:',
+        'it': ':guardia_donna_carnagione_chiara:'
     },
     u'\U0001F482\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 💂🏾‍♀️
         'en' : ':woman_guard_medium-dark_skin_tone:',
@@ -40635,7 +42589,12 @@ EMOJI_DATA = {
     u'\U0001F482\U0001F3FE\U0000200D\U00002640': { # 💂🏾‍♀
         'en' : ':woman_guard_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wachfrau_mitteldunkle_hautfarbe:',
+        'es': ':guardia_mujer_tono_de_piel_oscuro_medio:',
+        'fr': ':garde_femme_peau_mate:',
+        'pt': ':guarda_mulher_pele_morena_escura:',
+        'it': ':guardia_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F482\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 💂🏼‍♀️
         'en' : ':woman_guard_medium-light_skin_tone:',
@@ -40650,7 +42609,12 @@ EMOJI_DATA = {
     u'\U0001F482\U0001F3FC\U0000200D\U00002640': { # 💂🏼‍♀
         'en' : ':woman_guard_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wachfrau_mittelhelle_hautfarbe:',
+        'es': ':guardia_mujer_tono_de_piel_claro_medio:',
+        'fr': ':garde_femme_peau_moyennement_claire:',
+        'pt': ':guarda_mulher_pele_morena_clara:',
+        'it': ':guardia_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F482\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 💂🏽‍♀️
         'en' : ':woman_guard_medium_skin_tone:',
@@ -40665,7 +42629,12 @@ EMOJI_DATA = {
     u'\U0001F482\U0001F3FD\U0000200D\U00002640': { # 💂🏽‍♀
         'en' : ':woman_guard_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wachfrau_mittlere_hautfarbe:',
+        'es': ':guardia_mujer_tono_de_piel_medio:',
+        'fr': u':garde_femme_peau_légèrement_mate:',
+        'pt': ':guarda_mulher_pele_morena:',
+        'it': ':guardia_donna_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U00002695\U0000FE0F': { # 👩‍⚕️
         'en' : ':woman_health_worker:',
@@ -40675,7 +42644,8 @@ EMOJI_DATA = {
         'es': ':profesional_sanitario_mujer:',
         'fr': u':professionnelle_de_la_santé:',
         'pt': u':mulher_profissional_da_saúde:',
-        'it': ':operatrice_sanitaria:'
+        'it': ':operatrice_sanitaria:',
+        'fa': u':مددکار_بهداشت_زن:'
     },
     u'\U0001F469\U0000200D\U00002695': { # 👩‍⚕
         'en' : ':woman_health_worker:',
@@ -40701,7 +42671,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FF\U0000200D\U00002695': { # 👩🏿‍⚕
         'en' : ':woman_health_worker_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':ärztin_dunkle_hautfarbe:',
+        'es': ':profesional_sanitario_mujer_tono_de_piel_oscuro:',
+        'fr': u':professionnelle_de_la_santé_peau_foncée:',
+        'pt': u':mulher_profissional_da_saúde_pele_escura:',
+        'it': ':operatrice_sanitaria_carnagione_scura:'
     },
     u'\U0001F469\U0001F3FB\U0000200D\U00002695\U0000FE0F': { # 👩🏻‍⚕️
         'en' : ':woman_health_worker_light_skin_tone:',
@@ -40716,7 +42691,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FB\U0000200D\U00002695': { # 👩🏻‍⚕
         'en' : ':woman_health_worker_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':ärztin_helle_hautfarbe:',
+        'es': ':profesional_sanitario_mujer_tono_de_piel_claro:',
+        'fr': u':professionnelle_de_la_santé_peau_claire:',
+        'pt': u':mulher_profissional_da_saúde_pele_clara:',
+        'it': ':operatrice_sanitaria_carnagione_chiara:'
     },
     u'\U0001F469\U0001F3FE\U0000200D\U00002695\U0000FE0F': { # 👩🏾‍⚕️
         'en' : ':woman_health_worker_medium-dark_skin_tone:',
@@ -40731,7 +42711,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FE\U0000200D\U00002695': { # 👩🏾‍⚕
         'en' : ':woman_health_worker_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':ärztin_mitteldunkle_hautfarbe:',
+        'es': ':profesional_sanitario_mujer_tono_de_piel_oscuro_medio:',
+        'fr': u':professionnelle_de_la_santé_peau_mate:',
+        'pt': u':mulher_profissional_da_saúde_pele_morena_escura:',
+        'it': ':operatrice_sanitaria_carnagione_abbastanza_scura:'
     },
     u'\U0001F469\U0001F3FC\U0000200D\U00002695\U0000FE0F': { # 👩🏼‍⚕️
         'en' : ':woman_health_worker_medium-light_skin_tone:',
@@ -40746,7 +42731,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FC\U0000200D\U00002695': { # 👩🏼‍⚕
         'en' : ':woman_health_worker_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':ärztin_mittelhelle_hautfarbe:',
+        'es': ':profesional_sanitario_mujer_tono_de_piel_claro_medio:',
+        'fr': u':professionnelle_de_la_santé_peau_moyennement_claire:',
+        'pt': u':mulher_profissional_da_saúde_pele_morena_clara:',
+        'it': ':operatrice_sanitaria_carnagione_abbastanza_chiara:'
     },
     u'\U0001F469\U0001F3FD\U0000200D\U00002695\U0000FE0F': { # 👩🏽‍⚕️
         'en' : ':woman_health_worker_medium_skin_tone:',
@@ -40761,7 +42751,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FD\U0000200D\U00002695': { # 👩🏽‍⚕
         'en' : ':woman_health_worker_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':ärztin_mittlere_hautfarbe:',
+        'es': ':profesional_sanitario_mujer_tono_de_piel_medio:',
+        'fr': u':professionnelle_de_la_santé_peau_légèrement_mate:',
+        'pt': u':mulher_profissional_da_saúde_pele_morena:',
+        'it': ':operatrice_sanitaria_carnagione_olivastra:'
     },
     u'\U0001F9D8\U0000200D\U00002640\U0000FE0F': { # 🧘‍♀️
         'en' : ':woman_in_lotus_position:',
@@ -40771,7 +42766,8 @@ EMOJI_DATA = {
         'es': u':mujer_en_posición_de_loto:',
         'fr': ':femme_dans_la_posture_du_lotus:',
         'pt': u':mulher_na_posição_de_lótus:',
-        'it': ':donna_in_posizione_del_loto:'
+        'it': ':donna_in_posizione_del_loto:',
+        'fa': u':زن_در_حالت_خلسه:'
     },
     u'\U0001F9D8\U0000200D\U00002640': { # 🧘‍♀
         'en' : ':woman_in_lotus_position:',
@@ -40797,7 +42793,12 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0001F3FF\U0000200D\U00002640': { # 🧘🏿‍♀
         'en' : ':woman_in_lotus_position_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':frau_im_lotossitz_dunkle_hautfarbe:',
+        'es': u':mujer_en_posición_de_loto_tono_de_piel_oscuro:',
+        'fr': u':femme_dans_la_posture_du_lotus_peau_foncée:',
+        'pt': u':mulher_na_posição_de_lótus_pele_escura:',
+        'it': ':donna_in_posizione_del_loto_carnagione_scura:'
     },
     u'\U0001F9D8\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🧘🏻‍♀️
         'en' : ':woman_in_lotus_position_light_skin_tone:',
@@ -40812,7 +42813,12 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0001F3FB\U0000200D\U00002640': { # 🧘🏻‍♀
         'en' : ':woman_in_lotus_position_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':frau_im_lotossitz_helle_hautfarbe:',
+        'es': u':mujer_en_posición_de_loto_tono_de_piel_claro:',
+        'fr': ':femme_dans_la_posture_du_lotus_peau_claire:',
+        'pt': u':mulher_na_posição_de_lótus_pele_clara:',
+        'it': ':donna_in_posizione_del_loto_carnagione_chiara:'
     },
     u'\U0001F9D8\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🧘🏾‍♀️
         'en' : ':woman_in_lotus_position_medium-dark_skin_tone:',
@@ -40827,7 +42833,12 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0001F3FE\U0000200D\U00002640': { # 🧘🏾‍♀
         'en' : ':woman_in_lotus_position_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':frau_im_lotossitz_mitteldunkle_hautfarbe:',
+        'es': u':mujer_en_posición_de_loto_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_dans_la_posture_du_lotus_peau_mate:',
+        'pt': u':mulher_na_posição_de_lótus_pele_morena_escura:',
+        'it': ':donna_in_posizione_del_loto_carnagione_abbastanza_scura:'
     },
     u'\U0001F9D8\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🧘🏼‍♀️
         'en' : ':woman_in_lotus_position_medium-light_skin_tone:',
@@ -40842,7 +42853,12 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0001F3FC\U0000200D\U00002640': { # 🧘🏼‍♀
         'en' : ':woman_in_lotus_position_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':frau_im_lotossitz_mittelhelle_hautfarbe:',
+        'es': u':mujer_en_posición_de_loto_tono_de_piel_claro_medio:',
+        'fr': ':femme_dans_la_posture_du_lotus_peau_moyennement_claire:',
+        'pt': u':mulher_na_posição_de_lótus_pele_morena_clara:',
+        'it': ':donna_in_posizione_del_loto_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9D8\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🧘🏽‍♀️
         'en' : ':woman_in_lotus_position_medium_skin_tone:',
@@ -40857,7 +42873,12 @@ EMOJI_DATA = {
     u'\U0001F9D8\U0001F3FD\U0000200D\U00002640': { # 🧘🏽‍♀
         'en' : ':woman_in_lotus_position_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':frau_im_lotossitz_mittlere_hautfarbe:',
+        'es': u':mujer_en_posición_de_loto_tono_de_piel_medio:',
+        'fr': u':femme_dans_la_posture_du_lotus_peau_légèrement_mate:',
+        'pt': u':mulher_na_posição_de_lótus_pele_morena:',
+        'it': ':donna_in_posizione_del_loto_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F9BD': { # 👩‍🦽
         'en' : ':woman_in_manual_wheelchair:',
@@ -40989,7 +43010,8 @@ EMOJI_DATA = {
         'es': ':mujer_en_una_sauna:',
         'fr': ':femme_au_hammam:',
         'pt': ':mulher_na_sauna:',
-        'it': ':donna_in_sauna:'
+        'it': ':donna_in_sauna:',
+        'fa': u':زن_در_حمام_بخار:'
     },
     u'\U0001F9D6\U0000200D\U00002640': { # 🧖‍♀
         'en' : ':woman_in_steamy_room:',
@@ -41015,7 +43037,12 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0001F3FF\U0000200D\U00002640': { # 🧖🏿‍♀
         'en' : ':woman_in_steamy_room_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':frau_in_dampfsauna_dunkle_hautfarbe:',
+        'es': ':mujer_en_una_sauna_tono_de_piel_oscuro:',
+        'fr': u':femme_au_hammam_peau_foncée:',
+        'pt': ':mulher_na_sauna_pele_escura:',
+        'it': ':donna_in_sauna_carnagione_scura:'
     },
     u'\U0001F9D6\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🧖🏻‍♀️
         'en' : ':woman_in_steamy_room_light_skin_tone:',
@@ -41030,7 +43057,12 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0001F3FB\U0000200D\U00002640': { # 🧖🏻‍♀
         'en' : ':woman_in_steamy_room_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':frau_in_dampfsauna_helle_hautfarbe:',
+        'es': ':mujer_en_una_sauna_tono_de_piel_claro:',
+        'fr': ':femme_au_hammam_peau_claire:',
+        'pt': ':mulher_na_sauna_pele_clara:',
+        'it': ':donna_in_sauna_carnagione_chiara:'
     },
     u'\U0001F9D6\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🧖🏾‍♀️
         'en' : ':woman_in_steamy_room_medium-dark_skin_tone:',
@@ -41045,7 +43077,12 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0001F3FE\U0000200D\U00002640': { # 🧖🏾‍♀
         'en' : ':woman_in_steamy_room_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':frau_in_dampfsauna_mitteldunkle_hautfarbe:',
+        'es': ':mujer_en_una_sauna_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_au_hammam_peau_mate:',
+        'pt': ':mulher_na_sauna_pele_morena_escura:',
+        'it': ':donna_in_sauna_carnagione_abbastanza_scura:'
     },
     u'\U0001F9D6\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🧖🏼‍♀️
         'en' : ':woman_in_steamy_room_medium-light_skin_tone:',
@@ -41060,7 +43097,12 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0001F3FC\U0000200D\U00002640': { # 🧖🏼‍♀
         'en' : ':woman_in_steamy_room_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':frau_in_dampfsauna_mittelhelle_hautfarbe:',
+        'es': ':mujer_en_una_sauna_tono_de_piel_claro_medio:',
+        'fr': ':femme_au_hammam_peau_moyennement_claire:',
+        'pt': ':mulher_na_sauna_pele_morena_clara:',
+        'it': ':donna_in_sauna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9D6\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🧖🏽‍♀️
         'en' : ':woman_in_steamy_room_medium_skin_tone:',
@@ -41075,7 +43117,12 @@ EMOJI_DATA = {
     u'\U0001F9D6\U0001F3FD\U0000200D\U00002640': { # 🧖🏽‍♀
         'en' : ':woman_in_steamy_room_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':frau_in_dampfsauna_mittlere_hautfarbe:',
+        'es': ':mujer_en_una_sauna_tono_de_piel_medio:',
+        'fr': u':femme_au_hammam_peau_légèrement_mate:',
+        'pt': ':mulher_na_sauna_pele_morena:',
+        'it': ':donna_in_sauna_carnagione_olivastra:'
     },
     u'\U0001F935\U0000200D\U00002640\U0000FE0F': { # 🤵‍♀️
         'en' : ':woman_in_tuxedo:',
@@ -41085,7 +43132,8 @@ EMOJI_DATA = {
         'es': ':mujer_con_esmoquin:',
         'fr': ':femme_en_smoking:',
         'pt': ':mulher_de_smoking:',
-        'it': ':donna_in_smoking:'
+        'it': ':donna_in_smoking:',
+        'fa': u':زن_با_کت_و_شلوار_و_پاپیون:'
     },
     u'\U0001F935\U0000200D\U00002640': { # 🤵‍♀
         'en' : ':woman_in_tuxedo:',
@@ -41111,7 +43159,12 @@ EMOJI_DATA = {
     u'\U0001F935\U0001F3FF\U0000200D\U00002640': { # 🤵🏿‍♀
         'en' : ':woman_in_tuxedo_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':frau_im_smoking_dunkle_hautfarbe:',
+        'es': ':mujer_con_esmoquin_tono_de_piel_oscuro:',
+        'fr': u':femme_en_smoking_peau_foncée:',
+        'pt': ':mulher_de_smoking_pele_escura:',
+        'it': ':donna_in_smoking_carnagione_scura:'
     },
     u'\U0001F935\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🤵🏻‍♀️
         'en' : ':woman_in_tuxedo_light_skin_tone:',
@@ -41126,7 +43179,12 @@ EMOJI_DATA = {
     u'\U0001F935\U0001F3FB\U0000200D\U00002640': { # 🤵🏻‍♀
         'en' : ':woman_in_tuxedo_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':frau_im_smoking_helle_hautfarbe:',
+        'es': ':mujer_con_esmoquin_tono_de_piel_claro:',
+        'fr': ':femme_en_smoking_peau_claire:',
+        'pt': ':mulher_de_smoking_pele_clara:',
+        'it': ':donna_in_smoking_carnagione_chiara:'
     },
     u'\U0001F935\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🤵🏾‍♀️
         'en' : ':woman_in_tuxedo_medium-dark_skin_tone:',
@@ -41141,7 +43199,12 @@ EMOJI_DATA = {
     u'\U0001F935\U0001F3FE\U0000200D\U00002640': { # 🤵🏾‍♀
         'en' : ':woman_in_tuxedo_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':frau_im_smoking_mitteldunkle_hautfarbe:',
+        'es': ':mujer_con_esmoquin_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_en_smoking_peau_mate:',
+        'pt': ':mulher_de_smoking_pele_morena_escura:',
+        'it': ':donna_in_smoking_carnagione_abbastanza_scura:'
     },
     u'\U0001F935\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🤵🏼‍♀️
         'en' : ':woman_in_tuxedo_medium-light_skin_tone:',
@@ -41156,7 +43219,12 @@ EMOJI_DATA = {
     u'\U0001F935\U0001F3FC\U0000200D\U00002640': { # 🤵🏼‍♀
         'en' : ':woman_in_tuxedo_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':frau_im_smoking_mittelhelle_hautfarbe:',
+        'es': ':mujer_con_esmoquin_tono_de_piel_claro_medio:',
+        'fr': ':femme_en_smoking_peau_moyennement_claire:',
+        'pt': ':mulher_de_smoking_pele_morena_clara:',
+        'it': ':donna_in_smoking_carnagione_abbastanza_chiara:'
     },
     u'\U0001F935\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🤵🏽‍♀️
         'en' : ':woman_in_tuxedo_medium_skin_tone:',
@@ -41171,7 +43239,12 @@ EMOJI_DATA = {
     u'\U0001F935\U0001F3FD\U0000200D\U00002640': { # 🤵🏽‍♀
         'en' : ':woman_in_tuxedo_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':frau_im_smoking_mittlere_hautfarbe:',
+        'es': ':mujer_con_esmoquin_tono_de_piel_medio:',
+        'fr': u':femme_en_smoking_peau_légèrement_mate:',
+        'pt': ':mulher_de_smoking_pele_morena:',
+        'it': ':donna_in_smoking_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U00002696\U0000FE0F': { # 👩‍⚖️
         'en' : ':woman_judge:',
@@ -41181,7 +43254,8 @@ EMOJI_DATA = {
         'es': ':fiscal_mujer:',
         'fr': ':juge_femme:',
         'pt': u':juíza:',
-        'it': ':giudice_donna:'
+        'it': ':giudice_donna:',
+        'fa': u':قاضی_زن:'
     },
     u'\U0001F469\U0000200D\U00002696': { # 👩‍⚖
         'en' : ':woman_judge:',
@@ -41207,7 +43281,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FF\U0000200D\U00002696': { # 👩🏿‍⚖
         'en' : ':woman_judge_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':richterin_dunkle_hautfarbe:',
+        'es': ':fiscal_mujer_tono_de_piel_oscuro:',
+        'fr': u':juge_femme_peau_foncée:',
+        'pt': u':juíza_pele_escura:',
+        'it': ':giudice_donna_carnagione_scura:'
     },
     u'\U0001F469\U0001F3FB\U0000200D\U00002696\U0000FE0F': { # 👩🏻‍⚖️
         'en' : ':woman_judge_light_skin_tone:',
@@ -41222,7 +43301,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FB\U0000200D\U00002696': { # 👩🏻‍⚖
         'en' : ':woman_judge_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':richterin_helle_hautfarbe:',
+        'es': ':fiscal_mujer_tono_de_piel_claro:',
+        'fr': ':juge_femme_peau_claire:',
+        'pt': u':juíza_pele_clara:',
+        'it': ':giudice_donna_carnagione_chiara:'
     },
     u'\U0001F469\U0001F3FE\U0000200D\U00002696\U0000FE0F': { # 👩🏾‍⚖️
         'en' : ':woman_judge_medium-dark_skin_tone:',
@@ -41237,7 +43321,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FE\U0000200D\U00002696': { # 👩🏾‍⚖
         'en' : ':woman_judge_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':richterin_mitteldunkle_hautfarbe:',
+        'es': ':fiscal_mujer_tono_de_piel_oscuro_medio:',
+        'fr': ':juge_femme_peau_mate:',
+        'pt': u':juíza_pele_morena_escura:',
+        'it': ':giudice_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F469\U0001F3FC\U0000200D\U00002696\U0000FE0F': { # 👩🏼‍⚖️
         'en' : ':woman_judge_medium-light_skin_tone:',
@@ -41252,7 +43341,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FC\U0000200D\U00002696': { # 👩🏼‍⚖
         'en' : ':woman_judge_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':richterin_mittelhelle_hautfarbe:',
+        'es': ':fiscal_mujer_tono_de_piel_claro_medio:',
+        'fr': ':juge_femme_peau_moyennement_claire:',
+        'pt': u':juíza_pele_morena_clara:',
+        'it': ':giudice_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F469\U0001F3FD\U0000200D\U00002696\U0000FE0F': { # 👩🏽‍⚖️
         'en' : ':woman_judge_medium_skin_tone:',
@@ -41267,7 +43361,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FD\U0000200D\U00002696': { # 👩🏽‍⚖
         'en' : ':woman_judge_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':richterin_mittlere_hautfarbe:',
+        'es': ':fiscal_mujer_tono_de_piel_medio:',
+        'fr': u':juge_femme_peau_légèrement_mate:',
+        'pt': u':juíza_pele_morena:',
+        'it': ':giudice_donna_carnagione_olivastra:'
     },
     u'\U0001F939\U0000200D\U00002640\U0000FE0F': { # 🤹‍♀️
         'en' : ':woman_juggling:',
@@ -41277,7 +43376,8 @@ EMOJI_DATA = {
         'es': ':mujer_haciendo_malabares:',
         'fr': ':jongleuse:',
         'pt': ':mulher_malabarista:',
-        'it': ':giocoliere_donna:'
+        'it': ':giocoliere_donna:',
+        'fa': u':زن_ژانگولربازی_می_کند:'
     },
     u'\U0001F939\U0000200D\U00002640': { # 🤹‍♀
         'en' : ':woman_juggling:',
@@ -41303,7 +43403,12 @@ EMOJI_DATA = {
     u'\U0001F939\U0001F3FF\U0000200D\U00002640': { # 🤹🏿‍♀
         'en' : ':woman_juggling_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':jongleurin_dunkle_hautfarbe:',
+        'es': ':mujer_haciendo_malabares_tono_de_piel_oscuro:',
+        'fr': u':jongleuse_peau_foncée:',
+        'pt': ':mulher_malabarista_pele_escura:',
+        'it': ':giocoliere_donna_carnagione_scura:'
     },
     u'\U0001F939\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🤹🏻‍♀️
         'en' : ':woman_juggling_light_skin_tone:',
@@ -41318,7 +43423,12 @@ EMOJI_DATA = {
     u'\U0001F939\U0001F3FB\U0000200D\U00002640': { # 🤹🏻‍♀
         'en' : ':woman_juggling_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':jongleurin_helle_hautfarbe:',
+        'es': ':mujer_haciendo_malabares_tono_de_piel_claro:',
+        'fr': ':jongleuse_peau_claire:',
+        'pt': ':mulher_malabarista_pele_clara:',
+        'it': ':giocoliere_donna_carnagione_chiara:'
     },
     u'\U0001F939\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🤹🏾‍♀️
         'en' : ':woman_juggling_medium-dark_skin_tone:',
@@ -41333,7 +43443,12 @@ EMOJI_DATA = {
     u'\U0001F939\U0001F3FE\U0000200D\U00002640': { # 🤹🏾‍♀
         'en' : ':woman_juggling_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':jongleurin_mitteldunkle_hautfarbe:',
+        'es': ':mujer_haciendo_malabares_tono_de_piel_oscuro_medio:',
+        'fr': ':jongleuse_peau_mate:',
+        'pt': ':mulher_malabarista_pele_morena_escura:',
+        'it': ':giocoliere_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F939\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🤹🏼‍♀️
         'en' : ':woman_juggling_medium-light_skin_tone:',
@@ -41348,7 +43463,12 @@ EMOJI_DATA = {
     u'\U0001F939\U0001F3FC\U0000200D\U00002640': { # 🤹🏼‍♀
         'en' : ':woman_juggling_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':jongleurin_mittelhelle_hautfarbe:',
+        'es': ':mujer_haciendo_malabares_tono_de_piel_claro_medio:',
+        'fr': ':jongleuse_peau_moyennement_claire:',
+        'pt': ':mulher_malabarista_pele_morena_clara:',
+        'it': ':giocoliere_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F939\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🤹🏽‍♀️
         'en' : ':woman_juggling_medium_skin_tone:',
@@ -41363,7 +43483,12 @@ EMOJI_DATA = {
     u'\U0001F939\U0001F3FD\U0000200D\U00002640': { # 🤹🏽‍♀
         'en' : ':woman_juggling_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':jongleurin_mittlere_hautfarbe:',
+        'es': ':mujer_haciendo_malabares_tono_de_piel_medio:',
+        'fr': u':jongleuse_peau_légèrement_mate:',
+        'pt': ':mulher_malabarista_pele_morena:',
+        'it': ':giocoliere_donna_carnagione_olivastra:'
     },
     u'\U0001F9CE\U0000200D\U00002640\U0000FE0F': { # 🧎‍♀️
         'en' : ':woman_kneeling:',
@@ -41373,7 +43498,8 @@ EMOJI_DATA = {
         'es': ':mujer_de_rodillas:',
         'fr': u':femme_à_genoux:',
         'pt': ':mulher_ajoelhando:',
-        'it': ':donna_inginocchiata:'
+        'it': ':donna_inginocchiata:',
+        'fa': u':زن_زانوزده:'
     },
     u'\U0001F9CE\U0000200D\U00002640': { # 🧎‍♀
         'en' : ':woman_kneeling:',
@@ -41399,7 +43525,12 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0001F3FF\U0000200D\U00002640': { # 🧎🏿‍♀
         'en' : ':woman_kneeling_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':kniende_frau_dunkle_hautfarbe:',
+        'es': ':mujer_de_rodillas_tono_de_piel_oscuro:',
+        'fr': u':femme_à_genoux_peau_foncée:',
+        'pt': ':mulher_ajoelhando_pele_escura:',
+        'it': ':donna_inginocchiata_carnagione_scura:'
     },
     u'\U0001F9CE\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🧎🏻‍♀️
         'en' : ':woman_kneeling_light_skin_tone:',
@@ -41414,7 +43545,12 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0001F3FB\U0000200D\U00002640': { # 🧎🏻‍♀
         'en' : ':woman_kneeling_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':kniende_frau_helle_hautfarbe:',
+        'es': ':mujer_de_rodillas_tono_de_piel_claro:',
+        'fr': u':femme_à_genoux_peau_claire:',
+        'pt': ':mulher_ajoelhando_pele_clara:',
+        'it': ':donna_inginocchiata_carnagione_chiara:'
     },
     u'\U0001F9CE\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🧎🏾‍♀️
         'en' : ':woman_kneeling_medium-dark_skin_tone:',
@@ -41429,7 +43565,12 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0001F3FE\U0000200D\U00002640': { # 🧎🏾‍♀
         'en' : ':woman_kneeling_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':kniende_frau_mitteldunkle_hautfarbe:',
+        'es': ':mujer_de_rodillas_tono_de_piel_oscuro_medio:',
+        'fr': u':femme_à_genoux_peau_mate:',
+        'pt': ':mulher_ajoelhando_pele_morena_escura:',
+        'it': ':donna_inginocchiata_carnagione_abbastanza_scura:'
     },
     u'\U0001F9CE\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🧎🏼‍♀️
         'en' : ':woman_kneeling_medium-light_skin_tone:',
@@ -41444,7 +43585,12 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0001F3FC\U0000200D\U00002640': { # 🧎🏼‍♀
         'en' : ':woman_kneeling_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':kniende_frau_mittelhelle_hautfarbe:',
+        'es': ':mujer_de_rodillas_tono_de_piel_claro_medio:',
+        'fr': u':femme_à_genoux_peau_moyennement_claire:',
+        'pt': ':mulher_ajoelhando_pele_morena_clara:',
+        'it': ':donna_inginocchiata_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9CE\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🧎🏽‍♀️
         'en' : ':woman_kneeling_medium_skin_tone:',
@@ -41459,7 +43605,12 @@ EMOJI_DATA = {
     u'\U0001F9CE\U0001F3FD\U0000200D\U00002640': { # 🧎🏽‍♀
         'en' : ':woman_kneeling_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':kniende_frau_mittlere_hautfarbe:',
+        'es': ':mujer_de_rodillas_tono_de_piel_medio:',
+        'fr': u':femme_à_genoux_peau_légèrement_mate:',
+        'pt': ':mulher_ajoelhando_pele_morena:',
+        'it': ':donna_inginocchiata_carnagione_olivastra:'
     },
     u'\U0001F3CB\U0000FE0F\U0000200D\U00002640\U0000FE0F': { # 🏋️‍♀️
         'en' : ':woman_lifting_weights:',
@@ -41474,12 +43625,23 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0000200D\U00002640\U0000FE0F': { # 🏋‍♀️
         'en' : ':woman_lifting_weights:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheberin:',
+        'es': ':mujer_levantando_pesas:',
+        'fr': u':femme_haltérophile:',
+        'pt': ':mulher_levantando_peso:',
+        'it': ':donna_che_solleva_pesi:',
+        'fa': u':وزنه_بردار_زن:'
     },
     u'\U0001F3CB\U0000FE0F\U0000200D\U00002640': { # 🏋️‍♀
         'en' : ':woman_lifting_weights:',
         'status' : unqualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheberin:',
+        'es': ':mujer_levantando_pesas:',
+        'fr': u':femme_haltérophile:',
+        'pt': ':mulher_levantando_peso:',
+        'it': ':donna_che_solleva_pesi:'
     },
     u'\U0001F3CB\U0000200D\U00002640': { # 🏋‍♀
         'en' : ':woman_lifting_weights:',
@@ -41505,7 +43667,12 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0001F3FF\U0000200D\U00002640': { # 🏋🏿‍♀
         'en' : ':woman_lifting_weights_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheberin_dunkle_hautfarbe:',
+        'es': ':mujer_levantando_pesas_tono_de_piel_oscuro:',
+        'fr': u':femme_haltérophile_peau_foncée:',
+        'pt': ':mulher_levantando_peso_pele_escura:',
+        'it': ':donna_che_solleva_pesi_carnagione_scura:'
     },
     u'\U0001F3CB\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🏋🏻‍♀️
         'en' : ':woman_lifting_weights_light_skin_tone:',
@@ -41520,7 +43687,12 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0001F3FB\U0000200D\U00002640': { # 🏋🏻‍♀
         'en' : ':woman_lifting_weights_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheberin_helle_hautfarbe:',
+        'es': ':mujer_levantando_pesas_tono_de_piel_claro:',
+        'fr': u':femme_haltérophile_peau_claire:',
+        'pt': ':mulher_levantando_peso_pele_clara:',
+        'it': ':donna_che_solleva_pesi_carnagione_chiara:'
     },
     u'\U0001F3CB\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🏋🏾‍♀️
         'en' : ':woman_lifting_weights_medium-dark_skin_tone:',
@@ -41535,7 +43707,12 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0001F3FE\U0000200D\U00002640': { # 🏋🏾‍♀
         'en' : ':woman_lifting_weights_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheberin_mitteldunkle_hautfarbe:',
+        'es': ':mujer_levantando_pesas_tono_de_piel_oscuro_medio:',
+        'fr': u':femme_haltérophile_peau_mate:',
+        'pt': ':mulher_levantando_peso_pele_morena_escura:',
+        'it': ':donna_che_solleva_pesi_carnagione_abbastanza_scura:'
     },
     u'\U0001F3CB\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🏋🏼‍♀️
         'en' : ':woman_lifting_weights_medium-light_skin_tone:',
@@ -41550,7 +43727,12 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0001F3FC\U0000200D\U00002640': { # 🏋🏼‍♀
         'en' : ':woman_lifting_weights_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheberin_mittelhelle_hautfarbe:',
+        'es': ':mujer_levantando_pesas_tono_de_piel_claro_medio:',
+        'fr': u':femme_haltérophile_peau_moyennement_claire:',
+        'pt': ':mulher_levantando_peso_pele_morena_clara:',
+        'it': ':donna_che_solleva_pesi_carnagione_abbastanza_chiara:'
     },
     u'\U0001F3CB\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🏋🏽‍♀️
         'en' : ':woman_lifting_weights_medium_skin_tone:',
@@ -41565,7 +43747,12 @@ EMOJI_DATA = {
     u'\U0001F3CB\U0001F3FD\U0000200D\U00002640': { # 🏋🏽‍♀
         'en' : ':woman_lifting_weights_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':gewichtheberin_mittlere_hautfarbe:',
+        'es': ':mujer_levantando_pesas_tono_de_piel_medio:',
+        'fr': u':femme_haltérophile_peau_légèrement_mate:',
+        'pt': ':mulher_levantando_peso_pele_morena:',
+        'it': ':donna_che_solleva_pesi_carnagione_olivastra:'
     },
     u'\U0001F469\U0001F3FB': { # 👩🏻
         'en' : ':woman_light_skin_tone:',
@@ -41610,7 +43797,12 @@ EMOJI_DATA = {
     u'\U0001F471\U0001F3FB\U0000200D\U00002640': { # 👱🏻‍♀
         'en' : ':woman_light_skin_tone_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_helle_hautfarbe,_blond:',
+        'es': ':mujer_rubia_tono_de_piel_claro:',
+        'fr': ':femme_blonde_peau_claire:',
+        'pt': ':mulher_pele_clara_e_cabelo_loiro:',
+        'it': ':donna_bionda_carnagione_chiara:'
     },
     u'\U0001F469\U0001F3FB\U0000200D\U0001F9B1': { # 👩🏻‍🦱
         'en' : ':woman_light_skin_tone_curly_hair:',
@@ -41650,7 +43842,8 @@ EMOJI_DATA = {
         'es': ':maga:',
         'fr': ':mage_femme:',
         'pt': ':maga:',
-        'it': ':maga:'
+        'it': ':maga:',
+        'fa': u':ساحر_زن:'
     },
     u'\U0001F9D9\U0000200D\U00002640': { # 🧙‍♀
         'en' : ':woman_mage:',
@@ -41676,7 +43869,12 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0001F3FF\U0000200D\U00002640': { # 🧙🏿‍♀
         'en' : ':woman_mage_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':magierin_dunkle_hautfarbe:',
+        'es': ':maga_tono_de_piel_oscuro:',
+        'fr': u':mage_femme_peau_foncée:',
+        'pt': ':maga_pele_escura:',
+        'it': ':maga_carnagione_scura:'
     },
     u'\U0001F9D9\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🧙🏻‍♀️
         'en' : ':woman_mage_light_skin_tone:',
@@ -41691,7 +43889,12 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0001F3FB\U0000200D\U00002640': { # 🧙🏻‍♀
         'en' : ':woman_mage_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':magierin_helle_hautfarbe:',
+        'es': ':maga_tono_de_piel_claro:',
+        'fr': ':mage_femme_peau_claire:',
+        'pt': ':maga_pele_clara:',
+        'it': ':maga_carnagione_chiara:'
     },
     u'\U0001F9D9\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🧙🏾‍♀️
         'en' : ':woman_mage_medium-dark_skin_tone:',
@@ -41706,7 +43909,12 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0001F3FE\U0000200D\U00002640': { # 🧙🏾‍♀
         'en' : ':woman_mage_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':magierin_mitteldunkle_hautfarbe:',
+        'es': ':maga_tono_de_piel_oscuro_medio:',
+        'fr': ':mage_femme_peau_mate:',
+        'pt': ':maga_pele_morena_escura:',
+        'it': ':maga_carnagione_abbastanza_scura:'
     },
     u'\U0001F9D9\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🧙🏼‍♀️
         'en' : ':woman_mage_medium-light_skin_tone:',
@@ -41721,7 +43929,12 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0001F3FC\U0000200D\U00002640': { # 🧙🏼‍♀
         'en' : ':woman_mage_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':magierin_mittelhelle_hautfarbe:',
+        'es': ':maga_tono_de_piel_claro_medio:',
+        'fr': ':mage_femme_peau_moyennement_claire:',
+        'pt': ':maga_pele_morena_clara:',
+        'it': ':maga_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9D9\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🧙🏽‍♀️
         'en' : ':woman_mage_medium_skin_tone:',
@@ -41736,7 +43949,12 @@ EMOJI_DATA = {
     u'\U0001F9D9\U0001F3FD\U0000200D\U00002640': { # 🧙🏽‍♀
         'en' : ':woman_mage_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':magierin_mittlere_hautfarbe:',
+        'es': ':maga_tono_de_piel_medio:',
+        'fr': u':mage_femme_peau_légèrement_mate:',
+        'pt': ':maga_pele_morena:',
+        'it': ':maga_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F527': { # 👩‍🔧
         'en' : ':woman_mechanic:',
@@ -41842,7 +44060,12 @@ EMOJI_DATA = {
     u'\U0001F471\U0001F3FE\U0000200D\U00002640': { # 👱🏾‍♀
         'en' : ':woman_medium-dark_skin_tone_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mitteldunkle_hautfarbe,_blond:',
+        'es': ':mujer_rubia_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_blonde_peau_mate:',
+        'pt': ':mulher_pele_morena_escura_e_cabelo_loiro:',
+        'it': ':donna_bionda_carnagione_abbastanza_scura:'
     },
     u'\U0001F469\U0001F3FE\U0000200D\U0001F9B1': { # 👩🏾‍🦱
         'en' : ':woman_medium-dark_skin_tone_curly_hair:',
@@ -41917,7 +44140,12 @@ EMOJI_DATA = {
     u'\U0001F471\U0001F3FC\U0000200D\U00002640': { # 👱🏼‍♀
         'en' : ':woman_medium-light_skin_tone_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mittelhelle_hautfarbe,_blond:',
+        'es': ':mujer_rubia_tono_de_piel_claro_medio:',
+        'fr': ':femme_blonde_peau_moyennement_claire:',
+        'pt': ':mulher_pele_morena_clara_e_cabelo_loiro:',
+        'it': ':donna_bionda_carnagione_abbastanza_chiara:'
     },
     u'\U0001F469\U0001F3FC\U0000200D\U0001F9B1': { # 👩🏼‍🦱
         'en' : ':woman_medium-light_skin_tone_curly_hair:',
@@ -41992,7 +44220,12 @@ EMOJI_DATA = {
     u'\U0001F471\U0001F3FD\U0000200D\U00002640': { # 👱🏽‍♀
         'en' : ':woman_medium_skin_tone_blond_hair:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mittlere_hautfarbe,_blond:',
+        'es': ':mujer_rubia_tono_de_piel_medio:',
+        'fr': u':femme_blonde_peau_légèrement_mate:',
+        'pt': ':mulher_pele_morena_e_cabelo_loiro:',
+        'it': ':donna_bionda_carnagione_olivastra:'
     },
     u'\U0001F469\U0001F3FD\U0000200D\U0001F9B1': { # 👩🏽‍🦱
         'en' : ':woman_medium_skin_tone_curly_hair:',
@@ -42032,7 +44265,8 @@ EMOJI_DATA = {
         'es': u':mujer_en_bicicleta_de_montaña:',
         'fr': ':femme_en_vtt:',
         'pt': ':mulher_fazendo_mountain_bike:',
-        'it': ':ciclista_donna_di_mountain_bike:'
+        'it': ':ciclista_donna_di_mountain_bike:',
+        'fa': u':زن_و_دوچرخه_سواری_کوهستان:'
     },
     u'\U0001F6B5\U0000200D\U00002640': { # 🚵‍♀
         'en' : ':woman_mountain_biking:',
@@ -42058,7 +44292,12 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0001F3FF\U0000200D\U00002640': { # 🚵🏿‍♀
         'en' : ':woman_mountain_biking_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mountainbikerin_dunkle_hautfarbe:',
+        'es': u':mujer_en_bicicleta_de_montaña_tono_de_piel_oscuro:',
+        'fr': u':femme_en_vtt_peau_foncée:',
+        'pt': ':mulher_fazendo_mountain_bike_pele_escura:',
+        'it': ':ciclista_donna_di_mountain_bike_carnagione_scura:'
     },
     u'\U0001F6B5\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🚵🏻‍♀️
         'en' : ':woman_mountain_biking_light_skin_tone:',
@@ -42073,7 +44312,12 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0001F3FB\U0000200D\U00002640': { # 🚵🏻‍♀
         'en' : ':woman_mountain_biking_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mountainbikerin_helle_hautfarbe:',
+        'es': u':mujer_en_bicicleta_de_montaña_tono_de_piel_claro:',
+        'fr': ':femme_en_vtt_peau_claire:',
+        'pt': ':mulher_fazendo_mountain_bike_pele_clara:',
+        'it': ':ciclista_donna_di_mountain_bike_carnagione_chiara:'
     },
     u'\U0001F6B5\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🚵🏾‍♀️
         'en' : ':woman_mountain_biking_medium-dark_skin_tone:',
@@ -42088,7 +44332,12 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0001F3FE\U0000200D\U00002640': { # 🚵🏾‍♀
         'en' : ':woman_mountain_biking_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mountainbikerin_mitteldunkle_hautfarbe:',
+        'es': u':mujer_en_bicicleta_de_montaña_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_en_vtt_peau_mate:',
+        'pt': ':mulher_fazendo_mountain_bike_pele_morena_escura:',
+        'it': ':ciclista_donna_di_mountain_bike_carnagione_abbastanza_scura:'
     },
     u'\U0001F6B5\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🚵🏼‍♀️
         'en' : ':woman_mountain_biking_medium-light_skin_tone:',
@@ -42103,7 +44352,12 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0001F3FC\U0000200D\U00002640': { # 🚵🏼‍♀
         'en' : ':woman_mountain_biking_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mountainbikerin_mittelhelle_hautfarbe:',
+        'es': u':mujer_en_bicicleta_de_montaña_tono_de_piel_claro_medio:',
+        'fr': ':femme_en_vtt_peau_moyennement_claire:',
+        'pt': ':mulher_fazendo_mountain_bike_pele_morena_clara:',
+        'it': ':ciclista_donna_di_mountain_bike_carnagione_abbastanza_chiara:'
     },
     u'\U0001F6B5\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🚵🏽‍♀️
         'en' : ':woman_mountain_biking_medium_skin_tone:',
@@ -42118,7 +44372,12 @@ EMOJI_DATA = {
     u'\U0001F6B5\U0001F3FD\U0000200D\U00002640': { # 🚵🏽‍♀
         'en' : ':woman_mountain_biking_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':mountainbikerin_mittlere_hautfarbe:',
+        'es': u':mujer_en_bicicleta_de_montaña_tono_de_piel_medio:',
+        'fr': u':femme_en_vtt_peau_légèrement_mate:',
+        'pt': ':mulher_fazendo_mountain_bike_pele_morena:',
+        'it': ':ciclista_donna_di_mountain_bike_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F4BC': { # 👩‍💼
         'en' : ':woman_office_worker:',
@@ -42189,7 +44448,8 @@ EMOJI_DATA = {
         'es': ':piloto_mujer:',
         'fr': ':pilote_femme:',
         'pt': u':piloto_de_avião_mulher:',
-        'it': ':pilota_donna:'
+        'it': ':pilota_donna:',
+        'fa': u':خلبان_زن:'
     },
     u'\U0001F469\U0000200D\U00002708': { # 👩‍✈
         'en' : ':woman_pilot:',
@@ -42215,7 +44475,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FF\U0000200D\U00002708': { # 👩🏿‍✈
         'en' : ':woman_pilot_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':pilotin_dunkle_hautfarbe:',
+        'es': ':piloto_mujer_tono_de_piel_oscuro:',
+        'fr': u':pilote_femme_peau_foncée:',
+        'pt': u':piloto_de_avião_mulher_pele_escura:',
+        'it': ':pilota_donna_carnagione_scura:'
     },
     u'\U0001F469\U0001F3FB\U0000200D\U00002708\U0000FE0F': { # 👩🏻‍✈️
         'en' : ':woman_pilot_light_skin_tone:',
@@ -42230,7 +44495,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FB\U0000200D\U00002708': { # 👩🏻‍✈
         'en' : ':woman_pilot_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':pilotin_helle_hautfarbe:',
+        'es': ':piloto_mujer_tono_de_piel_claro:',
+        'fr': ':pilote_femme_peau_claire:',
+        'pt': u':piloto_de_avião_mulher_pele_clara:',
+        'it': ':pilota_donna_carnagione_chiara:'
     },
     u'\U0001F469\U0001F3FE\U0000200D\U00002708\U0000FE0F': { # 👩🏾‍✈️
         'en' : ':woman_pilot_medium-dark_skin_tone:',
@@ -42245,7 +44515,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FE\U0000200D\U00002708': { # 👩🏾‍✈
         'en' : ':woman_pilot_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':pilotin_mitteldunkle_hautfarbe:',
+        'es': ':piloto_mujer_tono_de_piel_oscuro_medio:',
+        'fr': ':pilote_femme_peau_mate:',
+        'pt': u':piloto_de_avião_mulher_pele_morena_escura:',
+        'it': ':pilota_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F469\U0001F3FC\U0000200D\U00002708\U0000FE0F': { # 👩🏼‍✈️
         'en' : ':woman_pilot_medium-light_skin_tone:',
@@ -42260,7 +44535,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FC\U0000200D\U00002708': { # 👩🏼‍✈
         'en' : ':woman_pilot_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':pilotin_mittelhelle_hautfarbe:',
+        'es': ':piloto_mujer_tono_de_piel_claro_medio:',
+        'fr': ':pilote_femme_peau_moyennement_claire:',
+        'pt': u':piloto_de_avião_mulher_pele_morena_clara:',
+        'it': ':pilota_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F469\U0001F3FD\U0000200D\U00002708\U0000FE0F': { # 👩🏽‍✈️
         'en' : ':woman_pilot_medium_skin_tone:',
@@ -42275,7 +44555,12 @@ EMOJI_DATA = {
     u'\U0001F469\U0001F3FD\U0000200D\U00002708': { # 👩🏽‍✈
         'en' : ':woman_pilot_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':pilotin_mittlere_hautfarbe:',
+        'es': ':piloto_mujer_tono_de_piel_medio:',
+        'fr': u':pilote_femme_peau_légèrement_mate:',
+        'pt': u':piloto_de_avião_mulher_pele_morena:',
+        'it': ':pilota_donna_carnagione_olivastra:'
     },
     u'\U0001F93E\U0000200D\U00002640\U0000FE0F': { # 🤾‍♀️
         'en' : ':woman_playing_handball:',
@@ -42285,7 +44570,8 @@ EMOJI_DATA = {
         'es': ':mujer_jugando_al_balonmano:',
         'fr': ':handballeuse:',
         'pt': ':jogadora_de_handebol:',
-        'it': ':pallamanista_donna:'
+        'it': ':pallamanista_donna:',
+        'fa': u':هندبالیست_زن:'
     },
     u'\U0001F93E\U0000200D\U00002640': { # 🤾‍♀
         'en' : ':woman_playing_handball:',
@@ -42311,7 +44597,12 @@ EMOJI_DATA = {
     u'\U0001F93E\U0001F3FF\U0000200D\U00002640': { # 🤾🏿‍♀
         'en' : ':woman_playing_handball_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':handballspielerin_dunkle_hautfarbe:',
+        'es': ':mujer_jugando_al_balonmano_tono_de_piel_oscuro:',
+        'fr': u':handballeuse_peau_foncée:',
+        'pt': ':jogadora_de_handebol_pele_escura:',
+        'it': ':pallamanista_donna_carnagione_scura:'
     },
     u'\U0001F93E\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🤾🏻‍♀️
         'en' : ':woman_playing_handball_light_skin_tone:',
@@ -42326,7 +44617,12 @@ EMOJI_DATA = {
     u'\U0001F93E\U0001F3FB\U0000200D\U00002640': { # 🤾🏻‍♀
         'en' : ':woman_playing_handball_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':handballspielerin_helle_hautfarbe:',
+        'es': ':mujer_jugando_al_balonmano_tono_de_piel_claro:',
+        'fr': ':handballeuse_peau_claire:',
+        'pt': ':jogadora_de_handebol_pele_clara:',
+        'it': ':pallamanista_donna_carnagione_chiara:'
     },
     u'\U0001F93E\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🤾🏾‍♀️
         'en' : ':woman_playing_handball_medium-dark_skin_tone:',
@@ -42341,7 +44637,12 @@ EMOJI_DATA = {
     u'\U0001F93E\U0001F3FE\U0000200D\U00002640': { # 🤾🏾‍♀
         'en' : ':woman_playing_handball_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':handballspielerin_mitteldunkle_hautfarbe:',
+        'es': ':mujer_jugando_al_balonmano_tono_de_piel_oscuro_medio:',
+        'fr': ':handballeuse_peau_mate:',
+        'pt': ':jogadora_de_handebol_pele_morena_escura:',
+        'it': ':pallamanista_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F93E\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🤾🏼‍♀️
         'en' : ':woman_playing_handball_medium-light_skin_tone:',
@@ -42356,7 +44657,12 @@ EMOJI_DATA = {
     u'\U0001F93E\U0001F3FC\U0000200D\U00002640': { # 🤾🏼‍♀
         'en' : ':woman_playing_handball_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':handballspielerin_mittelhelle_hautfarbe:',
+        'es': ':mujer_jugando_al_balonmano_tono_de_piel_claro_medio:',
+        'fr': ':handballeuse_peau_moyennement_claire:',
+        'pt': ':jogadora_de_handebol_pele_morena_clara:',
+        'it': ':pallamanista_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F93E\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🤾🏽‍♀️
         'en' : ':woman_playing_handball_medium_skin_tone:',
@@ -42371,7 +44677,12 @@ EMOJI_DATA = {
     u'\U0001F93E\U0001F3FD\U0000200D\U00002640': { # 🤾🏽‍♀
         'en' : ':woman_playing_handball_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':handballspielerin_mittlere_hautfarbe:',
+        'es': ':mujer_jugando_al_balonmano_tono_de_piel_medio:',
+        'fr': u':handballeuse_peau_légèrement_mate:',
+        'pt': ':jogadora_de_handebol_pele_morena:',
+        'it': ':pallamanista_donna_carnagione_olivastra:'
     },
     u'\U0001F93D\U0000200D\U00002640\U0000FE0F': { # 🤽‍♀️
         'en' : ':woman_playing_water_polo:',
@@ -42381,7 +44692,8 @@ EMOJI_DATA = {
         'es': ':mujer_jugando_al_waterpolo:',
         'fr': ':joueuse_de_water-polo:',
         'pt': u':mulher_jogando_polo_aquático:',
-        'it': ':pallanuotista_donna:'
+        'it': ':pallanuotista_donna:',
+        'fa': u':واترپلو_زنان:'
     },
     u'\U0001F93D\U0000200D\U00002640': { # 🤽‍♀
         'en' : ':woman_playing_water_polo:',
@@ -42407,7 +44719,12 @@ EMOJI_DATA = {
     u'\U0001F93D\U0001F3FF\U0000200D\U00002640': { # 🤽🏿‍♀
         'en' : ':woman_playing_water_polo_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wasserballspielerin_dunkle_hautfarbe:',
+        'es': ':mujer_jugando_al_waterpolo_tono_de_piel_oscuro:',
+        'fr': u':joueuse_de_water-polo_peau_foncée:',
+        'pt': u':mulher_jogando_polo_aquático_pele_escura:',
+        'it': ':pallanuotista_donna_carnagione_scura:'
     },
     u'\U0001F93D\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🤽🏻‍♀️
         'en' : ':woman_playing_water_polo_light_skin_tone:',
@@ -42422,7 +44739,12 @@ EMOJI_DATA = {
     u'\U0001F93D\U0001F3FB\U0000200D\U00002640': { # 🤽🏻‍♀
         'en' : ':woman_playing_water_polo_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wasserballspielerin_helle_hautfarbe:',
+        'es': ':mujer_jugando_al_waterpolo_tono_de_piel_claro:',
+        'fr': ':joueuse_de_water-polo_peau_claire:',
+        'pt': u':mulher_jogando_polo_aquático_pele_clara:',
+        'it': ':pallanuotista_donna_carnagione_chiara:'
     },
     u'\U0001F93D\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🤽🏾‍♀️
         'en' : ':woman_playing_water_polo_medium-dark_skin_tone:',
@@ -42437,7 +44759,12 @@ EMOJI_DATA = {
     u'\U0001F93D\U0001F3FE\U0000200D\U00002640': { # 🤽🏾‍♀
         'en' : ':woman_playing_water_polo_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wasserballspielerin_mitteldunkle_hautfarbe:',
+        'es': ':mujer_jugando_al_waterpolo_tono_de_piel_oscuro_medio:',
+        'fr': ':joueuse_de_water-polo_peau_mate:',
+        'pt': u':mulher_jogando_polo_aquático_pele_morena_escura:',
+        'it': ':pallanuotista_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F93D\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🤽🏼‍♀️
         'en' : ':woman_playing_water_polo_medium-light_skin_tone:',
@@ -42452,7 +44779,12 @@ EMOJI_DATA = {
     u'\U0001F93D\U0001F3FC\U0000200D\U00002640': { # 🤽🏼‍♀
         'en' : ':woman_playing_water_polo_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wasserballspielerin_mittelhelle_hautfarbe:',
+        'es': ':mujer_jugando_al_waterpolo_tono_de_piel_claro_medio:',
+        'fr': ':joueuse_de_water-polo_peau_moyennement_claire:',
+        'pt': u':mulher_jogando_polo_aquático_pele_morena_clara:',
+        'it': ':pallanuotista_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F93D\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🤽🏽‍♀️
         'en' : ':woman_playing_water_polo_medium_skin_tone:',
@@ -42467,7 +44799,12 @@ EMOJI_DATA = {
     u'\U0001F93D\U0001F3FD\U0000200D\U00002640': { # 🤽🏽‍♀
         'en' : ':woman_playing_water_polo_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':wasserballspielerin_mittlere_hautfarbe:',
+        'es': ':mujer_jugando_al_waterpolo_tono_de_piel_medio:',
+        'fr': u':joueuse_de_water-polo_peau_légèrement_mate:',
+        'pt': u':mulher_jogando_polo_aquático_pele_morena:',
+        'it': ':pallanuotista_donna_carnagione_olivastra:'
     },
     u'\U0001F46E\U0000200D\U00002640\U0000FE0F': { # 👮‍♀️
         'en' : ':woman_police_officer:',
@@ -42477,7 +44814,8 @@ EMOJI_DATA = {
         'es': u':agente_de_policía_mujer:',
         'fr': u':policière:',
         'pt': ':policial_mulher:',
-        'it': ':poliziotta:'
+        'it': ':poliziotta:',
+        'fa': u':پلیس_زن:'
     },
     u'\U0001F46E\U0000200D\U00002640': { # 👮‍♀
         'en' : ':woman_police_officer:',
@@ -42503,7 +44841,12 @@ EMOJI_DATA = {
     u'\U0001F46E\U0001F3FF\U0000200D\U00002640': { # 👮🏿‍♀
         'en' : ':woman_police_officer_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':polizistin_dunkle_hautfarbe:',
+        'es': u':agente_de_policía_mujer_tono_de_piel_oscuro:',
+        'fr': u':policière_peau_foncée:',
+        'pt': ':policial_mulher_pele_escura:',
+        'it': ':poliziotta_carnagione_scura:'
     },
     u'\U0001F46E\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 👮🏻‍♀️
         'en' : ':woman_police_officer_light_skin_tone:',
@@ -42518,7 +44861,12 @@ EMOJI_DATA = {
     u'\U0001F46E\U0001F3FB\U0000200D\U00002640': { # 👮🏻‍♀
         'en' : ':woman_police_officer_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':polizistin_helle_hautfarbe:',
+        'es': u':agente_de_policía_mujer_tono_de_piel_claro:',
+        'fr': u':policière_peau_claire:',
+        'pt': ':policial_mulher_pele_clara:',
+        'it': ':poliziotta_carnagione_chiara:'
     },
     u'\U0001F46E\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 👮🏾‍♀️
         'en' : ':woman_police_officer_medium-dark_skin_tone:',
@@ -42533,7 +44881,12 @@ EMOJI_DATA = {
     u'\U0001F46E\U0001F3FE\U0000200D\U00002640': { # 👮🏾‍♀
         'en' : ':woman_police_officer_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':polizistin_mitteldunkle_hautfarbe:',
+        'es': u':agente_de_policía_mujer_tono_de_piel_oscuro_medio:',
+        'fr': u':policière_peau_mate:',
+        'pt': ':policial_mulher_pele_morena_escura:',
+        'it': ':poliziotta_carnagione_abbastanza_scura:'
     },
     u'\U0001F46E\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 👮🏼‍♀️
         'en' : ':woman_police_officer_medium-light_skin_tone:',
@@ -42548,7 +44901,12 @@ EMOJI_DATA = {
     u'\U0001F46E\U0001F3FC\U0000200D\U00002640': { # 👮🏼‍♀
         'en' : ':woman_police_officer_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':polizistin_mittelhelle_hautfarbe:',
+        'es': u':agente_de_policía_mujer_tono_de_piel_claro_medio:',
+        'fr': u':policière_peau_moyennement_claire:',
+        'pt': ':policial_mulher_pele_morena_clara:',
+        'it': ':poliziotta_carnagione_abbastanza_chiara:'
     },
     u'\U0001F46E\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 👮🏽‍♀️
         'en' : ':woman_police_officer_medium_skin_tone:',
@@ -42563,7 +44921,12 @@ EMOJI_DATA = {
     u'\U0001F46E\U0001F3FD\U0000200D\U00002640': { # 👮🏽‍♀
         'en' : ':woman_police_officer_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':polizistin_mittlere_hautfarbe:',
+        'es': u':agente_de_policía_mujer_tono_de_piel_medio:',
+        'fr': u':policière_peau_légèrement_mate:',
+        'pt': ':policial_mulher_pele_morena:',
+        'it': ':poliziotta_carnagione_olivastra:'
     },
     u'\U0001F64E\U0000200D\U00002640\U0000FE0F': { # 🙎‍♀️
         'en' : ':woman_pouting:',
@@ -42573,7 +44936,8 @@ EMOJI_DATA = {
         'es': ':mujer_haciendo_pucheros:',
         'fr': ':femme_qui_boude:',
         'pt': ':mulher_fazendo_bico:',
-        'it': ':donna_imbronciata:'
+        'it': ':donna_imbronciata:',
+        'fa': u':زن_اخم_وتخم_می_کند:'
     },
     u'\U0001F64E\U0000200D\U00002640': { # 🙎‍♀
         'en' : ':woman_pouting:',
@@ -42599,7 +44963,12 @@ EMOJI_DATA = {
     u'\U0001F64E\U0001F3FF\U0000200D\U00002640': { # 🙎🏿‍♀
         'en' : ':woman_pouting_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schmollende_frau_dunkle_hautfarbe:',
+        'es': ':mujer_haciendo_pucheros_tono_de_piel_oscuro:',
+        'fr': u':femme_qui_boude_peau_foncée:',
+        'pt': ':mulher_fazendo_bico_pele_escura:',
+        'it': ':donna_imbronciata_carnagione_scura:'
     },
     u'\U0001F64E\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🙎🏻‍♀️
         'en' : ':woman_pouting_light_skin_tone:',
@@ -42614,7 +44983,12 @@ EMOJI_DATA = {
     u'\U0001F64E\U0001F3FB\U0000200D\U00002640': { # 🙎🏻‍♀
         'en' : ':woman_pouting_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schmollende_frau_helle_hautfarbe:',
+        'es': ':mujer_haciendo_pucheros_tono_de_piel_claro:',
+        'fr': ':femme_qui_boude_peau_claire:',
+        'pt': ':mulher_fazendo_bico_pele_clara:',
+        'it': ':donna_imbronciata_carnagione_chiara:'
     },
     u'\U0001F64E\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🙎🏾‍♀️
         'en' : ':woman_pouting_medium-dark_skin_tone:',
@@ -42629,7 +45003,12 @@ EMOJI_DATA = {
     u'\U0001F64E\U0001F3FE\U0000200D\U00002640': { # 🙎🏾‍♀
         'en' : ':woman_pouting_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schmollende_frau_mitteldunkle_hautfarbe:',
+        'es': ':mujer_haciendo_pucheros_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_qui_boude_peau_mate:',
+        'pt': ':mulher_fazendo_bico_pele_morena_escura:',
+        'it': ':donna_imbronciata_carnagione_abbastanza_scura:'
     },
     u'\U0001F64E\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🙎🏼‍♀️
         'en' : ':woman_pouting_medium-light_skin_tone:',
@@ -42644,7 +45023,12 @@ EMOJI_DATA = {
     u'\U0001F64E\U0001F3FC\U0000200D\U00002640': { # 🙎🏼‍♀
         'en' : ':woman_pouting_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schmollende_frau_mittelhelle_hautfarbe:',
+        'es': ':mujer_haciendo_pucheros_tono_de_piel_claro_medio:',
+        'fr': ':femme_qui_boude_peau_moyennement_claire:',
+        'pt': ':mulher_fazendo_bico_pele_morena_clara:',
+        'it': ':donna_imbronciata_carnagione_abbastanza_chiara:'
     },
     u'\U0001F64E\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🙎🏽‍♀️
         'en' : ':woman_pouting_medium_skin_tone:',
@@ -42659,7 +45043,12 @@ EMOJI_DATA = {
     u'\U0001F64E\U0001F3FD\U0000200D\U00002640': { # 🙎🏽‍♀
         'en' : ':woman_pouting_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schmollende_frau_mittlere_hautfarbe:',
+        'es': ':mujer_haciendo_pucheros_tono_de_piel_medio:',
+        'fr': u':femme_qui_boude_peau_légèrement_mate:',
+        'pt': ':mulher_fazendo_bico_pele_morena:',
+        'it': ':donna_imbronciata_carnagione_olivastra:'
     },
     u'\U0001F64B\U0000200D\U00002640\U0000FE0F': { # 🙋‍♀️
         'en' : ':woman_raising_hand:',
@@ -42669,7 +45058,8 @@ EMOJI_DATA = {
         'es': ':mujer_con_la_mano_levantada:',
         'fr': u':femme_qui_lève_la_main:',
         'pt': u':mulher_levantando_a_mão:',
-        'it': ':donna_con_mano_alzata:'
+        'it': ':donna_con_mano_alzata:',
+        'fa': u':زن_دستش_را_بالا_می_برد:'
     },
     u'\U0001F64B\U0000200D\U00002640': { # 🙋‍♀
         'en' : ':woman_raising_hand:',
@@ -42695,7 +45085,12 @@ EMOJI_DATA = {
     u'\U0001F64B\U0001F3FF\U0000200D\U00002640': { # 🙋🏿‍♀
         'en' : ':woman_raising_hand_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_erhobenem_arm_dunkle_hautfarbe:',
+        'es': ':mujer_con_la_mano_levantada_tono_de_piel_oscuro:',
+        'fr': u':femme_qui_lève_la_main_peau_foncée:',
+        'pt': u':mulher_levantando_a_mão_pele_escura:',
+        'it': ':donna_con_mano_alzata_carnagione_scura:'
     },
     u'\U0001F64B\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🙋🏻‍♀️
         'en' : ':woman_raising_hand_light_skin_tone:',
@@ -42710,7 +45105,12 @@ EMOJI_DATA = {
     u'\U0001F64B\U0001F3FB\U0000200D\U00002640': { # 🙋🏻‍♀
         'en' : ':woman_raising_hand_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_erhobenem_arm_helle_hautfarbe:',
+        'es': ':mujer_con_la_mano_levantada_tono_de_piel_claro:',
+        'fr': u':femme_qui_lève_la_main_peau_claire:',
+        'pt': u':mulher_levantando_a_mão_pele_clara:',
+        'it': ':donna_con_mano_alzata_carnagione_chiara:'
     },
     u'\U0001F64B\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🙋🏾‍♀️
         'en' : ':woman_raising_hand_medium-dark_skin_tone:',
@@ -42725,7 +45125,12 @@ EMOJI_DATA = {
     u'\U0001F64B\U0001F3FE\U0000200D\U00002640': { # 🙋🏾‍♀
         'en' : ':woman_raising_hand_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_erhobenem_arm_mitteldunkle_hautfarbe:',
+        'es': ':mujer_con_la_mano_levantada_tono_de_piel_oscuro_medio:',
+        'fr': u':femme_qui_lève_la_main_peau_mate:',
+        'pt': u':mulher_levantando_a_mão_pele_morena_escura:',
+        'it': ':donna_con_mano_alzata_carnagione_abbastanza_scura:'
     },
     u'\U0001F64B\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🙋🏼‍♀️
         'en' : ':woman_raising_hand_medium-light_skin_tone:',
@@ -42740,7 +45145,12 @@ EMOJI_DATA = {
     u'\U0001F64B\U0001F3FC\U0000200D\U00002640': { # 🙋🏼‍♀
         'en' : ':woman_raising_hand_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_erhobenem_arm_mittelhelle_hautfarbe:',
+        'es': ':mujer_con_la_mano_levantada_tono_de_piel_claro_medio:',
+        'fr': u':femme_qui_lève_la_main_peau_moyennement_claire:',
+        'pt': u':mulher_levantando_a_mão_pele_morena_clara:',
+        'it': ':donna_con_mano_alzata_carnagione_abbastanza_chiara:'
     },
     u'\U0001F64B\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🙋🏽‍♀️
         'en' : ':woman_raising_hand_medium_skin_tone:',
@@ -42755,7 +45165,12 @@ EMOJI_DATA = {
     u'\U0001F64B\U0001F3FD\U0000200D\U00002640': { # 🙋🏽‍♀
         'en' : ':woman_raising_hand_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_erhobenem_arm_mittlere_hautfarbe:',
+        'es': ':mujer_con_la_mano_levantada_tono_de_piel_medio:',
+        'fr': u':femme_qui_lève_la_main_peau_légèrement_mate:',
+        'pt': u':mulher_levantando_a_mão_pele_morena:',
+        'it': ':donna_con_mano_alzata_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F9B0': { # 👩‍🦰
         'en' : ':woman_red_hair:',
@@ -42775,7 +45190,8 @@ EMOJI_DATA = {
         'es': ':mujer_remando_en_un_bote:',
         'fr': ':rameuse_dans_une_barque:',
         'pt': ':mulher_remando:',
-        'it': ':donna_in_barca_a_remi:'
+        'it': ':donna_in_barca_a_remi:',
+        'fa': u':پاروزن_زن:'
     },
     u'\U0001F6A3\U0000200D\U00002640': { # 🚣‍♀
         'en' : ':woman_rowing_boat:',
@@ -42801,7 +45217,12 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0001F3FF\U0000200D\U00002640': { # 🚣🏿‍♀
         'en' : ':woman_rowing_boat_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_im_ruderboot_dunkle_hautfarbe:',
+        'es': ':mujer_remando_en_un_bote_tono_de_piel_oscuro:',
+        'fr': u':rameuse_dans_une_barque_peau_foncée:',
+        'pt': ':mulher_remando_pele_escura:',
+        'it': ':donna_in_barca_a_remi_carnagione_scura:'
     },
     u'\U0001F6A3\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🚣🏻‍♀️
         'en' : ':woman_rowing_boat_light_skin_tone:',
@@ -42816,7 +45237,12 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0001F3FB\U0000200D\U00002640': { # 🚣🏻‍♀
         'en' : ':woman_rowing_boat_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_im_ruderboot_helle_hautfarbe:',
+        'es': ':mujer_remando_en_un_bote_tono_de_piel_claro:',
+        'fr': ':rameuse_dans_une_barque_peau_claire:',
+        'pt': ':mulher_remando_pele_clara:',
+        'it': ':donna_in_barca_a_remi_carnagione_chiara:'
     },
     u'\U0001F6A3\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🚣🏾‍♀️
         'en' : ':woman_rowing_boat_medium-dark_skin_tone:',
@@ -42831,7 +45257,12 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0001F3FE\U0000200D\U00002640': { # 🚣🏾‍♀
         'en' : ':woman_rowing_boat_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_im_ruderboot_mitteldunkle_hautfarbe:',
+        'es': ':mujer_remando_en_un_bote_tono_de_piel_oscuro_medio:',
+        'fr': ':rameuse_dans_une_barque_peau_mate:',
+        'pt': ':mulher_remando_pele_morena_escura:',
+        'it': ':donna_in_barca_a_remi_carnagione_abbastanza_scura:'
     },
     u'\U0001F6A3\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🚣🏼‍♀️
         'en' : ':woman_rowing_boat_medium-light_skin_tone:',
@@ -42846,7 +45277,12 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0001F3FC\U0000200D\U00002640': { # 🚣🏼‍♀
         'en' : ':woman_rowing_boat_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_im_ruderboot_mittelhelle_hautfarbe:',
+        'es': ':mujer_remando_en_un_bote_tono_de_piel_claro_medio:',
+        'fr': ':rameuse_dans_une_barque_peau_moyennement_claire:',
+        'pt': ':mulher_remando_pele_morena_clara:',
+        'it': ':donna_in_barca_a_remi_carnagione_abbastanza_chiara:'
     },
     u'\U0001F6A3\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🚣🏽‍♀️
         'en' : ':woman_rowing_boat_medium_skin_tone:',
@@ -42861,7 +45297,12 @@ EMOJI_DATA = {
     u'\U0001F6A3\U0001F3FD\U0000200D\U00002640': { # 🚣🏽‍♀
         'en' : ':woman_rowing_boat_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_im_ruderboot_mittlere_hautfarbe:',
+        'es': ':mujer_remando_en_un_bote_tono_de_piel_medio:',
+        'fr': u':rameuse_dans_une_barque_peau_légèrement_mate:',
+        'pt': ':mulher_remando_pele_morena:',
+        'it': ':donna_in_barca_a_remi_carnagione_olivastra:'
     },
     u'\U0001F3C3\U0000200D\U00002640\U0000FE0F': { # 🏃‍♀️
         'en' : ':woman_running:',
@@ -42871,7 +45312,8 @@ EMOJI_DATA = {
         'es': ':mujer_corriendo:',
         'fr': ':femme_qui_court:',
         'pt': ':mulher_correndo:',
-        'it': ':donna_che_corre:'
+        'it': ':donna_che_corre:',
+        'fa': u':زن_دونده:'
     },
     u'\U0001F3C3\U0000200D\U00002640': { # 🏃‍♀
         'en' : ':woman_running:',
@@ -42897,7 +45339,12 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0001F3FF\U0000200D\U00002640': { # 🏃🏿‍♀
         'en' : ':woman_running_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':laufende_frau_dunkle_hautfarbe:',
+        'es': ':mujer_corriendo_tono_de_piel_oscuro:',
+        'fr': u':femme_qui_court_peau_foncée:',
+        'pt': ':mulher_correndo_pele_escura:',
+        'it': ':donna_che_corre_carnagione_scura:'
     },
     u'\U0001F3C3\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🏃🏻‍♀️
         'en' : ':woman_running_light_skin_tone:',
@@ -42912,7 +45359,12 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0001F3FB\U0000200D\U00002640': { # 🏃🏻‍♀
         'en' : ':woman_running_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':laufende_frau_helle_hautfarbe:',
+        'es': ':mujer_corriendo_tono_de_piel_claro:',
+        'fr': ':femme_qui_court_peau_claire:',
+        'pt': ':mulher_correndo_pele_clara:',
+        'it': ':donna_che_corre_carnagione_chiara:'
     },
     u'\U0001F3C3\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🏃🏾‍♀️
         'en' : ':woman_running_medium-dark_skin_tone:',
@@ -42927,7 +45379,12 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0001F3FE\U0000200D\U00002640': { # 🏃🏾‍♀
         'en' : ':woman_running_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':laufende_frau_mitteldunkle_hautfarbe:',
+        'es': ':mujer_corriendo_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_qui_court_peau_mate:',
+        'pt': ':mulher_correndo_pele_morena_escura:',
+        'it': ':donna_che_corre_carnagione_abbastanza_scura:'
     },
     u'\U0001F3C3\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🏃🏼‍♀️
         'en' : ':woman_running_medium-light_skin_tone:',
@@ -42942,7 +45399,12 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0001F3FC\U0000200D\U00002640': { # 🏃🏼‍♀
         'en' : ':woman_running_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':laufende_frau_mittelhelle_hautfarbe:',
+        'es': ':mujer_corriendo_tono_de_piel_claro_medio:',
+        'fr': ':femme_qui_court_peau_moyennement_claire:',
+        'pt': ':mulher_correndo_pele_morena_clara:',
+        'it': ':donna_che_corre_carnagione_abbastanza_chiara:'
     },
     u'\U0001F3C3\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🏃🏽‍♀️
         'en' : ':woman_running_medium_skin_tone:',
@@ -42957,7 +45419,12 @@ EMOJI_DATA = {
     u'\U0001F3C3\U0001F3FD\U0000200D\U00002640': { # 🏃🏽‍♀
         'en' : ':woman_running_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':laufende_frau_mittlere_hautfarbe:',
+        'es': ':mujer_corriendo_tono_de_piel_medio:',
+        'fr': u':femme_qui_court_peau_légèrement_mate:',
+        'pt': ':mulher_correndo_pele_morena:',
+        'it': ':donna_che_corre_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F52C': { # 👩‍🔬
         'en' : ':woman_scientist:',
@@ -43028,7 +45495,8 @@ EMOJI_DATA = {
         'es': ':mujer_encogida_de_hombros:',
         'fr': u':femme_qui_hausse_les_épaules:',
         'pt': ':mulher_dando_de_ombros:',
-        'it': ':donna_che_scrolla_le_spalle:'
+        'it': ':donna_che_scrolla_le_spalle:',
+        'fa': u':زن_شانه_بالا_می_اندازد:'
     },
     u'\U0001F937\U0000200D\U00002640': { # 🤷‍♀
         'en' : ':woman_shrugging:',
@@ -43054,7 +45522,12 @@ EMOJI_DATA = {
     u'\U0001F937\U0001F3FF\U0000200D\U00002640': { # 🤷🏿‍♀
         'en' : ':woman_shrugging_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schulterzuckende_frau_dunkle_hautfarbe:',
+        'es': ':mujer_encogida_de_hombros_tono_de_piel_oscuro:',
+        'fr': u':femme_qui_hausse_les_épaules_peau_foncée:',
+        'pt': ':mulher_dando_de_ombros_pele_escura:',
+        'it': ':donna_che_scrolla_le_spalle_carnagione_scura:'
     },
     u'\U0001F937\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🤷🏻‍♀️
         'en' : ':woman_shrugging_light_skin_tone:',
@@ -43069,7 +45542,12 @@ EMOJI_DATA = {
     u'\U0001F937\U0001F3FB\U0000200D\U00002640': { # 🤷🏻‍♀
         'en' : ':woman_shrugging_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schulterzuckende_frau_helle_hautfarbe:',
+        'es': ':mujer_encogida_de_hombros_tono_de_piel_claro:',
+        'fr': u':femme_qui_hausse_les_épaules_peau_claire:',
+        'pt': ':mulher_dando_de_ombros_pele_clara:',
+        'it': ':donna_che_scrolla_le_spalle_carnagione_chiara:'
     },
     u'\U0001F937\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🤷🏾‍♀️
         'en' : ':woman_shrugging_medium-dark_skin_tone:',
@@ -43084,7 +45562,12 @@ EMOJI_DATA = {
     u'\U0001F937\U0001F3FE\U0000200D\U00002640': { # 🤷🏾‍♀
         'en' : ':woman_shrugging_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schulterzuckende_frau_mitteldunkle_hautfarbe:',
+        'es': ':mujer_encogida_de_hombros_tono_de_piel_oscuro_medio:',
+        'fr': u':femme_qui_hausse_les_épaules_peau_mate:',
+        'pt': ':mulher_dando_de_ombros_pele_morena_escura:',
+        'it': ':donna_che_scrolla_le_spalle_carnagione_abbastanza_scura:'
     },
     u'\U0001F937\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🤷🏼‍♀️
         'en' : ':woman_shrugging_medium-light_skin_tone:',
@@ -43099,7 +45582,12 @@ EMOJI_DATA = {
     u'\U0001F937\U0001F3FC\U0000200D\U00002640': { # 🤷🏼‍♀
         'en' : ':woman_shrugging_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schulterzuckende_frau_mittelhelle_hautfarbe:',
+        'es': ':mujer_encogida_de_hombros_tono_de_piel_claro_medio:',
+        'fr': u':femme_qui_hausse_les_épaules_peau_moyennement_claire:',
+        'pt': ':mulher_dando_de_ombros_pele_morena_clara:',
+        'it': ':donna_che_scrolla_le_spalle_carnagione_abbastanza_chiara:'
     },
     u'\U0001F937\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🤷🏽‍♀️
         'en' : ':woman_shrugging_medium_skin_tone:',
@@ -43114,7 +45602,12 @@ EMOJI_DATA = {
     u'\U0001F937\U0001F3FD\U0000200D\U00002640': { # 🤷🏽‍♀
         'en' : ':woman_shrugging_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schulterzuckende_frau_mittlere_hautfarbe:',
+        'es': ':mujer_encogida_de_hombros_tono_de_piel_medio:',
+        'fr': u':femme_qui_hausse_les_épaules_peau_légèrement_mate:',
+        'pt': ':mulher_dando_de_ombros_pele_morena:',
+        'it': ':donna_che_scrolla_le_spalle_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F3A4': { # 👩‍🎤
         'en' : ':woman_singer:',
@@ -43185,7 +45678,8 @@ EMOJI_DATA = {
         'es': ':mujer_de_pie:',
         'fr': ':femme_debout:',
         'pt': u':mulher_em_pé:',
-        'it': ':donna_in_piedi:'
+        'it': ':donna_in_piedi:',
+        'fa': u':زن_ایستاده:'
     },
     u'\U0001F9CD\U0000200D\U00002640': { # 🧍‍♀
         'en' : ':woman_standing:',
@@ -43211,7 +45705,12 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0001F3FF\U0000200D\U00002640': { # 🧍🏿‍♀
         'en' : ':woman_standing_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':stehende_frau_dunkle_hautfarbe:',
+        'es': ':mujer_de_pie_tono_de_piel_oscuro:',
+        'fr': u':femme_debout_peau_foncée:',
+        'pt': u':mulher_em_pé_pele_escura:',
+        'it': ':donna_in_piedi_carnagione_scura:'
     },
     u'\U0001F9CD\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🧍🏻‍♀️
         'en' : ':woman_standing_light_skin_tone:',
@@ -43226,7 +45725,12 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0001F3FB\U0000200D\U00002640': { # 🧍🏻‍♀
         'en' : ':woman_standing_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':stehende_frau_helle_hautfarbe:',
+        'es': ':mujer_de_pie_tono_de_piel_claro:',
+        'fr': ':femme_debout_peau_claire:',
+        'pt': u':mulher_em_pé_pele_clara:',
+        'it': ':donna_in_piedi_carnagione_chiara:'
     },
     u'\U0001F9CD\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🧍🏾‍♀️
         'en' : ':woman_standing_medium-dark_skin_tone:',
@@ -43241,7 +45745,12 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0001F3FE\U0000200D\U00002640': { # 🧍🏾‍♀
         'en' : ':woman_standing_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':stehende_frau_mitteldunkle_hautfarbe:',
+        'es': ':mujer_de_pie_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_debout_peau_mate:',
+        'pt': u':mulher_em_pé_pele_morena_escura:',
+        'it': ':donna_in_piedi_carnagione_abbastanza_scura:'
     },
     u'\U0001F9CD\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🧍🏼‍♀️
         'en' : ':woman_standing_medium-light_skin_tone:',
@@ -43256,7 +45765,12 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0001F3FC\U0000200D\U00002640': { # 🧍🏼‍♀
         'en' : ':woman_standing_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':stehende_frau_mittelhelle_hautfarbe:',
+        'es': ':mujer_de_pie_tono_de_piel_claro_medio:',
+        'fr': ':femme_debout_peau_moyennement_claire:',
+        'pt': u':mulher_em_pé_pele_morena_clara:',
+        'it': ':donna_in_piedi_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9CD\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🧍🏽‍♀️
         'en' : ':woman_standing_medium_skin_tone:',
@@ -43271,7 +45785,12 @@ EMOJI_DATA = {
     u'\U0001F9CD\U0001F3FD\U0000200D\U00002640': { # 🧍🏽‍♀
         'en' : ':woman_standing_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 12
+        'E' : 12,
+        'de': ':stehende_frau_mittlere_hautfarbe:',
+        'es': ':mujer_de_pie_tono_de_piel_medio:',
+        'fr': u':femme_debout_peau_légèrement_mate:',
+        'pt': u':mulher_em_pé_pele_morena:',
+        'it': ':donna_in_piedi_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F393': { # 👩‍🎓
         'en' : ':woman_student:',
@@ -43342,7 +45861,8 @@ EMOJI_DATA = {
         'es': u':superheroína:',
         'fr': u':super-héroïne:',
         'pt': u':super-heroína:',
-        'it': ':supereroina:'
+        'it': ':supereroina:',
+        'fa': u':ابرقهرمان_زن:'
     },
     u'\U0001F9B8\U0000200D\U00002640': { # 🦸‍♀
         'en' : ':woman_superhero:',
@@ -43368,7 +45888,12 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0001F3FF\U0000200D\U00002640': { # 🦸🏿‍♀
         'en' : ':woman_superhero_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': ':heldin_dunkle_hautfarbe:',
+        'es': u':superheroína_tono_de_piel_oscuro:',
+        'fr': u':super-héroïne_peau_foncée:',
+        'pt': u':super-heroína_pele_escura:',
+        'it': ':supereroina_carnagione_scura:'
     },
     u'\U0001F9B8\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🦸🏻‍♀️
         'en' : ':woman_superhero_light_skin_tone:',
@@ -43383,7 +45908,12 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0001F3FB\U0000200D\U00002640': { # 🦸🏻‍♀
         'en' : ':woman_superhero_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': ':heldin_helle_hautfarbe:',
+        'es': u':superheroína_tono_de_piel_claro:',
+        'fr': u':super-héroïne_peau_claire:',
+        'pt': u':super-heroína_pele_clara:',
+        'it': ':supereroina_carnagione_chiara:'
     },
     u'\U0001F9B8\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🦸🏾‍♀️
         'en' : ':woman_superhero_medium-dark_skin_tone:',
@@ -43398,7 +45928,12 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0001F3FE\U0000200D\U00002640': { # 🦸🏾‍♀
         'en' : ':woman_superhero_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': ':heldin_mitteldunkle_hautfarbe:',
+        'es': u':superheroína_tono_de_piel_oscuro_medio:',
+        'fr': u':super-héroïne_peau_mate:',
+        'pt': u':super-heroína_pele_morena_escura:',
+        'it': ':supereroina_carnagione_abbastanza_scura:'
     },
     u'\U0001F9B8\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🦸🏼‍♀️
         'en' : ':woman_superhero_medium-light_skin_tone:',
@@ -43413,7 +45948,12 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0001F3FC\U0000200D\U00002640': { # 🦸🏼‍♀
         'en' : ':woman_superhero_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': ':heldin_mittelhelle_hautfarbe:',
+        'es': u':superheroína_tono_de_piel_claro_medio:',
+        'fr': u':super-héroïne_peau_moyennement_claire:',
+        'pt': u':super-heroína_pele_morena_clara:',
+        'it': ':supereroina_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9B8\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🦸🏽‍♀️
         'en' : ':woman_superhero_medium_skin_tone:',
@@ -43428,7 +45968,12 @@ EMOJI_DATA = {
     u'\U0001F9B8\U0001F3FD\U0000200D\U00002640': { # 🦸🏽‍♀
         'en' : ':woman_superhero_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': ':heldin_mittlere_hautfarbe:',
+        'es': u':superheroína_tono_de_piel_medio:',
+        'fr': u':super-héroïne_peau_légèrement_mate:',
+        'pt': u':super-heroína_pele_morena:',
+        'it': ':supereroina_carnagione_olivastra:'
     },
     u'\U0001F9B9\U0000200D\U00002640\U0000FE0F': { # 🦹‍♀️
         'en' : ':woman_supervillain:',
@@ -43438,7 +45983,8 @@ EMOJI_DATA = {
         'es': ':supervillana:',
         'fr': ':super-vilain_femme:',
         'pt': u':supervilã:',
-        'it': ':supercattiva:'
+        'it': ':supercattiva:',
+        'fa': u':ابرشرور_زن:'
     },
     u'\U0001F9B9\U0000200D\U00002640': { # 🦹‍♀
         'en' : ':woman_supervillain:',
@@ -43464,7 +46010,12 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0001F3FF\U0000200D\U00002640': { # 🦹🏿‍♀
         'en' : ':woman_supervillain_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': u':weiblicher_bösewicht_dunkle_hautfarbe:',
+        'es': ':supervillana_tono_de_piel_oscuro:',
+        'fr': u':super-vilain_femme_peau_foncée:',
+        'pt': u':supervilã_pele_escura:',
+        'it': ':supercattiva_carnagione_scura:'
     },
     u'\U0001F9B9\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🦹🏻‍♀️
         'en' : ':woman_supervillain_light_skin_tone:',
@@ -43479,7 +46030,12 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0001F3FB\U0000200D\U00002640': { # 🦹🏻‍♀
         'en' : ':woman_supervillain_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': u':weiblicher_bösewicht_helle_hautfarbe:',
+        'es': ':supervillana_tono_de_piel_claro:',
+        'fr': ':super-vilain_femme_peau_claire:',
+        'pt': u':supervilã_pele_clara:',
+        'it': ':supercattiva_carnagione_chiara:'
     },
     u'\U0001F9B9\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🦹🏾‍♀️
         'en' : ':woman_supervillain_medium-dark_skin_tone:',
@@ -43494,7 +46050,12 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0001F3FE\U0000200D\U00002640': { # 🦹🏾‍♀
         'en' : ':woman_supervillain_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': u':weiblicher_bösewicht_mitteldunkle_hautfarbe:',
+        'es': ':supervillana_tono_de_piel_oscuro_medio:',
+        'fr': ':super-vilain_femme_peau_mate:',
+        'pt': u':supervilã_pele_morena_escura:',
+        'it': ':supercattiva_carnagione_abbastanza_scura:'
     },
     u'\U0001F9B9\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🦹🏼‍♀️
         'en' : ':woman_supervillain_medium-light_skin_tone:',
@@ -43509,7 +46070,12 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0001F3FC\U0000200D\U00002640': { # 🦹🏼‍♀
         'en' : ':woman_supervillain_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': u':weiblicher_bösewicht_mittelhelle_hautfarbe:',
+        'es': ':supervillana_tono_de_piel_claro_medio:',
+        'fr': ':super-vilain_femme_peau_moyennement_claire:',
+        'pt': u':supervilã_pele_morena_clara:',
+        'it': ':supercattiva_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9B9\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🦹🏽‍♀️
         'en' : ':woman_supervillain_medium_skin_tone:',
@@ -43524,7 +46090,12 @@ EMOJI_DATA = {
     u'\U0001F9B9\U0001F3FD\U0000200D\U00002640': { # 🦹🏽‍♀
         'en' : ':woman_supervillain_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 11
+        'E' : 11,
+        'de': u':weiblicher_bösewicht_mittlere_hautfarbe:',
+        'es': ':supervillana_tono_de_piel_medio:',
+        'fr': u':super-vilain_femme_peau_légèrement_mate:',
+        'pt': u':supervilã_pele_morena:',
+        'it': ':supercattiva_carnagione_olivastra:'
     },
     u'\U0001F3C4\U0000200D\U00002640\U0000FE0F': { # 🏄‍♀️
         'en' : ':woman_surfing:',
@@ -43534,7 +46105,8 @@ EMOJI_DATA = {
         'es': ':mujer_haciendo_surf:',
         'fr': ':surfeuse:',
         'pt': ':mulher_surfista:',
-        'it': ':surfista_donna:'
+        'it': ':surfista_donna:',
+        'fa': u':موج_سوار_زن:'
     },
     u'\U0001F3C4\U0000200D\U00002640': { # 🏄‍♀
         'en' : ':woman_surfing:',
@@ -43560,7 +46132,12 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0001F3FF\U0000200D\U00002640': { # 🏄🏿‍♀
         'en' : ':woman_surfing_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':surferin_dunkle_hautfarbe:',
+        'es': ':mujer_haciendo_surf_tono_de_piel_oscuro:',
+        'fr': u':surfeuse_peau_foncée:',
+        'pt': ':mulher_surfista_pele_escura:',
+        'it': ':surfista_donna_carnagione_scura:'
     },
     u'\U0001F3C4\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🏄🏻‍♀️
         'en' : ':woman_surfing_light_skin_tone:',
@@ -43575,7 +46152,12 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0001F3FB\U0000200D\U00002640': { # 🏄🏻‍♀
         'en' : ':woman_surfing_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':surferin_helle_hautfarbe:',
+        'es': ':mujer_haciendo_surf_tono_de_piel_claro:',
+        'fr': ':surfeuse_peau_claire:',
+        'pt': ':mulher_surfista_pele_clara:',
+        'it': ':surfista_donna_carnagione_chiara:'
     },
     u'\U0001F3C4\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🏄🏾‍♀️
         'en' : ':woman_surfing_medium-dark_skin_tone:',
@@ -43590,7 +46172,12 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0001F3FE\U0000200D\U00002640': { # 🏄🏾‍♀
         'en' : ':woman_surfing_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':surferin_mitteldunkle_hautfarbe:',
+        'es': ':mujer_haciendo_surf_tono_de_piel_oscuro_medio:',
+        'fr': ':surfeuse_peau_mate:',
+        'pt': ':mulher_surfista_pele_morena_escura:',
+        'it': ':surfista_donna_carnagione_abbastanza_scura:'
     },
     u'\U0001F3C4\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🏄🏼‍♀️
         'en' : ':woman_surfing_medium-light_skin_tone:',
@@ -43605,7 +46192,12 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0001F3FC\U0000200D\U00002640': { # 🏄🏼‍♀
         'en' : ':woman_surfing_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':surferin_mittelhelle_hautfarbe:',
+        'es': ':mujer_haciendo_surf_tono_de_piel_claro_medio:',
+        'fr': ':surfeuse_peau_moyennement_claire:',
+        'pt': ':mulher_surfista_pele_morena_clara:',
+        'it': ':surfista_donna_carnagione_abbastanza_chiara:'
     },
     u'\U0001F3C4\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🏄🏽‍♀️
         'en' : ':woman_surfing_medium_skin_tone:',
@@ -43620,7 +46212,12 @@ EMOJI_DATA = {
     u'\U0001F3C4\U0001F3FD\U0000200D\U00002640': { # 🏄🏽‍♀
         'en' : ':woman_surfing_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':surferin_mittlere_hautfarbe:',
+        'es': ':mujer_haciendo_surf_tono_de_piel_medio:',
+        'fr': u':surfeuse_peau_légèrement_mate:',
+        'pt': ':mulher_surfista_pele_morena:',
+        'it': ':surfista_donna_carnagione_olivastra:'
     },
     u'\U0001F3CA\U0000200D\U00002640\U0000FE0F': { # 🏊‍♀️
         'en' : ':woman_swimming:',
@@ -43630,7 +46227,8 @@ EMOJI_DATA = {
         'es': ':mujer_nadando:',
         'fr': ':nageuse:',
         'pt': ':mulher_nadando:',
-        'it': ':nuotatrice:'
+        'it': ':nuotatrice:',
+        'fa': u':شناگر_زن:'
     },
     u'\U0001F3CA\U0000200D\U00002640': { # 🏊‍♀
         'en' : ':woman_swimming:',
@@ -43656,7 +46254,12 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0001F3FF\U0000200D\U00002640': { # 🏊🏿‍♀
         'en' : ':woman_swimming_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schwimmerin_dunkle_hautfarbe:',
+        'es': ':mujer_nadando_tono_de_piel_oscuro:',
+        'fr': u':nageuse_peau_foncée:',
+        'pt': ':mulher_nadando_pele_escura:',
+        'it': ':nuotatrice_carnagione_scura:'
     },
     u'\U0001F3CA\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🏊🏻‍♀️
         'en' : ':woman_swimming_light_skin_tone:',
@@ -43671,7 +46274,12 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0001F3FB\U0000200D\U00002640': { # 🏊🏻‍♀
         'en' : ':woman_swimming_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schwimmerin_helle_hautfarbe:',
+        'es': ':mujer_nadando_tono_de_piel_claro:',
+        'fr': ':nageuse_peau_claire:',
+        'pt': ':mulher_nadando_pele_clara:',
+        'it': ':nuotatrice_carnagione_chiara:'
     },
     u'\U0001F3CA\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🏊🏾‍♀️
         'en' : ':woman_swimming_medium-dark_skin_tone:',
@@ -43686,7 +46294,12 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0001F3FE\U0000200D\U00002640': { # 🏊🏾‍♀
         'en' : ':woman_swimming_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schwimmerin_mitteldunkle_hautfarbe:',
+        'es': ':mujer_nadando_tono_de_piel_oscuro_medio:',
+        'fr': ':nageuse_peau_mate:',
+        'pt': ':mulher_nadando_pele_morena_escura:',
+        'it': ':nuotatrice_carnagione_abbastanza_scura:'
     },
     u'\U0001F3CA\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🏊🏼‍♀️
         'en' : ':woman_swimming_medium-light_skin_tone:',
@@ -43701,7 +46314,12 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0001F3FC\U0000200D\U00002640': { # 🏊🏼‍♀
         'en' : ':woman_swimming_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schwimmerin_mittelhelle_hautfarbe:',
+        'es': ':mujer_nadando_tono_de_piel_claro_medio:',
+        'fr': ':nageuse_peau_moyennement_claire:',
+        'pt': ':mulher_nadando_pele_morena_clara:',
+        'it': ':nuotatrice_carnagione_abbastanza_chiara:'
     },
     u'\U0001F3CA\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🏊🏽‍♀️
         'en' : ':woman_swimming_medium_skin_tone:',
@@ -43716,7 +46334,12 @@ EMOJI_DATA = {
     u'\U0001F3CA\U0001F3FD\U0000200D\U00002640': { # 🏊🏽‍♀
         'en' : ':woman_swimming_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':schwimmerin_mittlere_hautfarbe:',
+        'es': ':mujer_nadando_tono_de_piel_medio:',
+        'fr': u':nageuse_peau_légèrement_mate:',
+        'pt': ':mulher_nadando_pele_morena:',
+        'it': ':nuotatrice_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F3EB': { # 👩‍🏫
         'en' : ':woman_teacher:',
@@ -43848,7 +46471,8 @@ EMOJI_DATA = {
         'es': u':empleada_de_mostrador_de_información:',
         'fr': ':femme_paume_vers_le_haut:',
         'pt': ':mulher_com_a_palma_virada_para_cima:',
-        'it': ':donna_con_suggerimento:'
+        'it': ':donna_con_suggerimento:',
+        'fa': u':زن_کمک_می_کند:'
     },
     u'\U0001F481\U0000200D\U00002640': { # 💁‍♀
         'en' : ':woman_tipping_hand:',
@@ -43874,7 +46498,12 @@ EMOJI_DATA = {
     u'\U0001F481\U0001F3FF\U0000200D\U00002640': { # 💁🏿‍♀
         'en' : ':woman_tipping_hand_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':infoschalter-mitarbeiterin_dunkle_hautfarbe:',
+        'es': u':empleada_de_mostrador_de_información_tono_de_piel_oscuro:',
+        'fr': u':femme_paume_vers_le_haut_peau_foncée:',
+        'pt': ':mulher_com_a_palma_virada_para_cima_pele_escura:',
+        'it': ':donna_con_suggerimento_carnagione_scura:'
     },
     u'\U0001F481\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 💁🏻‍♀️
         'en' : ':woman_tipping_hand_light_skin_tone:',
@@ -43889,7 +46518,12 @@ EMOJI_DATA = {
     u'\U0001F481\U0001F3FB\U0000200D\U00002640': { # 💁🏻‍♀
         'en' : ':woman_tipping_hand_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':infoschalter-mitarbeiterin_helle_hautfarbe:',
+        'es': u':empleada_de_mostrador_de_información_tono_de_piel_claro:',
+        'fr': ':femme_paume_vers_le_haut_peau_claire:',
+        'pt': ':mulher_com_a_palma_virada_para_cima_pele_clara:',
+        'it': ':donna_con_suggerimento_carnagione_chiara:'
     },
     u'\U0001F481\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 💁🏾‍♀️
         'en' : ':woman_tipping_hand_medium-dark_skin_tone:',
@@ -43904,7 +46538,12 @@ EMOJI_DATA = {
     u'\U0001F481\U0001F3FE\U0000200D\U00002640': { # 💁🏾‍♀
         'en' : ':woman_tipping_hand_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':infoschalter-mitarbeiterin_mitteldunkle_hautfarbe:',
+        'es': u':empleada_de_mostrador_de_información_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_paume_vers_le_haut_peau_mate:',
+        'pt': ':mulher_com_a_palma_virada_para_cima_pele_morena_escura:',
+        'it': ':donna_con_suggerimento_carnagione_abbastanza_scura:'
     },
     u'\U0001F481\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 💁🏼‍♀️
         'en' : ':woman_tipping_hand_medium-light_skin_tone:',
@@ -43919,7 +46558,12 @@ EMOJI_DATA = {
     u'\U0001F481\U0001F3FC\U0000200D\U00002640': { # 💁🏼‍♀
         'en' : ':woman_tipping_hand_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':infoschalter-mitarbeiterin_mittelhelle_hautfarbe:',
+        'es': u':empleada_de_mostrador_de_información_tono_de_piel_claro_medio:',
+        'fr': ':femme_paume_vers_le_haut_peau_moyennement_claire:',
+        'pt': ':mulher_com_a_palma_virada_para_cima_pele_morena_clara:',
+        'it': ':donna_con_suggerimento_carnagione_abbastanza_chiara:'
     },
     u'\U0001F481\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 💁🏽‍♀️
         'en' : ':woman_tipping_hand_medium_skin_tone:',
@@ -43934,7 +46578,12 @@ EMOJI_DATA = {
     u'\U0001F481\U0001F3FD\U0000200D\U00002640': { # 💁🏽‍♀
         'en' : ':woman_tipping_hand_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':infoschalter-mitarbeiterin_mittlere_hautfarbe:',
+        'es': u':empleada_de_mostrador_de_información_tono_de_piel_medio:',
+        'fr': u':femme_paume_vers_le_haut_peau_légèrement_mate:',
+        'pt': ':mulher_com_a_palma_virada_para_cima_pele_morena:',
+        'it': ':donna_con_suggerimento_carnagione_olivastra:'
     },
     u'\U0001F9DB\U0000200D\U00002640\U0000FE0F': { # 🧛‍♀️
         'en' : ':woman_vampire:',
@@ -43944,7 +46593,8 @@ EMOJI_DATA = {
         'es': ':vampiresa:',
         'fr': ':vampire_femme:',
         'pt': ':mulher_vampira:',
-        'it': ':vampira:'
+        'it': ':vampira:',
+        'fa': u':دراکولای_زن:'
     },
     u'\U0001F9DB\U0000200D\U00002640': { # 🧛‍♀
         'en' : ':woman_vampire:',
@@ -43970,7 +46620,12 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0001F3FF\U0000200D\U00002640': { # 🧛🏿‍♀
         'en' : ':woman_vampire_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':weiblicher_vampir_dunkle_hautfarbe:',
+        'es': ':vampiresa_tono_de_piel_oscuro:',
+        'fr': u':vampire_femme_peau_foncée:',
+        'pt': ':mulher_vampira_pele_escura:',
+        'it': ':vampira_carnagione_scura:'
     },
     u'\U0001F9DB\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🧛🏻‍♀️
         'en' : ':woman_vampire_light_skin_tone:',
@@ -43985,7 +46640,12 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0001F3FB\U0000200D\U00002640': { # 🧛🏻‍♀
         'en' : ':woman_vampire_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':weiblicher_vampir_helle_hautfarbe:',
+        'es': ':vampiresa_tono_de_piel_claro:',
+        'fr': ':vampire_femme_peau_claire:',
+        'pt': ':mulher_vampira_pele_clara:',
+        'it': ':vampira_carnagione_chiara:'
     },
     u'\U0001F9DB\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🧛🏾‍♀️
         'en' : ':woman_vampire_medium-dark_skin_tone:',
@@ -44000,7 +46660,12 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0001F3FE\U0000200D\U00002640': { # 🧛🏾‍♀
         'en' : ':woman_vampire_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':weiblicher_vampir_mitteldunkle_hautfarbe:',
+        'es': ':vampiresa_tono_de_piel_oscuro_medio:',
+        'fr': ':vampire_femme_peau_mate:',
+        'pt': ':mulher_vampira_pele_morena_escura:',
+        'it': ':vampira_carnagione_abbastanza_scura:'
     },
     u'\U0001F9DB\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🧛🏼‍♀️
         'en' : ':woman_vampire_medium-light_skin_tone:',
@@ -44015,7 +46680,12 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0001F3FC\U0000200D\U00002640': { # 🧛🏼‍♀
         'en' : ':woman_vampire_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':weiblicher_vampir_mittelhelle_hautfarbe:',
+        'es': ':vampiresa_tono_de_piel_claro_medio:',
+        'fr': ':vampire_femme_peau_moyennement_claire:',
+        'pt': ':mulher_vampira_pele_morena_clara:',
+        'it': ':vampira_carnagione_abbastanza_chiara:'
     },
     u'\U0001F9DB\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🧛🏽‍♀️
         'en' : ':woman_vampire_medium_skin_tone:',
@@ -44030,7 +46700,12 @@ EMOJI_DATA = {
     u'\U0001F9DB\U0001F3FD\U0000200D\U00002640': { # 🧛🏽‍♀
         'en' : ':woman_vampire_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 5
+        'E' : 5,
+        'de': ':weiblicher_vampir_mittlere_hautfarbe:',
+        'es': ':vampiresa_tono_de_piel_medio:',
+        'fr': u':vampire_femme_peau_légèrement_mate:',
+        'pt': ':mulher_vampira_pele_morena:',
+        'it': ':vampira_carnagione_olivastra:'
     },
     u'\U0001F6B6\U0000200D\U00002640\U0000FE0F': { # 🚶‍♀️
         'en' : ':woman_walking:',
@@ -44040,7 +46715,8 @@ EMOJI_DATA = {
         'es': ':mujer_caminando:',
         'fr': ':femme_qui_marche:',
         'pt': ':mulher_andando:',
-        'it': ':donna_che_cammina:'
+        'it': ':donna_che_cammina:',
+        'fa': u':زن_پیاده_روی_می_کند:'
     },
     u'\U0001F6B6\U0000200D\U00002640': { # 🚶‍♀
         'en' : ':woman_walking:',
@@ -44066,7 +46742,12 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0001F3FF\U0000200D\U00002640': { # 🚶🏿‍♀
         'en' : ':woman_walking_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':fußgängerin_dunkle_hautfarbe:',
+        'es': ':mujer_caminando_tono_de_piel_oscuro:',
+        'fr': u':femme_qui_marche_peau_foncée:',
+        'pt': ':mulher_andando_pele_escura:',
+        'it': ':donna_che_cammina_carnagione_scura:'
     },
     u'\U0001F6B6\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 🚶🏻‍♀️
         'en' : ':woman_walking_light_skin_tone:',
@@ -44081,7 +46762,12 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0001F3FB\U0000200D\U00002640': { # 🚶🏻‍♀
         'en' : ':woman_walking_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':fußgängerin_helle_hautfarbe:',
+        'es': ':mujer_caminando_tono_de_piel_claro:',
+        'fr': ':femme_qui_marche_peau_claire:',
+        'pt': ':mulher_andando_pele_clara:',
+        'it': ':donna_che_cammina_carnagione_chiara:'
     },
     u'\U0001F6B6\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 🚶🏾‍♀️
         'en' : ':woman_walking_medium-dark_skin_tone:',
@@ -44096,7 +46782,12 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0001F3FE\U0000200D\U00002640': { # 🚶🏾‍♀
         'en' : ':woman_walking_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':fußgängerin_mitteldunkle_hautfarbe:',
+        'es': ':mujer_caminando_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_qui_marche_peau_mate:',
+        'pt': ':mulher_andando_pele_morena_escura:',
+        'it': ':donna_che_cammina_carnagione_abbastanza_scura:'
     },
     u'\U0001F6B6\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 🚶🏼‍♀️
         'en' : ':woman_walking_medium-light_skin_tone:',
@@ -44111,7 +46802,12 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0001F3FC\U0000200D\U00002640': { # 🚶🏼‍♀
         'en' : ':woman_walking_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':fußgängerin_mittelhelle_hautfarbe:',
+        'es': ':mujer_caminando_tono_de_piel_claro_medio:',
+        'fr': ':femme_qui_marche_peau_moyennement_claire:',
+        'pt': ':mulher_andando_pele_morena_clara:',
+        'it': ':donna_che_cammina_carnagione_abbastanza_chiara:'
     },
     u'\U0001F6B6\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 🚶🏽‍♀️
         'en' : ':woman_walking_medium_skin_tone:',
@@ -44126,7 +46822,12 @@ EMOJI_DATA = {
     u'\U0001F6B6\U0001F3FD\U0000200D\U00002640': { # 🚶🏽‍♀
         'en' : ':woman_walking_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': u':fußgängerin_mittlere_hautfarbe:',
+        'es': ':mujer_caminando_tono_de_piel_medio:',
+        'fr': u':femme_qui_marche_peau_légèrement_mate:',
+        'pt': ':mulher_andando_pele_morena:',
+        'it': ':donna_che_cammina_carnagione_olivastra:'
     },
     u'\U0001F473\U0000200D\U00002640\U0000FE0F': { # 👳‍♀️
         'en' : ':woman_wearing_turban:',
@@ -44136,7 +46837,8 @@ EMOJI_DATA = {
         'es': ':mujer_con_turbante:',
         'fr': ':femme_en_turban:',
         'pt': ':mulher_com_turbante:',
-        'it': ':donna_con_turbante:'
+        'it': ':donna_con_turbante:',
+        'fa': u':زن_با_دستار:'
     },
     u'\U0001F473\U0000200D\U00002640': { # 👳‍♀
         'en' : ':woman_wearing_turban:',
@@ -44162,7 +46864,12 @@ EMOJI_DATA = {
     u'\U0001F473\U0001F3FF\U0000200D\U00002640': { # 👳🏿‍♀
         'en' : ':woman_wearing_turban_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_turban_dunkle_hautfarbe:',
+        'es': ':mujer_con_turbante_tono_de_piel_oscuro:',
+        'fr': u':femme_en_turban_peau_foncée:',
+        'pt': ':mulher_com_turbante_pele_escura:',
+        'it': ':donna_con_turbante_carnagione_scura:'
     },
     u'\U0001F473\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 👳🏻‍♀️
         'en' : ':woman_wearing_turban_light_skin_tone:',
@@ -44177,7 +46884,12 @@ EMOJI_DATA = {
     u'\U0001F473\U0001F3FB\U0000200D\U00002640': { # 👳🏻‍♀
         'en' : ':woman_wearing_turban_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_turban_helle_hautfarbe:',
+        'es': ':mujer_con_turbante_tono_de_piel_claro:',
+        'fr': ':femme_en_turban_peau_claire:',
+        'pt': ':mulher_com_turbante_pele_clara:',
+        'it': ':donna_con_turbante_carnagione_chiara:'
     },
     u'\U0001F473\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 👳🏾‍♀️
         'en' : ':woman_wearing_turban_medium-dark_skin_tone:',
@@ -44192,7 +46904,12 @@ EMOJI_DATA = {
     u'\U0001F473\U0001F3FE\U0000200D\U00002640': { # 👳🏾‍♀
         'en' : ':woman_wearing_turban_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_turban_mitteldunkle_hautfarbe:',
+        'es': ':mujer_con_turbante_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_en_turban_peau_mate:',
+        'pt': ':mulher_com_turbante_pele_morena_escura:',
+        'it': ':donna_con_turbante_carnagione_abbastanza_scura:'
     },
     u'\U0001F473\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 👳🏼‍♀️
         'en' : ':woman_wearing_turban_medium-light_skin_tone:',
@@ -44207,7 +46924,12 @@ EMOJI_DATA = {
     u'\U0001F473\U0001F3FC\U0000200D\U00002640': { # 👳🏼‍♀
         'en' : ':woman_wearing_turban_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_turban_mittelhelle_hautfarbe:',
+        'es': ':mujer_con_turbante_tono_de_piel_claro_medio:',
+        'fr': ':femme_en_turban_peau_moyennement_claire:',
+        'pt': ':mulher_com_turbante_pele_morena_clara:',
+        'it': ':donna_con_turbante_carnagione_abbastanza_chiara:'
     },
     u'\U0001F473\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 👳🏽‍♀️
         'en' : ':woman_wearing_turban_medium_skin_tone:',
@@ -44222,7 +46944,12 @@ EMOJI_DATA = {
     u'\U0001F473\U0001F3FD\U0000200D\U00002640': { # 👳🏽‍♀
         'en' : ':woman_wearing_turban_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 4
+        'E' : 4,
+        'de': ':frau_mit_turban_mittlere_hautfarbe:',
+        'es': ':mujer_con_turbante_tono_de_piel_medio:',
+        'fr': u':femme_en_turban_peau_légèrement_mate:',
+        'pt': ':mulher_com_turbante_pele_morena:',
+        'it': ':donna_con_turbante_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F9B3': { # 👩‍🦳
         'en' : ':woman_white_hair:',
@@ -44303,7 +47030,8 @@ EMOJI_DATA = {
         'es': ':mujer_con_velo:',
         'fr': ':femme_avec_voile:',
         'pt': u':noiva_com_véu:',
-        'it': ':sposa_con_velo:'
+        'it': ':sposa_con_velo:',
+        'fa': u':زن_با_تور_عروس:'
     },
     u'\U0001F470\U0000200D\U00002640': { # 👰‍♀
         'en' : ':woman_with_veil:',
@@ -44329,7 +47057,12 @@ EMOJI_DATA = {
     u'\U0001F470\U0001F3FF\U0000200D\U00002640': { # 👰🏿‍♀
         'en' : ':woman_with_veil_dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':frau_mit_schleier_dunkle_hautfarbe:',
+        'es': ':mujer_con_velo_tono_de_piel_oscuro:',
+        'fr': u':femme_avec_voile_peau_foncée:',
+        'pt': u':noiva_com_véu_pele_escura:',
+        'it': ':sposa_con_velo_carnagione_scura:'
     },
     u'\U0001F470\U0001F3FB\U0000200D\U00002640\U0000FE0F': { # 👰🏻‍♀️
         'en' : ':woman_with_veil_light_skin_tone:',
@@ -44344,7 +47077,12 @@ EMOJI_DATA = {
     u'\U0001F470\U0001F3FB\U0000200D\U00002640': { # 👰🏻‍♀
         'en' : ':woman_with_veil_light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':frau_mit_schleier_helle_hautfarbe:',
+        'es': ':mujer_con_velo_tono_de_piel_claro:',
+        'fr': ':femme_avec_voile_peau_claire:',
+        'pt': u':noiva_com_véu_pele_clara:',
+        'it': ':sposa_con_velo_carnagione_chiara:'
     },
     u'\U0001F470\U0001F3FE\U0000200D\U00002640\U0000FE0F': { # 👰🏾‍♀️
         'en' : ':woman_with_veil_medium-dark_skin_tone:',
@@ -44359,7 +47097,12 @@ EMOJI_DATA = {
     u'\U0001F470\U0001F3FE\U0000200D\U00002640': { # 👰🏾‍♀
         'en' : ':woman_with_veil_medium-dark_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':frau_mit_schleier_mitteldunkle_hautfarbe:',
+        'es': ':mujer_con_velo_tono_de_piel_oscuro_medio:',
+        'fr': ':femme_avec_voile_peau_mate:',
+        'pt': u':noiva_com_véu_pele_morena_escura:',
+        'it': ':sposa_con_velo_carnagione_abbastanza_scura:'
     },
     u'\U0001F470\U0001F3FC\U0000200D\U00002640\U0000FE0F': { # 👰🏼‍♀️
         'en' : ':woman_with_veil_medium-light_skin_tone:',
@@ -44374,7 +47117,12 @@ EMOJI_DATA = {
     u'\U0001F470\U0001F3FC\U0000200D\U00002640': { # 👰🏼‍♀
         'en' : ':woman_with_veil_medium-light_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':frau_mit_schleier_mittelhelle_hautfarbe:',
+        'es': ':mujer_con_velo_tono_de_piel_claro_medio:',
+        'fr': ':femme_avec_voile_peau_moyennement_claire:',
+        'pt': u':noiva_com_véu_pele_morena_clara:',
+        'it': ':sposa_con_velo_carnagione_abbastanza_chiara:'
     },
     u'\U0001F470\U0001F3FD\U0000200D\U00002640\U0000FE0F': { # 👰🏽‍♀️
         'en' : ':woman_with_veil_medium_skin_tone:',
@@ -44389,7 +47137,12 @@ EMOJI_DATA = {
     u'\U0001F470\U0001F3FD\U0000200D\U00002640': { # 👰🏽‍♀
         'en' : ':woman_with_veil_medium_skin_tone:',
         'status' : minimally_qualified,
-        'E' : 13
+        'E' : 13,
+        'de': ':frau_mit_schleier_mittlere_hautfarbe:',
+        'es': ':mujer_con_velo_tono_de_piel_medio:',
+        'fr': u':femme_avec_voile_peau_légèrement_mate:',
+        'pt': u':noiva_com_véu_pele_morena:',
+        'it': ':sposa_con_velo_carnagione_olivastra:'
     },
     u'\U0001F469\U0000200D\U0001F9AF': { # 👩‍🦯
         'en' : ':woman_with_white_cane:',
@@ -44460,7 +47213,8 @@ EMOJI_DATA = {
         'es': ':zombi_mujer:',
         'fr': ':zombie_femme:',
         'pt': ':mulher_zumbi:',
-        'it': ':zombie_donna:'
+        'it': ':zombie_donna:',
+        'fa': u':مرده_متحرک_زن:'
     },
     u'\U0001F9DF\U0000200D\U00002640': { # 🧟‍♀
         'en' : ':woman_zombie:',
@@ -44791,7 +47545,8 @@ EMOJI_DATA = {
         'es': ':mujeres_con_orejas_de_conejo:',
         'fr': ':femmes_avec_des_oreilles_de_lapin:',
         'pt': ':mulheres_com_orelhas_de_coelho:',
-        'it': ':donne_con_orecchie_da_coniglio:'
+        'it': ':donne_con_orecchie_da_coniglio:',
+        'fa': u':زنان_در_پارتی:'
     },
     u'\U0001F46F\U0000200D\U00002640': { # 👯‍♀
         'en' : ':women_with_bunny_ears:',
@@ -44812,7 +47567,8 @@ EMOJI_DATA = {
         'es': ':mujeres_luchando:',
         'fr': ':lutteuses:',
         'pt': ':mulheres_lutando:',
-        'it': ':lottatrici:'
+        'it': ':lottatrici:',
+        'fa': u':کُشتی_گیر_زن:'
     },
     u'\U0001F93C\U0000200D\U00002640': { # 🤼‍♀
         'en' : ':women_wrestling:',
