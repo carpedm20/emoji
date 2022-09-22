@@ -173,6 +173,24 @@ def extract_names(xml, lang):
                 print(
                     f"# {lang}: CHANGED {data[emj]} TO {emoji_name} \t\t(Original: {text})")
             data[emj] = emoji_name
+
+    # There are some emoji with two code sequences for the same emoji, one that ends with \uFE0F and one that does not.
+    # The one that ends with \uFE0F is the "new" emoji, that is RGI.
+    # The Unicode translation data sometimes only has one of the two code sequences and is missing the other one.
+    # In that case we want to use the existing translation for both code sequences.
+    missing_translation = {}
+    for emj in data:
+        if emj.endswith('\uFE0F') and emj[0:-1] not in data and emj[0:-1] in emoji_pkg.EMOJI_DATA:
+            # the emoji without \uFE0F exists in EMOJI_DATA but is has no translation
+            missing_translation[emj[0:-1]] = data[emj]
+
+        with_emoji_type = f"{emj}\uFE0F"
+        if not emj.endswith('\uFE0F') and with_emoji_type not in data and with_emoji_type in emoji_pkg.EMOJI_DATA:
+            # the emoji with \uFE0F exists in EMOJI_DATA but is has no translation
+            missing_translation[with_emoji_type] = data[emj]
+
+    data.update(missing_translation)
+
     return data
 
 
