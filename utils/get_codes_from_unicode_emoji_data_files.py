@@ -181,13 +181,25 @@ def extract_names(xml, lang):
     missing_translation = {}
     for emj in data:
         if emj.endswith('\uFE0F') and emj[0:-1] not in data and emj[0:-1] in emoji_pkg.EMOJI_DATA:
-            # the emoji without \uFE0F exists in EMOJI_DATA but is has no translation
+            # the emoji NOT ending in \uFE0F exists in EMOJI_DATA but is has no translation
+            # e.g. ':pirate_flag:' -> '\U0001F3F4\u200D\u2620\uFE0F' or '\U0001F3F4\u200D\u2620'
             missing_translation[emj[0:-1]] = data[emj]
 
         with_emoji_type = f"{emj}\uFE0F"
         if not emj.endswith('\uFE0F') and with_emoji_type not in data and with_emoji_type in emoji_pkg.EMOJI_DATA:
-            # the emoji with \uFE0F exists in EMOJI_DATA but is has no translation
+            # the emoji ending in \uFE0F exists in EMOJI_DATA but is has no translation
+            # e.g. ':face_in_clouds:' -> '\U0001F636\u200D\U0001F32B\uFE0F' or '\U0001F636\u200D\U0001F32B'
             missing_translation[with_emoji_type] = data[emj]
+
+    # Find emoji that contain \uFE0F inside the sequence (not just as a suffix)
+    # e.g. ':eye_in_speech_bubble:' -> '\U0001F441\uFE0F\u200D\U0001F5E8\uFE0F'
+    for emj in emoji_pkg.EMOJI_DATA:
+        if emj in data:
+            continue
+        emj_no_variant = emj.replace('\uFE0F', '')
+        if emj_no_variant != emj and emj_no_variant in data:
+            # the emoji with \uFE0F has not translation, but the emoji without all \uFE0F has a translation
+            data[emj] = data[emj_no_variant]
 
     data.update(missing_translation)
 
