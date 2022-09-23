@@ -11172,7 +11172,8 @@ EMOJI_DATA = {
         'es': ':ojo_en_bocadillo_de_texto:',
         'fr': u':œil_dans_une_bulle_de_bd:',
         'pt': u':olho_no_balão_de_diálogo:',
-        'it': ':occhio_nel_fumetto:'
+        'it': ':occhio_nel_fumetto:',
+        'fa': u':چشم_در_حباب_گفتار:'
     },
     u'\U0001F441\U0000200D\U0001F5E8\U0000FE0F': { # 👁‍🗨️
         'en' : ':eye_in_speech_bubble:',
@@ -11193,7 +11194,8 @@ EMOJI_DATA = {
         'es': ':ojo_en_bocadillo_de_texto:',
         'fr': u':œil_dans_une_bulle_de_bd:',
         'pt': u':olho_no_balão_de_diálogo:',
-        'it': ':occhio_nel_fumetto:'
+        'it': ':occhio_nel_fumetto:',
+        'fa': u':چشم_در_حباب_گفتار:'
     },
     u'\U0001F441\U0000200D\U0001F5E8': { # 👁‍🗨
         'en' : ':eye_in_speech_bubble:',
@@ -14323,7 +14325,13 @@ EMOJI_DATA = {
     u'\U00002764\U0000FE0F\U0000200D\U0001F525': { # ❤️‍🔥
         'en' : ':heart_on_fire:',
         'status' : fully_qualified,
-        'E' : 13.1
+        'E' : 13.1,
+        'de': ':herz_in_flammen:',
+        'es': u':corazón_en_llamas:',
+        'fr': u':cœur_enflammé:',
+        'pt': u':coração_em_chamas:',
+        'it': ':cuore_in_fiamme:',
+        'fa': u':قلب_در_آتش:'
     },
     u'\U00002764\U0000200D\U0001F525': { # ❤‍🔥
         'en' : ':heart_on_fire:',
@@ -18241,7 +18249,8 @@ EMOJI_DATA = {
         'es': u':hombre_botando_un_balón:',
         'fr': ':homme_avec_ballon:',
         'pt': ':homem_jogando_basquete:',
-        'it': ':uomo_che_fa_rimbalzare_una_palla:'
+        'it': ':uomo_che_fa_rimbalzare_una_palla:',
+        'fa': u':مرد_و_توپ:'
     },
     u'\U000026F9\U0000200D\U00002642\U0000FE0F': { # ⛹‍♂️
         'en' : ':man_bouncing_ball:',
@@ -18262,7 +18271,8 @@ EMOJI_DATA = {
         'es': u':hombre_botando_un_balón:',
         'fr': ':homme_avec_ballon:',
         'pt': ':homem_jogando_basquete:',
-        'it': ':uomo_che_fa_rimbalzare_una_palla:'
+        'it': ':uomo_che_fa_rimbalzare_una_palla:',
+        'fa': u':مرد_و_توپ:'
     },
     u'\U000026F9\U0000200D\U00002642': { # ⛹‍♂
         'en' : ':man_bouncing_ball:',
@@ -19083,7 +19093,8 @@ EMOJI_DATA = {
         'es': ':detective_hombre:',
         'fr': u':détective_homme:',
         'pt': ':detetive_homem:',
-        'it': ':investigatore:'
+        'it': ':investigatore:',
+        'fa': u':کارآگاه_مرد:'
     },
     u'\U0001F575\U0000200D\U00002642\U0000FE0F': { # 🕵‍♂️
         'en' : ':man_detective:',
@@ -19104,7 +19115,8 @@ EMOJI_DATA = {
         'es': ':detective_hombre:',
         'fr': u':détective_homme:',
         'pt': ':detetive_homem:',
-        'it': ':investigatore:'
+        'it': ':investigatore:',
+        'fa': u':کارآگاه_مرد:'
     },
     u'\U0001F575\U0000200D\U00002642': { # 🕵‍♂
         'en' : ':man_detective:',
@@ -20467,7 +20479,8 @@ EMOJI_DATA = {
         'es': ':hombre_jugando_al_golf:',
         'fr': ':golfeur:',
         'pt': ':homem_golfista:',
-        'it': ':golfista_uomo:'
+        'it': ':golfista_uomo:',
+        'fa': u':گلف_باز_مرد:'
     },
     u'\U0001F3CC\U0000200D\U00002642\U0000FE0F': { # 🏌‍♂️
         'en' : ':man_golfing:',
@@ -20488,7 +20501,8 @@ EMOJI_DATA = {
         'es': ':hombre_jugando_al_golf:',
         'fr': ':golfeur:',
         'pt': ':homem_golfista:',
-        'it': ':golfista_uomo:'
+        'it': ':golfista_uomo:',
+        'fa': u':گلف_باز_مرد:'
     },
     u'\U0001F3CC\U0000200D\U00002642': { # 🏌‍♂
         'en' : ':man_golfing:',
@@ -21707,7 +21721,8 @@ EMOJI_DATA = {
         'es': ':hombre_levantando_pesas:',
         'fr': u':homme_haltérophile:',
         'pt': ':homem_levantando_peso:',
-        'it': ':uomo_che_solleva_pesi:'
+        'it': ':uomo_che_solleva_pesi:',
+        'fa': u':وزنه_بردار_مرد:'
     },
     u'\U0001F3CB\U0000200D\U00002642\U0000FE0F': { # 🏋‍♂️
         'en' : ':man_lifting_weights:',
@@ -21728,7 +21743,8 @@ EMOJI_DATA = {
         'es': ':hombre_levantando_pesas:',
         'fr': u':homme_haltérophile:',
         'pt': ':homem_levantando_peso:',
-        'it': ':uomo_che_solleva_pesi:'
+        'it': ':uomo_che_solleva_pesi:',
+        'fa': u':وزنه_بردار_مرد:'
     },
     u'\U0001F3CB\U0000200D\U00002642': { # 🏋‍♂
         'en' : ':man_lifting_weights:',
@@ -25865,7 +25881,13 @@ EMOJI_DATA = {
     u'\U00002764\U0000FE0F\U0000200D\U0001FA79': { # ❤️‍🩹
         'en' : ':mending_heart:',
         'status' : fully_qualified,
-        'E' : 13.1
+        'E' : 13.1,
+        'de': ':herz_mit_verband:',
+        'es': u':corazón_curándose:',
+        'fr': u':cœur_avec_bandages:',
+        'pt': u':coração_remendado:',
+        'it': ':cuore_guarito:',
+        'fa': u':قلب_التیام_یافته:'
     },
     u'\U00002764\U0000200D\U0001FA79': { # ❤‍🩹
         'en' : ':mending_heart:',
@@ -33549,7 +33571,8 @@ EMOJI_DATA = {
         'es': u':bandera_del_arcoíris:',
         'fr': ':drapeau_arc-en-ciel:',
         'pt': u':bandeira_do_arco-íris:',
-        'it': ':bandiera_arcobaleno:'
+        'it': ':bandiera_arcobaleno:',
+        'fa': u':پرچم_رنگین_کمان:'
     },
     u'\U0001F3F3\U0000200D\U0001F308': { # 🏳‍🌈
         'en' : ':rainbow_flag:',
@@ -38124,7 +38147,8 @@ EMOJI_DATA = {
         'es': u':bandera_transgénero:',
         'fr': ':drapeau_transgenre:',
         'pt': u':bandeira_transgênero:',
-        'it': ':bandiera_transgender:'
+        'it': ':bandiera_transgender:',
+        'fa': u':پرچم_تراجنسیتی:'
     },
     u'\U0001F3F3\U0000200D\U000026A7\U0000FE0F': { # 🏳‍⚧️
         'en' : ':transgender_flag:',
@@ -38145,7 +38169,8 @@ EMOJI_DATA = {
         'es': u':bandera_transgénero:',
         'fr': ':drapeau_transgenre:',
         'pt': u':bandeira_transgênero:',
-        'it': ':bandiera_transgender:'
+        'it': ':bandiera_transgender:',
+        'fa': u':پرچم_تراجنسیتی:'
     },
     u'\U0001F3F3\U0000200D\U000026A7': { # 🏳‍⚧
         'en' : ':transgender_flag:',
@@ -40153,7 +40178,8 @@ EMOJI_DATA = {
         'es': u':mujer_botando_un_balón:',
         'fr': ':femme_avec_ballon:',
         'pt': ':mulher_jogando_basquete:',
-        'it': ':donna_che_fa_rimbalzare_una_palla:'
+        'it': ':donna_che_fa_rimbalzare_una_palla:',
+        'fa': u':زن_و_توپ:'
     },
     u'\U000026F9\U0000200D\U00002640\U0000FE0F': { # ⛹‍♀️
         'en' : ':woman_bouncing_ball:',
@@ -40174,7 +40200,8 @@ EMOJI_DATA = {
         'es': u':mujer_botando_un_balón:',
         'fr': ':femme_avec_ballon:',
         'pt': ':mulher_jogando_basquete:',
-        'it': ':donna_che_fa_rimbalzare_una_palla:'
+        'it': ':donna_che_fa_rimbalzare_una_palla:',
+        'fa': u':زن_و_توپ:'
     },
     u'\U000026F9\U0000200D\U00002640': { # ⛹‍♀
         'en' : ':woman_bouncing_ball:',
@@ -40996,7 +41023,8 @@ EMOJI_DATA = {
         'es': ':detective_mujer:',
         'fr': u':détective_femme:',
         'pt': ':detetive_mulher:',
-        'it': ':investigatrice:'
+        'it': ':investigatrice:',
+        'fa': u':کارآگاه_زن:'
     },
     u'\U0001F575\U0000200D\U00002640\U0000FE0F': { # 🕵‍♀️
         'en' : ':woman_detective:',
@@ -41017,7 +41045,8 @@ EMOJI_DATA = {
         'es': ':detective_mujer:',
         'fr': u':détective_femme:',
         'pt': ':detetive_mulher:',
-        'it': ':investigatrice:'
+        'it': ':investigatrice:',
+        'fa': u':کارآگاه_زن:'
     },
     u'\U0001F575\U0000200D\U00002640': { # 🕵‍♀
         'en' : ':woman_detective:',
@@ -42380,7 +42409,8 @@ EMOJI_DATA = {
         'es': ':mujer_jugando_al_golf:',
         'fr': ':golfeuse:',
         'pt': ':mulher_golfista:',
-        'it': ':golfista_donna:'
+        'it': ':golfista_donna:',
+        'fa': u':گلف_باز_زن:'
     },
     u'\U0001F3CC\U0000200D\U00002640\U0000FE0F': { # 🏌‍♀️
         'en' : ':woman_golfing:',
@@ -42401,7 +42431,8 @@ EMOJI_DATA = {
         'es': ':mujer_jugando_al_golf:',
         'fr': ':golfeuse:',
         'pt': ':mulher_golfista:',
-        'it': ':golfista_donna:'
+        'it': ':golfista_donna:',
+        'fa': u':گلف_باز_زن:'
     },
     u'\U0001F3CC\U0000200D\U00002640': { # 🏌‍♀
         'en' : ':woman_golfing:',
@@ -43620,7 +43651,8 @@ EMOJI_DATA = {
         'es': ':mujer_levantando_pesas:',
         'fr': u':femme_haltérophile:',
         'pt': ':mulher_levantando_peso:',
-        'it': ':donna_che_solleva_pesi:'
+        'it': ':donna_che_solleva_pesi:',
+        'fa': u':وزنه_بردار_زن:'
     },
     u'\U0001F3CB\U0000200D\U00002640\U0000FE0F': { # 🏋‍♀️
         'en' : ':woman_lifting_weights:',
@@ -43641,7 +43673,8 @@ EMOJI_DATA = {
         'es': ':mujer_levantando_pesas:',
         'fr': u':femme_haltérophile:',
         'pt': ':mulher_levantando_peso:',
-        'it': ':donna_che_solleva_pesi:'
+        'it': ':donna_che_solleva_pesi:',
+        'fa': u':وزنه_بردار_زن:'
     },
     u'\U0001F3CB\U0000200D\U00002640': { # 🏋‍♀
         'en' : ':woman_lifting_weights:',
