@@ -12,6 +12,7 @@ import sys
 import os
 import re
 import requests
+import bs4
 import xml.etree.ElementTree as ET
 
 include = os.path.relpath(os.path.join(os.path.dirname(__file__), ".."))
@@ -46,6 +47,20 @@ def get_emoji_variation_sequence_from_url(version: str) -> list:
     url = f"https://www.unicode.org/Public/{version}/ucd/emoji/emoji-variation-sequences.txt"
     return get_text_from_url(url).splitlines()
 
+def get_emojiterra_from_url(url: str) -> list:
+    html = get_text_from_url(url)
+
+    soup = bs4.BeautifulSoup(html)
+    emojis = {}
+
+    data = soup.find_all('li')
+    data = [i for i in data if 'href' not in str(i)]
+
+    for i in data:
+        code = i['data-clipboard-text']
+        emojis[code] = i['title'].strip()
+
+    return emojis
 
 def extract_emojis(emojis_lines: list, sequences_lines: list) -> dict:
     """Extract emojis line by line to dict"""
