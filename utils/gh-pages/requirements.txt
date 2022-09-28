@@ -1,2 +1,2 @@
-django>=4.0.5
+django>=4.1.1
 django-htmlmin>=0.11.0

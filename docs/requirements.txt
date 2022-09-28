@@ -1,2 +1,2 @@
-sphinx>=4.4.0
+sphinx>=5.2.2
 alabaster>=0.7.12
