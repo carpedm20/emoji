@@ -30,7 +30,8 @@ languages = {
     "pt": emoji.emojize("pt :Portugal:"),
     "it": emoji.emojize("it :Italy:"),
     "fr": emoji.emojize("fr :France:"),
-    "de": emoji.emojize("de :Germany:")
+    "de": emoji.emojize("de :Germany:"),
+    "fa": emoji.emojize("fa :Iran:"),
 }
 language_args = {}
 
