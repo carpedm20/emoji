@@ -54,7 +54,7 @@ Languages
 
 By default, the language is English (``language='en'``) but  also supported languages are:
 
-Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``), French (``'fr'``), German (``'de'``)
+Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``), French (``'fr'``), German (``'de'``), Farsi/Persian (``'fa'``)
 
 .. doctest::
 
