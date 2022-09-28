@@ -224,6 +224,25 @@ def get_emoji_from_github_api() -> dict:
 
     return output
 
+GITHUB_REMOVED_CHARS = re.compile("\u200D|\uFE0F|\uFE0E|", re.IGNORECASE)
+
+def find_github_aliases(emj, github_dict):
+    aliases = set()
+
+    # Strip ZWJ \u200D, text_type \uFE0E and emoji_type \uFE0F
+    # because the Github API does not include these
+    emj_clean = GITHUB_REMOVED_CHARS.sub("", emj)
+
+    for gh_alias in github_dict:
+        if emj == github_dict[gh_alias]:
+            aliases.add(gh_alias)
+        elif 'variant' in v and emj_no_variant == github_dict[gh_alias]:
+            aliases.add(gh_alias)
+        elif emj_clean == github_dict[gh_alias]:
+            aliases.add(gh_alias)
+
+    return aliases
+
 def ascii(s):
     # return escaped Code points \U000AB123
     return s.encode("unicode-escape").decode()
@@ -256,8 +275,10 @@ if __name__ == "__main__":
         #'fr': get_UNICODE_EMOJI('fr'),
         #'pt': get_UNICODE_EMOJI('pt'),
         #'it': get_UNICODE_EMOJI('it'),
+        #'fa': get_UNICODE_EMOJI('fa'),
     }
-    github_alias = get_emoji_from_github_api()
+    github_alias_dict = get_emoji_from_github_api()
+    used_github_aliases = set()
 
     escapedToUnicodeMap = {escaped: escaped.encode().decode('unicode-escape') for escaped in emojis}  # maps: "\\U0001F4A4" to "\U0001F4A4"
 
@@ -294,20 +315,22 @@ if __name__ == "__main__":
                 aliases.update(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj_no_variant]['alias'])
 
         # Add alias from  GitHub API
-        for gh_alias in github_alias:
-            if emj == github_alias[gh_alias]:
-                aliases.add(gh_alias)
-            elif 'variant' in v and emj_no_variant == github_alias[gh_alias]:
-                aliases.add(gh_alias)
+        github_aliases = find_github_aliases(emj, github_alias_dict)
+        aliases.update(github_aliases)
+        used_github_aliases.update(github_aliases)
 
         # Remove if alias is same as 'en'-name
         if v["en"] in aliases:
             aliases.remove(v["en"])
 
         # Store new aliases to print them at the end after the dict of dicts
-        if emj in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj]:
-            for a in aliases.difference(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias']):
-                new_aliases.append(f"# alias NEW {a} FOR {code}")
+        if emj in emoji_pkg.EMOJI_DATA:
+            if 'alias' in emoji_pkg.EMOJI_DATA[emj]:
+                diff = aliases.difference(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias'])
+            else:
+                diff = aliases
+            for a in diff:
+                new_aliases.append(f"# alias NEW {a} FOR {emj} CODE {code}")
 
         # Try to keep order of aliases intact
         if aliases == old_aliases and emj in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj]:
@@ -339,3 +362,8 @@ if __name__ == "__main__":
     print("# fully_qualified: ", f)
     print("# component: ", c)
     print("\n".join(new_aliases))
+
+    # Check if all aliases from GitHub API were used
+    for github_alias in github_alias_dict:
+        if github_alias not in used_github_aliases:
+            print("# Unused Github alias:", github_alias, github_alias_dict[github_alias], ascii(github_alias_dict[github_alias]))
