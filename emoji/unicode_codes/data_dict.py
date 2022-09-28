@@ -21,6 +21,7 @@
    | Emoji 13.0     | 2020-03-10  | Unicode 13.0     | E13.0             |
    | Emoji 13.1     | 2020-09-15  | Unicode 13.0     | E13.1             |
    | Emoji 14.0     | 2021-09-14  | Unicode 14.0     | E14.0             |
+   | Emoji 15.0     | 2022-09-13  | Unicode 15.0     | E15.0             |
 
                           http://www.unicode.org/reports/tr51/#Versioning
 
@@ -3936,6 +3937,18 @@ EMOJI_DATA = {
         'pt': u':bandeira_iêmen:',
         'it': ':bandiera_yemen:'
     },
+    u'\U0001F4A4': { # 💤
+        'en' : ':ZZZ:',
+        'status' : fully_qualified,
+        'E' : 0.6,
+        'alias' : [':zzz:'],
+        'de': ':schlafen:',
+        'es': u':símbolo_de_sueño:',
+        'fr': ':endormi:',
+        'pt': ':zzz:',
+        'it': ':sonno:',
+        'fa': u':خروپف:'
+    },
     u'\U0001F1FF\U0001F1F2': { # 🇿🇲
         'en' : ':Zambia:',
         'status' : fully_qualified,
@@ -5515,6 +5528,11 @@ EMOJI_DATA = {
         'pt': u':mordendo_o_lábio:',
         'it': ':bocca_che_morde_il_labbro:',
         'fa': u':گازگرفتن_لب:'
+    },
+    u'\U0001F426\U0000200D\U00002B1B': { # 🐦‍⬛
+        'en' : ':black_bird:',
+        'status' : fully_qualified,
+        'E' : 15
     },
     u'\U0001F408\U0000200D\U00002B1B': { # 🐈‍⬛
         'en' : ':black_cat:',
@@ -10284,6 +10302,11 @@ EMOJI_DATA = {
         'it': ':delfino:',
         'fa': u':دلفین:'
     },
+    u'\U0001FACF': { # 🫏
+        'en' : ':donkey:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
     u'\U0001F6AA': { # 🚪
         'en' : ':door:',
         'status' : fully_qualified,
@@ -11021,6 +11044,18 @@ EMOJI_DATA = {
         'it': ':nido_vuoto:',
         'fa': u':آشیانه_خالی:'
     },
+    u'\U0001F621': { # 😡
+        'en' : ':enraged_face:',
+        'status' : fully_qualified,
+        'E' : 0.6,
+        'alias' : [':rage:', ':pout:'],
+        'de': ':schmollendes_gesicht:',
+        'es': ':cara_cabreada:',
+        'fr': ':visage_boudeur:',
+        'pt': ':rosto_furioso:',
+        'it': ':faccina_accigliata:',
+        'fa': u':خشمگین:'
+    },
     u'\U00002709\U0000FE0F': { # ✉️
         'en' : ':envelope:',
         'status' : fully_qualified,
@@ -11190,7 +11225,7 @@ EMOJI_DATA = {
     },
     u'\U0001F441\U0000FE0F\U0000200D\U0001F5E8': { # 👁️‍🗨
         'en' : ':eye_in_speech_bubble:',
-        'status' : unqualified,
+        'status' : minimally_qualified,
         'E' : 2,
         'alias' : [':eye_speech_bubble:'],
         'de': ':auge_in_sprechblase:',
@@ -12626,6 +12661,11 @@ EMOJI_DATA = {
         'it': ':faccina_imbarazzata:',
         'fa': u':سرخ_شده:'
     },
+    u'\U0001FA88': { # 🪈
+        'en' : ':flute:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
     u'\U0001FAB0': { # 🪰
         'en' : ':fly:',
         'status' : fully_qualified,
@@ -12755,6 +12795,11 @@ EMOJI_DATA = {
         'fr': u':mains_en_prière_peau_légèrement_mate:',
         'pt': u':mãos_juntas_pele_morena:',
         'it': ':mani_giunte_carnagione_olivastra:'
+    },
+    u'\U0001FAAD': { # 🪭
+        'en' : ':folding_hand_fan:',
+        'status' : fully_qualified,
+        'E' : 15
     },
     u'\U0001FAD5': { # 🫕
         'en' : ':fondue:',
@@ -13225,6 +13270,11 @@ EMOJI_DATA = {
         'it': ':fantasma:',
         'fa': u':روح:'
     },
+    u'\U0001FADA': { # 🫚
+        'en' : ':ginger_root:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
     u'\U0001F992': { # 🦒
         'en' : ':giraffe:',
         'status' : fully_qualified,
@@ -13440,6 +13490,11 @@ EMOJI_DATA = {
         'it': ':maschera:',
         'fa': u':عینک_ایمنی:'
     },
+    u'\U0001FABF': { # 🪿
+        'en' : ':goose:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
     u'\U0001F98D': { # 🦍
         'en' : ':gorilla:',
         'status' : fully_qualified,
@@ -13540,6 +13595,11 @@ EMOJI_DATA = {
         'pt': ':quadrado_verde:',
         'it': ':quadrato_verde:',
         'fa': u':مربع_سبز:'
+    },
+    u'\U0001FA76': { # 🩶
+        'en' : ':grey_heart:',
+        'status' : fully_qualified,
+        'E' : 15
     },
     u'\U0001F62C': { # 😬
         'en' : ':grimacing_face:',
@@ -13732,6 +13792,11 @@ EMOJI_DATA = {
         'pt': ':guitarra:',
         'it': ':chitarra:',
         'fa': u':گیتار:'
+    },
+    u'\U0001FAAE': { # 🪮
+        'en' : ':hair_pick:',
+        'status' : fully_qualified,
+        'E' : 15
     },
     u'\U0001F354': { # 🍔
         'en' : ':hamburger:',
@@ -13962,7 +14027,7 @@ EMOJI_DATA = {
     u'\U0001F91D\U0001F3FF': { # 🤝🏿
         'en' : ':handshake_dark_skin_tone:',
         'status' : fully_qualified,
-        'E' : 3
+        'E' : 14
     },
     u'\U0001FAF1\U0001F3FF\U0000200D\U0001FAF2\U0001F3FB': { # 🫱🏿‍🫲🏻
         'en' : ':handshake_dark_skin_tone_light_skin_tone:',
@@ -13987,7 +14052,7 @@ EMOJI_DATA = {
     u'\U0001F91D\U0001F3FB': { # 🤝🏻
         'en' : ':handshake_light_skin_tone:',
         'status' : fully_qualified,
-        'E' : 3
+        'E' : 14
     },
     u'\U0001FAF1\U0001F3FB\U0000200D\U0001FAF2\U0001F3FF': { # 🫱🏻‍🫲🏿
         'en' : ':handshake_light_skin_tone_dark_skin_tone:',
@@ -14012,7 +14077,7 @@ EMOJI_DATA = {
     u'\U0001F91D\U0001F3FE': { # 🤝🏾
         'en' : ':handshake_medium-dark_skin_tone:',
         'status' : fully_qualified,
-        'E' : 3
+        'E' : 14
     },
     u'\U0001FAF1\U0001F3FE\U0000200D\U0001FAF2\U0001F3FF': { # 🫱🏾‍🫲🏿
         'en' : ':handshake_medium-dark_skin_tone_dark_skin_tone:',
@@ -14037,7 +14102,7 @@ EMOJI_DATA = {
     u'\U0001F91D\U0001F3FC': { # 🤝🏼
         'en' : ':handshake_medium-light_skin_tone:',
         'status' : fully_qualified,
-        'E' : 3
+        'E' : 14
     },
     u'\U0001FAF1\U0001F3FC\U0000200D\U0001FAF2\U0001F3FF': { # 🫱🏼‍🫲🏿
         'en' : ':handshake_medium-light_skin_tone_dark_skin_tone:',
@@ -14062,7 +14127,7 @@ EMOJI_DATA = {
     u'\U0001F91D\U0001F3FD': { # 🤝🏽
         'en' : ':handshake_medium_skin_tone:',
         'status' : fully_qualified,
-        'E' : 3
+        'E' : 14
     },
     u'\U0001FAF1\U0001F3FD\U0000200D\U0001FAF2\U0001F3FF': { # 🫱🏽‍🫲🏿
         'en' : ':handshake_medium_skin_tone_dark_skin_tone:',
@@ -14920,6 +14985,11 @@ EMOJI_DATA = {
         'it': ':capanna:',
         'fa': u':کلبه:'
     },
+    u'\U0001FABB': { # 🪻
+        'en' : ':hyacinth:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
     u'\U0001F9CA': { # 🧊
         'en' : ':ice:',
         'status' : fully_qualified,
@@ -15268,6 +15338,11 @@ EMOJI_DATA = {
         'pt': ':jeans:',
         'it': ':jeans:',
         'fa': u':شلوار_جین:'
+    },
+    u'\U0001FABC': { # 🪼
+        'en' : ':jellyfish:',
+        'status' : fully_qualified,
+        'E' : 15
     },
     u'\U0001F0CF': { # 🃏
         'en' : ':joker:',
@@ -15698,6 +15773,11 @@ EMOJI_DATA = {
         'status' : unqualified,
         'E' : 0.6,
         'alias' : [':nine:']
+    },
+    u'\U0001FAAF': { # 🪯
+        'en' : ':khanda:',
+        'status' : fully_qualified,
+        'E' : 15
     },
     u'\U0001F6F4': { # 🛴
         'en' : ':kick_scooter:',
@@ -17297,6 +17377,36 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 14
     },
+    u'\U0001FAF7': { # 🫷
+        'en' : ':leftwards_pushing_hand:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
+    u'\U0001FAF7\U0001F3FF': { # 🫷🏿
+        'en' : ':leftwards_pushing_hand_dark_skin_tone:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
+    u'\U0001FAF7\U0001F3FB': { # 🫷🏻
+        'en' : ':leftwards_pushing_hand_light_skin_tone:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
+    u'\U0001FAF7\U0001F3FE': { # 🫷🏾
+        'en' : ':leftwards_pushing_hand_medium-dark_skin_tone:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
+    u'\U0001FAF7\U0001F3FC': { # 🫷🏼
+        'en' : ':leftwards_pushing_hand_medium-light_skin_tone:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
+    u'\U0001FAF7\U0001F3FD': { # 🫷🏽
+        'en' : ':leftwards_pushing_hand_medium_skin_tone:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
     u'\U0001F9B5': { # 🦵
         'en' : ':leg:',
         'status' : fully_qualified,
@@ -17403,6 +17513,11 @@ EMOJI_DATA = {
         'pt': ':controle_de_volume:',
         'it': ':cursore_del_volume:',
         'fa': u':درجهٔ_تنظیم_کننده:'
+    },
+    u'\U0001FA75': { # 🩵
+        'en' : ':light_blue_heart:',
+        'status' : fully_qualified,
+        'E' : 15
     },
     u'\U0001F4A1': { # 💡
         'en' : ':light_bulb:',
@@ -18284,7 +18399,7 @@ EMOJI_DATA = {
     },
     u'\U000026F9\U0000FE0F\U0000200D\U00002642': { # ⛹️‍♂
         'en' : ':man_bouncing_ball:',
-        'status' : unqualified,
+        'status' : minimally_qualified,
         'E' : 4,
         'alias' : [':basketball_man:', ':bouncing_ball_man:'],
         'de': ':mann_mit_ball:',
@@ -19139,7 +19254,7 @@ EMOJI_DATA = {
     },
     u'\U0001F575\U0000FE0F\U0000200D\U00002642': { # 🕵️‍♂
         'en' : ':man_detective:',
-        'status' : unqualified,
+        'status' : minimally_qualified,
         'E' : 4,
         'alias' : [':male_detective:'],
         'de': ':detektiv:',
@@ -20545,7 +20660,7 @@ EMOJI_DATA = {
     },
     u'\U0001F3CC\U0000FE0F\U0000200D\U00002642': { # 🏌️‍♂
         'en' : ':man_golfing:',
-        'status' : unqualified,
+        'status' : minimally_qualified,
         'E' : 4,
         'alias' : [':golfing_man:'],
         'de': ':golfer:',
@@ -21799,7 +21914,7 @@ EMOJI_DATA = {
     },
     u'\U0001F3CB\U0000FE0F\U0000200D\U00002642': { # 🏋️‍♂
         'en' : ':man_lifting_weights:',
-        'status' : unqualified,
+        'status' : minimally_qualified,
         'E' : 4,
         'alias' : [':weight_lifting_man:'],
         'de': ':gewichtheber:',
@@ -25451,6 +25566,11 @@ EMOJI_DATA = {
         'it': u':foglia_d’acero:',
         'fa': u':برگ_افرا:'
     },
+    u'\U0001FA87': { # 🪇
+        'en' : ':maracas:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
     u'\U0001F94B': { # 🥋
         'en' : ':martial_arts_uniform:',
         'status' : fully_qualified,
@@ -26671,6 +26791,11 @@ EMOJI_DATA = {
         'pt': u':contemplação_da_lua:',
         'it': ':contemplazione_della_luna:',
         'fa': u':آئین_مشاهدهٔ_ماه_کامل:'
+    },
+    u'\U0001FACE': { # 🫎
+        'en' : ':moose:',
+        'status' : fully_qualified,
+        'E' : 15
     },
     u'\U0001F54C': { # 🕌
         'en' : ':mosque:',
@@ -28765,6 +28890,11 @@ EMOJI_DATA = {
         'pt': ':patas:',
         'it': ':impronte_di_zampe:',
         'fa': u':رد_پنجه:'
+    },
+    u'\U0001FADB': { # 🫛
+        'en' : ':pea_pod:',
+        'status' : fully_qualified,
+        'E' : 15
     },
     u'\U0000262E\U0000FE0F': { # ☮️
         'en' : ':peace_symbol:',
@@ -32692,6 +32822,11 @@ EMOJI_DATA = {
         'it': ':ping_pong:',
         'fa': u':پینگ_پونگ:'
     },
+    u'\U0001FA77': { # 🩷
+        'en' : ':pink_heart:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
     u'\U0001F3F4\U0000200D\U00002620\U0000FE0F': { # 🏴‍☠️
         'en' : ':pirate_flag:',
         'status' : fully_qualified,
@@ -33120,18 +33255,6 @@ EMOJI_DATA = {
         'pt': ':rosto_de_gato_mal-humorado:',
         'it': ':gatto_imbronciato:',
         'fa': u':گربهٔ_اخمو:'
-    },
-    u'\U0001F621': { # 😡
-        'en' : ':pouting_face:',
-        'status' : fully_qualified,
-        'E' : 0.6,
-        'alias' : [':rage:', ':pout:'],
-        'de': ':schmollendes_gesicht:',
-        'es': ':cara_cabreada:',
-        'fr': ':visage_boudeur:',
-        'pt': ':rosto_furioso:',
-        'it': ':faccina_accigliata:',
-        'fa': u':خشمگین:'
     },
     u'\U0001F4FF': { # 📿
         'en' : ':prayer_beads:',
@@ -34604,6 +34727,36 @@ EMOJI_DATA = {
         'status' : fully_qualified,
         'E' : 14
     },
+    u'\U0001FAF8': { # 🫸
+        'en' : ':rightwards_pushing_hand:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
+    u'\U0001FAF8\U0001F3FF': { # 🫸🏿
+        'en' : ':rightwards_pushing_hand_dark_skin_tone:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
+    u'\U0001FAF8\U0001F3FB': { # 🫸🏻
+        'en' : ':rightwards_pushing_hand_light_skin_tone:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
+    u'\U0001FAF8\U0001F3FE': { # 🫸🏾
+        'en' : ':rightwards_pushing_hand_medium-dark_skin_tone:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
+    u'\U0001FAF8\U0001F3FC': { # 🫸🏼
+        'en' : ':rightwards_pushing_hand_medium-light_skin_tone:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
+    u'\U0001FAF8\U0001F3FD': { # 🫸🏽
+        'en' : ':rightwards_pushing_hand_medium_skin_tone:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
     u'\U0001F48D': { # 💍
         'en' : ':ring:',
         'status' : fully_qualified,
@@ -35301,6 +35454,11 @@ EMOJI_DATA = {
         'pt': ':agulha_de_costura:',
         'it': ':ago_da_cucito:',
         'fa': u':سوزن_خیاطی:'
+    },
+    u'\U0001FAE8': { # 🫨
+        'en' : ':shaking_face:',
+        'status' : fully_qualified,
+        'E' : 15
     },
     u'\U0001F958': { # 🥘
         'en' : ':shallow_pan_of_food:',
@@ -38267,7 +38425,7 @@ EMOJI_DATA = {
     },
     u'\U0001F3F3\U0000FE0F\U0000200D\U000026A7': { # 🏳️‍⚧
         'en' : ':transgender_flag:',
-        'status' : unqualified,
+        'status' : minimally_qualified,
         'E' : 13,
         'de': ':transgender-flagge:',
         'es': u':bandera_transgénero:',
@@ -39668,6 +39826,11 @@ EMOJI_DATA = {
         'it': ':bicchiere_di_vino:',
         'fa': u':جام_شراب:'
     },
+    u'\U0001FABD': { # 🪽
+        'en' : ':wing:',
+        'status' : fully_qualified,
+        'E' : 15
+    },
     u'\U0001F609': { # 😉
         'en' : ':winking_face:',
         'status' : fully_qualified,
@@ -39691,6 +39854,11 @@ EMOJI_DATA = {
         'pt': u':rosto_piscando_e_com_língua_para_fora:',
         'it': u':faccina_che_fa_l’occhiolino_e_mostra_la_lingua:',
         'fa': u':زبونک_و_چشمک:'
+    },
+    u'\U0001F6DC': { # 🛜
+        'en' : ':wireless:',
+        'status' : fully_qualified,
+        'E' : 15
     },
     u'\U0001F43A': { # 🐺
         'en' : ':wolf:',
@@ -40305,7 +40473,7 @@ EMOJI_DATA = {
     },
     u'\U000026F9\U0000FE0F\U0000200D\U00002640': { # ⛹️‍♀
         'en' : ':woman_bouncing_ball:',
-        'status' : unqualified,
+        'status' : minimally_qualified,
         'E' : 4,
         'alias' : [':basketball_woman:', ':bouncing_ball_woman:'],
         'de': ':frau_mit_ball:',
@@ -41161,7 +41329,7 @@ EMOJI_DATA = {
     },
     u'\U0001F575\U0000FE0F\U0000200D\U00002640': { # 🕵️‍♀
         'en' : ':woman_detective:',
-        'status' : unqualified,
+        'status' : minimally_qualified,
         'E' : 4,
         'alias' : [':female_detective:'],
         'de': ':detektivin:',
@@ -42567,7 +42735,7 @@ EMOJI_DATA = {
     },
     u'\U0001F3CC\U0000FE0F\U0000200D\U00002640': { # 🏌️‍♀
         'en' : ':woman_golfing:',
-        'status' : unqualified,
+        'status' : minimally_qualified,
         'E' : 4,
         'alias' : [':golfing_woman:'],
         'de': ':golferin:',
@@ -43821,7 +43989,7 @@ EMOJI_DATA = {
     },
     u'\U0001F3CB\U0000FE0F\U0000200D\U00002640': { # 🏋️‍♀
         'en' : ':woman_lifting_weights:',
-        'status' : unqualified,
+        'status' : minimally_qualified,
         'E' : 4,
         'alias' : [':weight_lifting_woman:'],
         'de': ':gewichtheberin:',
@@ -48148,17 +48316,6 @@ EMOJI_DATA = {
         'pt': ':zumbi:',
         'it': ':zombie:',
         'fa': u':مرده_متحرک:'
-    },
-    u'\U0001F4A4': { # 💤
-        'en' : ':zzz:',
-        'status' : fully_qualified,
-        'E' : 0.6,
-        'de': ':schlafen:',
-        'es': u':símbolo_de_sueño:',
-        'fr': ':endormi:',
-        'pt': ':zzz:',
-        'it': ':sonno:',
-        'fa': u':خروپف:'
     },
     u'\U0001F1E6\U0001F1FD': { # 🇦🇽
         'en' : u':Åland_Islands:',
