@@ -23,6 +23,13 @@ pip install -r requirements.txt
 make html
 ```
 
+Check for warnings:
+
+```bash
+make clean
+sphinx-build -n -T -b html . _build
+```
+
 Test code in code blocks:
 
 ```bash
