@@ -304,10 +304,6 @@ if __name__ == "__main__":
         if v["en"] in aliases:
             aliases.remove(v["en"])
 
-        if any("flag" in a for a in aliases):
-            # Only :flag_for_COUNTRY: alias for flags
-            aliases = {a for a in aliases if "flag" in a}
-
         # Store new aliases to print them at the end after the dict of dicts
         if emj in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj]:
             for a in aliases.difference(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias']):
@@ -317,6 +313,11 @@ if __name__ == "__main__":
         if aliases == old_aliases and emj in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj]:
             # Use list instead of set, if there are no new aliases to keep the order intact
             aliases = [a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias']]
+
+        if any("flag_for_" in a for a in aliases):
+            # Put the :flag_for_COUNTRY: alias as the first entry so that it get's picked by demojize()
+            # This ensures compatiblity because in the past there was only the :flag_for_COUNTRY: alias
+            aliases = [a for a in aliases if "flag_for_" in a] + [a for a in aliases if "flag_for_" not in a]
 
         # Print dict of dicts
         alias = ''
