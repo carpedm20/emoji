@@ -10,6 +10,7 @@ emoji registry file.
 
 import sys
 import os
+import unicodedata
 import re
 import requests
 import bs4
@@ -50,7 +51,7 @@ def get_emoji_variation_sequence_from_url(version: str) -> list:
 def get_emojiterra_from_url(url: str) -> list:
     html = get_text_from_url(url)
 
-    soup = bs4.BeautifulSoup(html)
+    soup = bs4.BeautifulSoup(html, "html.parser")
     emojis = {}
 
     data = soup.find_all('li')
@@ -149,7 +150,46 @@ def get_UNICODE_EMOJI(lang):
     return {emj: emoji_pkg.EMOJI_DATA[emj][lang] for emj in emoji_pkg.EMOJI_DATA if lang in emoji_pkg.EMOJI_DATA[emj]}
 
 
-def extract_names(xml, lang):
+def adapt_emoji_name(text: str, lang: str) -> str:
+    # Use NFKC-form (single character instead of character + diacritic)
+    # Unicode.org files should be formatted like this anyway, but emojiterra is not consistent
+    text = unicodedata.normalize('NFKC', text)
+
+    # Fix German clock times "12:30 Uhr" -> "12.30 Uhr"
+    text = re.sub(r"(\d+):(\d+)", r"\1.\2", text)
+
+    # Remove white space
+    text = "_".join(text.split(" "))
+
+    emoji_name = ":" + (
+        text
+        .lower()
+        .removeprefix("flag:_")
+        .replace(":", "")
+        .replace(",", "")
+        .replace('"', "")
+        .replace("\u201e", "")
+        .replace("\u201f", "")
+        .replace("\u202f", "")
+        .replace("\u229b", "")
+        .replace(",_", ",")
+        .strip()
+        .replace(" ", "_")
+    ) + ":"
+
+    if lang == "de":
+        emoji_name = emoji_name.replace("\u201c", "").replace("\u201d", "")
+        emoji_name = re.sub(r"(hautfarbe)_und_([a-z]+_hautfarbe)", r"\1,\2", emoji_name)
+
+    if lang == "fa":
+        emoji_name = emoji_name.replace('\u200c',"_")
+        emoji_name = emoji_name.replace('\u200f',"_")
+        emoji_name = emoji_name.replace('\u060c',"_")
+        emoji_name = re.sub("_+","_",emoji_name)
+
+    return emoji_name
+
+def extract_names(xml, lang, emoji_terra={}):
     """Copies emoji.EMOJI_DATA[emj][lang] and adds the names from the xml"""
 
     data = get_UNICODE_EMOJI(lang)
@@ -160,29 +200,8 @@ def extract_names(xml, lang):
         if annotation.get('type') == 'tts':
             emj = annotation.get('cp')
             text = annotation.text.strip()
-            # Fix German clock times "12:30 Uhr" -> "12.30 Uhr"
-            text_replaced_colon = re.sub(r"(\d+):(\d+)", r"\1.\2", text)
-            separated_name = text_replaced_colon.split(" ")
-            emoji_name = ":" + (
-                "_".join(separated_name)
-                .lower()
-                .removeprefix("flag:_")
-                .replace(":", "")
-                .replace(",", "")
-                .replace('"', "")
-                .replace("\u201e", "")
-                .replace("\u201f", "")
-                .replace("\u229b", "")
-                .strip()
-                .replace(" ", "_")
-            ) + ":"
-            if lang == "de":
-                emoji_name = emoji_name.replace("\u201c", "").replace("\u201d", "")
 
-            if lang == "fa":
-                emoji_name = emoji_name.replace('\u200c',"_")
-                emoji_name = re.sub("_+","_",emoji_name)
-            
+            emoji_name = adapt_emoji_name(text, lang)
 
             if emj in data and data[emj] != emoji_name:
                 print(
@@ -217,6 +236,13 @@ def extract_names(xml, lang):
             data[emj] = data[emj_no_variant]
 
     data.update(missing_translation)
+
+    # Add names from emojiterra
+    for emj, name in emoji_terra.items():
+        if emj in emoji_pkg.EMOJI_DATA and emj not in data:
+            emoji_name = adapt_emoji_name(name, lang)
+            data[emj] = emoji_name
+
 
     return data
 
@@ -277,12 +303,12 @@ if __name__ == "__main__":
     github_tag = 'release-41'
     languages = {
         # Update names in other languages:
-        'de': extract_names(get_language_data_from_url(github_tag, 'de'), 'de'),
-        'es': extract_names(get_language_data_from_url(github_tag, 'es'), 'es'),
-        'fr': extract_names(get_language_data_from_url(github_tag, 'fr'), 'fr'),
-        'pt': extract_names(get_language_data_from_url(github_tag, 'pt'), 'pt'),
-        'it': extract_names(get_language_data_from_url(github_tag, 'it'), 'it'),
-        'fa': extract_names(get_language_data_from_url(github_tag, 'fa'), 'fa'),
+        'de': extract_names(get_language_data_from_url(github_tag, 'de'), 'de', get_emojiterra_from_url('https://emojiterra.com/de/kopieren/')),
+        'es': extract_names(get_language_data_from_url(github_tag, 'es'), 'es', get_emojiterra_from_url('https://emojiterra.com/es/copiar/')),
+        'fr': extract_names(get_language_data_from_url(github_tag, 'fr'), 'fr', get_emojiterra_from_url('https://emojiterra.com/fr/copier/')),
+        'pt': extract_names(get_language_data_from_url(github_tag, 'pt'), 'pt', get_emojiterra_from_url('https://emojiterra.com/pt/copiar/')),
+        'it': extract_names(get_language_data_from_url(github_tag, 'it'), 'it', get_emojiterra_from_url('https://emojiterra.com/it/copiare/')),
+        'fa': extract_names(get_language_data_from_url(github_tag, 'fa'), 'fa', get_emojiterra_from_url('https://emojiterra.com/copypaste/fa/')),
 
         # Do not update names in other languages:
         #'de': get_UNICODE_EMOJI('de'),
@@ -292,6 +318,7 @@ if __name__ == "__main__":
         #'it': get_UNICODE_EMOJI('it'),
         #'fa': get_UNICODE_EMOJI('fa'),
     }
+
     github_alias_dict = get_emoji_from_github_api()
     used_github_aliases = set()
 
