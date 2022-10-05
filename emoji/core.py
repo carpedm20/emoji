@@ -9,6 +9,8 @@ Core components for emoji.
 
 """
 
+import sys
+import unicodedata
 import re
 
 from emoji import unicode_codes
@@ -21,6 +23,14 @@ __all__ = [
 
 _SEARCH_TREE = None
 _DEFAULT_DELIMITER = ':'
+_EMOJI_NAME_PATTERN = u'\\w\\-&.’”“()!#*+?–,/«»\u0300\u0301\u0302\u0303\u0308\u030a\u0327\u064b\u064e\u064f\u0650\u0653\u0654'
+_PY2 = sys.version_info[0] == 2
+
+
+def _normalize(form, s):
+    if _PY2:
+        s = unicode(s)
+    return unicodedata.normalize(form, s)
 
 
 def emojize(
@@ -78,12 +88,12 @@ def emojize(
     else:
         language_pack = unicode_codes.get_emoji_unicode_dict(language)
 
-    pattern = re.compile(u'(%s[\\w\\-&.’”“()!#*+?–,/ًٌٍَُِّْؤئيإأآةك‌ٔء«»]+%s)' %
-                         (re.escape(delimiters[0]), re.escape(delimiters[1])), flags=re.UNICODE)
+    pattern = re.compile(u'(%s[%s]+%s)' %
+                         (re.escape(delimiters[0]), _EMOJI_NAME_PATTERN, re.escape(delimiters[1])), flags=re.UNICODE)
 
     def replace(match):
-        mg = match.group(1)[len(delimiters[0]):-len(delimiters[1])]
-        emj = language_pack.get(_DEFAULT_DELIMITER + mg + _DEFAULT_DELIMITER)
+        name = match.group(1)[len(delimiters[0]):-len(delimiters[1])]
+        emj = language_pack.get(_DEFAULT_DELIMITER + _normalize('NFKC', name) + _DEFAULT_DELIMITER)
         if emj is None:
             return match.group(1)
 
