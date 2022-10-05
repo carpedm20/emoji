@@ -57,7 +57,8 @@ def emojize(
 
     :param string: String contains emoji names.
     :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER. Each delimiter
-        should contain at least one character that is not part of a-zA-Z0-9 and ``_-–&.’”“()!?#*+,/\``
+        should contain at least one character that is not part of a-zA-Z0-9 and ``_-&.()!?#*+,``.
+        See ``emoji.core._EMOJI_NAME_PATTERN`` for the regular expression of unsafe characters.
     :param variant: (optional) Choose variation selector between "base"(None), VS-15 ("text_type") and VS-16 ("emoji_type")
     :param language: Choose language of emoji name: language code 'es', 'de', etc. or 'alias'
         to use English aliases
