@@ -71,6 +71,7 @@ setup(
     license="New BSD",
     long_description=readme_content,
     packages=['emoji', 'emoji.unicode_codes'],
+    package_data={"emoji": ["py.typed"]},
     url=source,
     version=version,
     zip_safe=True,
