@@ -57,3 +57,4 @@ target/
 
 # JetBrains PyCharm
 .idea/
+/.pytest_cache/

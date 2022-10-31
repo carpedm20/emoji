@@ -1,6 +1,13 @@
 emoji
 =====
 
+2.2.0
+-----
+* Add support for Unicode Version 15
+* Add more translations for existing languages: (similar to Turkish Language)
+* Add Readme on how to add a language
+* Fix 2.0.0: sphinx warnings reference target not found
+
 2.1.0
 -----
 * Added Farsi support
