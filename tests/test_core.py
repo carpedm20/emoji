@@ -5,11 +5,14 @@
 
 from __future__ import unicode_literals
 
+import sys
 import random
 import re
 import emoji
 import pytest
+import unicodedata
 
+_IS_PYTHON_2 = sys.version_info < (3, 0)
 
 # Build all language packs (i.e. fill the cache):
 emoji.emojize("", language="alias")
@@ -22,12 +25,81 @@ def ascii(s):
     return s.encode("unicode-escape").decode()
 
 
+def all_language_and_alias_packs():
+    yield ('alias', emoji.unicode_codes.get_aliases_unicode_dict())
+
+    for lang_code in emoji.LANGUAGES:
+        yield (lang_code, emoji.unicode_codes.get_emoji_unicode_dict(lang_code))
+
+
+def normalize(form, s):
+    if _IS_PYTHON_2 and isinstance(s, str):
+        s = unicode(s)
+    return unicodedata.normalize(form, s)
+
+
 def test_emojize_name_only():
-    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():
-        for name in emoji_pack.keys():
-            actual = emoji.emojize(name, language=lang_code)
-            expected = emoji_pack[name]
-            assert expected == actual, '%s != %s' % (expected, actual)
+    # Check that the regular expression emoji.core._EMOJI_NAME_PATTERN contains all the necesseary characters
+    from emoji.core import _EMOJI_NAME_PATTERN
+
+    pattern = re.compile(u'[^%s]' % (_EMOJI_NAME_PATTERN, ), flags=re.UNICODE)
+
+    for lang_code, emoji_pack in all_language_and_alias_packs():
+        for name_in_db in emoji_pack.keys():
+
+            pairs = [
+                ('Form from EMOJI_DATA',name_in_db),
+                ('NFKC', normalize('NFKC', name_in_db)),
+                ('NFKD', normalize('NFKD', name_in_db)),
+                ('NFD', normalize('NFD', name_in_db)),
+                ('NFC', normalize('NFC', name_in_db))
+            ]
+            for form, name in pairs:
+                actual = emoji.emojize(name, language=lang_code)
+                expected = emoji_pack[name_in_db]
+
+                if expected != actual:
+                    print("Regular expression is missing a character:")
+                    print("Emoji name %r in form %r contains:" % (name, form))
+                    print("\n".join(["%r (%r) is not in the regular expression" % (x, x.encode('unicode-escape').decode()) for x in pattern.findall(name[1:-1])]))
+
+                assert expected == actual, '%s != %s' % (expected, actual)
+                assert pattern.search(name[1:-1]) is None
+
+
+def test_regular_expression_minimal():
+    # Check that the regular expression emoji.core._EMOJI_NAME_PATTERN only contains the necesseary characters
+    from emoji.core import _EMOJI_NAME_PATTERN
+
+    pattern_str = u'[^%s]' % (_EMOJI_NAME_PATTERN, )
+    i = 2
+    while i < len(pattern_str) - 1:
+        c = pattern_str[i]
+        if c == '\\':
+            i += 2
+            continue
+        pattern = re.compile(pattern_str.replace(c, ''), flags=re.UNICODE)
+        failed = False
+        for lang_code, emoji_pack in all_language_and_alias_packs():
+            for name_in_db in emoji_pack.keys():
+                name_in_db = name_in_db[1:-1]
+                names = [
+                    name_in_db,
+                    normalize('NFKC', name_in_db),
+                    normalize('NFKD', name_in_db),
+                    normalize('NFD',name_in_db),
+                    normalize('NFC', name_in_db)
+                ]
+                for str in names:
+                    if pattern.search(str):
+                        failed = True
+                        break
+            if failed:
+                break
+        if not failed:
+            assert failed, "char: %r is not necessary in regular expression" % (c, )
+
+        i += 1
 
 
 def test_emojize_complicated_string():

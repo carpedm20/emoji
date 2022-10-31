@@ -9,6 +9,8 @@ Core components for emoji.
 
 """
 
+import sys
+import unicodedata
 import re
 
 from emoji import unicode_codes
@@ -21,6 +23,14 @@ __all__ = [
 
 _SEARCH_TREE = None
 _DEFAULT_DELIMITER = ':'
+_EMOJI_NAME_PATTERN = u'\\w\\-&.’”“()!#*+?–,/«»\u0300\u0301\u0302\u0303\u0308\u030a\u0327\u064b\u064e\u064f\u0650\u0653\u0654'
+_PY2 = sys.version_info[0] == 2
+
+
+def _normalize(form, s):
+    if _PY2:
+        s = unicode(s)
+    return unicodedata.normalize(form, s)
 
 
 def emojize(
@@ -47,7 +57,8 @@ def emojize(
 
     :param string: String contains emoji names.
     :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER. Each delimiter
-        should contain at least one character that is not part of a-zA-Z0-9 and ``_-–&.’”“()!?#*+,/\``
+        should contain at least one character that is not part of a-zA-Z0-9 and ``_-&.()!?#*+,``.
+        See ``emoji.core._EMOJI_NAME_PATTERN`` for the regular expression of unsafe characters.
     :param variant: (optional) Choose variation selector between "base"(None), VS-15 ("text_type") and VS-16 ("emoji_type")
     :param language: Choose language of emoji name: language code 'es', 'de', etc. or 'alias'
         to use English aliases
@@ -78,12 +89,12 @@ def emojize(
     else:
         language_pack = unicode_codes.get_emoji_unicode_dict(language)
 
-    pattern = re.compile(u'(%s[\\w\\-&.’”“()!#*+?–,/ًٌٍَُِّْؤئيإأآةك‌ٔء«»]+%s)' %
-                         (re.escape(delimiters[0]), re.escape(delimiters[1])), flags=re.UNICODE)
+    pattern = re.compile(u'(%s[%s]+%s)' %
+                         (re.escape(delimiters[0]), _EMOJI_NAME_PATTERN, re.escape(delimiters[1])), flags=re.UNICODE)
 
     def replace(match):
-        mg = match.group(1)[len(delimiters[0]):-len(delimiters[1])]
-        emj = language_pack.get(_DEFAULT_DELIMITER + mg + _DEFAULT_DELIMITER)
+        name = match.group(1)[len(delimiters[0]):-len(delimiters[1])]
+        emj = language_pack.get(_DEFAULT_DELIMITER + _normalize('NFKC', name) + _DEFAULT_DELIMITER)
         if emj is None:
             return match.group(1)
 

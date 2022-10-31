@@ -54,7 +54,7 @@ Languages
 
 By default, the language is English (``language='en'``) but  also supported languages are:
 
-Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``), French (``'fr'``), German (``'de'``)
+Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``), French (``'fr'``), German (``'de'``), Farsi/Persian (``'fa'``)
 
 .. doctest::
 
@@ -313,8 +313,8 @@ Reference documentation of all functions and properties in the module:
 
    api
 
-+--------------------------------------------------------------------------------------------+
-| API Reference                                                                              |
++-----------------------------+--------------------------------------------------------------+
+| API Reference               |                                                              |
 +=============================+==============================================================+
 | **Functions:**              |                                                              |
 +-----------------------------+--------------------------------------------------------------+
@@ -333,8 +333,6 @@ Reference documentation of all functions and properties in the module:
 | :func:`is_emoji`            | Check if a string/character is a single emoji                |
 +-----------------------------+--------------------------------------------------------------+
 | :func:`version`             | Find Unicode/Emoji version of an emoji                       |
-+-----------------------------+--------------------------------------------------------------+
-| :func:`get_emoji_regexp`    | Returns compiled regular expression that matches all emojis  |
 +-----------------------------+--------------------------------------------------------------+
 | **Module variables:**       |                                                              |
 +-----------------------------+--------------------------------------------------------------+
