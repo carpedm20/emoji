@@ -14,6 +14,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <link rel="canonical" href="https://carpedm20.github.io/emoji/docs/index.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,7 +39,7 @@
             
   <section id="emoji">
 <h1><a class="toc-backref" href="#id1" role="doc-backlink">emoji</a><a class="headerlink" href="#emoji" title="Permalink to this heading">¶</a></h1>
-<p>Release v2.1.0. (<a class="reference internal" href="install.html#install"><span class="std std-ref">Installation</span></a>)</p>
+<p>Release v2.2.0. (<a class="reference internal" href="install.html#install"><span class="std std-ref">Installation</span></a>)</p>
 <p>emoji supports Python 2.7 and 3.4+</p>
 <nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
@@ -75,7 +76,7 @@ versa with <a class="reference internal" href="api.html#emoji.emojize" title="em
 is supported in addition to a bunch of <a class="reference external" href="https://www.webfx.com/tools/emoji-cheat-sheet/">aliases</a>.
 By default, only the official list is enabled but doing <code class="docutils literal notranslate"><span class="pre">emoji.emojize(language='alias')</span></code>
 enables both the full list and aliases.</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;Python is :thumbs_up:&#39;</span><span class="p">))</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;Python is :thumbs_up:&#39;</span><span class="p">))</span>
 <span class="go">Python is 👍</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;Python is :thumbsup:&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;alias&#39;</span><span class="p">))</span>
 <span class="go">Python is 👍</span>
@@ -90,8 +91,8 @@ enables both the full list and aliases.</p>
 <section id="languages">
 <h3><a class="toc-backref" href="#id3" role="doc-backlink">Languages</a><a class="headerlink" href="#languages" title="Permalink to this heading">¶</a></h3>
 <p>By default, the language is English (<code class="docutils literal notranslate"><span class="pre">language='en'</span></code>) but  also supported languages are:</p>
-<p>Spanish (<code class="docutils literal notranslate"><span class="pre">'es'</span></code>), Portuguese (<code class="docutils literal notranslate"><span class="pre">'pt'</span></code>), Italian (<code class="docutils literal notranslate"><span class="pre">'it'</span></code>), French (<code class="docutils literal notranslate"><span class="pre">'fr'</span></code>), German (<code class="docutils literal notranslate"><span class="pre">'de'</span></code>)</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;Python es :pulgar_hacia_arriba:&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;es&#39;</span><span class="p">))</span>
+<p>Spanish (<code class="docutils literal notranslate"><span class="pre">'es'</span></code>), Portuguese (<code class="docutils literal notranslate"><span class="pre">'pt'</span></code>), Italian (<code class="docutils literal notranslate"><span class="pre">'it'</span></code>), French (<code class="docutils literal notranslate"><span class="pre">'fr'</span></code>), German (<code class="docutils literal notranslate"><span class="pre">'de'</span></code>), Farsi/Persian (<code class="docutils literal notranslate"><span class="pre">'fa'</span></code>)</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;Python es :pulgar_hacia_arriba:&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;es&#39;</span><span class="p">))</span>
 <span class="go">Python es 👍</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="s1">&#39;Python es 👍&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;es&#39;</span><span class="p">))</span>
 <span class="go">Python es :pulgar_hacia_arriba:</span>
@@ -106,7 +107,7 @@ enables both the full list and aliases.</p>
 <h3><a class="toc-backref" href="#id4" role="doc-backlink">Extracting emoji</a><a class="headerlink" href="#extracting-emoji" title="Permalink to this heading">¶</a></h3>
 <p>The function <a class="reference internal" href="api.html#emoji.emoji_list" title="emoji.emoji_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">emoji_list()</span></code></a> finds all emoji in string and their position.
 Keep in mind that an emoji can span over multiple characters:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_list</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">)</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_list</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">)</span>
 <span class="go">[{&#39;match_start&#39;: 10, &#39;match_end&#39;: 11, &#39;emoji&#39;: &#39;👍&#39;}]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_list</span><span class="p">(</span><span class="s1">&#39;A 👩‍🚀 aboard a 🚀&#39;</span><span class="p">)</span>
 <span class="go">[{&#39;match_start&#39;: 2, &#39;match_end&#39;: 5, &#39;emoji&#39;: &#39;👩‍🚀&#39;}, {&#39;match_start&#39;: 15, &#39;match_end&#39;: 16, &#39;emoji&#39;: &#39;🚀&#39;}]</span>
@@ -118,14 +119,14 @@ Keep in mind that an emoji can span over multiple characters:</p>
 </pre></div>
 </div>
 <p>To count the number of emoji in a string, use <a class="reference internal" href="api.html#emoji.emoji_count" title="emoji.emoji_count"><code class="xref py py-func docutils literal notranslate"><span class="pre">emoji_count()</span></code></a>:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_count</span><span class="p">(</span><span class="s1">&#39;Some emoji: 🌍, 😂, 😃, 😂, 🌍, 🌦️&#39;</span><span class="p">)</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_count</span><span class="p">(</span><span class="s1">&#39;Some emoji: 🌍, 😂, 😃, 😂, 🌍, 🌦️&#39;</span><span class="p">)</span>
 <span class="go">6</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_count</span><span class="p">(</span><span class="s1">&#39;Some emoji: 🌍, 😂, 😃, 😂, 🌍, 🌦️&#39;</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">4</span>
 </pre></div>
 </div>
 <p>You can check if a string is a single, valid emoji with <a class="reference internal" href="api.html#emoji.is_emoji" title="emoji.is_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_emoji()</span></code></a></p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;🌍&#39;</span><span class="p">)</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;🌍&#39;</span><span class="p">)</span>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;🌍😂&#39;</span><span class="p">)</span>
 <span class="go">False</span>
@@ -134,7 +135,7 @@ Keep in mind that an emoji can span over multiple characters:</p>
 </pre></div>
 </div>
 <p>To get more information about an emoji, you can look it up in the <a class="reference internal" href="api.html#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a> dict:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="s1">&#39;🌍&#39;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="s1">&#39;🌍&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;E&#39;: 0.7,
@@ -190,7 +191,7 @@ replace emoji above the specified version with the value of the parameter <code 
 It defaults to an empty string, but can be set to any string or a function that returns a string.</p>
 <p>For example the <code class="docutils literal notranslate"><span class="pre">:croissant:</span></code> 🥐 emoji was added in Emoji 3.0 (Unicode 9.0) in 2016 and
 <code class="docutils literal notranslate"><span class="pre">:T-Rex:</span></code> 🦖 was added later in Emoji 5.0 (Unicode 10.0) in 2017:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;A 🦖 is eating a 🥐&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">&#39;[Unsupported emoji]&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;A 🦖 is eating a 🥐&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">&#39;[Unsupported emoji]&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="go">&#39;A [Unsupported emoji] is eating a [Unsupported emoji]&#39;</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;A 🦖 is eating a 🥐&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="k">lambda</span> <span class="n">chars</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">:</span> <span class="n">data_dict</span><span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">],</span> <span class="n">version</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
@@ -210,7 +211,7 @@ It defaults to an empty string, but can be set to any string or a function that 
 </pre></div>
 </div>
 <p>You can find the version of an emoji with <a class="reference internal" href="api.html#emoji.version" title="emoji.version"><code class="xref py py-func docutils literal notranslate"><span class="pre">version()</span></code></a>:</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s1">&#39;🥐&#39;</span><span class="p">)</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s1">&#39;🥐&#39;</span><span class="p">)</span>
 <span class="go">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s1">&#39;🏌️‍♀️&#39;</span><span class="p">)</span>
 <span class="go">4</span>
@@ -243,7 +244,7 @@ as shown in the examples above.</p>
 <p>If you want to extract emoji from strings, you can use <a class="reference internal" href="api.html#emoji.emoji_list" title="emoji.emoji_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">emoji_list()</span></code></a> as a replacement.</p>
 <p>If you want to keep using a regular expression despite its problems, you can create the
 expression yourself like this:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">emoji</span>
 
 <span class="k">def</span> <span class="nf">get_emoji_regexp</span><span class="p">():</span>
@@ -284,7 +285,8 @@ information on Unicode in Python 2.7.</p>
 </div>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head" colspan="2"><p>API Reference</p></th>
+<tr class="row-odd"><th class="head"><p>API Reference</p></th>
+<th class="head"></th>
 </tr>
 </thead>
 <tbody>
@@ -315,16 +317,13 @@ information on Unicode in Python 2.7.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.version" title="emoji.version"><code class="xref py py-func docutils literal notranslate"><span class="pre">version()</span></code></a></p></td>
 <td><p>Find Unicode/Emoji version of an emoji</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">get_emoji_regexp()</span></code></p></td>
-<td><p>Returns compiled regular expression that matches all emojis</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Module variables:</strong></p></td>
+<tr class="row-odd"><td><p><strong>Module variables:</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a></p></td>
 <td><p>Dict of all emoji</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.STATUS" title="emoji.STATUS"><code class="xref py py-data docutils literal notranslate"><span class="pre">STATUS</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.STATUS" title="emoji.STATUS"><code class="xref py py-data docutils literal notranslate"><span class="pre">STATUS</span></code></a></p></td>
 <td><p>Dict of Unicode/Emoji status</p></td>
 </tr>
 </tbody>
@@ -444,7 +443,7 @@ information on Unicode in Python 2.7.</p>
       
       
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

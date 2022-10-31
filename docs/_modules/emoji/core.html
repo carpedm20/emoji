@@ -13,6 +13,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="canonical" href="https://carpedm20.github.io/emoji/docs/_modules/emoji/core.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -46,6 +47,8 @@
 
 <span class="sd">&quot;&quot;&quot;</span>
 
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">unicodedata</span>
 <span class="kn">import</span> <span class="nn">re</span>
 
 <span class="kn">from</span> <span class="nn">emoji</span> <span class="kn">import</span> <span class="n">unicode_codes</span>
@@ -58,6 +61,14 @@
 
 <span class="n">_SEARCH_TREE</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">_DEFAULT_DELIMITER</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span>
+<span class="n">_EMOJI_NAME_PATTERN</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">-&amp;.’”“()!#*+?–,/«»</span><span class="se">\u0300\u0301\u0302\u0303\u0308\u030a\u0327\u064b\u064e\u064f\u0650\u0653\u0654</span><span class="s1">&#39;</span>
+<span class="n">_PY2</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span>
+
+
+<span class="k">def</span> <span class="nf">_normalize</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">_PY2</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">unicode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="emojize"><a class="viewcode-back" href="../../api.html#emoji.emojize">[docs]</a><span class="k">def</span> <span class="nf">emojize</span><span class="p">(</span>
@@ -84,7 +95,8 @@
 
 <span class="sd">    :param string: String contains emoji names.</span>
 <span class="sd">    :param delimiters: (optional) Use delimiters other than _DEFAULT_DELIMITER. Each delimiter</span>
-<span class="sd">        should contain at least one character that is not part of a-zA-Z0-9 and ``_-–&amp;.’”“()!?#*+,/\``</span>
+<span class="sd">        should contain at least one character that is not part of a-zA-Z0-9 and ``_-&amp;.()!?#*+,``.</span>
+<span class="sd">        See ``emoji.core._EMOJI_NAME_PATTERN`` for the regular expression of unsafe characters.</span>
 <span class="sd">    :param variant: (optional) Choose variation selector between &quot;base&quot;(None), VS-15 (&quot;text_type&quot;) and VS-16 (&quot;emoji_type&quot;)</span>
 <span class="sd">    :param language: Choose language of emoji name: language code &#39;es&#39;, &#39;de&#39;, etc. or &#39;alias&#39;</span>
 <span class="sd">        to use English aliases</span>
@@ -115,12 +127,12 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">language_pack</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">get_emoji_unicode_dict</span><span class="p">(</span><span class="n">language</span><span class="p">)</span>
 
-    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;(</span><span class="si">%s</span><span class="s1">[</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">-&amp;.’”“()!#*+?–,/ًٌٍَُِّْؤئيإأآةك‌ٔء«»]+</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span>
-                         <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;(</span><span class="si">%s</span><span class="s1">[</span><span class="si">%s</span><span class="s1">]+</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span>
+                         <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">_EMOJI_NAME_PATTERN</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-        <span class="n">mg</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="nb">len</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
-        <span class="n">emj</span> <span class="o">=</span> <span class="n">language_pack</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">_DEFAULT_DELIMITER</span> <span class="o">+</span> <span class="n">mg</span> <span class="o">+</span> <span class="n">_DEFAULT_DELIMITER</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="nb">len</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+        <span class="n">emj</span> <span class="o">=</span> <span class="n">language_pack</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">_DEFAULT_DELIMITER</span> <span class="o">+</span> <span class="n">_normalize</span><span class="p">(</span><span class="s1">&#39;NFKC&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="n">_DEFAULT_DELIMITER</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">emj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
@@ -504,7 +516,7 @@
       
       
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

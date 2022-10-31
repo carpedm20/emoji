@@ -14,6 +14,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <link rel="canonical" href="https://carpedm20.github.io/emoji/docs/api.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -41,7 +42,8 @@
 <span id="api"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head" colspan="2"><p>Table of Contents</p></th>
+<tr class="row-odd"><th class="head"><p>Table of Contents</p></th>
+<th class="head"></th>
 </tr>
 </thead>
 <tbody>
@@ -72,16 +74,13 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#emoji.version" title="emoji.version"><code class="xref py py-func docutils literal notranslate"><span class="pre">version()</span></code></a></p></td>
 <td><p>Find Unicode/Emoji version of an emoji</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">get_emoji_regexp()</span></code></p></td>
-<td><p>Returns compiled regular expression that matches all emojis</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Module variables:</strong></p></td>
+<tr class="row-odd"><td><p><strong>Module variables:</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a></p></td>
 <td><p>Dict of all emoji</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#emoji.STATUS" title="emoji.STATUS"><code class="xref py py-data docutils literal notranslate"><span class="pre">STATUS</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.STATUS" title="emoji.STATUS"><code class="xref py py-data docutils literal notranslate"><span class="pre">STATUS</span></code></a></p></td>
 <td><p>Dict of Unicode/Emoji status</p></td>
 </tr>
 </tbody>
@@ -96,6 +95,7 @@
 <span class="go">Python is 👍</span>
 </pre></div>
 </div>
+</section>
 <dl class="py function">
 <dt class="sig sig-object py" id="emoji.demojize">
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">demojize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(':',</span> <span class="pre">':')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#demojize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.demojize" title="Permalink to this definition">¶</a></dt>
@@ -196,7 +196,8 @@ The passed data is in the form of:</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>string</strong> – String contains emoji names.</p></li>
 <li><p><strong>delimiters</strong> – (optional) Use delimiters other than _DEFAULT_DELIMITER. Each delimiter
-should contain at least one character that is not part of a-zA-Z0-9 and <code class="docutils literal notranslate"><span class="pre">_-–&amp;.’”“()!?#*+,/\</span></code></p></li>
+should contain at least one character that is not part of a-zA-Z0-9 and <code class="docutils literal notranslate"><span class="pre">_-&amp;.()!?#*+,</span></code>.
+See <code class="docutils literal notranslate"><span class="pre">emoji.core._EMOJI_NAME_PATTERN</span></code> for the regular expression of unsafe characters.</p></li>
 <li><p><strong>variant</strong> – (optional) Choose variation selector between “base”(None), VS-15 (“text_type”) and VS-16 (“emoji_type”)</p></li>
 <li><p><strong>language</strong> – Choose language of emoji name: language code ‘es’, ‘de’, etc. or ‘alias’
 to use English aliases</p></li>
@@ -275,7 +276,6 @@ only emoji above this version will be replaced.</p></li>
 </dl>
 </dd></dl>
 
-</section>
 <section id="emoji-data">
 <h2>EMOJI_DATA<a class="headerlink" href="#emoji-data" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
@@ -366,6 +366,7 @@ the “Data File Comment” column:</p>
  <span class="o">|</span> <span class="n">Emoji</span> <span class="mf">13.0</span>     <span class="o">|</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">10</span>  <span class="o">|</span> <span class="n">Unicode</span> <span class="mf">13.0</span>     <span class="o">|</span> <span class="n">E13</span><span class="mf">.0</span>             <span class="o">|</span>
  <span class="o">|</span> <span class="n">Emoji</span> <span class="mf">13.1</span>     <span class="o">|</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">15</span>  <span class="o">|</span> <span class="n">Unicode</span> <span class="mf">13.0</span>     <span class="o">|</span> <span class="n">E13</span><span class="mf">.1</span>             <span class="o">|</span>
  <span class="o">|</span> <span class="n">Emoji</span> <span class="mf">14.0</span>     <span class="o">|</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">14</span>  <span class="o">|</span> <span class="n">Unicode</span> <span class="mf">14.0</span>     <span class="o">|</span> <span class="n">E14</span><span class="mf">.0</span>             <span class="o">|</span>
+ <span class="o">|</span> <span class="n">Emoji</span> <span class="mf">15.0</span>     <span class="o">|</span> <span class="mi">2022</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">13</span>  <span class="o">|</span> <span class="n">Unicode</span> <span class="mf">15.0</span>     <span class="o">|</span> <span class="n">E15</span><span class="mf">.0</span>             <span class="o">|</span>
 
                         <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">unicode</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">reports</span><span class="o">/</span><span class="n">tr51</span><span class="o">/</span><span class="c1">#Versioning</span>
 
@@ -456,7 +457,7 @@ the “Data File Comment” column:</p>
       
       
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
