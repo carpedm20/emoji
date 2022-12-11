@@ -1,19 +1,19 @@
 emoji
 =====
 
-2.2.0
+v2.2.0 (2022-10-31)
 -----
 * Add support for Unicode Version 15
 * Add more translations for existing languages: (similar to Turkish Language)
 * Add Readme on how to add a language
 * Fix 2.0.0: sphinx warnings reference target not found
 
-2.1.0
+v2.1.0 (2022-09-17)
 -----
 * Added Farsi support
 * Added Trove classifiers for Python 3.10 and 3.11
 
-2.0.0
+v2.0.0 (2022-06-30)
 -----
 * Removed the old dicts EMOJI_UNICODE_*, UNICODE_EMOJI_*
 * Removed unused language=None parameters
@@ -27,28 +27,28 @@ emoji
 * Added some more examples to the README: e.g. how to replace/remove emojis
 * Total count of emojis:  4702
 
-1.7.0
+v1.7.0 (2022-03-07)
 -----
 * Added `emoji_list()` and `distinct_emoji_list()`
 * Added deprecation warnings for several functions and variables that will be removed in version 2.0.0.
   If you don't want to see these warnings, you can stay with 1.6.x. For example in pip/requirements.txt you can pin to 1.6.x with `emoji~=1.6.3`.
 
-1.6.3
+v1.6.3 (2022-01-15)
 -----
 * Added support for counting unique emojis
 
-1.6.2
+v1.6.2 (2021-12-06)
 -----
 * Improve performance of demojize()
 * Added more tests
 * Added warning when someone uses any other language than 'en' with use_aliases=True in emojize()
 
-1.6.1
+v1.6.1 (2021-10-13)
 -----
 * Allow multiple aliases
 * Restored aliases from 1.5.0
 
-1.6.0
+v1.6.0 (2021-10-04)
 -----
 * Fix Unicode of some emoji in the language files
 * is_emoji function added
@@ -56,69 +56,77 @@ emoji
 * emoji.version(string) method added
 * Included 'variant' in the dict of dicts
 
-1.5.0
+v1.5.2 (2021-09-25)
+-----
+* is_emoji function added
+
+v1.5.1 (2021-09-25)
+-----
+* Fix Unicode of some emoji in the language files
+
+v1.5.0 (2021-09-17)
 -----
 * Emojis of English version updated to the Emoji Charts v14.0
 * Current count of emojis - 3633
 * Fix matching of non-ASCII emoji names on Python 2
 
-1.4.2
+v1.4.2 (2021-07-30)
 -----
 * Delimiter for German time naming changed from ":" to "."
 
-1.4.1
+v1.4.1 (2021-07-18)
 -----
 * Fix some French emoji names not being matched
 * Drop seemingly accidentally added colons from German emoji names
 
-1.4.0
+v1.4.0 (2021-06-22)
 -----
 * Added support for German naming of emojis
 
-1.3.0
+v1.3.0 (2021-06-02)
 -----
 * Added support for French naming of emojis
 
-1.2.1
+v1.2.1 (2021-03-13)
 -----
 * Added replace_emoji
 
-1.2.0
+v1.2.0 (2021-01-27)
 -----
 * Emojis of English version updated to the Emoji Charts v13.1
 * Added all emoji modifiers
 * Current count of emojis - 3521
 
-1.1.1
+v1.1.1 (2021-01-25)
 -----
 * Emoji extractor refactored 
 
-1.1.0
+v1.1.0 (2021-01-23)
 -----
 * Added support for Italian naming of emojis
 * Added Python 3.8 and 3.9 as supported versions
 
-1.0.1
+v1.0.1 (2021-01-23)
 -----
 * Bug fixing
 
-1.0.0
+v1.0.0 (2021-01-22)
 -----
 * Added support for Spanish naming of emojis
 * Added support for Portuguese naming of emojis
 * Emoji packs split by language to different modules
 
-0.3.5
+v0.3.5
 -----
 * Use codecs.open() instead of open() when processing readme in setup.py - #2, #5
 
-0.3.4
+v0.3.4 (2015-05-19)
 -----
 * Restored default functionality - #6
 * Removed `emoji.decode()` - #10
 * Added `use_aliases` to `emoji.emojize()` to enable the GitHub aliases and others - #8
 
-0.2
+v0.2.0
 ---
 * Added ~400 codes to bring the emoji list up to date
 * emojize() regex now matches &.ô’Åéãíç
