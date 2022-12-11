@@ -63,7 +63,7 @@ From master branch:
 
     $ git clone https://github.com/carpedm20/emoji.git
     $ cd emoji
-    $ python setup.py install
+    $ python -m pip install .
 
 
 Developing
