@@ -19,5 +19,5 @@ Build pages locally
 
 .. code-block:: sh
 
-    pip install -r utils/gh-pages/requirements.txt
+    python -m pip install -r utils/gh-pages/requirements.txt
     python utils/gh-pages/generatePages.py

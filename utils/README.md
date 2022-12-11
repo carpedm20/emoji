@@ -47,7 +47,7 @@ languages = {
 Now we run the script and store the output in `out.py`. The output is a new `EMOJI_DATA` dict
 
 ```sh
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 python utils/get_codes_from_unicode_emoji_data_files.py > out.py
 ```
 

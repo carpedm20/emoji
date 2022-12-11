@@ -7,7 +7,7 @@ Via pip:
 
 .. code-block:: console
 
-    $ pip install emoji --upgrade
+    $ python -m pip install emoji --upgrade
 
 See https://pypi.org/project/emoji/ for more information on pip and PyPI
 

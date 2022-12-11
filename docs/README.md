@@ -19,7 +19,7 @@ Building the documentation with [Sphinx](https://www.sphinx-doc.org/):
 ```bash
 git clone https://github.com/carpedm20/emoji.git
 cd emoji/docs
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 make html
 ```
 
