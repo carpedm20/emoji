@@ -55,7 +55,7 @@ Via pip:
 
 .. code-block:: console
 
-    $ pip install emoji --upgrade
+    $ python -m pip install emoji --upgrade
 
 From master branch:
 
@@ -63,7 +63,7 @@ From master branch:
 
     $ git clone https://github.com/carpedm20/emoji.git
     $ cd emoji
-    $ python setup.py install
+    $ python -m pip install .
 
 
 Developing
@@ -73,7 +73,7 @@ Developing
 
     $ git clone https://github.com/carpedm20/emoji.git
     $ cd emoji
-    $ pip install -e .\[dev\]
+    $ python -m pip install -e .\[dev\]
     $ pytest
 
 The ``utils/get-codes-from-unicode-consortium.py`` may help when updating
