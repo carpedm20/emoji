@@ -300,7 +300,7 @@ if __name__ == "__main__":
     emoji_sequences_source = get_emoji_variation_sequence_from_url('15.0.0')
     emojis = extract_emojis(emoji_source, emoji_sequences_source)
     # Find latest release tag at https://cldr.unicode.org/index/downloads
-    github_tag = 'release-41'
+    github_tag = 'release-42'
     languages = {
         # Update names in other languages:
         'de': extract_names(get_language_data_from_url(github_tag, 'de'), 'de', get_emojiterra_from_url('https://emojiterra.com/de/kopieren/')),
