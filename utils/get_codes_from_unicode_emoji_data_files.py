@@ -309,6 +309,7 @@ if __name__ == "__main__":
         'pt': extract_names(get_language_data_from_url(github_tag, 'pt'), 'pt', get_emojiterra_from_url('https://emojiterra.com/pt/copiar/')),
         'it': extract_names(get_language_data_from_url(github_tag, 'it'), 'it', get_emojiterra_from_url('https://emojiterra.com/it/copiare/')),
         'fa': extract_names(get_language_data_from_url(github_tag, 'fa'), 'fa', get_emojiterra_from_url('https://emojiterra.com/copypaste/fa/')),
+        'id': extract_names(get_language_data_from_url(github_tag, 'id'), 'id', get_emojiterra_from_url('https://emojiterra.com/copypaste/id/')),
 
         # Do not update names in other languages:
         #'de': get_UNICODE_EMOJI('de'),
@@ -317,6 +318,7 @@ if __name__ == "__main__":
         #'pt': get_UNICODE_EMOJI('pt'),
         #'it': get_UNICODE_EMOJI('it'),
         #'fa': get_UNICODE_EMOJI('fa'),
+        #'id': get_UNICODE_EMOJI('id'),
     }
 
     github_alias_dict = get_emoji_from_github_api()
