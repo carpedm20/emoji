@@ -30,9 +30,16 @@ both the full list and aliases.
 
 ..
 
-By default, the language is English (``language='en'``) but  also supported languages are:
+By default, the language is English (``language='en'``) but also supported languages are:
 
-Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``), French (``'fr'``), German (``'de'``), Farsi/Persian (``'fa'``)
+* Spanish (``'es'``)
+* Portuguese (``'pt'``)
+* Italian (``'it'``)
+* French (``'fr'``)
+* German (``'de'``)
+* Farsi/Persian (``'fa'``)
+* Indonesian (``'id'``)
+* Simplified Chinese (``'zh'``)
 
 
 .. code-block:: python
@@ -76,11 +83,12 @@ Developing
     $ python -m pip install -e .\[dev\]
     $ pytest
 
-The ``utils/get-codes-from-unicode-consortium.py`` may help when updating
-``unicode_codes.py`` but is not guaranteed to work.  Generally speaking it
-scrapes a table on the Unicode Consortium's website with
-`BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`_ and prints the
-contents to ``stdout`` in a more useful format.
+The ``utils/get_codes_from_unicode_emoji_data_files.py`` is used to generate
+``unicode_codes/data_dict.py``. Generally speaking it scrapes a table on the
+`Unicode Consortium's website <https://www.unicode.org/reports/tr51/#emoji_data>`__
+with `BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`__
+and prints the contents to ``stdout`` as a Python dictionary. For more
+information take a look in the `utils/README.md <utils/README.md>`__ file.
 
 
 Links
