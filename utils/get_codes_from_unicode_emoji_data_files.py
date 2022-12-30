@@ -15,6 +15,9 @@ import re
 import requests
 import bs4
 import xml.etree.ElementTree as ET
+import logging
+
+logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
 include = os.path.relpath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, include)
@@ -150,7 +153,7 @@ def get_UNICODE_EMOJI(lang):
     return {emj: emoji_pkg.EMOJI_DATA[emj][lang] for emj in emoji_pkg.EMOJI_DATA if lang in emoji_pkg.EMOJI_DATA[emj]}
 
 
-def adapt_emoji_name(text: str, lang: str) -> str:
+def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
     # Use NFKC-form (single character instead of character + diacritic)
     # Unicode.org files should be formatted like this anyway, but emojiterra is not consistent
     text = unicodedata.normalize('NFKC', text)
@@ -187,6 +190,78 @@ def adapt_emoji_name(text: str, lang: str) -> str:
         emoji_name = emoji_name.replace('\u060c',"_")
         emoji_name = re.sub("_+","_",emoji_name)
 
+    if lang == "zh":
+        emoji_name = ":" + (
+            text
+            .replace(":", "")
+            .replace(",", "")
+            .replace('-', "")
+            .replace("\u201e", "")
+            .replace("\u201f", "")
+            .replace("\u202f", "")
+            .replace("\u229b", "")
+            .replace(",_", ",")
+            .strip()
+            .replace(" ", "_")
+        ) + ":"
+
+        if '日文' in emoji_name:
+            # Japanese buttons
+            emoji_name = emoji_name.replace('日文的', '').replace('按钮', '').replace('“','').replace('”','')
+
+        if '箭头' in emoji_name:
+            # Arrows
+            emoji_name = emoji_name.replace('_', '').replace('!','')
+
+        if '按钮' in emoji_name:
+            # English buttons
+            emoji_name = emoji_name.replace('_', '')
+
+        if '型血' in emoji_name:
+            emoji_name = emoji_name.replace('_', '')
+
+        if '中等-' in emoji_name:
+            emoji_name = emoji_name.replace('中等-', '中等')
+
+        if emoji_name.startswith(':旗_'):
+            # Countries
+            emoji_name = emoji_name.replace(':旗_', ':')
+
+        hardcoded = {
+            '\U0001f1ed\U0001f1f0': ':香港:', # 🇭🇰
+            '\U0001f1ee\U0001f1e9': ':印度尼西亞:', # 🇮🇩
+            '\U0001f1f0\U0001f1ff': ':哈薩克:', # 🇰🇿
+            '\U0001f1f2\U0001f1f4': ':澳門:', # 🇲🇴
+            '\U0001f1e8\U0001f1ec': ':刚果_布:', # 🇨🇬
+            '\U0001f1e8\U0001f1e9': ':刚果_金:', # 🇨🇩
+            '\U0001f193': ':FREE按钮:', # 🆓
+            '\U0001f238': ':申:', # 🈸
+            '\U0001f250': ':得:', # 🉐
+            '\U0001f22f': ':指:', # 🈯
+            '\U0001f232': ':禁:', # 🈲
+            '\u3297\ufe0f': ':祝:', # ㊗️
+            '\u3297': ':祝:', # ㊗
+            '\U0001f239': ':割:', # 🈹
+            '\U0001f21a': ':无:', # 🈚
+            '\U0001f237\ufe0f': ':月:', # 🈷️
+            '\U0001f237': ':月:', # 🈷
+            '\U0001f235': ':满:', # 🈵
+            '\U0001f236': ':有:', # 🈶
+            '\U0001f234': ':合:', # 🈴
+            '\u3299\ufe0f': ':秘:', # ㊙️
+            '\u3299': ':秘:', # ㊙
+            '\U0001f233': ':空:', # 🈳
+            '\U0001f251': ':可:', # 🉑
+            '\U0001F23A': ':营:', # 🈺
+            '\U0001F202\ufe0f': ':服务:', # 🈂️
+            '\U0001F202': ':服务:', #  🈂
+        }
+
+        if emj in hardcoded:
+            emoji_name = hardcoded[emj]
+
+
+
     return emoji_name
 
 def extract_names(xml, lang, emoji_terra={}):
@@ -201,7 +276,7 @@ def extract_names(xml, lang, emoji_terra={}):
             emj = annotation.get('cp')
             text = annotation.text.strip()
 
-            emoji_name = adapt_emoji_name(text, lang)
+            emoji_name = adapt_emoji_name(text, lang, emj)
 
             if emj in data and data[emj] != emoji_name:
                 print(
@@ -240,7 +315,7 @@ def extract_names(xml, lang, emoji_terra={}):
     # Add names from emojiterra
     for emj, name in emoji_terra.items():
         if emj in emoji_pkg.EMOJI_DATA and emj not in data:
-            emoji_name = adapt_emoji_name(name, lang)
+            emoji_name = adapt_emoji_name(name, lang, emj)
             data[emj] = emoji_name
 
 
