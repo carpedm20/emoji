@@ -58,7 +58,7 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Typing :: Typed'
     ],
-    description="Emoji for Python",
+    description='Emoji for Python',
     keywords=['emoji'],
     extras_require={
         'dev': [
@@ -68,10 +68,19 @@ setup(
         ],
     },
     include_package_data=True,
-    license="New BSD",
+    license='New BSD',
     long_description=readme_content,
     packages=['emoji', 'emoji.unicode_codes'],
-    package_data={"emoji": ["py.typed"]},
+    package_data={
+        'emoji': [
+            'py.typed',
+            '*.pyi',
+        ],
+        'emoji.unicode_codes': [
+            'py.typed',
+            '*.pyi',
+        ],
+    },
     url=source,
     version=version,
     zip_safe=True,
