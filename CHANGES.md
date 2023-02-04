@@ -1,6 +1,11 @@
 emoji
 =====
 
+v2.3.0 (2023-02-04)
+-----
+* Added Indonesian and Simplified Chinese
+* Bug fixing
+
 v2.2.0 (2022-10-31)
 -----
 * Add support for Unicode Version 15
