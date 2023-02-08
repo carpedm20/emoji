@@ -40,6 +40,8 @@ By default, the language is English (``language='en'``) but also supported langu
 * Farsi/Persian (``'fa'``)
 * Indonesian (``'id'``)
 * Simplified Chinese (``'zh'``)
+* Japanese (``'ja'``)
+* Korean (``'ko'``)
 
 
 .. code-block:: python

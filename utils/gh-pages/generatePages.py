@@ -27,6 +27,8 @@ languages = {
     "en": emoji.emojize("en :United_Kingdom:"),
     "alias":  emoji.emojize("alias :United_Kingdom:"),
     "es": emoji.emojize("es :Spain:"),
+    "ja": emoji.emojize("ja :Japan:"),
+    "ko": emoji.emojize("ko :South_Korea:"),
     "pt": emoji.emojize("pt :Portugal:"),
     "it": emoji.emojize("it :Italy:"),
     "fr": emoji.emojize("fr :France:"),

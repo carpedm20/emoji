@@ -94,7 +94,7 @@ unicodedata.normalize('NFD', name)   # ':Curac\\u0327ao:'
 ```
 
 To solve this, you can strip/replace the offending character from the emoji name by changing the `adapt_emoji_name()` in
-`utils/gh-pages/generatePages.py`. There are already special cases for some languages.
+`utils/get_codes_from_unicode_emoji_data_files.py`. There are already special cases for some languages.
 
 You could also change the entries in `EMOJI_DATA` by hand if it is only a few special cases.
 

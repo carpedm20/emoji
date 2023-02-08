@@ -381,6 +381,8 @@ if __name__ == "__main__":
         'de': extract_names(get_language_data_from_url(github_tag, 'de'), 'de', get_emojiterra_from_url('https://emojiterra.com/de/kopieren/')),
         'es': extract_names(get_language_data_from_url(github_tag, 'es'), 'es', get_emojiterra_from_url('https://emojiterra.com/es/copiar/')),
         'fr': extract_names(get_language_data_from_url(github_tag, 'fr'), 'fr', get_emojiterra_from_url('https://emojiterra.com/fr/copier/')),
+        'ja': extract_names(get_language_data_from_url(github_tag, 'ja'), 'ja', get_emojiterra_from_url('https://emojiterra.com/copypaste/ja/')),
+        'ko': extract_names(get_language_data_from_url(github_tag, 'ko'), 'ko', get_emojiterra_from_url('https://emojiterra.com/copypaste/ko/')),
         'pt': extract_names(get_language_data_from_url(github_tag, 'pt'), 'pt', get_emojiterra_from_url('https://emojiterra.com/pt/copiar/')),
         'it': extract_names(get_language_data_from_url(github_tag, 'it'), 'it', get_emojiterra_from_url('https://emojiterra.com/it/copiare/')),
         'fa': extract_names(get_language_data_from_url(github_tag, 'fa'), 'fa', get_emojiterra_from_url('https://emojiterra.com/copypaste/fa/')),
