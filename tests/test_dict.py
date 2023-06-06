@@ -1,6 +1,3 @@
-# -*- coding: UTF-8 -*-
-
-
 """Unittests for the big dict of dicts containing all emoji"""
 
 
