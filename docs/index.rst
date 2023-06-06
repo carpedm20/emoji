@@ -340,11 +340,11 @@ expression yourself like this:
         # Sort emoji by length to make sure multi-character emojis are
         # matched first
         emojis = sorted(emoji.EMOJI_DATA, key=len, reverse=True)
-        pattern = u'(' + u'|'.join(re.escape(u) for u in emojis) + u')'
+        pattern = '(' + '|'.join(re.escape(u) for u in emojis) + ')'
         return re.compile(pattern)
 
     exp = get_emoji_regexp()
-    print(exp.sub(repl='[emoji]', string=u'A 🏌️‍♀️ is eating a 🥐'))
+    print(exp.sub(repl='[emoji]', string='A 🏌️‍♀️ is eating a 🥐'))
 ..
 
 Output:

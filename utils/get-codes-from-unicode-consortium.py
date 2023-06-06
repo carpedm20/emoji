@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 Extract the full list of emoji and names from the Unicode Consortium and
 apply as much formatting as possible so the codes can be dropped into the
@@ -30,9 +28,9 @@ def extract_emojis(url) -> dict:
         name = name.removeprefix('flag: ')\
                    .replace(':', '') \
                    .replace(',', '') \
-                   .replace(u'\u201c', '') \
-                   .replace(u'\u201d', '') \
-                   .replace(u'\u229b', '') \
+                   .replace('\u201c', '') \
+                   .replace('\u201d', '') \
+                   .replace('\u229b', '') \
                    .strip() \
                    .replace(' ', '_')
 
@@ -56,5 +54,5 @@ if __name__ == '__main__':
     total = emojis | emoji_modifiers
 
     for emoji_name, emoji_code in sorted(total.items()):
-        print(f"    u':{emoji_name}:': u'{emoji_code}'", end=',\n')
+        print(f"    ':{emoji_name}:': '{emoji_code}'", end=',\n')
     print('\nTotal count of emojis: ', len(total))

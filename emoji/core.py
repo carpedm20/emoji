@@ -187,9 +187,9 @@ def demojize(
         >>> import emoji
         >>> print(emoji.emojize("Python is fun :thumbs_up:"))
         Python is fun 👍
-        >>> print(emoji.demojize(u"Python is fun 👍"))
+        >>> print(emoji.demojize("Python is fun 👍"))
         Python is fun :thumbs_up:
-        >>> print(emoji.demojize(u"Unicode is tricky 😯", delimiters=("__", "__")))
+        >>> print(emoji.demojize(icode is tricky 😯", delimiters=("__", "__")))
         Unicode is tricky __hushed_face__
 
     :param string: String contains Unicode characters. MUST BE UNICODE.
