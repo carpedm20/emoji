@@ -1,6 +1,3 @@
-# -*- coding: UTF-8 -*-
-
-
 """
 emoji for Python
 ~~~~~~~~~~~~~~~~
@@ -20,8 +17,10 @@ from emoji.unicode_codes import *
 
 __all__ = [
     # emoji.core
-    'emojize', 'demojize', 'emoji_count', 'emoji_list',
-    'distinct_emoji_list', 'replace_emoji', 'version', 'is_emoji',
+    'emojize', 'demojize', 'analyze', 'config',
+    'emoji_list', 'distinct_emoji_list', 'emoji_count',
+    'replace_emoji', 'is_emoji', 'version',
+    'Token', 'EmojiMatch', 'EmojiMatchZWJ', 'EmojiMatchZWJNonRGI',
     # emoji.unicode_codes
     'EMOJI_DATA', 'STATUS', 'LANGUAGES',
 ]
