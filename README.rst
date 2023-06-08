@@ -84,6 +84,8 @@ Developing
     $ cd emoji
     $ python -m pip install -e .\[dev\]
     $ pytest
+    $ coverage run -m pytest
+    $ coverage report
 
 The ``utils/get_codes_from_unicode_emoji_data_files.py`` is used to generate
 ``unicode_codes/data_dict.py``. Generally speaking it scrapes a table on the

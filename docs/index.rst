@@ -18,7 +18,7 @@ emoji
 
 Release v\ |version|. (:ref:`Installation <install>`)
 
-emoji supports Python 2.7 and 3.4+
+emoji supports Python 3.6+. The last version to support Python 2.7 and 3.5 was v2.4.0.
 
 .. contents:: Table of Contents
 
@@ -71,6 +71,39 @@ Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``), French (``'fr'``)
 
 Extracting emoji
 ^^^^^^^^^^^^^^^^
+
+The function :func:`analyze` finds all emoji in string and yields the emoji
+together with its position and the available meta information about the emoji.
+
+:func:`analyze` returns a generator that yields each emoji, so you need to iterate or
+convert the output to a list.
+
+.. doctest::
+
+    >>> first_token = next(emoji.analyze('Python is 👍'))
+    Token(chars='👍', value=EmojiMatch(👍, 10:11))
+    >>> emoji_match = first_token.value
+    EmojiMatch(👍, 10:11)
+    >>> emoji_match.data
+    {'en': ':thumbs_up:', 'status': 2, 'E': 0.6, 'alias': [':thumbsup:', ':+1:'], 'variant': True, 'de': ':daumen_hoch:', 'es': ':pulgar_hacia_arriba:', 'fr': ':pouce_vers_le_haut:', 'ja': ':サムズアップ:', 'ko': ':올린_엄지:', 'pt': ':polegar_para_cima:', 'it': ':pollice_in_su:', 'fa': ':پسندیدن:', 'id': ':jempol_ke_atas:', 'zh': ':拇指向上:'}
+    >>> list(emoji.analyze('A 👩‍🚀 aboard a 🚀'))
+    [Token(chars='👩\u200d🚀', value=EmojiMatch(👩‍🚀, 2:5)), Token(chars='🚀', value=EmojiMatch(🚀, 15:16))]
+    >>> list(emoji.analyze('A👩‍🚀B🚀', non_emoji=True))
+    [Token(chars='A', value='A'), Token(chars='👩\u200d🚀', value=EmojiMatch(👩‍🚀, 1:4)), Token(chars='B', value='B'), Token(chars='🚀', value=EmojiMatch(🚀, 5:6))]
+..
+
+The parameter ``join_emoji`` controls whether `non-RGI emoji <#non-rgi-zwj-emoji>`_  are handled as a single token or as multiple emoji:
+
+.. doctest::
+
+    >>> list(emoji.analyze('👨‍👩🏿‍👧🏻‍👦🏾', join_emoji=True))
+    [Token(chars='👨\u200d👩🏿\u200d👧🏻\u200d👦🏾', value=EmojiMatchZWJNonRGI(👨‍👩🏿‍👧🏻‍👦🏾, 0:10))]
+
+    >>> list(emoji.analyze('👨‍👩🏿‍👧🏻‍👦🏾', join_emoji=False))
+    [Token(chars='👨', value=EmojiMatch(👨, 0:1)), Token(chars='👩🏿', value=EmojiMatch(👩🏿, 2:4)), Token(chars='👧🏻', value=EmojiMatch(👧🏻, 5:7)), Token(chars='👦🏾', value=EmojiMatch(👦🏾, 8:10))]
+
+..
+
 
 The function :func:`emoji_list` finds all emoji in string and their position.
 Keep in mind that an emoji can span over multiple characters:
@@ -227,6 +260,43 @@ You can find the version of an emoji with :func:`version`:
 ..
 
 
+Non-RGI ZWJ emoji
+^^^^^^^^^^^^^^^^^
+
+Some emoji contain multiple persons and each person can have an individual skin tone.
+
+Unicode supports `Multi-Person Skin Tones <http://www.unicode.org/reports/tr51/#multiperson_skintones>`__ as of Emoji 11.0.
+Skin tones can be add to the nine characters known as `Multi-Person Groupings <https://www.unicode.org/reports/tr51/#MultiPersonGroupingsTable>`__.
+
+Multi-person groups with different skin tones can be represented with Unicode, but are not yet RGI (recommended for general interchange). This means Unicode.org recommends not to show them in emoji keyboards.
+However some browser and platforms already support some of them:
+
+.. figure:: 1F468-200D-1F469-1F3FF-200D-1F467-1F3FB-200D-1F466-1F3FE.png
+   :height: 4em
+   :alt: A family emoji 👨‍👩🏿‍👧🏻‍👦🏾 with four different skin tone values
+
+   The emoji 👨‍👩🏿‍👧🏻‍👦🏾 as it appears in Firefox on Windows 11
+
+   It consists of eleven Unicode characters, four person emoji, four different skin tones joined together by three ``\u200d`` **Z**\ ero-\ **W**\ idth **J**\ oiner:
+
+   #. 👨 ``:man:``
+   #. 🏽 ``:medium_skin_tone:``
+   #. ``\u200d``
+   #. 👩 ``:woman:``
+   #. 🏿 ``:dark_skin_tone:``
+   #. ``\u200d``
+   #. 👧 ``:girl:``
+   #. 🏻 ``:light_skin_tone:``
+   #. ``\u200d``
+   #. 👦 ``:boy:``
+   #. 🏾 ``:medium-dark_skin_tone:``
+
+   On platforms that don't support it, it might appear as separate emoji: 👨🏽👩🏿👧🏻👦🏾
+
+In the module configuration :class:`config` you can control how such emoji are handled.
+
+
+
 Migrating to version 2.0.0
 --------------------------
 
@@ -270,11 +340,11 @@ expression yourself like this:
         # Sort emoji by length to make sure multi-character emojis are
         # matched first
         emojis = sorted(emoji.EMOJI_DATA, key=len, reverse=True)
-        pattern = u'(' + u'|'.join(re.escape(u) for u in emojis) + u')'
+        pattern = '(' + '|'.join(re.escape(u) for u in emojis) + ')'
         return re.compile(pattern)
 
     exp = get_emoji_regexp()
-    print(exp.sub(repl='[emoji]', string=u'A 🏌️‍♀️ is eating a 🥐'))
+    print(exp.sub(repl='[emoji]', string='A 🏌️‍♀️ is eating a 🥐'))
 ..
 
 Output:
@@ -313,33 +383,47 @@ Reference documentation of all functions and properties in the module:
 
    api
 
-+-----------------------------+--------------------------------------------------------------+
-| API Reference               |                                                              |
-+=============================+==============================================================+
-| **Functions:**              |                                                              |
-+-----------------------------+--------------------------------------------------------------+
-| :func:`emojize`             | Replace emoji names with Unicode codes                       |
-+-----------------------------+--------------------------------------------------------------+
-| :func:`demojize`            | Replace Unicode emoji with emoji shortcodes                  |
-+-----------------------------+--------------------------------------------------------------+
-| :func:`replace_emoji`       | Replace Unicode emoji with a customizable string             |
-+-----------------------------+--------------------------------------------------------------+
-| :func:`emoji_list`          | Location of all emoji in a string                            |
-+-----------------------------+--------------------------------------------------------------+
-| :func:`distinct_emoji_list` | Distinct list of emojis in the string                        |
-+-----------------------------+--------------------------------------------------------------+
-| :func:`emoji_count`         | Number of emojis in a string                                 |
-+-----------------------------+--------------------------------------------------------------+
-| :func:`is_emoji`            | Check if a string/character is a single emoji                |
-+-----------------------------+--------------------------------------------------------------+
-| :func:`version`             | Find Unicode/Emoji version of an emoji                       |
-+-----------------------------+--------------------------------------------------------------+
-| **Module variables:**       |                                                              |
-+-----------------------------+--------------------------------------------------------------+
-| :data:`EMOJI_DATA`          | Dict of all emoji                                            |
-+-----------------------------+--------------------------------------------------------------+
-| :data:`STATUS`              | Dict of Unicode/Emoji status                                 |
-+-----------------------------+--------------------------------------------------------------+
++-------------------------------+--------------------------------------------------------------+
+| API Reference                 |                                                              |
++===============================+==============================================================+
+| **Functions:**                |                                                              |
++-------------------------------+--------------------------------------------------------------+
+| :func:`emojize`               | Replace emoji names with Unicode codes                       |
++-------------------------------+--------------------------------------------------------------+
+| :func:`demojize`              | Replace Unicode emoji with emoji shortcodes                  |
++-------------------------------+--------------------------------------------------------------+
+| :func:`analyze`               | Find Unicode emoji in a string                               |
++-------------------------------+--------------------------------------------------------------+
+| :func:`replace_emoji`         | Replace Unicode emoji with a customizable string             |
++-------------------------------+--------------------------------------------------------------+
+| :func:`emoji_list`            | Location of all emoji in a string                            |
++-------------------------------+--------------------------------------------------------------+
+| :func:`distinct_emoji_list`   | Distinct list of emojis in the string                        |
++-------------------------------+--------------------------------------------------------------+
+| :func:`emoji_count`           | Number of emojis in a string                                 |
++-------------------------------+--------------------------------------------------------------+
+| :func:`is_emoji`              | Check if a string/character is a single emoji                |
++-------------------------------+--------------------------------------------------------------+
+| :func:`version`               | Find Unicode/Emoji version of an emoji                       |
++-------------------------------+--------------------------------------------------------------+
+| **Module variables:**         |                                                              |
++-------------------------------+--------------------------------------------------------------+
+| :data:`EMOJI_DATA`            | Dict of all emoji                                            |
++-------------------------------+--------------------------------------------------------------+
+| :data:`STATUS`                | Dict of Unicode/Emoji status                                 |
++-------------------------------+--------------------------------------------------------------+
+| :class:`config`               | Module wide configuration                                    |
++-------------------------------+--------------------------------------------------------------+
+| **Classes:**                  |                                                              |
++-------------------------------+--------------------------------------------------------------+
+| :class:`EmojiMatch`           |                                                              |
++-------------------------------+--------------------------------------------------------------+
+| :class:`EmojiMatchZWJ`        |                                                              |
++-------------------------------+--------------------------------------------------------------+
+| :class:`EmojiMatchZWJNonRGI`  |                                                              |
++-------------------------------+--------------------------------------------------------------+
+| :class:`Token`                |                                                              |
++-------------------------------+--------------------------------------------------------------+
 
 
 Links

@@ -1,6 +1,3 @@
-# -*- coding: UTF-8 -*-
-
-
 """Unittests for emoji.unicode_codes."""
 
 
