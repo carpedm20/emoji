@@ -1,6 +1,13 @@
 emoji
 =====
 
+v2.5.0 (2023-06-08)
+-----
+* Added support for Multi-person skintones
+* Removed support for Python 2, 3.4, 3.5
+* The logic from demojize() is moved to two separate private function tokenize() and filter_tokens() in a new file emoji/tokenizer.py
+* A new public function analyze() is available and that supports the multi-person skintones
+
 v2.4.0 (2023-03-12)
 -----
 * Added Japanese and Korean
@@ -12,9 +19,9 @@ v2.3.0 (2023-02-04)
 
 v2.2.0 (2022-10-31)
 -----
-* Add support for Unicode Version 15
-* Add more translations for existing languages: (similar to Turkish Language)
-* Add Readme on how to add a language
+* Added support for Unicode Version 15
+* Added more translations for existing languages: (similar to Turkish Language)
+* Added Readme on how to add a language
 * Fix 2.0.0: sphinx warnings reference target not found
 
 v2.1.0 (2022-09-17)
