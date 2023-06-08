@@ -36,7 +36,7 @@ the Turkish url is `https://emojiterra.com/copypaste/tr/`
 To generate all the names automatically from all the data, we use
 [`utils/get_codes_from_unicode_emoji_data_files.py`](get_codes_from_unicode_emoji_data_files.py#L306-L311)
 
-Open the script and add the two letter code of the language to the dict `languages = {`. For example we can add `es`:
+Open the script and add the two-letter code of the language to the dict `languages = {`. For example, we can add `es`:
 
 ```python
 languages = {

@@ -10,6 +10,7 @@ def ascii(s):
     # return escaped Code points \U000AB123
     return s.encode("unicode-escape").decode()
 
+
 def test_non_rgi_zwj_demojize():
     # These emoji are non-RGI ZWJ sequences. They should be decoded by demojize to their constituents.
     emoji.config.demojize_keep_zwj = True
@@ -93,6 +94,7 @@ def test_non_rgi_zwj_replace():
 
     # Replace with different length
     index = [0]
+
     def replace_f(e, emoji_data):
         index[0] += 1
         if index[0] % 2 == 0:

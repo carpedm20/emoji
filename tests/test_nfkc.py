@@ -4,6 +4,7 @@ import sys
 import emoji
 import unicodedata
 
+
 def is_normalized(form, s):
     if sys.version_info >= (3, 8):
         return unicodedata.is_normalized(form, s)
@@ -35,7 +36,7 @@ def test_normalized_and_not_normalized():
         ['pt', ':bot\xe3o_free:', ':bota\u0303o_free:'],
         ['de', ':alter_schl\xfcssel:', ':alter_schlu\u0308ssel:'],
         ['fr', ':homme_\xe2g\xe9_peau_l\xe9g\xe8rement_mate:', ':homme_a\u0302ge\u0301_peau_le\u0301ge\u0300rement_mate:'],
-        ['pt', ':cora\xe7\xe3o_vermelho:',':corac\u0327a\u0303o_vermelho:'],
+        ['pt', ':cora\xe7\xe3o_vermelho:', ':corac\u0327a\u0303o_vermelho:'],
         ['en', ':Cayman_Islands:', ':Cayman_\u2160slands:'],
         ['fr', ':c\u0153ur_rouge:', ':c\ua7f9ur_rouge:'],
     ]

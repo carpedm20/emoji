@@ -49,7 +49,8 @@ def get_emoji_variation_sequence_from_url(version: str) -> list:
     url = f"https://www.unicode.org/Public/{version}/ucd/emoji/emoji-variation-sequences.txt"
     return get_text_from_url(url).splitlines()
 
-def get_emojiterra_from_url(url: str) -> list:
+
+def get_emojiterra_from_url(url: str) -> dict:
     html = get_text_from_url(url)
 
     soup = bs4.BeautifulSoup(html, "html.parser")
@@ -63,6 +64,7 @@ def get_emojiterra_from_url(url: str) -> list:
         emojis[code] = i['title'].strip()
 
     return emojis
+
 
 def extract_emojis(emojis_lines: list, sequences_lines: list) -> dict:
     """Extract emojis line by line to dict"""
@@ -183,10 +185,10 @@ def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
         emoji_name = re.sub(r"(hautfarbe)_und_([a-z]+_hautfarbe)", r"\1,\2", emoji_name)
 
     if lang == "fa":
-        emoji_name = emoji_name.replace('\u200c',"_")
-        emoji_name = emoji_name.replace('\u200f',"_")
-        emoji_name = emoji_name.replace('\u060c',"_")
-        emoji_name = re.sub("_+","_",emoji_name)
+        emoji_name = emoji_name.replace('\u200c', "_")
+        emoji_name = emoji_name.replace('\u200f', "_")
+        emoji_name = emoji_name.replace('\u060c', "_")
+        emoji_name = re.sub("_+", "_", emoji_name)
 
     if lang == "zh":
         emoji_name = ":" + (
@@ -205,11 +207,11 @@ def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
 
         if '日文' in emoji_name:
             # Japanese buttons
-            emoji_name = emoji_name.replace('日文的', '').replace('按钮', '').replace('“','').replace('”','')
+            emoji_name = emoji_name.replace('日文的', '').replace('按钮', '').replace('“', '').replace('”', '')
 
         if '箭头' in emoji_name:
             # Arrows
-            emoji_name = emoji_name.replace('_', '').replace('!','')
+            emoji_name = emoji_name.replace('_', '').replace('!', '')
 
         if '按钮' in emoji_name:
             # English buttons
@@ -226,41 +228,40 @@ def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
             emoji_name = emoji_name.replace(':旗_', ':')
 
         hardcoded = {
-            '\U0001f1ed\U0001f1f0': ':香港:', # 🇭🇰
-            '\U0001f1ee\U0001f1e9': ':印度尼西亞:', # 🇮🇩
-            '\U0001f1f0\U0001f1ff': ':哈薩克:', # 🇰🇿
-            '\U0001f1f2\U0001f1f4': ':澳門:', # 🇲🇴
-            '\U0001f1e8\U0001f1ec': ':刚果_布:', # 🇨🇬
-            '\U0001f1e8\U0001f1e9': ':刚果_金:', # 🇨🇩
-            '\U0001f193': ':FREE按钮:', # 🆓
-            '\U0001f238': ':申:', # 🈸
-            '\U0001f250': ':得:', # 🉐
-            '\U0001f22f': ':指:', # 🈯
-            '\U0001f232': ':禁:', # 🈲
-            '\u3297\ufe0f': ':祝:', # ㊗️
-            '\u3297': ':祝:', # ㊗
-            '\U0001f239': ':割:', # 🈹
-            '\U0001f21a': ':无:', # 🈚
-            '\U0001f237\ufe0f': ':月:', # 🈷️
-            '\U0001f237': ':月:', # 🈷
-            '\U0001f235': ':满:', # 🈵
-            '\U0001f236': ':有:', # 🈶
-            '\U0001f234': ':合:', # 🈴
-            '\u3299\ufe0f': ':秘:', # ㊙️
-            '\u3299': ':秘:', # ㊙
-            '\U0001f233': ':空:', # 🈳
-            '\U0001f251': ':可:', # 🉑
-            '\U0001F23A': ':营:', # 🈺
-            '\U0001F202\ufe0f': ':服务:', # 🈂️
-            '\U0001F202': ':服务:', #  🈂
+            '\U0001f1ed\U0001f1f0': ':香港:',  # 🇭🇰
+            '\U0001f1ee\U0001f1e9': ':印度尼西亞:',  # 🇮🇩
+            '\U0001f1f0\U0001f1ff': ':哈薩克:',  # 🇰🇿
+            '\U0001f1f2\U0001f1f4': ':澳門:',  # 🇲🇴
+            '\U0001f1e8\U0001f1ec': ':刚果_布:',  # 🇨🇬
+            '\U0001f1e8\U0001f1e9': ':刚果_金:',  # 🇨🇩
+            '\U0001f193': ':FREE按钮:',  # 🆓
+            '\U0001f238': ':申:',  # 🈸
+            '\U0001f250': ':得:',  # 🉐
+            '\U0001f22f': ':指:',  # 🈯
+            '\U0001f232': ':禁:',  # 🈲
+            '\u3297\ufe0f': ':祝:',  # ㊗️
+            '\u3297': ':祝:',  # ㊗
+            '\U0001f239': ':割:',  # 🈹
+            '\U0001f21a': ':无:',  # 🈚
+            '\U0001f237\ufe0f': ':月:',  # 🈷️
+            '\U0001f237': ':月:',  # 🈷
+            '\U0001f235': ':满:',  # 🈵
+            '\U0001f236': ':有:',  # 🈶
+            '\U0001f234': ':合:',  # 🈴
+            '\u3299\ufe0f': ':秘:',  # ㊙️
+            '\u3299': ':秘:',  # ㊙
+            '\U0001f233': ':空:',  # 🈳
+            '\U0001f251': ':可:',  # 🉑
+            '\U0001F23A': ':营:',  # 🈺
+            '\U0001F202\ufe0f': ':服务:',  # 🈂️
+            '\U0001F202': ':服务:',  # 🈂
         }
 
         if emj in hardcoded:
             emoji_name = hardcoded[emj]
 
-
-
     return emoji_name
+
 
 def extract_names(xml, lang, emoji_terra={}):
     """Copies emoji.EMOJI_DATA[emj][lang] and adds the names from the xml"""
@@ -305,7 +306,7 @@ def extract_names(xml, lang, emoji_terra={}):
             continue
         emj_no_variant = emj.replace('\uFE0F', '')
         if emj_no_variant != emj and emj_no_variant in data:
-            # the emoji with \uFE0F has not translation, but the emoji without all \uFE0F has a translation
+            # the emoji with \uFE0F has no translation, but the emoji without all \uFE0F has a translation
             data[emj] = data[emj_no_variant]
 
     data.update(missing_translation)
@@ -315,7 +316,6 @@ def extract_names(xml, lang, emoji_terra={}):
         if emj in emoji_pkg.EMOJI_DATA and emj not in data:
             emoji_name = adapt_emoji_name(name, lang, emj)
             data[emj] = emoji_name
-
 
     return data
 
@@ -338,13 +338,15 @@ def get_emoji_from_github_api() -> dict:
 
     return output
 
+
 GITHUB_REMOVED_CHARS = re.compile("\u200D|\uFE0F|\uFE0E", re.IGNORECASE)
+
 
 def find_github_aliases(emj, github_dict):
     aliases = set()
 
     # Strip ZWJ \u200D, text_type \uFE0E and emoji_type \uFE0F
-    # because the Github API does not include these
+    # because the GitHub API does not include these
     emj_clean = GITHUB_REMOVED_CHARS.sub("", emj)
 
     for gh_alias in github_dict:
@@ -357,9 +359,11 @@ def find_github_aliases(emj, github_dict):
 
     return aliases
 
+
 def ascii(s):
     # return escaped Code points \U000AB123
     return s.encode("unicode-escape").decode()
+
 
 if __name__ == "__main__":
     # Find the latest version at https://www.unicode.org/reports/tr51/#emoji_data
@@ -382,14 +386,14 @@ if __name__ == "__main__":
         'zh': extract_names(get_language_data_from_url(github_tag, 'zh'), 'zh', get_emojiterra_from_url('https://emojiterra.com/copypaste/zh/')),
 
         # Do not update names in other languages:
-        #'de': get_UNICODE_EMOJI('de'),
-        #'es': get_UNICODE_EMOJI('es'),
-        #'fr': get_UNICODE_EMOJI('fr'),
-        #'pt': get_UNICODE_EMOJI('pt'),
-        #'it': get_UNICODE_EMOJI('it'),
-        #'fa': get_UNICODE_EMOJI('fa'),
-        #'id': get_UNICODE_EMOJI('id'),
-        #'zh': get_UNICODE_EMOJI('zh'),
+        # 'de': get_UNICODE_EMOJI('de'),
+        # 'es': get_UNICODE_EMOJI('es'),
+        # 'fr': get_UNICODE_EMOJI('fr'),
+        # 'pt': get_UNICODE_EMOJI('pt'),
+        # 'it': get_UNICODE_EMOJI('it'),
+        # 'fa': get_UNICODE_EMOJI('fa'),
+        # 'id': get_UNICODE_EMOJI('id'),
+        # 'zh': get_UNICODE_EMOJI('zh'),
     }
 
     github_alias_dict = get_emoji_from_github_api()
@@ -411,7 +415,7 @@ if __name__ == "__main__":
                     lang, languages[lang][emj])
             elif 'variant' in v:
                 # the language annotation uses the normal emoji (no variant), while the emoji-test.txt uses the emoji or text variant
-                alternative = re.sub(r"\\U0000FE0[EF]$", "", code) # Strip the variant
+                alternative = re.sub(r"\\U0000FE0[EF]$", "", code)  # Strip the variant
                 emj_no_variant = escapedToUnicodeMap[alternative]
                 if emj_no_variant in languages[lang]:
                     language_str += ",\n        '%s': '%s'" % (
@@ -453,20 +457,20 @@ if __name__ == "__main__":
             aliases = [a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias']]
 
         if any("flag_for_" in a for a in aliases):
-            # Put the :flag_for_COUNTRY: alias as the first entry so that it get's picked by demojize()
-            # This ensures compatiblity because in the past there was only the :flag_for_COUNTRY: alias
+            # Put the :flag_for_COUNTRY: alias as the first entry so that it gets picked by demojize()
+            # This ensures compatibility because in the past there was only the :flag_for_COUNTRY: alias
             aliases = [a for a in aliases if "flag_for_" in a] + [a for a in aliases if "flag_for_" not in a]
 
         # Print dict of dicts
         alias = ''
         if len(aliases) > 0:
             alias_list_str = ", ".join([f"':{a}:'" for a in aliases])
-            alias = ",\n        'alias' : [%s]" % (alias_list_str, )
+            alias = ",\n        'alias': [%s]" % (alias_list_str, )
         variant = ",\n        'variant': True" if 'variant' in v else ''
-        print(f"""    '{code}': {{ # {emj}
-        'en' : ':{v['en']}:',
-        'status' : {v["status"]},
-        'E' : {v["version"]:g}{alias}{variant}{language_str}
+        print(f"""    '{code}': {{  # {emj}
+        'en': ':{v['en']}:',
+        'status': {v["status"]},
+        'E': {v["version"]:g}{alias}{variant}{language_str}
     }}""", end=",\n")
         if v["status"] == "fully_qualified":
             f += 1

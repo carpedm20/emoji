@@ -74,6 +74,7 @@ def test_malformed_zwj_demojize():
     assert ':person_medium-dark_skin_tone:' in result
     assert ':graduation_cap:' in result
 
+
 def test_non_rgi_zwj_replace():
     emoji.config.replace_emoji_keep_zwj = False
 
@@ -95,6 +96,7 @@ def test_non_rgi_zwj_replace():
 
     # Replace with different length
     index = [0]
+
     def replace_f(e, emoji_data):
         index[0] += 1
         if index[0] % 2 == 0:
