@@ -57,7 +57,7 @@ class EmojiMatch:
                 'match_end': self.end
             }
 
-    def is_zwj(self)-> bool:
+    def is_zwj(self) -> bool:
         """
         Checks if this is a ZWJ-emoji.
 
@@ -66,7 +66,7 @@ class EmojiMatch:
 
         return _ZWJ in self.emoji
 
-    def split(self)-> Union['EmojiMatchZWJ', 'EmojiMatch']:
+    def split(self) -> Union['EmojiMatchZWJ', 'EmojiMatch']:
         """
         Splits a ZWJ-emoji into its constituents.
 
@@ -162,7 +162,7 @@ def tokenize(string, keep_zwj: bool) -> Iterator[Token]:
 
     :param string: String contains unicode characters. MUST BE UNICODE.
     :param keep_zwj: Should ZWJ-characters (``\\u200D``) that join non-RGI emoji be
-        skipped or should the be yielded as normal characters
+        skipped or should be yielded as normal characters
     :return: An iterable of tuples :class:`Token` ``(char, char)`` or :class:`Token` ``(chars, EmojiMatch)``
     """
 
@@ -243,7 +243,7 @@ def filter_tokens(matches: Iterator[Token], emoji_only: bool, join_emoji: bool) 
         where ``result`` is either an EmojiMatch or a string.
     :param emoji_only: If True, only EmojiMatch are returned in the output.
         If False all characters are returned
-    :param combine_nonrgi_emoji: If True, multiple EmojiMatch are merged into
+    :param join_emoji: If True, multiple EmojiMatch are merged into
         a single :class:`EmojiMatchZWJNonRGI` if they are separated only by a ZWJ.
 
     :return: An iterable of tuples :class:`Token` ``(char, char)``,

@@ -4,6 +4,7 @@
 import re
 import emoji
 
+
 def test_all_languages_list():
     """Compare all language keys in EMOJI_DATA with the emoji.LANGUAGES list"""
 
@@ -13,6 +14,7 @@ def test_all_languages_list():
     all_languages = {lang for lang in langs if len(lang) == 2 and lang.lower() == lang}
 
     assert set(emoji.LANGUAGES) == all_languages
+
 
 def test_emoji_versions():
     """Check that every emoji has a valid version"""
@@ -24,7 +26,7 @@ def test_emoji_versions():
 
 
 def check_duplicate_names(lang):
-    """Check that there are no duplicate names in the fully_qualified except for differnt variants"""
+    """Check that there are no duplicate names in the fully_qualified except for different variants"""
     seen = {}
     for emj, item in emoji.EMOJI_DATA.items():
         if item["status"] > emoji.STATUS["fully_qualified"]:
@@ -42,7 +44,7 @@ def check_duplicate_names(lang):
 
 
 def test_duplicate_names():
-    """Check that there are no duplicate names in the fully_qualified except for differnt variants"""
+    """Check that there are no duplicate names in the fully_qualified except for different variants"""
     for lang in emoji.LANGUAGES:
         check_duplicate_names(lang)
 

@@ -189,7 +189,7 @@ def demojize(
         Python is fun 👍
         >>> print(emoji.demojize("Python is fun 👍"))
         Python is fun :thumbs_up:
-        >>> print(emoji.demojize(icode is tricky 😯", delimiters=("__", "__")))
+        >>> print(emoji.demojize("icode is tricky 😯", delimiters=("__", "__")))
         Unicode is tricky __hushed_face__
 
     :param string: String contains Unicode characters. MUST BE UNICODE.
@@ -314,7 +314,7 @@ def emoji_count(string, unique=False):
 
 def is_emoji(string):
     """
-    Returns True if the string is an emoji and it is "recommended for
+    Returns True if the string is an emoji, and it is "recommended for
     general interchange" by Unicode.org.
     """
     return string in unicode_codes.EMOJI_DATA
@@ -324,7 +324,7 @@ def version(string):
     """
     Returns the Emoji Version of the emoji.
 
-    See http://www.unicode.org/reports/tr51/#Versioning for more information.
+    See https://www.unicode.org/reports/tr51/#Versioning for more information.
         >>> emoji.version("😁")
         0.6
         >>> emoji.version(":butterfly:")

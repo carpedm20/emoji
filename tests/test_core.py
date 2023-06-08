@@ -38,7 +38,7 @@ def test_emojize_name_only():
         for name_in_db in emoji_pack.keys():
 
             pairs = [
-                ('Form from EMOJI_DATA',name_in_db),
+                ('Form from EMOJI_DATA', name_in_db),
                 ('NFKC', normalize('NFKC', name_in_db)),
                 ('NFKD', normalize('NFKD', name_in_db)),
                 ('NFD', normalize('NFD', name_in_db)),
@@ -77,7 +77,7 @@ def test_regular_expression_minimal():
                     name_in_db,
                     normalize('NFKC', name_in_db),
                     normalize('NFKD', name_in_db),
-                    normalize('NFD',name_in_db),
+                    normalize('NFD', name_in_db),
                     normalize('NFC', name_in_db)
                 ]
                 for str in names:
@@ -182,6 +182,7 @@ def test_emojize_invalid_emoji():
     string = ':: baby:: :_: : : :  : :-: :+:'
     assert emoji.emojize(string) == string
 
+
 def test_emojize_version():
     assert emoji.emojize("Flags like :Belgium: are in version 2.0", version=1.0) == "Flags like  are in version 2.0"
     assert emoji.emojize("Flags like :Belgium: are in version 2.0", version=1.9) == "Flags like  are in version 2.0"
@@ -229,8 +230,6 @@ def test_demojize_version():
     assert emoji.demojize('A 🦖 is eating a 🥐', handle_version='X', version=3.0) == 'A X is eating a :croissant:'
 
     assert emoji.demojize('A 🦖 is eating a 🥐', handle_version='X', version=5.0) == 'A :T-Rex: is eating a :croissant:'
-
-
 
 
 def test_alias():

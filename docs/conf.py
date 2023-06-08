@@ -76,10 +76,10 @@ html_theme_options = {
     'show_related': False,
     'canonical_url': 'https://carpedm20.github.io/emoji/docs/',
     'extra_nav_links': {
-        'GitHub repository' : 'https://github.com/carpedm20/emoji',
-        'emoji on PyPI' : 'https://pypi.org/project/emoji/',
-        'All supported emoji' : 'https://carpedm20.github.io/emoji/',
-        'All emoji on unicode.org' : 'http://www.unicode.org/emoji/charts/full-emoji-list.html',
-        'Unicode Standard' : 'http://www.unicode.org/reports/tr51/',
+        'GitHub repository': 'https://github.com/carpedm20/emoji',
+        'emoji on PyPI': 'https://pypi.org/project/emoji/',
+        'All supported emoji': 'https://carpedm20.github.io/emoji/',
+        'All emoji on unicode.org': 'http://www.unicode.org/emoji/charts/full-emoji-list.html',
+        'Unicode Standard': 'http://www.unicode.org/reports/tr51/',
     }
 }

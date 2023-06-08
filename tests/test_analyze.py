@@ -11,7 +11,7 @@ def test_analyze():
 
     assert list(emoji.analyze('abc')) == []
 
-    assert list(emoji.analyze('abc', non_emoji=True)) == [('a','a'), ('b', 'b'), ('c', 'c')]
+    assert list(emoji.analyze('abc', non_emoji=True)) == [('a', 'a'), ('b', 'b'), ('c', 'c')]
 
     result = list(emoji.analyze('abc\U0001F472'))
     assert len(result) == 1
@@ -57,7 +57,6 @@ def test_analyze_non_rgi_zwj():
     assert result[1].value == 'x'
 
 
-
 def test_emoji_match():
     s = 'a\U0001F309b'
     token = next(emoji.analyze(s))
@@ -73,6 +72,7 @@ def test_emoji_match():
     assert match.end == 2
     assert match.is_zwj() == False
     assert str(match).startswith('EmojiMatch(')
+
 
 def test_emoji_match():
     s = 'a\U0001F309b'
