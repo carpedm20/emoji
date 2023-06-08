@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -33,10 +32,7 @@
           <div class="body" role="main">
             
   <h1>Source code for emoji.core</h1><div class="highlight"><pre>
-<span></span><span class="c1"># -*- coding: UTF-8 -*-</span>
-
-
-<span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">emoji.core</span>
 <span class="sd">~~~~~~~~~~</span>
 
@@ -44,28 +40,59 @@
 
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">unicodedata</span>
 <span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">unicodedata</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterator</span>
 
 <span class="kn">from</span> <span class="nn">emoji</span> <span class="kn">import</span> <span class="n">unicode_codes</span>
+<span class="kn">from</span> <span class="nn">emoji.tokenizer</span> <span class="kn">import</span> <span class="n">Token</span><span class="p">,</span> <span class="n">EmojiMatch</span><span class="p">,</span> <span class="n">EmojiMatchZWJ</span><span class="p">,</span> <span class="n">EmojiMatchZWJNonRGI</span><span class="p">,</span> <span class="n">tokenize</span><span class="p">,</span> <span class="n">filter_tokens</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;emojize&#39;</span><span class="p">,</span> <span class="s1">&#39;demojize&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;emojize&#39;</span><span class="p">,</span> <span class="s1">&#39;demojize&#39;</span><span class="p">,</span> <span class="s1">&#39;analyze&#39;</span><span class="p">,</span> <span class="s1">&#39;config&#39;</span><span class="p">,</span>
     <span class="s1">&#39;emoji_list&#39;</span><span class="p">,</span> <span class="s1">&#39;distinct_emoji_list&#39;</span><span class="p">,</span> <span class="s1">&#39;emoji_count&#39;</span><span class="p">,</span>
     <span class="s1">&#39;replace_emoji&#39;</span><span class="p">,</span> <span class="s1">&#39;is_emoji&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Token&#39;</span><span class="p">,</span> <span class="s1">&#39;EmojiMatch&#39;</span><span class="p">,</span> <span class="s1">&#39;EmojiMatchZWJ&#39;</span><span class="p">,</span> <span class="s1">&#39;EmojiMatchZWJNonRGI&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 
-<span class="n">_SEARCH_TREE</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">_DEFAULT_DELIMITER</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span>
-<span class="n">_EMOJI_NAME_PATTERN</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">-&amp;.’”“()!#*+?–,/«»</span><span class="se">\u0300\u0301\u0302\u0303\u0308\u030a\u0327\u064b\u064e\u064f\u0650\u0653\u0654\u3099\u30fb\u309a</span><span class="s1">&#39;</span>
-<span class="n">_PY2</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="n">_EMOJI_NAME_PATTERN</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">-&amp;.’”“()!#*+?–,/«»</span><span class="se">\u0300\u0301\u0302\u0303\u0308\u030a\u0327\u064b\u064e\u064f\u0650\u0653\u0654\u3099\u30fb\u309a</span><span class="s1">&#39;</span>
 
 
-<span class="k">def</span> <span class="nf">_normalize</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">_PY2</span><span class="p">:</span>
-        <span class="n">s</span> <span class="o">=</span> <span class="n">unicode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<div class="viewcode-block" id="config"><a class="viewcode-back" href="../../api.html#emoji.config">[docs]</a><span class="k">class</span> <span class="nc">config</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Module-wide configuration&quot;&quot;&quot;</span>
+
+    <span class="n">demojize_keep_zwj</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Change the behavior of :func:`emoji.demojize()` regarding</span>
+<span class="sd">    zero-width-joiners (ZWJ/``\\u200D``) in emoji that are not</span>
+<span class="sd">    &quot;recommended for general interchange&quot; (non-RGI).</span>
+<span class="sd">    It has no effect on RGI emoji.</span>
+
+<span class="sd">    For example this family emoji with different skin tones &quot;👨‍👩🏿‍👧🏻‍👦🏾&quot; contains four</span>
+<span class="sd">    person emoji that are joined together by three ZWJ characters:</span>
+<span class="sd">    ``👨\\u200D👩🏿\\u200D👧🏻\\u200D👦🏾``</span>
+
+<span class="sd">    If ``True``, the zero-width-joiners will be kept and :func:`emoji.emojize()` can</span>
+<span class="sd">    reverse the :func:`emoji.demojize()` operation:</span>
+<span class="sd">    ``emoji.emojize(emoji.demojize(s)) == s``</span>
+
+<span class="sd">    The example emoji would be converted to</span>
+<span class="sd">    ``:man:\\u200d:woman_dark_skin_tone:\\u200d:girl_light_skin_tone:\\u200d:boy_medium-dark_skin_tone:``</span>
+
+<span class="sd">    If ``False``, the zero-width-joiners will be removed and :func:`emoji.emojize()`</span>
+<span class="sd">    can only reverse the individual emoji: ``emoji.emojize(emoji.demojize(s)) != s``</span>
+
+<span class="sd">    The example emoji would be converted to</span>
+<span class="sd">    ``:man::woman_dark_skin_tone::girl_light_skin_tone::boy_medium-dark_skin_tone:``</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">replace_emoji_keep_zwj</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Change the behavior of :func:`emoji.replace_emoji()` regarding</span>
+<span class="sd">    zero-width-joiners (ZWJ/``\\u200D``) in emoji that are not</span>
+<span class="sd">    &quot;recommended for general interchange&quot; (non-RGI).</span>
+<span class="sd">    It has no effect on RGI emoji.</span>
+
+<span class="sd">    See :attr:`config.demojize_keep_zwj` for more information.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
 
 
 <div class="viewcode-block" id="emojize"><a class="viewcode-back" href="../../api.html#emoji.emojize">[docs]</a><span class="k">def</span> <span class="nf">emojize</span><span class="p">(</span>
@@ -102,16 +129,16 @@
 <span class="sd">    :param handle_version: (optional) Replace the emoji above ``version``</span>
 <span class="sd">        instead of ignoring it. handle_version can be either a string or a</span>
 <span class="sd">        callable; If it is a callable, it&#39;s passed the Unicode emoji and the</span>
-<span class="sd">        data dict from emoji.EMOJI_DATA and must return a replacement string</span>
+<span class="sd">        data dict from :data:`EMOJI_DATA` and must return a replacement string</span>
 <span class="sd">        to be used::</span>
 
-<span class="sd">            handle_version(u&#39;\\U0001F6EB&#39;, {</span>
+<span class="sd">            handle_version(&#39;\\U0001F6EB&#39;, {</span>
 <span class="sd">                &#39;en&#39; : &#39;:airplane_departure:&#39;,</span>
 <span class="sd">                &#39;status&#39; : fully_qualified,</span>
 <span class="sd">                &#39;E&#39; : 1,</span>
-<span class="sd">                &#39;alias&#39; : [u&#39;:flight_departure:&#39;],</span>
-<span class="sd">                &#39;de&#39;: u&#39;:abflug:&#39;,</span>
-<span class="sd">                &#39;es&#39;: u&#39;:avión_despegando:&#39;,</span>
+<span class="sd">                &#39;alias&#39; : [&#39;:flight_departure:&#39;],</span>
+<span class="sd">                &#39;de&#39;: &#39;:abflug:&#39;,</span>
+<span class="sd">                &#39;es&#39;: &#39;:avión_despegando:&#39;,</span>
 <span class="sd">                ...</span>
 <span class="sd">            })</span>
 
@@ -124,17 +151,20 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">language_pack</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">get_emoji_unicode_dict</span><span class="p">(</span><span class="n">language</span><span class="p">)</span>
 
-    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;(</span><span class="si">%s</span><span class="s1">[</span><span class="si">%s</span><span class="s1">]+</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span>
-                         <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">_EMOJI_NAME_PATTERN</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">%s</span><span class="s1">[</span><span class="si">%s</span><span class="s1">]+</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span>
+                         <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">_EMOJI_NAME_PATTERN</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
 
     <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="nb">len</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
-        <span class="n">emj</span> <span class="o">=</span> <span class="n">language_pack</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">_DEFAULT_DELIMITER</span> <span class="o">+</span> <span class="n">_normalize</span><span class="p">(</span><span class="s1">&#39;NFKC&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="n">_DEFAULT_DELIMITER</span><span class="p">)</span>
+        <span class="n">emj</span> <span class="o">=</span> <span class="n">language_pack</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">_DEFAULT_DELIMITER</span> <span class="o">+</span>
+            <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">&#39;NFKC&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="o">+</span>
+            <span class="n">_DEFAULT_DELIMITER</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">emj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="n">emj</span><span class="p">][</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">version</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">handle_version</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">handle_version</span><span class="p">):</span>
                 <span class="n">emj_data</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="n">emj</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
                 <span class="n">emj_data</span><span class="p">[</span><span class="s1">&#39;match_start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
                 <span class="n">emj_data</span><span class="p">[</span><span class="s1">&#39;match_end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
@@ -148,18 +178,35 @@
         <span class="k">if</span> <span class="n">variant</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="s1">&#39;variant&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="n">emj</span><span class="p">]:</span>
             <span class="k">return</span> <span class="n">emj</span>
 
-        <span class="k">if</span> <span class="n">emj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="se">\uFE0E</span><span class="s1">&#39;</span> <span class="ow">or</span> <span class="n">emj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="se">\uFE0F</span><span class="s1">&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">emj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\uFE0E</span><span class="s1">&#39;</span> <span class="ow">or</span> <span class="n">emj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\uFE0F</span><span class="s1">&#39;</span><span class="p">:</span>
             <span class="c1"># Remove an existing variant</span>
             <span class="n">emj</span> <span class="o">=</span> <span class="n">emj</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">variant</span> <span class="o">==</span> <span class="s2">&quot;text_type&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">emj</span> <span class="o">+</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="se">\uFE0E</span><span class="s1">&#39;</span>
+            <span class="k">return</span> <span class="n">emj</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\uFE0E</span><span class="s1">&#39;</span>
         <span class="k">elif</span> <span class="n">variant</span> <span class="o">==</span> <span class="s2">&quot;emoji_type&quot;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">emj</span> <span class="o">+</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="se">\uFE0F</span><span class="s1">&#39;</span>
+            <span class="k">return</span> <span class="n">emj</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\uFE0F</span><span class="s1">&#39;</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s2">&quot;Parameter &#39;variant&#39; must be either None, &#39;text_type&#39; or &#39;emoji_type&#39;&quot;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replace</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="analyze"><a class="viewcode-back" href="../../api.html#emoji.analyze">[docs]</a><span class="k">def</span> <span class="nf">analyze</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">non_emoji</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">join_emoji</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Token</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find unicode emoji in a string. Yield each emoji as a named tuple</span>
+<span class="sd">    :class:`Token` ``(chars, EmojiMatch)`` or `:class:`Token` ``(chars, EmojiMatchZWJNonRGI)``.</span>
+<span class="sd">    If ``non_emoji`` is True, also yield all other characters as</span>
+<span class="sd">    :class:`Token` ``(char, char)`` .</span>
+
+<span class="sd">    :param string: String to analyze</span>
+<span class="sd">    :param non_emoji: If True also yield all non-emoji characters as Token(char, char)</span>
+<span class="sd">    :param join_emoji: If True, multiple EmojiMatch are merged into a single</span>
+<span class="sd">        EmojiMatchZWJNonRGI if they are separated only by a ZWJ.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">filter_tokens</span><span class="p">(</span>
+        <span class="n">tokenize</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">keep_zwj</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">emoji_only</span><span class="o">=</span><span class="ow">not</span> <span class="n">non_emoji</span><span class="p">,</span> <span class="n">join_emoji</span><span class="o">=</span><span class="n">join_emoji</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="demojize"><a class="viewcode-back" href="../../api.html#emoji.demojize">[docs]</a><span class="k">def</span> <span class="nf">demojize</span><span class="p">(</span>
@@ -174,9 +221,9 @@
 <span class="sd">        &gt;&gt;&gt; import emoji</span>
 <span class="sd">        &gt;&gt;&gt; print(emoji.emojize(&quot;Python is fun :thumbs_up:&quot;))</span>
 <span class="sd">        Python is fun 👍</span>
-<span class="sd">        &gt;&gt;&gt; print(emoji.demojize(u&quot;Python is fun 👍&quot;))</span>
+<span class="sd">        &gt;&gt;&gt; print(emoji.demojize(&quot;Python is fun 👍&quot;))</span>
 <span class="sd">        Python is fun :thumbs_up:</span>
-<span class="sd">        &gt;&gt;&gt; print(emoji.demojize(u&quot;Unicode is tricky 😯&quot;, delimiters=(&quot;__&quot;, &quot;__&quot;)))</span>
+<span class="sd">        &gt;&gt;&gt; print(emoji.demojize(icode is tricky 😯&quot;, delimiters=(&quot;__&quot;, &quot;__&quot;)))</span>
 <span class="sd">        Unicode is tricky __hushed_face__</span>
 
 <span class="sd">    :param string: String contains Unicode characters. MUST BE UNICODE.</span>
@@ -189,16 +236,16 @@
 <span class="sd">        instead of removing it. handle_version can be either a string or a</span>
 <span class="sd">        callable ``handle_version(emj: str, data: dict) -&gt; str``; If it is</span>
 <span class="sd">        a callable, it&#39;s passed the Unicode emoji and the data dict from</span>
-<span class="sd">        emoji.EMOJI_DATA and must return a replacement string  to be used.</span>
+<span class="sd">        :data:`EMOJI_DATA` and must return a replacement string  to be used.</span>
 <span class="sd">        The passed data is in the form of::</span>
 
-<span class="sd">            handle_version(u&#39;\\U0001F6EB&#39;, {</span>
+<span class="sd">            handle_version(&#39;\\U0001F6EB&#39;, {</span>
 <span class="sd">                &#39;en&#39; : &#39;:airplane_departure:&#39;,</span>
 <span class="sd">                &#39;status&#39; : fully_qualified,</span>
 <span class="sd">                &#39;E&#39; : 1,</span>
-<span class="sd">                &#39;alias&#39; : [u&#39;:flight_departure:&#39;],</span>
-<span class="sd">                &#39;de&#39;: u&#39;:abflug:&#39;,</span>
-<span class="sd">                &#39;es&#39;: u&#39;:avión_despegando:&#39;,</span>
+<span class="sd">                &#39;alias&#39; : [&#39;:flight_departure:&#39;],</span>
+<span class="sd">                &#39;de&#39;: &#39;:abflug:&#39;,</span>
+<span class="sd">                &#39;es&#39;: &#39;:avión_despegando:&#39;,</span>
 <span class="sd">                ...</span>
 <span class="sd">            })</span>
 
@@ -210,78 +257,60 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">_use_aliases</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="n">tree</span> <span class="o">=</span> <span class="n">_get_search_tree</span><span class="p">()</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">:</span>
-        <span class="n">consumed</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">char</span> <span class="o">=</span> <span class="n">string</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">tree</span><span class="p">:</span>
-            <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-            <span class="n">sub_tree</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
-            <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">length</span> <span class="ow">and</span> <span class="n">string</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="ow">in</span> <span class="n">sub_tree</span><span class="p">:</span>
-                <span class="n">sub_tree</span> <span class="o">=</span> <span class="n">sub_tree</span><span class="p">[</span><span class="n">string</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span>
-                <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">if</span> <span class="s1">&#39;data&#39;</span> <span class="ow">in</span> <span class="n">sub_tree</span><span class="p">:</span>
-                <span class="n">emj_data</span> <span class="o">=</span> <span class="n">sub_tree</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
-                <span class="n">code_points</span> <span class="o">=</span> <span class="n">string</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]</span>
-                <span class="n">replace_str</span> <span class="o">=</span> <span class="kc">None</span>
-                <span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">emj_data</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">version</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">handle_version</span><span class="p">):</span>
-                        <span class="n">emj_data</span> <span class="o">=</span> <span class="n">emj_data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-                        <span class="n">emj_data</span><span class="p">[</span><span class="s1">&#39;match_start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-                        <span class="n">emj_data</span><span class="p">[</span><span class="s1">&#39;match_end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span>
-                        <span class="n">replace_str</span> <span class="o">=</span> <span class="n">handle_version</span><span class="p">(</span><span class="n">code_points</span><span class="p">,</span> <span class="n">emj_data</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">handle_version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                        <span class="n">replace_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">handle_version</span><span class="p">)</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">replace_str</span> <span class="o">=</span> <span class="kc">None</span>
-                <span class="k">elif</span> <span class="n">language</span> <span class="ow">in</span> <span class="n">emj_data</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">_use_aliases</span> <span class="ow">and</span> <span class="s1">&#39;alias&#39;</span> <span class="ow">in</span> <span class="n">emj_data</span><span class="p">:</span>
-                        <span class="n">replace_str</span> <span class="o">=</span> <span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">emj_data</span><span class="p">[</span><span class="s1">&#39;alias&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">replace_str</span> <span class="o">=</span> <span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">emj_data</span><span class="p">[</span><span class="n">language</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="c1"># The emoji exists, but it is not translated, so we keep the emoji</span>
-                    <span class="n">replace_str</span> <span class="o">=</span> <span class="n">code_points</span>
+    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">emoji_match</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">version</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">handle_version</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">handle_version</span><span class="p">(</span><span class="n">emoji_match</span><span class="o">.</span><span class="n">emoji</span><span class="p">,</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data_copy</span><span class="p">())</span>
+            <span class="k">elif</span> <span class="n">handle_version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">handle_version</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">elif</span> <span class="n">language</span> <span class="ow">in</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">_use_aliases</span> <span class="ow">and</span> <span class="s1">&#39;alias&#39;</span> <span class="ow">in</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;alias&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">language</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># The emoji exists, but it is not translated, so we keep the emoji</span>
+            <span class="k">return</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">emoji</span>
 
-                <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
-                <span class="n">consumed</span> <span class="o">=</span> <span class="kc">True</span>
-                <span class="k">if</span> <span class="n">replace_str</span><span class="p">:</span>
-                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">replace_str</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">consumed</span> <span class="ow">and</span> <span class="n">char</span> <span class="o">!=</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="se">\ufe0e</span><span class="s1">&#39;</span> <span class="ow">and</span> <span class="n">char</span> <span class="o">!=</span> <span class="sa">u</span><span class="s1">&#39;</span><span class="se">\ufe0f</span><span class="s1">&#39;</span><span class="p">:</span>
-            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
-        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+    <span class="n">matches</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">keep_zwj</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">demojize_keep_zwj</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">handle</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">value</span><span class="p">))</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span>
+        <span class="n">token</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">EmojiMatch</span><span class="p">)</span> <span class="k">else</span> <span class="n">token</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="replace_emoji"><a class="viewcode-back" href="../../api.html#emoji.replace_emoji">[docs]</a><span class="k">def</span> <span class="nf">replace_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>  <span class="n">version</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="replace_emoji"><a class="viewcode-back" href="../../api.html#emoji.replace_emoji">[docs]</a><span class="k">def</span> <span class="nf">replace_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Replace Unicode emoji in a customizable string.</span>
 
 <span class="sd">    :param string: String contains Unicode characters. MUST BE UNICODE.</span>
 <span class="sd">    :param replace: (optional) replace can be either a string or a callable;</span>
 <span class="sd">        If it is a callable, it&#39;s passed the Unicode emoji and the data dict from</span>
-<span class="sd">        emoji.EMOJI_DATA and must return a replacement string to be used.</span>
+<span class="sd">        :data:`EMOJI_DATA` and must return a replacement string to be used.</span>
 <span class="sd">        replace(str, dict) -&gt; str</span>
 <span class="sd">    :param version: (optional) Max version. If set to an Emoji Version,</span>
 <span class="sd">        only emoji above this version will be replaced.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">if</span> <span class="n">version</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-        <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">emj</span><span class="p">,</span> <span class="n">emj_data</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">emj_data</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">version</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">emj</span>  <span class="c1"># Do not replace emj</span>
-            <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">replace</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">replace</span><span class="p">(</span><span class="n">emj</span><span class="p">,</span> <span class="n">emj_data</span><span class="p">)</span>
-            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">replace</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">emoji_match</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">version</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">replace</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">replace</span><span class="p">(</span><span class="n">emoji_match</span><span class="o">.</span><span class="n">emoji</span><span class="p">,</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data_copy</span><span class="p">())</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">replace</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">callable</span><span class="p">(</span><span class="n">replace</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">replace</span><span class="p">(</span><span class="n">emoji_match</span><span class="o">.</span><span class="n">emoji</span><span class="p">,</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data_copy</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">replace</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">replace</span>
+        <span class="k">return</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">emoji</span>
 
-        <span class="k">return</span> <span class="n">demojize</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">handle_version</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">demojize</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">handle_version</span><span class="o">=</span><span class="n">replace</span><span class="p">)</span></div>
+    <span class="n">matches</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">keep_zwj</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">replace_emoji_keep_zwj</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">replace_emoji_keep_zwj</span><span class="p">:</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="n">filter_tokens</span><span class="p">(</span>
+            <span class="n">matches</span><span class="p">,</span> <span class="n">emoji_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">join_emoji</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">handle</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="p">))</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">EmojiMatch</span><span class="p">)</span> <span class="k">else</span> <span class="n">m</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="emoji_list"><a class="viewcode-back" href="../../api.html#emoji.emoji_list">[docs]</a><span class="k">def</span> <span class="nf">emoji_list</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
@@ -290,17 +319,12 @@
 <span class="sd">        &gt;&gt;&gt; emoji.emoji_list(&quot;Hi, I am fine. 😁&quot;)</span>
 <span class="sd">        [{&#39;match_start&#39;: 15, &#39;match_end&#39;: 16, &#39;emoji&#39;: &#39;😁&#39;}]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">_entities</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">emj</span><span class="p">,</span> <span class="n">emj_data</span><span class="p">):</span>
-        <span class="n">_entities</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-            <span class="s1">&#39;match_start&#39;</span><span class="p">:</span> <span class="n">emj_data</span><span class="p">[</span><span class="s1">&#39;match_start&#39;</span><span class="p">],</span>
-            <span class="s1">&#39;match_end&#39;</span><span class="p">:</span> <span class="n">emj_data</span><span class="p">[</span><span class="s1">&#39;match_end&#39;</span><span class="p">],</span>
-            <span class="s1">&#39;emoji&#39;</span><span class="p">:</span> <span class="n">emj</span><span class="p">,</span>
-        <span class="p">})</span>
-
-    <span class="n">demojize</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">handle_version</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">_entities</span></div>
+    <span class="k">return</span> <span class="p">[{</span>
+        <span class="s1">&#39;match_start&#39;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+        <span class="s1">&#39;match_end&#39;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+        <span class="s1">&#39;emoji&#39;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">emoji</span><span class="p">,</span>
+    <span class="p">}</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">keep_zwj</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">EmojiMatch</span><span class="p">)]</span></div>
 
 
 <div class="viewcode-block" id="distinct_emoji_list"><a class="viewcode-back" href="../../api.html#emoji.distinct_emoji_list">[docs]</a><span class="k">def</span> <span class="nf">distinct_emoji_list</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
@@ -323,7 +347,10 @@
 
 
 <div class="viewcode-block" id="is_emoji"><a class="viewcode-back" href="../../api.html#emoji.is_emoji">[docs]</a><span class="k">def</span> <span class="nf">is_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns True if the string is an emoji.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns True if the string is an emoji and it is &quot;recommended for</span>
+<span class="sd">    general interchange&quot; by Unicode.org.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span></div>
 
 
@@ -337,7 +364,7 @@
 <span class="sd">        &gt;&gt;&gt; emoji.version(&quot;:butterfly:&quot;)</span>
 <span class="sd">        3</span>
 
-<span class="sd">    :param string: An emoji or a text containig an emoji</span>
+<span class="sd">    :param string: An emoji or a text containing an emoji</span>
 <span class="sd">    :raises ValueError: if ``string`` does not contain an emoji</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Try dictionary lookup</span>
@@ -368,69 +395,6 @@
             <span class="k">return</span> <span class="n">version</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No emoji found in string&quot;</span><span class="p">)</span></div>
-
-
-<span class="k">def</span> <span class="nf">_get_search_tree</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Generate a search tree for demojize().</span>
-<span class="sd">    Example of a search tree::</span>
-
-<span class="sd">        EMOJI_DATA =</span>
-<span class="sd">        {&#39;a&#39;: {&#39;en&#39;: &#39;:Apple:&#39;},</span>
-<span class="sd">        &#39;b&#39;: {&#39;en&#39;: &#39;:Bus:&#39;},</span>
-<span class="sd">        &#39;ba&#39;: {&#39;en&#39;: &#39;:Bat:&#39;},</span>
-<span class="sd">        &#39;band&#39;: {&#39;en&#39;: &#39;:Beatles:&#39;},</span>
-<span class="sd">        &#39;bandit&#39;: {&#39;en&#39;: &#39;:Outlaw:&#39;},</span>
-<span class="sd">        &#39;bank&#39;: {&#39;en&#39;: &#39;:BankOfEngland:&#39;},</span>
-<span class="sd">        &#39;bb&#39;: {&#39;en&#39;: &#39;:BB-gun:&#39;},</span>
-<span class="sd">        &#39;c&#39;: {&#39;en&#39;: &#39;:Car:&#39;}}</span>
-
-<span class="sd">        _SEARCH_TREE =</span>
-<span class="sd">        {&#39;a&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:Apple:&#39;}},</span>
-<span class="sd">        &#39;b&#39;: {&#39;a&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:Bat:&#39;},</span>
-<span class="sd">                    &#39;n&#39;: {&#39;d&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:Beatles:&#39;},</span>
-<span class="sd">                                &#39;i&#39;: {&#39;t&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:Outlaw:&#39;}}}},</span>
-<span class="sd">                        &#39;k&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:BankOfEngland:&#39;}}}},</span>
-<span class="sd">            &#39;b&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:BB-gun:&#39;}},</span>
-<span class="sd">            &#39;data&#39;: {&#39;en&#39;: &#39;:Bus:&#39;}},</span>
-<span class="sd">        &#39;c&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:Car:&#39;}}}</span>
-
-<span class="sd">                   _SEARCH_TREE</span>
-<span class="sd">                 /     |        ⧵</span>
-<span class="sd">               /       |          ⧵</span>
-<span class="sd">            a          b             c</span>
-<span class="sd">            |        / |  ⧵          |</span>
-<span class="sd">            |       /  |    ⧵        |</span>
-<span class="sd">        :Apple:   ba  :Bus:  bb     :Car:</span>
-<span class="sd">                 /  ⧵         |</span>
-<span class="sd">                /    ⧵        |</span>
-<span class="sd">              :Bat:    ban     :BB-gun:</span>
-<span class="sd">                     /     ⧵</span>
-<span class="sd">                    /       ⧵</span>
-<span class="sd">                 band       bank</span>
-<span class="sd">                /   ⧵         |</span>
-<span class="sd">               /     ⧵        |</span>
-<span class="sd">            bandi :Beatles:  :BankOfEngland:</span>
-<span class="sd">               |</span>
-<span class="sd">            bandit</span>
-<span class="sd">               |</span>
-<span class="sd">           :Outlaw:</span>
-
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">_SEARCH_TREE</span>
-    <span class="k">if</span> <span class="n">_SEARCH_TREE</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">_SEARCH_TREE</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">emj</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">:</span>
-            <span class="n">sub_tree</span> <span class="o">=</span> <span class="n">_SEARCH_TREE</span>
-            <span class="n">lastidx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">emj</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">emj</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sub_tree</span><span class="p">:</span>
-                    <span class="n">sub_tree</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-                <span class="n">sub_tree</span> <span class="o">=</span> <span class="n">sub_tree</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">lastidx</span><span class="p">:</span>
-                    <span class="n">sub_tree</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="n">emj</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">_SEARCH_TREE</span>
 </pre></div>
 
           </div>
@@ -513,7 +477,7 @@
       
       
       
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>
