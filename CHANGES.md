@@ -1,6 +1,10 @@
 emoji
 =====
 
+v2.5.1 (2023-06-15)
+-----
+* Fix Malformed zero width joiner (\u200d) causes IndexError
+
 v2.5.0 (2023-06-08)
 -----
 * Added support for Multi-person skintones
