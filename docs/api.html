@@ -308,13 +308,13 @@ It has no effect on RGI emoji.</p>
 <dt class="sig sig-object py" id="emoji.demojize">
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">demojize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(':',</span> <span class="pre">':')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#demojize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.demojize" title="Permalink to this definition">¶</a></dt>
 <dd><dl>
-<dt>Replace Unicode emoji in a string with emoji shortcodes. Useful for storage.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import emoji
-&gt;&gt;&gt; print(emoji.emojize(&quot;Python is fun :thumbs_up:&quot;))
-Python is fun 👍
-&gt;&gt;&gt; print(emoji.demojize(&quot;Python is fun 👍&quot;))
-Python is fun :thumbs_up:
-&gt;&gt;&gt; print(emoji.demojize(icode is tricky 😯&quot;, delimiters=(&quot;__&quot;, &quot;__&quot;)))
-Unicode is tricky __hushed_face__
+<dt>Replace Unicode emoji in a string with emoji shortcodes. Useful for storage.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">emoji</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun :thumbs_up:&quot;</span><span class="p">))</span>
+<span class="go">Python is fun 👍</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="s2">&quot;Python is fun 👍&quot;</span><span class="p">))</span>
+<span class="go">Python is fun :thumbs_up:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="s2">&quot;icode is tricky 😯&quot;</span><span class="p">,</span> <span class="n">delimiters</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">,</span> <span class="s2">&quot;__&quot;</span><span class="p">)))</span>
+<span class="go">Unicode is tricky __hushed_face__</span>
 </pre></div>
 </div>
 </dd>
@@ -439,7 +439,7 @@ to be used:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="emoji.is_emoji">
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">is_emoji</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#is_emoji"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.is_emoji" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if the string is an emoji and it is “recommended for
+<dd><p>Returns True if the string is an emoji, and it is “recommended for
 general interchange” by Unicode.org.</p>
 </dd></dl>
 
@@ -467,7 +467,7 @@ only emoji above this version will be replaced.</p></li>
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Emoji Version of the emoji.</p>
 <dl>
-<dt>See <a class="reference external" href="http://www.unicode.org/reports/tr51/#Versioning">http://www.unicode.org/reports/tr51/#Versioning</a> for more information.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;😁&quot;</span><span class="p">)</span>
+<dt>See <a class="reference external" href="https://www.unicode.org/reports/tr51/#Versioning">https://www.unicode.org/reports/tr51/#Versioning</a> for more information.</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;😁&quot;</span><span class="p">)</span>
 <span class="go">0.6</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;:butterfly:&quot;</span><span class="p">)</span>
 <span class="go">3</span>
@@ -529,10 +529,10 @@ only emoji above this version will be replaced.</p></li>
 <span class="n">unqualified</span> <span class="o">=</span> <span class="mi">4</span>
 
 <span class="n">STATUS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;component&quot;</span> <span class="p">:</span> <span class="n">component</span><span class="p">,</span>
-    <span class="s2">&quot;fully_qualified&quot;</span> <span class="p">:</span> <span class="n">fully_qualified</span><span class="p">,</span>
-    <span class="s2">&quot;minimally_qualified&quot;</span> <span class="p">:</span> <span class="n">minimally_qualified</span><span class="p">,</span>
-    <span class="s2">&quot;unqualified&quot;</span> <span class="p">:</span> <span class="n">unqualified</span>
+    <span class="s2">&quot;component&quot;</span><span class="p">:</span> <span class="n">component</span><span class="p">,</span>
+    <span class="s2">&quot;fully_qualified&quot;</span><span class="p">:</span> <span class="n">fully_qualified</span><span class="p">,</span>
+    <span class="s2">&quot;minimally_qualified&quot;</span><span class="p">:</span> <span class="n">minimally_qualified</span><span class="p">,</span>
+    <span class="s2">&quot;unqualified&quot;</span><span class="p">:</span> <span class="n">unqualified</span>
 <span class="p">}</span>
 
 <span class="n">LANGUAGES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="s1">&#39;ja&#39;</span><span class="p">,</span> <span class="s1">&#39;ko&#39;</span><span class="p">,</span> <span class="s1">&#39;pt&#39;</span><span class="p">,</span> <span class="s1">&#39;it&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;fa&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;zh&#39;</span><span class="p">]</span>

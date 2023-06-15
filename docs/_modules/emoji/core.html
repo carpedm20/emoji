@@ -223,7 +223,7 @@
 <span class="sd">        Python is fun 👍</span>
 <span class="sd">        &gt;&gt;&gt; print(emoji.demojize(&quot;Python is fun 👍&quot;))</span>
 <span class="sd">        Python is fun :thumbs_up:</span>
-<span class="sd">        &gt;&gt;&gt; print(emoji.demojize(icode is tricky 😯&quot;, delimiters=(&quot;__&quot;, &quot;__&quot;)))</span>
+<span class="sd">        &gt;&gt;&gt; print(emoji.demojize(&quot;icode is tricky 😯&quot;, delimiters=(&quot;__&quot;, &quot;__&quot;)))</span>
 <span class="sd">        Unicode is tricky __hushed_face__</span>
 
 <span class="sd">    :param string: String contains Unicode characters. MUST BE UNICODE.</span>
@@ -348,7 +348,7 @@
 
 <div class="viewcode-block" id="is_emoji"><a class="viewcode-back" href="../../api.html#emoji.is_emoji">[docs]</a><span class="k">def</span> <span class="nf">is_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns True if the string is an emoji and it is &quot;recommended for</span>
+<span class="sd">    Returns True if the string is an emoji, and it is &quot;recommended for</span>
 <span class="sd">    general interchange&quot; by Unicode.org.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span></div>
@@ -358,7 +358,7 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the Emoji Version of the emoji.</span>
 
-<span class="sd">    See http://www.unicode.org/reports/tr51/#Versioning for more information.</span>
+<span class="sd">    See https://www.unicode.org/reports/tr51/#Versioning for more information.</span>
 <span class="sd">        &gt;&gt;&gt; emoji.version(&quot;😁&quot;)</span>
 <span class="sd">        0.6</span>
 <span class="sd">        &gt;&gt;&gt; emoji.version(&quot;:butterfly:&quot;)</span>
