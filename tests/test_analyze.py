@@ -56,6 +56,21 @@ def test_analyze_non_rgi_zwj():
     assert result[0].value.emoji == '\U0001F468\U0001F3FF\U0000200D\U0001F469\U0001F3FB\U0000200D\U0001F467\U0001F3FD'
     assert result[1].value == 'x'
 
+    result = list(emoji.analyze("\u200D🦷\u200D🦷"))
+    assert len(result) == 1
+    assert isinstance(result[0].value, emoji.EmojiMatchZWJNonRGI)
+
+    result = list(emoji.analyze("\u200D🦷\u200D🦷", join_emoji=False))
+    assert len(result) == 2
+    assert all(isinstance(token.value, emoji.EmojiMatch) for token in result)
+
+    result = list(emoji.analyze("\u200D🦷\u200D🦷", join_emoji=False, non_emoji=True))
+    assert len(result) == 4
+    assert result[0].value == '\u200D'
+    assert isinstance(result[1].value, emoji.EmojiMatch)
+    assert result[2].value == '\u200D'
+    assert isinstance(result[3].value, emoji.EmojiMatch)
+
 
 def test_emoji_match():
     s = 'a\U0001F309b'

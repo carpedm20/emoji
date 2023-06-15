@@ -203,7 +203,7 @@ def tokenize(string, keep_zwj: bool) -> Iterator[Token]:
                 consumed = True
                 result.append(Token(code_points, match_obj))
 
-        elif char == _ZWJ and result[-1].chars in EMOJI_DATA and string[i - 1] in tree:
+        elif char == _ZWJ and result and result[-1].chars in EMOJI_DATA and i > 0 and string[i - 1] in tree:
             # the current char is ZWJ and the last match was an emoji
             ignore.append(i)
             if EMOJI_DATA[result[-1].chars]["status"] == unicode_codes.STATUS["component"]:

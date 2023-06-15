@@ -77,3 +77,145 @@ def test_non_rgi_zwj_demojize():
     assert '\U0001F6B5\U0001F3FF\U0000200D\U00002642\U0000FE0F' not in result
     assert '\U0001F468\U0001F3FF\u200d\U0001F469\U0001F3FE\u200d\U0001F466\U0001F3FD\u200d\U0001F467\U0001F3FB' not in result
     assert ':man_mountain_biking_dark_skin_tone:' in result
+
+
+def test_malformed_zwj_no_emoji():
+    s = "\u200D"
+    assert emoji.replace_emoji(s) == s
+
+    s = "\u200D\u200D"
+    assert emoji.replace_emoji(s) == s
+
+    s = "\u200D\u200D\u200D"
+    assert emoji.replace_emoji(s) == s
+
+    s = "Has\u200Din the middle"
+    assert emoji.replace_emoji(s) == s
+
+    s = "\u200DStarts With"
+    assert emoji.replace_emoji(s) == s
+
+    s = "Ends With\u200D"
+    assert emoji.replace_emoji(s) == s
+
+    s = "Multiple\u200D\u200D\u200Din the middle"
+    assert emoji.replace_emoji(s) == s
+
+    s = "\u200D\u200DStarts With two"
+    assert emoji.replace_emoji(s) == s
+
+    s = "\u200D\u200D\u200DStarts With three"
+    assert emoji.replace_emoji(s) == s
+
+    s = "Ends With two\u200D\u200D"
+    assert emoji.replace_emoji(s) == s
+
+    s = "Ends With three\u200D\u200D\u200D"
+    assert emoji.replace_emoji(s) == s
+
+
+def test_malformed_zwj_mixed_with_emoji():
+    i = "Has🦷\u200Din the middle"
+    o = "Has:tooth:\u200Din the middle"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "Has\u200D🦷in the middle"
+    o = "Has\u200D:tooth:in the middle"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "\u200D🦷Starts with"
+    o = "\u200D:tooth:Starts with"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "🦷\u200DStarts with"
+    o = ":tooth:\u200DStarts with"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "Ends with \u200D🦷"
+    o = "Ends with \u200D:tooth:"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "Ends with 🦷\u200D"
+    o = "Ends with :tooth:\u200D"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "Multiple 🦷\u200D🦷\u200D in the middle"
+    o = "Multiple :tooth:\u200D:tooth:\u200D in the middle"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "Multiple 🦷🦷\u200D\u200D in the middle"
+    o = "Multiple :tooth::tooth:\u200D\u200D in the middle"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "Multiple \u200D\u200D🦷🦷 in the middle"
+    o = "Multiple \u200D\u200D:tooth::tooth: in the middle"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "\u200D\u200D🦷Starts with two"
+    o = "\u200D\u200D:tooth:Starts with two"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "\u200D\u200D\u200D🦷Starts with three"
+    o = "\u200D\u200D\u200D:tooth:Starts with three"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "Ends with two \u200D\u200D🦷"
+    o =  "Ends with two \u200D\u200D:tooth:"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "Ends with two 🦷\u200D\u200D"
+    o =  "Ends with two :tooth:\u200D\u200D"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+
+    i = "Ends with three \u200D\u200D\u200D🦷"
+    o =  "Ends with three \u200D\u200D\u200D:tooth:"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "Ends with three 🦷\u200D\u200D\u200D"
+    o =  "Ends with three :tooth:\u200D\u200D\u200D"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "🦷\u200D"
+    o =  ":tooth:\u200D"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "\u200D🦷"
+    o =  "\u200D:tooth:"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "\u200D\u200D🦷"
+    o =  "\u200D\u200D:tooth:"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "🦷\u200D\u200D"
+    o =  ":tooth:\u200D\u200D"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "\u200D🦷\u200D"
+    o =  "\u200D:tooth:\u200D"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "\u200D\u200D🦷\u200D\u200D"
+    o =  "\u200D\u200D:tooth:\u200D\u200D"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "\u200D\u200D\u200D🦷\u200D\u200D"
+    o =  "\u200D\u200D\u200D:tooth:\u200D\u200D"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "\u200D\u200D🦷\u200D\u200D\u200D"
+    o =  "\u200D\u200D:tooth:\u200D\u200D\u200D"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "🦷\u200D\u200D🦷\u200D\u200D\u200D"
+    o =  ":tooth:\u200D\u200D:tooth:\u200D\u200D\u200D"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "\u200D\u200D🦷🦷\u200D\u200D\u200D🦷"
+    o =  "\u200D\u200D:tooth::tooth:\u200D\u200D\u200D:tooth:"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
+
+    i = "\u200D\u200D🦷\u200D\u200D\u200D🦷"
+    o =  "\u200D\u200D:tooth:\u200D\u200D\u200D:tooth:"
+    assert emoji.demojize(i) == o, f"{i!r} != {o!r}"
