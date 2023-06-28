@@ -358,6 +358,8 @@ def test_is_emoji():
     assert emoji.is_emoji('😁')
     assert not emoji.is_emoji('H')
     assert emoji.is_emoji('🇫🇷')
+    assert not emoji.is_emoji('🇫🇷🇫🇷')
+    assert not emoji.is_emoji('\ufe0f')  # variation selector
 
 
 def test_long_emoji():
@@ -512,3 +514,19 @@ def test_combine_with_component():
     combined = emoji.emojize(text % ":woman_dark_skin_tone_white_hair:")
     seperated = emoji.emojize(text % ":woman::dark_skin_tone:\u200d:white_hair:")
     assert combined == seperated,  "%r != %r" % (ascii(combined), ascii(seperated))
+
+
+purely_emoji_testdata = [
+    ('\U0001f600\ufe0f', True),
+    ('\U0001f600', True),
+    ('\U0001f600\U0001f600\U0001f600', True),
+    ('abc', False),
+    ('abc\U0001f600', False),
+    ('\U0001f600c', False),
+    ('\u270a\U0001f3fe', True),
+]
+
+
+@pytest.mark.parametrize("string,expected", purely_emoji_testdata)
+def test_purely_emoji(string: str, expected: bool):
+    assert emoji.purely_emoji(string) == expected

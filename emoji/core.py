@@ -16,7 +16,7 @@ from emoji.tokenizer import Token, EmojiMatch, EmojiMatchZWJ, EmojiMatchZWJNonRG
 __all__ = [
     'emojize', 'demojize', 'analyze', 'config',
     'emoji_list', 'distinct_emoji_list', 'emoji_count',
-    'replace_emoji', 'is_emoji', 'version',
+    'replace_emoji', 'is_emoji', 'purely_emoji', 'version',
     'Token', 'EmojiMatch', 'EmojiMatchZWJ', 'EmojiMatchZWJNonRGI',
 ]
 
@@ -314,10 +314,19 @@ def emoji_count(string, unique=False):
 
 def is_emoji(string):
     """
-    Returns True if the string is an emoji, and it is "recommended for
+    Returns True if the string is a single emoji, and it is "recommended for
     general interchange" by Unicode.org.
     """
     return string in unicode_codes.EMOJI_DATA
+
+
+def purely_emoji(string: str) -> bool:
+    """
+    Returns True if the string contains only emojis.
+    This might not imply that `is_emoji` for all the characters, for example,
+    if the string contains variation selectors.
+    """
+    return all(isinstance(m.value, EmojiMatch) for m in analyze(string, non_emoji=True))
 
 
 def version(string):
