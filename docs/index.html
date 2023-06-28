@@ -35,7 +35,7 @@
             
   <section id="emoji">
 <h1><a class="toc-backref" href="#id2" role="doc-backlink">emoji</a><a class="headerlink" href="#emoji" title="Permalink to this heading">¶</a></h1>
-<p>Release v2.5.1. (<a class="reference internal" href="install.html#install"><span class="std std-ref">Installation</span></a>)</p>
+<p>Release v2.6.0. (<a class="reference internal" href="install.html#install"><span class="std std-ref">Installation</span></a>)</p>
 <p>emoji supports Python 3.6+. The last version to support Python 2.7 and 3.5 was v2.4.0.</p>
 <nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
@@ -153,6 +153,21 @@ Keep in mind that an emoji can span over multiple characters:</p>
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
 <span class="go">False</span>
+</pre></div>
+</div>
+<p>While dealing with emojis, it is generally a bad idea to look at individual characters.
+Unicode contains modifier characters, such as variation selectors, which are not emojis themselves
+and modify the preceding emoji instead. You can check if a string has only emojis in it with <a class="reference internal" href="api.html#emoji.purely_emoji" title="emoji.purely_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">purely_emoji()</span></code></a></p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;</span><span class="se">\U0001f600\ufe0f</span><span class="s1">&#39;</span>
+<span class="go">&#39;😀&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001f600\ufe0f</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001f600</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\ufe0f</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">purely_emoji</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001f600\ufe0f</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 <p>To get more information about an emoji, you can look it up in the <a class="reference internal" href="api.html#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a> dict:</p>
@@ -370,34 +385,37 @@ information on Unicode in Python 2.7.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.is_emoji" title="emoji.is_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_emoji()</span></code></a></p></td>
 <td><p>Check if a string/character is a single emoji</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.version" title="emoji.version"><code class="xref py py-func docutils literal notranslate"><span class="pre">version()</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.purely_emoji" title="emoji.purely_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">purely_emoji()</span></code></a></p></td>
+<td><p>Check if a string contains only emojis</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.version" title="emoji.version"><code class="xref py py-func docutils literal notranslate"><span class="pre">version()</span></code></a></p></td>
 <td><p>Find Unicode/Emoji version of an emoji</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Module variables:</strong></p></td>
+<tr class="row-odd"><td><p><strong>Module variables:</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a></p></td>
 <td><p>Dict of all emoji</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.STATUS" title="emoji.STATUS"><code class="xref py py-data docutils literal notranslate"><span class="pre">STATUS</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.STATUS" title="emoji.STATUS"><code class="xref py py-data docutils literal notranslate"><span class="pre">STATUS</span></code></a></p></td>
 <td><p>Dict of Unicode/Emoji status</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.config" title="emoji.config"><code class="xref py py-class docutils literal notranslate"><span class="pre">config</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.config" title="emoji.config"><code class="xref py py-class docutils literal notranslate"><span class="pre">config</span></code></a></p></td>
 <td><p>Module wide configuration</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Classes:</strong></p></td>
+<tr class="row-odd"><td><p><strong>Classes:</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.EmojiMatch" title="emoji.EmojiMatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatch</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.EmojiMatch" title="emoji.EmojiMatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatch</span></code></a></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.EmojiMatchZWJ" title="emoji.EmojiMatchZWJ"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatchZWJ</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.EmojiMatchZWJ" title="emoji.EmojiMatchZWJ"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatchZWJ</span></code></a></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.EmojiMatchZWJNonRGI" title="emoji.EmojiMatchZWJNonRGI"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatchZWJNonRGI</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.EmojiMatchZWJNonRGI" title="emoji.EmojiMatchZWJNonRGI"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatchZWJNonRGI</span></code></a></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api.html#emoji.Token" title="emoji.Token"><code class="xref py py-class docutils literal notranslate"><span class="pre">Token</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api.html#emoji.Token" title="emoji.Token"><code class="xref py py-class docutils literal notranslate"><span class="pre">Token</span></code></a></p></td>
 <td></td>
 </tr>
 </tbody>

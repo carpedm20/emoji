@@ -150,6 +150,24 @@ You can check if a string is a single, valid emoji with :func:`is_emoji`
 
 ..
 
+While dealing with emojis, it is generally a bad idea to look at individual characters.
+Unicode contains modifier characters, such as variation selectors, which are not emojis themselves
+and modify the preceding emoji instead. You can check if a string has only emojis in it with :func:`purely_emoji`
+
+.. doctest::
+
+    >>> '\U0001f600\ufe0f'
+    '😀'
+    >>> emoji.is_emoji('\U0001f600\ufe0f')
+    False
+    >>> emoji.is_emoji('\U0001f600')
+    True
+    >>> emoji.is_emoji('\ufe0f')
+    False
+    >>> emoji.purely_emoji('\U0001f600\ufe0f')
+    True
+
+..
 
 To get more information about an emoji, you can look it up in the :data:`EMOJI_DATA` dict:
 
@@ -403,6 +421,8 @@ Reference documentation of all functions and properties in the module:
 | :func:`emoji_count`           | Number of emojis in a string                                 |
 +-------------------------------+--------------------------------------------------------------+
 | :func:`is_emoji`              | Check if a string/character is a single emoji                |
++-------------------------------+--------------------------------------------------------------+
+| :func:`purely_emoji`          | Check if a string contains only emojis                       |
 +-------------------------------+--------------------------------------------------------------+
 | :func:`version`               | Find Unicode/Emoji version of an emoji                       |
 +-------------------------------+--------------------------------------------------------------+

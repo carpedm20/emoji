@@ -50,7 +50,7 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;emojize&#39;</span><span class="p">,</span> <span class="s1">&#39;demojize&#39;</span><span class="p">,</span> <span class="s1">&#39;analyze&#39;</span><span class="p">,</span> <span class="s1">&#39;config&#39;</span><span class="p">,</span>
     <span class="s1">&#39;emoji_list&#39;</span><span class="p">,</span> <span class="s1">&#39;distinct_emoji_list&#39;</span><span class="p">,</span> <span class="s1">&#39;emoji_count&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;replace_emoji&#39;</span><span class="p">,</span> <span class="s1">&#39;is_emoji&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;replace_emoji&#39;</span><span class="p">,</span> <span class="s1">&#39;is_emoji&#39;</span><span class="p">,</span> <span class="s1">&#39;purely_emoji&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span>
     <span class="s1">&#39;Token&#39;</span><span class="p">,</span> <span class="s1">&#39;EmojiMatch&#39;</span><span class="p">,</span> <span class="s1">&#39;EmojiMatchZWJ&#39;</span><span class="p">,</span> <span class="s1">&#39;EmojiMatchZWJNonRGI&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 
@@ -348,10 +348,19 @@
 
 <div class="viewcode-block" id="is_emoji"><a class="viewcode-back" href="../../api.html#emoji.is_emoji">[docs]</a><span class="k">def</span> <span class="nf">is_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns True if the string is an emoji, and it is &quot;recommended for</span>
+<span class="sd">    Returns True if the string is a single emoji, and it is &quot;recommended for</span>
 <span class="sd">    general interchange&quot; by Unicode.org.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span></div>
+
+
+<div class="viewcode-block" id="purely_emoji"><a class="viewcode-back" href="../../api.html#emoji.purely_emoji">[docs]</a><span class="k">def</span> <span class="nf">purely_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns True if the string contains only emojis.</span>
+<span class="sd">    This might not imply that `is_emoji` for all the characters, for example,</span>
+<span class="sd">    if the string contains variation selectors.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">EmojiMatch</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">analyze</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">non_emoji</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="version"><a class="viewcode-back" href="../../api.html#emoji.version">[docs]</a><span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>

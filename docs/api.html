@@ -70,34 +70,37 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#emoji.is_emoji" title="emoji.is_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_emoji()</span></code></a></p></td>
 <td><p>Check if a string/character is a single emoji</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.version" title="emoji.version"><code class="xref py py-func docutils literal notranslate"><span class="pre">version()</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.purely_emoji" title="emoji.purely_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">purely_emoji()</span></code></a></p></td>
+<td><p>Check if a string contains only emojis</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#emoji.version" title="emoji.version"><code class="xref py py-func docutils literal notranslate"><span class="pre">version()</span></code></a></p></td>
 <td><p>Find Unicode/Emoji version of an emoji</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Module variables:</strong></p></td>
+<tr class="row-odd"><td><p><strong>Module variables:</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a></p></td>
 <td><p>Dict of all emoji</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#emoji.STATUS" title="emoji.STATUS"><code class="xref py py-data docutils literal notranslate"><span class="pre">STATUS</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.STATUS" title="emoji.STATUS"><code class="xref py py-data docutils literal notranslate"><span class="pre">STATUS</span></code></a></p></td>
 <td><p>Dict of Unicode/Emoji status</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.config" title="emoji.config"><code class="xref py py-class docutils literal notranslate"><span class="pre">config</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#emoji.config" title="emoji.config"><code class="xref py py-class docutils literal notranslate"><span class="pre">config</span></code></a></p></td>
 <td><p>Module wide configuration</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Classes:</strong></p></td>
+<tr class="row-odd"><td><p><strong>Classes:</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.EmojiMatch" title="emoji.EmojiMatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatch</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#emoji.EmojiMatch" title="emoji.EmojiMatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatch</span></code></a></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#emoji.EmojiMatchZWJ" title="emoji.EmojiMatchZWJ"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatchZWJ</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.EmojiMatchZWJ" title="emoji.EmojiMatchZWJ"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatchZWJ</span></code></a></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.EmojiMatchZWJNonRGI" title="emoji.EmojiMatchZWJNonRGI"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatchZWJNonRGI</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#emoji.EmojiMatchZWJNonRGI" title="emoji.EmojiMatchZWJNonRGI"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmojiMatchZWJNonRGI</span></code></a></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#emoji.Token" title="emoji.Token"><code class="xref py py-class docutils literal notranslate"><span class="pre">Token</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#emoji.Token" title="emoji.Token"><code class="xref py py-class docutils literal notranslate"><span class="pre">Token</span></code></a></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -439,8 +442,16 @@ to be used:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="emoji.is_emoji">
 <span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">is_emoji</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emoji/core.html#is_emoji"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.is_emoji" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns True if the string is an emoji, and it is “recommended for
+<dd><p>Returns True if the string is a single emoji, and it is “recommended for
 general interchange” by Unicode.org.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="emoji.purely_emoji">
+<span class="sig-prename descclassname"><span class="pre">emoji.</span></span><span class="sig-name descname"><span class="pre">purely_emoji</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/emoji/core.html#purely_emoji"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emoji.purely_emoji" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the string contains only emojis.
+This might not imply that <cite>is_emoji</cite> for all the characters, for example,
+if the string contains variation selectors.</p>
 </dd></dl>
 
 <dl class="py function">
