@@ -1,6 +1,10 @@
 emoji
 =====
 
+v2.6.0 (2023-06-28)
+-----
+* Added new function purely_emoji() | Check if a string contains only emojis
+
 v2.5.1 (2023-06-15)
 -----
 * Fix Malformed zero width joiner (\u200d) causes IndexError
@@ -24,7 +28,7 @@ v2.3.0 (2023-02-04)
 v2.2.0 (2022-10-31)
 -----
 * Added support for Unicode Version 15
-* Added more translations for existing languages: (similar to Turkish Language)
+* Added more translations for existing languages: (similar to the Turkish Language)
 * Added Readme on how to add a language
 * Fix 2.0.0: sphinx warnings reference target not found
 
@@ -43,7 +47,7 @@ v2.0.0 (2022-06-30)
 * Removed distinct_emoji_lis
 * Made the list of languages public: emoji.LANGUAGES = ['en','es','pt','it','fr','de']
 * Updated translations to release-41 (no changes compared to release-40)
-* Generate a documentation for the public functions from the docstrings with Sphinx
+* Generate documentation for the public functions from the docstrings with Sphinx
 * Added some more examples to the README: e.g. how to replace/remove emojis
 * Total count of emojis:  4702
 
@@ -51,7 +55,7 @@ v1.7.0 (2022-03-07)
 -----
 * Added `emoji_list()` and `distinct_emoji_list()`
 * Added deprecation warnings for several functions and variables that will be removed in version 2.0.0.
-  If you don't want to see these warnings, you can stay with 1.6.x. For example in pip/requirements.txt you can pin to 1.6.x with `emoji~=1.6.3`.
+  If you don't want to see these warnings, you can stay with 1.6.x. For example, in pip/requirements.txt you can pin to 1.6.x with `emoji~=1.6.3`.
 
 v1.6.3 (2022-01-15)
 -----
