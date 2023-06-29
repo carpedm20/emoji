@@ -508,12 +508,12 @@ def test_combine_with_component():
     text = "Example of a combined emoji%sin a sentence"
 
     combined = emoji.emojize(text % ":woman_dark_skin_tone:")
-    seperated = emoji.emojize(text % ":woman::dark_skin_tone:")
-    assert combined == seperated,  "%r != %r" % (ascii(combined), ascii(seperated))
+    separated = emoji.emojize(text % ":woman::dark_skin_tone:")
+    assert combined == separated,  "%r != %r" % (ascii(combined), ascii(separated))
 
     combined = emoji.emojize(text % ":woman_dark_skin_tone_white_hair:")
-    seperated = emoji.emojize(text % ":woman::dark_skin_tone:\u200d:white_hair:")
-    assert combined == seperated,  "%r != %r" % (ascii(combined), ascii(seperated))
+    separated = emoji.emojize(text % ":woman::dark_skin_tone:\u200d:white_hair:")
+    assert combined == separated,  "%r != %r" % (ascii(combined), ascii(separated))
 
 
 purely_emoji_testdata = [
