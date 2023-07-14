@@ -52200,7 +52200,7 @@ EMOJI_DATA = {
         'en': ':smiling_face_with_heart-eyes:',
         'status': fully_qualified,
         'E': 0.6,
-        'alias': [':heart_eyes:'],
+        'alias': [':heart_eyes:', ':smiling_face_with_heart_eyes:'],
         'de': ':lächelndes_gesicht_mit_herzförmigen_augen:',
         'es': ':cara_sonriendo_con_ojos_de_corazón:',
         'fr': ':visage_souriant_avec_yeux_en_forme_de_cœur:',
