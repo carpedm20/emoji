@@ -57,13 +57,96 @@ def get_emojiterra_from_url(url: str) -> dict:
     emojis = {}
 
     data = soup.find_all('li')
-    data = [i for i in data if 'href' not in str(i) and 'data-e' in i]
+    data = [i for i in data if 'href' not in i.attrs and 'data-e' in i.attrs and i['data-e'].strip()]
 
     for i in data:
         code = i['data-e']
         emojis[code] = i['title'].strip()
 
+    assert len(data) > 100, f"emojiterra data from {url} has only {len(data)} entries"
+
     return emojis
+
+
+def get_cheat_sheet(url: str) -> dict:
+    """
+    Returns a dict of emoji to short-names:
+    E.g. {'👴': ':old_man:', '👵': ':old_woman:', ... }
+    """
+
+    html = get_text_from_url(url)
+
+    soup = bs4.BeautifulSoup(html, "html.parser")
+    emojis = {}
+
+    items = soup.find(class_='ecs-list').find_all(class_='_item')
+
+    pattern = re.compile(r'U\+([0-9A-F]+)')
+
+    for i in items:
+        unicode_text = i.find(class_='unicode').text
+
+        code_points = pattern.findall(unicode_text)
+        code = ''.join(chr(int(x,16)) for x in code_points)
+
+        emojis[code] = i.find(class_='shortcode').text
+
+    # Remove some unwanted and some weird entries from the cheat sheet
+    filtered = {}
+    for emj, short_code in emojis.items():
+
+        if short_code.startswith(':flag_'):
+            # Skip flags from cheat-sheet, because we already have very similar aliases for the flags
+            continue
+
+        if '⊛' in short_code:
+            # Strange emoji with ⊛ in the short-code
+            continue
+
+        if emj == '\U0001F93E\U0000200D\U00002640\U0000FE0F':
+            # The short-code for this emoji is wrong
+            continue
+
+        if emj == '\U0001F468\U0000200D\U0001F468\U0000200D\U0001F467':
+            # The short-code for this emoji is wrong
+            continue
+
+        if short_code.startswith('::'):
+            # Do not allow short-codes to have double :: at the start
+            short_code = short_code[1:]
+
+        if short_code.endswith('::'):
+            # Do not allow short-codes to have double :: at the end
+            short_code = short_code[:-1]
+
+        filtered[emj] = short_code
+
+    assert len(filtered) > 100, f"emoji-cheat-sheet data from {url} has only {len(filtered)} entries"
+
+    return filtered
+
+def get_emoji_from_youtube(url: str) -> dict:
+    """Get emoji alias from Youtube
+    Returns a dict of emoji to list of short-names:
+    E.g. {'💁': [':person_tipping_hand:', ':information_desk_person:'], '😉': [':winking_face:', ':wink:']}
+    """
+
+    data = requests.get(url).json()
+
+    output = {}
+    for obj in data:
+        if 'shortcuts' not in obj or 'emojiId' not in obj:
+            continue
+
+        shortcuts = [x for x in obj['shortcuts'] if x.startswith(':') and x.endswith(':')]
+
+        if shortcuts:
+            output[obj['emojiId']] = shortcuts
+
+    assert len(output) > 100, f"youtube data from {url} has only {len(output)} entries"
+
+    return output
+
 
 
 def extract_emojis(emojis_lines: list, sequences_lines: list) -> dict:
@@ -320,11 +403,11 @@ def extract_names(xml, lang, emoji_terra={}):
     return data
 
 
-def get_emoji_from_github_api() -> dict:
+def get_emoji_from_github_api(url: str) -> dict:
     """Get emoji alias from GitHub API
     """
 
-    data = requests.get("https://api.github.com/emojis").json()
+    data = requests.get(url).json()
     pattern = re.compile(r"unicode/([0-9a-fA-F-]+)\.[a-z]+")
 
     output = {}
@@ -336,13 +419,15 @@ def get_emoji_from_github_api() -> dict:
         else:
             pass  # Special GitHub emoji that is not part of Unicode
 
+    assert len(output) > 100, f"data from github API has only {len(output)} entries"
+
     return output
 
 
 GITHUB_REMOVED_CHARS = re.compile("\u200D|\uFE0F|\uFE0E", re.IGNORECASE)
 
 
-def find_github_aliases(emj, github_dict):
+def find_github_aliases(emj, github_dict, v, emj_no_variant=None):
     aliases = set()
 
     # Strip ZWJ \u200D, text_type \uFE0E and emoji_type \uFE0F
@@ -366,12 +451,15 @@ def ascii(s):
 
 
 if __name__ == "__main__":
+    logging.info('  Downloading...\n')
+
     # Find the latest version at https://www.unicode.org/reports/tr51/#emoji_data
     emoji_source = get_emoji_from_url(15.0)
     emoji_sequences_source = get_emoji_variation_sequence_from_url('15.0.0')
     emojis = extract_emojis(emoji_source, emoji_sequences_source)
     # Find latest release tag at https://cldr.unicode.org/index/downloads
-    github_tag = 'release-42'
+    github_tag = 'release-43'
+
     languages = {
         # Update names in other languages:
         'de': extract_names(get_language_data_from_url(github_tag, 'de'), 'de', get_emojiterra_from_url('https://emojiterra.com/de/kopieren/')),
@@ -389,6 +477,8 @@ if __name__ == "__main__":
         # 'de': get_UNICODE_EMOJI('de'),
         # 'es': get_UNICODE_EMOJI('es'),
         # 'fr': get_UNICODE_EMOJI('fr'),
+        # 'ja': get_UNICODE_EMOJI('ja'),
+        # 'ko': get_UNICODE_EMOJI('ko'),
         # 'pt': get_UNICODE_EMOJI('pt'),
         # 'it': get_UNICODE_EMOJI('it'),
         # 'fa': get_UNICODE_EMOJI('fa'),
@@ -396,18 +486,30 @@ if __name__ == "__main__":
         # 'zh': get_UNICODE_EMOJI('zh'),
     }
 
-    github_alias_dict = get_emoji_from_github_api()
+    github_alias_dict = get_emoji_from_github_api('https://api.github.com/emojis')
+    cheat_sheet_dict = get_cheat_sheet('https://www.webfx.com/tools/emoji-cheat-sheet/')
+    youtube_dict = get_emoji_from_youtube('https://www.gstatic.com/youtube/img/emojis/emojis-png-7.json')
+
+    logging.info('  Combining...\n')
+
     used_github_aliases = set()
 
     escapedToUnicodeMap = {escaped: escaped.encode().decode('unicode-escape') for escaped in emojis}  # maps: "\\U0001F4A4" to "\U0001F4A4"
 
+    all_existing_aliases_and_en = set(item for emj_data in emoji_pkg.EMOJI_DATA.values() for item in emj_data.get('alias', []))
+    all_existing_aliases_and_en.update(emj_data['en'] for emj_data in emoji_pkg.EMOJI_DATA.values())
+
     f = 0
     c = 0
     new_aliases = []
-    # Print the dict of dicts
+    logging.info('  Print EMOJI_DATA...\n')
     for code, v in sorted(emojis.items(), key=lambda item: item[1]["en"]):
         language_str = ''
         emj = escapedToUnicodeMap[code]
+
+        alternative = re.sub(r"\\U0000FE0[EF]$", "", code)
+        emj_no_variant = escapedToUnicodeMap[alternative]
+
         # add names in other languages
         for lang in languages:
             if emj in languages[lang]:
@@ -415,8 +517,6 @@ if __name__ == "__main__":
                     lang, languages[lang][emj])
             elif 'variant' in v:
                 # the language annotation uses the normal emoji (no variant), while the emoji-test.txt uses the emoji or text variant
-                alternative = re.sub(r"\\U0000FE0[EF]$", "", code)  # Strip the variant
-                emj_no_variant = escapedToUnicodeMap[alternative]
                 if emj_no_variant in languages[lang]:
                     language_str += ",\n        '%s': '%s'" % (
                         lang, languages[lang][emj_no_variant])
@@ -427,16 +527,25 @@ if __name__ == "__main__":
             aliases.update(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias'])
         old_aliases = set(aliases)
 
-        if 'variant' in v:
-            alternative = re.sub(r"\\U0000FE0[EF]$", "", code)
-            emj_no_variant = escapedToUnicodeMap[alternative]
-            if emj_no_variant in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj_no_variant]:
-                aliases.update(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj_no_variant]['alias'])
+        if emj_no_variant in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj_no_variant]:
+            aliases.update(a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj_no_variant]['alias'])
 
-        # Add alias from  GitHub API
-        github_aliases = find_github_aliases(emj, github_alias_dict)
-        aliases.update(github_aliases)
+        # Add alias from GitHub API
+        github_aliases = find_github_aliases(emj, github_alias_dict, v, emj_no_variant)
+        aliases.update(shortcut for shortcut in github_aliases if shortcut not in all_existing_aliases_and_en)
         used_github_aliases.update(github_aliases)
+
+        # Add alias from cheat sheet
+        if emj in cheat_sheet_dict and cheat_sheet_dict[emj] not in all_existing_aliases_and_en:
+            aliases.add(cheat_sheet_dict[emj][1:-1])
+        if emj_no_variant in cheat_sheet_dict and cheat_sheet_dict[emj_no_variant] not in all_existing_aliases_and_en:
+            aliases.add(cheat_sheet_dict[emj_no_variant][1:-1])
+
+        # Add alias from youtube
+        if emj in youtube_dict:
+            aliases.update(shortcut[1:-1] for shortcut in youtube_dict[emj] if shortcut not in all_existing_aliases_and_en)
+        if emj_no_variant in youtube_dict:
+            aliases.update(shortcut[1:-1] for shortcut in youtube_dict[emj_no_variant] if shortcut not in all_existing_aliases_and_en)
 
         # Remove if alias is same as 'en'-name
         if v["en"] in aliases:
@@ -451,10 +560,9 @@ if __name__ == "__main__":
             for a in diff:
                 new_aliases.append(f"# alias NEW {a} FOR {emj} CODE {code}")
 
-        # Try to keep order of aliases intact
-        if aliases == old_aliases and emj in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj]:
-            # Use list instead of set, if there are no new aliases to keep the order intact
-            aliases = [a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias']]
+        # Keep the order of existing aliases intact
+        if emj in emoji_pkg.EMOJI_DATA and 'alias' in emoji_pkg.EMOJI_DATA[emj]:
+            aliases = [a[1:-1] for a in emoji_pkg.EMOJI_DATA[emj]['alias']] + [a for a in aliases if f":{a}:" not in emoji_pkg.EMOJI_DATA[emj]['alias']]
 
         if any("flag_for_" in a for a in aliases):
             # Put the :flag_for_COUNTRY: alias as the first entry so that it gets picked by demojize()
@@ -477,12 +585,14 @@ if __name__ == "__main__":
         elif v["status"] == "component":
             c += 1
 
-    print("\n# Total count of emojis: ", len(emojis))
-    print("# fully_qualified: ", f)
-    print("# component: ", c)
-    print("\n".join(new_aliases))
+    logging.debug(f" # Total count of emojis: {len(emojis)}")
+    logging.debug(f" # fully_qualified: {f}")
+    logging.debug(f" # component: {c}\n")
+    logging.debug("\n".join(new_aliases))
 
     # Check if all aliases from GitHub API were used
     for github_alias in github_alias_dict:
         if github_alias not in used_github_aliases:
-            print("# Unused Github alias:", github_alias, github_alias_dict[github_alias], ascii(github_alias_dict[github_alias]))
+            logging.debug(f"# Unused Github alias: {github_alias} {github_alias_dict[github_alias]} {ascii(github_alias_dict[github_alias])}")
+
+    logging.info('\n\n  Done.')
