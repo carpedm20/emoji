@@ -1,6 +1,12 @@
 emoji
 =====
 
+v2.7.0 (2023-07-25)
+-----
+* Extract aliases from cheat sheet and youtube
+* Fix extracting translations from emojiterra
+* Update EMOJI_DATA with new aliases and translations
+
 v2.6.0 (2023-06-28)
 -----
 * Added new function purely_emoji() | Check if a string contains only emojis
