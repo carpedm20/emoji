@@ -21,7 +21,7 @@ __all__ = [
 ]
 
 _DEFAULT_DELIMITER = ':'
-_EMOJI_NAME_PATTERN = '\\w\\-&.’”“()!#*+?–,/«»\u0300\u0301\u0302\u0303\u0308\u030a\u0327\u064b\u064e\u064f\u0650\u0653\u0654\u3099\u30fb\u309a'
+_EMOJI_NAME_PATTERN = '\\w\\-&.’”“()!#*+,/«»\u0300\u0301\u0302\u0303\u0308\u030a\u0327\u064b\u064e\u064f\u0650\u0653\u0654\u3099\u30fb\u309a'
 
 
 class config():
