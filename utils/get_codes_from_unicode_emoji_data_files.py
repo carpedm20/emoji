@@ -28,14 +28,6 @@ def get_text_from_url(url: str) -> str:
     return requests.get(url).text
 
 
-def get_language_data_from_url(tag: str, lang: str) -> str:
-    """Get emoji language annotation xml
-    Find latest tag at https://cldr.unicode.org/index/downloads """
-
-    url = f"https://github.com/unicode-org/cldr/raw/{tag}/common/annotations/{lang}.xml"
-    return get_text_from_url(url)
-
-
 def get_emoji_from_url(version: float) -> list:
     """Get splitlines of emojis list from unicode.org"""
 
@@ -171,6 +163,7 @@ def extract_emojis(emojis_lines: list, sequences_lines: list) -> dict:
                 .replace("\u229b", "")
                 .strip()
                 .replace(" ", "_")
+                .replace("_-_", "-")
             )
 
             emoji_code = "".join(
@@ -258,9 +251,11 @@ def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
         .replace("\u201f", "")
         .replace("\u202f", "")
         .replace("\u229b", "")
+        .replace("\u2013", "-")
         .replace(",_", ",")
         .strip()
         .replace(" ", "_")
+        .replace("_-_", "-")
     ) + ":"
 
     if lang == "de":
@@ -343,13 +338,17 @@ def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
         if emj in hardcoded:
             emoji_name = hardcoded[emj]
 
+    emoji_name = (emoji_name
+        .replace("____", "_")
+        .replace("___", "_")
+        .replace("__", "_")
+        .replace("--", "-"))
+
     return emoji_name
 
 
-def extract_names(xml, lang, emoji_terra={}):
-    """Copies emoji.EMOJI_DATA[emj][lang] and adds the names from the xml"""
-
-    data = get_UNICODE_EMOJI(lang)
+def add_unicode_annotations(data, lang, url):
+    xml = get_text_from_url(url)
 
     tree = ET.fromstring(xml)
     annotations = tree.find('annotations')
@@ -363,6 +362,24 @@ def extract_names(xml, lang, emoji_terra={}):
             if emj in data and data[emj] != emoji_name:
                 print(
                     f"# {lang}: CHANGED {data[emj]} TO {emoji_name} \t\t(Original: {text})")
+            data[emj] = emoji_name
+
+
+def extract_names(github_tag, github_lang, lang, emoji_terra={}):
+    """Copies emoji.EMOJI_DATA[emj][lang] and adds the names from the Unicode CLDR xml
+
+    Find latest tag at https://cldr.unicode.org/index/downloads or
+    https://github.com/unicode-org/cldr/tree/main/common/annotations
+    """
+
+    data = get_UNICODE_EMOJI(lang)
+    add_unicode_annotations(data, lang, f"https://github.com/unicode-org/cldr/raw/{github_tag}/common/annotations/{github_lang}.xml")
+    add_unicode_annotations(data, lang, f"https://github.com/unicode-org/cldr/raw/{github_tag}/common/annotationsDerived/{github_lang}.xml")
+
+    # Add names from emojiterra if there is no unicode annotation
+    for emj, name in emoji_terra.items():
+        if emj in emoji_pkg.EMOJI_DATA and emj not in data:
+            emoji_name = adapt_emoji_name(name, lang, emj)
             data[emj] = emoji_name
 
     # There are some emoji with two code sequences for the same emoji, one that ends with \uFE0F and one that does not.
@@ -393,12 +410,6 @@ def extract_names(xml, lang, emoji_terra={}):
             data[emj] = data[emj_no_variant]
 
     data.update(missing_translation)
-
-    # Add names from emojiterra
-    for emj, name in emoji_terra.items():
-        if emj in emoji_pkg.EMOJI_DATA and emj not in data:
-            emoji_name = adapt_emoji_name(name, lang, emj)
-            data[emj] = emoji_name
 
     return data
 
@@ -458,20 +469,20 @@ if __name__ == "__main__":
     emoji_sequences_source = get_emoji_variation_sequence_from_url('15.0.0')
     emojis = extract_emojis(emoji_source, emoji_sequences_source)
     # Find latest release tag at https://cldr.unicode.org/index/downloads
-    github_tag = 'release-43'
+    github_tag = 'release-43-1'
 
     languages = {
         # Update names in other languages:
-        'de': extract_names(get_language_data_from_url(github_tag, 'de'), 'de', get_emojiterra_from_url('https://emojiterra.com/de/kopieren/')),
-        'es': extract_names(get_language_data_from_url(github_tag, 'es'), 'es', get_emojiterra_from_url('https://emojiterra.com/es/copiar/')),
-        'fr': extract_names(get_language_data_from_url(github_tag, 'fr'), 'fr', get_emojiterra_from_url('https://emojiterra.com/fr/copier/')),
-        'ja': extract_names(get_language_data_from_url(github_tag, 'ja'), 'ja', get_emojiterra_from_url('https://emojiterra.com/copypaste/ja/')),
-        'ko': extract_names(get_language_data_from_url(github_tag, 'ko'), 'ko', get_emojiterra_from_url('https://emojiterra.com/copypaste/ko/')),
-        'pt': extract_names(get_language_data_from_url(github_tag, 'pt'), 'pt', get_emojiterra_from_url('https://emojiterra.com/pt/copiar/')),
-        'it': extract_names(get_language_data_from_url(github_tag, 'it'), 'it', get_emojiterra_from_url('https://emojiterra.com/it/copiare/')),
-        'fa': extract_names(get_language_data_from_url(github_tag, 'fa'), 'fa', get_emojiterra_from_url('https://emojiterra.com/copypaste/fa/')),
-        'id': extract_names(get_language_data_from_url(github_tag, 'id'), 'id', get_emojiterra_from_url('https://emojiterra.com/copypaste/id/')),
-        'zh': extract_names(get_language_data_from_url(github_tag, 'zh'), 'zh', get_emojiterra_from_url('https://emojiterra.com/copypaste/zh/')),
+        'de': extract_names(github_tag, 'de', 'de', get_emojiterra_from_url('https://emojiterra.com/de/kopieren/')),
+        'es': extract_names(github_tag, 'es', 'es', get_emojiterra_from_url('https://emojiterra.com/es/copiar/')),
+        'fr': extract_names(github_tag, 'fr', 'fr', get_emojiterra_from_url('https://emojiterra.com/fr/copier/')),
+        'ja': extract_names(github_tag, 'ja', 'ja', get_emojiterra_from_url('https://emojiterra.com/copypaste/ja/')),
+        'ko': extract_names(github_tag, 'ko', 'ko', get_emojiterra_from_url('https://emojiterra.com/copypaste/ko/')),
+        'pt': extract_names(github_tag, 'pt', 'pt', get_emojiterra_from_url('https://emojiterra.com/pt/copiar/')),
+        'it': extract_names(github_tag, 'it', 'it', get_emojiterra_from_url('https://emojiterra.com/it/copiare/')),
+        'fa': extract_names(github_tag, 'fa', 'fa', get_emojiterra_from_url('https://emojiterra.com/copypaste/fa/')),
+        'id': extract_names(github_tag, 'id', 'id', get_emojiterra_from_url('https://emojiterra.com/copypaste/id/')),
+        'zh': extract_names(github_tag, 'zh', 'zh', get_emojiterra_from_url('https://emojiterra.com/copypaste/zh/')),
 
         # Do not update names in other languages:
         # 'de': get_UNICODE_EMOJI('de'),
