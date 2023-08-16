@@ -25,7 +25,7 @@ __all__ = [
     'EMOJI_DATA', 'STATUS', 'LANGUAGES',
 ]
 
-__version__ = '2.7.1'
+__version__ = '2.8.0'
 __author__ = 'Taehoon Kim, Kevin Wurster'
 __email__ = 'carpedm20@gmail.com'
 # and wursterk@gmail.com, tahir.jalilov@gmail.com
