@@ -1,6 +1,13 @@
 emoji
 =====
 
+v2.8.0 (2023-08-16)
+-----
+* Update translations to unicode release-43-1
+* Include "derived annotations"-translations from unicode CLDR
+* Fix translations for emoji that have multiple forms with/out \uFE0F (Fixes Partially missing languages #272 )
+* Remove multiple underscore __,  ___, ____ and _-_ from translations
+
 v2.7.0 (2023-07-25)
 -----
 * Extract aliases from cheat sheet and youtube
