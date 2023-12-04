@@ -345,22 +345,10 @@ def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
             .replace(",", "")
             .replace('-', " ")
             .replace('—', "")
-            .replace("\u0439", "\u0438")
-            .replace("\u0419", "\u0418")
-            .replace("й", "и")
-            .replace("Й", "И")
             .replace(",_", ",")
             .strip()
             .replace(" ", "_")
         ) + ":"
-        hardcoded = {
-            '\U00002697\U0000FE0F' : ":перегонныи_сосуд:"
-        }
-        # print(f"emoji {emj} changing {text} to {emoji_name}")
-        if emj in hardcoded:
-            emoji_name = hardcoded[emj]
-
-
 
     emoji_name = (emoji_name
         .replace("____", "_")
