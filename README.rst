@@ -42,6 +42,7 @@ By default, the language is English (``language='en'``) but also supported langu
 * Simplified Chinese (``'zh'``)
 * Japanese (``'ja'``)
 * Korean (``'ko'``)
+* Russian (``'ru'``)
 
 
 .. code-block:: python

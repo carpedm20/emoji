@@ -337,6 +337,18 @@ def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
 
         if emj in hardcoded:
             emoji_name = hardcoded[emj]
+    
+    if lang == "ru":
+        emoji_name = ":" + (
+            text
+            .replace(":", "")
+            .replace(",", "")
+            .replace('-', " ")
+            .replace('—', "")
+            .replace(",_", ",")
+            .strip()
+            .replace(" ", "_")
+        ) + ":"
 
     emoji_name = (emoji_name
         .replace("____", "_")
@@ -483,6 +495,7 @@ if __name__ == "__main__":
         'fa': extract_names(github_tag, 'fa', 'fa', get_emojiterra_from_url('https://emojiterra.com/copypaste/fa/')),
         'id': extract_names(github_tag, 'id', 'id', get_emojiterra_from_url('https://emojiterra.com/copypaste/id/')),
         'zh': extract_names(github_tag, 'zh', 'zh', get_emojiterra_from_url('https://emojiterra.com/copypaste/zh/')),
+        'ru': extract_names(github_tag, 'ru', 'ru', get_emojiterra_from_url('https://emojiterra.com/copypaste/ru/')),
 
         # Do not update names in other languages:
         # 'de': get_UNICODE_EMOJI('de'),
