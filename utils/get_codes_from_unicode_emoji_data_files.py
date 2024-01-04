@@ -267,6 +267,9 @@ def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
         emoji_name = emoji_name.replace('\u200f', "_")
         emoji_name = emoji_name.replace('\u060c', "_")
         emoji_name = re.sub("_+", "_", emoji_name)
+    
+    if lang == "tr":
+        emoji_name = emoji_name.replace('\u0307', "")
 
     if lang == "zh":
         emoji_name = ":" + (
@@ -496,6 +499,7 @@ if __name__ == "__main__":
         'id': extract_names(github_tag, 'id', 'id', get_emojiterra_from_url('https://emojiterra.com/copypaste/id/')),
         'zh': extract_names(github_tag, 'zh', 'zh', get_emojiterra_from_url('https://emojiterra.com/copypaste/zh/')),
         'ru': extract_names(github_tag, 'ru', 'ru', get_emojiterra_from_url('https://emojiterra.com/copypaste/ru/')),
+        'tr': extract_names(github_tag, 'tr', 'tr', get_emojiterra_from_url('https://emojiterra.com/copypaste/tr/')),
 
         # Do not update names in other languages:
         # 'de': get_UNICODE_EMOJI('de'),
