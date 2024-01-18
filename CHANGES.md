@@ -1,6 +1,10 @@
 emoji
 =====
 
+v2.10.0 (2024-01-18)
+-----
+* Added Arabic and Turkish translations
+
 v2.9.0 (2023-12-05)
 -----
 * Added Russian translation
