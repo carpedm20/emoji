@@ -267,7 +267,31 @@ def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
         emoji_name = emoji_name.replace('\u200f', "_")
         emoji_name = emoji_name.replace('\u060c', "_")
         emoji_name = re.sub("_+", "_", emoji_name)
+    
+    if lang == "tr":
+        emoji_name = emoji_name.replace('\u0307', "")
 
+    if lang == "ar":
+        # Removal of Arabic comma
+        emoji_name = emoji_name.replace('\u060c', '')
+        # Removal of supplementary Arabic diacritics "tashkīl"
+        diacritics = u'[\u0651\u0652\u064c\u064b\u064d\u0640\ufc62]'
+        emoji_name = re.sub(diacritics, '', emoji_name)
+        # Renaming duplicates
+        duplicates = {
+            '\U0001F9DB\U0001F3FF' : ':مصاص_دماء_رجل_بشرة_بلون_غامق:', # 🧛🏿‍♂️
+            '\U0001F9DB\U0001F3FB' : ':مصاص_دماء_رجل_بشرة_بلون_فاتح:', # 🧛🏻
+            '\U0001F9DB\U0001F3FE' : ':مصاص_دماء_رجل_بشرة_بلون_معتدل_مائل_للغامق:', # 🧛🏾
+            '\U0001F9DB\U0001F3FC' : ':مصاص_دماء_رجل_بشرة_بلون_فاتح_ومعتدل:', # 🧛🏼
+            '\U0001F9DB\U0001F3FD' : ':مصاص_دماء_رجل_بشرة_بلون_معتدل:', # 🧛🏽
+            '\U0001F9DB\U0000200D\U00002642\U0000FE0F': ':مصاص_دماء_رجل:',  # 🧛‍♂️
+            '\U0001F9A2': ":إوَزة:", # 🦢
+        }
+
+        for e in duplicates:
+            if e == emj:
+                emoji_name = duplicates[emj]
+        
     if lang == "zh":
         emoji_name = ":" + (
             text
@@ -496,6 +520,8 @@ if __name__ == "__main__":
         'id': extract_names(github_tag, 'id', 'id', get_emojiterra_from_url('https://emojiterra.com/copypaste/id/')),
         'zh': extract_names(github_tag, 'zh', 'zh', get_emojiterra_from_url('https://emojiterra.com/copypaste/zh/')),
         'ru': extract_names(github_tag, 'ru', 'ru', get_emojiterra_from_url('https://emojiterra.com/copypaste/ru/')),
+        'tr': extract_names(github_tag, 'tr', 'tr', get_emojiterra_from_url('https://emojiterra.com/copypaste/tr/')),
+        'ar': extract_names(github_tag, 'ar', 'ar', get_emojiterra_from_url('https://emojiterra.com/copypaste/ar/')),
 
         # Do not update names in other languages:
         # 'de': get_UNICODE_EMOJI('de'),

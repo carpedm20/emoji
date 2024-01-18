@@ -37,6 +37,8 @@ languages = {
     "id": emoji.emojize("id :Indonesia:"),
     "zh": emoji.emojize("zh :China:"),
     "ru": emoji.emojize("ru :Russia:"),
+    "ar": emoji.emojize("ar :Saudi_Arabia:"),
+    "tr": emoji.emojize("tr :Turkey:"),
 }
 language_args = {}
 

@@ -43,6 +43,8 @@ By default, the language is English (``language='en'``) but also supported langu
 * Japanese (``'ja'``)
 * Korean (``'ko'``)
 * Russian (``'ru'``)
+* Arabic (``'ar'``)
+* Turkish (``'tr'``)
 
 
 .. code-block:: python
