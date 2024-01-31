@@ -1,6 +1,10 @@
 emoji
 =====
 
+v2.10.1 (TBD)
+-----
+* Fix slow import when debugging in Python 3.12 #280
+
 v2.10.0 (2024-01-18)
 -----
 * Added Arabic and Turkish translations
