@@ -501,11 +501,11 @@ if __name__ == "__main__":
     logging.info('  Downloading...\n')
 
     # Find the latest version at https://www.unicode.org/reports/tr51/#emoji_data
-    emoji_source = get_emoji_from_url(15.0)
-    emoji_sequences_source = get_emoji_variation_sequence_from_url('15.0.0')
+    emoji_source = get_emoji_from_url(15.1)
+    emoji_sequences_source = get_emoji_variation_sequence_from_url('15.1.0')
     emojis = extract_emojis(emoji_source, emoji_sequences_source)
     # Find latest release tag at https://cldr.unicode.org/index/downloads
-    github_tag = 'release-43-1'
+    github_tag = 'release-44-1'
 
     languages = {
         # Update names in other languages:
@@ -534,6 +534,9 @@ if __name__ == "__main__":
         # 'fa': get_UNICODE_EMOJI('fa'),
         # 'id': get_UNICODE_EMOJI('id'),
         # 'zh': get_UNICODE_EMOJI('zh'),
+        # 'ru': get_UNICODE_EMOJI('ru'),
+        # 'tr': get_UNICODE_EMOJI('tr'),
+        # 'ar': get_UNICODE_EMOJI('ar'),
     }
 
     github_alias_dict = get_emoji_from_github_api('https://api.github.com/emojis')
