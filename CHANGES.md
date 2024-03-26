@@ -1,6 +1,10 @@
 emoji
 =====
 
+v2.11.0 (2024-03-26)
+-----
+* Update to Unicode v15.1
+
 v2.10.1 (TBD)
 -----
 * Fix slow import when debugging in Python 3.12 #280
