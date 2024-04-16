@@ -9,6 +9,7 @@ from .core import (
     version as version,
     analyze as analyze,
     config as config,
+    purely_emoji as purely_emoji,
 )
 from .tokenizer import (
     Token as Token,
@@ -24,7 +25,7 @@ __all__ = [
     # emoji.core
     'emojize', 'demojize', 'analyze', 'config',
     'emoji_list', 'distinct_emoji_list', 'emoji_count',
-    'replace_emoji', 'is_emoji', 'version',
+    'replace_emoji', 'is_emoji', 'purely_emoji', 'version',
     'Token', 'EmojiMatch', 'EmojiMatchZWJ', 'EmojiMatchZWJNonRGI',
     # emoji.unicode_codes
     'EMOJI_DATA', 'STATUS', 'LANGUAGES',
