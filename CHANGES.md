@@ -1,6 +1,10 @@
 emoji
 =====
 
+v2.11.1 (2024-04-21)
+-----
+* Add missing stubs for purely_emoji
+
 v2.11.0 (2024-03-26)
 -----
 * Update to Unicode v15.1
