@@ -1,3 +1,57 @@
 [build-system]
 requires = ["setuptools>=59.6.0"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "emoji"
+description = "Emoji for Python"
+readme = "README.rst"
+requires-python = ">=3.6"
+authors = [
+    {name = "Taehoon Kim", email = "carpedm20@gmail.com"},
+    {name = "Kevin Wurster", email = "wursterk@gmail.com"},
+]
+keywords = ["emoji"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Programming Language :: Python",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Multimedia :: Graphics :: Presentation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed"
+]
+dependencies = []
+dynamic = ["version"]
+
+[project.urls]
+homepage = "https://github.com/carpedm20/emoji/"
+repository = "https://github.com/carpedm20/emoji/"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "coverage",
+    "coveralls",
+]
+
+[tool.setuptools.packages.find]
+include = ["emoji*"]
+
+[tool.setuptools.package-data]
+emoji = ["py.typed"]
+
+[tool.setuptools.dynamic]
+version = {attr = "emoji.__version__"}
