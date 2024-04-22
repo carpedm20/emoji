@@ -32,7 +32,9 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Typing :: Typed"
 ]
-dependencies = []
+dependencies = [
+    "typing_extensions",
+]
 dynamic = ["version"]
 
 [project.urls]
@@ -54,3 +56,19 @@ emoji = ["py.typed"]
 
 [tool.setuptools.dynamic]
 version = {attr = "emoji.__version__"}
+
+[tool.pyright]
+pythonVersion = "3.6"
+pythonPlatform = "All"
+typeCheckingMode = "strict"
+
+exclude = [
+  "**/__pycache__",
+  ".git",
+  ".venv",
+  "build",
+  "docs",
+  "example",
+  "tests",
+  "utils",
+]

@@ -8,7 +8,8 @@ Core components for emoji.
 
 import re
 import unicodedata
-from typing import Iterator
+from typing import Any, Callable, Dict, Iterator, List, Optional, Tuple, Union
+from typing_extensions import Literal, Match, TypedDict
 
 from emoji import unicode_codes
 from emoji.tokenizer import Token, EmojiMatch, EmojiMatchZWJ, EmojiMatchZWJNonRGI, tokenize, filter_tokens
@@ -23,6 +24,12 @@ __all__ = [
 _DEFAULT_DELIMITER = ':'
 # In Arabic language, the unicode character "\u0655" should be kept so we add it to the pattern below
 _EMOJI_NAME_PATTERN = '\\w\\-&.’”“()!#*+,/«»\u0300\u0301\u0302\u0303\u0306\u0308\u030a\u0327\u064b\u064e\u064f\u0650\u0653\u0654\u3099\u30fb\u309a\u0655'
+
+
+class _EmojiListReturn(TypedDict):
+    emoji: str
+    match_start: int
+    match_end: int
 
 
 class config():
@@ -63,13 +70,13 @@ class config():
 
 
 def emojize(
-        string,
-        delimiters=(_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
-        variant=None,
-        language='en',
-        version=None,
-        handle_version=None
-):
+        string: str,
+        delimiters: Tuple[str, str] = (_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
+        variant: Optional[Literal['text_type', 'emoji_type']] = None,
+        language: str = 'en',
+        version: Optional[float] = None,
+        handle_version: Optional[Union[str, Callable[[str, Dict[str, str]], str]]] = None
+) -> str:
     """
     Replace emoji names in a string with Unicode codes.
         >>> import emoji
@@ -121,7 +128,7 @@ def emojize(
     pattern = re.compile('(%s[%s]+%s)' %
                          (re.escape(delimiters[0]), _EMOJI_NAME_PATTERN, re.escape(delimiters[1])))
 
-    def replace(match):
+    def replace(match: Match[str]) -> str:
         name = match.group(1)[len(delimiters[0]):-len(delimiters[1])]
         emj = language_pack.get(
             _DEFAULT_DELIMITER +
@@ -177,12 +184,12 @@ def analyze(string: str, non_emoji: bool = False, join_emoji: bool = True) -> It
 
 
 def demojize(
-        string,
-        delimiters=(_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
-        language='en',
-        version=None,
-        handle_version=None
-):
+        string: str,
+        delimiters: Tuple[str, str] = (_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
+        language: str = 'en',
+        version: Optional[float] = None,
+        handle_version: Optional[Union[str, Callable[[str, Dict[str, str]], str]]] = None
+) -> str:
     """
     Replace Unicode emoji in a string with emoji shortcodes. Useful for storage.
         >>> import emoji
@@ -224,7 +231,8 @@ def demojize(
     else:
         _use_aliases = False
 
-    def handle(emoji_match):
+    def handle(emoji_match: EmojiMatch) -> str:
+        assert emoji_match.data is not None
         if version is not None and emoji_match.data['E'] > version:
             if callable(handle_version):
                 return handle_version(emoji_match.emoji, emoji_match.data_copy())
@@ -246,7 +254,11 @@ def demojize(
         token.value, EmojiMatch) else token.value for token in matches)
 
 
-def replace_emoji(string, replace='', version=-1):
+def replace_emoji(
+        string: str,
+        replace: Union[str, Callable[[str, Dict[str, str]], str]] = '',
+        version: float = -1
+) -> str:
     """
     Replace Unicode emoji in a customizable string.
 
@@ -259,8 +271,9 @@ def replace_emoji(string, replace='', version=-1):
         only emoji above this version will be replaced.
     """
 
-    def handle(emoji_match):
+    def handle(emoji_match: EmojiMatch) -> str:
         if version > -1:
+            assert emoji_match.data is not None
             if emoji_match.data['E'] > version:
                 if callable(replace):
                     return replace(emoji_match.emoji, emoji_match.data_copy())
@@ -268,7 +281,7 @@ def replace_emoji(string, replace='', version=-1):
                     return str(replace)
         elif callable(replace):
             return replace(emoji_match.emoji, emoji_match.data_copy())
-        elif replace is not None:
+        elif replace is not None:  # type: ignore
             return replace
         return emoji_match.emoji
 
@@ -280,7 +293,7 @@ def replace_emoji(string, replace='', version=-1):
         m.value, EmojiMatch) else m.value for m in matches)
 
 
-def emoji_list(string):
+def emoji_list(string: str) -> List[_EmojiListReturn]:
     """
     Returns the location and emoji in list of dict format.
         >>> emoji.emoji_list("Hi, I am fine. 😁")
@@ -294,7 +307,7 @@ def emoji_list(string):
     } for m in tokenize(string, keep_zwj=False) if isinstance(m.value, EmojiMatch)]
 
 
-def distinct_emoji_list(string):
+def distinct_emoji_list(string: str) -> List[str]:
     """Returns distinct list of emojis from the string."""
     distinct_list = list(
         {e['emoji'] for e in emoji_list(string)}
@@ -302,7 +315,7 @@ def distinct_emoji_list(string):
     return distinct_list
 
 
-def emoji_count(string, unique=False):
+def emoji_count(string: str, unique: bool = False) -> int:
     """
     Returns the count of emojis in a string.
 
@@ -313,7 +326,7 @@ def emoji_count(string, unique=False):
     return len(emoji_list(string))
 
 
-def is_emoji(string):
+def is_emoji(string: str) -> bool:
     """
     Returns True if the string is a single emoji, and it is "recommended for
     general interchange" by Unicode.org.
@@ -330,7 +343,7 @@ def purely_emoji(string: str) -> bool:
     return all(isinstance(m.value, EmojiMatch) for m in analyze(string, non_emoji=True))
 
 
-def version(string):
+def version(string: str) -> float:
     """
     Returns the Emoji Version of the emoji.
 
@@ -354,9 +367,9 @@ def version(string):
             return unicode_codes.EMOJI_DATA[emj_code]['E']
 
     # Try to find first emoji in string
-    version = []
+    version: List[float] = []
 
-    def f(e, emoji_data):
+    def f(e: str, emoji_data: Dict[str, Any]) -> str:
         version.append(emoji_data['E'])
         return ''
     replace_emoji(string, replace=f, version=-1)
@@ -365,7 +378,7 @@ def version(string):
     emojize(string, language='alias', version=-1, handle_version=f)
     if version:
         return version[0]
-    for lang_code in unicode_codes._EMOJI_UNICODE:
+    for lang_code in unicode_codes._EMOJI_UNICODE:  # type: ignore
         emojize(string, language=lang_code, version=-1, handle_version=f)
         if version:
             return version[0]
