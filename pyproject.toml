@@ -1,12 +1,12 @@
 [build-system]
-requires = ["setuptools>=59.6.0"]
+requires = ["setuptools>=65.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "emoji"
 description = "Emoji for Python"
 readme = "README.rst"
-requires-python = ">=3.6"
+requires-python = ">=3.7"
 authors = [
     {name = "Taehoon Kim", email = "carpedm20@gmail.com"},
     {name = "Kevin Wurster", email = "wursterk@gmail.com"},
@@ -19,7 +19,6 @@ classifiers = [
     "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
