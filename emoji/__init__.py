@@ -1,20 +1,3 @@
-"""
-emoji for Python
-~~~~~~~~~~~~~~~~
-
-emoji terminal output for Python.
-
-    >>> import emoji
-    >>> print(emoji.emojize('Python is :thumbsup:', language='alias'))
-    Python is 👍
-    >>> print(emoji.emojize('Python is :thumbs_up:'))
-    Python is 👍
-"""
-
-
-from emoji.core import *
-from emoji.unicode_codes import *
-
 __all__ = [
     # emoji.core
     'emojize', 'demojize', 'analyze', 'config',
@@ -60,3 +43,6 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 '''
+
+from emoji.core import *
+from emoji.unicode_codes import *

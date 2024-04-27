@@ -13,19 +13,16 @@ jobs:
     strategy:
       max-parallel: 8
       matrix:
-        python-version: [3.6, 3.7, 3.8, 3.9, "3.10", "3.11", "3.12", "3.13-dev"]
+        python-version: [3.7, 3.8, 3.9, "3.10", "3.11", "3.12", "3.13-dev"]
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
+    - name: Test install
       run: |
-        python -m pip install -e .[dev]
+        python -m pip install .[dev]
     - name: Test with pytest
       run: |
         pytest
-    - name: Test install
-      run: |
-        python -m pip install .
