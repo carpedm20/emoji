@@ -5,7 +5,7 @@ emoji.tokenizer
 Components for detecting and tokenizing emoji in strings.
 
 """
-from typing import NamedTuple, Dict, Union, Iterator, Any
+from typing import List, NamedTuple, Dict, Optional, Union, Iterator, Any
 from emoji import unicode_codes
 
 
@@ -15,7 +15,7 @@ __all__ = [
 ]
 
 _ZWJ = '\u200D'
-_SEARCH_TREE = None
+_SEARCH_TREE: Optional[Dict[str, Any]] = None
 
 
 class EmojiMatch:
@@ -27,7 +27,7 @@ class EmojiMatch:
     __slots__ = ('emoji', 'start', 'end', 'data')
 
     def __init__(self, emoji: str, start: int,
-                 end: int, data: Union[dict, None]):
+                 end: int, data: Union[Dict[str, Any], None]):
 
         self.emoji = emoji
         """The emoji substring"""
@@ -92,7 +92,7 @@ class EmojiMatchZWJ(EmojiMatch):
     def __init__(self, match: EmojiMatch):
         super().__init__(match.emoji, match.start, match.end, match.data)
 
-        self.emojis = []
+        self.emojis: List[EmojiMatch] = []
         """List of sub emoji as EmojiMatch objects"""
 
         i = match.start
@@ -155,7 +155,7 @@ class Token(NamedTuple):
     value: Union[str, EmojiMatch]
 
 
-def tokenize(string, keep_zwj: bool) -> Iterator[Token]:
+def tokenize(string: str, keep_zwj: bool) -> Iterator[Token]:
     """
     Finds unicode emoji in a string. Yields all normal characters as a named
     tuple :class:`Token` ``(char, char)`` and all emoji as :class:`Token` ``(chars, EmojiMatch)``.
@@ -169,10 +169,10 @@ def tokenize(string, keep_zwj: bool) -> Iterator[Token]:
     tree = get_search_tree()
     EMOJI_DATA = unicode_codes.EMOJI_DATA
     # result: [ Token(oldsubstring0, EmojiMatch), Token(char1, char1), ... ]
-    result = []
+    result: List[Token] = []
     i = 0
     length = len(string)
-    ignore = []  # index of chars in string that are skipped, i.e. the ZWJ-char in non-RGI-ZWJ-sequences
+    ignore: List[int] = []  # index of chars in string that are skipped, i.e. the ZWJ-char in non-RGI-ZWJ-sequences
     while i < length:
         consumed = False
         char = string[i]
@@ -265,7 +265,7 @@ def filter_tokens(matches: Iterator[Token], emoji_only: bool, join_emoji: bool) 
     previous_is_emoji = False
     previous_is_zwj = False
     pre_previous_is_emoji = False
-    accumulator = []
+    accumulator: List[Token] = []
     for token in matches:
         pre_previous_is_emoji = previous_is_emoji
         if previous_is_emoji and token.value == _ZWJ:
@@ -273,7 +273,7 @@ def filter_tokens(matches: Iterator[Token], emoji_only: bool, join_emoji: bool) 
         elif isinstance(token.value, EmojiMatch):
             if pre_previous_is_emoji and previous_is_zwj:
                 if isinstance(accumulator[-1].value, EmojiMatchZWJNonRGI):
-                    accumulator[-1].value._add(token.value)
+                    accumulator[-1].value._add(token.value)  # type: ignore
                     accumulator[-1] = Token(accumulator[-1].chars +
                                             _ZWJ + token.chars, accumulator[-1].value)
                 else:
@@ -281,7 +281,7 @@ def filter_tokens(matches: Iterator[Token], emoji_only: bool, join_emoji: bool) 
                     accumulator.append(
                         Token(prev.chars + _ZWJ + token.chars,
                               EmojiMatchZWJNonRGI(
-                                  prev.value,
+                                  prev.value,  # type: ignore
                                   token.value)))
             else:
                 accumulator.append(token)
@@ -348,7 +348,7 @@ def get_search_tree() -> Dict[str, Any]:
     """
     global _SEARCH_TREE
     if _SEARCH_TREE is None:
-        _SEARCH_TREE = {}
+        _SEARCH_TREE = {}  # type: ignore
         for emj in unicode_codes.EMOJI_DATA:
             sub_tree = _SEARCH_TREE
             lastidx = len(emj) - 1
