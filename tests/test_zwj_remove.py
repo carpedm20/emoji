@@ -3,10 +3,11 @@ This file contains tests when the ZWJ is removed by demojize/replace_emoji.
 See test_zwj_keep.py for tests when the ZWJ is kept.
 """
 
+from typing import Any, Dict
 import emoji
 
 
-def ascii(s):
+def ascii(s: str) -> str:
     # return escaped Code points \U000AB123
     return s.encode("unicode-escape").decode()
 
@@ -97,7 +98,7 @@ def test_non_rgi_zwj_replace():
     # Replace with different length
     index = [0]
 
-    def replace_f(e, emoji_data):
+    def replace_f(e: str, emoji_data: Dict[str, Any]) -> str:
         index[0] += 1
         if index[0] % 2 == 0:
             return 'X'

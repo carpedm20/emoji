@@ -8,7 +8,7 @@ import emoji
 def test_all_languages_list():
     """Compare all language keys in EMOJI_DATA with the emoji.LANGUAGES list"""
 
-    langs = set()
+    langs: set[str] = set()
     for item in emoji.EMOJI_DATA.values():
         langs.update(item.keys())
     all_languages = {lang for lang in langs if len(lang) == 2 and lang.lower() == lang}
@@ -25,10 +25,10 @@ def test_emoji_versions():
         assert v >= 0.6
 
 
-def check_duplicate_names(lang):
+def check_duplicate_names(lang: str):
     """Check that there are no duplicate names in the fully_qualified except for different variants"""
     seen = {}
-    for emj, item in emoji.EMOJI_DATA.items():
+    for item in emoji.EMOJI_DATA.values():
         if item["status"] > emoji.STATUS["fully_qualified"]:
             continue
 
