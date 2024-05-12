@@ -89,11 +89,11 @@ def test_non_rgi_zwj_replace():
     assert emoji.replace_emoji('\U0001F468\U0001F3FF\u200d\U0001F469\u200d\U0001F467\U0001F3FB\u200d\U0001F466', 'X') == 'XXXX'
 
     # https://www.unicode.org/Public/15.0.0/ucd/auxiliary/GraphemeBreakTest-15.0.0d1.html#s19
-    assert emoji.demojize('\U0001f3ff\U0001f476\u200d\U0001f6d1') == ':dark_skin_tone::baby::stop_sign:'
+    assert emoji.replace_emoji('\U0001f3ff\U0001f476\u200d\U0001f6d1', 'Test8') == 'Test8Test8Test8'
 
     # https://www.unicode.org/Public/15.0.0/ucd/auxiliary/GraphemeBreakTest-15.0.0d1.html#s20
     # Check that \u200d is kept, if it not part of a valid ZWJ emoji
-    assert emoji.demojize('\U0001f476\U0001f3ff\u0308\u200d\U0001f476\U0001f3ff') == ':baby_dark_skin_tone:\u0308\u200d:baby_dark_skin_tone:'
+    assert emoji.replace_emoji('\U0001f476\U0001f3ff\u0308\u200d\U0001f476\U0001f3ff', 'Test9') == 'Test9\u0308\u200dTest9'
 
     # Replace with different length
     index = [0]

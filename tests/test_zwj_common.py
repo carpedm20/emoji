@@ -115,6 +115,8 @@ def test_malformed_zwj_no_emoji():
 
 
 def test_malformed_zwj_mixed_with_emoji():
+    emoji.config.demojize_keep_zwj = True  # Restore default config value
+
     i = "Has🦷\u200Din the middle"
     o = "Has:tooth:\u200Din the middle"
     assert emoji.demojize(i) == o, f"{i!r} != {o!r}"

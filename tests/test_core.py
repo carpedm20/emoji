@@ -394,6 +394,9 @@ def test_untranslated():
 
 
 def test_text():
+    emoji.config.demojize_keep_zwj = True  # Restore default config value
+    emoji.config.replace_emoji_keep_zwj = False  # Restore default config value
+
     UCS2 = len('Hello 🇫🇷👌') > 9  # don't break up characters on python with UCS-2
 
     text = """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
