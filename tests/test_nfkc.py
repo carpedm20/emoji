@@ -1,7 +1,6 @@
 """Unittests for canonically equivalent Unicode sequences"""
 
 import emoji
-
 from testutils import is_normalized
 
 def test_database_normalized():

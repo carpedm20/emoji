@@ -1,5 +1,6 @@
 """Unittests for emoji.unicode_codes."""
 
+from typing import Set
 import emoji.unicode_codes
 from testutils import get_language_packs
 
@@ -25,7 +26,7 @@ def test_compare_normal_and_aliases():
 def test_no_alias_duplicates():
     # There should not be two emoji with the same alias
     # (aliases still can be the same as another 'en'-name)
-    all_aliases: set[str] = set()
+    all_aliases: Set[str] = set()
     for data in emoji.EMOJI_DATA.values():
         if data['status'] <= emoji.STATUS['fully_qualified'] and 'alias' in data:
             for alias in data['alias']:

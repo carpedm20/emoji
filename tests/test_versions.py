@@ -1,8 +1,8 @@
 """Unittests for versions in EMOJI_DATA"""
 
 from typing import Any, Dict, List
-import emoji.unicode_codes
 import pytest
+import emoji.unicode_codes
 from testutils import all_language_packs
 
 def test_emoji_versions_complete_emojize():

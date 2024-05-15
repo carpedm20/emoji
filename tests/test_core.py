@@ -4,10 +4,8 @@ import random
 import re
 from typing import Any, Callable, Dict, List, Tuple, Union
 from typing_extensions import Literal
-import emoji.unicode_codes
 import pytest
-from typing import Dict, Any, Tuple, Union
-from typing_extensions import Literal
+import emoji.unicode_codes
 from testutils import ascii, normalize, all_language_packs, all_language_and_alias_packs
 
 
@@ -130,13 +128,13 @@ def test_emojize_variant():
         english_pack[':admission_tickets:']) + '\ufe0f'
 
     with pytest.raises(ValueError):
-        emoji.emojize(':admission_tickets:', variant=False)  # pyright: ignore [reportArgumentType]
+        emoji.emojize(':admission_tickets:', variant=False)  # type: ignore[arg-type]
 
     with pytest.raises(ValueError):
-        emoji.emojize(':admission_tickets:', variant=True)  # pyright: ignore [reportArgumentType]
+        emoji.emojize(':admission_tickets:', variant=True)  # type: ignore[arg-type]
 
     with pytest.raises(ValueError):
-        emoji.emojize(':admission_tickets:', variant='wrong')  # pyright: ignore [reportArgumentType]
+        emoji.emojize(':admission_tickets:', variant='wrong')  # type: ignore[arg-type]
 
     assert emoji.emojize(":football:") == ':football:'
     assert emoji.emojize(":football:", variant="text_type") == ':football:'

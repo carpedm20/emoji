@@ -1,6 +1,6 @@
 """Unittests for the big dict of dicts containing all emoji"""
 
-
+from typing import Set, Dict
 import re
 import emoji
 
@@ -8,7 +8,7 @@ import emoji
 def test_all_languages_list():
     """Compare all language keys in EMOJI_DATA with the emoji.LANGUAGES list"""
 
-    langs: set[str] = set()
+    langs: Set[str] = set()
     for item in emoji.EMOJI_DATA.values():
         langs.update(item.keys())
     all_languages = {lang for lang in langs if len(lang) == 2 and lang.lower() == lang}
@@ -27,7 +27,7 @@ def test_emoji_versions():
 
 def check_duplicate_names(lang: str):
     """Check that there are no duplicate names in the fully_qualified except for different variants"""
-    seen = {}
+    seen: Dict[str, int] = {}
     for item in emoji.EMOJI_DATA.values():
         if item["status"] > emoji.STATUS["fully_qualified"]:
             continue
