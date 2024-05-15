@@ -1,17 +1,18 @@
 """Unittests for versions in EMOJI_DATA"""
 
-import emoji
+from typing import Any, Dict, List
+import emoji.unicode_codes
 import pytest
 
 
 def test_emoji_versions_complete_emojize():
     # Check that every emoji has a valid version
     replacement = "<3"
-    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():
+    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():  # pyright: ignore [reportPrivateUsage]
         for name in emoji_pack.keys():
-            version = []
+            version: List[float] = []
 
-            def f(e, d):
+            def f(e: str, d: Dict[str, Any]) -> str:
                 v = d['E']
                 n = d[lang_code]
                 assert n == name
@@ -27,11 +28,11 @@ def test_emoji_versions_complete_emojize():
 
 def test_emoji_versions_complete_demojize():
     # Check that every emoji has a valid version
-    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():
+    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():  # pyright: ignore [reportPrivateUsage]
         for name in emoji_pack.keys():
-            version = []
+            version: List[float] = []
 
-            def f(e, d):
+            def f(e: str, d: Dict[str, Any]) -> str:
                 v = d['E']
                 assert isinstance(v, (int, float))
                 assert v >= 0.6
@@ -86,7 +87,7 @@ def test_method_replace_version():
     assert emoji.replace_emoji('Hello 🇫🇷👌', 'x', version=0,) == 'Hello xx'
     assert emoji.replace_emoji('Hello 🇫🇷👌', 'x', version=1,) == 'Hello 🇫🇷👌'
 
-    def replace(emj, data):
+    def replace(emj: str, data: Dict[str, Any]) -> str:
         assert emj in ["🇫🇷", "👌"]
         return 'x'
     assert emoji.replace_emoji('Hello 🇫🇷👌', replace, version=0.1) == 'Hello xx'

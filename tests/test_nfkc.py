@@ -1,11 +1,14 @@
 """Unittests for canonically equivalent Unicode sequences"""
 
 import sys
-import emoji
 import unicodedata
+import emoji
+from typing_extensions import Literal
 
 
-def is_normalized(form, s):
+_NormalizationForm = Literal['NFC', 'NFD', 'NFKC', 'NFKD']
+
+def is_normalized(form: _NormalizationForm, s: str) -> bool:
     if sys.version_info >= (3, 8):
         return unicodedata.is_normalized(form, s)
     else:

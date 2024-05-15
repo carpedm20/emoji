@@ -2,9 +2,13 @@
 
 import random
 import re
-import emoji
+from typing import Any, Callable, Dict, List, Tuple, Union
+from typing_extensions import Literal
+import emoji.unicode_codes
 import pytest
 import unicodedata
+
+_NormalizationForm = Literal['NFC', 'NFD', 'NFKC', 'NFKD']
 
 # Build all language packs (i.e. fill the cache):
 emoji.emojize("", language="alias")
@@ -12,7 +16,7 @@ for lang_code in emoji.LANGUAGES:
     emoji.emojize("", language=lang_code)
 
 
-def ascii(s):
+def ascii(s: str) -> str:
     # return escaped Code points \U000AB123
     return s.encode("unicode-escape").decode()
 
@@ -24,13 +28,13 @@ def all_language_and_alias_packs():
         yield (lang_code, emoji.unicode_codes.get_emoji_unicode_dict(lang_code))
 
 
-def normalize(form, s):
+def normalize(form: _NormalizationForm, s: str) -> str:
     return unicodedata.normalize(form, s)
 
 
 def test_emojize_name_only():
     # Check that the regular expression emoji.core._EMOJI_NAME_PATTERN contains all the necesseary characters
-    from emoji.core import _EMOJI_NAME_PATTERN
+    from emoji.core import _EMOJI_NAME_PATTERN  # pyright: ignore [reportPrivateUsage]
 
     pattern = re.compile('[^%s]' % (_EMOJI_NAME_PATTERN, ))
 
@@ -59,7 +63,7 @@ def test_emojize_name_only():
 
 def test_regular_expression_minimal():
     # Check that the regular expression emoji.core._EMOJI_NAME_PATTERN only contains the necesseary characters
-    from emoji.core import _EMOJI_NAME_PATTERN
+    from emoji.core import _EMOJI_NAME_PATTERN  # pyright: ignore [reportPrivateUsage]
 
     pattern_str = '[^%s]' % (_EMOJI_NAME_PATTERN, )
     i = 2
@@ -70,7 +74,7 @@ def test_regular_expression_minimal():
             continue
         pattern = re.compile(pattern_str.replace(c, ''))
         failed = False
-        for lang_code, emoji_pack in all_language_and_alias_packs():
+        for _, emoji_pack in all_language_and_alias_packs():
             for name_in_db in emoji_pack.keys():
                 name_in_db = name_in_db[1:-1]
                 names = [
@@ -112,45 +116,46 @@ def test_emojize_complicated_string():
 
 
 def test_emojize_languages():
-    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():
+    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():  # pyright: ignore [reportPrivateUsage]
         for name, emj in emoji_pack.items():
             assert emoji.emojize(name, language=lang_code) == emj
 
 
 def test_demojize_languages():
-    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():
+    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():  # pyright: ignore [reportPrivateUsage]
         for name, emj in emoji_pack.items():
             assert emoji.demojize(emj, language=lang_code) == name
 
 
 def test_emojize_variant():
-    def remove_variant(s): return re.sub('[\ufe0e\ufe0f]$', '', s)
+    def remove_variant(s: str) -> str:
+        return re.sub('[\ufe0e\ufe0f]$', '', s)
 
     assert emoji.emojize(
-        ':Taurus:', variant=None) == emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']
+        ':Taurus:', variant=None) == emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']  # pyright: ignore [reportPrivateUsage]
     assert emoji.emojize(':Taurus:', variant=None) == emoji.emojize(':Taurus:')
     assert emoji.emojize(':Taurus:', variant='text_type') == remove_variant(
-        emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']) + '\ufe0e'
+        emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']) + '\ufe0e'  # pyright: ignore [reportPrivateUsage]
     assert emoji.emojize(':Taurus:', variant='emoji_type') == remove_variant(
-        emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']) + '\ufe0f'
+        emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']) + '\ufe0f'  # pyright: ignore [reportPrivateUsage]
 
     assert emoji.emojize(
-        ':admission_tickets:', variant=None) == emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']
+        ':admission_tickets:', variant=None) == emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']  # pyright: ignore [reportPrivateUsage]
     assert emoji.emojize(':admission_tickets:', variant=None) == emoji.emojize(
         ':admission_tickets:')
     assert emoji.emojize(':admission_tickets:', variant='text_type') == remove_variant(
-        emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']) + '\ufe0e'
+        emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']) + '\ufe0e'  # pyright: ignore [reportPrivateUsage]
     assert emoji.emojize(':admission_tickets:', variant='emoji_type') == remove_variant(
-        emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']) + '\ufe0f'
+        emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']) + '\ufe0f'  # pyright: ignore [reportPrivateUsage]
 
     with pytest.raises(ValueError):
-        emoji.emojize(':admission_tickets:', variant=False)
+        emoji.emojize(':admission_tickets:', variant=False)  # pyright: ignore [reportArgumentType]
 
     with pytest.raises(ValueError):
-        emoji.emojize(':admission_tickets:', variant=True)
+        emoji.emojize(':admission_tickets:', variant=True)  # pyright: ignore [reportArgumentType]
 
     with pytest.raises(ValueError):
-        emoji.emojize(':admission_tickets:', variant='wrong')
+        emoji.emojize(':admission_tickets:', variant='wrong')  # pyright: ignore [reportArgumentType]
 
     assert emoji.emojize(":football:") == ':football:'
     assert emoji.emojize(":football:", variant="text_type") == ':football:'
@@ -198,11 +203,11 @@ def test_emojize_version():
     assert emoji.emojize("Biking :man_biking: is in 4.0", version=3.0, handle_version=lambda e, data: '<emoji>') == "Biking <emoji> is in 4.0"
     assert emoji.emojize("Biking :man_biking: is in 4.0", version=3.0, handle_version=lambda e, data: data["fr"]) == "Biking :cycliste_homme: is in 4.0"
 
-    def f(emj, data):
+    def f(emj: str, data: Dict[str, str]) -> str:
         assert data['E'] == 5
+        return ''
 
-    assert emoji.emojize(':bowl_with_spoon:', version=-
-                         1, handle_version=f) == ''
+    assert emoji.emojize(':bowl_with_spoon:', version=-1, handle_version=f) == ''
     assert emoji.emojize(':bowl_with_spoon:') == '\U0001F963'
     assert emoji.emojize(':bowl_with_spoon:', version=4) == ''
     assert emoji.emojize(':bowl_with_spoon:', version=4.9) == ''
@@ -348,7 +353,7 @@ def test_replace_emoji():
     assert emoji.replace_emoji('Hello 🇫🇷👌') == 'Hello '
     assert emoji.replace_emoji('Hello 🇫🇷👌', 'x') == 'Hello xx'
 
-    def replace(emj, data):
+    def replace(emj: str, data: Dict[str, str]) -> str:
         assert emj in ["🇫🇷", "👌"]
         return 'x'
     assert emoji.replace_emoji('Hello 🇫🇷👌', replace) == 'Hello xx'
@@ -373,7 +378,7 @@ def test_long_emoji():
 
 
 def test_untranslated():
-    for emj, item in emoji.EMOJI_DATA.items():
+    for item in emoji.EMOJI_DATA.values():
         if item['status'] != emoji.STATUS['fully_qualified']:
             continue
         if 'es' not in item:
@@ -408,9 +413,16 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 """
 
-    def add_random_emoji(text, lst, select=lambda emj_data: emj_data['en']):
+    def default_select(emj_data: Dict[str, Any]) -> str:
+        return emj_data['en']
 
-        emoji_list = []
+    def add_random_emoji(
+        text: str,
+        lst: List[Tuple[str, Dict[str, Any]]],
+        select: Callable[[Dict[str, Any]], Union[str, Literal[False]]] = default_select
+    ) -> Tuple[str, str, List[str]]:
+
+        emoji_list: List[str] = []
         text_with_unicode = ""
         text_with_placeholder = ""
         for i in range(0, len(text), 10):
@@ -439,7 +451,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
         return text_with_unicode, text_with_placeholder, emoji_list
 
-    def clean(s):
+    def clean(s: str) -> str:
         return s.replace('\u200d', '').replace('\ufe0f', '')
 
     all_emoji_list = list(emoji.EMOJI_DATA.items())
@@ -456,8 +468,10 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
         assert lis['emoji'] == emoji_list[i]
 
     # qualified emoji from "es"
-    selector = lambda emoji_data: emoji_data["es"] if "es" in emoji_data else False
-    text_with_unicode, text_with_placeholder, emoji_list = add_random_emoji(text, qualified_emoji_list, selector)
+    def select_es(emj_data: Dict[str, Any]) -> Union[str, Literal[False]]:
+        return emj_data["es"] if "es" in emj_data else False
+
+    text_with_unicode, text_with_placeholder, emoji_list = add_random_emoji(text, qualified_emoji_list, select=select_es)
     assert emoji.demojize(text_with_unicode, language="es") == text_with_placeholder
     assert emoji.emojize(text_with_placeholder, language="es") == text_with_unicode
     if not UCS2:
@@ -467,8 +481,10 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
         assert lis['emoji'] == emoji_list[i]
 
     # qualified emoji from "alias"
-    selector = lambda emoji_data: emoji_data["alias"][0] if "alias" in emoji_data else False
-    text_with_unicode, text_with_placeholder, emoji_list = add_random_emoji(text, qualified_emoji_list, selector)
+    def select_alias(emj_data: Dict[str, Any]) -> Union[str, Literal[False]]:
+        return emj_data["alias"][0] if "alias" in emj_data else False
+
+    text_with_unicode, text_with_placeholder, emoji_list = add_random_emoji(text, qualified_emoji_list, select=select_alias)
     assert emoji.demojize(text_with_unicode, language="alias") == text_with_placeholder
     assert emoji.emojize(text_with_placeholder, language="alias") == text_with_unicode
     if not UCS2:
@@ -490,7 +506,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
 def test_text_multiple_times():
     # Run test_text() multiple times because it relies on a random text
-    for i in range(100):
+    for _ in range(100):
         test_text()
 
 

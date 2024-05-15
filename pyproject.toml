@@ -67,8 +67,5 @@ exclude = [
   ".git",
   ".venv",
   "build",
-  "docs",
-  "example",
-  "tests",
   "utils",
 ]
