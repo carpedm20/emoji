@@ -378,7 +378,7 @@ def version(string: str) -> float:
     emojize(string, language='alias', version=-1, handle_version=f)
     if version:
         return version[0]
-    for lang_code in unicode_codes._EMOJI_UNICODE:  # type: ignore
+    for lang_code in unicode_codes.LANGUAGES:
         emojize(string, language=lang_code, version=-1, handle_version=f)
         if version:
             return version[0]
