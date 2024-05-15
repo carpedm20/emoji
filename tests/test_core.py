@@ -6,30 +6,9 @@ from typing import Any, Callable, Dict, List, Tuple, Union
 from typing_extensions import Literal
 import emoji.unicode_codes
 import pytest
-import unicodedata
-
-_NormalizationForm = Literal['NFC', 'NFD', 'NFKC', 'NFKD']
-
-# Build all language packs (i.e. fill the cache):
-emoji.emojize("", language="alias")
-for lang_code in emoji.LANGUAGES:
-    emoji.emojize("", language=lang_code)
-
-
-def ascii(s: str) -> str:
-    # return escaped Code points \U000AB123
-    return s.encode("unicode-escape").decode()
-
-
-def all_language_and_alias_packs():
-    yield ('alias', emoji.unicode_codes.get_aliases_unicode_dict())
-
-    for lang_code in emoji.LANGUAGES:
-        yield (lang_code, emoji.unicode_codes.get_emoji_unicode_dict(lang_code))
-
-
-def normalize(form: _NormalizationForm, s: str) -> str:
-    return unicodedata.normalize(form, s)
+from typing import Dict, Any, Tuple, Union
+from typing_extensions import Literal
+from testutils import ascii, normalize, all_language_packs, all_language_and_alias_packs
 
 
 def test_emojize_name_only():
@@ -116,13 +95,13 @@ def test_emojize_complicated_string():
 
 
 def test_emojize_languages():
-    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():  # pyright: ignore [reportPrivateUsage]
+    for lang_code, emoji_pack in all_language_packs():
         for name, emj in emoji_pack.items():
             assert emoji.emojize(name, language=lang_code) == emj
 
 
 def test_demojize_languages():
-    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():  # pyright: ignore [reportPrivateUsage]
+    for lang_code, emoji_pack in all_language_packs():
         for name, emj in emoji_pack.items():
             assert emoji.demojize(emj, language=lang_code) == name
 
@@ -131,22 +110,24 @@ def test_emojize_variant():
     def remove_variant(s: str) -> str:
         return re.sub('[\ufe0e\ufe0f]$', '', s)
 
-    assert emoji.emojize(
-        ':Taurus:', variant=None) == emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']  # pyright: ignore [reportPrivateUsage]
-    assert emoji.emojize(':Taurus:', variant=None) == emoji.emojize(':Taurus:')
-    assert emoji.emojize(':Taurus:', variant='text_type') == remove_variant(
-        emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']) + '\ufe0e'  # pyright: ignore [reportPrivateUsage]
-    assert emoji.emojize(':Taurus:', variant='emoji_type') == remove_variant(
-        emoji.unicode_codes._EMOJI_UNICODE['en'][':Taurus:']) + '\ufe0f'  # pyright: ignore [reportPrivateUsage]
+    english_pack = emoji.unicode_codes.get_emoji_unicode_dict('en')
 
     assert emoji.emojize(
-        ':admission_tickets:', variant=None) == emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']  # pyright: ignore [reportPrivateUsage]
+        ':Taurus:', variant=None) == english_pack[':Taurus:']
+    assert emoji.emojize(':Taurus:', variant=None) == emoji.emojize(':Taurus:')
+    assert emoji.emojize(':Taurus:', variant='text_type') == remove_variant(
+        english_pack[':Taurus:']) + '\ufe0e'
+    assert emoji.emojize(':Taurus:', variant='emoji_type') == remove_variant(
+        english_pack[':Taurus:']) + '\ufe0f'
+
+    assert emoji.emojize(
+        ':admission_tickets:', variant=None) == english_pack[':admission_tickets:']
     assert emoji.emojize(':admission_tickets:', variant=None) == emoji.emojize(
         ':admission_tickets:')
     assert emoji.emojize(':admission_tickets:', variant='text_type') == remove_variant(
-        emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']) + '\ufe0e'  # pyright: ignore [reportPrivateUsage]
+        english_pack[':admission_tickets:']) + '\ufe0e'
     assert emoji.emojize(':admission_tickets:', variant='emoji_type') == remove_variant(
-        emoji.unicode_codes._EMOJI_UNICODE['en'][':admission_tickets:']) + '\ufe0f'  # pyright: ignore [reportPrivateUsage]
+        english_pack[':admission_tickets:']) + '\ufe0f'
 
     with pytest.raises(ValueError):
         emoji.emojize(':admission_tickets:', variant=False)  # pyright: ignore [reportArgumentType]

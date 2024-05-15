@@ -43,7 +43,7 @@ repository = "https://github.com/carpedm20/emoji/"
 
 [project.optional-dependencies]
 dev = [
-    "pytest",
+    "pytest>=7.4.4",
     "coverage",
     "coveralls",
 ]
@@ -57,15 +57,23 @@ emoji = ["py.typed"]
 [tool.setuptools.dynamic]
 version = {attr = "emoji.__version__"}
 
+[tool.pytest.ini_options]
+pythonpath = [".", "utils"]
+testpaths = ["tests"]
+addopts = [
+    "--import-mode=importlib",
+]
+
 [tool.pyright]
-pythonVersion = "3.6"
+pythonVersion = "3.7"
 pythonPlatform = "All"
 typeCheckingMode = "strict"
-
+extraPaths = ["utils"]
 exclude = [
   "**/__pycache__",
   ".git",
   ".venv",
   "build",
-  "utils",
+  "utils/gh-pages",
+  "utils/get_codes_from_unicode_emoji_data_files.py",
 ]

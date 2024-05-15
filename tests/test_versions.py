@@ -3,12 +3,12 @@
 from typing import Any, Dict, List
 import emoji.unicode_codes
 import pytest
-
+from testutils import all_language_packs
 
 def test_emoji_versions_complete_emojize():
     # Check that every emoji has a valid version
     replacement = "<3"
-    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():  # pyright: ignore [reportPrivateUsage]
+    for lang_code, emoji_pack in all_language_packs():
         for name in emoji_pack.keys():
             version: List[float] = []
 
@@ -28,7 +28,7 @@ def test_emoji_versions_complete_emojize():
 
 def test_emoji_versions_complete_demojize():
     # Check that every emoji has a valid version
-    for lang_code, emoji_pack in emoji.unicode_codes._EMOJI_UNICODE.items():  # pyright: ignore [reportPrivateUsage]
+    for lang_code, emoji_pack in all_language_packs():
         for name in emoji_pack.keys():
             version: List[float] = []
 

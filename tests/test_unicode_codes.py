@@ -1,31 +1,25 @@
 """Unittests for emoji.unicode_codes."""
 
 import emoji.unicode_codes
-
-# Build all language packs (i.e. fill the cache):
-emoji.emojize("", language="alias")
-for lang_code in emoji.LANGUAGES:
-    emoji.emojize("", language=lang_code)
+from testutils import get_language_packs
 
 
 def test_emoji_english_names():
-
-    for language, group in (
-            ('en', emoji.unicode_codes._EMOJI_UNICODE['en']),  # pyright: ignore [reportPrivateUsage]
-            ('alias', emoji.unicode_codes._ALIASES_UNICODE)  # pyright: ignore [reportPrivateUsage]
-    ):
+    for language, group in get_language_packs('en', 'alias'):
         for name, ucode in group.items():
             assert name.startswith(':') and name.endswith(':') and len(name) >= 3
             emj = emoji.emojize(name, language=language)
-            assert emj == ucode, '%s != %s' % (emoji.emojize(name), ucode)
+            assert emj == ucode, '"%s" == "%s"' % (emj, ucode)
 
 
 def test_compare_normal_and_aliases():
     # There should always be more aliases than normal codes
     # since the aliases contain the normal codes
 
-    assert len(emoji.unicode_codes._EMOJI_UNICODE['en']) < len(  # pyright: ignore [reportPrivateUsage]
-        emoji.unicode_codes._ALIASES_UNICODE)  # pyright: ignore [reportPrivateUsage]
+    english_pack = emoji.unicode_codes.get_emoji_unicode_dict('en')
+    alias_pack = emoji.unicode_codes.get_aliases_unicode_dict()
+
+    assert len(english_pack) < len(alias_pack)
 
 
 def test_no_alias_duplicates():
