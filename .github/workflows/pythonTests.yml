@@ -9,11 +9,11 @@ on:
       - 'gh-pages'
 jobs:
   pytest:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       max-parallel: 8
       matrix:
-        python-version: [3.7, 3.8, 3.9, "3.10", "3.11", "3.12", "3.13-dev"]
+        python-version: [3.7, 3.8, 3.9, "3.10", "pypy-3.10", "3.11", "3.12", "3.13-dev"]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
@@ -26,6 +26,9 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: Test with pytest (random test order)
+      run: |
+        pytest --shuffle
 
   lint:
     runs-on: ubuntu-latest
