@@ -23,14 +23,42 @@ def is_normalized(form: _NormalizationForm, s: str) -> bool:
         return normalize(form, s) == s
 
 
+_EMOJI_UNICODE: Dict[str, Any] = {lang: None for lang in emoji.LANGUAGES}  # Cache for the language dicts
+_ALIASES_UNICODE: Dict[str, str] = {}  # Cache for the aliases dict
+
+def get_emoji_unicode_dict(lang: str) -> Dict[str, Any]:
+    """Generate dict containing all fully-qualified and component emoji name for a language
+    The dict is only generated once per language and then cached in _EMOJI_UNICODE[lang]"""
+
+    if _EMOJI_UNICODE[lang] is None:
+        _EMOJI_UNICODE[lang] = {data[lang]: emj for emj, data in emoji.EMOJI_DATA.items()
+                                if lang in data and data['status'] <= emoji.STATUS['fully_qualified']}
+
+    return _EMOJI_UNICODE[lang]
+
+
+def get_aliases_unicode_dict() -> Dict[str, str]:
+    """Generate dict containing all fully-qualified and component aliases
+    The dict is only generated once and then cached in _ALIASES_UNICODE"""
+
+    if not _ALIASES_UNICODE:
+        _ALIASES_UNICODE.update(get_emoji_unicode_dict('en'))
+        for emj, data in emoji.EMOJI_DATA.items():
+            if 'alias' in data and data['status'] <= emoji.STATUS['fully_qualified']:
+                for alias in data['alias']:
+                    _ALIASES_UNICODE[alias] = emj
+
+    return _ALIASES_UNICODE
+
+
 def all_language_packs() -> Generator[Tuple[str, Dict[str, Any]], None, None]:
     for lang_code in emoji.LANGUAGES:
-        yield (lang_code, emoji.unicode_codes.get_emoji_unicode_dict(lang_code))
+        yield (lang_code, get_emoji_unicode_dict(lang_code))
 
 
 def all_language_and_alias_packs(
 ) -> Generator[Tuple[str, Dict[str, Any]], None, None]:
-    yield ('alias', emoji.unicode_codes.get_aliases_unicode_dict())
+    yield ('alias', get_aliases_unicode_dict())
     yield from all_language_packs()
 
 

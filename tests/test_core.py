@@ -6,7 +6,7 @@ from typing import Any, Callable, Dict, List, Tuple, Union
 from typing_extensions import Literal
 import pytest
 import emoji.unicode_codes
-from testutils import ascii, normalize, all_language_packs, all_language_and_alias_packs
+from testutils import ascii, normalize, all_language_packs, all_language_and_alias_packs, get_emoji_unicode_dict
 
 
 def test_emojize_name_only():
@@ -108,7 +108,7 @@ def test_emojize_variant():
     def remove_variant(s: str) -> str:
         return re.sub('[\ufe0e\ufe0f]$', '', s)
 
-    english_pack = emoji.unicode_codes.get_emoji_unicode_dict('en')
+    english_pack = get_emoji_unicode_dict('en')
 
     assert emoji.emojize(
         ':Taurus:', variant=None) == english_pack[':Taurus:']
