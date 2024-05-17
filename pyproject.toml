@@ -60,9 +60,6 @@ version = {attr = "emoji.__version__"}
 [tool.pytest.ini_options]
 pythonpath = [".", "utils"]
 testpaths = ["tests"]
-addopts = [
-    "--import-mode=importlib",
-]
 
 [tool.pyright]
 pythonVersion = "3.7"
