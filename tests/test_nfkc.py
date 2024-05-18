@@ -1,19 +1,7 @@
 """Unittests for canonically equivalent Unicode sequences"""
 
-import sys
-import unicodedata
 import emoji
-from typing_extensions import Literal
-
-
-_NormalizationForm = Literal['NFC', 'NFD', 'NFKC', 'NFKD']
-
-def is_normalized(form: _NormalizationForm, s: str) -> bool:
-    if sys.version_info >= (3, 8):
-        return unicodedata.is_normalized(form, s)
-    else:
-        return unicodedata.normalize(form, s) == s
-
+from testutils import is_normalized
 
 def test_database_normalized():
     # Test if all names in EMOJI_DATA are in NFKC form

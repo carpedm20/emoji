@@ -1,37 +1,33 @@
-from typing import Any, Dict
-from emoji.unicode_codes.data_dict import *
+from typing import Optional
+from functools import lru_cache
+from emoji.unicode_codes.data_dict import EMOJI_DATA, STATUS, LANGUAGES
 
 __all__ = [
-    'get_emoji_unicode_dict', 'get_aliases_unicode_dict',
+    'get_emoji_by_name',
     'EMOJI_DATA', 'STATUS', 'LANGUAGES'
 ]
 
 
-_EMOJI_UNICODE: Dict[str, Any] = {lang: None for lang in LANGUAGES}  # Cache for the language dicts
+@lru_cache(maxsize=4000)
+def get_emoji_by_name(name: str, language: str) -> Optional[str]:
+    """
+    Find emoji by short-name in a specific language.
+    Returns None if not found
 
-_ALIASES_UNICODE: Dict[str, str] = {}  # Cache for the aliases dict
+    :param name: emoji short code e.g. ":banana:"
+    :param language: language-code e.g. 'es', 'de', etc. or 'alias'
+    """
 
+    fully_qualified = STATUS['fully_qualified']
 
-def get_emoji_unicode_dict(lang: str) -> Dict[str, Any]:
-    """Generate dict containing all fully-qualified and component emoji name for a language
-    The dict is only generated once per language and then cached in _EMOJI_UNICODE[lang]"""
-
-    if _EMOJI_UNICODE[lang] is None:
-        _EMOJI_UNICODE[lang] = {data[lang]: emj for emj, data in EMOJI_DATA.items()
-                                if lang in data and data['status'] <= STATUS['fully_qualified']}
-
-    return _EMOJI_UNICODE[lang]
-
-
-def get_aliases_unicode_dict() -> Dict[str, str]:
-    """Generate dict containing all fully-qualified and component aliases
-    The dict is only generated once and then cached in _ALIASES_UNICODE"""
-
-    if not _ALIASES_UNICODE:
-        _ALIASES_UNICODE.update(get_emoji_unicode_dict('en'))
+    if language == 'alias':
         for emj, data in EMOJI_DATA.items():
-            if 'alias' in data and data['status'] <= STATUS['fully_qualified']:
-                for alias in data['alias']:
-                    _ALIASES_UNICODE[alias] = emj
+            if name in data.get('alias', []) and data['status'] <= fully_qualified:
+                return emj
+        language = 'en'
 
-    return _ALIASES_UNICODE
+    for emj, data in EMOJI_DATA.items():
+        if data.get(language) == name and data['status'] <= fully_qualified:
+            return emj
+
+    return None

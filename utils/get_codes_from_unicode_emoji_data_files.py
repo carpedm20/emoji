@@ -396,8 +396,14 @@ def add_unicode_annotations(data, lang, url):
             emoji_name = adapt_emoji_name(text, lang, emj)
 
             if emj in data and data[emj] != emoji_name:
+                if "\U0000200D\U000027A1" in emj:
+                    # Skip right-facing emoji (i.e. 🧑🏻‍🦽 vs 🧑🏻‍🦽‍➡️) for now  because they are not correctly translated yet
+                    print(f"# {lang}: {emj} SKIPPED CHANGE FROM {data[emj]} TO {emoji_name} \t\t(Source: {text})")
+                    continue
+
                 print(
-                    f"# {lang}: CHANGED {data[emj]} TO {emoji_name} \t\t(Original: {text})")
+                    f"# {lang}: {emj} CHANGED {data[emj]} TO {emoji_name} \t\t(Source: {text})")
+
             data[emj] = emoji_name
 
 
@@ -505,7 +511,7 @@ if __name__ == "__main__":
     emoji_sequences_source = get_emoji_variation_sequence_from_url('15.1.0')
     emojis = extract_emojis(emoji_source, emoji_sequences_source)
     # Find latest release tag at https://cldr.unicode.org/index/downloads
-    github_tag = 'release-44-1'
+    github_tag = 'release-45'
 
     languages = {
         # Update names in other languages:

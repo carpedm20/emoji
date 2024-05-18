@@ -5,7 +5,7 @@ emoji.tokenizer
 Components for detecting and tokenizing emoji in strings.
 
 """
-from typing import List, NamedTuple, Dict, Optional, Union, Iterator, Any
+from typing import List, NamedTuple, Dict, Union, Iterator, Any
 from emoji import unicode_codes
 
 
@@ -15,7 +15,7 @@ __all__ = [
 ]
 
 _ZWJ = '\u200D'
-_SEARCH_TREE: Optional[Dict[str, Any]] = None
+_SEARCH_TREE: Dict[str, Any] = {}
 
 
 class EmojiMatch:
@@ -273,16 +273,15 @@ def filter_tokens(matches: Iterator[Token], emoji_only: bool, join_emoji: bool) 
         elif isinstance(token.value, EmojiMatch):
             if pre_previous_is_emoji and previous_is_zwj:
                 if isinstance(accumulator[-1].value, EmojiMatchZWJNonRGI):
-                    accumulator[-1].value._add(token.value)  # type: ignore
+                    accumulator[-1].value._add(token.value)  # pyright: ignore [reportPrivateUsage]
                     accumulator[-1] = Token(accumulator[-1].chars +
                                             _ZWJ + token.chars, accumulator[-1].value)
                 else:
                     prev = accumulator.pop()
+                    assert isinstance(prev.value, EmojiMatch)
                     accumulator.append(
                         Token(prev.chars + _ZWJ + token.chars,
-                              EmojiMatchZWJNonRGI(
-                                  prev.value,  # type: ignore
-                                  token.value)))
+                              EmojiMatchZWJNonRGI(prev.value, token.value)))
             else:
                 accumulator.append(token)
             previous_is_emoji = True
@@ -346,9 +345,7 @@ def get_search_tree() -> Dict[str, Any]:
 
 
     """
-    global _SEARCH_TREE
-    if _SEARCH_TREE is None:
-        _SEARCH_TREE = {}  # type: ignore
+    if not _SEARCH_TREE:
         for emj in unicode_codes.EMOJI_DATA:
             sub_tree = _SEARCH_TREE
             lastidx = len(emj) - 1

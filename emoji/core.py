@@ -120,20 +120,16 @@ def emojize(
 
     """
 
-    if language == 'alias':
-        language_pack = unicode_codes.get_aliases_unicode_dict()
-    else:
-        language_pack = unicode_codes.get_emoji_unicode_dict(language)
-
     pattern = re.compile('(%s[%s]+%s)' %
                          (re.escape(delimiters[0]), _EMOJI_NAME_PATTERN, re.escape(delimiters[1])))
 
     def replace(match: Match[str]) -> str:
         name = match.group(1)[len(delimiters[0]):-len(delimiters[1])]
-        emj = language_pack.get(
+        emj = unicode_codes.get_emoji_by_name(
             _DEFAULT_DELIMITER +
             unicodedata.normalize('NFKC', name) +
-            _DEFAULT_DELIMITER)
+            _DEFAULT_DELIMITER, language)
+
         if emj is None:
             return match.group(1)
 
@@ -360,11 +356,10 @@ def version(string: str) -> float:
     if string in unicode_codes.EMOJI_DATA:
         return unicode_codes.EMOJI_DATA[string]['E']
 
-    language_pack = unicode_codes.get_emoji_unicode_dict('en')
-    if string in language_pack:
-        emj_code = language_pack[string]
-        if emj_code in unicode_codes.EMOJI_DATA:
-            return unicode_codes.EMOJI_DATA[emj_code]['E']
+    # Try name lookup
+    emj_code = unicode_codes.get_emoji_by_name(string, 'en')
+    if emj_code and emj_code in unicode_codes.EMOJI_DATA:
+        return unicode_codes.EMOJI_DATA[emj_code]['E']
 
     # Try to find first emoji in string
     version: List[float] = []
@@ -378,7 +373,7 @@ def version(string: str) -> float:
     emojize(string, language='alias', version=-1, handle_version=f)
     if version:
         return version[0]
-    for lang_code in unicode_codes._EMOJI_UNICODE:  # type: ignore
+    for lang_code in unicode_codes.LANGUAGES:
         emojize(string, language=lang_code, version=-1, handle_version=f)
         if version:
             return version[0]
