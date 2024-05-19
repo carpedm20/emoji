@@ -1,6 +1,14 @@
 emoji
 =====
 
+v2.12.0 (2024-05-19)
+-----
+* Move type annotations inline
+* Use `functools.lru_cache` for looking up emoji by name with `get_emoji_by_name()`
+* Move internal functions `get_emoji_unicode_dict()`, `get_aliases_unicode_dict()`, `_EMOJI_UNICODE` and `_ALIASES_UNICODE` to `testutils`
+* Add type hints to tests
+* Remove obsolete dev dependency `coveralls`
+
 v2.11.1 (2024-04-21)
 -----
 * Add missing stubs for purely_emoji
@@ -9,7 +17,7 @@ v2.11.0 (2024-03-26)
 -----
 * Update to Unicode v15.1
 
-v2.10.1 (TBD)
+v2.10.1 (2024-01-31)
 -----
 * Fix slow import when debugging in Python 3.12 #280
 
