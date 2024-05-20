@@ -18,7 +18,7 @@ emoji
 
 Release v\ |version|. (:ref:`Installation <install>`)
 
-emoji supports Python 3.6+. The last version to support Python 2.7 and 3.5 was v2.4.0.
+emoji supports Python 3.7+. The last version to support Python 2.7 and 3.5 was v2.4.0.
 
 .. contents:: Table of Contents
 

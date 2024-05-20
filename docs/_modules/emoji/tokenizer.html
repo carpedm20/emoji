@@ -38,7 +38,7 @@
 <span class="sd">Components for detecting and tokenizing emoji in strings.</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">NamedTuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Any</span>
 <span class="kn">from</span> <span class="nn">emoji</span> <span class="kn">import</span> <span class="n">unicode_codes</span>
 
 
@@ -48,7 +48,7 @@
 <span class="p">]</span>
 
 <span class="n">_ZWJ</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u200D</span><span class="s1">&#39;</span>
-<span class="n">_SEARCH_TREE</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">_SEARCH_TREE</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 
 
 <div class="viewcode-block" id="EmojiMatch">
@@ -62,7 +62,7 @@
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;emoji&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">emoji</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
-                 <span class="n">end</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="kc">None</span><span class="p">]):</span>
+                 <span class="n">end</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="kc">None</span><span class="p">]):</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">emoji</span> <span class="o">=</span> <span class="n">emoji</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;The emoji substring&quot;&quot;&quot;</span>
@@ -139,7 +139,7 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">match</span><span class="p">:</span> <span class="n">EmojiMatch</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">emoji</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">emojis</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emojis</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">EmojiMatch</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;List of sub emoji as EmojiMatch objects&quot;&quot;&quot;</span>
 
         <span class="n">i</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">start</span>
@@ -218,7 +218,7 @@
 
 
 
-<span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">keep_zwj</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Token</span><span class="p">]:</span>
+<span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">keep_zwj</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Token</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Finds unicode emoji in a string. Yields all normal characters as a named</span>
 <span class="sd">    tuple :class:`Token` ``(char, char)`` and all emoji as :class:`Token` ``(chars, EmojiMatch)``.</span>
@@ -232,10 +232,10 @@
     <span class="n">tree</span> <span class="o">=</span> <span class="n">get_search_tree</span><span class="p">()</span>
     <span class="n">EMOJI_DATA</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span>
     <span class="c1"># result: [ Token(oldsubstring0, EmojiMatch), Token(char1, char1), ... ]</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">result</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Token</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
-    <span class="n">ignore</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># index of chars in string that are skipped, i.e. the ZWJ-char in non-RGI-ZWJ-sequences</span>
+    <span class="n">ignore</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># index of chars in string that are skipped, i.e. the ZWJ-char in non-RGI-ZWJ-sequences</span>
     <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">:</span>
         <span class="n">consumed</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="n">char</span> <span class="o">=</span> <span class="n">string</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
@@ -328,7 +328,7 @@
     <span class="n">previous_is_emoji</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">previous_is_zwj</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">pre_previous_is_emoji</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">accumulator</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">accumulator</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Token</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
         <span class="n">pre_previous_is_emoji</span> <span class="o">=</span> <span class="n">previous_is_emoji</span>
         <span class="k">if</span> <span class="n">previous_is_emoji</span> <span class="ow">and</span> <span class="n">token</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">_ZWJ</span><span class="p">:</span>
@@ -336,16 +336,15 @@
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">EmojiMatch</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">pre_previous_is_emoji</span> <span class="ow">and</span> <span class="n">previous_is_zwj</span><span class="p">:</span>
                 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">accumulator</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">EmojiMatchZWJNonRGI</span><span class="p">):</span>
-                    <span class="n">accumulator</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+                    <span class="n">accumulator</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># pyright: ignore [reportPrivateUsage]</span>
                     <span class="n">accumulator</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Token</span><span class="p">(</span><span class="n">accumulator</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">chars</span> <span class="o">+</span>
                                             <span class="n">_ZWJ</span> <span class="o">+</span> <span class="n">token</span><span class="o">.</span><span class="n">chars</span><span class="p">,</span> <span class="n">accumulator</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">prev</span> <span class="o">=</span> <span class="n">accumulator</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prev</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">EmojiMatch</span><span class="p">)</span>
                     <span class="n">accumulator</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                         <span class="n">Token</span><span class="p">(</span><span class="n">prev</span><span class="o">.</span><span class="n">chars</span> <span class="o">+</span> <span class="n">_ZWJ</span> <span class="o">+</span> <span class="n">token</span><span class="o">.</span><span class="n">chars</span><span class="p">,</span>
-                              <span class="n">EmojiMatchZWJNonRGI</span><span class="p">(</span>
-                                  <span class="n">prev</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
-                                  <span class="n">token</span><span class="o">.</span><span class="n">value</span><span class="p">)))</span>
+                              <span class="n">EmojiMatchZWJNonRGI</span><span class="p">(</span><span class="n">prev</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">value</span><span class="p">)))</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">accumulator</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
             <span class="n">previous_is_emoji</span> <span class="o">=</span> <span class="kc">True</span>
@@ -409,9 +408,7 @@
 
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">_SEARCH_TREE</span>
-    <span class="k">if</span> <span class="n">_SEARCH_TREE</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">_SEARCH_TREE</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_SEARCH_TREE</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">emj</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">:</span>
             <span class="n">sub_tree</span> <span class="o">=</span> <span class="n">_SEARCH_TREE</span>
             <span class="n">lastidx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">emj</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>

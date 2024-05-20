@@ -41,7 +41,8 @@
 
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">unicodedata</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterator</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">Match</span><span class="p">,</span> <span class="n">TypedDict</span>
 
 <span class="kn">from</span> <span class="nn">emoji</span> <span class="kn">import</span> <span class="n">unicode_codes</span>
 <span class="kn">from</span> <span class="nn">emoji.tokenizer</span> <span class="kn">import</span> <span class="n">Token</span><span class="p">,</span> <span class="n">EmojiMatch</span><span class="p">,</span> <span class="n">EmojiMatchZWJ</span><span class="p">,</span> <span class="n">EmojiMatchZWJNonRGI</span><span class="p">,</span> <span class="n">tokenize</span><span class="p">,</span> <span class="n">filter_tokens</span>
@@ -56,6 +57,12 @@
 <span class="n">_DEFAULT_DELIMITER</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span>
 <span class="c1"># In Arabic language, the unicode character &quot;\u0655&quot; should be kept so we add it to the pattern below</span>
 <span class="n">_EMOJI_NAME_PATTERN</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">-&amp;.’”“()!#*+,/«»</span><span class="se">\u0300\u0301\u0302\u0303\u0306\u0308\u030a\u0327\u064b\u064e\u064f\u0650\u0653\u0654\u3099\u30fb\u309a\u0655</span><span class="s1">&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">_EmojiListReturn</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+    <span class="n">emoji</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">match_start</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">match_end</span><span class="p">:</span> <span class="nb">int</span>
 
 
 <div class="viewcode-block" id="config">
@@ -101,13 +108,13 @@
 <div class="viewcode-block" id="emojize">
 <a class="viewcode-back" href="../../api.html#emoji.emojize">[docs]</a>
 <span class="k">def</span> <span class="nf">emojize</span><span class="p">(</span>
-        <span class="n">string</span><span class="p">,</span>
-        <span class="n">delimiters</span><span class="o">=</span><span class="p">(</span><span class="n">_DEFAULT_DELIMITER</span><span class="p">,</span> <span class="n">_DEFAULT_DELIMITER</span><span class="p">),</span>
-        <span class="n">variant</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span>
-        <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">handle_version</span><span class="o">=</span><span class="kc">None</span>
-<span class="p">):</span>
+        <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">delimiters</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">_DEFAULT_DELIMITER</span><span class="p">,</span> <span class="n">_DEFAULT_DELIMITER</span><span class="p">),</span>
+        <span class="n">variant</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;text_type&#39;</span><span class="p">,</span> <span class="s1">&#39;emoji_type&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span><span class="p">,</span>
+        <span class="n">version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">handle_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Replace emoji names in a string with Unicode codes.</span>
 <span class="sd">        &gt;&gt;&gt; import emoji</span>
@@ -151,20 +158,16 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">if</span> <span class="n">language</span> <span class="o">==</span> <span class="s1">&#39;alias&#39;</span><span class="p">:</span>
-        <span class="n">language_pack</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">get_aliases_unicode_dict</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">language_pack</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">get_emoji_unicode_dict</span><span class="p">(</span><span class="n">language</span><span class="p">)</span>
-
     <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">%s</span><span class="s1">[</span><span class="si">%s</span><span class="s1">]+</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span>
                          <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">_EMOJI_NAME_PATTERN</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
 
-    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="n">match</span><span class="p">:</span> <span class="n">Match</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="nb">len</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">delimiters</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
-        <span class="n">emj</span> <span class="o">=</span> <span class="n">language_pack</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="n">emj</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">get_emoji_by_name</span><span class="p">(</span>
             <span class="n">_DEFAULT_DELIMITER</span> <span class="o">+</span>
             <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">&#39;NFKC&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="o">+</span>
-            <span class="n">_DEFAULT_DELIMITER</span><span class="p">)</span>
+            <span class="n">_DEFAULT_DELIMITER</span><span class="p">,</span> <span class="n">language</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="n">emj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
@@ -221,12 +224,12 @@
 <div class="viewcode-block" id="demojize">
 <a class="viewcode-back" href="../../api.html#emoji.demojize">[docs]</a>
 <span class="k">def</span> <span class="nf">demojize</span><span class="p">(</span>
-        <span class="n">string</span><span class="p">,</span>
-        <span class="n">delimiters</span><span class="o">=</span><span class="p">(</span><span class="n">_DEFAULT_DELIMITER</span><span class="p">,</span> <span class="n">_DEFAULT_DELIMITER</span><span class="p">),</span>
-        <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">,</span>
-        <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">handle_version</span><span class="o">=</span><span class="kc">None</span>
-<span class="p">):</span>
+        <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">delimiters</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">_DEFAULT_DELIMITER</span><span class="p">,</span> <span class="n">_DEFAULT_DELIMITER</span><span class="p">),</span>
+        <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span><span class="p">,</span>
+        <span class="n">version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">handle_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Replace Unicode emoji in a string with emoji shortcodes. Useful for storage.</span>
 <span class="sd">        &gt;&gt;&gt; import emoji</span>
@@ -268,7 +271,8 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">_use_aliases</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">emoji_match</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">emoji_match</span><span class="p">:</span> <span class="n">EmojiMatch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">version</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">handle_version</span><span class="p">):</span>
                 <span class="k">return</span> <span class="n">handle_version</span><span class="p">(</span><span class="n">emoji_match</span><span class="o">.</span><span class="n">emoji</span><span class="p">,</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data_copy</span><span class="p">())</span>
@@ -293,7 +297,11 @@
 
 <div class="viewcode-block" id="replace_emoji">
 <a class="viewcode-back" href="../../api.html#emoji.replace_emoji">[docs]</a>
-<span class="k">def</span> <span class="nf">replace_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">replace_emoji</span><span class="p">(</span>
+        <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">replace</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="n">version</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Replace Unicode emoji in a customizable string.</span>
 
@@ -306,8 +314,9 @@
 <span class="sd">        only emoji above this version will be replaced.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">emoji_match</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">emoji_match</span><span class="p">:</span> <span class="n">EmojiMatch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">version</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
             <span class="k">if</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">version</span><span class="p">:</span>
                 <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">replace</span><span class="p">):</span>
                     <span class="k">return</span> <span class="n">replace</span><span class="p">(</span><span class="n">emoji_match</span><span class="o">.</span><span class="n">emoji</span><span class="p">,</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data_copy</span><span class="p">())</span>
@@ -315,7 +324,7 @@
                     <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">replace</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">callable</span><span class="p">(</span><span class="n">replace</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">replace</span><span class="p">(</span><span class="n">emoji_match</span><span class="o">.</span><span class="n">emoji</span><span class="p">,</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">data_copy</span><span class="p">())</span>
-        <span class="k">elif</span> <span class="n">replace</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">replace</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
             <span class="k">return</span> <span class="n">replace</span>
         <span class="k">return</span> <span class="n">emoji_match</span><span class="o">.</span><span class="n">emoji</span>
 
@@ -330,7 +339,7 @@
 
 <div class="viewcode-block" id="emoji_list">
 <a class="viewcode-back" href="../../api.html#emoji.emoji_list">[docs]</a>
-<span class="k">def</span> <span class="nf">emoji_list</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">emoji_list</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">_EmojiListReturn</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the location and emoji in list of dict format.</span>
 <span class="sd">        &gt;&gt;&gt; emoji.emoji_list(&quot;Hi, I am fine. 😁&quot;)</span>
@@ -347,7 +356,7 @@
 
 <div class="viewcode-block" id="distinct_emoji_list">
 <a class="viewcode-back" href="../../api.html#emoji.distinct_emoji_list">[docs]</a>
-<span class="k">def</span> <span class="nf">distinct_emoji_list</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">distinct_emoji_list</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns distinct list of emojis from the string.&quot;&quot;&quot;</span>
     <span class="n">distinct_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
         <span class="p">{</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;emoji&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">emoji_list</span><span class="p">(</span><span class="n">string</span><span class="p">)}</span>
@@ -358,7 +367,7 @@
 
 <div class="viewcode-block" id="emoji_count">
 <a class="viewcode-back" href="../../api.html#emoji.emoji_count">[docs]</a>
-<span class="k">def</span> <span class="nf">emoji_count</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">emoji_count</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unique</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the count of emojis in a string.</span>
 
@@ -372,7 +381,7 @@
 
 <div class="viewcode-block" id="is_emoji">
 <a class="viewcode-back" href="../../api.html#emoji.is_emoji">[docs]</a>
-<span class="k">def</span> <span class="nf">is_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">is_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns True if the string is a single emoji, and it is &quot;recommended for</span>
 <span class="sd">    general interchange&quot; by Unicode.org.</span>
@@ -395,7 +404,7 @@
 
 <div class="viewcode-block" id="version">
 <a class="viewcode-back" href="../../api.html#emoji.version">[docs]</a>
-<span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the Emoji Version of the emoji.</span>
 
@@ -412,16 +421,15 @@
     <span class="k">if</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="n">string</span><span class="p">][</span><span class="s1">&#39;E&#39;</span><span class="p">]</span>
 
-    <span class="n">language_pack</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">get_emoji_unicode_dict</span><span class="p">(</span><span class="s1">&#39;en&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">language_pack</span><span class="p">:</span>
-        <span class="n">emj_code</span> <span class="o">=</span> <span class="n">language_pack</span><span class="p">[</span><span class="n">string</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">emj_code</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="n">emj_code</span><span class="p">][</span><span class="s1">&#39;E&#39;</span><span class="p">]</span>
+    <span class="c1"># Try name lookup</span>
+    <span class="n">emj_code</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">get_emoji_by_name</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="s1">&#39;en&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">emj_code</span> <span class="ow">and</span> <span class="n">emj_code</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="n">emj_code</span><span class="p">][</span><span class="s1">&#39;E&#39;</span><span class="p">]</span>
 
     <span class="c1"># Try to find first emoji in string</span>
-    <span class="n">version</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">version</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">emoji_data</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">emoji_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">version</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">emoji_data</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">])</span>
         <span class="k">return</span> <span class="s1">&#39;&#39;</span>
     <span class="n">replace_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">version</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
@@ -430,7 +438,7 @@
     <span class="n">emojize</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;alias&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">handle_version</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">version</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">version</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">lang_code</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">_EMOJI_UNICODE</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">lang_code</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">LANGUAGES</span><span class="p">:</span>
         <span class="n">emojize</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="n">lang_code</span><span class="p">,</span> <span class="n">version</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">handle_version</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">version</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">version</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
