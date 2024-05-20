@@ -45,7 +45,6 @@ repository = "https://github.com/carpedm20/emoji/"
 dev = [
     "pytest>=7.4.4",
     "coverage",
-    "coveralls",
 ]
 
 [tool.setuptools.packages.find]
