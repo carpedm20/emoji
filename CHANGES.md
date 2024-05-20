@@ -1,6 +1,10 @@
 emoji
 =====
 
+v2.12.1 (2024-05-20)
+-----
+* `typing-extensions` requires at least version `4.7.0` #297
+
 v2.12.0 (2024-05-19)
 -----
 * Move type annotations inline
