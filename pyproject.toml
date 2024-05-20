@@ -33,7 +33,7 @@ classifiers = [
     "Typing :: Typed"
 ]
 dependencies = [
-    "typing_extensions",
+    "typing_extensions >= 4.7.0",
 ]
 dynamic = ["version"]
 
