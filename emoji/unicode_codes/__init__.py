@@ -8,14 +8,18 @@ from typing import Optional, Dict, List, Any
 from emoji.unicode_codes.data_dict import STATUS, LANGUAGES
 
 __all__ = [
-    'get_emoji_by_name', 'load_from_json',
-    'EMOJI_DATA', 'STATUS', 'LANGUAGES',
+    'get_emoji_by_name',
+    'load_from_json',
+    'EMOJI_DATA',
+    'STATUS',
+    'LANGUAGES',
 ]
 
 _DEFAULT_KEYS = ('en', 'alias', 'E', 'status')  # The keys in emoji.json
 
-_loaded_keys: List[str] = list(_DEFAULT_KEYS)  # Keep track of keys already loaded from json files to avoid loading them twice
-
+_loaded_keys: List[str] = list(
+    _DEFAULT_KEYS
+)  # Keep track of keys already loaded from json files to avoid loading them twice
 
 
 @lru_cache(maxsize=4000)
@@ -57,14 +61,19 @@ class EmojiDataDict(Dict[str, Any]):
         if key in LANGUAGES and key not in _loaded_keys:
             load_from_json(key)
             if key in self:
-                warn(f"""Use emoji.config.load_language('{key}') before accesing EMOJI_DATA[emj]['{key}'].
-Accessing EMOJI_DATA[emj]['{key}'] without loading the language is deprecated.""", DeprecationWarning, stacklevel=3)
+                warn(
+                    f"""Use emoji.config.load_language('{key}') before accesing EMOJI_DATA[emj]['{key}'].
+Accessing EMOJI_DATA[emj]['{key}'] without loading the language is deprecated.""",
+                    DeprecationWarning,
+                    stacklevel=3,
+                )
                 return self[key]  # type: ignore
 
         raise KeyError(key)
 
 
 EMOJI_DATA: Dict[str, Dict[str, Any]]
+
 
 def _load_default_from_json():
     global EMOJI_DATA
@@ -81,7 +90,7 @@ def load_from_json(key: str):
         return
 
     if key not in LANGUAGES:
-        raise NotImplementedError("Language not supported", key)
+        raise NotImplementedError('Language not supported', key)
 
     file = Path(__file__).with_name(f'emoji_{key}.json')
     with open(file) as f:

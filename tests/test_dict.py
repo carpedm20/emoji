@@ -21,8 +21,8 @@ def test_all_languages_list(load_all_languages):  # type:ignore
 def test_emoji_versions():
     """Check that every emoji has a valid version"""
     for item in emoji.EMOJI_DATA.values():
-        assert "E" in item
-        v = item["E"]
+        assert 'E' in item
+        v = item['E']
         assert isinstance(v, (int, float))
         assert v >= 0.6
 
@@ -31,7 +31,7 @@ def check_duplicate_names(lang: str):
     """Check that there are no duplicate names in the fully_qualified except for different variants"""
     seen: Dict[str, int] = {}
     for item in emoji.EMOJI_DATA.values():
-        if item["status"] > emoji.STATUS["fully_qualified"]:
+        if item['status'] > emoji.STATUS['fully_qualified']:
             continue
 
         if lang not in item:
@@ -54,7 +54,7 @@ def test_duplicate_names(load_all_languages):  # type:ignore
 def test_name_valid(load_all_languages):  # type:ignore
     """Check that every name starts with colons and does not contain other colons or whitespace"""
 
-    pattern = re.compile(r":[^:\s]+:")
+    pattern = re.compile(r':[^:\s]+:')
     for item in emoji.EMOJI_DATA.values():
         for lang in emoji.LANGUAGES:
             if lang in item:

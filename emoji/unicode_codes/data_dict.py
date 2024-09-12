@@ -1,34 +1,32 @@
 """Data containing all current emoji
-   Extracted from https://unicode.org/Public/emoji/latest/emoji-test.txt
-   and https://www.unicode.org/Public/UCD/latest/ucd/emoji/emoji-variation-sequences.txt
-   See utils/get_codes_from_unicode_emoji_data_files.py
+Extracted from https://unicode.org/Public/emoji/latest/emoji-test.txt
+and https://www.unicode.org/Public/UCD/latest/ucd/emoji/emoji-variation-sequences.txt
+See utils/get_codes_from_unicode_emoji_data_files.py
 
-   +----------------+-------------+------------------+-------------------+
-   | Emoji Version  |    Date     | Unicode Version  | Data File Comment |
-   +----------------+-------------+------------------+-------------------+
-   | N/A            | 2010-10-11  | Unicode 6.0      | E0.6              |
-   | N/A            | 2014-06-16  | Unicode 7.0      | E0.7              |
-   | Emoji 1.0      | 2015-06-09  | Unicode 8.0      | E1.0              |
-   | Emoji 2.0      | 2015-11-12  | Unicode 8.0      | E2.0              |
-   | Emoji 3.0      | 2016-06-03  | Unicode 9.0      | E3.0              |
-   | Emoji 4.0      | 2016-11-22  | Unicode 9.0      | E4.0              |
-   | Emoji 5.0      | 2017-06-20  | Unicode 10.0     | E5.0              |
-   | Emoji 11.0     | 2018-05-21  | Unicode 11.0     | E11.0             |
-   | Emoji 12.0     | 2019-03-05  | Unicode 12.0     | E12.0             |
-   | Emoji 12.1     | 2019-10-21  | Unicode 12.1     | E12.1             |
-   | Emoji 13.0     | 2020-03-10  | Unicode 13.0     | E13.0             |
-   | Emoji 13.1     | 2020-09-15  | Unicode 13.0     | E13.1             |
-   | Emoji 14.0     | 2021-09-14  | Unicode 14.0     | E14.0             |
-   | Emoji 15.0     | 2022-09-13  | Unicode 15.0     | E15.0             |
-   | Emoji 15.1     | 2023-09-12  | Unicode 15.1     | E15.1             |
++----------------+-------------+------------------+-------------------+
+| Emoji Version  |    Date     | Unicode Version  | Data File Comment |
++----------------+-------------+------------------+-------------------+
+| N/A            | 2010-10-11  | Unicode 6.0      | E0.6              |
+| N/A            | 2014-06-16  | Unicode 7.0      | E0.7              |
+| Emoji 1.0      | 2015-06-09  | Unicode 8.0      | E1.0              |
+| Emoji 2.0      | 2015-11-12  | Unicode 8.0      | E2.0              |
+| Emoji 3.0      | 2016-06-03  | Unicode 9.0      | E3.0              |
+| Emoji 4.0      | 2016-11-22  | Unicode 9.0      | E4.0              |
+| Emoji 5.0      | 2017-06-20  | Unicode 10.0     | E5.0              |
+| Emoji 11.0     | 2018-05-21  | Unicode 11.0     | E11.0             |
+| Emoji 12.0     | 2019-03-05  | Unicode 12.0     | E12.0             |
+| Emoji 12.1     | 2019-10-21  | Unicode 12.1     | E12.1             |
+| Emoji 13.0     | 2020-03-10  | Unicode 13.0     | E13.0             |
+| Emoji 13.1     | 2020-09-15  | Unicode 13.0     | E13.1             |
+| Emoji 14.0     | 2021-09-14  | Unicode 14.0     | E14.0             |
+| Emoji 15.0     | 2022-09-13  | Unicode 15.0     | E15.0             |
+| Emoji 15.1     | 2023-09-12  | Unicode 15.1     | E15.1             |
 
-                  http://www.unicode.org/reports/tr51/#Versioning
+               http://www.unicode.org/reports/tr51/#Versioning
 
 """
 
-__all__ = [
-    'STATUS', 'LANGUAGES'
-]
+__all__ = ['STATUS', 'LANGUAGES']
 
 from typing import Any, Dict, List
 
@@ -39,19 +37,34 @@ minimally_qualified = 3
 unqualified = 4
 
 STATUS: Dict[str, int] = {
-    "component": component,
-    "fully_qualified": fully_qualified,
-    "minimally_qualified": minimally_qualified,
-    "unqualified": unqualified
+    'component': component,
+    'fully_qualified': fully_qualified,
+    'minimally_qualified': minimally_qualified,
+    'unqualified': unqualified,
 }
 
-LANGUAGES: List[str] = ['en', 'es', 'ja', 'ko', 'pt', 'it', 'fr', 'de', 'fa', 'id', 'zh', 'ru', 'tr', 'ar']
+LANGUAGES: List[str] = [
+    'en',
+    'es',
+    'ja',
+    'ko',
+    'pt',
+    'it',
+    'fr',
+    'de',
+    'fa',
+    'id',
+    'zh',
+    'ru',
+    'tr',
+    'ar',
+]
 
 
 # The following is only an example of how the EMOJI_DATA dict is structured.
 # The real data is loaded from the json files at runtime, see unicode_codes/__init__.py
 EMOJI_DATA: Dict[str, Dict[str, Any]] = {
-    '\U0001F947': {  # 🥇
+    '\U0001f947': {  # 🥇
         'en': ':1st_place_medal:',
         'status': fully_qualified,
         'E': 3,
@@ -67,9 +80,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]] = {
         'zh': ':金牌:',
         'ru': ':золотая_медаль:',
         'tr': ':birincilik_madalyası:',
-        'ar': ':ميدالية_مركز_أول:'
+        'ar': ':ميدالية_مركز_أول:',
     },
-    '\U0001F948': {  # 🥈
+    '\U0001f948': {  # 🥈
         'en': ':2nd_place_medal:',
         'status': fully_qualified,
         'E': 3,
@@ -85,9 +98,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]] = {
         'zh': ':银牌:',
         'ru': ':серебряная_медаль:',
         'tr': ':ikincilik_madalyası:',
-        'ar': ':ميدالية_مركز_ثان:'
+        'ar': ':ميدالية_مركز_ثان:',
     },
-    '\U0001F949': {  # 🥉
+    '\U0001f949': {  # 🥉
         'en': ':3rd_place_medal:',
         'status': fully_qualified,
         'E': 3,
@@ -103,9 +116,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]] = {
         'zh': ':铜牌:',
         'ru': ':бронзовая_медаль:',
         'tr': ':üçüncülük_madalyası:',
-        'ar': ':ميدالية_مركز_ثالث:'
+        'ar': ':ميدالية_مركز_ثالث:',
     },
-    '\U0001F18E': {  # 🆎
+    '\U0001f18e': {  # 🆎
         'en': ':AB_button_(blood_type):',
         'status': fully_qualified,
         'E': 0.6,
@@ -122,9 +135,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]] = {
         'zh': ':AB型血:',
         'ru': ':IV_группа_крови:',
         'tr': ':ab_düğmesi_(kan_grubu):',
-        'ar': ':زر_ab_(فئة_الدم):'
+        'ar': ':زر_ab_(فئة_الدم):',
     },
-    '\U0001F3E7': {  # 🏧
+    '\U0001f3e7': {  # 🏧
         'en': ':ATM_sign:',
         'status': fully_qualified,
         'E': 0.6,
@@ -141,9 +154,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]] = {
         'zh': ':取款机:',
         'ru': ':значок_банкомата:',
         'tr': ':atm_işareti:',
-        'ar': ':علامة_ماكينة_صرف_آلي:'
+        'ar': ':علامة_ماكينة_صرف_آلي:',
     },
-    '\U0001F170\U0000FE0F': {  # 🅰️
+    '\U0001f170\U0000fe0f': {  # 🅰️
         'en': ':A_button_(blood_type):',
         'status': fully_qualified,
         'E': 0.6,
@@ -161,9 +174,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]] = {
         'zh': ':A型血:',
         'ru': ':ii_группа_крови:',
         'tr': ':a_düğmesi_(kan_grubu):',
-        'ar': ':زر_a:'
+        'ar': ':زر_a:',
     },
-    '\U0001F170': {  # 🅰
+    '\U0001f170': {  # 🅰
         'en': ':A_button_(blood_type):',
         'status': unqualified,
         'E': 0.6,
@@ -181,9 +194,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]] = {
         'zh': ':A型血:',
         'ru': ':II_группа_крови:',
         'tr': ':a_düğmesi_(kan_grubu):',
-        'ar': ':زر_a:'
+        'ar': ':زر_a:',
     },
-    '\U0001F1E6\U0001F1EB': {  # 🇦🇫
+    '\U0001f1e6\U0001f1eb': {  # 🇦🇫
         'en': ':Afghanistan:',
         'status': fully_qualified,
         'E': 2,
@@ -200,9 +213,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]] = {
         'zh': ':阿富汗:',
         'ru': ':флаг_Афганистан:',
         'tr': ':bayrak_afganistan:',
-        'ar': ':علم_أفغانستان:'
+        'ar': ':علم_أفغانستان:',
     },
-    '\U0001F1E6\U0001F1F1': {  # 🇦🇱
+    '\U0001f1e6\U0001f1f1': {  # 🇦🇱
         'en': ':Albania:',
         'status': fully_qualified,
         'E': 2,
@@ -219,9 +232,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]] = {
         'zh': ':阿尔巴尼亚:',
         'ru': ':флаг_Албания:',
         'tr': ':bayrak_arnavutluk:',
-        'ar': ':علم_ألبانيا:'
+        'ar': ':علم_ألبانيا:',
     },
-    '\U0001F1E9\U0001F1FF': {  # 🇩🇿
+    '\U0001f1e9\U0001f1ff': {  # 🇩🇿
         'en': ':Algeria:',
         'status': fully_qualified,
         'E': 2,
@@ -238,9 +251,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]] = {
         'zh': ':阿尔及利亚:',
         'ru': ':флаг_Алжир:',
         'tr': ':bayrak_cezayir:',
-        'ar': ':علم_الجزائر:'
+        'ar': ':علم_الجزائر:',
     },
-    '\U0001F1E6\U0001F1F8': {  # 🇦🇸
+    '\U0001f1e6\U0001f1f8': {  # 🇦🇸
         'en': ':American_Samoa:',
         'status': fully_qualified,
         'E': 2,
@@ -257,6 +270,6 @@ EMOJI_DATA: Dict[str, Dict[str, Any]] = {
         'zh': ':美属萨摩亚:',
         'ru': ':флаг_Американское_Самоа:',
         'tr': ':bayrak_amerikan_samoası:',
-        'ar': ':علم_ساموا_الأمريكية:'
-    }
+        'ar': ':علم_ساموا_الأمريكية:',
+    },
 }

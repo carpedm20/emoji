@@ -97,9 +97,21 @@ Emoji status
    .. literalinclude:: ../emoji/unicode_codes/data_dict.py
       :language: python
       :start-at: component =
-      :end-before: EMOJI_DATA
+      :end-before: LANGUAGES
       :caption: emoji/unicode_codes/data_dict.py
 
+.. data:: LANGUAGES
+   :type: dict
+   :canonical: emoji.unicode_codes.data_dict.LANGUAGES
+
+     All available languages, that can be used as the ``language`` parameter in :func:`emojize` and :func:`demojize`.
+     (Additionally the special ``"alias"`` language can be used in :func:`emojize` and :func:`demojize`).
+
+   .. literalinclude:: ../emoji/unicode_codes/data_dict.py
+      :language: python
+      :start-at: LANGUAGES:
+      :end-before: EMOJI_DATA
+      :caption: emoji/unicode_codes/data_dict.py
 
 .. _Emoji version:
 
