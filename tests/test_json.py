@@ -20,21 +20,21 @@ def clean_module():
         del sys.modules[name]
 
 
-def test_language_loaded_after_emojize(clean_module):
+def test_language_loaded_after_emojize(clean_module):  # type:ignore
     emoji.emojize("string", language="es")
     assert "es" in emoji.EMOJI_DATA[emoji.emojize(':lion:')]
 
 
-def test_language_loaded_after_demojize(clean_module):
+def test_language_loaded_after_demojize(clean_module):  # type:ignore
     emoji.demojize("string", language="es")
     assert "es" in emoji.EMOJI_DATA[emoji.emojize(':lion:')]
 
 
-def test_language_not_auto_loaded(clean_module):
+def test_language_not_auto_loaded(clean_module):  # type:ignore
     assert "es" not in emoji.EMOJI_DATA[emoji.emojize(':lion:')]
 
 
-def test_key_access_load_language(clean_module):
+def test_key_access_load_language(clean_module):  # type:ignore
     assert "es" not in emoji.EMOJI_DATA[emoji.emojize(':lion:')]
     with pytest.deprecated_call():
         assert emoji.EMOJI_DATA[emoji.emojize(':lion:')]['es']
@@ -45,7 +45,7 @@ def test_key_access_load_language(clean_module):
         emoji.EMOJI_DATA[emoji.emojize(':lion:')]['xyz']
 
 
-def test_explicit_load_language(clean_module):
+def test_explicit_load_language(clean_module):  # type:ignore
     assert "fr" not in emoji.EMOJI_DATA[emoji.emojize(':lion:')]
     emoji.config.load_language("fr")
     assert "fr"  in emoji.EMOJI_DATA[emoji.emojize(':lion:')]
@@ -56,7 +56,7 @@ def test_explicit_load_language(clean_module):
     assert "es"  in emoji.EMOJI_DATA[emoji.emojize(':lion:')]
 
 
-def test_explict_load_all_languages(clean_module):
+def test_explict_load_all_languages(clean_module):  # type:ignore
     assert "fr" not in emoji.EMOJI_DATA[emoji.emojize(':lion:')]
     assert "es" not in emoji.EMOJI_DATA[emoji.emojize(':lion:')]
     emoji.config.load_language()
@@ -65,7 +65,7 @@ def test_explict_load_all_languages(clean_module):
     assert emoji.EMOJI_DATA[emoji.emojize(':lion:')]["fr"] == ":tête_de_lion:"
 
 
-def test_load_language_multiple_times(clean_module):
+def test_load_language_multiple_times(clean_module):  # type:ignore
     assert "fr" not in emoji.EMOJI_DATA[emoji.emojize(':lion:')]
     for _ in range(10000):
         emoji.config.load_language("fr")

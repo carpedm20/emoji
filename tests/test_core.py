@@ -6,18 +6,16 @@ from typing import Any, Callable, Dict, List, Tuple, Union
 from typing_extensions import Literal
 import pytest
 import emoji.unicode_codes
-from testutils import ascii, normalize, all_language_packs, all_language_and_alias_packs, get_emoji_unicode_dict, load_all_languages
+from testutils import ascii, normalize, all_language_packs, all_language_and_alias_packs, get_emoji_unicode_dict, load_all_languages as load_all_languages
 
 try:
-    from typeguard import suppress_type_checks
+    from typeguard import suppress_type_checks  # type:ignore
 except ImportError:
     from contextlib import nullcontext as suppress_type_checks  # type:ignore
 
 
-assert load_all_languages  # type:ignore # silence the linter about unused import
+def test_emojize_name_only(load_all_languages):  # type:ignore
 
-
-def test_emojize_name_only(load_all_languages):
     # Check that the regular expression emoji.core._EMOJI_NAME_PATTERN contains all the necesseary characters
     from emoji.core import _EMOJI_NAME_PATTERN  # pyright: ignore [reportPrivateUsage]
 
@@ -46,7 +44,7 @@ def test_emojize_name_only(load_all_languages):
                 assert pattern.search(name[1:-1]) is None
 
 
-def test_regular_expression_minimal(load_all_languages):
+def test_regular_expression_minimal(load_all_languages):  # type:ignore
     # Check that the regular expression emoji.core._EMOJI_NAME_PATTERN only contains the necesseary characters
     from emoji.core import _EMOJI_NAME_PATTERN  # pyright: ignore [reportPrivateUsage]
 
@@ -100,13 +98,13 @@ def test_emojize_complicated_string():
     assert expected == actual, '%s != %s' % (expected, actual)
 
 
-def test_emojize_languages(load_all_languages):
+def test_emojize_languages(load_all_languages):  # type:ignore
     for lang_code, emoji_pack in all_language_packs():
         for name, emj in emoji_pack.items():
             assert emoji.emojize(name, language=lang_code) == emj
 
 
-def test_demojize_languages(load_all_languages):
+def test_demojize_languages(load_all_languages):  # type:ignore
     for lang_code, emoji_pack in all_language_packs():
         for name, emj in emoji_pack.items():
             assert emoji.demojize(emj, language=lang_code) == name
@@ -135,7 +133,7 @@ def test_emojize_variant():
     assert emoji.emojize(':admission_tickets:', variant='emoji_type') == remove_variant(
         english_pack[':admission_tickets:']) + '\ufe0f'
 
-    with suppress_type_checks():
+    with suppress_type_checks():  # type:ignore
         with pytest.raises(ValueError):
             emoji.emojize(':admission_tickets:', variant=False)  # type: ignore[arg-type]
 
@@ -176,7 +174,7 @@ def test_emojize_invalid_emoji():
     assert emoji.emojize(string) == string
 
 
-def test_emojize_version(load_all_languages):
+def test_emojize_version(load_all_languages):  # type:ignore
     assert emoji.emojize("Flags like :Belgium: are in version 2.0", version=1.0) == "Flags like  are in version 2.0"
     assert emoji.emojize("Flags like :Belgium: are in version 2.0", version=1.9) == "Flags like  are in version 2.0"
     assert emoji.emojize("Flags like :Belgium: are in version 2.0", version=2.0) == "Flags like 🇧🇪 are in version 2.0"
@@ -268,7 +266,7 @@ def test_invalid_alias():
                   variant="text_type") == ':socer:'
 
 
-def test_demojize_name_only(load_all_languages):
+def test_demojize_name_only(load_all_languages):  # type:ignore
     for emj, item in emoji.EMOJI_DATA.items():
         if item['status'] != emoji.STATUS['fully_qualified']:
             continue
@@ -365,7 +363,7 @@ def test_long_emoji():
     assert emoji.demojize(emoji.demojize(s)) == s
 
 
-def test_untranslated(load_all_languages):
+def test_untranslated(load_all_languages):  # type:ignore
     for item in emoji.EMOJI_DATA.values():
         if item['status'] != emoji.STATUS['fully_qualified']:
             continue
@@ -381,7 +379,7 @@ def test_untranslated(load_all_languages):
             assert roundtrip == item['es'], '%s != %s' % (roundtrip, item['es'])
 
 
-def test_text(load_all_languages):
+def test_text(load_all_languages):  # type:ignore
     emoji.config.demojize_keep_zwj = True  # Restore default config value
     emoji.config.replace_emoji_keep_zwj = False  # Restore default config value
 
@@ -495,7 +493,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
         assert lis['emoji'] == emoji_list[i]
 
 
-def test_text_multiple_times(load_all_languages):
+def test_text_multiple_times(load_all_languages: Any):
     # Run test_text() multiple times because it relies on a random text
     for _ in range(100):
         test_text(load_all_languages)
