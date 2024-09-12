@@ -1,10 +1,23 @@
 from typing import Generator, Dict, Any, Tuple, Iterable
 import sys
 import unicodedata
+
 import emoji.unicode_codes
+
 from typing_extensions import Literal
+import pytest
 
 _NormalizationForm = Literal['NFC', 'NFD', 'NFKC', 'NFKD']
+
+
+@pytest.fixture
+def load_all_languages():
+    """Load all keys from JSON files into EMOJI_DATA and
+    build all language packs (i.e. fill the cache)"""
+    emoji.emojize("", language="alias")
+    for lang_code in emoji.LANGUAGES:
+        emoji.emojize("", language=lang_code)
+    yield
 
 
 def ascii(s: str) -> str:

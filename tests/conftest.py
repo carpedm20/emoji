@@ -1,7 +1,8 @@
 from typing import List
 import random
-import pytest
 import functools
+
+import pytest
 
 
 def pytest_sessionstart():

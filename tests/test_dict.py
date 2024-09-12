@@ -4,8 +4,13 @@ from typing import Set, Dict
 import re
 import emoji
 
+from testutils import load_all_languages
 
-def test_all_languages_list():
+
+assert load_all_languages  # type:ignore # silence the linter about unused import
+
+
+def test_all_languages_list(load_all_languages):
     """Compare all language keys in EMOJI_DATA with the emoji.LANGUAGES list"""
 
     langs: Set[str] = set()
@@ -43,13 +48,13 @@ def check_duplicate_names(lang: str):
             seen[name] = 0
 
 
-def test_duplicate_names():
+def test_duplicate_names(load_all_languages):
     """Check that there are no duplicate names in the fully_qualified except for different variants"""
     for lang in emoji.LANGUAGES:
         check_duplicate_names(lang)
 
 
-def test_name_valid():
+def test_name_valid(load_all_languages):
     """Check that every name starts with colons and does not contain other colons or whitespace"""
 
     pattern = re.compile(r":[^:\s]+:")
