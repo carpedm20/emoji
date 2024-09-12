@@ -68,6 +68,21 @@ class config():
     See :attr:`config.demojize_keep_zwj` for more information.
     """
 
+    @staticmethod
+    def load_language(language: Union[List[str], str, None] = None):
+        """Load one or multiples languages.
+        If no language is specified, all languages will be loaded.
+
+        This makes language data accessible in the EMOJI_DATA dict,
+        for example `emoji.EMOJI_DATA['🏄']['fr']` to access a French emoji name.
+
+        Available languages are listed in emoji.LANGUAGES"""
+
+        languages = [language] if isinstance(language, str) else language if language else unicode_codes.LANGUAGES
+
+        for lang in languages:
+            unicode_codes.load_from_json(lang)
+
 
 def emojize(
         string: str,
@@ -119,6 +134,8 @@ def emojize(
     :raises ValueError: if ``variant`` is neither None, 'text_type' or 'emoji_type'
 
     """
+
+    unicode_codes.load_from_json(language)
 
     pattern = re.compile('(%s[%s]+%s)' %
                          (re.escape(delimiters[0]), _EMOJI_NAME_PATTERN, re.escape(delimiters[1])))
@@ -226,6 +243,8 @@ def demojize(
         _use_aliases = True
     else:
         _use_aliases = False
+
+    unicode_codes.load_from_json(language)
 
     def handle(emoji_match: EmojiMatch) -> str:
         assert emoji_match.data is not None
