@@ -88,13 +88,19 @@ class config:
 
     @staticmethod
     def load_language(language: Union[List[str], str, None] = None):
-        """Load one or multiples languages.
+        """Load one or multiple languages into memory.
         If no language is specified, all languages will be loaded.
 
-        This makes language data accessible in the EMOJI_DATA dict,
-        for example `emoji.EMOJI_DATA['🏄']['fr']` to access a French emoji name.
+        This makes language data accessible in the :data:`EMOJI_DATA` dict.
+        For example to access a French emoji name, first load French with
 
-        Available languages are listed in emoji.LANGUAGES"""
+         ``emoji.config.load_language('fr')``
+
+        and then access it with
+
+         ``emoji.EMOJI_DATA['🏄']['fr']``
+
+        Available languages are listed in :data:`LANGUAGES`"""
 
         languages = (
             [language]
@@ -213,7 +219,7 @@ def analyze(
 ) -> Iterator[Token]:
     """
     Find unicode emoji in a string. Yield each emoji as a named tuple
-    :class:`Token` ``(chars, EmojiMatch)`` or `:class:`Token` ``(chars, EmojiMatchZWJNonRGI)``.
+    :class:`Token` ``(chars, EmojiMatch)`` or :class:`Token` ``(chars, EmojiMatchZWJNonRGI)``.
     If ``non_emoji`` is True, also yield all other characters as
     :class:`Token` ``(char, char)`` .
 

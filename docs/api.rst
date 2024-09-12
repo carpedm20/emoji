@@ -63,9 +63,24 @@ EMOJI_DATA
    :type: dict
    :canonical: emoji.unicode_codes.data_dict.EMOJI_DATA
 
-     Contains all emoji as keys and their names, Unicode version and status
+     Contains all emoji as keys and their names, Unicode version and status.
+
+     The data is stored in JSON files: `<https://github.com/carpedm20/emoji/tree/master/emoji/unicode_codes>`_
+
+     The names in other languages than English are not loaded by default. They can be loaded with the :func:`config.load_language` function.
 
      .. code-block:: python
+
+       EMOJI_DATA = {
+         '🥇': {
+             'en' : ':1st_place_medal:',
+             'status' : emoji.STATUS["fully_qualified"],
+             'E' : 3
+         },
+         ...
+       }
+
+       # After config.load_language() to load more languages:
 
        EMOJI_DATA = {
          '🥇': {
@@ -81,7 +96,6 @@ EMOJI_DATA
          ...
        }
 
-**Source code:** `emoji/unicode_codes/data_dict.py <https://github.com/carpedm20/emoji/raw/master/emoji/unicode_codes/data_dict.py>`_ **(2MB)**
 
 Emoji status
 ------------
@@ -136,4 +150,3 @@ the "Data File Comment" column:
    :end-before: """
    :caption: Unicode/Emoji Version (emoji/unicode_codes/data_dict.py)
    :dedent: 2
-
