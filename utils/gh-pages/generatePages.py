@@ -38,7 +38,7 @@ languages = {
     'zh': emoji.emojize('zh :China:'),
     'ru': emoji.emojize('ru :Russia:'),
     'ar': emoji.emojize('ar :Saudi_Arabia:'),
-    'tr': emoji.emojize('tr :Turkey:'),
+    'tr': emoji.emojize('tr :Turkey:', language='alias'),
 }
 language_args = {}
 
@@ -52,6 +52,7 @@ print('Collecting emoji data...')
 
 data['lists'] = lists = []
 for language in languages:
+    emoji.config.load_language(language)
     if language in language_args:
         language_arg = language_args[language]
     elif language == data['defaultLang']:
