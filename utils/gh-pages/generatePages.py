@@ -11,51 +11,51 @@ from htmlmin.minify import html_minify
 try:
     import emoji
 except ImportError:
-    include = os.path.relpath(os.path.join(os.path.dirname(__file__), "../.."))
+    include = os.path.relpath(os.path.join(os.path.dirname(__file__), '../..'))
     sys.path.insert(0, include)
     import emoji
-    print("Imported emoji from %s" %
-          os.path.abspath(os.path.join(include, "emoji")))
+
+    print('Imported emoji from %s' % os.path.abspath(os.path.join(include, 'emoji')))
 
 # Configuration
 OUT_DIR = os.path.abspath(os.path.dirname(__file__))
 TEMPLATE_DIR = os.path.abspath(os.path.dirname(__file__))
-TEMPLATE_FILE = os.path.join(TEMPLATE_DIR, "template.html")
-data = {"defaultLang": "en"}
+TEMPLATE_FILE = os.path.join(TEMPLATE_DIR, 'template.html')
+data = {'defaultLang': 'en'}
 
 languages = {
-    "en": emoji.emojize("en :United_Kingdom:"),
-    "alias":  emoji.emojize("alias :United_Kingdom:"),
-    "es": emoji.emojize("es :Spain:"),
-    "ja": emoji.emojize("ja :Japan:"),
-    "ko": emoji.emojize("ko :South_Korea:"),
-    "pt": emoji.emojize("pt :Portugal:"),
-    "it": emoji.emojize("it :Italy:"),
-    "fr": emoji.emojize("fr :France:"),
-    "de": emoji.emojize("de :Germany:"),
-    "fa": emoji.emojize("fa :Iran:"),
-    "id": emoji.emojize("id :Indonesia:"),
-    "zh": emoji.emojize("zh :China:"),
-    "ru": emoji.emojize("ru :Russia:"),
-    "ar": emoji.emojize("ar :Saudi_Arabia:"),
-    "tr": emoji.emojize("tr :Turkey:"),
+    'en': emoji.emojize('en :United_Kingdom:'),
+    'alias': emoji.emojize('alias :United_Kingdom:'),
+    'es': emoji.emojize('es :Spain:'),
+    'ja': emoji.emojize('ja :Japan:'),
+    'ko': emoji.emojize('ko :South_Korea:'),
+    'pt': emoji.emojize('pt :Portugal:'),
+    'it': emoji.emojize('it :Italy:'),
+    'fr': emoji.emojize('fr :France:'),
+    'de': emoji.emojize('de :Germany:'),
+    'fa': emoji.emojize('fa :Iran:'),
+    'id': emoji.emojize('id :Indonesia:'),
+    'zh': emoji.emojize('zh :China:'),
+    'ru': emoji.emojize('ru :Russia:'),
+    'ar': emoji.emojize('ar :Saudi_Arabia:'),
+    'tr': emoji.emojize('tr :Turkey:', language='alias'),
 }
 language_args = {}
 
 
 minify_enabled = sys.argv[-1] == '-minify'
 if not minify_enabled:
-    print("Run with -minify to minify HTML")
+    print('Run with -minify to minify HTML')
 
 
-print("Collecting emoji data...")
+print('Collecting emoji data...')
 
-data["lists"] = lists = []
+data['lists'] = lists = []
 for language in languages:
-
+    emoji.config.load_language(language)
     if language in language_args:
         language_arg = language_args[language]
-    elif language == data["defaultLang"]:
+    elif language == data['defaultLang']:
         language_arg = ''
     else:
         language_arg = f'language="{language}"'
@@ -64,21 +64,27 @@ for language in languages:
     for code, emoji_data in emoji.EMOJI_DATA.items():
         if language not in emoji_data:
             continue
-        names = [emoji_data[language]] if isinstance(emoji_data[language], str) else emoji_data[language]
+        names = (
+            [emoji_data[language]]
+            if isinstance(emoji_data[language], str)
+            else emoji_data[language]
+        )
         for name in names:
-            emoji_list.append({
-                "code": code,
-                "name": name,
-                "unicode": code.encode('ascii', 'backslashreplace').decode('ascii'),
-                "charname": code.encode('ascii', 'namereplace').decode('ascii'),
-                "xml": code.encode('ascii', 'xmlcharrefreplace').decode('ascii')
-            })
+            emoji_list.append(
+                {
+                    'code': code,
+                    'name': name,
+                    'unicode': code.encode('ascii', 'backslashreplace').decode('ascii'),
+                    'charname': code.encode('ascii', 'namereplace').decode('ascii'),
+                    'xml': code.encode('ascii', 'xmlcharrefreplace').decode('ascii'),
+                }
+            )
 
     listentry = {
-        "name": language,
-        "pretty": languages[language],
-        "languageArg": language_arg,
-        "emojis": emoji_list
+        'name': language,
+        'pretty': languages[language],
+        'languageArg': language_arg,
+        'emojis': emoji_list,
     }
     lists.append(listentry)
 
@@ -96,7 +102,7 @@ django.setup()
 template = django.template.loader.get_template(TEMPLATE_FILE)
 
 print("Render 'all.html' ...")
-with codecs.open(os.path.join(OUT_DIR, "all.html"), "w", encoding="utf-8") as f:
+with codecs.open(os.path.join(OUT_DIR, 'all.html'), 'w', encoding='utf-8') as f:
     html = template.render(data)
     if minify_enabled:
         print("Minify 'all.html' ...")
@@ -107,10 +113,10 @@ with codecs.open(os.path.join(OUT_DIR, "all.html"), "w", encoding="utf-8") as f:
 print("Render 'index.html' ...")
 # Remove emoji except for default list
 for listentry in lists:
-    if listentry["name"] != data["defaultLang"]:
-        listentry["emojis"] = []
+    if listentry['name'] != data['defaultLang']:
+        listentry['emojis'] = []
 
-with codecs.open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as f:
+with codecs.open(os.path.join(OUT_DIR, 'index.html'), 'w', encoding='utf-8') as f:
     html = template.render(data)
     if minify_enabled:
         print("Minify 'index.html' ...")
@@ -118,4 +124,4 @@ with codecs.open(os.path.join(OUT_DIR, "index.html"), "w", encoding="utf-8") as 
     f.write(html)
     print(f"Wrote to {os.path.join(OUT_DIR, 'index.html')}")
 
-print("Done.")
+print('Done.')

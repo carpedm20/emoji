@@ -2,7 +2,11 @@
 
 from typing import Set
 import emoji.unicode_codes
-from testutils import get_language_packs, get_aliases_unicode_dict, get_emoji_unicode_dict
+from testutils import (
+    get_language_packs,
+    get_aliases_unicode_dict,
+    get_emoji_unicode_dict,
+)
 
 
 def test_emoji_english_names():

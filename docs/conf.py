@@ -12,11 +12,13 @@
 #
 import os
 import sys
+
 sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
-import emoji as emoji_pkg
+import emoji as emoji_pkg  # noqa: E402
+
 project = 'emoji'
 copyright = emoji_pkg.__source__
 author = emoji_pkg.__author__
@@ -81,5 +83,5 @@ html_theme_options = {
         'All supported emoji': 'https://carpedm20.github.io/emoji/',
         'All emoji on unicode.org': 'http://www.unicode.org/emoji/charts/full-emoji-list.html',
         'Unicode Standard': 'http://www.unicode.org/reports/tr51/',
-    }
+    },
 }

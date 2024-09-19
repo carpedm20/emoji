@@ -1,11 +1,24 @@
 __all__ = [
     # emoji.core
-    'emojize', 'demojize', 'analyze', 'config',
-    'emoji_list', 'distinct_emoji_list', 'emoji_count',
-    'replace_emoji', 'is_emoji', 'purely_emoji', 'version',
-    'Token', 'EmojiMatch', 'EmojiMatchZWJ', 'EmojiMatchZWJNonRGI',
+    'emojize',
+    'demojize',
+    'analyze',
+    'config',
+    'emoji_list',
+    'distinct_emoji_list',
+    'emoji_count',
+    'replace_emoji',
+    'is_emoji',
+    'purely_emoji',
+    'version',
+    'Token',
+    'EmojiMatch',
+    'EmojiMatchZWJ',
+    'EmojiMatchZWJNonRGI',
     # emoji.unicode_codes
-    'EMOJI_DATA', 'STATUS', 'LANGUAGES',
+    'EMOJI_DATA',
+    'STATUS',
+    'LANGUAGES',
 ]
 
 __version__ = '2.12.1'
@@ -13,7 +26,7 @@ __author__ = 'Taehoon Kim, Kevin Wurster'
 __email__ = 'carpedm20@gmail.com'
 # and wursterk@gmail.com, tahir.jalilov@gmail.com
 __source__ = 'https://github.com/carpedm20/emoji/'
-__license__ = '''
+__license__ = """
 New BSD License
 
 Copyright (c) 2014-2024, Taehoon Kim, Kevin Wurster
@@ -42,7 +55,7 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-'''
+"""
 
 from emoji.core import *
 from emoji.unicode_codes import *

@@ -12,13 +12,31 @@ from typing import Any, Callable, Dict, Iterator, List, Optional, Tuple, Union
 from typing_extensions import Literal, Match, TypedDict
 
 from emoji import unicode_codes
-from emoji.tokenizer import Token, EmojiMatch, EmojiMatchZWJ, EmojiMatchZWJNonRGI, tokenize, filter_tokens
+from emoji.tokenizer import (
+    Token,
+    EmojiMatch,
+    EmojiMatchZWJ,
+    EmojiMatchZWJNonRGI,
+    tokenize,
+    filter_tokens,
+)
 
 __all__ = [
-    'emojize', 'demojize', 'analyze', 'config',
-    'emoji_list', 'distinct_emoji_list', 'emoji_count',
-    'replace_emoji', 'is_emoji', 'purely_emoji', 'version',
-    'Token', 'EmojiMatch', 'EmojiMatchZWJ', 'EmojiMatchZWJNonRGI',
+    'emojize',
+    'demojize',
+    'analyze',
+    'config',
+    'emoji_list',
+    'distinct_emoji_list',
+    'emoji_count',
+    'replace_emoji',
+    'is_emoji',
+    'purely_emoji',
+    'version',
+    'Token',
+    'EmojiMatch',
+    'EmojiMatchZWJ',
+    'EmojiMatchZWJNonRGI',
 ]
 
 _DEFAULT_DELIMITER = ':'
@@ -32,7 +50,7 @@ class _EmojiListReturn(TypedDict):
     match_end: int
 
 
-class config():
+class config:
     """Module-wide configuration"""
 
     demojize_keep_zwj = True
@@ -68,14 +86,41 @@ class config():
     See :attr:`config.demojize_keep_zwj` for more information.
     """
 
+    @staticmethod
+    def load_language(language: Union[List[str], str, None] = None):
+        """Load one or multiple languages into memory.
+        If no language is specified, all languages will be loaded.
+
+        This makes language data accessible in the :data:`EMOJI_DATA` dict.
+        For example to access a French emoji name, first load French with
+
+         ``emoji.config.load_language('fr')``
+
+        and then access it with
+
+         ``emoji.EMOJI_DATA['🏄']['fr']``
+
+        Available languages are listed in :data:`LANGUAGES`"""
+
+        languages = (
+            [language]
+            if isinstance(language, str)
+            else language
+            if language
+            else unicode_codes.LANGUAGES
+        )
+
+        for lang in languages:
+            unicode_codes.load_from_json(lang)
+
 
 def emojize(
-        string: str,
-        delimiters: Tuple[str, str] = (_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
-        variant: Optional[Literal['text_type', 'emoji_type']] = None,
-        language: str = 'en',
-        version: Optional[float] = None,
-        handle_version: Optional[Union[str, Callable[[str, Dict[str, str]], str]]] = None
+    string: str,
+    delimiters: Tuple[str, str] = (_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
+    variant: Optional[Literal['text_type', 'emoji_type']] = None,
+    language: str = 'en',
+    version: Optional[float] = None,
+    handle_version: Optional[Union[str, Callable[[str, Dict[str, str]], str]]] = None,
 ) -> str:
     """
     Replace emoji names in a string with Unicode codes.
@@ -120,15 +165,21 @@ def emojize(
 
     """
 
-    pattern = re.compile('(%s[%s]+%s)' %
-                         (re.escape(delimiters[0]), _EMOJI_NAME_PATTERN, re.escape(delimiters[1])))
+    unicode_codes.load_from_json(language)
+
+    pattern = re.compile(
+        '(%s[%s]+%s)'
+        % (re.escape(delimiters[0]), _EMOJI_NAME_PATTERN, re.escape(delimiters[1]))
+    )
 
     def replace(match: Match[str]) -> str:
-        name = match.group(1)[len(delimiters[0]):-len(delimiters[1])]
+        name = match.group(1)[len(delimiters[0]) : -len(delimiters[1])]
         emj = unicode_codes.get_emoji_by_name(
-            _DEFAULT_DELIMITER +
-            unicodedata.normalize('NFKC', name) +
-            _DEFAULT_DELIMITER, language)
+            _DEFAULT_DELIMITER
+            + unicodedata.normalize('NFKC', name)
+            + _DEFAULT_DELIMITER,
+            language,
+        )
 
         if emj is None:
             return match.group(1)
@@ -148,24 +199,27 @@ def emojize(
         if variant is None or 'variant' not in unicode_codes.EMOJI_DATA[emj]:
             return emj
 
-        if emj[-1] == '\uFE0E' or emj[-1] == '\uFE0F':
+        if emj[-1] == '\ufe0e' or emj[-1] == '\ufe0f':
             # Remove an existing variant
             emj = emj[0:-1]
-        if variant == "text_type":
-            return emj + '\uFE0E'
-        elif variant == "emoji_type":
-            return emj + '\uFE0F'
+        if variant == 'text_type':
+            return emj + '\ufe0e'
+        elif variant == 'emoji_type':
+            return emj + '\ufe0f'
         else:
             raise ValueError(
-                "Parameter 'variant' must be either None, 'text_type' or 'emoji_type'")
+                "Parameter 'variant' must be either None, 'text_type' or 'emoji_type'"
+            )
 
     return pattern.sub(replace, string)
 
 
-def analyze(string: str, non_emoji: bool = False, join_emoji: bool = True) -> Iterator[Token]:
+def analyze(
+    string: str, non_emoji: bool = False, join_emoji: bool = True
+) -> Iterator[Token]:
     """
     Find unicode emoji in a string. Yield each emoji as a named tuple
-    :class:`Token` ``(chars, EmojiMatch)`` or `:class:`Token` ``(chars, EmojiMatchZWJNonRGI)``.
+    :class:`Token` ``(chars, EmojiMatch)`` or :class:`Token` ``(chars, EmojiMatchZWJNonRGI)``.
     If ``non_emoji`` is True, also yield all other characters as
     :class:`Token` ``(char, char)`` .
 
@@ -176,15 +230,16 @@ def analyze(string: str, non_emoji: bool = False, join_emoji: bool = True) -> It
     """
 
     return filter_tokens(
-        tokenize(string, keep_zwj=True), emoji_only=not non_emoji, join_emoji=join_emoji)
+        tokenize(string, keep_zwj=True), emoji_only=not non_emoji, join_emoji=join_emoji
+    )
 
 
 def demojize(
-        string: str,
-        delimiters: Tuple[str, str] = (_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
-        language: str = 'en',
-        version: Optional[float] = None,
-        handle_version: Optional[Union[str, Callable[[str, Dict[str, str]], str]]] = None
+    string: str,
+    delimiters: Tuple[str, str] = (_DEFAULT_DELIMITER, _DEFAULT_DELIMITER),
+    language: str = 'en',
+    version: Optional[float] = None,
+    handle_version: Optional[Union[str, Callable[[str, Dict[str, str]], str]]] = None,
 ) -> str:
     """
     Replace Unicode emoji in a string with emoji shortcodes. Useful for storage.
@@ -227,6 +282,8 @@ def demojize(
     else:
         _use_aliases = False
 
+    unicode_codes.load_from_json(language)
+
     def handle(emoji_match: EmojiMatch) -> str:
         assert emoji_match.data is not None
         if version is not None and emoji_match.data['E'] > version:
@@ -238,7 +295,9 @@ def demojize(
                 return ''
         elif language in emoji_match.data:
             if _use_aliases and 'alias' in emoji_match.data:
-                return delimiters[0] + emoji_match.data['alias'][0][1:-1] + delimiters[1]
+                return (
+                    delimiters[0] + emoji_match.data['alias'][0][1:-1] + delimiters[1]
+                )
             else:
                 return delimiters[0] + emoji_match.data[language][1:-1] + delimiters[1]
         else:
@@ -246,14 +305,16 @@ def demojize(
             return emoji_match.emoji
 
     matches = tokenize(string, keep_zwj=config.demojize_keep_zwj)
-    return "".join(str(handle(token.value)) if isinstance(
-        token.value, EmojiMatch) else token.value for token in matches)
+    return ''.join(
+        str(handle(token.value)) if isinstance(token.value, EmojiMatch) else token.value
+        for token in matches
+    )
 
 
 def replace_emoji(
-        string: str,
-        replace: Union[str, Callable[[str, Dict[str, str]], str]] = '',
-        version: float = -1
+    string: str,
+    replace: Union[str, Callable[[str, Dict[str, str]], str]] = '',
+    version: float = -1,
 ) -> str:
     """
     Replace Unicode emoji in a customizable string.
@@ -283,10 +344,11 @@ def replace_emoji(
 
     matches = tokenize(string, keep_zwj=config.replace_emoji_keep_zwj)
     if config.replace_emoji_keep_zwj:
-        matches = filter_tokens(
-            matches, emoji_only=False, join_emoji=True)
-    return "".join(str(handle(m.value)) if isinstance(
-        m.value, EmojiMatch) else m.value for m in matches)
+        matches = filter_tokens(matches, emoji_only=False, join_emoji=True)
+    return ''.join(
+        str(handle(m.value)) if isinstance(m.value, EmojiMatch) else m.value
+        for m in matches
+    )
 
 
 def emoji_list(string: str) -> List[_EmojiListReturn]:
@@ -296,18 +358,20 @@ def emoji_list(string: str) -> List[_EmojiListReturn]:
         [{'match_start': 15, 'match_end': 16, 'emoji': '😁'}]
     """
 
-    return [{
-        'match_start': m.value.start,
-        'match_end': m.value.end,
-        'emoji': m.value.emoji,
-    } for m in tokenize(string, keep_zwj=False) if isinstance(m.value, EmojiMatch)]
+    return [
+        {
+            'match_start': m.value.start,
+            'match_end': m.value.end,
+            'emoji': m.value.emoji,
+        }
+        for m in tokenize(string, keep_zwj=False)
+        if isinstance(m.value, EmojiMatch)
+    ]
 
 
 def distinct_emoji_list(string: str) -> List[str]:
     """Returns distinct list of emojis from the string."""
-    distinct_list = list(
-        {e['emoji'] for e in emoji_list(string)}
-    )
+    distinct_list = list({e['emoji'] for e in emoji_list(string)})
     return distinct_list
 
 
@@ -367,6 +431,7 @@ def version(string: str) -> float:
     def f(e: str, emoji_data: Dict[str, Any]) -> str:
         version.append(emoji_data['E'])
         return ''
+
     replace_emoji(string, replace=f, version=-1)
     if version:
         return version[0]
@@ -378,4 +443,4 @@ def version(string: str) -> float:
         if version:
             return version[0]
 
-    raise ValueError("No emoji found in string")
+    raise ValueError('No emoji found in string')

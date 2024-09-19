@@ -1,4 +1,4 @@
-name: updateGithubPages
+name: Update GithubPages documentation
 
 on:
   workflow_dispatch:
