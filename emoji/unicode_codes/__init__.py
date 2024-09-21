@@ -78,7 +78,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]]
 def _load_default_from_json():
     global EMOJI_DATA
     global _loaded_keys
-    with open(Path(__file__).with_name('emoji.json')) as f:
+
+    file = Path(__file__).with_name('emoji.json')
+    with open(file, 'rb') as f:
         EMOJI_DATA = dict(json.load(f, object_pairs_hook=EmojiDataDict))  # type: ignore
     _loaded_keys = list(_DEFAULT_KEYS)
 
@@ -93,7 +95,7 @@ def load_from_json(key: str):
         raise NotImplementedError('Language not supported', key)
 
     file = Path(__file__).with_name(f'emoji_{key}.json')
-    with open(file) as f:
+    with open(file, 'rb') as f:
         for emj, value in json.load(f).items():
             EMOJI_DATA[emj][key] = value  # type: ignore
 

@@ -4,3 +4,5 @@ include README.rst
 include CHANGES.md
 include utils/testutils.py
 recursive-include tests *.py
+include emoji/unicode_codes/emoji.json
+recursive-include emoji/unicode_codes emoji_*.json

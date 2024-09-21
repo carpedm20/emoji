@@ -1,6 +1,10 @@
 emoji
 =====
 
+v2.13.1 (2024-09-21)
+-----
+* Read JSON files in binary mode to avoid UnicodeDecodeError #305
+
 v2.13.0 (2024-09-19)
 -----
 * Use JSON files to store the database of emoji
