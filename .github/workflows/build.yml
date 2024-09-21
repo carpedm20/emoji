@@ -1,0 +1,52 @@
+name: Build & test whl
+
+on: [push]
+
+jobs:
+
+  build-package:
+    name: Build & verify package
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: hynek/build-and-inspect-python-package@v2
+        id: baipp
+
+    outputs:
+      python-versions: ${{ steps.baipp.outputs.supported_python_classifiers_json_array }}
+
+  testwheel:
+    name: Test whl
+    runs-on: ubuntu-latest
+    needs: build-package
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version:
+            - "3.10"
+            - "3.11"
+            - "3.12"
+            - "3.13-dev"
+    steps:
+
+    - name: Download pre-built packages
+      uses: actions/download-artifact@v4
+      with:
+        name: Packages
+        path: dist
+    - name: Extract source tarball
+      run: tar xf dist/*.tar.gz --strip-components=1
+    - name: Remove source code
+      run: rm -R emoji
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install tox
+      run: python -Im pip install tox
+    - name: Run tox on wheel
+      run: python -Im tox run --installpkg dist/*.whl

@@ -1,6 +1,15 @@
 emoji
 =====
 
+v2.13.1 (2024-09-21)
+-----
+* Read JSON files in binary mode to avoid UnicodeDecodeError #305
+
+v2.13.0 (2024-09-19)
+-----
+* Use JSON files to store the database of emoji
+* Load a language into emoji.EMOJI_DATA with emoji.config.load_language("zh")
+
 v2.12.1 (2024-05-20)
 -----
 * `typing-extensions` requires at least version `4.7.0` #297

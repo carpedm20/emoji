@@ -8,8 +8,8 @@ description = "Emoji for Python"
 readme = "README.rst"
 requires-python = ">=3.7"
 authors = [
-    {name = "Taehoon Kim", email = "carpedm20@gmail.com"},
-    {name = "Kevin Wurster", email = "wursterk@gmail.com"},
+    { name = "Taehoon Kim", email = "carpedm20@gmail.com" },
+    { name = "Kevin Wurster", email = "wursterk@gmail.com" },
 ]
 keywords = ["emoji"]
 classifiers = [
@@ -24,17 +24,17 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
     "Programming Language :: Python",
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     "Topic :: Multimedia :: Graphics :: Presentation",
     "Topic :: Software Development :: Libraries :: Python Modules",
-    "Typing :: Typed"
+    "Typing :: Typed",
 ]
-dependencies = [
-    "typing_extensions >= 4.7.0",
-]
+dependencies = ["typing_extensions >= 4.7.0"]
 dynamic = ["version"]
 
 [project.urls]
@@ -42,19 +42,16 @@ homepage = "https://github.com/carpedm20/emoji/"
 repository = "https://github.com/carpedm20/emoji/"
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=7.4.4",
-    "coverage",
-]
+dev = ["pytest>=7.4.4", "coverage"]
 
 [tool.setuptools.packages.find]
 include = ["emoji*"]
 
 [tool.setuptools.package-data]
-emoji = ["py.typed"]
+emoji = ["py.typed", "unicode_codes/emoji.json", "unicode_codes/emoji_*.json"]
 
 [tool.setuptools.dynamic]
-version = {attr = "emoji.__version__"}
+version = { attr = "emoji.__version__" }
 
 [tool.pytest.ini_options]
 pythonpath = [".", "utils"]
@@ -66,10 +63,35 @@ pythonPlatform = "All"
 typeCheckingMode = "strict"
 extraPaths = ["utils"]
 exclude = [
-  "**/__pycache__",
-  ".git",
-  ".venv",
-  "build",
-  "utils/gh-pages",
-  "utils/get_codes_from_unicode_emoji_data_files.py",
+    "**/__pycache__",
+    ".git",
+    ".venv",
+    "build",
+    "utils/gh-pages",
+    "utils/get_codes_from_unicode_emoji_data_files.py",
 ]
+
+
+[tool.ruff]
+line-length = 88
+[tool.ruff.format]
+quote-style = "single"
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B", "Q"]
+ignore = ["Q000", "Q003"]
+
+[tool.tox]
+legacy_tox_ini = """
+    [tox]
+    minversion = 4.15.0
+
+    [testenv]
+    description = Run the tests with pytest
+    package = wheel
+    wheel_build_env = .pkg
+    changedir = tests
+    deps =
+        pytest>=6
+    commands =
+        pytest {tty:--color=yes} --basetemp="{envtmpdir}" {posargs}
+"""

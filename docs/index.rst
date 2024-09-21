@@ -69,6 +69,21 @@ Spanish (``'es'``), Portuguese (``'pt'``), Italian (``'it'``), French (``'fr'``)
 
 ..
 
+If you want to access the emoji names of a language directly,
+you can load the language data and then access it in the :data:`EMOJI_DATA` dict
+by using the language code as a key:
+
+.. doctest::
+
+    >>> emoji.config.load_language('es')
+    >>> print(emoji.EMOJI_DATA['👍']['es'])
+    :pulgar_hacia_arriba:
+
+..
+
+Note: Not all emoji have names in all languages
+
+
 Extracting emoji
 ^^^^^^^^^^^^^^^^
 

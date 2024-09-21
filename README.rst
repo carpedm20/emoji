@@ -97,6 +97,23 @@ with `BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`__
 and prints the contents to ``stdout`` as a Python dictionary. For more
 information take a look in the `utils/README.md <utils/README.md>`__ file.
 
+Check the code style with:
+
+.. code-block:: console
+
+    $ python -m pip install ruff
+    $ ruff check emoji
+
+Test the type checks with:
+
+.. code-block:: console
+
+    $ python -m pip install pyright mypy typeguard
+    $ pyright emoji
+    $ pyright tests
+    $ mypy emoji
+    $ pytest --typeguard-packages=emoji
+
 
 Links
 -----
