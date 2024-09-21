@@ -4,6 +4,7 @@ emoji
 v2.13.1 (2024-09-21)
 -----
 * Read JSON files in binary mode to avoid UnicodeDecodeError #305
+* `typing_extensions` dependency not required on Python 3.9 and higher #303
 
 v2.13.0 (2024-09-19)
 -----
