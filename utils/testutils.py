@@ -4,7 +4,7 @@ import unicodedata
 
 import pytest
 if sys.version_info < (3, 9):
-    from typing_extensions import Literal
+    from typing_extensions import Literal  # type: ignore
 else:
     from typing import Literal
 

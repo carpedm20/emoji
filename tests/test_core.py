@@ -6,7 +6,7 @@ import sys
 
 from typing import Any, Callable, Dict, List, Tuple, Union
 if sys.version_info < (3, 9):
-    from typing_extensions import Literal
+    from typing_extensions import Literal  # type: ignore
 else:
     from typing import Literal
 import pytest
