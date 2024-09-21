@@ -2,7 +2,11 @@ from typing import Generator, Dict, Any, Tuple, Iterable
 import sys
 import unicodedata
 import emoji.unicode_codes
-from typing_extensions import Literal
+
+if sys.version_info < (3, 9):
+    from typing_extensions import Literal
+else:
+    from typing import Literal
 
 _NormalizationForm = Literal['NFC', 'NFD', 'NFKC', 'NFKD']
 
