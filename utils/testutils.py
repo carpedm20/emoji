@@ -2,10 +2,13 @@ from typing import Generator, Dict, Any, Tuple, Iterable
 import sys
 import unicodedata
 
-import emoji.unicode_codes
-
-from typing_extensions import Literal
 import pytest
+if sys.version_info < (3, 9):
+    from typing_extensions import Literal  # type: ignore
+else:
+    from typing import Literal
+
+import emoji.unicode_codes
 
 _NormalizationForm = Literal['NFC', 'NFD', 'NFKC', 'NFKD']
 

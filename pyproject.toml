@@ -34,7 +34,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Typing :: Typed",
 ]
-dependencies = ["typing_extensions >= 4.7.0"]
+dependencies = ["typing_extensions >= 4.7.0; python_version < '3.9'"]
 dynamic = ["version"]
 
 [project.urls]
