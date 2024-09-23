@@ -21,7 +21,7 @@ __all__ = [
     'LANGUAGES',
 ]
 
-__version__ = '2.13.1'
+__version__ = '2.13.2'
 __author__ = 'Taehoon Kim, Kevin Wurster'
 __email__ = 'carpedm20@gmail.com'
 # and wursterk@gmail.com, tahir.jalilov@gmail.com
