@@ -1,6 +1,10 @@
 emoji
 =====
 
+v2.14.0 (2024-10-02)
+-----
+* Update to Unicode 16.0
+
 v2.13.2 (2024-09-23)
 -----
 * `typing_extensions` dependency not required on Python 3.9 and higher #303
