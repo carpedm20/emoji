@@ -595,11 +595,16 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
     def clean(s: str) -> str:
         return s.replace('\u200d', '').replace('\ufe0f', '')
 
-    all_emoji_list = list(emoji.EMOJI_DATA.items())
     qualified_emoji_list = [
         (emj, item)
         for emj, item in emoji.EMOJI_DATA.items()
         if item['status'] == emoji.STATUS['fully_qualified']
+    ]
+
+    all_emoji_list_except_component = [
+        (emj, item)
+        for emj, item in emoji.EMOJI_DATA.items()
+        if item['status'] >= emoji.STATUS['fully_qualified']
     ]
 
     # qualified emoji
@@ -644,9 +649,9 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
     for i, lis in enumerate(emoji.emoji_list(text_with_unicode)):
         assert lis['emoji'] == emoji_list[i]
 
-    # all emoji
+    # all emoji (except components)
     text_with_unicode, text_with_placeholder, emoji_list = add_random_emoji(
-        text, all_emoji_list
+        text, all_emoji_list_except_component
     )
     assert emoji.demojize(text_with_unicode) == text_with_placeholder
     assert clean(emoji.emojize(text_with_placeholder)) == clean(text_with_unicode)
