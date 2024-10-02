@@ -90,12 +90,11 @@ Developing
     $ coverage run -m pytest
     $ coverage report
 
-The ``utils/get_codes_from_unicode_emoji_data_files.py`` is used to generate
-``unicode_codes/data_dict.py``. Generally speaking it scrapes a table on the
+The ``utils/generate_emoji.py`` script is used to generate
+``unicode_codes/emoji.json``. Generally speaking it scrapes a table on the
 `Unicode Consortium's website <https://www.unicode.org/reports/tr51/#emoji_data>`__
 with `BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`__
-and prints the contents to ``stdout`` as a Python dictionary. For more
-information take a look in the `utils/README.md <utils/README.md>`__ file.
+For more information take a look in the `utils/README.md <utils/README.md>`__ file.
 
 Check the code style with:
 

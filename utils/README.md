@@ -25,16 +25,25 @@ The data on https://emojiterra.com/ is also sourced from the unicode repository 
 countries/flags are included on emojiterra but no in the Unicode repository (they are located in a different file
 on the Unicode respository).
 
-We use the URL of the "Copy and Paste"-section to extract the data. Go to https://emojiterra.com/copypaste/ and
+We use the URL of the "Copy and Paste"-section to extract the data. Go to https://emojiterra.com/keyboard/ and
 then select the language from the dropdown menu.
-Note that the URL is sometimes localized. For example the Spanish url is `https://emojiterra.com/es/copiar/` but
-the Turkish url is `https://emojiterra.com/copypaste/tr/`
+Note that the URL is sometimes localized. For example the Spanish url is `https://emojiterra.com/es/teclado/` but
+the Turkish url is `https://emojiterra.com/keyboard/tr/`
 
 
-## Generate EMOJI_DATA
+## Generate JSON files
 
-To generate all the names automatically from all the data, we use
-[`utils/get_codes_from_unicode_emoji_data_files.py`](get_codes_from_unicode_emoji_data_files.py#L306-L311)
+To generate all the emoji sequences, English names and aliases automatically from all the data, we use
+[`utils/generate_emoji.py`](generate_emoji.py)
+
+To update to a newer Unicode version, change the parameters of these lines:
+
+```python
+   emoji_source = get_emoji_from_url(16.0)
+    emoji_sequences_source = get_emoji_variation_sequence_from_url('16.0.0')
+```
+
+The translations are generated with the script [`utils/generate_emoji_translations.py`](generate_emoji_translations.py)
 
 Open the script and add the two-letter code of the language to the dict `languages = {`. For example, we can add `es`:
 
@@ -44,19 +53,19 @@ languages = {
 }
 ```
 
-Now we run the script and store the output in `out.py`. The output is a new `EMOJI_DATA` dict
+If you run the script, the JSON files in the directory `emoji/unicode_codes/` are replaced with the new files.
 
 ```sh
 python -m pip install -r requirements.txt
-python utils/get_codes_from_unicode_emoji_data_files.py > out.py
+python utils/generate_emoji.py
+python utils/generate_emoji_translations.py
 ```
 
-Copy the content of `out.py` into the `EMOJI_DATA` dict in [`emoji/unicode_codes/data_dict.py`](../emoji/unicode_codes/data_dict.py) and
-add `'es'` to `LANGUAGES` variable.
+If you have added a new language you need to add the language to the `LANGUAGES` variable in [`emoji/unicode_codes/data_dict.py`](../emoji/unicode_codes/data_dict.py).
 
 You can also add the new langauge to the `languages` dict in [`utils/gh-pages/generatePages.py`](gh-pages/generatePages.py#L26-L35).
 
-## Test the new `EMOJI_DATA`
+## Test the new data
 
 The final step is to run the tests to check that everything works as it should:
 
@@ -93,10 +102,10 @@ unicodedata.normalize('NFKD', name)  # ':Curac\\u0327ao:'
 unicodedata.normalize('NFD', name)   # ':Curac\\u0327ao:'
 ```
 
-To solve this, you can strip/replace the offending character from the emoji name by changing the `adapt_emoji_name()` in
-`utils/get_codes_from_unicode_emoji_data_files.py`. There are already special cases for some languages.
+To solve this, you can strip/replace the offending character from the emoji name by changing the `adapt_emoji_name()` in `generateutils.py`.
+There are already special cases for some languages.
 
-You could also change the entries in `EMOJI_DATA` by hand if it is only a few special cases.
+You could also change the entries in the JSON file by hand if it is only a few special cases.
 
 If you think the character should be kept in the name, then you have to add the character (and possibly the other Unicode forms of it)
 to the regular expression `emoji.core._EMOJI_NAME_PATTERN`.
