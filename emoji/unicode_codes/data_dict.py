@@ -1,7 +1,7 @@
 """Data containing all current emoji
 Extracted from https://unicode.org/Public/emoji/latest/emoji-test.txt
 and https://www.unicode.org/Public/UCD/latest/ucd/emoji/emoji-variation-sequences.txt
-See utils/get_codes_from_unicode_emoji_data_files.py
+See utils/generate_emoji.py
 
 +----------------+-------------+------------------+-------------------+
 | Emoji Version  |    Date     | Unicode Version  | Data File Comment |
@@ -21,6 +21,7 @@ See utils/get_codes_from_unicode_emoji_data_files.py
 | Emoji 14.0     | 2021-09-14  | Unicode 14.0     | E14.0             |
 | Emoji 15.0     | 2022-09-13  | Unicode 15.0     | E15.0             |
 | Emoji 15.1     | 2023-09-12  | Unicode 15.1     | E15.1             |
+| Emoji 16.0     | 2024-09-10  | Unicode 16.0     | E16.0             |
 
                http://www.unicode.org/reports/tr51/#Versioning
 
