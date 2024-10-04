@@ -68,14 +68,21 @@ exclude = [
     ".venv",
     "build",
     "utils/gh-pages",
-    "utils/get_codes_from_unicode_emoji_data_files.py",
+    "utils/generate_emoji.py",
+    "utils/generate_emoji_translations.py",
+    "utils/generateutils.py",
 ]
-
 
 [tool.ruff]
 line-length = 88
 [tool.ruff.format]
 quote-style = "single"
+exclude = [
+    "utils/generate_emoji.py",
+    "utils/generate_emoji_translations.py",
+    "utils/generateutils.py",
+]
+
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F", "B", "Q"]
 ignore = ["Q000", "Q003"]
