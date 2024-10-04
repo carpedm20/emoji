@@ -146,7 +146,7 @@ The following table lists all versions, the number that is used in :data:`emoji.
 the "Data File Comment" column:
 
 .. literalinclude:: ../emoji/unicode_codes/data_dict.py
-   :start-after: emoji_data_files.py
+   :start-after: generate_emoji.py
    :end-before: """
    :caption: Unicode/Emoji Version (emoji/unicode_codes/data_dict.py)
    :dedent: 2
