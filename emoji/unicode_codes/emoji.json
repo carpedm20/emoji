@@ -1675,7 +1675,8 @@
 "🇨🇶": {
   "en": ":Sark:",
   "status": 2,
-  "E": 16
+  "E": 16,
+  "alias": [":flag_for_Sark:"]
 },
 "🇸🇦": {
   "en": ":Saudi_Arabia:",
