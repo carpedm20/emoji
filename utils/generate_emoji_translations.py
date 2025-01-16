@@ -27,23 +27,26 @@ import emoji as emoji_pkg  # noqa: E402
 emoji_pkg.config.load_language()  # Make all languages available in EMOJI_DATA
 
 
-
 def get_emojiterra_from_url(url: str) -> Dict[str, str]:
     html = get_text_from_url(url)
 
     soup = bs4.BeautifulSoup(html, 'html.parser')
     emojis: Dict[str, str] = {}
 
-    data = soup.find_all('li')
+    lis = soup.find_all('li')
 
     data = [
-        i
-        for i in data
-        if 'href' not in i.attrs and 'data-e' in i.attrs and i['data-e'].strip()
+        li
+        for li in lis
+        if 'class' in li.attrs
+        and 'href' not in li.attrs
+        and 'e-' in str(li['class'])
+        and li['title'].strip()
+        and li.text.strip()
     ]
 
     for i in data:
-        code = i['data-e']
+        code = i.text.strip()
         emojis[code] = i['title'].strip()
 
     assert len(data) > 100, f'emojiterra data from {url} has only {len(data)} entries'
@@ -68,7 +71,7 @@ def add_unicode_annotations(data: Dict[str, str], lang: str, url: str):
     for annotation in annotations:
         if annotation.get('type') == 'tts':
             emj = annotation.get('cp')
-            assert annotation.text is not None, "Empty annotation text"
+            assert annotation.text is not None, 'Empty annotation text'
             text = annotation.text.strip()
             assert emj is not None, f'No code point found in {url} for {annotation}'
             assert text is not None, f'No text found in {url} for {annotation}'
@@ -76,13 +79,6 @@ def add_unicode_annotations(data: Dict[str, str], lang: str, url: str):
             emoji_name = adapt_emoji_name(text, lang, emj)
 
             if emj in data and data[emj] != emoji_name:
-                if '\U0000200d\U000027a1' in emj:
-                    # TODO Skip right-facing emoji (i.e. 🧑🏻‍🦽 vs 🧑🏻‍🦽‍➡️) for now because they are not correctly translated yet
-                    # TODO They are currently missing the skin-colour information in the translations.
-                    print(
-                        f'# {lang}: {emj} SKIPPED CHANGE FROM {data[emj]} TO {emoji_name} \t\t(Source: {text})'
-                    )
-                    continue
                 print(
                     f'# {lang}: {emj} CHANGED {data[emj]} TO {emoji_name} \t\t(Source: {text})'
                 )
@@ -162,9 +158,10 @@ def extract_names(
     return data
 
 
-
 if __name__ == '__main__':
-    logging.warning('Please run generate_emoji.py before this script to update the list of emojis (emoji.json file).')
+    logging.warning(
+        'Please run generate_emoji.py before this script to update the list of emojis (emoji.json file).'
+    )
 
     logging.info('  Downloading...\n')
 
@@ -172,7 +169,7 @@ if __name__ == '__main__':
 
     # Find latest release tag at https://cldr.unicode.org/index/downloads
     # or  https://github.com/unicode-org/cldr/releases
-    github_tag = 'release-46-beta2'
+    github_tag = 'release-46-1'
     languages = {
         # Update names in other languages:
         'de': extract_names(github_tag, 'de', 'de', get_emojiterra_from_url('https://emojiterra.com/de/tastatur/')),

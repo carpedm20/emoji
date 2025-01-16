@@ -1,9 +1,10 @@
+import sys
+import importlib.resources
 import json
 from functools import lru_cache
-from pathlib import Path
 from warnings import warn
 
-from typing import Optional, Dict, List, Any
+from typing import Any, BinaryIO, Dict, List, Optional
 
 from emoji.unicode_codes.data_dict import STATUS, LANGUAGES
 
@@ -75,12 +76,18 @@ Accessing EMOJI_DATA[emj]['{key}'] without loading the language is deprecated.""
 EMOJI_DATA: Dict[str, Dict[str, Any]]
 
 
+def _open_file(name: str) -> BinaryIO:
+    if sys.version_info >= (3, 9):
+        return importlib.resources.files('emoji.unicode_codes').joinpath(name).open('rb')
+    else:
+        return importlib.resources.open_binary('emoji.unicode_codes', name)
+
+
 def _load_default_from_json():
     global EMOJI_DATA
     global _loaded_keys
 
-    file = Path(__file__).with_name('emoji.json')
-    with open(file, 'rb') as f:
+    with _open_file('emoji.json') as f:
         EMOJI_DATA = dict(json.load(f, object_pairs_hook=EmojiDataDict))  # type: ignore
     _loaded_keys = list(_DEFAULT_KEYS)
 
@@ -94,8 +101,7 @@ def load_from_json(key: str):
     if key not in LANGUAGES:
         raise NotImplementedError('Language not supported', key)
 
-    file = Path(__file__).with_name(f'emoji_{key}.json')
-    with open(file, 'rb') as f:
+    with _open_file(f'emoji_{key}.json') as f:
         for emj, value in json.load(f).items():
             EMOJI_DATA[emj][key] = value  # type: ignore
 
