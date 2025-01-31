@@ -107,8 +107,7 @@ class EmojiMatchZWJ(EmojiMatch):
         """
         Joins a ZWJ-emoji into a string
         """
-
-        return _ZWJ.join(e.emoji for e in self.emojis)
+        return _ZWJ.join([e.emoji for e in self.emojis])
 
     def is_zwj(self) -> bool:
         return True
