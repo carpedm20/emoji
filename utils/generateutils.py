@@ -16,10 +16,9 @@ def to_ascii(s: str) -> str:
 def get_text_from_url(url: str) -> str:
     """Get text from url"""
 
-    html = ''
-    if __scraper is None:
-        html = requests.get(url).text
-    if __scraper is not None or 'you have been blocked' in html.lower():
+    html = requests.get(url).text
+
+    if 'you have been blocked' in html.lower():
         html = get_text_from_cloudflare_url(url)
 
     return html
