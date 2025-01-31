@@ -81,7 +81,7 @@ class EmojiMatch:
             return self
 
     def __repr__(self) -> str:
-        return f'{self.__class__.__name__}({self.emoji}, {self.start}:{self.end})'
+        return f'EmojiMatch({self.emoji}, {self.start}:{self.end})'
 
 
 class EmojiMatchZWJ(EmojiMatch):
