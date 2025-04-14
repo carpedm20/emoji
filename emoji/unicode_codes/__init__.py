@@ -4,7 +4,7 @@ import json
 from functools import lru_cache
 from warnings import warn
 
-from typing import Any, BinaryIO, Dict, List, Optional, Set
+from typing import Any, BinaryIO, Dict, Optional, Set
 
 from emoji.unicode_codes.data_dict import STATUS, LANGUAGES
 
