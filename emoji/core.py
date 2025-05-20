@@ -405,6 +405,8 @@ def purely_emoji(string: str) -> bool:
     This might not imply that `is_emoji` for all the characters, for example,
     if the string contains variation selectors.
     """
+    if not string:
+        return False
     return all(isinstance(m.value, EmojiMatch) for m in analyze(string, non_emoji=True))
 
 
