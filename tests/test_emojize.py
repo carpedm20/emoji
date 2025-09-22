@@ -9,5 +9,5 @@ import emoji
     (":red_heart:", "❤️"),
     (":grinning_face:", "😀"),
 ])
-def test_emojize_basic(input_text, expected):
+def test_emojize_basic(input_text: str, expected: str) -> None:
     assert emoji.emojize(input_text) == expected
