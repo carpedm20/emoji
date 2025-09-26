@@ -337,9 +337,8 @@ def replace_emoji(
                     return str(replace)
         elif callable(replace):
             return replace(emoji_match.emoji, emoji_match.data_copy())
-        elif replace is not None:  # type: ignore
-            return replace
-        return emoji_match.emoji
+        else:
+            return str(replace)  # This will convert empty string, None, or any other value to string
 
     matches = tokenize(string, keep_zwj=config.replace_emoji_keep_zwj)
     if config.replace_emoji_keep_zwj:
