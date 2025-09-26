@@ -293,10 +293,12 @@ def demojize(
             else:
                 return ''
         elif language in emoji_match.data:
-            if _use_aliases and 'alias' in emoji_match.data:
-                return (
-                    delimiters[0] + emoji_match.data['alias'][0][1:-1] + delimiters[1]
-                )
+            if _use_aliases and 'alias' in emoji_match.data and emoji_match.data['alias']:
+                alias = emoji_match.data['alias'][0]
+                if len(alias) >= 2:
+                    return delimiters[0] + alias[1:-1] + delimiters[1]
+                else:
+                    return delimiters[0] + alias + delimiters[1]
             else:
                 return delimiters[0] + emoji_match.data[language][1:-1] + delimiters[1]
         else:
@@ -427,7 +429,7 @@ def version(string: str) -> float:
     version: List[float] = []
 
     def f(e: str, emoji_data: Dict[str, Any]) -> str:
-        version.append(emoji_data['E'])
+        version.append(emoji_data.get('E', 0.0))  # Default to 0.0 if 'E' key missing
         return ''
 
     replace_emoji(string, replace=f, version=-1)
