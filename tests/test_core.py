@@ -707,6 +707,7 @@ purely_emoji_testdata = [
     ('abc\U0001f600', False),
     ('\U0001f600c', False),
     ('\u270a\U0001f3fe', True),
+    ('', False),
 ]
 
 
