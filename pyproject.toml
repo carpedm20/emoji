@@ -35,6 +35,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 dynamic = ["version"]
+dependencies = ["orjson"]
 
 [project.urls]
 homepage = "https://github.com/carpedm20/emoji/"

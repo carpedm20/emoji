@@ -1,12 +1,17 @@
-import sys
 import importlib.resources
-import json
+import sys
 from functools import lru_cache
+from typing import IO, Any, Dict, Optional, Set
 from warnings import warn
 
-from typing import IO, Any, Dict, Optional, Set
+import orjson
 
-from emoji.unicode_codes.data_dict import STATUS, LANGUAGES
+
+def _loads(data: bytes) -> Any:
+    return orjson.loads(data)
+
+
+from emoji.unicode_codes.data_dict import LANGUAGES, STATUS
 
 __all__ = [
     'get_emoji_by_name',
@@ -78,7 +83,9 @@ EMOJI_DATA: Dict[str, Dict[str, Any]]
 
 def _open_file(name: str) -> IO[bytes]:
     if sys.version_info >= (3, 9):
-        return importlib.resources.files('emoji.unicode_codes').joinpath(name).open('rb')
+        return (
+            importlib.resources.files('emoji.unicode_codes').joinpath(name).open('rb')
+        )
     else:
         return importlib.resources.open_binary('emoji.unicode_codes', name)
 
@@ -88,7 +95,8 @@ def _load_default_from_json():
     global _loaded_keys
 
     with _open_file('emoji.json') as f:
-        EMOJI_DATA = dict(json.load(f, object_pairs_hook=EmojiDataDict))  # type: ignore
+        raw = _loads(f.read())
+    EMOJI_DATA = {k: EmojiDataDict(v) for k, v in raw.items()}  # type: ignore
     _loaded_keys = set(_DEFAULT_KEYS)
 
 
@@ -102,7 +110,7 @@ def load_from_json(key: str):
         raise NotImplementedError('Language not supported', key)
 
     with _open_file(f'emoji_{key}.json') as f:
-        for emj, value in json.load(f).items():
+        for emj, value in _loads(f.read()).items():
             EMOJI_DATA[emj][key] = value  # type: ignore
 
     _loaded_keys.add(key)
