@@ -88,7 +88,14 @@ def _load_default_from_json():
     global _loaded_keys
 
     with _open_file('emoji.json') as f:
-        EMOJI_DATA = dict(json.load(f, object_pairs_hook=EmojiDataDict))  # type: ignore
+        data = dict(json.load(f, object_pairs_hook=EmojiDataDict))  # type: ignore
+    # Exclude unqualified (status=4) entries to ensure
+    # emojize(demojize(s)) == s for all fully-qualified emoji.
+    # These are non-canonical forms (e.g., bare U+2764 without U+FE0F)
+    # that duplicate a fully-qualified entry with the same name.
+    EMOJI_DATA = {
+        k: v for k, v in data.items() if v.get('status', 0) < STATUS['unqualified']
+    }
     _loaded_keys = set(_DEFAULT_KEYS)
 
 
@@ -103,6 +110,10 @@ def load_from_json(key: str):
 
     with _open_file(f'emoji_{key}.json') as f:
         for emj, value in json.load(f).items():
+            # After filtering unqualified entries from _load_default_from_json(),
+            # some keys from language JSON files no longer exist in EMOJI_DATA.
+            if emj not in EMOJI_DATA:
+                continue
             EMOJI_DATA[emj][key] = value  # type: ignore
 
     _loaded_keys.add(key)
