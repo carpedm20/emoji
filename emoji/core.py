@@ -164,6 +164,11 @@ def emojize(
 
     """
 
+    if variant not in (None, 'text_type', 'emoji_type'):
+        raise ValueError(
+            "Parameter 'variant' must be either None, 'text_type' or 'emoji_type'"
+        )
+
     unicode_codes.load_from_json(language)
 
     pattern = re.compile(
