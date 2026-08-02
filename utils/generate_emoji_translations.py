@@ -6,7 +6,7 @@ The output files are emoji_{xy}.json where {xy} is the letter language code
 
 import sys
 import os
-from pathlib import Path
+from pathlib import Path 
 from typing import Dict, Optional, Set
 import re
 import io
@@ -185,6 +185,7 @@ if __name__ == '__main__':
         'ru': extract_names(github_tag, 'ru', 'ru', get_emojiterra_from_url('https://emojiterra.com/keyboard/ru/')),
         'tr': extract_names(github_tag, 'tr', 'tr', get_emojiterra_from_url('https://emojiterra.com/keyboard/tr/')),
         'ar': extract_names(github_tag, 'ar', 'ar', get_emojiterra_from_url('https://emojiterra.com/keyboard/ar/')),
+        'az': extract_names(github_tag, 'az', 'az', get_emojiterra_from_url('https://emojiterra.com/keyboard/az/')),
 
         # Do not update names in other languages:
         # 'de': get_UNICODE_EMOJI('de'),
