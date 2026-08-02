@@ -474,6 +474,10 @@ def test_is_emoji():
     assert emoji.is_emoji('🇫🇷')
     assert not emoji.is_emoji('🇫🇷🇫🇷')
     assert not emoji.is_emoji('\ufe0f')  # variation selector
+    # Fully-qualified emoji with variation selector (issue #325)
+    assert emoji.is_emoji('\u2615\ufe0f')  # ☕️
+    assert emoji.is_emoji('\u2615')  # ☕ (without VS16)
+    assert not emoji.is_emoji('\u2615\ufe0f\ufe0f')  # double VS16 is invalid
 
 
 def test_long_emoji():
