@@ -278,8 +278,8 @@ if __name__ == '__main__':
     logging.info('  Downloading...\n')
 
     # Find the latest version at https://www.unicode.org/reports/tr51/#emoji_data
-    emoji_source = get_emoji_from_url('17.0.0')
-    emoji_sequences_source = get_emoji_variation_sequence_from_url('17.0.0')
+    emoji_source = get_emoji_from_url('17.0.1')
+    emoji_sequences_source = get_emoji_variation_sequence_from_url('17.0.')
     emojis = extract_emojis(emoji_source, emoji_sequences_source)
 
     github_alias_dict = get_emoji_from_github_api('https://api.github.com/emojis')

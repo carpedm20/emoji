@@ -59,6 +59,7 @@ LANGUAGES: List[str] = [
     'ru',
     'tr',
     'ar',
+    'az',
 ]
 
 
