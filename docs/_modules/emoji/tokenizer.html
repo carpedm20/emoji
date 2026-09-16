@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=9550617d" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="canonical" href="https://carpedm20.github.io/emoji/docs/_modules/emoji/tokenizer.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,92 +32,92 @@
           <div class="body" role="main">
             
   <h1>Source code for emoji.tokenizer</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">emoji.tokenizer</span>
 <span class="sd">~~~~~~~~~~~~~~~</span>
 
 <span class="sd">Components for detecting and tokenizing emoji in strings.</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">NamedTuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Any</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">emoji</span><span class="w"> </span><span class="kn">import</span> <span class="n">unicode_codes</span>
 
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;EmojiMatch&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;EmojiMatchZWJ&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;EmojiMatchZWJNonRGI&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Token&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;tokenize&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;filter_tokens&#39;</span><span class="p">,</span>
+    <span class="s1">'EmojiMatch'</span><span class="p">,</span>
+    <span class="s1">'EmojiMatchZWJ'</span><span class="p">,</span>
+    <span class="s1">'EmojiMatchZWJNonRGI'</span><span class="p">,</span>
+    <span class="s1">'Token'</span><span class="p">,</span>
+    <span class="s1">'tokenize'</span><span class="p">,</span>
+    <span class="s1">'filter_tokens'</span><span class="p">,</span>
 <span class="p">]</span>
 
-<span class="n">_ZWJ</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u200d</span><span class="s1">&#39;</span>
+<span class="n">_ZWJ</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\u200d</span><span class="s1">'</span>
 <span class="n">_SEARCH_TREE</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 
 
 <div class="viewcode-block" id="EmojiMatch">
 <a class="viewcode-back" href="../../api.html#emoji.EmojiMatch">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">EmojiMatch</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Represents a match of a &quot;recommended for general interchange&quot; (RGI)</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Represents a match of a "recommended for general interchange" (RGI)</span>
 <span class="sd">    emoji in a string.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;emoji&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'emoji'</span><span class="p">,</span> <span class="s1">'start'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">,</span> <span class="s1">'data'</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">emoji</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">end</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span>
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">emoji</span> <span class="o">=</span> <span class="n">emoji</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;The emoji substring&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""The emoji substring"""</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">start</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;The start index of the match in the string&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""The start index of the match in the string"""</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;The end index of the match in the string&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""The end index of the match in the string"""</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;The entry from :data:`EMOJI_DATA` for this emoji or ``None`` if the emoji is non-RGI&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""The entry from :data:`EMOJI_DATA` for this emoji or ``None`` if the emoji is non-RGI"""</span>
 
 <div class="viewcode-block" id="EmojiMatch.data_copy">
 <a class="viewcode-back" href="../../api.html#emoji.EmojiMatch.data_copy">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">data_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Returns a copy of the data from :data:`EMOJI_DATA` for this match</span>
 <span class="sd">        with the additional keys ``match_start`` and ``match_end``.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
             <span class="n">emj_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-            <span class="n">emj_data</span><span class="p">[</span><span class="s1">&#39;match_start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span>
-            <span class="n">emj_data</span><span class="p">[</span><span class="s1">&#39;match_end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span>
+            <span class="n">emj_data</span><span class="p">[</span><span class="s1">'match_start'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span>
+            <span class="n">emj_data</span><span class="p">[</span><span class="s1">'match_end'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span>
             <span class="k">return</span> <span class="n">emj_data</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;match_start&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="s1">&#39;match_end&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">}</span></div>
+            <span class="k">return</span> <span class="p">{</span><span class="s1">'match_start'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="s1">'match_end'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">}</span></div>
 
 
 <div class="viewcode-block" id="EmojiMatch.is_zwj">
 <a class="viewcode-back" href="../../api.html#emoji.EmojiMatch.is_zwj">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">is_zwj</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Checks if this is a ZWJ-emoji.</span>
 
 <span class="sd">        :returns: True if this is a ZWJ-emoji, False otherwise</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="n">_ZWJ</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">emoji</span></div>
 
 
 <div class="viewcode-block" id="EmojiMatch.split">
 <a class="viewcode-back" href="../../api.html#emoji.EmojiMatch.split">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="s1">&#39;EmojiMatchZWJ&#39;</span><span class="p">,</span> <span class="s1">&#39;EmojiMatch&#39;</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="s1">'EmojiMatchZWJ'</span><span class="p">,</span> <span class="s1">'EmojiMatch'</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Splits a ZWJ-emoji into its constituents.</span>
 
-<span class="sd">        :returns: An :class:`EmojiMatchZWJ` containing the &quot;sub-emoji&quot; if this is a ZWJ-emoji, otherwise self</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        :returns: An :class:`EmojiMatchZWJ` containing the "sub-emoji" if this is a ZWJ-emoji, otherwise self</span>
+<span class="sd">        """</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_zwj</span><span class="p">():</span>
             <span class="k">return</span> <span class="n">EmojiMatchZWJ</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -126,24 +126,24 @@
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">emoji</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="si">}</span><span class="s1">)&#39;</span></div>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">emoji</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="si">}</span><span class="s1">)'</span></div>
 
 
 
 <div class="viewcode-block" id="EmojiMatchZWJ">
 <a class="viewcode-back" href="../../api.html#emoji.EmojiMatchZWJ">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">EmojiMatchZWJ</span><span class="p">(</span><span class="n">EmojiMatch</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Represents a match of multiple emoji in a string that were joined by</span>
-<span class="sd">    zero-width-joiners (ZWJ/``\\u200D``).&quot;&quot;&quot;</span>
+<span class="sd">    zero-width-joiners (ZWJ/``\\u200D``)."""</span>
 
-    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;emojis&#39;</span><span class="p">,)</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'emojis'</span><span class="p">,)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">match</span><span class="p">:</span> <span class="n">EmojiMatch</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">emoji</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">emojis</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">EmojiMatch</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;List of sub emoji as EmojiMatch objects&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""List of sub emoji as EmojiMatch objects"""</span>
 
         <span class="n">i</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">start</span>
         <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">match</span><span class="o">.</span><span class="n">emoji</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">_ZWJ</span><span class="p">):</span>
@@ -154,9 +154,9 @@
 <div class="viewcode-block" id="EmojiMatchZWJ.join">
 <a class="viewcode-back" href="../../api.html#emoji.EmojiMatchZWJ.join">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Joins a ZWJ-emoji into a string</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="n">_ZWJ</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">emoji</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">emojis</span><span class="p">)</span></div>
 
@@ -169,28 +169,28 @@
 
 <div class="viewcode-block" id="EmojiMatchZWJ.split">
 <a class="viewcode-back" href="../../api.html#emoji.EmojiMatchZWJ.split">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;EmojiMatchZWJ&#39;</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'EmojiMatchZWJ'</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">join</span><span class="p">()</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="si">}</span><span class="s1">)&#39;</span></div>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">join</span><span class="p">()</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="si">}</span><span class="s1">)'</span></div>
 
 
 
 <div class="viewcode-block" id="EmojiMatchZWJNonRGI">
 <a class="viewcode-back" href="../../api.html#emoji.EmojiMatchZWJNonRGI">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">EmojiMatchZWJNonRGI</span><span class="p">(</span><span class="n">EmojiMatchZWJ</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Represents a match of multiple emoji in a string that were joined by</span>
 <span class="sd">    zero-width-joiners (ZWJ/``\\u200D``). This class is only used for emoji</span>
-<span class="sd">    that are not &quot;recommended for general interchange&quot; (non-RGI) by Unicode.org.</span>
+<span class="sd">    that are not "recommended for general interchange" (non-RGI) by Unicode.org.</span>
 <span class="sd">    The data property of this class is always None.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_emoji_match</span><span class="p">:</span> <span class="n">EmojiMatch</span><span class="p">,</span> <span class="n">second_emoji_match</span><span class="p">:</span> <span class="n">EmojiMatch</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">emojis</span> <span class="o">=</span> <span class="p">[</span><span class="n">first_emoji_match</span><span class="p">,</span> <span class="n">second_emoji_match</span><span class="p">]</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;List of sub emoji as EmojiMatch objects&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""List of sub emoji as EmojiMatch objects"""</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span>
 
@@ -209,10 +209,10 @@
 <div class="viewcode-block" id="Token">
 <a class="viewcode-back" href="../../api.html#emoji.Token">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Token</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    A named tuple containing the matched string and its :class:`EmojiMatch` object if it is an emoji</span>
 <span class="sd">    or a single character that is not a unicode emoji.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">chars</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">value</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">EmojiMatch</span><span class="p">]</span></div>
@@ -220,7 +220,7 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">tokenize</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">keep_zwj</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Token</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Finds unicode emoji in a string. Yields all normal characters as a named</span>
 <span class="sd">    tuple :class:`Token` ``(char, char)`` and all emoji as :class:`Token` ``(chars, EmojiMatch)``.</span>
 
@@ -228,7 +228,7 @@
 <span class="sd">    :param keep_zwj: Should ZWJ-characters (``\\u200D``) that join non-RGI emoji be</span>
 <span class="sd">        skipped or should be yielded as normal characters</span>
 <span class="sd">    :return: An iterable of tuples :class:`Token` ``(char, char)`` or :class:`Token` ``(chars, EmojiMatch)``</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">tree</span> <span class="o">=</span> <span class="n">get_search_tree</span><span class="p">()</span>
     <span class="n">EMOJI_DATA</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span>
@@ -256,13 +256,13 @@
                     <span class="k">break</span>
                 <span class="n">sub_tree</span> <span class="o">=</span> <span class="n">sub_tree</span><span class="p">[</span><span class="n">string</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span>
                 <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">if</span> <span class="s1">&#39;data&#39;</span> <span class="ow">in</span> <span class="n">sub_tree</span><span class="p">:</span>
-                <span class="n">emj_data</span> <span class="o">=</span> <span class="n">sub_tree</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s1">'data'</span> <span class="ow">in</span> <span class="n">sub_tree</span><span class="p">:</span>
+                <span class="n">emj_data</span> <span class="o">=</span> <span class="n">sub_tree</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]</span>
                 <span class="n">code_points</span> <span class="o">=</span> <span class="n">string</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]</span>
 
                 <span class="c1"># We cannot yield the result here, we need to defer</span>
                 <span class="c1"># the call until we are sure that the emoji is finished</span>
-                <span class="c1"># i.e. we&#39;re not inside an ongoing ZWJ-sequence</span>
+                <span class="c1"># i.e. we're not inside an ongoing ZWJ-sequence</span>
                 <span class="n">match_obj</span> <span class="o">=</span> <span class="n">EmojiMatch</span><span class="p">(</span><span class="n">code_points</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">emj_data</span><span class="p">)</span>
 
                 <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
@@ -279,18 +279,18 @@
             <span class="c1"># the current char is ZWJ and the last match was an emoji</span>
             <span class="n">ignore</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
             <span class="k">if</span> <span class="p">(</span>
-                <span class="n">EMOJI_DATA</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">chars</span><span class="p">][</span><span class="s1">&#39;status&#39;</span><span class="p">]</span>
-                <span class="o">==</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">STATUS</span><span class="p">[</span><span class="s1">&#39;component&#39;</span><span class="p">]</span>
+                <span class="n">EMOJI_DATA</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">chars</span><span class="p">][</span><span class="s1">'status'</span><span class="p">]</span>
+                <span class="o">==</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">STATUS</span><span class="p">[</span><span class="s1">'component'</span><span class="p">]</span>
             <span class="p">):</span>
                 <span class="c1"># last match was a component, it could be ZWJ+EMOJI+COMPONENT</span>
                 <span class="c1"># or ZWJ+COMPONENT</span>
                 <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">chars</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
                 <span class="k">if</span> <span class="n">string</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">_ZWJ</span><span class="p">:</span>
-                    <span class="c1"># It&#39;s ZWJ+COMPONENT, move one back</span>
+                    <span class="c1"># It's ZWJ+COMPONENT, move one back</span>
                     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
                     <span class="k">del</span> <span class="n">result</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="c1"># It&#39;s ZWJ+EMOJI+COMPONENT, move two back</span>
+                    <span class="c1"># It's ZWJ+EMOJI+COMPONENT, move two back</span>
                     <span class="k">del</span> <span class="n">result</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="c1"># last match result[-1] was a normal emoji, move cursor</span>
@@ -303,7 +303,7 @@
             <span class="k">yield from</span> <span class="n">result</span>
             <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">consumed</span> <span class="ow">and</span> <span class="n">char</span> <span class="o">!=</span> <span class="s1">&#39;</span><span class="se">\ufe0e</span><span class="s1">&#39;</span> <span class="ow">and</span> <span class="n">char</span> <span class="o">!=</span> <span class="s1">&#39;</span><span class="se">\ufe0f</span><span class="s1">&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">consumed</span> <span class="ow">and</span> <span class="n">char</span> <span class="o">!=</span> <span class="s1">'</span><span class="se">\ufe0e</span><span class="s1">'</span> <span class="ow">and</span> <span class="n">char</span> <span class="o">!=</span> <span class="s1">'</span><span class="se">\ufe0f</span><span class="s1">'</span><span class="p">:</span>
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Token</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">))</span>
         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 
@@ -313,7 +313,7 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">filter_tokens</span><span class="p">(</span>
     <span class="n">matches</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Token</span><span class="p">],</span> <span class="n">emoji_only</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">join_emoji</span><span class="p">:</span> <span class="nb">bool</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Token</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Filters the output of `tokenize()`</span>
 
 <span class="sd">    :param matches: An iterable of tuples of the form ``(match_str, result)``</span>
@@ -325,7 +325,7 @@
 
 <span class="sd">    :return: An iterable of tuples :class:`Token` ``(char, char)``,</span>
 <span class="sd">        :class:`Token` ``(chars, EmojiMatch)`` or :class:`Token` ``(chars, EmojiMatchZWJNonRGI)``</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">join_emoji</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">emoji_only</span><span class="p">:</span>
         <span class="k">yield from</span> <span class="n">matches</span>
@@ -380,29 +380,29 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get_search_tree</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Generate a search tree for demojize().</span>
 <span class="sd">    Example of a search tree::</span>
 
 <span class="sd">        EMOJI_DATA =</span>
-<span class="sd">        {&#39;a&#39;: {&#39;en&#39;: &#39;:Apple:&#39;},</span>
-<span class="sd">        &#39;b&#39;: {&#39;en&#39;: &#39;:Bus:&#39;},</span>
-<span class="sd">        &#39;ba&#39;: {&#39;en&#39;: &#39;:Bat:&#39;},</span>
-<span class="sd">        &#39;band&#39;: {&#39;en&#39;: &#39;:Beatles:&#39;},</span>
-<span class="sd">        &#39;bandit&#39;: {&#39;en&#39;: &#39;:Outlaw:&#39;},</span>
-<span class="sd">        &#39;bank&#39;: {&#39;en&#39;: &#39;:BankOfEngland:&#39;},</span>
-<span class="sd">        &#39;bb&#39;: {&#39;en&#39;: &#39;:BB-gun:&#39;},</span>
-<span class="sd">        &#39;c&#39;: {&#39;en&#39;: &#39;:Car:&#39;}}</span>
+<span class="sd">        {'a': {'en': ':Apple:'},</span>
+<span class="sd">        'b': {'en': ':Bus:'},</span>
+<span class="sd">        'ba': {'en': ':Bat:'},</span>
+<span class="sd">        'band': {'en': ':Beatles:'},</span>
+<span class="sd">        'bandit': {'en': ':Outlaw:'},</span>
+<span class="sd">        'bank': {'en': ':BankOfEngland:'},</span>
+<span class="sd">        'bb': {'en': ':BB-gun:'},</span>
+<span class="sd">        'c': {'en': ':Car:'}}</span>
 
 <span class="sd">        _SEARCH_TREE =</span>
-<span class="sd">        {&#39;a&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:Apple:&#39;}},</span>
-<span class="sd">        &#39;b&#39;: {&#39;a&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:Bat:&#39;},</span>
-<span class="sd">                    &#39;n&#39;: {&#39;d&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:Beatles:&#39;},</span>
-<span class="sd">                                &#39;i&#39;: {&#39;t&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:Outlaw:&#39;}}}},</span>
-<span class="sd">                        &#39;k&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:BankOfEngland:&#39;}}}},</span>
-<span class="sd">            &#39;b&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:BB-gun:&#39;}},</span>
-<span class="sd">            &#39;data&#39;: {&#39;en&#39;: &#39;:Bus:&#39;}},</span>
-<span class="sd">        &#39;c&#39;: {&#39;data&#39;: {&#39;en&#39;: &#39;:Car:&#39;}}}</span>
+<span class="sd">        {'a': {'data': {'en': ':Apple:'}},</span>
+<span class="sd">        'b': {'a': {'data': {'en': ':Bat:'},</span>
+<span class="sd">                    'n': {'d': {'data': {'en': ':Beatles:'},</span>
+<span class="sd">                                'i': {'t': {'data': {'en': ':Outlaw:'}}}},</span>
+<span class="sd">                        'k': {'data': {'en': ':BankOfEngland:'}}}},</span>
+<span class="sd">            'b': {'data': {'en': ':BB-gun:'}},</span>
+<span class="sd">            'data': {'en': ':Bus:'}},</span>
+<span class="sd">        'c': {'data': {'en': ':Car:'}}}</span>
 
 <span class="sd">                   _SEARCH_TREE</span>
 <span class="sd">                 /     |        ⧵</span>
@@ -426,7 +426,7 @@
 <span class="sd">           :Outlaw:</span>
 
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">_SEARCH_TREE</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">emj</span> <span class="ow">in</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">:</span>
             <span class="n">sub_tree</span> <span class="o">=</span> <span class="n">_SEARCH_TREE</span>
@@ -436,7 +436,7 @@
                     <span class="n">sub_tree</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
                 <span class="n">sub_tree</span> <span class="o">=</span> <span class="n">sub_tree</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
                 <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">lastidx</span><span class="p">:</span>
-                    <span class="n">sub_tree</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="n">emj</span><span class="p">]</span>
+                    <span class="n">sub_tree</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]</span> <span class="o">=</span> <span class="n">unicode_codes</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="n">emj</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">_SEARCH_TREE</span>
 </pre></div>
 
@@ -519,7 +519,7 @@
       
       
       
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
     </div>

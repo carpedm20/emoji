@@ -10,8 +10,8 @@
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=9550617d" />
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="canonical" href="https://carpedm20.github.io/emoji/docs/index.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -35,7 +35,7 @@
             
   <section id="emoji">
 <h1><a class="toc-backref" href="#id2" role="doc-backlink">emoji</a><a class="headerlink" href="#emoji" title="Link to this heading">¶</a></h1>
-<p>Release v2.15.0. (<a class="reference internal" href="install.html#install"><span class="std std-ref">Installation</span></a>)</p>
+<p>Release v2.16.0. (<a class="reference internal" href="install.html#install"><span class="std std-ref">Installation</span></a>)</p>
 <p>emoji supports Python 3.8+. The last version to support Python 2.7 and 3.5 was v2.4.0.</p>
 <nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
@@ -73,15 +73,15 @@ versa with <a class="reference internal" href="api.html#emoji.emojize" title="em
 is supported in addition to a bunch of <a class="reference external" href="https://www.webfx.com/tools/emoji-cheat-sheet/">aliases</a>.
 By default, only the official list is enabled but doing <code class="docutils literal notranslate"><span class="pre">emoji.emojize(language='alias')</span></code>
 enables both the full list and aliases.</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;Python is :thumbs_up:&#39;</span><span class="p">))</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">'Python is :thumbs_up:'</span><span class="p">))</span>
 <span class="go">Python is 👍</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;Python is :thumbsup:&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;alias&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">'Python is :thumbsup:'</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">'alias'</span><span class="p">))</span>
 <span class="go">Python is 👍</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="s1">'Python is 👍'</span><span class="p">))</span>
 <span class="go">Python is :thumbs_up:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun :red_heart:&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;text_type&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">"Python is fun :red_heart:"</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">"text_type"</span><span class="p">))</span>
 <span class="go">Python is fun ❤︎</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python is fun :red_heart:&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;emoji_type&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">"Python is fun :red_heart:"</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">"emoji_type"</span><span class="p">))</span>
 <span class="go">Python is fun ❤️</span>
 </pre></div>
 </div>
@@ -89,21 +89,21 @@ enables both the full list and aliases.</p>
 <h3><a class="toc-backref" href="#id4" role="doc-backlink">Languages</a><a class="headerlink" href="#languages" title="Link to this heading">¶</a></h3>
 <p>By default, the language is English (<code class="docutils literal notranslate"><span class="pre">language='en'</span></code>) but  also supported languages are:</p>
 <p>Spanish (<code class="docutils literal notranslate"><span class="pre">'es'</span></code>), Portuguese (<code class="docutils literal notranslate"><span class="pre">'pt'</span></code>), Italian (<code class="docutils literal notranslate"><span class="pre">'it'</span></code>), French (<code class="docutils literal notranslate"><span class="pre">'fr'</span></code>), German (<code class="docutils literal notranslate"><span class="pre">'de'</span></code>), Farsi/Persian (<code class="docutils literal notranslate"><span class="pre">'fa'</span></code>)</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;Python es :pulgar_hacia_arriba:&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;es&#39;</span><span class="p">))</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">'Python es :pulgar_hacia_arriba:'</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">'es'</span><span class="p">))</span>
 <span class="go">Python es 👍</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="s1">&#39;Python es 👍&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;es&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="s1">'Python es 👍'</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">'es'</span><span class="p">))</span>
 <span class="go">Python es :pulgar_hacia_arriba:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">&quot;Python é :polegar_para_cima:&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s2">"Python é :polegar_para_cima:"</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">'pt'</span><span class="p">))</span>
 <span class="go">Python é 👍</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="s2">&quot;Python é 👍&quot;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="s2">"Python é 👍"</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">'pt'</span><span class="p">))</span>
 <span class="go">Python é :polegar_para_cima:</span>
 </pre></div>
 </div>
 <p>If you want to access the emoji names of a language directly,
 you can load the language data and then access it in the <a class="reference internal" href="api.html#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a> dict
 by using the language code as a key:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">load_language</span><span class="p">(</span><span class="s1">&#39;es&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="s1">&#39;👍&#39;</span><span class="p">][</span><span class="s1">&#39;es&#39;</span><span class="p">])</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">load_language</span><span class="p">(</span><span class="s1">'es'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="s1">'👍'</span><span class="p">][</span><span class="s1">'es'</span><span class="p">])</span>
 <span class="go">:pulgar_hacia_arriba:</span>
 </pre></div>
 </div>
@@ -115,84 +115,84 @@ by using the language code as a key:</p>
 together with its position and the available meta information about the emoji.</p>
 <p><a class="reference internal" href="api.html#emoji.analyze" title="emoji.analyze"><code class="xref py py-func docutils literal notranslate"><span class="pre">analyze()</span></code></a> returns a generator that yields each emoji, so you need to iterate or
 convert the output to a list.</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">first_token</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">))</span>
-<span class="go">Token(chars=&#39;👍&#39;, value=EmojiMatch(👍, 10:11))</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">first_token</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">'Python is 👍'</span><span class="p">))</span>
+<span class="go">Token(chars='👍', value=EmojiMatch(👍, 10:11))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">emoji_match</span> <span class="o">=</span> <span class="n">first_token</span><span class="o">.</span><span class="n">value</span>
 <span class="go">EmojiMatch(👍, 10:11)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">emoji_match</span><span class="o">.</span><span class="n">data</span>
-<span class="go">{&#39;en&#39;: &#39;:thumbs_up:&#39;, &#39;status&#39;: 2, &#39;E&#39;: 0.6, &#39;alias&#39;: [&#39;:thumbsup:&#39;, &#39;:+1:&#39;], &#39;variant&#39;: True, &#39;de&#39;: &#39;:daumen_hoch:&#39;, &#39;es&#39;: &#39;:pulgar_hacia_arriba:&#39;, &#39;fr&#39;: &#39;:pouce_vers_le_haut:&#39;, &#39;ja&#39;: &#39;:サムズアップ:&#39;, &#39;ko&#39;: &#39;:올린_엄지:&#39;, &#39;pt&#39;: &#39;:polegar_para_cima:&#39;, &#39;it&#39;: &#39;:pollice_in_su:&#39;, &#39;fa&#39;: &#39;:پسندیدن:&#39;, &#39;id&#39;: &#39;:jempol_ke_atas:&#39;, &#39;zh&#39;: &#39;:拇指向上:&#39;}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">&#39;A 👩‍🚀 aboard a 🚀&#39;</span><span class="p">))</span>
-<span class="go">[Token(chars=&#39;👩\u200d🚀&#39;, value=EmojiMatch(👩‍🚀, 2:5)), Token(chars=&#39;🚀&#39;, value=EmojiMatch(🚀, 15:16))]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">&#39;A👩‍🚀B🚀&#39;</span><span class="p">,</span> <span class="n">non_emoji</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-<span class="go">[Token(chars=&#39;A&#39;, value=&#39;A&#39;), Token(chars=&#39;👩\u200d🚀&#39;, value=EmojiMatch(👩‍🚀, 1:4)), Token(chars=&#39;B&#39;, value=&#39;B&#39;), Token(chars=&#39;🚀&#39;, value=EmojiMatch(🚀, 5:6))]</span>
+<span class="go">{'en': ':thumbs_up:', 'status': 2, 'E': 0.6, 'alias': [':thumbsup:', ':+1:'], 'variant': True, 'de': ':daumen_hoch:', 'es': ':pulgar_hacia_arriba:', 'fr': ':pouce_vers_le_haut:', 'ja': ':サムズアップ:', 'ko': ':올린_엄지:', 'pt': ':polegar_para_cima:', 'it': ':pollice_in_su:', 'fa': ':پسندیدن:', 'id': ':jempol_ke_atas:', 'zh': ':拇指向上:'}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">'A 👩‍🚀 aboard a 🚀'</span><span class="p">))</span>
+<span class="go">[Token(chars='👩\u200d🚀', value=EmojiMatch(👩‍🚀, 2:5)), Token(chars='🚀', value=EmojiMatch(🚀, 15:16))]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">'A👩‍🚀B🚀'</span><span class="p">,</span> <span class="n">non_emoji</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">[Token(chars='A', value='A'), Token(chars='👩\u200d🚀', value=EmojiMatch(👩‍🚀, 1:4)), Token(chars='B', value='B'), Token(chars='🚀', value=EmojiMatch(🚀, 5:6))]</span>
 </pre></div>
 </div>
 <p>The parameter <code class="docutils literal notranslate"><span class="pre">join_emoji</span></code> controls whether <a class="reference external" href="#non-rgi-zwj-emoji">non-RGI emoji</a>  are handled as a single token or as multiple emoji:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">&#39;👨‍👩🏿‍👧🏻‍👦🏾&#39;</span><span class="p">,</span> <span class="n">join_emoji</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-<span class="go">[Token(chars=&#39;👨\u200d👩🏿\u200d👧🏻\u200d👦🏾&#39;, value=EmojiMatchZWJNonRGI(👨‍👩🏿‍👧🏻‍👦🏾, 0:10))]</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">'👨‍👩🏿‍👧🏻‍👦🏾'</span><span class="p">,</span> <span class="n">join_emoji</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">[Token(chars='👨\u200d👩🏿\u200d👧🏻\u200d👦🏾', value=EmojiMatchZWJNonRGI(👨‍👩🏿‍👧🏻‍👦🏾, 0:10))]</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">&#39;👨‍👩🏿‍👧🏻‍👦🏾&#39;</span><span class="p">,</span> <span class="n">join_emoji</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-<span class="go">[Token(chars=&#39;👨&#39;, value=EmojiMatch(👨, 0:1)), Token(chars=&#39;👩🏿&#39;, value=EmojiMatch(👩🏿, 2:4)), Token(chars=&#39;👧🏻&#39;, value=EmojiMatch(👧🏻, 5:7)), Token(chars=&#39;👦🏾&#39;, value=EmojiMatch(👦🏾, 8:10))]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">'👨‍👩🏿‍👧🏻‍👦🏾'</span><span class="p">,</span> <span class="n">join_emoji</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="go">[Token(chars='👨', value=EmojiMatch(👨, 0:1)), Token(chars='👩🏿', value=EmojiMatch(👩🏿, 2:4)), Token(chars='👧🏻', value=EmojiMatch(👧🏻, 5:7)), Token(chars='👦🏾', value=EmojiMatch(👦🏾, 8:10))]</span>
 </pre></div>
 </div>
 <p>The function <a class="reference internal" href="api.html#emoji.emoji_list" title="emoji.emoji_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">emoji_list()</span></code></a> finds all emoji in string and their position.
 Keep in mind that an emoji can span over multiple characters:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_list</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">)</span>
-<span class="go">[{&#39;match_start&#39;: 10, &#39;match_end&#39;: 11, &#39;emoji&#39;: &#39;👍&#39;}]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_list</span><span class="p">(</span><span class="s1">&#39;A 👩‍🚀 aboard a 🚀&#39;</span><span class="p">)</span>
-<span class="go">[{&#39;match_start&#39;: 2, &#39;match_end&#39;: 5, &#39;emoji&#39;: &#39;👩‍🚀&#39;}, {&#39;match_start&#39;: 15, &#39;match_end&#39;: 16, &#39;emoji&#39;: &#39;🚀&#39;}]</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_list</span><span class="p">(</span><span class="s1">'Python is 👍'</span><span class="p">)</span>
+<span class="go">[{'match_start': 10, 'match_end': 11, 'emoji': '👍'}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_list</span><span class="p">(</span><span class="s1">'A 👩‍🚀 aboard a 🚀'</span><span class="p">)</span>
+<span class="go">[{'match_start': 2, 'match_end': 5, 'emoji': '👩‍🚀'}, {'match_start': 15, 'match_end': 16, 'emoji': '🚀'}]</span>
 </pre></div>
 </div>
 <p>To retrieve the distinct set of emoji from a string, use <a class="reference internal" href="api.html#emoji.distinct_emoji_list" title="emoji.distinct_emoji_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">distinct_emoji_list()</span></code></a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">distinct_emoji_list</span><span class="p">(</span><span class="s1">&#39;Some emoji: 🌍, 😂, 😃, 😂, 🌍, 🌦️&#39;</span><span class="p">)</span>
-<span class="go">[&#39;😃&#39;, &#39;😂&#39;, &#39;🌦️&#39;, &#39;🌍&#39;]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">distinct_emoji_list</span><span class="p">(</span><span class="s1">'Some emoji: 🌍, 😂, 😃, 😂, 🌍, 🌦️'</span><span class="p">)</span>
+<span class="go">['😃', '😂', '🌦️', '🌍']</span>
 </pre></div>
 </div>
 <p>To count the number of emoji in a string, use <a class="reference internal" href="api.html#emoji.emoji_count" title="emoji.emoji_count"><code class="xref py py-func docutils literal notranslate"><span class="pre">emoji_count()</span></code></a>:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_count</span><span class="p">(</span><span class="s1">&#39;Some emoji: 🌍, 😂, 😃, 😂, 🌍, 🌦️&#39;</span><span class="p">)</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_count</span><span class="p">(</span><span class="s1">'Some emoji: 🌍, 😂, 😃, 😂, 🌍, 🌦️'</span><span class="p">)</span>
 <span class="go">6</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_count</span><span class="p">(</span><span class="s1">&#39;Some emoji: 🌍, 😂, 😃, 😂, 🌍, 🌦️&#39;</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emoji_count</span><span class="p">(</span><span class="s1">'Some emoji: 🌍, 😂, 😃, 😂, 🌍, 🌦️'</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">4</span>
 </pre></div>
 </div>
 <p>You can check if a string is a single, valid emoji with <a class="reference internal" href="api.html#emoji.is_emoji" title="emoji.is_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_emoji()</span></code></a></p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;🌍&#39;</span><span class="p">)</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">'🌍'</span><span class="p">)</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;🌍😂&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">'🌍😂'</span><span class="p">)</span>
 <span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">'test'</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
 <p>While dealing with emojis, it is generally a bad idea to look at individual characters.
 Unicode contains modifier characters, such as variation selectors, which are not emojis themselves
 and modify the preceding emoji instead. You can check if a string has only emojis in it with <a class="reference internal" href="api.html#emoji.purely_emoji" title="emoji.purely_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">purely_emoji()</span></code></a></p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;</span><span class="se">\U0001f600\ufe0f</span><span class="s1">&#39;</span>
-<span class="go">&#39;😀&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001f600\ufe0f</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">'</span><span class="se">\U0001f600\ufe0f</span><span class="s1">'</span>
+<span class="go">'😀'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">'</span><span class="se">\U0001f600\ufe0f</span><span class="s1">'</span><span class="p">)</span>
 <span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001f600</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">'</span><span class="se">\U0001f600</span><span class="s1">'</span><span class="p">)</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\ufe0f</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">is_emoji</span><span class="p">(</span><span class="s1">'</span><span class="se">\ufe0f</span><span class="s1">'</span><span class="p">)</span>
 <span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">purely_emoji</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001f600\ufe0f</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">purely_emoji</span><span class="p">(</span><span class="s1">'</span><span class="se">\U0001f600\ufe0f</span><span class="s1">'</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
 <p>To get more information about an emoji, you can look it up in the <a class="reference internal" href="api.html#emoji.EMOJI_DATA" title="emoji.EMOJI_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">EMOJI_DATA</span></code></a> dict:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="s1">&#39;🌍&#39;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">[</span><span class="s1">'🌍'</span><span class="p">])</span>
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;E&#39;: 0.7,
- &#39;alias&#39;: [&#39;:earth_africa:&#39;],
- &#39;de&#39;: &#39;:globus_mit_europa_und_afrika:&#39;,
- &#39;en&#39;: &#39;:globe_showing_Europe-Africa:&#39;,
- &#39;es&#39;: &#39;:globo_terráqueo_mostrando_europa_y_áfrica:&#39;,
- &#39;fr&#39;: &#39;:globe_tourné_sur_l’afrique_et_l’europe:&#39;,
- &#39;it&#39;: &#39;:europa_e_africa:&#39;,
- &#39;pt&#39;: &#39;:globo_mostrando_europa_e_áfrica:&#39;,
- &#39;status&#39;: 2,
- &#39;variant&#39;: True}
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{'E': 0.7,
+ 'alias': [':earth_africa:'],
+ 'de': ':globus_mit_europa_und_afrika:',
+ 'en': ':globe_showing_Europe-Africa:',
+ 'es': ':globo_terráqueo_mostrando_europa_y_áfrica:',
+ 'fr': ':globe_tourné_sur_l’afrique_et_l’europe:',
+ 'it': ':europa_e_africa:',
+ 'pt': ':globo_mostrando_europa_e_áfrica:',
+ 'status': 2,
+ 'variant': True}
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">'E'</span></code> is the <a class="reference internal" href="api.html#emoji-version"><span class="std std-ref">Emoji version</span></a>.</p>
@@ -203,27 +203,27 @@ Unicode Standard <a class="reference external" href="http://www.unicode.org/repo
 <section id="replacing-and-removing-emoji">
 <h3><a class="toc-backref" href="#id6" role="doc-backlink">Replacing and removing emoji</a><a class="headerlink" href="#replacing-and-removing-emoji" title="Link to this heading">¶</a></h3>
 <p>With <a class="reference internal" href="api.html#emoji.replace_emoji" title="emoji.replace_emoji"><code class="xref py py-func docutils literal notranslate"><span class="pre">replace_emoji()</span></code></a> you can replace, filter, escape or remove emoji in a string:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="go">&#39;Python is &#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">'Python is 👍'</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="go">'Python is '</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">&#39;👎&#39;</span><span class="p">)</span>
-<span class="go">&#39;Python is 👎&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">'Python is 👍'</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">'👎'</span><span class="p">)</span>
+<span class="go">'Python is 👎'</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">unicode_escape</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">):</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">chars</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;unicode-escape&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="n">unicode_escape</span><span class="p">)</span>
-<span class="go">&#39;Python is \U0001f44d&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">chars</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'unicode-escape'</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">'Python is 👍'</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="n">unicode_escape</span><span class="p">)</span>
+<span class="go">'Python is \U0001f44d'</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">xml_escape</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">):</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">chars</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="s1">&#39;xmlcharrefreplace&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="n">xml_escape</span><span class="p">)</span>
-<span class="go">&#39;Python is &amp;#128077;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">chars</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'ascii'</span><span class="p">,</span> <span class="s1">'xmlcharrefreplace'</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">'Python is 👍'</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="n">xml_escape</span><span class="p">)</span>
+<span class="go">'Python is &amp;#128077;'</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="k">lambda</span> <span class="n">chars</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">:</span> <span class="n">chars</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="s1">&#39;namereplace&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
-<span class="go">&#39;Python is \N{THUMBS UP SIGN}&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">'Python is 👍'</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="k">lambda</span> <span class="n">chars</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">:</span> <span class="n">chars</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'ascii'</span><span class="p">,</span> <span class="s1">'namereplace'</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+<span class="go">'Python is \N{THUMBS UP SIGN}'</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;Python is 👍&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="k">lambda</span> <span class="n">chars</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">:</span> <span class="n">data_dict</span><span class="p">[</span><span class="s1">&#39;es&#39;</span><span class="p">])</span>
-<span class="go">&#39;Python is :pulgar_hacia_arriba:&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">'Python is 👍'</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="k">lambda</span> <span class="n">chars</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">:</span> <span class="n">data_dict</span><span class="p">[</span><span class="s1">'es'</span><span class="p">])</span>
+<span class="go">'Python is :pulgar_hacia_arriba:'</span>
 </pre></div>
 </div>
 </section>
@@ -236,31 +236,31 @@ replace emoji above the specified version with the value of the parameter <code 
 It defaults to an empty string, but can be set to any string or a function that returns a string.</p>
 <p>For example the <code class="docutils literal notranslate"><span class="pre">:croissant:</span></code> 🥐 emoji was added in Emoji 3.0 (Unicode 9.0) in 2016 and
 <code class="docutils literal notranslate"><span class="pre">:T-Rex:</span></code> 🦖 was added later in Emoji 5.0 (Unicode 10.0) in 2017:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;A 🦖 is eating a 🥐&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">&#39;[Unsupported emoji]&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="go">&#39;A [Unsupported emoji] is eating a [Unsupported emoji]&#39;</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">'A 🦖 is eating a 🥐'</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">'[Unsupported emoji]'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="go">'A [Unsupported emoji] is eating a [Unsupported emoji]'</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;A 🦖 is eating a 🥐&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="k">lambda</span> <span class="n">chars</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">:</span> <span class="n">data_dict</span><span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">],</span> <span class="n">version</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="go">&#39;A :T-Rex: is eating a 🥐&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">'A 🦖 is eating a 🥐'</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="k">lambda</span> <span class="n">chars</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">:</span> <span class="n">data_dict</span><span class="p">[</span><span class="s1">'en'</span><span class="p">],</span> <span class="n">version</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="go">'A :T-Rex: is eating a 🥐'</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;A :T-Rex: is eating a :croissant:&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="go">&#39;A  is eating a 🥐&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">'A :T-Rex: is eating a :croissant:'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="go">'A  is eating a 🥐'</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">&#39;A :T-Rex: is eating a :croissant:&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">handle_version</span><span class="o">=</span><span class="s1">&#39;[Unsupported emoji]&#39;</span><span class="p">)</span>
-<span class="go">&#39;A [Unsupported emoji] is eating a 🥐&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">emojize</span><span class="p">(</span><span class="s1">'A :T-Rex: is eating a :croissant:'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">handle_version</span><span class="o">=</span><span class="s1">'[Unsupported emoji]'</span><span class="p">)</span>
+<span class="go">'A [Unsupported emoji] is eating a 🥐'</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="s1">&#39;A 🦖 is eating a 🥐&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="go">&#39;A  is eating a :croissant:&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">demojize</span><span class="p">(</span><span class="s1">'A 🦖 is eating a 🥐'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="go">'A  is eating a :croissant:'</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">&#39;A 🦖 is eating a 🥐&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
-<span class="go">&#39;A 🦖 is eating a 🥐&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">replace_emoji</span><span class="p">(</span><span class="s1">'A 🦖 is eating a 🥐'</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
+<span class="go">'A 🦖 is eating a 🥐'</span>
 </pre></div>
 </div>
 <p>You can find the version of an emoji with <a class="reference internal" href="api.html#emoji.version" title="emoji.version"><code class="xref py py-func docutils literal notranslate"><span class="pre">version()</span></code></a>:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s1">&#39;🥐&#39;</span><span class="p">)</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s1">'🥐'</span><span class="p">)</span>
 <span class="go">3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s1">&#39;🏌️‍♀️&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s1">'🏌️‍♀️'</span><span class="p">)</span>
 <span class="go">4</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s1">&#39;🦖&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">emoji</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s1">'🦖'</span><span class="p">)</span>
 <span class="go">5</span>
 </pre></div>
 </div>
@@ -329,11 +329,11 @@ expression yourself like this:</p>
     <span class="c1"># Sort emoji by length to make sure multi-character emojis are</span>
     <span class="c1"># matched first</span>
     <span class="n">emojis</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">emoji</span><span class="o">.</span><span class="n">EMOJI_DATA</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">pattern</span> <span class="o">=</span> <span class="s1">&#39;(&#39;</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">emojis</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="s1">'('</span> <span class="o">+</span> <span class="s1">'|'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">emojis</span><span class="p">)</span> <span class="o">+</span> <span class="s1">')'</span>
     <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
 
 <span class="n">exp</span> <span class="o">=</span> <span class="n">get_emoji_regexp</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">repl</span><span class="o">=</span><span class="s1">&#39;[emoji]&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="s1">&#39;A 🏌️‍♀️ is eating a 🥐&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">repl</span><span class="o">=</span><span class="s1">'[emoji]'</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="s1">'A 🏌️‍♀️ is eating a 🥐'</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -544,7 +544,7 @@ information on Unicode in Python 2.7.</p>
       
       
       
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
