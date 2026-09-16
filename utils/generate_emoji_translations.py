@@ -169,7 +169,7 @@ if __name__ == '__main__':
 
     # Find latest release tag at https://cldr.unicode.org/index/downloads
     # or  https://github.com/unicode-org/cldr/releases
-    github_tag = 'release-48-alpha3'
+    github_tag = 'release-49-alpha2'
     languages = {
         # Update names in other languages:
         'de': extract_names(github_tag, 'de', 'de', get_emojiterra_from_url('https://emojiterra.com/de/tastatur/')),

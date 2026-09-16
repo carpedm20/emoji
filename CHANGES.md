@@ -1,6 +1,11 @@
 emoji
 =====
 
+v2.16.0 (2026-09-16)
+-----
+* Update to Unicode 18.0
+* Update translations to CLDR release-49-alpha2
+
 v2.15.0 (2025-09-20)
 -----
 * Update to Unicode 17.0
