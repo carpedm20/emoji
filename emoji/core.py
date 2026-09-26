@@ -390,7 +390,14 @@ def is_emoji(string: str) -> bool:
     Returns True if the string is a single emoji, and it is "recommended for
     general interchange" by Unicode.org.
     """
-    return string in unicode_codes.EMOJI_DATA
+    if string in unicode_codes.EMOJI_DATA:
+        return True
+    # Check if the string is a fully-qualified form with variation selector
+    if string.endswith('\uFE0F'):
+        base = string[:-1]
+        if base in unicode_codes.EMOJI_DATA:
+            return unicode_codes.EMOJI_DATA[base].get('variant') is not None
+    return False
 
 
 def purely_emoji(string: str) -> bool:
