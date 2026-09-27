@@ -168,6 +168,15 @@ def test_emojize_variant():
         with pytest.raises(ValueError):
             emoji.emojize(':admission_tickets:', variant='wrong')  # type: ignore[arg-type]
 
+        # ValueError must be raised unconditionally regardless of whether the
+        # input string contains no emoji at all, or only emoji without a variant
+        # key. Previously these silently accepted the invalid argument.
+        with pytest.raises(ValueError):
+            emoji.emojize('hello world', variant='bogus')  # type: ignore[arg-type]
+
+        with pytest.raises(ValueError):
+            emoji.emojize(':thumbs_up:', variant='bogus')  # type: ignore[arg-type]
+
     assert emoji.emojize(':football:') == ':football:'
     assert emoji.emojize(':football:', variant='text_type') == ':football:'
     assert emoji.emojize(':football:', language='alias') == '\U0001f3c8'
