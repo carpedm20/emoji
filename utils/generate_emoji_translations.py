@@ -4,19 +4,18 @@ The translation is based on the Unicode CLDR annotations and the emojiterra.com 
 The output files are emoji_{xy}.json where {xy} is the letter language code
 """
 
-import sys
+import io
+import logging
 import os
+import re
+import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Dict, Optional, Set
-import re
-import io
-import xml.etree.ElementTree as ET
-import logging
-import json
 
 import bs4
-
-from generateutils import get_text_from_url, adapt_emoji_name, to_ascii
+import orjson
+from generateutils import adapt_emoji_name, get_text_from_url, to_ascii
 
 logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
@@ -272,6 +271,6 @@ if __name__ == '__main__':
         logging.info(f'   *  {out_file}')
 
         with open(out_file, 'rt', encoding='utf-8') as fp:
-            json.load(fp)
+            orjson.loads(fp.read())
         with open(out_file, 'rb') as fp:
-            json.load(fp)
+            orjson.loads(fp.read())

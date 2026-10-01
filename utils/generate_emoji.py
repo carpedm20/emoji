@@ -6,17 +6,16 @@ and the aliases from various sources.
 and combine it with the existing emoji data from the emoji package.
 """
 
-import sys
+import logging
 import os
+import re
+import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
-import re
-import logging
-import json
 
-import requests
 import bs4
-
+import orjson
+import requests
 from generateutils import get_text_from_url, to_ascii
 
 logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
@@ -442,6 +441,6 @@ if __name__ == '__main__':
 
     logging.info('\n\n  Checking json file. Any errors should appear below:\n')
     with open(out_file, 'rt', encoding='utf-8') as fp:
-        json.load(fp)
+        orjson.loads(fp.read())
     with open(out_file, 'rb') as fp:
-        json.load(fp)
+        orjson.loads(fp.read())
