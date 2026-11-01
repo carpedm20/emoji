@@ -172,9 +172,9 @@ def tokenize(string: str, keep_zwj: bool) -> Iterator[Token]:
     result: List[Token] = []
     i = 0
     length = len(string)
-    ignore: List[
-        int
-    ] = []  # index of chars in string that are skipped, i.e. the ZWJ-char in non-RGI-ZWJ-sequences
+    # Set of indices of chars in string that are skipped, i.e. the ZWJ-char in
+    # non-RGI-ZWJ-sequences. A set gives O(1) membership instead of O(n) list scan.
+    ignore = set()
     while i < length:
         consumed = False
         char = string[i]
@@ -213,7 +213,7 @@ def tokenize(string: str, keep_zwj: bool) -> Iterator[Token]:
             and string[i - 1] in tree
         ):
             # the current char is ZWJ and the last match was an emoji
-            ignore.append(i)
+            ignore.add(i)
             if (
                 EMOJI_DATA[result[-1].chars]['status']
                 == unicode_codes.STATUS['component']
@@ -233,6 +233,24 @@ def tokenize(string: str, keep_zwj: bool) -> Iterator[Token]:
                 # before the emoji
                 i = i - len(result[-1].chars)
                 del result[-1]
+            continue
+
+        elif not consumed and char != _ZWJ and char not in tree and char != '\ufe0e' and char != '\ufe0f':
+            # Fast path: consume a run of contiguous plain characters and emit
+            # one Token per character in a single flush instead of resetting the
+            # result list for each character. Yields exactly the same tokens.
+            run_end = i + 1
+            while run_end < length:
+                c = string[run_end]
+                if c in tree or c == _ZWJ or c == '\ufe0e' or c == '\ufe0f':
+                    break
+                run_end += 1
+            for ci in range(i, run_end):
+                result.append(Token(string[ci], string[ci]))
+            if result:
+                yield from result
+                result = []
+            i = run_end
             continue
 
         elif result:
