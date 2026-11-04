@@ -29,6 +29,12 @@ def get_emoji_by_name(name: str, language: str) -> Optional[str]:
     Find emoji by short-name in a specific language.
     Returns None if not found
 
+    Fully-qualified and component names are preferred. If a name only exists
+    on a minimally-qualified or unqualified entry (for example many
+    non-English names for emoji without a fully-qualified twin), that entry is
+    returned instead so shortcodes emitted by :func:`demojize` remain
+    resolvable.
+
     :param name: emoji short code e.g. ":banana:"
     :param language: language-code e.g. 'es', 'de', etc. or 'alias'
     """
@@ -41,11 +47,15 @@ def get_emoji_by_name(name: str, language: str) -> Optional[str]:
                 return emj
         language = 'en'
 
+    fallback = None
     for emj, data in EMOJI_DATA.items():
-        if data.get(language) == name and data['status'] <= fully_qualified:
-            return emj
+        if data.get(language) == name:
+            if data['status'] <= fully_qualified:
+                return emj
+            if fallback is None:
+                fallback = emj
 
-    return None
+    return fallback
 
 
 class EmojiDataDict(Dict[str, Any]):
