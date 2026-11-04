@@ -198,6 +198,30 @@ def test_demojize_removes_variant():
         assert '\ufe0f' not in result
 
 
+def test_demojize_keeps_standalone_variation_selectors():
+    # A variation selector that is not part of a recognised emoji must not be dropped
+    for selector in ('\ufe0e', '\ufe0f'):
+        assert emoji.demojize(selector) == selector
+        assert emoji.demojize('a' + selector + 'b') == 'a' + selector + 'b'
+
+
+@pytest.mark.parametrize(
+    'string',
+    [
+        '\ufe0e',
+        '\ufe0f',
+        'a\ufe0eb',
+        'he\ufe0fllo',
+        '\ufe0f\U0001f600',
+        '\ufe0e\ufe0f',
+    ],
+)
+def test_emojize_demojize_roundtrip_with_standalone_variation_selectors(
+    string: str,
+) -> None:
+    assert emoji.emojize(emoji.demojize(string)) == string
+
+
 def test_emojize_invalid_emoji():
     string = '__---___--Invalid__--__-Name'
     assert emoji.emojize(string) == string

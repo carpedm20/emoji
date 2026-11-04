@@ -175,6 +175,7 @@ def tokenize(string: str, keep_zwj: bool) -> Iterator[Token]:
     ignore: List[
         int
     ] = []  # index of chars in string that are skipped, i.e. the ZWJ-char in non-RGI-ZWJ-sequences
+    last_emoji_end = -1
     while i < length:
         consumed = False
         char = string[i]
@@ -203,6 +204,7 @@ def tokenize(string: str, keep_zwj: bool) -> Iterator[Token]:
 
                 i = j - 1
                 consumed = True
+                last_emoji_end = j
                 result.append(Token(code_points, match_obj))
 
         elif (
@@ -239,7 +241,10 @@ def tokenize(string: str, keep_zwj: bool) -> Iterator[Token]:
             yield from result
             result = []
 
-        if not consumed and char != '\ufe0e' and char != '\ufe0f':
+        # A variation selector directly after a recognised emoji belongs to that emoji's
+        # presentation. A selector anywhere else is standalone and must be preserved, so
+        # demojize/emojize do not drop characters that are not part of an emoji match.
+        if not consumed and not (char in ('\ufe0e', '\ufe0f') and last_emoji_end == i):
             result.append(Token(char, char))
         i += 1
 
