@@ -379,6 +379,26 @@ def test_demojize_name_only(load_all_languages):  # type:ignore
             assert name == roundtrip, '%s != %s' % (name, roundtrip)
 
 
+def test_emojize_all_language_names(load_all_languages):  # type:ignore
+    # Every shortcode that demojize can emit in every language must be
+    # resolvable by emojize again, including emoji that only exist in an
+    # unqualified form (#337).
+    for lang_code in emoji.LANGUAGES:
+        for item in emoji.EMOJI_DATA.values():
+            if lang_code not in item:
+                continue
+            name = item[lang_code]
+            result = emoji.emojize(name, language=lang_code)
+            assert result != name, '%s did not resolve in %s' % (name, lang_code)
+
+
+def test_emojize_unqualified_language_name(load_all_languages):  # type:ignore
+    # A status-4 entry with no fully-qualified twin: demojize emits this
+    # shortcode, so emojize must return the same unqualified emoji (#337).
+    assert emoji.demojize('🗂', language='de') == ':karteireiter:'
+    assert emoji.emojize(':karteireiter:', language='de') == '🗂'
+
+
 def test_demojize_complicated_string():
     constructed = 'testing :baby::emoji_modifier_fitzpatrick_type-3: with :eyes: :eyes::eyes: modifiers :baby::emoji_modifier_fitzpatrick_type-5: to symbols ヒㇿ'
     emojid = emoji.emojize(constructed)
