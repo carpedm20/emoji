@@ -112,9 +112,13 @@ def extract_names(
         f'https://github.com/unicode-org/cldr/raw/{github_tag}/common/annotationsDerived/{github_lang}.xml',
     )
 
-    # Add names from emojiterra if there is no unicode annotation
+    # Add names from emojiterra if there is no unicode annotation.
     for emj, name in emoji_terra.items():
-        if emj in emoji_pkg.EMOJI_DATA and emj not in data:
+        if (
+            emj in emoji_pkg.EMOJI_DATA
+            and emj not in data
+            and not (lang == 'ro' and emj.replace('\ufe0f', '') in data)
+        ):
             emoji_name = adapt_emoji_name(name, lang, emj)
             data[emj] = emoji_name
 
@@ -185,6 +189,7 @@ if __name__ == '__main__':
         'ru': extract_names(github_tag, 'ru', 'ru', get_emojiterra_from_url('https://emojiterra.com/keyboard/ru/')),
         'tr': extract_names(github_tag, 'tr', 'tr', get_emojiterra_from_url('https://emojiterra.com/keyboard/tr/')),
         'ar': extract_names(github_tag, 'ar', 'ar', get_emojiterra_from_url('https://emojiterra.com/keyboard/ar/')),
+        'ro': extract_names(github_tag, 'ro', 'ro', get_emojiterra_from_url('https://emojiterra.com/keyboard/ro/')),
 
         # Do not update names in other languages:
         # 'de': get_UNICODE_EMOJI('de'),
@@ -200,6 +205,7 @@ if __name__ == '__main__':
         # 'ru': get_UNICODE_EMOJI('ru'),
         # 'tr': get_UNICODE_EMOJI('tr'),
         # 'ar': get_UNICODE_EMOJI('ar'),
+        # 'ro': get_UNICODE_EMOJI('ro'),
     }
 
     logging.info('  Combining...\n')

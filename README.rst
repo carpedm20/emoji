@@ -45,6 +45,7 @@ By default, the language is English (``language='en'``) but also supported langu
 * Russian (``'ru'``)
 * Arabic (``'ar'``)
 * Turkish (``'tr'``)
+* Romanian (``'ro'``)
 
 
 .. code-block:: python

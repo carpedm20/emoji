@@ -39,6 +39,7 @@ languages = {
     'ru': emoji.emojize('ru :Russia:'),
     'ar': emoji.emojize('ar :Saudi_Arabia:'),
     'tr': emoji.emojize('tr :Turkey:', language='alias'),
+    'ro': emoji.emojize('ro :Romania:'),
 }
 language_args = {}
 

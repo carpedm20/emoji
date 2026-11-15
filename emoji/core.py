@@ -40,7 +40,10 @@ __all__ = [
 
 _DEFAULT_DELIMITER = ':'
 # In Arabic language, the unicode character "\u0655" should be kept so we add it to the pattern below
-_EMOJI_NAME_PATTERN = '\\w\\-&.’”“()!#*+,/«»\u0300\u0301\u0302\u0303\u0306\u0308\u030a\u0327\u064b\u064e\u064f\u0650\u0653\u0654\u3099\u30fb\u309a\u0655'
+# In Romanian language, "\u0326" (comma below in decomposed ș/ț) is used
+_EMOJI_NAME_PATTERN = '\\w\\-&.’”“()!#*+,/«»\u0300\u0301\u0302\u0303\u0306\u0308\u030a\u0327\u064b\u064e\u064f\u0650\u0653\u0654\u3099\u30fb\u309a\u0655\u0326'
+
+_RO_CEDILLA_TO_COMMA = str.maketrans('\u015f\u0163\u015e\u0162', '\u0219\u021b\u0218\u021a')
 
 
 class _EmojiListReturn(TypedDict):
@@ -173,10 +176,12 @@ def emojize(
 
     def replace(match: Match[str]) -> str:
         name = match.group(1)[len(delimiters[0]) : -len(delimiters[1])]
+        name = unicodedata.normalize('NFKC', name)
+        if language == 'ro':
+            # Accept the legacy cedilla letters ş/ţ
+            name = name.translate(_RO_CEDILLA_TO_COMMA)
         emj = unicode_codes.get_emoji_by_name(
-            _DEFAULT_DELIMITER
-            + unicodedata.normalize('NFKC', name)
-            + _DEFAULT_DELIMITER,
+            _DEFAULT_DELIMITER + name + _DEFAULT_DELIMITER,
             language,
         )
 
