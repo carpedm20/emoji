@@ -713,3 +713,23 @@ purely_emoji_testdata = [
 @pytest.mark.parametrize('string,expected', purely_emoji_testdata)
 def test_purely_emoji(string: str, expected: bool):
     assert emoji.purely_emoji(string) == expected
+
+
+romanian_diacritics_testdata = [
+    (
+        ':față_încântată: :țânțar: :steag_antigua_și_barbuda:',
+        '\U0001f600 \U0001f99f \U0001f1e6\U0001f1ec',
+    ),
+    (
+        ':faţă_încântată: :ţânţar: :steag_antigua_şi_barbuda:',
+        '\U0001f600 \U0001f99f \U0001f1e6\U0001f1ec',
+    ),
+    (normalize('NFD', ':față_încântată: :țânțar:'), '\U0001f600 \U0001f99f'),
+    (normalize('NFD', ':faţă_încântată: :ţânţar:'), '\U0001f600 \U0001f99f'),
+]
+
+
+@pytest.mark.parametrize('text,expected', romanian_diacritics_testdata)
+def test_emojize_romanian_diacritics(text: str, expected: str):
+    assert emoji.emojize(text, language='ro') == expected
+    assert emoji.emojize(':şi:', language='tr') == ':şi:'

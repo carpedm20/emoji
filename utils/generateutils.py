@@ -81,6 +81,9 @@ def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
     if lang == 'tr':
         emoji_name = emoji_name.replace('\u0307', '')
 
+    if lang == 'ro':
+        emoji_name = ':' + fix_romanian_name(emoji_name[1:-1]) + ':'
+
     if lang == 'ar':
         # Removal of Arabic comma
         emoji_name = emoji_name.replace('\u060c', '')
@@ -203,3 +206,36 @@ def adapt_emoji_name(text: str, lang: str, emj: str) -> str:
     )
 
     return emoji_name
+
+
+# Corrections for the Romanian CLDR annotations, also applied to the skin tone variants
+_RO_NAME_FIXES = {
+    'sfor': 'sforăit',  # ZZZ
+    'buton_0_(grupă_sanguină)': 'buton_o_(grupă_sanguină)',  # was the digit zero
+    'crăciun': 'moș_sau_doamna_crăciun',  # Mx Claus
+    'veveriță': 'burunduc',  # chipmunk
+    'față_îmbufnată': 'față_înfuriată',  # enraged face
+    'eventai_pliabil': 'evantai_pliabil',
+    'șarlotă': 'cremă_de_zahăr_ars',  # custard
+    'ciocan_și_daltă': 'ciocan_și_târnăcop',  # hammer and pick
+    'alternare_cântăreț': 'semn_de_alternare_a_părților',
+    'bărbat_cu_bonetă_chinezească': 'persoană_cu_tichie',  # person with skullcap
+    'chifteluțe_de_orez': 'bilă_de_orez',
+    'tricou_de_alegare': 'tricou_de_alergare',
+    'pisică_surprinsă': 'pisică_extenuată',  # weary cat
+    'bărbat_care_jongleză': 'bărbat_care_jonglează',
+}
+
+
+def fix_romanian_name(name: str) -> str:
+    """Fix the Romanian emoji name (without the colons)"""
+
+    name = name.replace('\u2010', '-')
+    name = name.replace('\u201d', '')
+
+    for wrong, right in _RO_NAME_FIXES.items():
+        name = re.sub(f'^{re.escape(wrong)}(?=_ton_|$)', right, name)
+
+    name = name.replace('_orientate_spre_dreapta', '_cu_fața_spre_dreapta')
+
+    return name
