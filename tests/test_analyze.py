@@ -117,6 +117,36 @@ def test_analyze_non_rgi_zwj():
     assert isinstance(result[3].value, emoji.EmojiMatch)
 
 
+def test_analyze_join_emoji_false_emoji_only():
+    # 'a\U0001f600b': with join_emoji=False the default non_emoji=False must
+    # still yield only emoji tokens, per the analyze() non_emoji contract.
+    text = 'a\U0001f600b'
+
+    result = list(emoji.analyze(text, join_emoji=False))
+    assert len(result) == 1
+    assert isinstance(result[0].value, emoji.EmojiMatch)
+    assert result[0].value.emoji == '\U0001f600'
+
+    result = list(emoji.analyze(text, join_emoji=False, non_emoji=True))
+    assert len(result) == 3
+    assert result[0].value == 'a'
+    assert isinstance(result[1].value, emoji.EmojiMatch)
+    assert result[1].value.emoji == '\U0001f600'
+    assert result[2].value == 'b'
+
+    # The reported reproducer: a ZWJ family surrounded by plain characters.
+    family = 'a\U0001f468\u200d\U0001f469\u200d\U0001f467b'
+    result = list(emoji.analyze(family, join_emoji=False))
+    assert len(result) == 1
+    assert isinstance(result[0].value, emoji.EmojiMatch)
+
+    result = list(emoji.analyze(family, join_emoji=False, non_emoji=True))
+    assert len(result) == 3
+    assert result[0].value == 'a'
+    assert isinstance(result[1].value, emoji.EmojiMatch)
+    assert result[2].value == 'b'
+
+
 def test_emoji_match():
     s = 'a\U0001f309b'
     token = next(emoji.analyze(s))

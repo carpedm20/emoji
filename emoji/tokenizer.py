@@ -269,7 +269,9 @@ def filter_tokens(
 
     if not join_emoji:
         for token in matches:
-            if token.chars != _ZWJ:
+            if token.chars != _ZWJ and (
+                not emoji_only or isinstance(token.value, EmojiMatch)
+            ):
                 yield token
         return
 
