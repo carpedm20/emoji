@@ -90,6 +90,7 @@ def _load_default_from_json():
     with _open_file('emoji.json') as f:
         EMOJI_DATA = dict(json.load(f, object_pairs_hook=EmojiDataDict))  # type: ignore
     _loaded_keys = set(_DEFAULT_KEYS)
+    get_emoji_by_name.cache_clear()
 
 
 def load_from_json(key: str):
@@ -106,6 +107,7 @@ def load_from_json(key: str):
             EMOJI_DATA[emj][key] = value  # type: ignore
 
     _loaded_keys.add(key)
+    get_emoji_by_name.cache_clear()
 
 
 _load_default_from_json()
