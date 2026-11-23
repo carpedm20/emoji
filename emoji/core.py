@@ -105,7 +105,7 @@ class config:
             [language]
             if isinstance(language, str)
             else language
-            if language
+            if language is not None
             else unicode_codes.LANGUAGES
         )
 
