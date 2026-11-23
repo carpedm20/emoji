@@ -23,6 +23,53 @@ except ImportError:
     from contextlib import nullcontext as suppress_type_checks  # type:ignore
 
 
+@pytest.fixture
+def isolated_language_data(monkeypatch: pytest.MonkeyPatch):
+    """Isolate language loading so no test leaks language keys into another."""
+    from emoji import unicode_codes
+
+    language_keys = set(unicode_codes.LANGUAGES) - set(unicode_codes._DEFAULT_KEYS)
+    saved = {
+        emj: {key: data[key] for key in language_keys if key in data}
+        for emj, data in unicode_codes.EMOJI_DATA.items()
+    }
+
+    for data in unicode_codes.EMOJI_DATA.values():
+        for key in language_keys:
+            data.pop(key, None)
+    monkeypatch.setattr(unicode_codes, '_loaded_keys', set(unicode_codes._DEFAULT_KEYS))
+
+    yield
+
+    for data in unicode_codes.EMOJI_DATA.values():
+        for key in language_keys:
+            data.pop(key, None)
+    for emj, keys in saved.items():
+        unicode_codes.EMOJI_DATA[emj].update(keys)
+
+
+def test_load_language_empty_iterable_loads_nothing(  # type:ignore
+    isolated_language_data,
+):
+    """An explicitly empty language collection must not load every language."""
+    from emoji import unicode_codes
+
+    lion = emoji.emojize(':lion:')
+    language_keys = set(unicode_codes.LANGUAGES) - set(unicode_codes._DEFAULT_KEYS)
+
+    def loaded_languages():
+        return {key for key in language_keys if key in emoji.EMOJI_DATA[lion]}
+
+    assert loaded_languages() == set()
+    emoji.config.load_language([])
+    assert loaded_languages() == set()
+    emoji.config.load_language(())
+    assert loaded_languages() == set()
+
+    emoji.config.load_language('de')
+    assert 'de' in loaded_languages()
+
+
 def test_emojize_name_only(load_all_languages):  # type:ignore
     # Check that the regular expression emoji.core._EMOJI_NAME_PATTERN contains all the necesseary characters
     from emoji.core import _EMOJI_NAME_PATTERN  # pyright: ignore [reportPrivateUsage]
